@@ -20,9 +20,9 @@ AbstractElement:
     TestIntention | Function | Data | Import | PackageDeclaration;
           
 TestIntention:
-	 'description : ' description=STRING
-     'datapredicate : ' expression+=Expression
-     'oracle : ' expression+=Expression;
+	 'description:' description=STRING
+     'datapredicate:' expression+=Expression
+     'oracle:' expression+=Expression;
      
 Expression: Or;
 
