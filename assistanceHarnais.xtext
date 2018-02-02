@@ -1,0 +1,29 @@
+Model:
+	greetings+=AbstractModel;
+	
+
+AbstractModel:	
+	'Component:' nomComponent=ID
+	
+	'Service:' nomService=ID
+	
+	'StateVariable:' refStatVar+=Reference*
+	
+	'InputVariable:' refInputVar+=Reference*
+	
+	'Oracle:' refOracleVar+=Reference+
+	
+	('RequiredService:' (refMockVar+=ReferenceMook | refReqServkVar+=Reference)* )?
+	
+	'END';
+	
+Reference : 
+	'varModel:' nameVarMode+=ID 'ref' 'varTest:' nameVarTest+=ID;
+
+
+ReferenceMook : 
+	('mockReplace:' nameVarMode+=ID 'replace' mockName+=Mock)*
+	'varTest:' nameVarTest+=ID 'refMock'  'mock:' mockRef+=[Mock] ;
+
+Mock:
+	name=ID;
