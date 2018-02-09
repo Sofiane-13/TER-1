@@ -1,0 +1,18 @@
+domain my.exemple.testDomain{
+	ExpectedFlow:INT = airflowFunction(temp:Double, humidity:INT, presence:Boolean, fanPower:INT, curPower:INT, MaxPower:INT)
+}
+
+
+domain my.exemple.testIntention{
+	import my.exemple.testDomain.*
+	description:"test"
+	datapredicate:presence∧((temp≥32∧humidity≥70)∨(temp≥35∧humidity≥60))
+	oracle:ExpectedFlow=0
+}
+
+
+domain my.exemple.testData{
+	import my.exemple.testDomain.*
+	input:(temp :=36, humidity :=60, presence := true) 
+	input:(temp :=32, humidity :=70, presence := true)
+}
