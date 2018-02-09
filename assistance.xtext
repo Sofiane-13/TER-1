@@ -1,8 +1,8 @@
 Model:
-     (elements+=PackageDeclaration)*;
+     (elements+=DomainDeclaration)*;
 
-PackageDeclaration:
-    'package' name=QualifiedName '{'
+DomainDeclaration:
+    'domain' name=QualifiedName '{'
         (elements+=AbstractElement)*
     '}';
 
@@ -17,7 +17,7 @@ QualifiedNameWithWildcard:
     QualifiedName '.*'?;
 
 AbstractElement:
-    TestIntention | Function | Data | Import | PackageDeclaration;
+    TestIntention | Function | Data | Import | DomainDeclaration;
           
 TestIntention:
 	 'description:' description=STRING
