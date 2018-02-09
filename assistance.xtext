@@ -18,7 +18,16 @@ QualifiedNameWithWildcard:
 
 AbstractElement:
     TestIntention | Function | Data | Import | DomainDeclaration;
-          
+
+//Pour le test domain 
+Function:
+	out = Variable "=" methode = ID "("(arg+=Variable ",")*arg1=Variable")";
+	
+//Pour le test data 	
+Data:
+	'input : ('(variable=[Variable] ':=' val=Atomic "," )*|variable=[Variable] ':=' val=Atomic")"*;
+	
+//Pour le test intention           
 TestIntention:
 	 'description:' description=STRING
      'datapredicate:' expression+=Expression
@@ -51,9 +60,8 @@ MulOrDiv returns Expression: Primary (
 		{MulOrDiv.left=current} op=('*'|'/')
        	right=Primary
  )*;
- 
-Function:
-	out = Variable "=" methode = ID "("(arg+=Variable ",")*arg1=Variable")";
+
+
  
 Variable:
       name=ID ":" type=Type;
@@ -77,5 +85,3 @@ Atomic returns Expression:
 	{BoolConstant} value=('true'|'false') | 
 	{VariableRef} variable=[Variable];
 	
-Data:
-	'input : ('(variable=[Variable] ':=' val=Atomic "," )*|variable=[Variable] ':=' val=Atomic")"*;
