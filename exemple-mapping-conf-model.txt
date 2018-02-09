@@ -1,0 +1,19 @@
+Component:Voiture
+Service:speed
+StateVariable:
+	varModel:positionM ref varTest:positionT
+	
+InputVariable:
+	varModel:positionM ref varTest:positionT
+	varModel:positionM ref varTest:positionT
+	varModel:positionM ref varTest:positionT
+	varModel:positionM ref varTest:positionT
+	varModel:positionM ref varTest:positionT
+	
+Oracle:
+	varModel:positionM ref varTest:positionT
+	
+RequiredService: 
+	mockReplace: pilotSpeed replace MockInteger
+	varTest:pilotSpeedT refMock mock:MockInteger
+END
