@@ -1,0 +1,21 @@
+Model:
+	function+=AbstractModel*;
+
+
+AbstractModel:	Component;
+
+Component :
+	"Component:" name=ID
+	"ProvidedServices:"
+		"conf("(arg+=Variable ",")*arg1+=Variable")"
+		(methode+=ServiceName "("(arg+=Variable ",")*arg+=Variable")"(":"arg+=Variable)?)*
+	"RequiredServices:"
+		(nameComp+=[Component]'.'nameServ+=[ServiceName])*
+;
+
+ServiceName : name=ID;
+
+Variable:
+      name=ID ":" type=Type;
+      
+enum Type : INT | STRING | Boolean | Double;
