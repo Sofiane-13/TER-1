@@ -2,7 +2,7 @@ Model:
 	function+=AbstractModel*;
 
 
-AbstractModel:	Component map+=Mapping;
+AbstractModel:	Component map+=Mapping*;
 
 Component :
 	"Component:" name=ID
