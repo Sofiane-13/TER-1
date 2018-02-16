@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 7 resources" deleteContents="false" description="Delete 7 resources" element1="/com.aelos.testintentionsassistance" element2="/com.aelos.testintentionsassistance.ide" element3="/com.aelos.testintentionsassistance.sdk" element4="/com.aelos.testintentionsassistance.tests" element5="/com.aelos.testintentionsassistance.ui" element6="/com.aelos.testintentionsassistance.updatesite" element7="/parent" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="7" stamp="1518775807268"/>
+</session>

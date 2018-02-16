@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.aelos.testintentionsassistance.ide
+Bundle-SymbolicName: com.aelos.testintentionsassistance.ide;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: com.aelos.ide.contentassist.antlr,
+ com.aelos.ide.contentassist.antlr.internal
+Require-Bundle: org.antlr.runtime,
+ org.eclipse.xtext.xbase.lib,
+ com.aelos.testintentionsassistance,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+

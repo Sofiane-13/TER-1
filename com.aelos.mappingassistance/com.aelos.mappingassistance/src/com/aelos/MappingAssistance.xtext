@@ -1,0 +1,29 @@
+grammar com.aelos.MappingAssistance with org.eclipse.xtext.xbase.Xbase
+
+generate mappingassistance "http://www.aelos.com/MappingAssistance"
+
+Model:
+	function+=AbstractModel*;
+
+
+AbstractModel: Component | Mapping;
+
+Component :
+	"Component:" name=ID
+	"ProvidedServices:"
+		"conf("(arg+=Variable ",")*arg+=Variable")"
+		(methode+=ServiceName "("(arg+=Variable ",")*arg+=Variable")"(":"arg+=Variable)?)*
+	"RequiredServices:"
+		(nameServ+=ServiceName)*
+;
+
+Mapping:
+	servName=[ServiceName]'.'compServ=[Variable] 'ref' testVar=[Variable]
+;
+
+ServiceName : compName=[Component]'.'name=ID;
+
+Variable: name=ID ":" type=Type;
+      
+enum Type : INT | STRING | Boolean | Double;
+
