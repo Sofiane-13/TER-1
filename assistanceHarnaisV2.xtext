@@ -2,7 +2,7 @@ Model:
 	function+=AbstractModel*;
 
 
-AbstractModel:	Component;
+AbstractModel:	Component map+=Mapping*;
 
 Component :
 	"Component:" name=ID
@@ -11,6 +11,12 @@ Component :
 		(methode+=ServiceName "("(arg+=Variable ",")*arg+=Variable")"(":"arg+=Variable)?)*
 	"RequiredServices:"
 		(nameComp+=[Component]'.'nameServ+=[ServiceName])*
+;
+
+Mapping  :
+	 
+	'varModel:' nameVarMode+=[Variable] 'ref' 'varTest:' nameVarTest+=[Variable]
+	
 ;
 
 ServiceName : name=ID;
