@@ -2,7 +2,7 @@ Model:
 	function+=AbstractModel*;
 
 
-AbstractModel:	Component map+=Mapping*;
+AbstractModel:	Component map+=Mapping* bind+=Bindings*;
 
 Component :
 	"Component:" name=ID
@@ -17,6 +17,10 @@ Mapping  :
 	 
 	'varModel:' nameVarMode+=[Variable] 'ref' 'varTest:' nameVarTest+=[Variable]
 	
+;
+
+Bindings :
+	"bind(" nameComp+=[Component]'.'nameServ+=[ServiceName] "," nameComp+=[Component]'.'nameServ+=[ServiceName] ")"  
 ;
 
 ServiceName : name=ID;
