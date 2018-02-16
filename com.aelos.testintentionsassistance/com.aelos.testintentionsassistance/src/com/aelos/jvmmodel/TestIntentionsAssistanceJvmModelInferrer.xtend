@@ -1,6 +1,7 @@
 package com.aelos.jvmmodel
 
 import com.google.inject.Inject
+import com.aelos.testintentionsassistance.Heros
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
@@ -16,7 +17,7 @@ class TestIntentionsAssistanceJvmModelInferrer extends AbstractModelInferrer {
 	/**
 	 * convenience API to build and initialize JVM types and their members.
 	 */
-	//@Inject extension JvmTypesBuilder
+	@Inject extension JvmTypesBuilder
 
 	/**
 	 * The dispatch method {@code infer} is called for each instance of the
@@ -43,7 +44,7 @@ class TestIntentionsAssistanceJvmModelInferrer extends AbstractModelInferrer {
 	 *            rely on linking using the index if isPreIndexingPhase is
 	 *            <code>true</code>.
 	 */
-	/*def dispatch void infer(Heros element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
+	def dispatch void infer(Heros element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		for (hero : element.heros) {
 			acceptor.accept(element.toClass("my.company." + hero.name)) [
 				members += hero.toMethod("hello" + hero.name, inferredType) [
@@ -51,6 +52,6 @@ class TestIntentionsAssistanceJvmModelInferrer extends AbstractModelInferrer {
 				]
 			]
 		}
-	}*/
+	}
 }
 

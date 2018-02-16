@@ -4,6 +4,7 @@
 package com.aelos.tests
 
 import com.google.inject.Inject
+import com.aelos.testintentionsassistance.Heros
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
 import org.eclipse.xtext.testing.util.ParseHelper
@@ -14,16 +15,16 @@ import org.junit.runner.RunWith
 @RunWith(XtextRunner)
 @InjectWith(TestIntentionsAssistanceInjectorProvider)
 class TestIntentionsAssistanceParsingTest {
-	/*@Inject
-	ParseHelper<Heros> parseHelper */
+	@Inject
+	ParseHelper<Heros> parseHelper
 	
 	@Test
 	def void loadModel() {
-		/*val result = parseHelper.parse('''
+		val result = parseHelper.parse('''
 			hero superman can FLY
 			hero iceman can ICE
-		''')*/
-		Assert.assertNotNull(1)
-		//Assert.assertTrue(result.eResource.errors.isEmpty)
+		''')
+		Assert.assertNotNull(result)
+		Assert.assertTrue(result.eResource.errors.isEmpty)
 	}
 }

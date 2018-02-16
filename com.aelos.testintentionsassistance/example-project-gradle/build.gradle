@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    xtextLanguages 'com.aelos.testintentionsassistance:com.aelos.testintentionsassistance:0.1.0-SNAPSHOT'
+    xtextLanguages 'com.aelos.testintentionsassistance:com.aelos.testintentionsassistance:1.0.0-SNAPSHOT'
 
     compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.11.0'
     testCompile 'junit:junit:4.12'
