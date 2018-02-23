@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/com.aelos.testintentionsassistance.sdk_0.0.0.jar" id="com.aelos.testintentionsassistance.sdk" version="0.0.0">
-      <category name="com.aelos.testintentionsassistance"/>
-   </feature>
-   <category-def name="com.aelos.testintentionsassistance" label="Test Intentions Assistance"/>
-</site>

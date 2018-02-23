@@ -1,0 +1,52 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+import "http://www.xtext.org/example/mydsl1/MyDsl" as def
+
+Model:
+	function+=AbstractModel*;
+
+
+
+AbstractModel:Import (comp+=Component)+ ;
+
+Import:
+    'import' importedNamespace=QualifiedNameWithWildcard;
+    
+QualifiedNameWithWildcard:
+    QualifiedName '.*'?;
+        
+QualifiedName:
+    ID ('.' ID)*;
+Component :
+	"Component:" name=ID
+	"ProvidedServices:"
+		"conf("(arg+=Variable ",")*arg1+=Variable")"
+		(methode+=ServiceName "("(arg+=Variable ",")*arg+=Variable")"(":"arg+=Variable)?)*
+        "RequiredServices:"?
+        (req+=RequiredService)*
+		(map+=Mapping)*
+		(bind+=Bindings)*
+;
+
+Variable:
+      name=ID ":" type=Type;
+      
+Mapping :
+	 'varModel:' nameVarMode+=[Variable] 'ref' 'varTest:' nameVarTest+=[def::Variable]
+;
+
+Bindings :
+	"bind(" nameComp+=[Component]'.'nameServ1+=[ServiceName] "," nameComp+=[Component]'.'nameServ2+=[ServiceName] ")";
+	  
+RequiredService:
+		 
+		nameComp+=[Component]'.'nameServ+=[ServiceName]";";
+	  
+
+ServiceName : name=ID;
+
+
+      
+enum Type : INT | STRING | Boolean | Double;
