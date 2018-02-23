@@ -23,7 +23,7 @@ Component :
 	"Component:" name=ID
 	"ProvidedServices:"
 		"conf("(arg+=Variable ",")*arg1+=Variable")"
-		(methode+=ServiceName "("(arg+=Variable ",")*arg+=Variable")"(":"arg+=Variable)?)+
+		(methode+=ServiceName "("(arg+=Variable ",")*arg+=Variable")"(":"arg+=Variable)?)*
 	"RequiredServices:"
 		(nameComp+=[Component]'.'nameServ+=[ServiceName])*
      ('varModel:' nameVarMode+=[Variable] 'ref' 'varTest:' nameVarTest+=[def::Variable])*
