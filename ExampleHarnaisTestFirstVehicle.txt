@@ -1,0 +1,34 @@
+domain my.exemple.testData{
+	input:(pilotPos:Double:=23,safeDistance:Double:=2,vSpeed:Double:=3,lastPos:Double:=10,piloteSpeed:Double:=2) 
+}
+
+________________________________
+
+domain my.exemple.testDomain{
+	import my.exemple.testData.*
+	ExpectedValue:Double = computeSpeed(safeDistance)
+}
+
+________________________________
+
+import my.exemple.testData.*
+Component:first:SimpleViehcle
+ProvidedServices:
+	conf(pos:Double,speed:Double)
+	computeSpeed(safeDistance:Double):result:Double
+	speed()
+	pos()
+RequiredServices:
+	pilotSpeed:Double:= pilot.speedpilot;
+	pilotPos:Double:= pilot.pospilot;
+
+varModel:pos ref varTest:lastPos
+varModel:speed ref varTest:vSpeed
+
+bind(first.computeSpeed, pilot.speedpilot)
+bind(first.computeSpeed, pilot.pospilot)
+
+Component:pilot:SimplePilot
+ProvidedServices:conf(init:Boolean)
+speedpilot()
+pospilot()

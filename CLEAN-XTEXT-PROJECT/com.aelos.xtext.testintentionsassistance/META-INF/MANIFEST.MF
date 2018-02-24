@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.aelos.xtext.testintentionsassistance
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.aelos.xtext.testintentionsassistance; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.13.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.13.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl,
+ com.aelos.xtext.testintentionsassistance.scoping,
+ com.aelos.xtext.testintentionsassistance.testintentionsAssistance.util,
+ com.aelos.xtext.testintentionsassistance.parser.antlr.internal,
+ com.aelos.xtext.testintentionsassistance.validation,
+ com.aelos.xtext.testintentionsassistance.testintentionsAssistance,
+ com.aelos.xtext.testintentionsassistance.parser.antlr,
+ com.aelos.xtext.testintentionsassistance.serializer,
+ com.aelos.xtext.testintentionsassistance.services,
+ com.aelos.xtext.testintentionsassistance.generator,
+ com.aelos.xtext.testintentionsassistance
+Import-Package: org.apache.log4j

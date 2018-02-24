@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.aelos.xtext.mappingassistance
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.aelos.xtext.mappingassistance; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.generator;bundle-version="2.13.0",
+ com.aelos.xtext.testintentionsassistance;bundle-version="1.0.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.13.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.13.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.apache.log4j;version="1.2.15"
+Export-Package: com.aelos.xtext.mappingassistance.parser.antlr.internal,
+ com.aelos.xtext.mappingassistance.mappingAssistance.util,
+ com.aelos.xtext.mappingassistance.scoping,
+ com.aelos.xtext.mappingassistance.mappingAssistance,
+ com.aelos.xtext.mappingassistance.serializer,
+ com.aelos.xtext.mappingassistance.generator,
+ com.aelos.xtext.mappingassistance,
+ com.aelos.xtext.mappingassistance.validation,
+ com.aelos.xtext.mappingassistance.parser.antlr,
+ com.aelos.xtext.mappingassistance.mappingAssistance.impl,
+ com.aelos.xtext.mappingassistance.services
+
