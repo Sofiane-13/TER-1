@@ -9,7 +9,7 @@ Model:
 
 
 
-AbstractModel:Import (comp+=Component)+ ;
+AbstractModel:Import (comp+=Component )+ ;
 
 Import:
     'import' importedNamespace=QualifiedNameWithWildcard;
@@ -20,14 +20,19 @@ QualifiedNameWithWildcard:
 QualifiedName:
     ID ('.' ID)*;
 Component :
-	"Component:" name=ID
+	
+	("Component" | "Mock" | "Observator")":" 
+	inst+=InstanceComp":" name=ID
 	"ProvidedServices:"
-		"conf("(arg+=Variable ",")*arg1+=Variable")"
-		(methode+=ServiceName "("(arg+=Variable ",")*arg+=Variable")"(":"arg+=Variable)?)*
-        "RequiredServices:"?
-        (req+=RequiredService)*
-		(map+=Mapping)*
-		(bind+=Bindings)*
+	"conf("(arg+=Variable ",")*arg1+=Variable")"
+	(methode+=ServiceName "("((arg+=Variable ",")*arg+=Variable)*")"(":"arg+=Variable)?)*
+    "RequiredServices:"?
+    (req+=RequiredService)*
+	(map+=Mapping)*
+	(bind+=Bindings)*
+;
+InstanceComp:
+	name=ID
 ;
 
 Variable:
@@ -38,11 +43,11 @@ Mapping :
 ;
 
 Bindings :
-	"bind(" nameComp+=[Component]'.'nameServ1+=[ServiceName] "," nameComp+=[Component]'.'nameServ2+=[ServiceName] ")";
+	"bind(" nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
 	  
 RequiredService:
 		 
-		nameComp+=[Component]'.'nameServ+=[ServiceName]";";
+		nameVarMethode+=Variable":="nameComp+=[InstanceComp]'.'nameServ+=[ServiceName]";";
 	  
 
 ServiceName : name=ID;
