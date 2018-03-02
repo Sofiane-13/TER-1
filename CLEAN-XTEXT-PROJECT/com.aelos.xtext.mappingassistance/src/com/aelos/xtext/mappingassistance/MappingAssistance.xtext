@@ -8,7 +8,6 @@ Model:
 	function+=AbstractModel*;
 
 
-
 AbstractModel:Import (comp+=Component )+ ;
 
 Import:
