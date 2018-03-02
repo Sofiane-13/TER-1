@@ -1,0 +1,9 @@
+grammar com.aelos.xtext.architecture.Architecture with org.eclipse.xtext.common.Terminals
+
+generate architecture "http://www.aelos.com/xtext/architecture/Architecture"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
