@@ -11,5 +11,4 @@ import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
 @FinalFieldsConstructor
 class MappingAssistanceUiModule extends AbstractMappingAssistanceUiModule {
 	
-	
 }
