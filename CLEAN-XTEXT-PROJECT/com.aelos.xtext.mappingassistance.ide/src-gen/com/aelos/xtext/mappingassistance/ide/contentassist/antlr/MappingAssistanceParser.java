@@ -31,12 +31,17 @@ public class MappingAssistanceParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MappingAssistanceGrammarAccess grammarAccess) {
+<<<<<<< HEAD
+=======
+			builder.put(grammarAccess.getComponentAccess().getAlternatives_0(), "rule__Component__Alternatives_0");
+>>>>>>> master
 			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 			builder.put(grammarAccess.getAbstractModelAccess().getGroup(), "rule__AbstractModel__Group__0");
 			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 			builder.put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
+<<<<<<< HEAD
 			builder.put(grammarAccess.getTestedserviceAccess().getGroup(), "rule__Testedservice__Group__0");
 			builder.put(grammarAccess.getMappingAccess().getGroup(), "rule__Mapping__Group__0");
 			builder.put(grammarAccess.getMocksAccess().getGroup(), "rule__Mocks__Group__0");
@@ -67,6 +72,45 @@ public class MappingAssistanceParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getObserveurNameAccess().getNameAssignment(), "rule__ObserveurName__NameAssignment");
 			builder.put(grammarAccess.getMockNameAccess().getNameAssignment(), "rule__MockName__NameAssignment");
 			builder.put(grammarAccess.getInstanceCompAccess().getNameAssignment(), "rule__InstanceComp__NameAssignment");
+=======
+			builder.put(grammarAccess.getComponentAccess().getGroup(), "rule__Component__Group__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_7(), "rule__Component__Group_7__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_10(), "rule__Component__Group_10__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_10_2(), "rule__Component__Group_10_2__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_10_2_0(), "rule__Component__Group_10_2_0__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_10_4(), "rule__Component__Group_10_4__0");
+			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
+			builder.put(grammarAccess.getMappingAccess().getGroup(), "rule__Mapping__Group__0");
+			builder.put(grammarAccess.getBindingsAccess().getGroup(), "rule__Bindings__Group__0");
+			builder.put(grammarAccess.getRequiredServiceAccess().getGroup(), "rule__RequiredService__Group__0");
+			builder.put(grammarAccess.getModelAccess().getFunctionAssignment(), "rule__Model__FunctionAssignment");
+			builder.put(grammarAccess.getAbstractModelAccess().getCompAssignment_1(), "rule__AbstractModel__CompAssignment_1");
+			builder.put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
+			builder.put(grammarAccess.getComponentAccess().getInstAssignment_2(), "rule__Component__InstAssignment_2");
+			builder.put(grammarAccess.getComponentAccess().getNameAssignment_4(), "rule__Component__NameAssignment_4");
+			builder.put(grammarAccess.getComponentAccess().getArgAssignment_7_0(), "rule__Component__ArgAssignment_7_0");
+			builder.put(grammarAccess.getComponentAccess().getArg1Assignment_8(), "rule__Component__Arg1Assignment_8");
+			builder.put(grammarAccess.getComponentAccess().getMethodeAssignment_10_0(), "rule__Component__MethodeAssignment_10_0");
+			builder.put(grammarAccess.getComponentAccess().getArgAssignment_10_2_0_0(), "rule__Component__ArgAssignment_10_2_0_0");
+			builder.put(grammarAccess.getComponentAccess().getArgAssignment_10_2_1(), "rule__Component__ArgAssignment_10_2_1");
+			builder.put(grammarAccess.getComponentAccess().getArgAssignment_10_4_1(), "rule__Component__ArgAssignment_10_4_1");
+			builder.put(grammarAccess.getComponentAccess().getReqAssignment_12(), "rule__Component__ReqAssignment_12");
+			builder.put(grammarAccess.getComponentAccess().getMapAssignment_13(), "rule__Component__MapAssignment_13");
+			builder.put(grammarAccess.getComponentAccess().getBindAssignment_14(), "rule__Component__BindAssignment_14");
+			builder.put(grammarAccess.getInstanceCompAccess().getNameAssignment(), "rule__InstanceComp__NameAssignment");
+			builder.put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
+			builder.put(grammarAccess.getVariableAccess().getTypeAssignment_2(), "rule__Variable__TypeAssignment_2");
+			builder.put(grammarAccess.getMappingAccess().getNameVarModeAssignment_1(), "rule__Mapping__NameVarModeAssignment_1");
+			builder.put(grammarAccess.getMappingAccess().getNameVarTestAssignment_4(), "rule__Mapping__NameVarTestAssignment_4");
+			builder.put(grammarAccess.getBindingsAccess().getNameCompAssignment_1(), "rule__Bindings__NameCompAssignment_1");
+			builder.put(grammarAccess.getBindingsAccess().getNameServ1Assignment_3(), "rule__Bindings__NameServ1Assignment_3");
+			builder.put(grammarAccess.getBindingsAccess().getNameCompAssignment_5(), "rule__Bindings__NameCompAssignment_5");
+			builder.put(grammarAccess.getBindingsAccess().getNameServ2Assignment_7(), "rule__Bindings__NameServ2Assignment_7");
+			builder.put(grammarAccess.getRequiredServiceAccess().getNameVarMethodeAssignment_0(), "rule__RequiredService__NameVarMethodeAssignment_0");
+			builder.put(grammarAccess.getRequiredServiceAccess().getNameCompAssignment_2(), "rule__RequiredService__NameCompAssignment_2");
+			builder.put(grammarAccess.getRequiredServiceAccess().getNameServAssignment_4(), "rule__RequiredService__NameServAssignment_4");
+			builder.put(grammarAccess.getServiceNameAccess().getNameAssignment(), "rule__ServiceName__NameAssignment");
+>>>>>>> master
 		}
 	}
 	

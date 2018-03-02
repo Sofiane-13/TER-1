@@ -19,8 +19,6 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
     throw new Error("Unresolved compilation problems:"
-      + "\nRequiredService cannot be resolved to a type."
-      + "\nRequiredService cannot be resolved to a type."
       + "\nBindings cannot be resolved to a type."
       + "\nBindings cannot be resolved to a type."
       + "\nThe method or field REQUIRED_SERVICE__NAME_SERV is undefined for the type Class<Literals>"
