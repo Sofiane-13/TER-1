@@ -11,6 +11,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,10 +20,12 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class ArchitectureSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected ArchitectureGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Component_RequiredServicesKeyword_10_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (ArchitectureGrammarAccess) access;
+		match_Component_RequiredServicesKeyword_10_q = new TokenAlias(false, true, grammarAccess.getComponentAccess().getRequiredServicesKeyword_10());
 	}
 	
 	@Override
@@ -36,8 +40,32 @@ public class ArchitectureSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Component_RequiredServicesKeyword_10_q.equals(syntax))
+				emit_Component_RequiredServicesKeyword_10_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'RequiredServices:'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     arg+=Variable ')' (ambiguity) (rule end)
+	 *     arg+=Variable ')' (ambiguity) bind+=Bindings
+	 *     arg+=Variable ')' (ambiguity) req+=RequiredService
+	 *     arg+=Variable (ambiguity) (rule end)
+	 *     arg+=Variable (ambiguity) bind+=Bindings
+	 *     arg+=Variable (ambiguity) req+=RequiredService
+	 *     arg1+=Variable ')' (ambiguity) (rule end)
+	 *     arg1+=Variable ')' (ambiguity) bind+=Bindings
+	 *     arg1+=Variable ')' (ambiguity) req+=RequiredService
+	 *     methode+=ServiceName '(' ')' (ambiguity) (rule end)
+	 *     methode+=ServiceName '(' ')' (ambiguity) bind+=Bindings
+	 *     methode+=ServiceName '(' ')' (ambiguity) req+=RequiredService
+	 */
+	protected void emit_Component_RequiredServicesKeyword_10_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

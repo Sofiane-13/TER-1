@@ -81,9 +81,44 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseAbstractModel(AbstractModel object)
       {
-        return createGreetingAdapter();
+        return createAbstractModelAdapter();
+      }
+      @Override
+      public Adapter caseImport(Import object)
+      {
+        return createImportAdapter();
+      }
+      @Override
+      public Adapter caseComponent(Component object)
+      {
+        return createComponentAdapter();
+      }
+      @Override
+      public Adapter caseInstanceComp(InstanceComp object)
+      {
+        return createInstanceCompAdapter();
+      }
+      @Override
+      public Adapter caseVariable(Variable object)
+      {
+        return createVariableAdapter();
+      }
+      @Override
+      public Adapter caseBindings(Bindings object)
+      {
+        return createBindingsAdapter();
+      }
+      @Override
+      public Adapter caseRequiredService(RequiredService object)
+      {
+        return createRequiredServiceAdapter();
+      }
+      @Override
+      public Adapter caseServiceName(ServiceName object)
+      {
+        return createServiceNameAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +158,121 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.AbstractModel <em>Abstract Model</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.Greeting
+   * @see com.aelos.xtext.architecture.architecture.AbstractModel
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createAbstractModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Import <em>Import</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.Import
+   * @generated
+   */
+  public Adapter createImportAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Component <em>Component</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.Component
+   * @generated
+   */
+  public Adapter createComponentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.InstanceComp <em>Instance Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.InstanceComp
+   * @generated
+   */
+  public Adapter createInstanceCompAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.Variable
+   * @generated
+   */
+  public Adapter createVariableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Bindings <em>Bindings</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.Bindings
+   * @generated
+   */
+  public Adapter createBindingsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.RequiredService <em>Required Service</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.RequiredService
+   * @generated
+   */
+  public Adapter createRequiredServiceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.ServiceName <em>Service Name</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.ServiceName
+   * @generated
+   */
+  public Adapter createServiceNameAdapter()
   {
     return null;
   }

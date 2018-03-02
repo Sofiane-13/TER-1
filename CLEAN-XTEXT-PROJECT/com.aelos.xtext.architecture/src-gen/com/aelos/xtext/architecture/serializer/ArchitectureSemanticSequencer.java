@@ -3,9 +3,16 @@
  */
 package com.aelos.xtext.architecture.serializer;
 
+import com.aelos.xtext.architecture.architecture.AbstractModel;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Greeting;
+import com.aelos.xtext.architecture.architecture.Bindings;
+import com.aelos.xtext.architecture.architecture.Component;
+import com.aelos.xtext.architecture.architecture.Import;
+import com.aelos.xtext.architecture.architecture.InstanceComp;
 import com.aelos.xtext.architecture.architecture.Model;
+import com.aelos.xtext.architecture.architecture.RequiredService;
+import com.aelos.xtext.architecture.architecture.ServiceName;
+import com.aelos.xtext.architecture.architecture.Variable;
 import com.aelos.xtext.architecture.services.ArchitectureGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -33,11 +40,39 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == ArchitecturePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case ArchitecturePackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case ArchitecturePackage.ABSTRACT_MODEL:
+				sequence_AbstractModel(context, (AbstractModel) semanticObject); 
+				return; 
+			case ArchitecturePackage.BINDINGS:
+				sequence_Bindings(context, (Bindings) semanticObject); 
+				return; 
+			case ArchitecturePackage.COMPONENT:
+				sequence_Component(context, (Component) semanticObject); 
+				return; 
+			case ArchitecturePackage.IMPORT:
+				if (rule == grammarAccess.getAbstractModelRule()) {
+					sequence_AbstractModel_Import(context, (Import) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getImportRule()) {
+					sequence_Import(context, (Import) semanticObject); 
+					return; 
+				}
+				else break;
+			case ArchitecturePackage.INSTANCE_COMP:
+				sequence_InstanceComp(context, (InstanceComp) semanticObject); 
 				return; 
 			case ArchitecturePackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case ArchitecturePackage.REQUIRED_SERVICE:
+				sequence_RequiredService(context, (RequiredService) semanticObject); 
+				return; 
+			case ArchitecturePackage.SERVICE_NAME:
+				sequence_ServiceName(context, (ServiceName) semanticObject); 
+				return; 
+			case ArchitecturePackage.VARIABLE:
+				sequence_Variable(context, (Variable) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -46,18 +81,92 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     AbstractModel returns AbstractModel
+	 *
+	 * Constraint:
+	 *     comp+=Component+
+	 */
+	protected void sequence_AbstractModel(ISerializationContext context, AbstractModel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AbstractModel returns Import
+	 *
+	 * Constraint:
+	 *     (importedNamespace=QualifiedNameWithWildcard comp+=Component+)
+	 */
+	protected void sequence_AbstractModel_Import(ISerializationContext context, Import semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Bindings returns Bindings
+	 *
+	 * Constraint:
+	 *     (nameComp+=[InstanceComp|ID] nameServ1+=[ServiceName|ID] nameComp+=[InstanceComp|ID] nameServ2+=[ServiceName|ID])
+	 */
+	protected void sequence_Bindings(ISerializationContext context, Bindings semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Component returns Component
+	 *
+	 * Constraint:
+	 *     (
+	 *         inst+=InstanceComp 
+	 *         name=ID 
+	 *         arg+=Variable* 
+	 *         arg1+=Variable 
+	 *         (methode+=ServiceName (arg+=Variable* arg+=Variable)* arg+=Variable?)* 
+	 *         req+=RequiredService* 
+	 *         bind+=Bindings*
+	 *     )
+	 */
+	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Import returns Import
+	 *
+	 * Constraint:
+	 *     importedNamespace=QualifiedNameWithWildcard
+	 */
+	protected void sequence_Import(ISerializationContext context, Import semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     InstanceComp returns InstanceComp
 	 *
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
+	protected void sequence_InstanceComp(ISerializationContext context, InstanceComp semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.GREETING__NAME));
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.INSTANCE_COMP__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.INSTANCE_COMP__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getInstanceCompAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -67,10 +176,61 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     function+=AbstractModel+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RequiredService returns RequiredService
+	 *
+	 * Constraint:
+	 *     (nameVarMethode+=Variable nameComp+=[InstanceComp|ID] nameServ+=[ServiceName|ID])
+	 */
+	protected void sequence_RequiredService(ISerializationContext context, RequiredService semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ServiceName returns ServiceName
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_ServiceName(ISerializationContext context, ServiceName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.SERVICE_NAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.SERVICE_NAME__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getServiceNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Variable returns Variable
+	 *
+	 * Constraint:
+	 *     (name=ID type=Type)
+	 */
+	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.VARIABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.VARIABLE__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVariableAccess().getTypeTypeEnumRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
 	}
 	
 	

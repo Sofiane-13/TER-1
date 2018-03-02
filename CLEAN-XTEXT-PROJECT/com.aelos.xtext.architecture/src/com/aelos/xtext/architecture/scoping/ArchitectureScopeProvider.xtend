@@ -3,6 +3,15 @@
  */
 package com.aelos.xtext.architecture.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import com.aelos.xtext.architecture.architecture.RequiredService
+import com.aelos.xtext.architecture.architecture.ArchitecturePackage
+import org.eclipse.xtext.EcoreUtil2
+import com.aelos.xtext.architecture.architecture.ServiceName
+import com.aelos.xtext.architecture.architecture.InstanceComp
+import javax.script.Bindings
+import org.eclipse.xtext.scoping.Scopes
 
 /**
  * This class contains custom scoping description.
@@ -11,5 +20,48 @@ package com.aelos.xtext.architecture.scoping
  * on how and when to use it.
  */
 class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
-
+	override getScope(EObject context, EReference reference) {
+    // We want to define the Scope for the Element's superElement cross-reference
+    if (context instanceof RequiredService
+            && reference == ArchitecturePackage.Literals.REQUIRED_SERVICE__NAME_SERV) {
+        // Collect a list of candidates by going through the model
+        // EcoreUtil2 provides useful functionality to do that
+        // For example searching for all elements within the root Object's tree
+        val rootElement = EcoreUtil2.getRootContainer(context)
+        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,ServiceName )
+        // Create IEObjectDescriptions and puts them into an IScope instance
+        return Scopes.scopeFor(candidates)
+    }
+    if (context instanceof RequiredService
+            && reference == ArchitecturePackage.Literals.REQUIRED_SERVICE__NAME_COMP) {
+        // Collect a list of candidates by going through the model
+        // EcoreUtil2 provides useful functionality to do that
+        // For example searching for all elements within the root Object's tree
+        val rootElement = EcoreUtil2.getRootContainer(context)
+        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,InstanceComp )
+        // Create IEObjectDescriptions and puts them into an IScope instance
+        return Scopes.scopeFor(candidates)
+    }
+    if (context instanceof Bindings
+            && reference == ArchitecturePackage.Literals.BINDINGS__NAME_SERV2) {
+        // Collect a list of candidates by going through the model
+        // EcoreUtil2 provides useful functionality to do that
+        // For example searching for all elements within the root Object's tree
+        val rootElement = EcoreUtil2.getRootContainer(context)
+        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,ServiceName )
+        // Create IEObjectDescriptions and puts them into an IScope instance
+        return Scopes.scopeFor(candidates)
+    }
+    if (context instanceof Bindings
+            && reference == ArchitecturePackage.Literals.BINDINGS__NAME_COMP) {
+        // Collect a list of candidates by going through the model
+        // EcoreUtil2 provides useful functionality to do that
+        // For example searching for all elements within the root Object's tree
+        val rootElement = EcoreUtil2.getRootContainer(context)
+        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,InstanceComp )
+        // Create IEObjectDescriptions and puts them into an IScope instance
+        return Scopes.scopeFor(candidates)
+    }
+    return super.getScope(context, reference);
+}
 }

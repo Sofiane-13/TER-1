@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Model#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.Model#getFunction <em>Function</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getModel()
@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Greetings</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Greeting}.
+   * Returns the value of the '<em><b>Function</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.AbstractModel}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Greetings</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Function</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Greetings</em>' containment reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getModel_Greetings()
+   * @return the value of the '<em>Function</em>' containment reference list.
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getModel_Function()
    * @model containment="true"
    * @generated
    */
-  EList<Greeting> getGreetings();
+  EList<AbstractModel> getFunction();
 
 } // Model

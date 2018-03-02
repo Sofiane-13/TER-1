@@ -31,6 +31,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "com.aelos.xtext.architecture.Architecture"
+			referencedResource = "platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.genmodel"
 			fileExtensions = "archi"
 
 			serializer = {

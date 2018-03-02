@@ -6,11 +6,49 @@
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.14">
   <genPackages prefix="Architecture" basePackage="com.aelos.xtext.architecture" disposableProviderFactory="true"
       fileExtensions="archi" ecorePackage="Architecture.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Architecture.ecore#//Type">
+      <genEnumLiterals ecoreEnumLiteral="Architecture.ecore#//Type/INT"/>
+      <genEnumLiterals ecoreEnumLiteral="Architecture.ecore#//Type/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="Architecture.ecore#//Type/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="Architecture.ecore#//Type/Double"/>
+    </genEnums>
     <genClasses ecoreClass="Architecture.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Model/function"/>
     </genClasses>
-    <genClasses ecoreClass="Architecture.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="Architecture.ecore#//AbstractModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//AbstractModel/comp"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Import/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//Component">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/inst"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Component/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/arg"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/arg1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/methode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/req"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/bind"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//InstanceComp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//InstanceComp/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Variable/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//Bindings">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Bindings/nameComp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Bindings/nameServ1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Bindings/nameServ2"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//RequiredService">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//RequiredService/nameVarMethode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//RequiredService/nameComp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//RequiredService/nameServ"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//ServiceName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//ServiceName/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
