@@ -4,13 +4,10 @@
 package com.aelos.xtext.architecture.ui
 
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
-import org.eclipse.ui.plugin.AbstractUIPlugin
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
  */
 @FinalFieldsConstructor
 class ArchitectureUiModule extends AbstractArchitectureUiModule {
-	
-	
 }
