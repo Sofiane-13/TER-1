@@ -7,5 +7,23 @@ Bundle-SymbolicName: com.aelos.xtext.architecture; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtext.xbase,
- org.eclipse.equinox.common;bundle-version="3.5.0"
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.eclipse.xtend.lib;bundle-version="2.14.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.aelos.xtext.architecture.architecture.impl,
+ com.aelos.xtext.architecture.serializer,
+ com.aelos.xtext.architecture.architecture.util,
+ com.aelos.xtext.architecture.parser.antlr,
+ com.aelos.xtext.architecture.generator,
+ com.aelos.xtext.architecture.architecture,
+ com.aelos.xtext.architecture,
+ com.aelos.xtext.architecture.services,
+ com.aelos.xtext.architecture.scoping,
+ com.aelos.xtext.architecture.parser.antlr.internal,
+ com.aelos.xtext.architecture.validation
+Import-Package: org.apache.log4j
