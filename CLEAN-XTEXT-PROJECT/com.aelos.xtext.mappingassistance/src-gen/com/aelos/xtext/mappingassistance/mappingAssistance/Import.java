@@ -14,7 +14,10 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Import#getComp <em>Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Import#getObs <em>Obs</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Import#getMock <em>Mock</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Import#getTestedserv <em>Testedserv</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Import#getTestedcomp <em>Testedcomp</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Import#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
  *
@@ -25,20 +28,68 @@ import org.eclipse.emf.common.util.EList;
 public interface Import extends AbstractModel
 {
   /**
-   * Returns the value of the '<em><b>Comp</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Component}.
+   * Returns the value of the '<em><b>Obs</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Observeurs}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Comp</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Obs</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Comp</em>' containment reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getImport_Comp()
+   * @return the value of the '<em>Obs</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getImport_Obs()
    * @model containment="true"
    * @generated
    */
-  EList<Component> getComp();
+  EList<Observeurs> getObs();
+
+  /**
+   * Returns the value of the '<em><b>Mock</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Mocks}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Mock</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mock</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getImport_Mock()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Mocks> getMock();
+
+  /**
+   * Returns the value of the '<em><b>Testedserv</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Testedservice}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Testedserv</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Testedserv</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getImport_Testedserv()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Testedservice> getTestedserv();
+
+  /**
+   * Returns the value of the '<em><b>Testedcomp</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Testedcomposant}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Testedcomp</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Testedcomp</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getImport_Testedcomp()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Testedcomposant> getTestedcomp();
 
   /**
    * Returns the value of the '<em><b>Imported Namespace</b></em>' attribute.

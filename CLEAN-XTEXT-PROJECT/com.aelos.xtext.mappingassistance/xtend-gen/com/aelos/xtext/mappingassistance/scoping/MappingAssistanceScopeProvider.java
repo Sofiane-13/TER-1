@@ -3,19 +3,10 @@
  */
 package com.aelos.xtext.mappingassistance.scoping;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
-import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
-import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
-import com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService;
-import com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName;
 import com.aelos.xtext.mappingassistance.scoping.AbstractMappingAssistanceScopeProvider;
-import com.google.common.base.Objects;
-import java.util.List;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.scoping.IScope;
-import org.eclipse.xtext.scoping.Scopes;
 
 /**
  * This class contains custom scoping description.
@@ -27,26 +18,14 @@ import org.eclipse.xtext.scoping.Scopes;
 public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if (((context instanceof RequiredService) && Objects.equal(reference, MappingAssistancePackage.Literals.REQUIRED_SERVICE__NAME_SERV))) {
-      final EObject rootElement = EcoreUtil2.getRootContainer(context);
-      final List<ServiceName> candidates = EcoreUtil2.<ServiceName>getAllContentsOfType(rootElement, ServiceName.class);
-      return Scopes.scopeFor(candidates);
-    }
-    if (((context instanceof RequiredService) && Objects.equal(reference, MappingAssistancePackage.Literals.REQUIRED_SERVICE__NAME_COMP))) {
-      final EObject rootElement_1 = EcoreUtil2.getRootContainer(context);
-      final List<InstanceComp> candidates_1 = EcoreUtil2.<InstanceComp>getAllContentsOfType(rootElement_1, InstanceComp.class);
-      return Scopes.scopeFor(candidates_1);
-    }
-    if (((context instanceof Bindings) && Objects.equal(reference, MappingAssistancePackage.Literals.BINDINGS__NAME_SERV2))) {
-      final EObject rootElement_2 = EcoreUtil2.getRootContainer(context);
-      final List<ServiceName> candidates_2 = EcoreUtil2.<ServiceName>getAllContentsOfType(rootElement_2, ServiceName.class);
-      return Scopes.scopeFor(candidates_2);
-    }
-    if (((context instanceof Bindings) && Objects.equal(reference, MappingAssistancePackage.Literals.BINDINGS__NAME_COMP))) {
-      final EObject rootElement_3 = EcoreUtil2.getRootContainer(context);
-      final List<InstanceComp> candidates_3 = EcoreUtil2.<InstanceComp>getAllContentsOfType(rootElement_3, InstanceComp.class);
-      return Scopes.scopeFor(candidates_3);
-    }
-    return super.getScope(context, reference);
+    throw new Error("Unresolved compilation problems:"
+      + "\nRequiredService cannot be resolved to a type."
+      + "\nRequiredService cannot be resolved to a type."
+      + "\nBindings cannot be resolved to a type."
+      + "\nBindings cannot be resolved to a type."
+      + "\nThe method or field REQUIRED_SERVICE__NAME_SERV is undefined for the type Class<Literals>"
+      + "\nThe method or field REQUIRED_SERVICE__NAME_COMP is undefined for the type Class<Literals>"
+      + "\nThe method or field BINDINGS__NAME_SERV2 is undefined for the type Class<Literals>"
+      + "\nThe method or field BINDINGS__NAME_COMP is undefined for the type Class<Literals>");
   }
 }

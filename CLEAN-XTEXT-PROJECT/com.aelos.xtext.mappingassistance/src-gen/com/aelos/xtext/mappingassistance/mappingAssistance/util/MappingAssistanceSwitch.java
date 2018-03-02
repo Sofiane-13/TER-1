@@ -95,24 +95,17 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MappingAssistancePackage.COMPONENT:
+      case MappingAssistancePackage.TESTEDCOMPOSANT:
       {
-        Component component = (Component)theEObject;
-        T result = caseComponent(component);
+        Testedcomposant testedcomposant = (Testedcomposant)theEObject;
+        T result = caseTestedcomposant(testedcomposant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MappingAssistancePackage.INSTANCE_COMP:
+      case MappingAssistancePackage.TESTEDSERVICE:
       {
-        InstanceComp instanceComp = (InstanceComp)theEObject;
-        T result = caseInstanceComp(instanceComp);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MappingAssistancePackage.VARIABLE:
-      {
-        Variable variable = (Variable)theEObject;
-        T result = caseVariable(variable);
+        Testedservice testedservice = (Testedservice)theEObject;
+        T result = caseTestedservice(testedservice);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -123,17 +116,17 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MappingAssistancePackage.BINDINGS:
+      case MappingAssistancePackage.MOCKS:
       {
-        Bindings bindings = (Bindings)theEObject;
-        T result = caseBindings(bindings);
+        Mocks mocks = (Mocks)theEObject;
+        T result = caseMocks(mocks);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MappingAssistancePackage.REQUIRED_SERVICE:
+      case MappingAssistancePackage.OBSERVEURS:
       {
-        RequiredService requiredService = (RequiredService)theEObject;
-        T result = caseRequiredService(requiredService);
+        Observeurs observeurs = (Observeurs)theEObject;
+        T result = caseObserveurs(observeurs);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -141,6 +134,34 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
       {
         ServiceName serviceName = (ServiceName)theEObject;
         T result = caseServiceName(serviceName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.VARIABLE:
+      {
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.OBSERVEUR_NAME:
+      {
+        ObserveurName observeurName = (ObserveurName)theEObject;
+        T result = caseObserveurName(observeurName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.MOCK_NAME:
+      {
+        MockName mockName = (MockName)theEObject;
+        T result = caseMockName(mockName);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.INSTANCE_COMP:
+      {
+        InstanceComp instanceComp = (InstanceComp)theEObject;
+        T result = caseInstanceComp(instanceComp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -197,49 +218,33 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Testedcomposant</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Testedcomposant</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComponent(Component object)
+  public T caseTestedcomposant(Testedcomposant object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Testedservice</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Testedservice</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInstanceComp(InstanceComp object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariable(Variable object)
+  public T caseTestedservice(Testedservice object)
   {
     return null;
   }
@@ -261,33 +266,33 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Bindings</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Mocks</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Bindings</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Mocks</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBindings(Bindings object)
+  public T caseMocks(Mocks object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Required Service</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Observeurs</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Required Service</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Observeurs</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRequiredService(RequiredService object)
+  public T caseObserveurs(Observeurs object)
   {
     return null;
   }
@@ -304,6 +309,70 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseServiceName(ServiceName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariable(Variable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Observeur Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Observeur Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseObserveurName(ObserveurName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Mock Name</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mock Name</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMockName(MockName object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstanceComp(InstanceComp object)
   {
     return null;
   }

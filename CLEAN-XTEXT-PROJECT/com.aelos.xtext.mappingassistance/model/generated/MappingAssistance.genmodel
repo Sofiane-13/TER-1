@@ -17,42 +17,49 @@
     </genClasses>
     <genClasses ecoreClass="MappingAssistance.ecore#//AbstractModel"/>
     <genClasses ecoreClass="MappingAssistance.ecore#//Import">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Import/comp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Import/obs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Import/mock"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Import/testedserv"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Import/testedcomp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//Import/importedNamespace"/>
     </genClasses>
-    <genClasses ecoreClass="MappingAssistance.ecore#//Component">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Component/inst"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//Component/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Component/arg"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Component/arg1"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Component/methode"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Component/req"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Component/map"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Component/bind"/>
+    <genClasses ecoreClass="MappingAssistance.ecore#//Testedcomposant">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Testedcomposant/nameComp"/>
     </genClasses>
-    <genClasses ecoreClass="MappingAssistance.ecore#//InstanceComp">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//InstanceComp/name"/>
-    </genClasses>
-    <genClasses ecoreClass="MappingAssistance.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//Variable/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//Variable/type"/>
+    <genClasses ecoreClass="MappingAssistance.ecore#//Testedservice">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Testedservice/nameComp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Testedservice/nameServ1"/>
     </genClasses>
     <genClasses ecoreClass="MappingAssistance.ecore#//Mapping">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Mapping/nameVarMode"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Mapping/nameVarTest"/>
     </genClasses>
-    <genClasses ecoreClass="MappingAssistance.ecore#//Bindings">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Bindings/nameComp"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Bindings/nameServ1"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Bindings/nameServ2"/>
+    <genClasses ecoreClass="MappingAssistance.ecore#//Mocks">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Mocks/mockname"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Mocks/nameComp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Mocks/nameServ1"/>
     </genClasses>
-    <genClasses ecoreClass="MappingAssistance.ecore#//RequiredService">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//RequiredService/nameVarMethode"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//RequiredService/nameComp"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//RequiredService/nameServ"/>
+    <genClasses ecoreClass="MappingAssistance.ecore#//Observeurs">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Observeurs/obsname"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Observeurs/nameComp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Observeurs/nameServ1"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Observeurs/nameServ2"/>
     </genClasses>
     <genClasses ecoreClass="MappingAssistance.ecore#//ServiceName">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//ServiceName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MappingAssistance.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//Variable/type"/>
+    </genClasses>
+    <genClasses ecoreClass="MappingAssistance.ecore#//ObserveurName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//ObserveurName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MappingAssistance.ecore#//MockName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//MockName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MappingAssistance.ecore#//InstanceComp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MappingAssistance.ecore#//InstanceComp/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

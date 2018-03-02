@@ -124,22 +124,79 @@ ruleAbstractModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAbstractModelAccess().getCompComponentParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getAbstractModelAccess().getObsObserveursParserRuleCall_1_0());
 				}
-				lv_comp_1_0=ruleComponent
+				lv_obs_1_0=ruleObserveurs
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAbstractModelRule());
 					}
 					add(
 						$current,
-						"comp",
-						lv_comp_1_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.Component");
+						"obs",
+						lv_obs_1_0,
+						"com.aelos.xtext.mappingassistance.MappingAssistance.Observeurs");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAbstractModelAccess().getMockMocksParserRuleCall_2_0());
+				}
+				lv_mock_2_0=ruleMocks
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAbstractModelRule());
+					}
+					add(
+						$current,
+						"mock",
+						lv_mock_2_0,
+						"com.aelos.xtext.mappingassistance.MappingAssistance.Mocks");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAbstractModelAccess().getTestedservTestedserviceParserRuleCall_3_0());
+				}
+				lv_testedserv_3_0=ruleTestedservice
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAbstractModelRule());
+					}
+					add(
+						$current,
+						"testedserv",
+						lv_testedserv_3_0,
+						"com.aelos.xtext.mappingassistance.MappingAssistance.Testedservice");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAbstractModelAccess().getTestedcompTestedcomposantParserRuleCall_4_0());
+				}
+				lv_testedcomp_4_0=ruleTestedcomposant
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAbstractModelRule());
+					}
+					add(
+						$current,
+						"testedcomp",
+						lv_testedcomp_4_0,
+						"com.aelos.xtext.mappingassistance.MappingAssistance.Testedcomposant");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -261,15 +318,15 @@ ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleT
 	)
 ;
 
-// Entry rule entryRuleComponent
-entryRuleComponent returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getComponentRule()); }
-	iv_ruleComponent=ruleComponent
-	{ $current=$iv_ruleComponent.current; }
+// Entry rule entryRuleTestedcomposant
+entryRuleTestedcomposant returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestedcomposantRule()); }
+	iv_ruleTestedcomposant=ruleTestedcomposant
+	{ $current=$iv_ruleTestedcomposant.current; }
 	EOF;
 
-// Rule Component
-ruleComponent returns [EObject current=null]
+// Rule Testedcomposant
+ruleTestedcomposant returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -278,540 +335,28 @@ ruleComponent returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='Component'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getComponentAccess().getComponentKeyword_0_0());
-			}
-			    |
-			otherlv_1='Mock'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getComponentAccess().getMockKeyword_0_1());
-			}
-			    |
-			otherlv_2='Observator'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getComponentAccess().getObservatorKeyword_0_2());
-			}
-		)
-		otherlv_3=':'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getComponentAccess().getColonKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComponentAccess().getInstInstanceCompParserRuleCall_2_0());
-				}
-				lv_inst_4_0=ruleInstanceComp
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComponentRule());
-					}
-					add(
-						$current,
-						"inst",
-						lv_inst_4_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.InstanceComp");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_5=':'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getComponentAccess().getColonKeyword_3());
-		}
-		(
-			(
-				lv_name_6_0=RULE_ID
-				{
-					newLeafNode(lv_name_6_0, grammarAccess.getComponentAccess().getNameIDTerminalRuleCall_4_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getComponentRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_6_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_7='ProvidedServices:'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getComponentAccess().getProvidedServicesKeyword_5());
-		}
-		otherlv_8='conf('
-		{
-			newLeafNode(otherlv_8, grammarAccess.getComponentAccess().getConfKeyword_6());
-		}
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getComponentAccess().getArgVariableParserRuleCall_7_0_0());
-					}
-					lv_arg_9_0=ruleVariable
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getComponentRule());
-						}
-						add(
-							$current,
-							"arg",
-							lv_arg_9_0,
-							"com.aelos.xtext.mappingassistance.MappingAssistance.Variable");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_10=','
-			{
-				newLeafNode(otherlv_10, grammarAccess.getComponentAccess().getCommaKeyword_7_1());
-			}
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComponentAccess().getArg1VariableParserRuleCall_8_0());
-				}
-				lv_arg1_11_0=ruleVariable
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComponentRule());
-					}
-					add(
-						$current,
-						"arg1",
-						lv_arg1_11_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.Variable");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_12=')'
-		{
-			newLeafNode(otherlv_12, grammarAccess.getComponentAccess().getRightParenthesisKeyword_9());
-		}
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getComponentAccess().getMethodeServiceNameParserRuleCall_10_0_0());
-					}
-					lv_methode_13_0=ruleServiceName
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getComponentRule());
-						}
-						add(
-							$current,
-							"methode",
-							lv_methode_13_0,
-							"com.aelos.xtext.mappingassistance.MappingAssistance.ServiceName");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_14='('
-			{
-				newLeafNode(otherlv_14, grammarAccess.getComponentAccess().getLeftParenthesisKeyword_10_1());
-			}
-			(
-				(
-					(
-						(
-							{
-								newCompositeNode(grammarAccess.getComponentAccess().getArgVariableParserRuleCall_10_2_0_0_0());
-							}
-							lv_arg_15_0=ruleVariable
-							{
-								if ($current==null) {
-									$current = createModelElementForParent(grammarAccess.getComponentRule());
-								}
-								add(
-									$current,
-									"arg",
-									lv_arg_15_0,
-									"com.aelos.xtext.mappingassistance.MappingAssistance.Variable");
-								afterParserOrEnumRuleCall();
-							}
-						)
-					)
-					otherlv_16=','
-					{
-						newLeafNode(otherlv_16, grammarAccess.getComponentAccess().getCommaKeyword_10_2_0_1());
-					}
-				)*
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getComponentAccess().getArgVariableParserRuleCall_10_2_1_0());
-						}
-						lv_arg_17_0=ruleVariable
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getComponentRule());
-							}
-							add(
-								$current,
-								"arg",
-								lv_arg_17_0,
-								"com.aelos.xtext.mappingassistance.MappingAssistance.Variable");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_18=')'
-			{
-				newLeafNode(otherlv_18, grammarAccess.getComponentAccess().getRightParenthesisKeyword_10_3());
-			}
-			(
-				otherlv_19=':'
-				{
-					newLeafNode(otherlv_19, grammarAccess.getComponentAccess().getColonKeyword_10_4_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getComponentAccess().getArgVariableParserRuleCall_10_4_1_0());
-						}
-						lv_arg_20_0=ruleVariable
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getComponentRule());
-							}
-							add(
-								$current,
-								"arg",
-								lv_arg_20_0,
-								"com.aelos.xtext.mappingassistance.MappingAssistance.Variable");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)?
-		)*
-		(
-			otherlv_21='RequiredServices:'
-			{
-				newLeafNode(otherlv_21, grammarAccess.getComponentAccess().getRequiredServicesKeyword_11());
-			}
-		)?
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComponentAccess().getReqRequiredServiceParserRuleCall_12_0());
-				}
-				lv_req_22_0=ruleRequiredService
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComponentRule());
-					}
-					add(
-						$current,
-						"req",
-						lv_req_22_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.RequiredService");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComponentAccess().getMapMappingParserRuleCall_13_0());
-				}
-				lv_map_23_0=ruleMapping
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComponentRule());
-					}
-					add(
-						$current,
-						"map",
-						lv_map_23_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.Mapping");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getComponentAccess().getBindBindingsParserRuleCall_14_0());
-				}
-				lv_bind_24_0=ruleBindings
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getComponentRule());
-					}
-					add(
-						$current,
-						"bind",
-						lv_bind_24_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.Bindings");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-	)
-;
-
-// Entry rule entryRuleInstanceComp
-entryRuleInstanceComp returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getInstanceCompRule()); }
-	iv_ruleInstanceComp=ruleInstanceComp
-	{ $current=$iv_ruleInstanceComp.current; }
-	EOF;
-
-// Rule InstanceComp
-ruleInstanceComp returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			lv_name_0_0=RULE_ID
-			{
-				newLeafNode(lv_name_0_0, grammarAccess.getInstanceCompAccess().getNameIDTerminalRuleCall_0());
-			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getInstanceCompRule());
+					$current = createModelElement(grammarAccess.getTestedcomposantRule());
 				}
-				setWithLastConsumed(
-					$current,
-					"name",
-					lv_name_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
+			}
+			otherlv_0=RULE_ID
+			{
+				newLeafNode(otherlv_0, grammarAccess.getTestedcomposantAccess().getNameCompInstanceCompCrossReference_0());
 			}
 		)
 	)
 ;
 
-// Entry rule entryRuleVariable
-entryRuleVariable returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getVariableRule()); }
-	iv_ruleVariable=ruleVariable
-	{ $current=$iv_ruleVariable.current; }
+// Entry rule entryRuleTestedservice
+entryRuleTestedservice returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestedserviceRule()); }
+	iv_ruleTestedservice=ruleTestedservice
+	{ $current=$iv_ruleTestedservice.current; }
 	EOF;
 
-// Rule Variable
-ruleVariable returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_name_0_0=RULE_ID
-				{
-					newLeafNode(lv_name_0_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVariableRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_1=':'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getVariableAccess().getColonKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getVariableAccess().getTypeTypeEnumRuleCall_2_0());
-				}
-				lv_type_2_0=ruleType
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getVariableRule());
-					}
-					set(
-						$current,
-						"type",
-						lv_type_2_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.Type");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleMapping
-entryRuleMapping returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMappingRule()); }
-	iv_ruleMapping=ruleMapping
-	{ $current=$iv_ruleMapping.current; }
-	EOF;
-
-// Rule Mapping
-ruleMapping returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='varModel:'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getMappingAccess().getVarModelKeyword_0());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMappingRule());
-					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getMappingAccess().getNameVarModeVariableCrossReference_1_0());
-				}
-			)
-		)
-		otherlv_2='ref'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getMappingAccess().getRefKeyword_2());
-		}
-		otherlv_3='varTest:'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getMappingAccess().getVarTestKeyword_3());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMappingRule());
-					}
-				}
-				otherlv_4=RULE_ID
-				{
-					newLeafNode(otherlv_4, grammarAccess.getMappingAccess().getNameVarTestVariableCrossReference_4_0());
-				}
-			)
-		)
-	)
-;
-
-// Entry rule entryRuleBindings
-entryRuleBindings returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBindingsRule()); }
-	iv_ruleBindings=ruleBindings
-	{ $current=$iv_ruleBindings.current; }
-	EOF;
-
-// Rule Bindings
-ruleBindings returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='bind('
-		{
-			newLeafNode(otherlv_0, grammarAccess.getBindingsAccess().getBindKeyword_0());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBindingsRule());
-					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getBindingsAccess().getNameCompInstanceCompCrossReference_1_0());
-				}
-			)
-		)
-		otherlv_2='.'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getBindingsAccess().getFullStopKeyword_2());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBindingsRule());
-					}
-				}
-				otherlv_3=RULE_ID
-				{
-					newLeafNode(otherlv_3, grammarAccess.getBindingsAccess().getNameServ1ServiceNameCrossReference_3_0());
-				}
-			)
-		)
-		otherlv_4=','
-		{
-			newLeafNode(otherlv_4, grammarAccess.getBindingsAccess().getCommaKeyword_4());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBindingsRule());
-					}
-				}
-				otherlv_5=RULE_ID
-				{
-					newLeafNode(otherlv_5, grammarAccess.getBindingsAccess().getNameCompInstanceCompCrossReference_5_0());
-				}
-			)
-		)
-		otherlv_6='.'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getBindingsAccess().getFullStopKeyword_6());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBindingsRule());
-					}
-				}
-				otherlv_7=RULE_ID
-				{
-					newLeafNode(otherlv_7, grammarAccess.getBindingsAccess().getNameServ2ServiceNameCrossReference_7_0());
-				}
-			)
-		)
-		otherlv_8=')'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getBindingsAccess().getRightParenthesisKeyword_8());
-		}
-	)
-;
-
-// Entry rule entryRuleRequiredService
-entryRuleRequiredService returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getRequiredServiceRule()); }
-	iv_ruleRequiredService=ruleRequiredService
-	{ $current=$iv_ruleRequiredService.current; }
-	EOF;
-
-// Rule RequiredService
-ruleRequiredService returns [EObject current=null]
+// Rule Testedservice
+ruleTestedservice returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -822,72 +367,45 @@ ruleRequiredService returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRequiredServiceAccess().getNameVarMethodeVariableParserRuleCall_0_0());
-				}
-				lv_nameVarMethode_0_0=ruleVariable
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRequiredServiceRule());
+						$current = createModelElement(grammarAccess.getTestedserviceRule());
 					}
-					add(
-						$current,
-						"nameVarMethode",
-						lv_nameVarMethode_0_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.Variable");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getTestedserviceAccess().getNameCompInstanceCompCrossReference_0_0());
 				}
 			)
 		)
-		otherlv_1=':='
+		otherlv_1='.'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getRequiredServiceAccess().getColonEqualsSignKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getTestedserviceAccess().getFullStopKeyword_1());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRequiredServiceRule());
+						$current = createModelElement(grammarAccess.getTestedserviceRule());
 					}
 				}
 				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getRequiredServiceAccess().getNameCompInstanceCompCrossReference_2_0());
+					newLeafNode(otherlv_2, grammarAccess.getTestedserviceAccess().getNameServ1ServiceNameCrossReference_2_0());
 				}
 			)
 		)
-		otherlv_3='.'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getRequiredServiceAccess().getFullStopKeyword_3());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getRequiredServiceRule());
-					}
-				}
-				otherlv_4=RULE_ID
-				{
-					newLeafNode(otherlv_4, grammarAccess.getRequiredServiceAccess().getNameServServiceNameCrossReference_4_0());
-				}
-			)
-		)
-		otherlv_5=';'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getRequiredServiceAccess().getSemicolonKeyword_5());
-		}
 	)
 ;
 
-// Entry rule entryRuleServiceName
-entryRuleServiceName returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getServiceNameRule()); }
-	iv_ruleServiceName=ruleServiceName
-	{ $current=$iv_ruleServiceName.current; }
+// Entry rule entryRuleMocks
+entryRuleMocks returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMocksRule()); }
+	iv_ruleMocks=ruleMocks
+	{ $current=$iv_ruleMocks.current; }
 	EOF;
 
-// Rule ServiceName
-ruleServiceName returns [EObject current=null]
+// Rule Mocks
+ruleMocks returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -895,22 +413,169 @@ ruleServiceName returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='addMock('
+		{
+			newLeafNode(otherlv_0, grammarAccess.getMocksAccess().getAddMockKeyword_0());
+		}
 		(
-			lv_name_0_0=RULE_ID
-			{
-				newLeafNode(lv_name_0_0, grammarAccess.getServiceNameAccess().getNameIDTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getServiceNameRule());
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMocksRule());
+					}
 				}
-				setWithLastConsumed(
-					$current,
-					"name",
-					lv_name_0_0,
-					"org.eclipse.xtext.common.Terminals.ID");
-			}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getMocksAccess().getMocknameMockNameCrossReference_1_0());
+				}
+			)
 		)
+		otherlv_2=','
+		{
+			newLeafNode(otherlv_2, grammarAccess.getMocksAccess().getCommaKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMocksRule());
+					}
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getMocksAccess().getNameCompInstanceCompCrossReference_3_0());
+				}
+			)
+		)
+		otherlv_4='.'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getMocksAccess().getFullStopKeyword_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMocksRule());
+					}
+				}
+				otherlv_5=RULE_ID
+				{
+					newLeafNode(otherlv_5, grammarAccess.getMocksAccess().getNameServ1ServiceNameCrossReference_5_0());
+				}
+			)
+		)
+		otherlv_6=')'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getMocksAccess().getRightParenthesisKeyword_6());
+		}
+	)
+;
+
+// Entry rule entryRuleObserveurs
+entryRuleObserveurs returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getObserveursRule()); }
+	iv_ruleObserveurs=ruleObserveurs
+	{ $current=$iv_ruleObserveurs.current; }
+	EOF;
+
+// Rule Observeurs
+ruleObserveurs returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='addObserveur('
+		{
+			newLeafNode(otherlv_0, grammarAccess.getObserveursAccess().getAddObserveurKeyword_0());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getObserveursRule());
+					}
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getObserveursAccess().getObsnameObserveurNameCrossReference_1_0());
+				}
+			)
+		)
+		otherlv_2=','
+		{
+			newLeafNode(otherlv_2, grammarAccess.getObserveursAccess().getCommaKeyword_2());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getObserveursRule());
+					}
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getObserveursAccess().getNameCompInstanceCompCrossReference_3_0());
+				}
+			)
+		)
+		otherlv_4='.'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getObserveursAccess().getFullStopKeyword_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getObserveursRule());
+					}
+				}
+				otherlv_5=RULE_ID
+				{
+					newLeafNode(otherlv_5, grammarAccess.getObserveursAccess().getNameServ1ServiceNameCrossReference_5_0());
+				}
+			)
+		)
+		otherlv_6=','
+		{
+			newLeafNode(otherlv_6, grammarAccess.getObserveursAccess().getCommaKeyword_6());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getObserveursRule());
+					}
+				}
+				otherlv_7=RULE_ID
+				{
+					newLeafNode(otherlv_7, grammarAccess.getObserveursAccess().getNameCompInstanceCompCrossReference_7_0());
+				}
+			)
+		)
+		otherlv_8='.'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getObserveursAccess().getFullStopKeyword_8());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getObserveursRule());
+					}
+				}
+				otherlv_9=RULE_ID
+				{
+					newLeafNode(otherlv_9, grammarAccess.getObserveursAccess().getNameServ2ServiceNameCrossReference_9_0());
+				}
+			)
+		)
+		otherlv_10=')'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getObserveursAccess().getRightParenthesisKeyword_10());
+		}
 	)
 ;
 

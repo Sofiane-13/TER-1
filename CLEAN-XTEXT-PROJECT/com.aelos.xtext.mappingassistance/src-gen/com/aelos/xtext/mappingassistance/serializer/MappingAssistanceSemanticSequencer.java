@@ -3,15 +3,18 @@
  */
 package com.aelos.xtext.mappingassistance.serializer;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Component;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Mapping;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.MockName;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Mocks;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
-import com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ObserveurName;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observeurs;
 import com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Testedcomposant;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Testedservice;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Variable;
 import com.aelos.xtext.mappingassistance.services.MappingAssistanceGrammarAccess;
 import com.google.inject.Inject;
@@ -40,12 +43,6 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MappingAssistancePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case MappingAssistancePackage.BINDINGS:
-				sequence_Bindings(context, (Bindings) semanticObject); 
-				return; 
-			case MappingAssistancePackage.COMPONENT:
-				sequence_Component(context, (Component) semanticObject); 
-				return; 
 			case MappingAssistancePackage.IMPORT:
 				if (rule == grammarAccess.getAbstractModelRule()) {
 					sequence_AbstractModel_Import(context, (Import) semanticObject); 
@@ -62,14 +59,29 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 			case MappingAssistancePackage.MAPPING:
 				sequence_Mapping(context, (Mapping) semanticObject); 
 				return; 
+			case MappingAssistancePackage.MOCK_NAME:
+				sequence_MockName(context, (MockName) semanticObject); 
+				return; 
+			case MappingAssistancePackage.MOCKS:
+				sequence_Mocks(context, (Mocks) semanticObject); 
+				return; 
 			case MappingAssistancePackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case MappingAssistancePackage.REQUIRED_SERVICE:
-				sequence_RequiredService(context, (RequiredService) semanticObject); 
+			case MappingAssistancePackage.OBSERVEUR_NAME:
+				sequence_ObserveurName(context, (ObserveurName) semanticObject); 
+				return; 
+			case MappingAssistancePackage.OBSERVEURS:
+				sequence_Observeurs(context, (Observeurs) semanticObject); 
 				return; 
 			case MappingAssistancePackage.SERVICE_NAME:
 				sequence_ServiceName(context, (ServiceName) semanticObject); 
+				return; 
+			case MappingAssistancePackage.TESTEDCOMPOSANT:
+				sequence_Testedcomposant(context, (Testedcomposant) semanticObject); 
+				return; 
+			case MappingAssistancePackage.TESTEDSERVICE:
+				sequence_Testedservice(context, (Testedservice) semanticObject); 
 				return; 
 			case MappingAssistancePackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
@@ -84,42 +96,9 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     AbstractModel returns Import
 	 *
 	 * Constraint:
-	 *     (importedNamespace=QualifiedNameWithWildcard comp+=Component+)
+	 *     (importedNamespace=QualifiedNameWithWildcard obs+=Observeurs* mock+=Mocks* testedserv+=Testedservice+ testedcomp+=Testedcomposant)
 	 */
 	protected void sequence_AbstractModel_Import(ISerializationContext context, Import semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Bindings returns Bindings
-	 *
-	 * Constraint:
-	 *     (nameComp+=[InstanceComp|ID] nameServ1+=[ServiceName|ID] nameComp+=[InstanceComp|ID] nameServ2+=[ServiceName|ID])
-	 */
-	protected void sequence_Bindings(ISerializationContext context, Bindings semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Component returns Component
-	 *
-	 * Constraint:
-	 *     (
-	 *         inst+=InstanceComp 
-	 *         name=ID 
-	 *         arg+=Variable* 
-	 *         arg1+=Variable 
-	 *         (methode+=ServiceName (arg+=Variable* arg+=Variable)* arg+=Variable?)* 
-	 *         req+=RequiredService* 
-	 *         map+=Mapping* 
-	 *         bind+=Bindings*
-	 *     )
-	 */
-	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -174,6 +153,36 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
+	 *     MockName returns MockName
+	 *
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_MockName(ISerializationContext context, MockName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MappingAssistancePackage.Literals.MOCK_NAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MappingAssistancePackage.Literals.MOCK_NAME__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMockNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Mocks returns Mocks
+	 *
+	 * Constraint:
+	 *     (mockname+=[MockName|ID] nameComp+=[InstanceComp|ID] nameServ1+=[ServiceName|ID])
+	 */
+	protected void sequence_Mocks(ISerializationContext context, Mocks semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
@@ -186,12 +195,30 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     RequiredService returns RequiredService
+	 *     ObserveurName returns ObserveurName
 	 *
 	 * Constraint:
-	 *     (nameVarMethode+=Variable nameComp+=[InstanceComp|ID] nameServ+=[ServiceName|ID])
+	 *     name=ID
 	 */
-	protected void sequence_RequiredService(ISerializationContext context, RequiredService semanticObject) {
+	protected void sequence_ObserveurName(ISerializationContext context, ObserveurName semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MappingAssistancePackage.Literals.OBSERVEUR_NAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MappingAssistancePackage.Literals.OBSERVEUR_NAME__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getObserveurNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Observeurs returns Observeurs
+	 *
+	 * Constraint:
+	 *     (obsname+=[ObserveurName|ID] nameComp+=[InstanceComp|ID] nameServ1+=[ServiceName|ID] nameComp+=[InstanceComp|ID] nameServ2+=[ServiceName|ID])
+	 */
+	protected void sequence_Observeurs(ISerializationContext context, Observeurs semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -211,6 +238,30 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getServiceNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Testedcomposant returns Testedcomposant
+	 *
+	 * Constraint:
+	 *     nameComp+=[InstanceComp|ID]
+	 */
+	protected void sequence_Testedcomposant(ISerializationContext context, Testedcomposant semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Testedservice returns Testedservice
+	 *
+	 * Constraint:
+	 *     (nameComp+=[InstanceComp|ID] nameServ1+=[ServiceName|ID])
+	 */
+	protected void sequence_Testedservice(ISerializationContext context, Testedservice semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

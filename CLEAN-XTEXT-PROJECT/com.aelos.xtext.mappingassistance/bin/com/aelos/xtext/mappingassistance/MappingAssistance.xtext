@@ -3,12 +3,15 @@ grammar com.aelos.xtext.mappingassistance.MappingAssistance with org.eclipse.xte
 generate mappingAssistance "http://www.aelos.com/xtext/mappingassistance/MappingAssistance"
 
 import "http://www.aelos.com/xtext/testintentionsassistance/TestintentionsAssistance" as testIntention
+//import "http://www.aelos.com/xtext/testintentionsassistance/architecture" as architecture 
+//A mettre quand on aura fait le projet ""architecture"
+
 
 Model:
 	function+=AbstractModel*;
 
 
-AbstractModel:Import (comp+=Component )+ ;
+AbstractModel: (imp+=Import)+ (obs+=Observeurs)* (mock+=Mocks)* (testedserv+=Testedservice)+ (testedcomp+=Testedcomposant);
 
 Import:
     'import' importedNamespace=QualifiedNameWithWildcard;
@@ -18,40 +21,50 @@ QualifiedNameWithWildcard:
         
 QualifiedName:
     ID ('.' ID)*;
-Component :
-	
-	("Component" | "Mock" | "Observator")":" 
-	inst+=InstanceComp":" name=ID
-	"ProvidedServices:"
-	"conf("(arg+=Variable ",")*arg1+=Variable")"
-	(methode+=ServiceName "("((arg+=Variable ",")*arg+=Variable)*")"(":"arg+=Variable)?)*
-    "RequiredServices:"?
-    (req+=RequiredService)*
-	(map+=Mapping)*
-	(bind+=Bindings)*
+
+Testedcomposant :
+	nameComp+=[InstanceComp]
+;
+
+//Testedcomposant :
+//	nameComp+=[architecture::InstanceComp]
+//;
+
+Testedservice :
+	nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName]
+;
+
+Mapping :
+	 'varModel:' nameVarMode+=[Variable] 'ref' 'varTest:' nameVarTest+=[testIntention::Variable]
+;
+
+Mocks :
+	'addMock(' mockname+=[MockName] "," nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] ")"
+;
+
+Observeurs :
+	"addObserveur(" obsname+=[ObserveurName] "," nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
+
+
+ServiceName : 
+	name=ID
+;
+
+Variable:
+      
+      name=ID ":" type=Type;
+      
+ObserveurName : 
+	name=ID
+;
+
+MockName : 
+	name=ID
 ;
 
 InstanceComp:
 	name=ID
 ;
-
-Variable:
-      name=ID ":" type=Type;
-      
-Mapping :
-	 'varModel:' nameVarMode+=[Variable] 'ref' 'varTest:' nameVarTest+=[testIntention::Variable]
-;
-
-Bindings :
-	"bind(" nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
-	  
-RequiredService:
-		 
-		nameVarMethode+=Variable":="nameComp+=[InstanceComp]'.'nameServ+=[ServiceName]";";
-	  
-
-ServiceName : name=ID;
-
 
       
 enum Type : INT | STRING | Boolean | Double;

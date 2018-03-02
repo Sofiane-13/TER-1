@@ -69,13 +69,16 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
       case MappingAssistancePackage.MODEL: return createModel();
       case MappingAssistancePackage.ABSTRACT_MODEL: return createAbstractModel();
       case MappingAssistancePackage.IMPORT: return createImport();
-      case MappingAssistancePackage.COMPONENT: return createComponent();
-      case MappingAssistancePackage.INSTANCE_COMP: return createInstanceComp();
-      case MappingAssistancePackage.VARIABLE: return createVariable();
+      case MappingAssistancePackage.TESTEDCOMPOSANT: return createTestedcomposant();
+      case MappingAssistancePackage.TESTEDSERVICE: return createTestedservice();
       case MappingAssistancePackage.MAPPING: return createMapping();
-      case MappingAssistancePackage.BINDINGS: return createBindings();
-      case MappingAssistancePackage.REQUIRED_SERVICE: return createRequiredService();
+      case MappingAssistancePackage.MOCKS: return createMocks();
+      case MappingAssistancePackage.OBSERVEURS: return createObserveurs();
       case MappingAssistancePackage.SERVICE_NAME: return createServiceName();
+      case MappingAssistancePackage.VARIABLE: return createVariable();
+      case MappingAssistancePackage.OBSERVEUR_NAME: return createObserveurName();
+      case MappingAssistancePackage.MOCK_NAME: return createMockName();
+      case MappingAssistancePackage.INSTANCE_COMP: return createInstanceComp();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -153,10 +156,10 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component createComponent()
+  public Testedcomposant createTestedcomposant()
   {
-    ComponentImpl component = new ComponentImpl();
-    return component;
+    TestedcomposantImpl testedcomposant = new TestedcomposantImpl();
+    return testedcomposant;
   }
 
   /**
@@ -164,21 +167,10 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public InstanceComp createInstanceComp()
+  public Testedservice createTestedservice()
   {
-    InstanceCompImpl instanceComp = new InstanceCompImpl();
-    return instanceComp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Variable createVariable()
-  {
-    VariableImpl variable = new VariableImpl();
-    return variable;
+    TestedserviceImpl testedservice = new TestedserviceImpl();
+    return testedservice;
   }
 
   /**
@@ -197,10 +189,10 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public Bindings createBindings()
+  public Mocks createMocks()
   {
-    BindingsImpl bindings = new BindingsImpl();
-    return bindings;
+    MocksImpl mocks = new MocksImpl();
+    return mocks;
   }
 
   /**
@@ -208,10 +200,10 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public RequiredService createRequiredService()
+  public Observeurs createObserveurs()
   {
-    RequiredServiceImpl requiredService = new RequiredServiceImpl();
-    return requiredService;
+    ObserveursImpl observeurs = new ObserveursImpl();
+    return observeurs;
   }
 
   /**
@@ -223,6 +215,50 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
   {
     ServiceNameImpl serviceName = new ServiceNameImpl();
     return serviceName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ObserveurName createObserveurName()
+  {
+    ObserveurNameImpl observeurName = new ObserveurNameImpl();
+    return observeurName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MockName createMockName()
+  {
+    MockNameImpl mockName = new MockNameImpl();
+    return mockName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstanceComp createInstanceComp()
+  {
+    InstanceCompImpl instanceComp = new InstanceCompImpl();
+    return instanceComp;
   }
 
   /**

@@ -3,9 +3,10 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ObserveurName;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observeurs;
 import com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName;
 
 import java.util.Collection;
@@ -20,21 +21,32 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Bindings</b></em>'.
+ * An implementation of the model object '<em><b>Observeurs</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.BindingsImpl#getNameComp <em>Name Comp</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.BindingsImpl#getNameServ1 <em>Name Serv1</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.BindingsImpl#getNameServ2 <em>Name Serv2</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserveursImpl#getObsname <em>Obsname</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserveursImpl#getNameComp <em>Name Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserveursImpl#getNameServ1 <em>Name Serv1</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserveursImpl#getNameServ2 <em>Name Serv2</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindings
+public class ObserveursImpl extends MinimalEObjectImpl.Container implements Observeurs
 {
+  /**
+   * The cached value of the '{@link #getObsname() <em>Obsname</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getObsname()
+   * @generated
+   * @ordered
+   */
+  protected EList<ObserveurName> obsname;
+
   /**
    * The cached value of the '{@link #getNameComp() <em>Name Comp</em>}' reference list.
    * <!-- begin-user-doc -->
@@ -70,7 +82,7 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BindingsImpl()
+  protected ObserveursImpl()
   {
     super();
   }
@@ -83,7 +95,21 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   @Override
   protected EClass eStaticClass()
   {
-    return MappingAssistancePackage.Literals.BINDINGS;
+    return MappingAssistancePackage.Literals.OBSERVEURS;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ObserveurName> getObsname()
+  {
+    if (obsname == null)
+    {
+      obsname = new EObjectResolvingEList<ObserveurName>(ObserveurName.class, this, MappingAssistancePackage.OBSERVEURS__OBSNAME);
+    }
+    return obsname;
   }
 
   /**
@@ -95,7 +121,7 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     if (nameComp == null)
     {
-      nameComp = new EObjectResolvingEList<InstanceComp>(InstanceComp.class, this, MappingAssistancePackage.BINDINGS__NAME_COMP);
+      nameComp = new EObjectResolvingEList<InstanceComp>(InstanceComp.class, this, MappingAssistancePackage.OBSERVEURS__NAME_COMP);
     }
     return nameComp;
   }
@@ -109,7 +135,7 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     if (nameServ1 == null)
     {
-      nameServ1 = new EObjectResolvingEList<ServiceName>(ServiceName.class, this, MappingAssistancePackage.BINDINGS__NAME_SERV1);
+      nameServ1 = new EObjectResolvingEList<ServiceName>(ServiceName.class, this, MappingAssistancePackage.OBSERVEURS__NAME_SERV1);
     }
     return nameServ1;
   }
@@ -123,7 +149,7 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     if (nameServ2 == null)
     {
-      nameServ2 = new EObjectResolvingEList<ServiceName>(ServiceName.class, this, MappingAssistancePackage.BINDINGS__NAME_SERV2);
+      nameServ2 = new EObjectResolvingEList<ServiceName>(ServiceName.class, this, MappingAssistancePackage.OBSERVEURS__NAME_SERV2);
     }
     return nameServ2;
   }
@@ -138,11 +164,13 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.BINDINGS__NAME_COMP:
+      case MappingAssistancePackage.OBSERVEURS__OBSNAME:
+        return getObsname();
+      case MappingAssistancePackage.OBSERVEURS__NAME_COMP:
         return getNameComp();
-      case MappingAssistancePackage.BINDINGS__NAME_SERV1:
+      case MappingAssistancePackage.OBSERVEURS__NAME_SERV1:
         return getNameServ1();
-      case MappingAssistancePackage.BINDINGS__NAME_SERV2:
+      case MappingAssistancePackage.OBSERVEURS__NAME_SERV2:
         return getNameServ2();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -159,15 +187,19 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.BINDINGS__NAME_COMP:
+      case MappingAssistancePackage.OBSERVEURS__OBSNAME:
+        getObsname().clear();
+        getObsname().addAll((Collection<? extends ObserveurName>)newValue);
+        return;
+      case MappingAssistancePackage.OBSERVEURS__NAME_COMP:
         getNameComp().clear();
         getNameComp().addAll((Collection<? extends InstanceComp>)newValue);
         return;
-      case MappingAssistancePackage.BINDINGS__NAME_SERV1:
+      case MappingAssistancePackage.OBSERVEURS__NAME_SERV1:
         getNameServ1().clear();
         getNameServ1().addAll((Collection<? extends ServiceName>)newValue);
         return;
-      case MappingAssistancePackage.BINDINGS__NAME_SERV2:
+      case MappingAssistancePackage.OBSERVEURS__NAME_SERV2:
         getNameServ2().clear();
         getNameServ2().addAll((Collection<? extends ServiceName>)newValue);
         return;
@@ -185,13 +217,16 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.BINDINGS__NAME_COMP:
+      case MappingAssistancePackage.OBSERVEURS__OBSNAME:
+        getObsname().clear();
+        return;
+      case MappingAssistancePackage.OBSERVEURS__NAME_COMP:
         getNameComp().clear();
         return;
-      case MappingAssistancePackage.BINDINGS__NAME_SERV1:
+      case MappingAssistancePackage.OBSERVEURS__NAME_SERV1:
         getNameServ1().clear();
         return;
-      case MappingAssistancePackage.BINDINGS__NAME_SERV2:
+      case MappingAssistancePackage.OBSERVEURS__NAME_SERV2:
         getNameServ2().clear();
         return;
     }
@@ -208,14 +243,16 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.BINDINGS__NAME_COMP:
+      case MappingAssistancePackage.OBSERVEURS__OBSNAME:
+        return obsname != null && !obsname.isEmpty();
+      case MappingAssistancePackage.OBSERVEURS__NAME_COMP:
         return nameComp != null && !nameComp.isEmpty();
-      case MappingAssistancePackage.BINDINGS__NAME_SERV1:
+      case MappingAssistancePackage.OBSERVEURS__NAME_SERV1:
         return nameServ1 != null && !nameServ1.isEmpty();
-      case MappingAssistancePackage.BINDINGS__NAME_SERV2:
+      case MappingAssistancePackage.OBSERVEURS__NAME_SERV2:
         return nameServ2 != null && !nameServ2.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //BindingsImpl
+} //ObserveursImpl

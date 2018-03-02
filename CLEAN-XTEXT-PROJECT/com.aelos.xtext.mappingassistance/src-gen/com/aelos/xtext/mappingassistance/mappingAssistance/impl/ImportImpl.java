@@ -3,9 +3,12 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Component;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Mocks;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observeurs;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Testedcomposant;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Testedservice;
 
 import java.util.Collection;
 
@@ -30,7 +33,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ImportImpl#getComp <em>Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ImportImpl#getObs <em>Obs</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ImportImpl#getMock <em>Mock</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ImportImpl#getTestedserv <em>Testedserv</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ImportImpl#getTestedcomp <em>Testedcomp</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ImportImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
  *
@@ -39,14 +45,44 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ImportImpl extends AbstractModelImpl implements Import
 {
   /**
-   * The cached value of the '{@link #getComp() <em>Comp</em>}' containment reference list.
+   * The cached value of the '{@link #getObs() <em>Obs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComp()
+   * @see #getObs()
    * @generated
    * @ordered
    */
-  protected EList<Component> comp;
+  protected EList<Observeurs> obs;
+
+  /**
+   * The cached value of the '{@link #getMock() <em>Mock</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMock()
+   * @generated
+   * @ordered
+   */
+  protected EList<Mocks> mock;
+
+  /**
+   * The cached value of the '{@link #getTestedserv() <em>Testedserv</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTestedserv()
+   * @generated
+   * @ordered
+   */
+  protected EList<Testedservice> testedserv;
+
+  /**
+   * The cached value of the '{@link #getTestedcomp() <em>Testedcomp</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTestedcomp()
+   * @generated
+   * @ordered
+   */
+  protected EList<Testedcomposant> testedcomp;
 
   /**
    * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
@@ -94,13 +130,55 @@ public class ImportImpl extends AbstractModelImpl implements Import
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Component> getComp()
+  public EList<Observeurs> getObs()
   {
-    if (comp == null)
+    if (obs == null)
     {
-      comp = new EObjectContainmentEList<Component>(Component.class, this, MappingAssistancePackage.IMPORT__COMP);
+      obs = new EObjectContainmentEList<Observeurs>(Observeurs.class, this, MappingAssistancePackage.IMPORT__OBS);
     }
-    return comp;
+    return obs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Mocks> getMock()
+  {
+    if (mock == null)
+    {
+      mock = new EObjectContainmentEList<Mocks>(Mocks.class, this, MappingAssistancePackage.IMPORT__MOCK);
+    }
+    return mock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Testedservice> getTestedserv()
+  {
+    if (testedserv == null)
+    {
+      testedserv = new EObjectContainmentEList<Testedservice>(Testedservice.class, this, MappingAssistancePackage.IMPORT__TESTEDSERV);
+    }
+    return testedserv;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Testedcomposant> getTestedcomp()
+  {
+    if (testedcomp == null)
+    {
+      testedcomp = new EObjectContainmentEList<Testedcomposant>(Testedcomposant.class, this, MappingAssistancePackage.IMPORT__TESTEDCOMP);
+    }
+    return testedcomp;
   }
 
   /**
@@ -136,8 +214,14 @@ public class ImportImpl extends AbstractModelImpl implements Import
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.IMPORT__COMP:
-        return ((InternalEList<?>)getComp()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.IMPORT__OBS:
+        return ((InternalEList<?>)getObs()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.IMPORT__MOCK:
+        return ((InternalEList<?>)getMock()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.IMPORT__TESTEDSERV:
+        return ((InternalEList<?>)getTestedserv()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.IMPORT__TESTEDCOMP:
+        return ((InternalEList<?>)getTestedcomp()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -152,8 +236,14 @@ public class ImportImpl extends AbstractModelImpl implements Import
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.IMPORT__COMP:
-        return getComp();
+      case MappingAssistancePackage.IMPORT__OBS:
+        return getObs();
+      case MappingAssistancePackage.IMPORT__MOCK:
+        return getMock();
+      case MappingAssistancePackage.IMPORT__TESTEDSERV:
+        return getTestedserv();
+      case MappingAssistancePackage.IMPORT__TESTEDCOMP:
+        return getTestedcomp();
       case MappingAssistancePackage.IMPORT__IMPORTED_NAMESPACE:
         return getImportedNamespace();
     }
@@ -171,9 +261,21 @@ public class ImportImpl extends AbstractModelImpl implements Import
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.IMPORT__COMP:
-        getComp().clear();
-        getComp().addAll((Collection<? extends Component>)newValue);
+      case MappingAssistancePackage.IMPORT__OBS:
+        getObs().clear();
+        getObs().addAll((Collection<? extends Observeurs>)newValue);
+        return;
+      case MappingAssistancePackage.IMPORT__MOCK:
+        getMock().clear();
+        getMock().addAll((Collection<? extends Mocks>)newValue);
+        return;
+      case MappingAssistancePackage.IMPORT__TESTEDSERV:
+        getTestedserv().clear();
+        getTestedserv().addAll((Collection<? extends Testedservice>)newValue);
+        return;
+      case MappingAssistancePackage.IMPORT__TESTEDCOMP:
+        getTestedcomp().clear();
+        getTestedcomp().addAll((Collection<? extends Testedcomposant>)newValue);
         return;
       case MappingAssistancePackage.IMPORT__IMPORTED_NAMESPACE:
         setImportedNamespace((String)newValue);
@@ -192,8 +294,17 @@ public class ImportImpl extends AbstractModelImpl implements Import
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.IMPORT__COMP:
-        getComp().clear();
+      case MappingAssistancePackage.IMPORT__OBS:
+        getObs().clear();
+        return;
+      case MappingAssistancePackage.IMPORT__MOCK:
+        getMock().clear();
+        return;
+      case MappingAssistancePackage.IMPORT__TESTEDSERV:
+        getTestedserv().clear();
+        return;
+      case MappingAssistancePackage.IMPORT__TESTEDCOMP:
+        getTestedcomp().clear();
         return;
       case MappingAssistancePackage.IMPORT__IMPORTED_NAMESPACE:
         setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
@@ -212,8 +323,14 @@ public class ImportImpl extends AbstractModelImpl implements Import
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.IMPORT__COMP:
-        return comp != null && !comp.isEmpty();
+      case MappingAssistancePackage.IMPORT__OBS:
+        return obs != null && !obs.isEmpty();
+      case MappingAssistancePackage.IMPORT__MOCK:
+        return mock != null && !mock.isEmpty();
+      case MappingAssistancePackage.IMPORT__TESTEDSERV:
+        return testedserv != null && !testedserv.isEmpty();
+      case MappingAssistancePackage.IMPORT__TESTEDCOMP:
+        return testedcomp != null && !testedcomp.isEmpty();
       case MappingAssistancePackage.IMPORT__IMPORTED_NAMESPACE:
         return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
     }

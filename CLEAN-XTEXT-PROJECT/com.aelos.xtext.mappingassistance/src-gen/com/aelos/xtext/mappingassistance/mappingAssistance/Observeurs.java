@@ -9,24 +9,41 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Bindings</b></em>'.
+ * A representation of the model object '<em><b>Observeurs</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameComp <em>Name Comp</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameServ1 <em>Name Serv1</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameServ2 <em>Name Serv2</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observeurs#getObsname <em>Obsname</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observeurs#getNameComp <em>Name Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observeurs#getNameServ1 <em>Name Serv1</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observeurs#getNameServ2 <em>Name Serv2</em>}</li>
  * </ul>
  *
- * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getBindings()
+ * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserveurs()
  * @model
  * @generated
  */
-public interface Bindings extends EObject
+public interface Observeurs extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Obsname</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.ObserveurName}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Obsname</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Obsname</em>' reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserveurs_Obsname()
+   * @model
+   * @generated
+   */
+  EList<ObserveurName> getObsname();
+
   /**
    * Returns the value of the '<em><b>Name Comp</b></em>' reference list.
    * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp}.
@@ -37,7 +54,7 @@ public interface Bindings extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name Comp</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getBindings_NameComp()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserveurs_NameComp()
    * @model
    * @generated
    */
@@ -53,7 +70,7 @@ public interface Bindings extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name Serv1</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getBindings_NameServ1()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserveurs_NameServ1()
    * @model
    * @generated
    */
@@ -69,10 +86,10 @@ public interface Bindings extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name Serv2</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getBindings_NameServ2()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserveurs_NameServ2()
    * @model
    * @generated
    */
   EList<ServiceName> getNameServ2();
 
-} // Bindings
+} // Observeurs

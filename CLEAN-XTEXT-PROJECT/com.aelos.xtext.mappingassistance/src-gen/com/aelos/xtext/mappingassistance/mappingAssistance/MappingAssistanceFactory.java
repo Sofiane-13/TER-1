@@ -51,31 +51,22 @@ public interface MappingAssistanceFactory extends EFactory
   Import createImport();
 
   /**
-   * Returns a new object of class '<em>Component</em>'.
+   * Returns a new object of class '<em>Testedcomposant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component</em>'.
+   * @return a new object of class '<em>Testedcomposant</em>'.
    * @generated
    */
-  Component createComponent();
+  Testedcomposant createTestedcomposant();
 
   /**
-   * Returns a new object of class '<em>Instance Comp</em>'.
+   * Returns a new object of class '<em>Testedservice</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instance Comp</em>'.
+   * @return a new object of class '<em>Testedservice</em>'.
    * @generated
    */
-  InstanceComp createInstanceComp();
-
-  /**
-   * Returns a new object of class '<em>Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable</em>'.
-   * @generated
-   */
-  Variable createVariable();
+  Testedservice createTestedservice();
 
   /**
    * Returns a new object of class '<em>Mapping</em>'.
@@ -87,22 +78,22 @@ public interface MappingAssistanceFactory extends EFactory
   Mapping createMapping();
 
   /**
-   * Returns a new object of class '<em>Bindings</em>'.
+   * Returns a new object of class '<em>Mocks</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bindings</em>'.
+   * @return a new object of class '<em>Mocks</em>'.
    * @generated
    */
-  Bindings createBindings();
+  Mocks createMocks();
 
   /**
-   * Returns a new object of class '<em>Required Service</em>'.
+   * Returns a new object of class '<em>Observeurs</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Required Service</em>'.
+   * @return a new object of class '<em>Observeurs</em>'.
    * @generated
    */
-  RequiredService createRequiredService();
+  Observeurs createObserveurs();
 
   /**
    * Returns a new object of class '<em>Service Name</em>'.
@@ -112,6 +103,42 @@ public interface MappingAssistanceFactory extends EFactory
    * @generated
    */
   ServiceName createServiceName();
+
+  /**
+   * Returns a new object of class '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable</em>'.
+   * @generated
+   */
+  Variable createVariable();
+
+  /**
+   * Returns a new object of class '<em>Observeur Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Observeur Name</em>'.
+   * @generated
+   */
+  ObserveurName createObserveurName();
+
+  /**
+   * Returns a new object of class '<em>Mock Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mock Name</em>'.
+   * @generated
+   */
+  MockName createMockName();
+
+  /**
+   * Returns a new object of class '<em>Instance Comp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instance Comp</em>'.
+   * @generated
+   */
+  InstanceComp createInstanceComp();
 
   /**
    * Returns the package supported by this factory.

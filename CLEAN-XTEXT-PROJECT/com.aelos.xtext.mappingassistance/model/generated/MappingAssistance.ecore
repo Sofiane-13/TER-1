@@ -8,33 +8,25 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractModel"/>
   <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//AbstractModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" upperBound="-1" eType="#//Component"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="obs" upperBound="-1" eType="#//Observeurs"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mock" upperBound="-1" eType="#//Mocks"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testedserv" upperBound="-1"
+        eType="#//Testedservice" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testedcomp" upperBound="-1"
+        eType="#//Testedcomposant" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inst" upperBound="-1" eType="#//InstanceComp"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arg" upperBound="-1" eType="#//Variable"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arg1" upperBound="-1" eType="#//Variable"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="methode" upperBound="-1"
-        eType="#//ServiceName" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="req" upperBound="-1" eType="#//RequiredService"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="map" upperBound="-1" eType="#//Mapping"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bind" upperBound="-1" eType="#//Bindings"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Testedcomposant">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameComp" unique="false"
+        upperBound="-1" eType="#//InstanceComp"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InstanceComp">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Testedservice">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameComp" unique="false"
+        upperBound="-1" eType="#//InstanceComp"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameServ1" unique="false"
+        upperBound="-1" eType="#//ServiceName"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mapping">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nameVarMode" unique="false"
@@ -42,7 +34,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="nameVarTest" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bindings">
+  <eClassifiers xsi:type="ecore:EClass" name="Mocks">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mockname" unique="false"
+        upperBound="-1" eType="#//MockName"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameComp" unique="false"
+        upperBound="-1" eType="#//InstanceComp"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameServ1" unique="false"
+        upperBound="-1" eType="#//ServiceName"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Observeurs">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="obsname" unique="false"
+        upperBound="-1" eType="#//ObserveurName"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nameComp" unique="false"
         upperBound="-1" eType="#//InstanceComp"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nameServ1" unique="false"
@@ -50,15 +52,20 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="nameServ2" unique="false"
         upperBound="-1" eType="#//ServiceName"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredService">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameVarMethode" upperBound="-1"
-        eType="#//Variable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameComp" unique="false"
-        upperBound="-1" eType="#//InstanceComp"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameServ" unique="false"
-        upperBound="-1" eType="#//ServiceName"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ServiceName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ObserveurName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MockName">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceComp">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Type">
