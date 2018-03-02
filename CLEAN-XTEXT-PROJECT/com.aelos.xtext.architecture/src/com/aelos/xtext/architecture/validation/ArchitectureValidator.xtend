@@ -3,6 +3,8 @@
  */
 package com.aelos.xtext.architecture.validation
 
+import org.eclipse.xtext.validation.Check
+import com.aelos.xtext.architecture.architecture.ArchitecturePackage
 
 /**
  * This class contains custom validation rules. 
@@ -21,5 +23,16 @@ class ArchitectureValidator extends AbstractArchitectureValidator {
 //					INVALID_NAME)
 //		}
 //	}
+	
+	/*@Check
+	def checkMappingSameType(Mapping map) {
+		var x=0;
+		for(varmod:map.nameVarMode){
+			if(!((varmod.type.literal).equals(map.nameVarTest.get(x).type.literal))){
+				error("the variables must have the same Type",ArchitecturePackage.Literals.MAPPING__NAME_VAR_MODE)
+			}
+			x++
+		}
+	}*/
 	
 }

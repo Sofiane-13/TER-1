@@ -5,7 +5,7 @@ package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.AbstractModel;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Model;
+import com.aelos.xtext.architecture.architecture.Component;
 
 import java.util.Collection;
 
@@ -23,35 +23,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Model</b></em>'.
+ * An implementation of the model object '<em><b>Abstract Model</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ModelImpl#getFunction <em>Function</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.AbstractModelImpl#getComp <em>Comp</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModelImpl extends MinimalEObjectImpl.Container implements Model
+public class AbstractModelImpl extends MinimalEObjectImpl.Container implements AbstractModel
 {
   /**
-   * The cached value of the '{@link #getFunction() <em>Function</em>}' containment reference list.
+   * The cached value of the '{@link #getComp() <em>Comp</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFunction()
+   * @see #getComp()
    * @generated
    * @ordered
    */
-  protected EList<AbstractModel> function;
+  protected EList<Component> comp;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ModelImpl()
+  protected AbstractModelImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   @Override
   protected EClass eStaticClass()
   {
-    return ArchitecturePackage.Literals.MODEL;
+    return ArchitecturePackage.Literals.ABSTRACT_MODEL;
   }
 
   /**
@@ -72,13 +72,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<AbstractModel> getFunction()
+  public EList<Component> getComp()
   {
-    if (function == null)
+    if (comp == null)
     {
-      function = new EObjectContainmentEList<AbstractModel>(AbstractModel.class, this, ArchitecturePackage.MODEL__FUNCTION);
+      comp = new EObjectContainmentEList<Component>(Component.class, this, ArchitecturePackage.ABSTRACT_MODEL__COMP);
     }
-    return function;
+    return comp;
   }
 
   /**
@@ -91,8 +91,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        return ((InternalEList<?>)getFunction()).basicRemove(otherEnd, msgs);
+      case ArchitecturePackage.ABSTRACT_MODEL__COMP:
+        return ((InternalEList<?>)getComp()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        return getFunction();
+      case ArchitecturePackage.ABSTRACT_MODEL__COMP:
+        return getComp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        getFunction().clear();
-        getFunction().addAll((Collection<? extends AbstractModel>)newValue);
+      case ArchitecturePackage.ABSTRACT_MODEL__COMP:
+        getComp().clear();
+        getComp().addAll((Collection<? extends Component>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        getFunction().clear();
+      case ArchitecturePackage.ABSTRACT_MODEL__COMP:
+        getComp().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,10 +159,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        return function != null && !function.isEmpty();
+      case ArchitecturePackage.ABSTRACT_MODEL__COMP:
+        return comp != null && !comp.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ModelImpl
+} //AbstractModelImpl

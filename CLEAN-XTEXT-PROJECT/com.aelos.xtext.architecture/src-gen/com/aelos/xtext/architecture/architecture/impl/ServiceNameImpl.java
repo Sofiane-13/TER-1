@@ -4,7 +4,7 @@
 package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Greeting;
+import com.aelos.xtext.architecture.architecture.ServiceName;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,18 +15,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Greeting</b></em>'.
+ * An implementation of the model object '<em><b>Service Name</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.GreetingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ServiceNameImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeting
+public class ServiceNameImpl extends MinimalEObjectImpl.Container implements ServiceName
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -53,7 +53,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GreetingImpl()
+  protected ServiceNameImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   @Override
   protected EClass eStaticClass()
   {
-    return ArchitecturePackage.Literals.GREETING;
+    return ArchitecturePackage.Literals.SERVICE_NAME;
   }
 
   /**
@@ -89,7 +89,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.GREETING__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.SERVICE_NAME__NAME, oldName, name));
   }
 
   /**
@@ -102,7 +102,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ArchitecturePackage.GREETING__NAME:
+      case ArchitecturePackage.SERVICE_NAME__NAME:
         return getName();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -118,7 +118,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ArchitecturePackage.GREETING__NAME:
+      case ArchitecturePackage.SERVICE_NAME__NAME:
         setName((String)newValue);
         return;
     }
@@ -135,7 +135,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ArchitecturePackage.GREETING__NAME:
+      case ArchitecturePackage.SERVICE_NAME__NAME:
         setName(NAME_EDEFAULT);
         return;
     }
@@ -152,7 +152,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case ArchitecturePackage.GREETING__NAME:
+      case ArchitecturePackage.SERVICE_NAME__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
@@ -175,4 +175,4 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     return result.toString();
   }
 
-} //GreetingImpl
+} //ServiceNameImpl

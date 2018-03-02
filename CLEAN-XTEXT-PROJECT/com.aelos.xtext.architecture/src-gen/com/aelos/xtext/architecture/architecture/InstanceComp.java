@@ -7,21 +7,21 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Greeting</b></em>'.
+ * A representation of the model object '<em><b>Instance Comp</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Greeting#getName <em>Name</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.InstanceComp#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getGreeting()
+ * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getInstanceComp()
  * @model
  * @generated
  */
-public interface Greeting extends EObject
+public interface InstanceComp extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -33,14 +33,14 @@ public interface Greeting extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getGreeting_Name()
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getInstanceComp_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Greeting#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.InstanceComp#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -49,4 +49,4 @@ public interface Greeting extends EObject
    */
   void setName(String value);
 
-} // Greeting
+} // InstanceComp

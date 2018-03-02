@@ -2,8 +2,51 @@ grammar com.aelos.xtext.architecture.Architecture with org.eclipse.xtext.common.
 
 generate architecture "http://www.aelos.com/xtext/architecture/Architecture"
 
+import "http://www.aelos.com/xtext/testintentionsassistance/TestintentionsAssistance" as testIntention
+
 Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+	function+=AbstractModel*;
+
+
+AbstractModel:Import? (comp+=Component )+ ;
+
+Import:
+    'import' importedNamespace=QualifiedNameWithWildcard;
+    
+QualifiedNameWithWildcard:
+    QualifiedName '.*'?;
+        
+QualifiedName:
+    ID ('.' ID)*;
+Component :
+	"Component:" 
+	inst+=InstanceComp":" name=ID
+	"ProvidedServices:"
+	"conf("(arg+=Variable ",")*arg1+=Variable")"
+	(methode+=ServiceName "("((arg+=Variable ",")*arg+=Variable)*")"(":"arg+=Variable)?)*
+    "RequiredServices:"?
+    (req+=RequiredService)*
+	(bind+=Bindings)*
+;
+
+InstanceComp:
+	name=ID
+;
+
+Variable:
+      name=ID ":" type=Type;
+      
+
+Bindings :
+	"bind(" nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
+	  
+RequiredService:
+		 
+		nameVarMethode+=Variable":="nameComp+=[InstanceComp]'.'nameServ+=[ServiceName]";";
+	  
+
+ServiceName : name=ID;
+
+
+      
+enum Type : INT | STRING | Boolean | Double;

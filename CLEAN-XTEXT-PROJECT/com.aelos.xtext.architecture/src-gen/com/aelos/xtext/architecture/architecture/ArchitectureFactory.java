@@ -33,13 +33,76 @@ public interface ArchitectureFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Abstract Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Abstract Model</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  AbstractModel createAbstractModel();
+
+  /**
+   * Returns a new object of class '<em>Import</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Import</em>'.
+   * @generated
+   */
+  Import createImport();
+
+  /**
+   * Returns a new object of class '<em>Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component</em>'.
+   * @generated
+   */
+  Component createComponent();
+
+  /**
+   * Returns a new object of class '<em>Instance Comp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instance Comp</em>'.
+   * @generated
+   */
+  InstanceComp createInstanceComp();
+
+  /**
+   * Returns a new object of class '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable</em>'.
+   * @generated
+   */
+  Variable createVariable();
+
+  /**
+   * Returns a new object of class '<em>Bindings</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bindings</em>'.
+   * @generated
+   */
+  Bindings createBindings();
+
+  /**
+   * Returns a new object of class '<em>Required Service</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Required Service</em>'.
+   * @generated
+   */
+  RequiredService createRequiredService();
+
+  /**
+   * Returns a new object of class '<em>Service Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Service Name</em>'.
+   * @generated
+   */
+  ServiceName createServiceName();
 
   /**
    * Returns the package supported by this factory.

@@ -6,6 +6,7 @@ package com.aelos.xtext.architecture.architecture.impl;
 import com.aelos.xtext.architecture.architecture.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,9 +67,50 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
     switch (eClass.getClassifierID())
     {
       case ArchitecturePackage.MODEL: return createModel();
-      case ArchitecturePackage.GREETING: return createGreeting();
+      case ArchitecturePackage.ABSTRACT_MODEL: return createAbstractModel();
+      case ArchitecturePackage.IMPORT: return createImport();
+      case ArchitecturePackage.COMPONENT: return createComponent();
+      case ArchitecturePackage.INSTANCE_COMP: return createInstanceComp();
+      case ArchitecturePackage.VARIABLE: return createVariable();
+      case ArchitecturePackage.BINDINGS: return createBindings();
+      case ArchitecturePackage.REQUIRED_SERVICE: return createRequiredService();
+      case ArchitecturePackage.SERVICE_NAME: return createServiceName();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case ArchitecturePackage.TYPE:
+        return createTypeFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case ArchitecturePackage.TYPE:
+        return convertTypeToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -88,10 +130,109 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public Greeting createGreeting()
+  public AbstractModel createAbstractModel()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    AbstractModelImpl abstractModel = new AbstractModelImpl();
+    return abstractModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Import createImport()
+  {
+    ImportImpl import_ = new ImportImpl();
+    return import_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Component createComponent()
+  {
+    ComponentImpl component = new ComponentImpl();
+    return component;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstanceComp createInstanceComp()
+  {
+    InstanceCompImpl instanceComp = new InstanceCompImpl();
+    return instanceComp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Bindings createBindings()
+  {
+    BindingsImpl bindings = new BindingsImpl();
+    return bindings;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RequiredService createRequiredService()
+  {
+    RequiredServiceImpl requiredService = new RequiredServiceImpl();
+    return requiredService;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ServiceName createServiceName()
+  {
+    ServiceNameImpl serviceName = new ServiceNameImpl();
+    return serviceName;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type createTypeFromString(EDataType eDataType, String initialValue)
+  {
+    Type result = Type.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**
