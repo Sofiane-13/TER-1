@@ -174,8 +174,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBindBindingsParserRuleCall_12_0 = (RuleCall)cBindAssignment_12.eContents().get(0);
 		
 		//Component:
-		//	"Component:"
-		//	inst+=InstanceComp ":" name=ID
+		//	"Component:" inst+=InstanceComp ":" name=ID
 		//	"ProvidedServices:"
 		//	"conf(" (arg+=Variable ",")* arg1+=Variable ")" (methode+=ServiceName "(" ((arg+=Variable ",")* arg+=Variable)* ")"
 		//	(":" arg+=Variable)?)*
@@ -653,8 +652,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Component:
-	//	"Component:"
-	//	inst+=InstanceComp ":" name=ID
+	//	"Component:" inst+=InstanceComp ":" name=ID
 	//	"ProvidedServices:"
 	//	"conf(" (arg+=Variable ",")* arg1+=Variable ")" (methode+=ServiceName "(" ((arg+=Variable ",")* arg+=Variable)* ")"
 	//	(":" arg+=Variable)?)*
