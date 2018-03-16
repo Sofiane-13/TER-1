@@ -32,6 +32,7 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ArchitectureGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
+			builder.put(grammarAccess.getDomainDeclarationAccess().getGroup(), "rule__DomainDeclaration__Group__0");
 			builder.put(grammarAccess.getAbstractModelAccess().getGroup(), "rule__AbstractModel__Group__0");
 			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 			builder.put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
@@ -46,7 +47,9 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 			builder.put(grammarAccess.getBindingsAccess().getGroup(), "rule__Bindings__Group__0");
 			builder.put(grammarAccess.getRequiredServiceAccess().getGroup(), "rule__RequiredService__Group__0");
-			builder.put(grammarAccess.getModelAccess().getFunctionAssignment(), "rule__Model__FunctionAssignment");
+			builder.put(grammarAccess.getModelAccess().getPackageAssignment(), "rule__Model__PackageAssignment");
+			builder.put(grammarAccess.getDomainDeclarationAccess().getNameAssignment_1(), "rule__DomainDeclaration__NameAssignment_1");
+			builder.put(grammarAccess.getDomainDeclarationAccess().getElementsAssignment_3(), "rule__DomainDeclaration__ElementsAssignment_3");
 			builder.put(grammarAccess.getAbstractModelAccess().getCompAssignment_1(), "rule__AbstractModel__CompAssignment_1");
 			builder.put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
 			builder.put(grammarAccess.getComponentAccess().getInstAssignment_1(), "rule__Component__InstAssignment_1");

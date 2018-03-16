@@ -8,6 +8,7 @@ import com.aelos.xtext.architecture.architecture.ArchitectureFactory;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.Bindings;
 import com.aelos.xtext.architecture.architecture.Component;
+import com.aelos.xtext.architecture.architecture.DomainDeclaration;
 import com.aelos.xtext.architecture.architecture.Import;
 import com.aelos.xtext.architecture.architecture.InstanceComp;
 import com.aelos.xtext.architecture.architecture.Model;
@@ -38,6 +39,13 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * @generated
    */
   private EClass modelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass domainDeclarationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -180,9 +188,39 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Function()
+  public EReference getModel_Package()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDomainDeclaration()
+  {
+    return domainDeclarationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDomainDeclaration_Name()
+  {
+    return (EAttribute)domainDeclarationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDomainDeclaration_Elements()
+  {
+    return (EReference)domainDeclarationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -506,7 +544,11 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__FUNCTION);
+    createEReference(modelEClass, MODEL__PACKAGE);
+
+    domainDeclarationEClass = createEClass(DOMAIN_DECLARATION);
+    createEAttribute(domainDeclarationEClass, DOMAIN_DECLARATION__NAME);
+    createEReference(domainDeclarationEClass, DOMAIN_DECLARATION__ELEMENTS);
 
     abstractModelEClass = createEClass(ABSTRACT_MODEL);
     createEReference(abstractModelEClass, ABSTRACT_MODEL__COMP);
@@ -581,7 +623,11 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Function(), this.getAbstractModel(), null, "function", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Package(), this.getDomainDeclaration(), null, "package", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(domainDeclarationEClass, DomainDeclaration.class, "DomainDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDomainDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, DomainDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDomainDeclaration_Elements(), this.getAbstractModel(), null, "elements", null, 0, -1, DomainDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractModelEClass, AbstractModel.class, "AbstractModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAbstractModel_Comp(), this.getComponent(), null, "comp", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

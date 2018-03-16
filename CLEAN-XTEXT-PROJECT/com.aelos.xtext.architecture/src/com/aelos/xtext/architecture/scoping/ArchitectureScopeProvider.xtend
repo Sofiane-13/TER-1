@@ -43,7 +43,9 @@ class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
         return Scopes.scopeFor(candidates)
     }
     if (context instanceof Bindings
-            && reference == ArchitecturePackage.Literals.BINDINGS__NAME_SERV2) {
+            && ((reference == ArchitecturePackage.Literals.BINDINGS__NAME_SERV2) ||
+            	(reference == ArchitecturePackage.Literals.BINDINGS__NAME_SERV1)
+            )) {
         // Collect a list of candidates by going through the model
         // EcoreUtil2 provides useful functionality to do that
         // For example searching for all elements within the root Object's tree
@@ -52,23 +54,16 @@ class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
         // Create IEObjectDescriptions and puts them into an IScope instance
         return Scopes.scopeFor(candidates)
     }
+
     if (context instanceof Bindings
-            && reference == ArchitecturePackage.Literals.BINDINGS__NAME_SERV1) {
+            && ((reference == ArchitecturePackage.Literals.BINDINGS__NAME_COMP1) 
+            	|| (reference == ArchitecturePackage.Literals.BINDINGS__NAME_COMP2)
+            )) {
         // Collect a list of candidates by going through the model
         // EcoreUtil2 provides useful functionality to do that
         // For example searching for all elements within the root Object's tree
         val rootElement = EcoreUtil2.getRootContainer(context)
-        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,InstanceComp )
-        // Create IEObjectDescriptions and puts them into an IScope instance
-        return Scopes.scopeFor(candidates)
-    }
-    if (context instanceof Bindings
-            && reference == ArchitecturePackage.Literals.BINDINGS__NAME_SERV2) {
-        // Collect a list of candidates by going through the model
-        // EcoreUtil2 provides useful functionality to do that
-        // For example searching for all elements within the root Object's tree
-        val rootElement = EcoreUtil2.getRootContainer(context)
-        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,InstanceComp )
+        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,InstanceComp)
         // Create IEObjectDescriptions and puts them into an IScope instance
         return Scopes.scopeFor(candidates)
     }

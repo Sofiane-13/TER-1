@@ -28,18 +28,59 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Model");
-		private final Assignment cFunctionAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cFunctionAbstractModelParserRuleCall_0 = (RuleCall)cFunctionAssignment.eContents().get(0);
+		private final Assignment cPackageAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cPackageDomainDeclarationParserRuleCall_0 = (RuleCall)cPackageAssignment.eContents().get(0);
 		
 		//Model:
-		//	function+=AbstractModel*;
+		//	package+=DomainDeclaration*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//function+=AbstractModel*
-		public Assignment getFunctionAssignment() { return cFunctionAssignment; }
+		//package+=DomainDeclaration*
+		public Assignment getPackageAssignment() { return cPackageAssignment; }
+		
+		//DomainDeclaration
+		public RuleCall getPackageDomainDeclarationParserRuleCall_0() { return cPackageDomainDeclarationParserRuleCall_0; }
+	}
+	public class DomainDeclarationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.DomainDeclaration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDomainKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cElementsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cElementsAbstractModelParserRuleCall_3_0 = (RuleCall)cElementsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//DomainDeclaration:
+		//	'domain' name=QualifiedName '{'
+		//	elements+=AbstractModel*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'domain' name=QualifiedName '{' elements+=AbstractModel* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//'domain'
+		public Keyword getDomainKeyword_0() { return cDomainKeyword_0; }
+		
+		//name=QualifiedName
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//QualifiedName
+		public RuleCall getNameQualifiedNameParserRuleCall_1_0() { return cNameQualifiedNameParserRuleCall_1_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		
+		//elements+=AbstractModel*
+		public Assignment getElementsAssignment_3() { return cElementsAssignment_3; }
 		
 		//AbstractModel
-		public RuleCall getFunctionAbstractModelParserRuleCall_0() { return cFunctionAbstractModelParserRuleCall_0; }
+		public RuleCall getElementsAbstractModelParserRuleCall_3_0() { return cElementsAbstractModelParserRuleCall_3_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 	public class AbstractModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.AbstractModel");
@@ -539,6 +580,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private final ModelElements pModel;
+	private final DomainDeclarationElements pDomainDeclaration;
 	private final AbstractModelElements pAbstractModel;
 	private final ImportElements pImport;
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
@@ -561,6 +603,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
+		this.pDomainDeclaration = new DomainDeclarationElements();
 		this.pAbstractModel = new AbstractModelElements();
 		this.pImport = new ImportElements();
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
@@ -602,13 +645,25 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	function+=AbstractModel*;
+	//	package+=DomainDeclaration*;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
 	
 	public ParserRule getModelRule() {
 		return getModelAccess().getRule();
+	}
+	
+	//DomainDeclaration:
+	//	'domain' name=QualifiedName '{'
+	//	elements+=AbstractModel*
+	//	'}';
+	public DomainDeclarationElements getDomainDeclarationAccess() {
+		return pDomainDeclaration;
+	}
+	
+	public ParserRule getDomainDeclarationRule() {
+		return getDomainDeclarationAccess().getRule();
 	}
 	
 	//AbstractModel:

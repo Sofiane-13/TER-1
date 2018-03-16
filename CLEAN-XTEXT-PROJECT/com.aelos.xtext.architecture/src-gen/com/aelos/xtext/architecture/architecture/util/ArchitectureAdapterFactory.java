@@ -81,6 +81,11 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseDomainDeclaration(DomainDeclaration object)
+      {
+        return createDomainDeclarationAdapter();
+      }
+      @Override
       public Adapter caseAbstractModel(AbstractModel object)
       {
         return createAbstractModelAdapter();
@@ -153,6 +158,21 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.DomainDeclaration <em>Domain Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.DomainDeclaration
+   * @generated
+   */
+  public Adapter createDomainDeclarationAdapter()
   {
     return null;
   }

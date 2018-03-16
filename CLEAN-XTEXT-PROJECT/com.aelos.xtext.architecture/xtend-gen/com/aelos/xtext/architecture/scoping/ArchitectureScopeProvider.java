@@ -37,20 +37,15 @@ public class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider
       final List<InstanceComp> candidates_1 = EcoreUtil2.<InstanceComp>getAllContentsOfType(rootElement_1, InstanceComp.class);
       return Scopes.scopeFor(candidates_1);
     }
-    if (((context instanceof Bindings) && Objects.equal(reference, ArchitecturePackage.Literals.BINDINGS__NAME_SERV2))) {
+    if (((context instanceof Bindings) && (Objects.equal(reference, ArchitecturePackage.Literals.BINDINGS__NAME_SERV2) || Objects.equal(reference, ArchitecturePackage.Literals.BINDINGS__NAME_SERV1)))) {
       final EObject rootElement_2 = EcoreUtil2.getRootContainer(context);
       final List<ServiceName> candidates_2 = EcoreUtil2.<ServiceName>getAllContentsOfType(rootElement_2, ServiceName.class);
       return Scopes.scopeFor(candidates_2);
     }
-    if (((context instanceof Bindings) && Objects.equal(reference, ArchitecturePackage.Literals.BINDINGS__NAME_SERV1))) {
+    if (((context instanceof Bindings) && (Objects.equal(reference, ArchitecturePackage.Literals.BINDINGS__NAME_COMP1) || Objects.equal(reference, ArchitecturePackage.Literals.BINDINGS__NAME_COMP2)))) {
       final EObject rootElement_3 = EcoreUtil2.getRootContainer(context);
       final List<InstanceComp> candidates_3 = EcoreUtil2.<InstanceComp>getAllContentsOfType(rootElement_3, InstanceComp.class);
       return Scopes.scopeFor(candidates_3);
-    }
-    if (((context instanceof Bindings) && Objects.equal(reference, ArchitecturePackage.Literals.BINDINGS__NAME_SERV2))) {
-      final EObject rootElement_4 = EcoreUtil2.getRootContainer(context);
-      final List<InstanceComp> candidates_4 = EcoreUtil2.<InstanceComp>getAllContentsOfType(rootElement_4, InstanceComp.class);
-      return Scopes.scopeFor(candidates_4);
     }
     return super.getScope(context, reference);
   }

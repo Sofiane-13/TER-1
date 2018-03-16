@@ -7,6 +7,7 @@ import com.aelos.xtext.architecture.architecture.AbstractModel;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.Bindings;
 import com.aelos.xtext.architecture.architecture.Component;
+import com.aelos.xtext.architecture.architecture.DomainDeclaration;
 import com.aelos.xtext.architecture.architecture.Import;
 import com.aelos.xtext.architecture.architecture.InstanceComp;
 import com.aelos.xtext.architecture.architecture.Model;
@@ -48,6 +49,9 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 				return; 
 			case ArchitecturePackage.COMPONENT:
 				sequence_Component(context, (Component) semanticObject); 
+				return; 
+			case ArchitecturePackage.DOMAIN_DECLARATION:
+				sequence_DomainDeclaration(context, (DomainDeclaration) semanticObject); 
 				return; 
 			case ArchitecturePackage.IMPORT:
 				if (rule == grammarAccess.getAbstractModelRule()) {
@@ -137,6 +141,18 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
+	 *     DomainDeclaration returns DomainDeclaration
+	 *
+	 * Constraint:
+	 *     (name=QualifiedName elements+=AbstractModel*)
+	 */
+	protected void sequence_DomainDeclaration(ISerializationContext context, DomainDeclaration semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Import returns Import
 	 *
 	 * Constraint:
@@ -176,7 +192,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     function+=AbstractModel+
+	 *     package+=DomainDeclaration+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

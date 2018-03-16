@@ -69,13 +69,13 @@ public interface ArchitecturePackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Function</b></em>' containment reference list.
+   * The feature id for the '<em><b>Package</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__FUNCTION = 0;
+  int MODEL__PACKAGE = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -87,6 +87,43 @@ public interface ArchitecturePackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.DomainDeclarationImpl <em>Domain Declaration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.architecture.architecture.impl.DomainDeclarationImpl
+   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getDomainDeclaration()
+   * @generated
+   */
+  int DOMAIN_DECLARATION = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOMAIN_DECLARATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOMAIN_DECLARATION__ELEMENTS = 1;
+
+  /**
+   * The number of structural features of the '<em>Domain Declaration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOMAIN_DECLARATION_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.AbstractModelImpl <em>Abstract Model</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,7 +131,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getAbstractModel()
    * @generated
    */
-  int ABSTRACT_MODEL = 1;
+  int ABSTRACT_MODEL = 2;
 
   /**
    * The feature id for the '<em><b>Comp</b></em>' containment reference list.
@@ -122,7 +159,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getImport()
    * @generated
    */
-  int IMPORT = 2;
+  int IMPORT = 3;
 
   /**
    * The feature id for the '<em><b>Comp</b></em>' containment reference list.
@@ -159,7 +196,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getComponent()
    * @generated
    */
-  int COMPONENT = 3;
+  int COMPONENT = 4;
 
   /**
    * The feature id for the '<em><b>Inst</b></em>' containment reference list.
@@ -241,7 +278,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getInstanceComp()
    * @generated
    */
-  int INSTANCE_COMP = 4;
+  int INSTANCE_COMP = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -269,7 +306,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 5;
+  int VARIABLE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -306,7 +343,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getBindings()
    * @generated
    */
-  int BINDINGS = 6;
+  int BINDINGS = 7;
 
   /**
    * The feature id for the '<em><b>Name Comp1</b></em>' reference list.
@@ -361,7 +398,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getRequiredService()
    * @generated
    */
-  int REQUIRED_SERVICE = 7;
+  int REQUIRED_SERVICE = 8;
 
   /**
    * The feature id for the '<em><b>Name Var Methode</b></em>' containment reference list.
@@ -407,7 +444,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getServiceName()
    * @generated
    */
-  int SERVICE_NAME = 8;
+  int SERVICE_NAME = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -435,7 +472,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getType()
    * @generated
    */
-  int TYPE = 9;
+  int TYPE = 10;
 
 
   /**
@@ -449,15 +486,47 @@ public interface ArchitecturePackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Model#getFunction <em>Function</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Model#getPackage <em>Package</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Function</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Model#getFunction()
+   * @return the meta object for the containment reference list '<em>Package</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Model#getPackage()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Function();
+  EReference getModel_Package();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.DomainDeclaration <em>Domain Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Domain Declaration</em>'.
+   * @see com.aelos.xtext.architecture.architecture.DomainDeclaration
+   * @generated
+   */
+  EClass getDomainDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.architecture.architecture.DomainDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.aelos.xtext.architecture.architecture.DomainDeclaration#getName()
+   * @see #getDomainDeclaration()
+   * @generated
+   */
+  EAttribute getDomainDeclaration_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.DomainDeclaration#getElements <em>Elements</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
+   * @see com.aelos.xtext.architecture.architecture.DomainDeclaration#getElements()
+   * @see #getDomainDeclaration()
+   * @generated
+   */
+  EReference getDomainDeclaration_Elements();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.AbstractModel <em>Abstract Model</em>}'.
@@ -803,12 +872,38 @@ public interface ArchitecturePackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Function</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Package</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__FUNCTION = eINSTANCE.getModel_Function();
+    EReference MODEL__PACKAGE = eINSTANCE.getModel_Package();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.DomainDeclarationImpl <em>Domain Declaration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.architecture.architecture.impl.DomainDeclarationImpl
+     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getDomainDeclaration()
+     * @generated
+     */
+    EClass DOMAIN_DECLARATION = eINSTANCE.getDomainDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOMAIN_DECLARATION__NAME = eINSTANCE.getDomainDeclaration_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DOMAIN_DECLARATION__ELEMENTS = eINSTANCE.getDomainDeclaration_Elements();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.AbstractModelImpl <em>Abstract Model</em>}' class.

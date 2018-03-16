@@ -33,6 +33,15 @@ public interface ArchitectureFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Domain Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Domain Declaration</em>'.
+   * @generated
+   */
+  DomainDeclaration createDomainDeclaration();
+
+  /**
    * Returns a new object of class '<em>Abstract Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

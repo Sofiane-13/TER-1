@@ -13,7 +13,11 @@
       <genEnumLiterals ecoreEnumLiteral="Architecture.ecore#//Type/Double"/>
     </genEnums>
     <genClasses ecoreClass="Architecture.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Model/function"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Model/package"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//DomainDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//DomainDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//DomainDeclaration/elements"/>
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//AbstractModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//AbstractModel/comp"/>

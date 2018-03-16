@@ -67,6 +67,7 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
     switch (eClass.getClassifierID())
     {
       case ArchitecturePackage.MODEL: return createModel();
+      case ArchitecturePackage.DOMAIN_DECLARATION: return createDomainDeclaration();
       case ArchitecturePackage.ABSTRACT_MODEL: return createAbstractModel();
       case ArchitecturePackage.IMPORT: return createImport();
       case ArchitecturePackage.COMPONENT: return createComponent();
@@ -123,6 +124,17 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
   {
     ModelImpl model = new ModelImpl();
     return model;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DomainDeclaration createDomainDeclaration()
+  {
+    DomainDeclarationImpl domainDeclaration = new DomainDeclarationImpl();
+    return domainDeclaration;
   }
 
   /**

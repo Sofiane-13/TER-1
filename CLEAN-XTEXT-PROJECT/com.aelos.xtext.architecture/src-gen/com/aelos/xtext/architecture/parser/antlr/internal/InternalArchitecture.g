@@ -79,22 +79,91 @@ ruleModel returns [EObject current=null]
 	(
 		(
 			{
-				newCompositeNode(grammarAccess.getModelAccess().getFunctionAbstractModelParserRuleCall_0());
+				newCompositeNode(grammarAccess.getModelAccess().getPackageDomainDeclarationParserRuleCall_0());
 			}
-			lv_function_0_0=ruleAbstractModel
+			lv_package_0_0=ruleDomainDeclaration
 			{
 				if ($current==null) {
 					$current = createModelElementForParent(grammarAccess.getModelRule());
 				}
 				add(
 					$current,
-					"function",
-					lv_function_0_0,
-					"com.aelos.xtext.architecture.Architecture.AbstractModel");
+					"package",
+					lv_package_0_0,
+					"com.aelos.xtext.architecture.Architecture.DomainDeclaration");
 				afterParserOrEnumRuleCall();
 			}
 		)
 	)*
+;
+
+// Entry rule entryRuleDomainDeclaration
+entryRuleDomainDeclaration returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDomainDeclarationRule()); }
+	iv_ruleDomainDeclaration=ruleDomainDeclaration
+	{ $current=$iv_ruleDomainDeclaration.current; }
+	EOF;
+
+// Rule DomainDeclaration
+ruleDomainDeclaration returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='domain'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDomainDeclarationAccess().getDomainKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDomainDeclarationAccess().getNameQualifiedNameParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleQualifiedName
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDomainDeclarationRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"com.aelos.xtext.architecture.Architecture.QualifiedName");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='{'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getDomainDeclarationAccess().getLeftCurlyBracketKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDomainDeclarationAccess().getElementsAbstractModelParserRuleCall_3_0());
+				}
+				lv_elements_3_0=ruleAbstractModel
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDomainDeclarationRule());
+					}
+					add(
+						$current,
+						"elements",
+						lv_elements_3_0,
+						"com.aelos.xtext.architecture.Architecture.AbstractModel");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_4='}'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getDomainDeclarationAccess().getRightCurlyBracketKeyword_4());
+		}
+	)
 ;
 
 // Entry rule entryRuleAbstractModel
