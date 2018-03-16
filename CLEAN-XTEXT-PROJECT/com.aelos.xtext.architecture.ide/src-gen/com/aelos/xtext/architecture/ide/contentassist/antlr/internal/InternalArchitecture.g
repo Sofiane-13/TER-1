@@ -5,6 +5,7 @@ grammar InternalArchitecture;
 
 options {
 	superClass=AbstractInternalContentAssistParser;
+	backtrack=true;
 }
 
 @lexer::header {
@@ -669,7 +670,7 @@ rule__Component__Group__0__Impl
 :
 (
 	{ before(grammarAccess.getComponentAccess().getComponentKeyword_0()); }
-	'Component:'
+	('Component:')
 	{ after(grammarAccess.getComponentAccess().getComponentKeyword_0()); }
 )
 ;
@@ -1478,9 +1479,9 @@ rule__Bindings__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBindingsAccess().getNameCompAssignment_1()); }
-	(rule__Bindings__NameCompAssignment_1)
-	{ after(grammarAccess.getBindingsAccess().getNameCompAssignment_1()); }
+	{ before(grammarAccess.getBindingsAccess().getNameComp1Assignment_1()); }
+	(rule__Bindings__NameComp1Assignment_1)
+	{ after(grammarAccess.getBindingsAccess().getNameComp1Assignment_1()); }
 )
 ;
 finally {
@@ -1586,9 +1587,9 @@ rule__Bindings__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBindingsAccess().getNameCompAssignment_5()); }
-	(rule__Bindings__NameCompAssignment_5)
-	{ after(grammarAccess.getBindingsAccess().getNameCompAssignment_5()); }
+	{ before(grammarAccess.getBindingsAccess().getNameComp2Assignment_5()); }
+	(rule__Bindings__NameComp2Assignment_5)
+	{ after(grammarAccess.getBindingsAccess().getNameComp2Assignment_5()); }
 )
 ;
 finally {
@@ -2078,19 +2079,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Bindings__NameCompAssignment_1
+rule__Bindings__NameComp1Assignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getBindingsAccess().getNameCompInstanceCompCrossReference_1_0()); }
+		{ before(grammarAccess.getBindingsAccess().getNameComp1InstanceCompCrossReference_1_0()); }
 		(
-			{ before(grammarAccess.getBindingsAccess().getNameCompInstanceCompIDTerminalRuleCall_1_0_1()); }
+			{ before(grammarAccess.getBindingsAccess().getNameComp1InstanceCompIDTerminalRuleCall_1_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getBindingsAccess().getNameCompInstanceCompIDTerminalRuleCall_1_0_1()); }
+			{ after(grammarAccess.getBindingsAccess().getNameComp1InstanceCompIDTerminalRuleCall_1_0_1()); }
 		)
-		{ after(grammarAccess.getBindingsAccess().getNameCompInstanceCompCrossReference_1_0()); }
+		{ after(grammarAccess.getBindingsAccess().getNameComp1InstanceCompCrossReference_1_0()); }
 	)
 ;
 finally {
@@ -2116,19 +2117,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Bindings__NameCompAssignment_5
+rule__Bindings__NameComp2Assignment_5
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getBindingsAccess().getNameCompInstanceCompCrossReference_5_0()); }
+		{ before(grammarAccess.getBindingsAccess().getNameComp2InstanceCompCrossReference_5_0()); }
 		(
-			{ before(grammarAccess.getBindingsAccess().getNameCompInstanceCompIDTerminalRuleCall_5_0_1()); }
+			{ before(grammarAccess.getBindingsAccess().getNameComp2InstanceCompIDTerminalRuleCall_5_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getBindingsAccess().getNameCompInstanceCompIDTerminalRuleCall_5_0_1()); }
+			{ after(grammarAccess.getBindingsAccess().getNameComp2InstanceCompIDTerminalRuleCall_5_0_1()); }
 		)
-		{ after(grammarAccess.getBindingsAccess().getNameCompInstanceCompCrossReference_5_0()); }
+		{ after(grammarAccess.getBindingsAccess().getNameComp2InstanceCompCrossReference_5_0()); }
 	)
 ;
 finally {

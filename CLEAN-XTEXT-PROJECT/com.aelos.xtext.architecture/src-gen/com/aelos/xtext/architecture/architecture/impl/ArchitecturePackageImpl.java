@@ -370,7 +370,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBindings_NameComp()
+  public EReference getBindings_NameComp1()
   {
     return (EReference)bindingsEClass.getEStructuralFeatures().get(0);
   }
@@ -390,9 +390,19 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBindings_NameServ2()
+  public EReference getBindings_NameComp2()
   {
     return (EReference)bindingsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBindings_NameServ2()
+  {
+    return (EReference)bindingsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -521,8 +531,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     createEAttribute(variableEClass, VARIABLE__TYPE);
 
     bindingsEClass = createEClass(BINDINGS);
-    createEReference(bindingsEClass, BINDINGS__NAME_COMP);
+    createEReference(bindingsEClass, BINDINGS__NAME_COMP1);
     createEReference(bindingsEClass, BINDINGS__NAME_SERV1);
+    createEReference(bindingsEClass, BINDINGS__NAME_COMP2);
     createEReference(bindingsEClass, BINDINGS__NAME_SERV2);
 
     requiredServiceEClass = createEClass(REQUIRED_SERVICE);
@@ -595,8 +606,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     initEAttribute(getVariable_Type(), this.getType(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bindingsEClass, Bindings.class, "Bindings", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBindings_NameComp(), this.getInstanceComp(), null, "nameComp", null, 0, -1, Bindings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBindings_NameComp1(), this.getInstanceComp(), null, "nameComp1", null, 0, -1, Bindings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBindings_NameServ1(), this.getServiceName(), null, "nameServ1", null, 0, -1, Bindings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBindings_NameComp2(), this.getInstanceComp(), null, "nameComp2", null, 0, -1, Bindings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBindings_NameServ2(), this.getServiceName(), null, "nameServ2", null, 0, -1, Bindings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(requiredServiceEClass, RequiredService.class, "RequiredService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

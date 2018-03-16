@@ -429,10 +429,10 @@ public class InternalArchitectureLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalArchitecture.g:870:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalArchitecture.g:870:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalArchitecture.g:878:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalArchitecture.g:878:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalArchitecture.g:870:11: ( '^' )?
+            // InternalArchitecture.g:878:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -441,7 +441,7 @@ public class InternalArchitectureLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalArchitecture.g:870:11: '^'
+                    // InternalArchitecture.g:878:11: '^'
                     {
                     match('^'); 
 
@@ -459,7 +459,7 @@ public class InternalArchitectureLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalArchitecture.g:870:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalArchitecture.g:878:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -508,10 +508,10 @@ public class InternalArchitectureLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalArchitecture.g:872:10: ( ( '0' .. '9' )+ )
-            // InternalArchitecture.g:872:12: ( '0' .. '9' )+
+            // InternalArchitecture.g:880:10: ( ( '0' .. '9' )+ )
+            // InternalArchitecture.g:880:12: ( '0' .. '9' )+
             {
-            // InternalArchitecture.g:872:12: ( '0' .. '9' )+
+            // InternalArchitecture.g:880:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -525,7 +525,7 @@ public class InternalArchitectureLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalArchitecture.g:872:13: '0' .. '9'
+            	    // InternalArchitecture.g:880:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -557,10 +557,10 @@ public class InternalArchitectureLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalArchitecture.g:874:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalArchitecture.g:874:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalArchitecture.g:882:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalArchitecture.g:882:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalArchitecture.g:874:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalArchitecture.g:882:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -578,10 +578,10 @@ public class InternalArchitectureLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalArchitecture.g:874:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalArchitecture.g:882:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalArchitecture.g:874:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalArchitecture.g:882:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -597,7 +597,7 @@ public class InternalArchitectureLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalArchitecture.g:874:21: '\\\\' .
+                    	    // InternalArchitecture.g:882:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -605,7 +605,7 @@ public class InternalArchitectureLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalArchitecture.g:874:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalArchitecture.g:882:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -630,10 +630,10 @@ public class InternalArchitectureLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalArchitecture.g:874:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalArchitecture.g:882:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalArchitecture.g:874:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalArchitecture.g:882:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -649,7 +649,7 @@ public class InternalArchitectureLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalArchitecture.g:874:54: '\\\\' .
+                    	    // InternalArchitecture.g:882:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -657,7 +657,7 @@ public class InternalArchitectureLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalArchitecture.g:874:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalArchitecture.g:882:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -700,12 +700,12 @@ public class InternalArchitectureLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalArchitecture.g:876:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalArchitecture.g:876:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalArchitecture.g:884:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalArchitecture.g:884:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalArchitecture.g:876:24: ( options {greedy=false; } : . )*
+            // InternalArchitecture.g:884:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -730,7 +730,7 @@ public class InternalArchitectureLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalArchitecture.g:876:52: .
+            	    // InternalArchitecture.g:884:52: .
             	    {
             	    matchAny(); 
 
@@ -760,12 +760,12 @@ public class InternalArchitectureLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalArchitecture.g:878:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalArchitecture.g:878:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalArchitecture.g:886:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalArchitecture.g:886:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalArchitecture.g:878:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalArchitecture.g:886:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -778,7 +778,7 @@ public class InternalArchitectureLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalArchitecture.g:878:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalArchitecture.g:886:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -798,7 +798,7 @@ public class InternalArchitectureLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalArchitecture.g:878:40: ( ( '\\r' )? '\\n' )?
+            // InternalArchitecture.g:886:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -807,9 +807,9 @@ public class InternalArchitectureLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalArchitecture.g:878:41: ( '\\r' )? '\\n'
+                    // InternalArchitecture.g:886:41: ( '\\r' )? '\\n'
                     {
-                    // InternalArchitecture.g:878:41: ( '\\r' )?
+                    // InternalArchitecture.g:886:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -818,7 +818,7 @@ public class InternalArchitectureLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalArchitecture.g:878:41: '\\r'
+                            // InternalArchitecture.g:886:41: '\\r'
                             {
                             match('\r'); 
 
@@ -850,10 +850,10 @@ public class InternalArchitectureLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalArchitecture.g:880:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalArchitecture.g:880:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalArchitecture.g:888:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalArchitecture.g:888:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalArchitecture.g:880:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalArchitecture.g:888:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -907,8 +907,8 @@ public class InternalArchitectureLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalArchitecture.g:882:16: ( . )
-            // InternalArchitecture.g:882:18: .
+            // InternalArchitecture.g:890:16: ( . )
+            // InternalArchitecture.g:890:18: .
             {
             matchAny(); 
 

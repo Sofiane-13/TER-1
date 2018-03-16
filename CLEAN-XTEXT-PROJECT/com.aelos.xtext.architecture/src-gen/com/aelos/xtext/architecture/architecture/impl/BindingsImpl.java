@@ -26,8 +26,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingsImpl#getNameComp <em>Name Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingsImpl#getNameComp1 <em>Name Comp1</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingsImpl#getNameServ1 <em>Name Serv1</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingsImpl#getNameComp2 <em>Name Comp2</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingsImpl#getNameServ2 <em>Name Serv2</em>}</li>
  * </ul>
  *
@@ -36,14 +37,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindings
 {
   /**
-   * The cached value of the '{@link #getNameComp() <em>Name Comp</em>}' reference list.
+   * The cached value of the '{@link #getNameComp1() <em>Name Comp1</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNameComp()
+   * @see #getNameComp1()
    * @generated
    * @ordered
    */
-  protected EList<InstanceComp> nameComp;
+  protected EList<InstanceComp> nameComp1;
 
   /**
    * The cached value of the '{@link #getNameServ1() <em>Name Serv1</em>}' reference list.
@@ -54,6 +55,16 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
    * @ordered
    */
   protected EList<ServiceName> nameServ1;
+
+  /**
+   * The cached value of the '{@link #getNameComp2() <em>Name Comp2</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getNameComp2()
+   * @generated
+   * @ordered
+   */
+  protected EList<InstanceComp> nameComp2;
 
   /**
    * The cached value of the '{@link #getNameServ2() <em>Name Serv2</em>}' reference list.
@@ -91,13 +102,13 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<InstanceComp> getNameComp()
+  public EList<InstanceComp> getNameComp1()
   {
-    if (nameComp == null)
+    if (nameComp1 == null)
     {
-      nameComp = new EObjectResolvingEList<InstanceComp>(InstanceComp.class, this, ArchitecturePackage.BINDINGS__NAME_COMP);
+      nameComp1 = new EObjectResolvingEList<InstanceComp>(InstanceComp.class, this, ArchitecturePackage.BINDINGS__NAME_COMP1);
     }
-    return nameComp;
+    return nameComp1;
   }
 
   /**
@@ -112,6 +123,20 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
       nameServ1 = new EObjectResolvingEList<ServiceName>(ServiceName.class, this, ArchitecturePackage.BINDINGS__NAME_SERV1);
     }
     return nameServ1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<InstanceComp> getNameComp2()
+  {
+    if (nameComp2 == null)
+    {
+      nameComp2 = new EObjectResolvingEList<InstanceComp>(InstanceComp.class, this, ArchitecturePackage.BINDINGS__NAME_COMP2);
+    }
+    return nameComp2;
   }
 
   /**
@@ -138,10 +163,12 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     switch (featureID)
     {
-      case ArchitecturePackage.BINDINGS__NAME_COMP:
-        return getNameComp();
+      case ArchitecturePackage.BINDINGS__NAME_COMP1:
+        return getNameComp1();
       case ArchitecturePackage.BINDINGS__NAME_SERV1:
         return getNameServ1();
+      case ArchitecturePackage.BINDINGS__NAME_COMP2:
+        return getNameComp2();
       case ArchitecturePackage.BINDINGS__NAME_SERV2:
         return getNameServ2();
     }
@@ -159,13 +186,17 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     switch (featureID)
     {
-      case ArchitecturePackage.BINDINGS__NAME_COMP:
-        getNameComp().clear();
-        getNameComp().addAll((Collection<? extends InstanceComp>)newValue);
+      case ArchitecturePackage.BINDINGS__NAME_COMP1:
+        getNameComp1().clear();
+        getNameComp1().addAll((Collection<? extends InstanceComp>)newValue);
         return;
       case ArchitecturePackage.BINDINGS__NAME_SERV1:
         getNameServ1().clear();
         getNameServ1().addAll((Collection<? extends ServiceName>)newValue);
+        return;
+      case ArchitecturePackage.BINDINGS__NAME_COMP2:
+        getNameComp2().clear();
+        getNameComp2().addAll((Collection<? extends InstanceComp>)newValue);
         return;
       case ArchitecturePackage.BINDINGS__NAME_SERV2:
         getNameServ2().clear();
@@ -185,11 +216,14 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     switch (featureID)
     {
-      case ArchitecturePackage.BINDINGS__NAME_COMP:
-        getNameComp().clear();
+      case ArchitecturePackage.BINDINGS__NAME_COMP1:
+        getNameComp1().clear();
         return;
       case ArchitecturePackage.BINDINGS__NAME_SERV1:
         getNameServ1().clear();
+        return;
+      case ArchitecturePackage.BINDINGS__NAME_COMP2:
+        getNameComp2().clear();
         return;
       case ArchitecturePackage.BINDINGS__NAME_SERV2:
         getNameServ2().clear();
@@ -208,10 +242,12 @@ public class BindingsImpl extends MinimalEObjectImpl.Container implements Bindin
   {
     switch (featureID)
     {
-      case ArchitecturePackage.BINDINGS__NAME_COMP:
-        return nameComp != null && !nameComp.isEmpty();
+      case ArchitecturePackage.BINDINGS__NAME_COMP1:
+        return nameComp1 != null && !nameComp1.isEmpty();
       case ArchitecturePackage.BINDINGS__NAME_SERV1:
         return nameServ1 != null && !nameServ1.isEmpty();
+      case ArchitecturePackage.BINDINGS__NAME_COMP2:
+        return nameComp2 != null && !nameComp2.isEmpty();
       case ArchitecturePackage.BINDINGS__NAME_SERV2:
         return nameServ2 != null && !nameServ2.isEmpty();
     }

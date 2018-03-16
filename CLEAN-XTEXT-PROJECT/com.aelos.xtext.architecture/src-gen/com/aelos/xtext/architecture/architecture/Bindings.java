@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Bindings#getNameComp <em>Name Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.Bindings#getNameComp1 <em>Name Comp1</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.Bindings#getNameServ1 <em>Name Serv1</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.Bindings#getNameComp2 <em>Name Comp2</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.Bindings#getNameServ2 <em>Name Serv2</em>}</li>
  * </ul>
  *
@@ -28,20 +29,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface Bindings extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name Comp</b></em>' reference list.
+   * Returns the value of the '<em><b>Name Comp1</b></em>' reference list.
    * The list contents are of type {@link com.aelos.xtext.architecture.architecture.InstanceComp}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name Comp</em>' reference list isn't clear,
+   * If the meaning of the '<em>Name Comp1</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name Comp</em>' reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBindings_NameComp()
+   * @return the value of the '<em>Name Comp1</em>' reference list.
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBindings_NameComp1()
    * @model
    * @generated
    */
-  EList<InstanceComp> getNameComp();
+  EList<InstanceComp> getNameComp1();
 
   /**
    * Returns the value of the '<em><b>Name Serv1</b></em>' reference list.
@@ -58,6 +59,22 @@ public interface Bindings extends EObject
    * @generated
    */
   EList<ServiceName> getNameServ1();
+
+  /**
+   * Returns the value of the '<em><b>Name Comp2</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.InstanceComp}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name Comp2</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name Comp2</em>' reference list.
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBindings_NameComp2()
+   * @model
+   * @generated
+   */
+  EList<InstanceComp> getNameComp2();
 
   /**
    * Returns the value of the '<em><b>Name Serv2</b></em>' reference list.

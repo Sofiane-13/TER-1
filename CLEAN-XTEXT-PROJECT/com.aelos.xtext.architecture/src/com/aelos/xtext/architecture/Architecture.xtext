@@ -18,8 +18,9 @@ QualifiedNameWithWildcard:
         
 QualifiedName:
     ID ('.' ID)*;
+    
 Component :
-	"Component:" inst+=InstanceComp":" name=ID
+	=> "Component:" inst+=InstanceComp":" => name=ID
 	"ProvidedServices:"
 	"conf("(arg+=Variable ",")*arg1+=Variable")"
 	(methode+=ServiceName "("((arg+=Variable ",")*arg+=Variable)*")"(":"arg+=Variable)?)*
@@ -28,18 +29,16 @@ Component :
 	(bind+=Bindings)*
 ;
 
-InstanceComp:
-	name=ID;
+InstanceComp: name=ID;
 
 Variable:
       name=ID ":" type=Type;
       
 
 Bindings :
-	"bind(" nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
+	"bind(" nameComp1+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp2+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
 	  
 RequiredService:
-		 
 		nameVarMethode+=Variable":="nameComp+=[InstanceComp]'.'nameServ+=[ServiceName]";";
 	  
 

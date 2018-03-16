@@ -309,13 +309,13 @@ public interface ArchitecturePackage extends EPackage
   int BINDINGS = 6;
 
   /**
-   * The feature id for the '<em><b>Name Comp</b></em>' reference list.
+   * The feature id for the '<em><b>Name Comp1</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDINGS__NAME_COMP = 0;
+  int BINDINGS__NAME_COMP1 = 0;
 
   /**
    * The feature id for the '<em><b>Name Serv1</b></em>' reference list.
@@ -327,13 +327,22 @@ public interface ArchitecturePackage extends EPackage
   int BINDINGS__NAME_SERV1 = 1;
 
   /**
+   * The feature id for the '<em><b>Name Comp2</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDINGS__NAME_COMP2 = 2;
+
+  /**
    * The feature id for the '<em><b>Name Serv2</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINDINGS__NAME_SERV2 = 2;
+  int BINDINGS__NAME_SERV2 = 3;
 
   /**
    * The number of structural features of the '<em>Bindings</em>' class.
@@ -342,7 +351,7 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    * @ordered
    */
-  int BINDINGS_FEATURE_COUNT = 3;
+  int BINDINGS_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.RequiredServiceImpl <em>Required Service</em>}' class.
@@ -643,15 +652,15 @@ public interface ArchitecturePackage extends EPackage
   EClass getBindings();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Bindings#getNameComp <em>Name Comp</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Bindings#getNameComp1 <em>Name Comp1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Name Comp</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Bindings#getNameComp()
+   * @return the meta object for the reference list '<em>Name Comp1</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Bindings#getNameComp1()
    * @see #getBindings()
    * @generated
    */
-  EReference getBindings_NameComp();
+  EReference getBindings_NameComp1();
 
   /**
    * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Bindings#getNameServ1 <em>Name Serv1</em>}'.
@@ -663,6 +672,17 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    */
   EReference getBindings_NameServ1();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Bindings#getNameComp2 <em>Name Comp2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Name Comp2</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Bindings#getNameComp2()
+   * @see #getBindings()
+   * @generated
+   */
+  EReference getBindings_NameComp2();
 
   /**
    * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Bindings#getNameServ2 <em>Name Serv2</em>}'.
@@ -947,12 +967,12 @@ public interface ArchitecturePackage extends EPackage
     EClass BINDINGS = eINSTANCE.getBindings();
 
     /**
-     * The meta object literal for the '<em><b>Name Comp</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Name Comp1</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BINDINGS__NAME_COMP = eINSTANCE.getBindings_NameComp();
+    EReference BINDINGS__NAME_COMP1 = eINSTANCE.getBindings_NameComp1();
 
     /**
      * The meta object literal for the '<em><b>Name Serv1</b></em>' reference list feature.
@@ -961,6 +981,14 @@ public interface ArchitecturePackage extends EPackage
      * @generated
      */
     EReference BINDINGS__NAME_SERV1 = eINSTANCE.getBindings_NameServ1();
+
+    /**
+     * The meta object literal for the '<em><b>Name Comp2</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDINGS__NAME_COMP2 = eINSTANCE.getBindings_NameComp2();
 
     /**
      * The meta object literal for the '<em><b>Name Serv2</b></em>' reference list feature.

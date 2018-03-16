@@ -124,6 +124,7 @@ ruleAbstractModel returns [EObject current=null]
 			}
 		)?
 		(
+			('Component:')=>
 			(
 				{
 					newCompositeNode(grammarAccess.getAbstractModelAccess().getCompComponentParserRuleCall_1_0());
@@ -279,10 +280,13 @@ ruleComponent returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Component:'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getComponentAccess().getComponentKeyword_0());
-		}
+		(
+			('Component:')=>
+			otherlv_0='Component:'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getComponentAccess().getComponentKeyword_0());
+			}
+		)
 		(
 			(
 				{
@@ -307,6 +311,10 @@ ruleComponent returns [EObject current=null]
 			newLeafNode(otherlv_2, grammarAccess.getComponentAccess().getColonKeyword_2());
 		}
 		(
+			((
+				RULE_ID
+			)
+			)=>
 			(
 				lv_name_3_0=RULE_ID
 				{
@@ -651,7 +659,7 @@ ruleBindings returns [EObject current=null]
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getBindingsAccess().getNameCompInstanceCompCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getBindingsAccess().getNameComp1InstanceCompCrossReference_1_0());
 				}
 			)
 		)
@@ -685,7 +693,7 @@ ruleBindings returns [EObject current=null]
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getBindingsAccess().getNameCompInstanceCompCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getBindingsAccess().getNameComp2InstanceCompCrossReference_5_0());
 				}
 			)
 		)

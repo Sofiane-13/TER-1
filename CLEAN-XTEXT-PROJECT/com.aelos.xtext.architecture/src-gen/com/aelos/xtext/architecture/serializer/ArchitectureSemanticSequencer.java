@@ -108,7 +108,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Bindings returns Bindings
 	 *
 	 * Constraint:
-	 *     (nameComp+=[InstanceComp|ID] nameServ1+=[ServiceName|ID] nameComp+=[InstanceComp|ID] nameServ2+=[ServiceName|ID])
+	 *     (nameComp1+=[InstanceComp|ID] nameServ1+=[ServiceName|ID] nameComp2+=[InstanceComp|ID] nameServ2+=[ServiceName|ID])
 	 */
 	protected void sequence_Bindings(ISerializationContext context, Bindings semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

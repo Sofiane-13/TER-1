@@ -62,9 +62,9 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInstanceCompAccess().getNameAssignment(), "rule__InstanceComp__NameAssignment");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
 			builder.put(grammarAccess.getVariableAccess().getTypeAssignment_2(), "rule__Variable__TypeAssignment_2");
-			builder.put(grammarAccess.getBindingsAccess().getNameCompAssignment_1(), "rule__Bindings__NameCompAssignment_1");
+			builder.put(grammarAccess.getBindingsAccess().getNameComp1Assignment_1(), "rule__Bindings__NameComp1Assignment_1");
 			builder.put(grammarAccess.getBindingsAccess().getNameServ1Assignment_3(), "rule__Bindings__NameServ1Assignment_3");
-			builder.put(grammarAccess.getBindingsAccess().getNameCompAssignment_5(), "rule__Bindings__NameCompAssignment_5");
+			builder.put(grammarAccess.getBindingsAccess().getNameComp2Assignment_5(), "rule__Bindings__NameComp2Assignment_5");
 			builder.put(grammarAccess.getBindingsAccess().getNameServ2Assignment_7(), "rule__Bindings__NameServ2Assignment_7");
 			builder.put(grammarAccess.getRequiredServiceAccess().getNameVarMethodeAssignment_0(), "rule__RequiredService__NameVarMethodeAssignment_0");
 			builder.put(grammarAccess.getRequiredServiceAccess().getNameCompAssignment_2(), "rule__RequiredService__NameCompAssignment_2");

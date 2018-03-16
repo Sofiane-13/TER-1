@@ -174,7 +174,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cBindBindingsParserRuleCall_12_0 = (RuleCall)cBindAssignment_12.eContents().get(0);
 		
 		//Component:
-		//	"Component:" inst+=InstanceComp ":" name=ID
+		//	=> "Component:" inst+=InstanceComp ":" => name=ID
 		//	"ProvidedServices:"
 		//	"conf(" (arg+=Variable ",")* arg1+=Variable ")" (methode+=ServiceName "(" ((arg+=Variable ",")* arg+=Variable)* ")"
 		//	(":" arg+=Variable)?)*
@@ -183,12 +183,12 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//	bind+=Bindings*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Component:" inst+=InstanceComp ":" name=ID "ProvidedServices:" "conf(" (arg+=Variable ",")* arg1+=Variable ")"
+		//=> "Component:" inst+=InstanceComp ":" => name=ID "ProvidedServices:" "conf(" (arg+=Variable ",")* arg1+=Variable ")"
 		//(methode+=ServiceName "(" ((arg+=Variable ",")* arg+=Variable)* ")" (":" arg+=Variable)?)* "RequiredServices:"?
 		//req+=RequiredService* bind+=Bindings*
 		public Group getGroup() { return cGroup; }
 		
-		//"Component:"
+		//=> "Component:"
 		public Keyword getComponentKeyword_0() { return cComponentKeyword_0; }
 		
 		//inst+=InstanceComp
@@ -200,7 +200,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
 		
-		//name=ID
+		//=> name=ID
 		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 		
 		//ID
@@ -346,17 +346,17 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Bindings");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBindKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameCompAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cNameCompInstanceCompCrossReference_1_0 = (CrossReference)cNameCompAssignment_1.eContents().get(0);
-		private final RuleCall cNameCompInstanceCompIDTerminalRuleCall_1_0_1 = (RuleCall)cNameCompInstanceCompCrossReference_1_0.eContents().get(1);
+		private final Assignment cNameComp1Assignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cNameComp1InstanceCompCrossReference_1_0 = (CrossReference)cNameComp1Assignment_1.eContents().get(0);
+		private final RuleCall cNameComp1InstanceCompIDTerminalRuleCall_1_0_1 = (RuleCall)cNameComp1InstanceCompCrossReference_1_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cNameServ1Assignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cNameServ1ServiceNameCrossReference_3_0 = (CrossReference)cNameServ1Assignment_3.eContents().get(0);
 		private final RuleCall cNameServ1ServiceNameIDTerminalRuleCall_3_0_1 = (RuleCall)cNameServ1ServiceNameCrossReference_3_0.eContents().get(1);
 		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cNameCompAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cNameCompInstanceCompCrossReference_5_0 = (CrossReference)cNameCompAssignment_5.eContents().get(0);
-		private final RuleCall cNameCompInstanceCompIDTerminalRuleCall_5_0_1 = (RuleCall)cNameCompInstanceCompCrossReference_5_0.eContents().get(1);
+		private final Assignment cNameComp2Assignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cNameComp2InstanceCompCrossReference_5_0 = (CrossReference)cNameComp2Assignment_5.eContents().get(0);
+		private final RuleCall cNameComp2InstanceCompIDTerminalRuleCall_5_0_1 = (RuleCall)cNameComp2InstanceCompCrossReference_5_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cNameServ2Assignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final CrossReference cNameServ2ServiceNameCrossReference_7_0 = (CrossReference)cNameServ2Assignment_7.eContents().get(0);
@@ -364,25 +364,25 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Bindings:
-		//	"bind(" nameComp+=[InstanceComp] '.' nameServ1+=[ServiceName] "," nameComp+=[InstanceComp] '.'
+		//	"bind(" nameComp1+=[InstanceComp] '.' nameServ1+=[ServiceName] "," nameComp2+=[InstanceComp] '.'
 		//	nameServ2+=[ServiceName] ")";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"bind(" nameComp+=[InstanceComp] '.' nameServ1+=[ServiceName] "," nameComp+=[InstanceComp] '.' nameServ2+=[ServiceName]
-		//")"
+		//"bind(" nameComp1+=[InstanceComp] '.' nameServ1+=[ServiceName] "," nameComp2+=[InstanceComp] '.'
+		//nameServ2+=[ServiceName] ")"
 		public Group getGroup() { return cGroup; }
 		
 		//"bind("
 		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
 		
-		//nameComp+=[InstanceComp]
-		public Assignment getNameCompAssignment_1() { return cNameCompAssignment_1; }
+		//nameComp1+=[InstanceComp]
+		public Assignment getNameComp1Assignment_1() { return cNameComp1Assignment_1; }
 		
 		//[InstanceComp]
-		public CrossReference getNameCompInstanceCompCrossReference_1_0() { return cNameCompInstanceCompCrossReference_1_0; }
+		public CrossReference getNameComp1InstanceCompCrossReference_1_0() { return cNameComp1InstanceCompCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getNameCompInstanceCompIDTerminalRuleCall_1_0_1() { return cNameCompInstanceCompIDTerminalRuleCall_1_0_1; }
+		public RuleCall getNameComp1InstanceCompIDTerminalRuleCall_1_0_1() { return cNameComp1InstanceCompIDTerminalRuleCall_1_0_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
@@ -399,14 +399,14 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
 		
-		//nameComp+=[InstanceComp]
-		public Assignment getNameCompAssignment_5() { return cNameCompAssignment_5; }
+		//nameComp2+=[InstanceComp]
+		public Assignment getNameComp2Assignment_5() { return cNameComp2Assignment_5; }
 		
 		//[InstanceComp]
-		public CrossReference getNameCompInstanceCompCrossReference_5_0() { return cNameCompInstanceCompCrossReference_5_0; }
+		public CrossReference getNameComp2InstanceCompCrossReference_5_0() { return cNameComp2InstanceCompCrossReference_5_0; }
 		
 		//ID
-		public RuleCall getNameCompInstanceCompIDTerminalRuleCall_5_0_1() { return cNameCompInstanceCompIDTerminalRuleCall_5_0_1; }
+		public RuleCall getNameComp2InstanceCompIDTerminalRuleCall_5_0_1() { return cNameComp2InstanceCompIDTerminalRuleCall_5_0_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_6() { return cFullStopKeyword_6; }
@@ -652,7 +652,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Component:
-	//	"Component:" inst+=InstanceComp ":" name=ID
+	//	=> "Component:" inst+=InstanceComp ":" => name=ID
 	//	"ProvidedServices:"
 	//	"conf(" (arg+=Variable ",")* arg1+=Variable ")" (methode+=ServiceName "(" ((arg+=Variable ",")* arg+=Variable)* ")"
 	//	(":" arg+=Variable)?)*
@@ -688,7 +688,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Bindings:
-	//	"bind(" nameComp+=[InstanceComp] '.' nameServ1+=[ServiceName] "," nameComp+=[InstanceComp] '.'
+	//	"bind(" nameComp1+=[InstanceComp] '.' nameServ1+=[ServiceName] "," nameComp2+=[InstanceComp] '.'
 	//	nameServ2+=[ServiceName] ")";
 	public BindingsElements getBindingsAccess() {
 		return pBindings;
