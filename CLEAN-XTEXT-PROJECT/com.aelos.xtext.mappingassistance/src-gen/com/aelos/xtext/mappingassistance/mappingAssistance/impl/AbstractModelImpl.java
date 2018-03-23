@@ -4,21 +4,72 @@
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Abstract Model</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getIm <em>Im</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getTestDr <em>Test Dr</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getObs <em>Obs</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class AbstractModelImpl extends MinimalEObjectImpl.Container implements AbstractModel
 {
+  /**
+   * The cached value of the '{@link #getIm() <em>Im</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIm()
+   * @generated
+   * @ordered
+   */
+  protected EList<Import> im;
+
+  /**
+   * The cached value of the '{@link #getTestDr() <em>Test Dr</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTestDr()
+   * @generated
+   * @ordered
+   */
+  protected EList<TestDriver> testDr;
+
+  /**
+   * The cached value of the '{@link #getObs() <em>Obs</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getObs()
+   * @generated
+   * @ordered
+   */
+  protected EList<Observer> obs;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -38,6 +89,158 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
   protected EClass eStaticClass()
   {
     return MappingAssistancePackage.Literals.ABSTRACT_MODEL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Import> getIm()
+  {
+    if (im == null)
+    {
+      im = new EObjectContainmentEList<Import>(Import.class, this, MappingAssistancePackage.ABSTRACT_MODEL__IM);
+    }
+    return im;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<TestDriver> getTestDr()
+  {
+    if (testDr == null)
+    {
+      testDr = new EObjectContainmentEList<TestDriver>(TestDriver.class, this, MappingAssistancePackage.ABSTRACT_MODEL__TEST_DR);
+    }
+    return testDr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Observer> getObs()
+  {
+    if (obs == null)
+    {
+      obs = new EObjectContainmentEList<Observer>(Observer.class, this, MappingAssistancePackage.ABSTRACT_MODEL__OBS);
+    }
+    return obs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MappingAssistancePackage.ABSTRACT_MODEL__IM:
+        return ((InternalEList<?>)getIm()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.ABSTRACT_MODEL__TEST_DR:
+        return ((InternalEList<?>)getTestDr()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.ABSTRACT_MODEL__OBS:
+        return ((InternalEList<?>)getObs()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case MappingAssistancePackage.ABSTRACT_MODEL__IM:
+        return getIm();
+      case MappingAssistancePackage.ABSTRACT_MODEL__TEST_DR:
+        return getTestDr();
+      case MappingAssistancePackage.ABSTRACT_MODEL__OBS:
+        return getObs();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @SuppressWarnings("unchecked")
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case MappingAssistancePackage.ABSTRACT_MODEL__IM:
+        getIm().clear();
+        getIm().addAll((Collection<? extends Import>)newValue);
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__TEST_DR:
+        getTestDr().clear();
+        getTestDr().addAll((Collection<? extends TestDriver>)newValue);
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__OBS:
+        getObs().clear();
+        getObs().addAll((Collection<? extends Observer>)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case MappingAssistancePackage.ABSTRACT_MODEL__IM:
+        getIm().clear();
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__TEST_DR:
+        getTestDr().clear();
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__OBS:
+        getObs().clear();
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case MappingAssistancePackage.ABSTRACT_MODEL__IM:
+        return im != null && !im.isEmpty();
+      case MappingAssistancePackage.ABSTRACT_MODEL__TEST_DR:
+        return testDr != null && !testDr.isEmpty();
+      case MappingAssistancePackage.ABSTRACT_MODEL__OBS:
+        return obs != null && !obs.isEmpty();
+    }
+    return super.eIsSet(featureID);
   }
 
 } //AbstractModelImpl

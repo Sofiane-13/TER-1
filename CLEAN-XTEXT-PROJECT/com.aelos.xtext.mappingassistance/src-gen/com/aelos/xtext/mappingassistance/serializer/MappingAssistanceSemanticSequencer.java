@@ -3,16 +3,13 @@
  */
 package com.aelos.xtext.mappingassistance.serializer;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Component;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
-import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Mapping;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
-import com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService;
-import com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Variable;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.services.MappingAssistanceGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -40,39 +37,23 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MappingAssistancePackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case MappingAssistancePackage.BINDINGS:
-				sequence_Bindings(context, (Bindings) semanticObject); 
+			case MappingAssistancePackage.ABSTRACT_MODEL:
+				sequence_AbstractModel(context, (AbstractModel) semanticObject); 
 				return; 
-			case MappingAssistancePackage.COMPONENT:
-				sequence_Component(context, (Component) semanticObject); 
+			case MappingAssistancePackage.CALL:
+				sequence_Call(context, (Call) semanticObject); 
 				return; 
 			case MappingAssistancePackage.IMPORT:
-				if (rule == grammarAccess.getAbstractModelRule()) {
-					sequence_AbstractModel_Import(context, (Import) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getImportRule()) {
-					sequence_Import(context, (Import) semanticObject); 
-					return; 
-				}
-				else break;
-			case MappingAssistancePackage.INSTANCE_COMP:
-				sequence_InstanceComp(context, (InstanceComp) semanticObject); 
-				return; 
-			case MappingAssistancePackage.MAPPING:
-				sequence_Mapping(context, (Mapping) semanticObject); 
+				sequence_Import(context, (Import) semanticObject); 
 				return; 
 			case MappingAssistancePackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case MappingAssistancePackage.REQUIRED_SERVICE:
-				sequence_RequiredService(context, (RequiredService) semanticObject); 
+			case MappingAssistancePackage.OBSERVER:
+				sequence_Observer(context, (Observer) semanticObject); 
 				return; 
-			case MappingAssistancePackage.SERVICE_NAME:
-				sequence_ServiceName(context, (ServiceName) semanticObject); 
-				return; 
-			case MappingAssistancePackage.VARIABLE:
-				sequence_Variable(context, (Variable) semanticObject); 
+			case MappingAssistancePackage.TEST_DRIVER:
+				sequence_TestDriver(context, (TestDriver) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -81,45 +62,24 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     AbstractModel returns Import
+	 *     AbstractModel returns AbstractModel
 	 *
 	 * Constraint:
-	 *     (importedNamespace=QualifiedNameWithWildcard comp+=Component+)
+	 *     (im+=Import+ testDr+=TestDriver obs+=Observer*)
 	 */
-	protected void sequence_AbstractModel_Import(ISerializationContext context, Import semanticObject) {
+	protected void sequence_AbstractModel(ISerializationContext context, AbstractModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Bindings returns Bindings
+	 *     Call returns Call
 	 *
 	 * Constraint:
-	 *     (nameComp+=[InstanceComp|ID] nameServ1+=[ServiceName|ID] nameComp+=[InstanceComp|ID] nameServ2+=[ServiceName|ID])
+	 *     (receiver=[Variable|ID] member+=[Operation|ID])
 	 */
-	protected void sequence_Bindings(ISerializationContext context, Bindings semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Component returns Component
-	 *
-	 * Constraint:
-	 *     (
-	 *         inst+=InstanceComp 
-	 *         name=ID 
-	 *         arg+=Variable* 
-	 *         arg1+=Variable 
-	 *         (methode+=ServiceName (arg+=Variable* arg+=Variable)* arg+=Variable?)* 
-	 *         req+=RequiredService* 
-	 *         map+=Mapping* 
-	 *         bind+=Bindings*
-	 *     )
-	 */
-	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
+	protected void sequence_Call(ISerializationContext context, Call semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -144,36 +104,6 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     InstanceComp returns InstanceComp
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_InstanceComp(ISerializationContext context, InstanceComp semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MappingAssistancePackage.Literals.INSTANCE_COMP__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MappingAssistancePackage.Literals.INSTANCE_COMP__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInstanceCompAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Mapping returns Mapping
-	 *
-	 * Constraint:
-	 *     (nameVarMode+=[Variable|ID] nameVarTest+=[Variable|ID])
-	 */
-	protected void sequence_Mapping(ISerializationContext context, Mapping semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
@@ -186,52 +116,25 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     RequiredService returns RequiredService
+	 *     Observer returns Observer
 	 *
 	 * Constraint:
-	 *     (nameVarMethode+=Variable nameComp+=[InstanceComp|ID] nameServ+=[ServiceName|ID])
+	 *     (name=ID serviceName1+=Call serviceName2+=Call (arg+=[Variable|ID]* arg+=[Variable|ID])*)
 	 */
-	protected void sequence_RequiredService(ISerializationContext context, RequiredService semanticObject) {
+	protected void sequence_Observer(ISerializationContext context, Observer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     ServiceName returns ServiceName
+	 *     TestDriver returns TestDriver
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (outVar+=[Variable|ID] tagetedservice+=Call (arg+=[Variable|ID]* arg+=[Variable|ID])*)+
 	 */
-	protected void sequence_ServiceName(ISerializationContext context, ServiceName semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MappingAssistancePackage.Literals.SERVICE_NAME__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MappingAssistancePackage.Literals.SERVICE_NAME__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getServiceNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Variable returns Variable
-	 *
-	 * Constraint:
-	 *     (name=ID type=Type)
-	 */
-	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MappingAssistancePackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MappingAssistancePackage.Literals.VARIABLE__NAME));
-			if (transientValues.isValueTransient(semanticObject, MappingAssistancePackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MappingAssistancePackage.Literals.VARIABLE__TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getVariableAccess().getTypeTypeEnumRuleCall_2_0(), semanticObject.getType());
-		feeder.finish();
+	protected void sequence_TestDriver(ISerializationContext context, TestDriver semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

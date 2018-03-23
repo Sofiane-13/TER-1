@@ -3,25 +3,21 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
+import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
+
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Component;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
-import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Mapping;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistanceFactory;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
-import com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService;
-import com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Type;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Variable;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -61,56 +57,21 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass componentEClass = null;
+  private EClass testDriverEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass instanceCompEClass = null;
+  private EClass observerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass variableEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass mappingEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass bindingsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass requiredServiceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass serviceNameEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EEnum typeEEnum = null;
+  private EClass callEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -162,6 +123,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     isInited = true;
 
     // Initialize simple dependencies
+    ArchitecturePackage.eINSTANCE.eClass();
     TestintentionsAssistancePackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
@@ -213,6 +175,36 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getAbstractModel_Im()
+  {
+    return (EReference)abstractModelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbstractModel_TestDr()
+  {
+    return (EReference)abstractModelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbstractModel_Obs()
+  {
+    return (EReference)abstractModelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getImport()
   {
     return importEClass;
@@ -223,19 +215,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getImport_Comp()
-  {
-    return (EReference)importEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getImport_ImportedNamespace()
   {
-    return (EAttribute)importEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)importEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -243,9 +225,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getComponent()
+  public EClass getTestDriver()
   {
-    return componentEClass;
+    return testDriverEClass;
   }
 
   /**
@@ -253,9 +235,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Inst()
+  public EReference getTestDriver_OutVar()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(0);
+    return (EReference)testDriverEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -263,9 +245,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getComponent_Name()
+  public EReference getTestDriver_Tagetedservice()
   {
-    return (EAttribute)componentEClass.getEStructuralFeatures().get(1);
+    return (EReference)testDriverEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -273,9 +255,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Arg()
+  public EReference getTestDriver_Arg()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(2);
+    return (EReference)testDriverEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -283,9 +265,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Arg1()
+  public EClass getObserver()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(3);
+    return observerEClass;
   }
 
   /**
@@ -293,9 +275,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Methode()
+  public EAttribute getObserver_Name()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)observerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -303,9 +285,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Req()
+  public EReference getObserver_ServiceName1()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(5);
+    return (EReference)observerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -313,9 +295,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Map()
+  public EReference getObserver_ServiceName2()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(6);
+    return (EReference)observerEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -323,9 +305,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Bind()
+  public EReference getObserver_Arg()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(7);
+    return (EReference)observerEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -333,9 +315,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getInstanceComp()
+  public EClass getCall()
   {
-    return instanceCompEClass;
+    return callEClass;
   }
 
   /**
@@ -343,9 +325,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getInstanceComp_Name()
+  public EReference getCall_Receiver()
   {
-    return (EAttribute)instanceCompEClass.getEStructuralFeatures().get(0);
+    return (EReference)callEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -353,169 +335,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariable()
+  public EReference getCall_Member()
   {
-    return variableEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVariable_Name()
-  {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVariable_Type()
-  {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getMapping()
-  {
-    return mappingEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMapping_NameVarMode()
-  {
-    return (EReference)mappingEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMapping_NameVarTest()
-  {
-    return (EReference)mappingEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getBindings()
-  {
-    return bindingsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBindings_NameComp()
-  {
-    return (EReference)bindingsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBindings_NameServ1()
-  {
-    return (EReference)bindingsEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getBindings_NameServ2()
-  {
-    return (EReference)bindingsEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getRequiredService()
-  {
-    return requiredServiceEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequiredService_NameVarMethode()
-  {
-    return (EReference)requiredServiceEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequiredService_NameComp()
-  {
-    return (EReference)requiredServiceEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getRequiredService_NameServ()
-  {
-    return (EReference)requiredServiceEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getServiceName()
-  {
-    return serviceNameEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getServiceName_Name()
-  {
-    return (EAttribute)serviceNameEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EEnum getType()
-  {
-    return typeEEnum;
+    return (EReference)callEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -552,47 +374,27 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     createEReference(modelEClass, MODEL__FUNCTION);
 
     abstractModelEClass = createEClass(ABSTRACT_MODEL);
+    createEReference(abstractModelEClass, ABSTRACT_MODEL__IM);
+    createEReference(abstractModelEClass, ABSTRACT_MODEL__TEST_DR);
+    createEReference(abstractModelEClass, ABSTRACT_MODEL__OBS);
 
     importEClass = createEClass(IMPORT);
-    createEReference(importEClass, IMPORT__COMP);
     createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
 
-    componentEClass = createEClass(COMPONENT);
-    createEReference(componentEClass, COMPONENT__INST);
-    createEAttribute(componentEClass, COMPONENT__NAME);
-    createEReference(componentEClass, COMPONENT__ARG);
-    createEReference(componentEClass, COMPONENT__ARG1);
-    createEReference(componentEClass, COMPONENT__METHODE);
-    createEReference(componentEClass, COMPONENT__REQ);
-    createEReference(componentEClass, COMPONENT__MAP);
-    createEReference(componentEClass, COMPONENT__BIND);
+    testDriverEClass = createEClass(TEST_DRIVER);
+    createEReference(testDriverEClass, TEST_DRIVER__OUT_VAR);
+    createEReference(testDriverEClass, TEST_DRIVER__TAGETEDSERVICE);
+    createEReference(testDriverEClass, TEST_DRIVER__ARG);
 
-    instanceCompEClass = createEClass(INSTANCE_COMP);
-    createEAttribute(instanceCompEClass, INSTANCE_COMP__NAME);
+    observerEClass = createEClass(OBSERVER);
+    createEAttribute(observerEClass, OBSERVER__NAME);
+    createEReference(observerEClass, OBSERVER__SERVICE_NAME1);
+    createEReference(observerEClass, OBSERVER__SERVICE_NAME2);
+    createEReference(observerEClass, OBSERVER__ARG);
 
-    variableEClass = createEClass(VARIABLE);
-    createEAttribute(variableEClass, VARIABLE__NAME);
-    createEAttribute(variableEClass, VARIABLE__TYPE);
-
-    mappingEClass = createEClass(MAPPING);
-    createEReference(mappingEClass, MAPPING__NAME_VAR_MODE);
-    createEReference(mappingEClass, MAPPING__NAME_VAR_TEST);
-
-    bindingsEClass = createEClass(BINDINGS);
-    createEReference(bindingsEClass, BINDINGS__NAME_COMP);
-    createEReference(bindingsEClass, BINDINGS__NAME_SERV1);
-    createEReference(bindingsEClass, BINDINGS__NAME_SERV2);
-
-    requiredServiceEClass = createEClass(REQUIRED_SERVICE);
-    createEReference(requiredServiceEClass, REQUIRED_SERVICE__NAME_VAR_METHODE);
-    createEReference(requiredServiceEClass, REQUIRED_SERVICE__NAME_COMP);
-    createEReference(requiredServiceEClass, REQUIRED_SERVICE__NAME_SERV);
-
-    serviceNameEClass = createEClass(SERVICE_NAME);
-    createEAttribute(serviceNameEClass, SERVICE_NAME__NAME);
-
-    // Create enums
-    typeEEnum = createEEnum(TYPE);
+    callEClass = createEClass(CALL);
+    createEReference(callEClass, CALL__RECEIVER);
+    createEReference(callEClass, CALL__MEMBER);
   }
 
   /**
@@ -621,64 +423,40 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
 
     // Obtain other dependent packages
     TestintentionsAssistancePackage theTestintentionsAssistancePackage = (TestintentionsAssistancePackage)EPackage.Registry.INSTANCE.getEPackage(TestintentionsAssistancePackage.eNS_URI);
+    ArchitecturePackage theArchitecturePackage = (ArchitecturePackage)EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI);
 
     // Create type parameters
 
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    importEClass.getESuperTypes().add(this.getAbstractModel());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Function(), this.getAbstractModel(), null, "function", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractModelEClass, AbstractModel.class, "AbstractModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAbstractModel_Im(), this.getImport(), null, "im", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractModel_TestDr(), this.getTestDriver(), null, "testDr", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractModel_Obs(), this.getObserver(), null, "obs", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getImport_Comp(), this.getComponent(), null, "comp", null, 0, -1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComponent_Inst(), this.getInstanceComp(), null, "inst", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Arg(), this.getVariable(), null, "arg", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Arg1(), this.getVariable(), null, "arg1", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Methode(), this.getServiceName(), null, "methode", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Req(), this.getRequiredService(), null, "req", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Map(), this.getMapping(), null, "map", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Bind(), this.getBindings(), null, "bind", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(testDriverEClass, TestDriver.class, "TestDriver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTestDriver_OutVar(), theTestintentionsAssistancePackage.getVariable(), null, "outVar", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestDriver_Tagetedservice(), this.getCall(), null, "tagetedservice", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestDriver_Arg(), theTestintentionsAssistancePackage.getVariable(), null, "arg", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(instanceCompEClass, InstanceComp.class, "InstanceComp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInstanceComp_Name(), ecorePackage.getEString(), "name", null, 0, 1, InstanceComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(observerEClass, Observer.class, "Observer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getObserver_Name(), ecorePackage.getEString(), "name", null, 0, 1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObserver_ServiceName1(), this.getCall(), null, "serviceName1", null, 0, -1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObserver_ServiceName2(), this.getCall(), null, "serviceName2", null, 0, -1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObserver_Arg(), theTestintentionsAssistancePackage.getVariable(), null, "arg", null, 0, -1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariable_Type(), this.getType(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(mappingEClass, Mapping.class, "Mapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMapping_NameVarMode(), this.getVariable(), null, "nameVarMode", null, 0, -1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMapping_NameVarTest(), theTestintentionsAssistancePackage.getVariable(), null, "nameVarTest", null, 0, -1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(bindingsEClass, Bindings.class, "Bindings", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBindings_NameComp(), this.getInstanceComp(), null, "nameComp", null, 0, -1, Bindings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBindings_NameServ1(), this.getServiceName(), null, "nameServ1", null, 0, -1, Bindings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBindings_NameServ2(), this.getServiceName(), null, "nameServ2", null, 0, -1, Bindings.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(requiredServiceEClass, RequiredService.class, "RequiredService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRequiredService_NameVarMethode(), this.getVariable(), null, "nameVarMethode", null, 0, -1, RequiredService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequiredService_NameComp(), this.getInstanceComp(), null, "nameComp", null, 0, -1, RequiredService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRequiredService_NameServ(), this.getServiceName(), null, "nameServ", null, 0, -1, RequiredService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(serviceNameEClass, ServiceName.class, "ServiceName", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getServiceName_Name(), ecorePackage.getEString(), "name", null, 0, 1, ServiceName.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    // Initialize enums and add enum literals
-    initEEnum(typeEEnum, Type.class, "Type");
-    addEEnumLiteral(typeEEnum, Type.INT);
-    addEEnumLiteral(typeEEnum, Type.STRING);
-    addEEnumLiteral(typeEEnum, Type.BOOLEAN);
-    addEEnumLiteral(typeEEnum, Type.DOUBLE);
+    initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCall_Receiver(), theArchitecturePackage.getVariable(), null, "receiver", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCall_Member(), theArchitecturePackage.getOperation(), null, "member", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

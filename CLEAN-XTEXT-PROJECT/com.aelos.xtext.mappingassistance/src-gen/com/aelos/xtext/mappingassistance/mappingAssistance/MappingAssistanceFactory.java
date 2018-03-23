@@ -51,67 +51,31 @@ public interface MappingAssistanceFactory extends EFactory
   Import createImport();
 
   /**
-   * Returns a new object of class '<em>Component</em>'.
+   * Returns a new object of class '<em>Test Driver</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component</em>'.
+   * @return a new object of class '<em>Test Driver</em>'.
    * @generated
    */
-  Component createComponent();
+  TestDriver createTestDriver();
 
   /**
-   * Returns a new object of class '<em>Instance Comp</em>'.
+   * Returns a new object of class '<em>Observer</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instance Comp</em>'.
+   * @return a new object of class '<em>Observer</em>'.
    * @generated
    */
-  InstanceComp createInstanceComp();
+  Observer createObserver();
 
   /**
-   * Returns a new object of class '<em>Variable</em>'.
+   * Returns a new object of class '<em>Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable</em>'.
+   * @return a new object of class '<em>Call</em>'.
    * @generated
    */
-  Variable createVariable();
-
-  /**
-   * Returns a new object of class '<em>Mapping</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mapping</em>'.
-   * @generated
-   */
-  Mapping createMapping();
-
-  /**
-   * Returns a new object of class '<em>Bindings</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bindings</em>'.
-   * @generated
-   */
-  Bindings createBindings();
-
-  /**
-   * Returns a new object of class '<em>Required Service</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Required Service</em>'.
-   * @generated
-   */
-  RequiredService createRequiredService();
-
-  /**
-   * Returns a new object of class '<em>Service Name</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Service Name</em>'.
-   * @generated
-   */
-  ServiceName createServiceName();
+  Call createCall();
 
   /**
    * Returns the package supported by this factory.

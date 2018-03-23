@@ -91,39 +91,19 @@ public class MappingAssistanceAdapterFactory extends AdapterFactoryImpl
         return createImportAdapter();
       }
       @Override
-      public Adapter caseComponent(Component object)
+      public Adapter caseTestDriver(TestDriver object)
       {
-        return createComponentAdapter();
+        return createTestDriverAdapter();
       }
       @Override
-      public Adapter caseInstanceComp(InstanceComp object)
+      public Adapter caseObserver(Observer object)
       {
-        return createInstanceCompAdapter();
+        return createObserverAdapter();
       }
       @Override
-      public Adapter caseVariable(Variable object)
+      public Adapter caseCall(Call object)
       {
-        return createVariableAdapter();
-      }
-      @Override
-      public Adapter caseMapping(Mapping object)
-      {
-        return createMappingAdapter();
-      }
-      @Override
-      public Adapter caseBindings(Bindings object)
-      {
-        return createBindingsAdapter();
-      }
-      @Override
-      public Adapter caseRequiredService(RequiredService object)
-      {
-        return createRequiredServiceAdapter();
-      }
-      @Override
-      public Adapter caseServiceName(ServiceName object)
-      {
-        return createServiceNameAdapter();
+        return createCallAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -193,106 +173,46 @@ public class MappingAssistanceAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Component <em>Component</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver <em>Test Driver</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Component
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver
    * @generated
    */
-  public Adapter createComponentAdapter()
+  public Adapter createTestDriverAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp <em>Instance Comp</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer <em>Observer</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer
    * @generated
    */
-  public Adapter createInstanceCompAdapter()
+  public Adapter createObserverAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Variable <em>Variable</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Call <em>Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Variable
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Call
    * @generated
    */
-  public Adapter createVariableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mapping <em>Mapping</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Mapping
-   * @generated
-   */
-  public Adapter createMappingAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings <em>Bindings</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Bindings
-   * @generated
-   */
-  public Adapter createBindingsAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService <em>Required Service</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService
-   * @generated
-   */
-  public Adapter createRequiredServiceAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName <em>Service Name</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName
-   * @generated
-   */
-  public Adapter createServiceNameAdapter()
+  public Adapter createCallAdapter()
   {
     return null;
   }

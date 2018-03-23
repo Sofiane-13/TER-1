@@ -3,12 +3,13 @@ grammar com.aelos.xtext.mappingassistance.MappingAssistance with org.eclipse.xte
 generate mappingAssistance "http://www.aelos.com/xtext/mappingassistance/MappingAssistance"
 
 import "http://www.aelos.com/xtext/testintentionsassistance/TestintentionsAssistance" as testIntention
+import "http://www.aelos.com/xtext/architecture/Architecture" as arch
 
 Model:
 	function+=AbstractModel*;
 
 
-AbstractModel:Import (comp+=Component )+ ;
+AbstractModel:(im+=Import)+ (testDr+=TestDriver ) (obs+=Observer)* ;
 
 Import:
     'import' importedNamespace=QualifiedNameWithWildcard;
@@ -18,40 +19,44 @@ QualifiedNameWithWildcard:
         
 QualifiedName:
     ID ('.' ID)*;
-Component :
-	
-	("Component" | "Mock" | "Observator")":" 
-	inst+=InstanceComp":" name=ID
-	"ProvidedServices:"
-	"conf("(arg+=Variable ",")*arg1+=Variable")"
-	(methode+=ServiceName "("((arg+=Variable ",")*arg+=Variable)*")"(":"arg+=Variable)?)*
-    "RequiredServices:"?
-    (req+=RequiredService)*
-	(map+=Mapping)*
-	(bind+=Bindings)*
-;
+TestDriver :
+	"TestDriver:"
+	(outVar+=[testIntention::Variable]":="tagetedservice+=Call"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
+	;
+Observer :
+	"observer:"name=ID"("serviceName1+=Call","serviceName2+=Call")"("("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*;	
+//	("Component" | "Mock" | "Observator")":" 
+//	inst+=InstanceComp":" name=ID
+//	"ProvidedServices:"
+//	"conf("(arg+=Variable ",")*arg1+=Variable")"
+//	(methode+=ServiceName "("((arg+=Variable ",")*arg+=Variable)*")"(":"arg+=Variable)?)*
+//    "RequiredServices:"?
+//    (req+=RequiredService)*
+//	(map+=Mapping)*
+//	(bind+=Bindings)*
+//;
+//
+//InstanceComp:
+//	name=ID
+//;
+//
+//Variable:
+//      name=ID ":" type=Type;
+//      
+//Mapping :
+//	 'varModel:' nameVarMode+=[Variable] 'ref' 'varTest:' nameVarTest+=[testIntention::Variable]
+//;
+//
+//Bindings :
+//	"bind(" nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
+//	  
+//RequiredService:
+//		 
+//		nameVarMethode+=Variable":="nameComp+=[InstanceComp]'.'nameServ+=[ServiceName]";";
+//	  
+//
+//ServiceName : name=ID;
+Call : receiver=[arch::Variable]'.'member+=[arch::Operation]; 
 
-InstanceComp:
-	name=ID
-;
-
-Variable:
-      name=ID ":" type=Type;
       
-Mapping :
-	 'varModel:' nameVarMode+=[Variable] 'ref' 'varTest:' nameVarTest+=[testIntention::Variable]
-;
-
-Bindings :
-	"bind(" nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
-	  
-RequiredService:
-		 
-		nameVarMethode+=Variable":="nameComp+=[InstanceComp]'.'nameServ+=[ServiceName]";";
-	  
-
-ServiceName : name=ID;
-
-
-      
-enum Type : INT | STRING | Boolean | Double;
+// enum Type : INT | STRING | Boolean | Double;

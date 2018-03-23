@@ -32,6 +32,7 @@ Workflow {
 		language = StandardLanguage {
 			name = "com.aelos.xtext.mappingassistance.MappingAssistance"
 			referencedResource = "platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.genmodel"
+			referencedResource = "platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.genmodel"
 			fileExtensions = "map"
 			
 			

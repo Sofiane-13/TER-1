@@ -6,65 +6,37 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="function" upperBound="-1"
         eType="#//AbstractModel" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractModel"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//AbstractModel">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" upperBound="-1" eType="#//Component"
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="im" upperBound="-1" eType="#//Import"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testDr" upperBound="-1"
+        eType="#//TestDriver" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="obs" upperBound="-1" eType="#//Observer"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inst" upperBound="-1" eType="#//InstanceComp"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arg" upperBound="-1" eType="#//Variable"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arg1" upperBound="-1" eType="#//Variable"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="methode" upperBound="-1"
-        eType="#//ServiceName" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="req" upperBound="-1" eType="#//RequiredService"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="map" upperBound="-1" eType="#//Mapping"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bind" upperBound="-1" eType="#//Bindings"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InstanceComp">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Mapping">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameVarMode" unique="false"
-        upperBound="-1" eType="#//Variable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameVarTest" unique="false"
+  <eClassifiers xsi:type="ecore:EClass" name="TestDriver">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outVar" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tagetedservice" upperBound="-1"
+        eType="#//Call" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arg" unique="false" upperBound="-1"
+        eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Bindings">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameComp" unique="false"
-        upperBound="-1" eType="#//InstanceComp"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameServ1" unique="false"
-        upperBound="-1" eType="#//ServiceName"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameServ2" unique="false"
-        upperBound="-1" eType="#//ServiceName"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredService">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameVarMethode" upperBound="-1"
-        eType="#//Variable" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameComp" unique="false"
-        upperBound="-1" eType="#//InstanceComp"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nameServ" unique="false"
-        upperBound="-1" eType="#//ServiceName"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServiceName">
+  <eClassifiers xsi:type="ecore:EClass" name="Observer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceName1" upperBound="-1"
+        eType="#//Call" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceName2" upperBound="-1"
+        eType="#//Call" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arg" unique="false" upperBound="-1"
+        eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Type">
-    <eLiterals name="INT" literal="INT"/>
-    <eLiterals name="STRING" value="1" literal="STRING"/>
-    <eLiterals name="Boolean" value="2" literal="Boolean"/>
-    <eLiterals name="Double" value="3" literal="Double"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Call">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
   </eClassifiers>
 </ecore:EPackage>

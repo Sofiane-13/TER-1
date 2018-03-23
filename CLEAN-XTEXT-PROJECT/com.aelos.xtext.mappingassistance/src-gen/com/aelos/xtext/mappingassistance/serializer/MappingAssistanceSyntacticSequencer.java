@@ -11,7 +11,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -21,14 +21,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class MappingAssistanceSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MappingAssistanceGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Component_ComponentKeyword_0_0_or_MockKeyword_0_1_or_ObservatorKeyword_0_2;
-	protected AbstractElementAlias match_Component_RequiredServicesKeyword_11_q;
+	protected AbstractElementAlias match_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a;
+	protected AbstractElementAlias match_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MappingAssistanceGrammarAccess) access;
-		match_Component_ComponentKeyword_0_0_or_MockKeyword_0_1_or_ObservatorKeyword_0_2 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getComponentAccess().getComponentKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getComponentAccess().getMockKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getComponentAccess().getObservatorKeyword_0_2()));
-		match_Component_RequiredServicesKeyword_11_q = new TokenAlias(false, true, grammarAccess.getComponentAccess().getRequiredServicesKeyword_11());
+		match_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getObserverAccess().getRightParenthesisKeyword_7_2()));
+		match_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getObserverAccess().getRightParenthesisKeyword_7_2()), new TokenAlias(false, false, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_7_0()));
 	}
 	
 	@Override
@@ -43,48 +43,35 @@ public class MappingAssistanceSyntacticSequencer extends AbstractSyntacticSequen
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Component_ComponentKeyword_0_0_or_MockKeyword_0_1_or_ObservatorKeyword_0_2.equals(syntax))
-				emit_Component_ComponentKeyword_0_0_or_MockKeyword_0_1_or_ObservatorKeyword_0_2(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Component_RequiredServicesKeyword_11_q.equals(syntax))
-				emit_Component_RequiredServicesKeyword_11_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a.equals(syntax))
+				emit_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a.equals(syntax))
+				emit_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     'Component' | 'Mock' | 'Observator'
+	 *     ('(' ')')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) ':' inst+=InstanceComp
+	 *     arg+=[Variable|ID] ')' (ambiguity) (rule end)
+	 *     serviceName2+=Call ')' (ambiguity) (rule end)
 	 */
-	protected void emit_Component_ComponentKeyword_0_0_or_MockKeyword_0_1_or_ObservatorKeyword_0_2(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
 	/**
 	 * Ambiguous syntax:
-	 *     'RequiredServices:'?
+	 *     (')' '(')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     arg+=Variable ')' (ambiguity) (rule end)
-	 *     arg+=Variable ')' (ambiguity) bind+=Bindings
-	 *     arg+=Variable ')' (ambiguity) map+=Mapping
-	 *     arg+=Variable ')' (ambiguity) req+=RequiredService
-	 *     arg+=Variable (ambiguity) (rule end)
-	 *     arg+=Variable (ambiguity) bind+=Bindings
-	 *     arg+=Variable (ambiguity) map+=Mapping
-	 *     arg+=Variable (ambiguity) req+=RequiredService
-	 *     arg1+=Variable ')' (ambiguity) (rule end)
-	 *     arg1+=Variable ')' (ambiguity) bind+=Bindings
-	 *     arg1+=Variable ')' (ambiguity) map+=Mapping
-	 *     arg1+=Variable ')' (ambiguity) req+=RequiredService
-	 *     methode+=ServiceName '(' ')' (ambiguity) (rule end)
-	 *     methode+=ServiceName '(' ')' (ambiguity) bind+=Bindings
-	 *     methode+=ServiceName '(' ')' (ambiguity) map+=Mapping
-	 *     methode+=ServiceName '(' ')' (ambiguity) req+=RequiredService
+	 *     arg+=[Variable|ID] (ambiguity) arg+=[Variable|ID]
+	 *     serviceName2+=Call ')' '(' (ambiguity) arg+=[Variable|ID]
 	 */
-	protected void emit_Component_RequiredServicesKeyword_11_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

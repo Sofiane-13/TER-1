@@ -91,56 +91,27 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
       {
         Import import_ = (Import)theEObject;
         T result = caseImport(import_);
-        if (result == null) result = caseAbstractModel(import_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MappingAssistancePackage.COMPONENT:
+      case MappingAssistancePackage.TEST_DRIVER:
       {
-        Component component = (Component)theEObject;
-        T result = caseComponent(component);
+        TestDriver testDriver = (TestDriver)theEObject;
+        T result = caseTestDriver(testDriver);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MappingAssistancePackage.INSTANCE_COMP:
+      case MappingAssistancePackage.OBSERVER:
       {
-        InstanceComp instanceComp = (InstanceComp)theEObject;
-        T result = caseInstanceComp(instanceComp);
+        Observer observer = (Observer)theEObject;
+        T result = caseObserver(observer);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MappingAssistancePackage.VARIABLE:
+      case MappingAssistancePackage.CALL:
       {
-        Variable variable = (Variable)theEObject;
-        T result = caseVariable(variable);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MappingAssistancePackage.MAPPING:
-      {
-        Mapping mapping = (Mapping)theEObject;
-        T result = caseMapping(mapping);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MappingAssistancePackage.BINDINGS:
-      {
-        Bindings bindings = (Bindings)theEObject;
-        T result = caseBindings(bindings);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MappingAssistancePackage.REQUIRED_SERVICE:
-      {
-        RequiredService requiredService = (RequiredService)theEObject;
-        T result = caseRequiredService(requiredService);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MappingAssistancePackage.SERVICE_NAME:
-      {
-        ServiceName serviceName = (ServiceName)theEObject;
-        T result = caseServiceName(serviceName);
+        Call call = (Call)theEObject;
+        T result = caseCall(call);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -197,113 +168,49 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Test Driver</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Test Driver</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComponent(Component object)
+  public T caseTestDriver(TestDriver object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Observer</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Observer</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInstanceComp(InstanceComp object)
+  public T caseObserver(Observer object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Call</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseVariable(Variable object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Mapping</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Mapping</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMapping(Mapping object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Bindings</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Bindings</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBindings(Bindings object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Required Service</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Required Service</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRequiredService(RequiredService object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Service Name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Service Name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseServiceName(ServiceName object)
+  public T caseCall(Call object)
   {
     return null;
   }

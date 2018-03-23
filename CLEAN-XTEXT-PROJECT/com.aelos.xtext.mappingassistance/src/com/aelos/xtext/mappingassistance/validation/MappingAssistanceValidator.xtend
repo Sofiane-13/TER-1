@@ -4,7 +4,7 @@
 package com.aelos.xtext.mappingassistance.validation
 
 import org.eclipse.xtext.validation.Check
-import com.aelos.xtext.mappingassistance.mappingAssistance.Mapping
+//import com.aelos.xtext.mappingassistance.mappingAssistance.Mapping
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
 
 /**
@@ -24,16 +24,16 @@ class MappingAssistanceValidator extends AbstractMappingAssistanceValidator {
 //					INVALID_NAME)
 //		}
 //	}
-
-	@Check
-	def checkMappingSameType(Mapping map) {
-		var x=0;
-		for(varmod:map.nameVarMode){
-			if(!((varmod.type.literal).equals(map.nameVarTest.get(x).type.literal))){
-				error("the variables must have the same Type",MappingAssistancePackage.Literals.MAPPING__NAME_VAR_MODE)
-			}
-			x++
-		}
-	}
+//
+//	@Check
+//	def checkMappingSameType(Mapping map) {
+//		var x=0;
+//		for(varmod:map.nameVarMode){
+//			if(!((varmod.type.literal).equals(map.nameVarTest.get(x).type.literal))){
+//				error("the variables must have the same Type",MappingAssistancePackage.Literals.MAPPING__NAME_VAR_MODE)
+//			}
+//			x++
+//		}
+//	}
 	
 }

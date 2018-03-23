@@ -3,6 +3,8 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -10,6 +12,14 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Abstract Model</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getIm <em>Im</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getTestDr <em>Test Dr</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getObs <em>Obs</em>}</li>
+ * </ul>
  *
  * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel()
  * @model
@@ -17,4 +27,52 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AbstractModel extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Im</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Import}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Im</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Im</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel_Im()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Import> getIm();
+
+  /**
+   * Returns the value of the '<em><b>Test Dr</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Test Dr</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Test Dr</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel_TestDr()
+   * @model containment="true"
+   * @generated
+   */
+  EList<TestDriver> getTestDr();
+
+  /**
+   * Returns the value of the '<em><b>Obs</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Obs</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Obs</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel_Obs()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Observer> getObs();
+
 } // AbstractModel

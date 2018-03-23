@@ -8,11 +8,17 @@ import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.scoping.Scopes
-import com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService
-import com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName
-import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings
+import org.eclipse.xtext.scoping.IScope
+import com.aelos.xtext.architecture.architecture.Call
+import com.aelos.xtext.architecture.architecture.ArchitecturePackage
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
-import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp
+
+//import com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService
+//import com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName
+//import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings
+//import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
+//import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp
 
 /**
  * This class contains custom scoping description.
@@ -21,48 +27,66 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp
  * on how and when to use it.
  */
 class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvider {
+//	override getScope(EObject context, EReference reference) {
+//    // We want to define the Scope for the Element's superElement cross-reference
+//    if (context instanceof RequiredService
+//            && reference == MappingAssistancePackage.Literals.REQUIRED_SERVICE__NAME_SERV) {
+//        // Collect a list of candidates by going through the model
+//        // EcoreUtil2 provides useful functionality to do that
+//        // For example searching for all elements within the root Object's tree
+//        val rootElement = EcoreUtil2.getRootContainer(context)
+//        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,ServiceName )
+//        // Create IEObjectDescriptions and puts them into an IScope instance
+//        return Scopes.scopeFor(candidates)
+//    }
+//    if (context instanceof RequiredService
+//            && reference == MappingAssistancePackage.Literals.REQUIRED_SERVICE__NAME_COMP) {
+//        // Collect a list of candidates by going through the model
+//        // EcoreUtil2 provides useful functionality to do that
+//        // For example searching for all elements within the root Object's tree
+//        val rootElement = EcoreUtil2.getRootContainer(context)
+//        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,InstanceComp )
+//        // Create IEObjectDescriptions and puts them into an IScope instance
+//        return Scopes.scopeFor(candidates)
+//    }
+//    if (context instanceof Bindings
+//            && reference == MappingAssistancePackage.Literals.BINDINGS__NAME_SERV2) {
+//        // Collect a list of candidates by going through the model
+//        // EcoreUtil2 provides useful functionality to do that
+//        // For example searching for all elements within the root Object's tree
+//        val rootElement = EcoreUtil2.getRootContainer(context)
+//        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,ServiceName )
+//        // Create IEObjectDescriptions and puts them into an IScope instance
+//        return Scopes.scopeFor(candidates)
+//    }
+//    if (context instanceof Bindings
+//            && reference == MappingAssistancePackage.Literals.BINDINGS__NAME_COMP) {
+//        // Collect a list of candidates by going through the model
+//        // EcoreUtil2 provides useful functionality to do that
+//        // For example searching for all elements within the root Object's tree
+//        val rootElement = EcoreUtil2.getRootContainer(context)
+//        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,InstanceComp )
+//        // Create IEObjectDescriptions and puts them into an IScope instance
+//        return Scopes.scopeFor(candidates)
+//    }
+//    return super.getScope(context, reference);
+//}
+
 	override getScope(EObject context, EReference reference) {
-    // We want to define the Scope for the Element's superElement cross-reference
-    if (context instanceof RequiredService
-            && reference == MappingAssistancePackage.Literals.REQUIRED_SERVICE__NAME_SERV) {
-        // Collect a list of candidates by going through the model
-        // EcoreUtil2 provides useful functionality to do that
-        // For example searching for all elements within the root Object's tree
-        val rootElement = EcoreUtil2.getRootContainer(context)
-        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,ServiceName )
-        // Create IEObjectDescriptions and puts them into an IScope instance
-        return Scopes.scopeFor(candidates)
-    }
-    if (context instanceof RequiredService
-            && reference == MappingAssistancePackage.Literals.REQUIRED_SERVICE__NAME_COMP) {
-        // Collect a list of candidates by going through the model
-        // EcoreUtil2 provides useful functionality to do that
-        // For example searching for all elements within the root Object's tree
-        val rootElement = EcoreUtil2.getRootContainer(context)
-        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,InstanceComp )
-        // Create IEObjectDescriptions and puts them into an IScope instance
-        return Scopes.scopeFor(candidates)
-    }
-    if (context instanceof Bindings
-            && reference == MappingAssistancePackage.Literals.BINDINGS__NAME_SERV2) {
-        // Collect a list of candidates by going through the model
-        // EcoreUtil2 provides useful functionality to do that
-        // For example searching for all elements within the root Object's tree
-        val rootElement = EcoreUtil2.getRootContainer(context)
-        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,ServiceName )
-        // Create IEObjectDescriptions and puts them into an IScope instance
-        return Scopes.scopeFor(candidates)
-    }
-    if (context instanceof Bindings
-            && reference == MappingAssistancePackage.Literals.BINDINGS__NAME_COMP) {
-        // Collect a list of candidates by going through the model
-        // EcoreUtil2 provides useful functionality to do that
-        // For example searching for all elements within the root Object's tree
-        val rootElement = EcoreUtil2.getRootContainer(context)
-        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,InstanceComp )
-        // Create IEObjectDescriptions and puts them into an IScope instance
-        return Scopes.scopeFor(candidates)
-    }
-    return super.getScope(context, reference);
-}
+		
+		
+    
+	    if (context instanceof TestDriver ) {
+	        	System.out.print("dsjkbjjc")
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, Call))
+	    }
+	    return super.getScope(context, reference);
+	}
+
+
+	def  IScope scope_Call_op(Call selct) {
+      System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.receiver.type.compType.ops);
+	}
 }

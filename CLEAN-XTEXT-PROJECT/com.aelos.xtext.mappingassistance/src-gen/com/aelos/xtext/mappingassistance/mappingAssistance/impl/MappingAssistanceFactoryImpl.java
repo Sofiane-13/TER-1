@@ -6,7 +6,6 @@ package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 import com.aelos.xtext.mappingassistance.mappingAssistance.*;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -69,49 +68,11 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
       case MappingAssistancePackage.MODEL: return createModel();
       case MappingAssistancePackage.ABSTRACT_MODEL: return createAbstractModel();
       case MappingAssistancePackage.IMPORT: return createImport();
-      case MappingAssistancePackage.COMPONENT: return createComponent();
-      case MappingAssistancePackage.INSTANCE_COMP: return createInstanceComp();
-      case MappingAssistancePackage.VARIABLE: return createVariable();
-      case MappingAssistancePackage.MAPPING: return createMapping();
-      case MappingAssistancePackage.BINDINGS: return createBindings();
-      case MappingAssistancePackage.REQUIRED_SERVICE: return createRequiredService();
-      case MappingAssistancePackage.SERVICE_NAME: return createServiceName();
+      case MappingAssistancePackage.TEST_DRIVER: return createTestDriver();
+      case MappingAssistancePackage.OBSERVER: return createObserver();
+      case MappingAssistancePackage.CALL: return createCall();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object createFromString(EDataType eDataType, String initialValue)
-  {
-    switch (eDataType.getClassifierID())
-    {
-      case MappingAssistancePackage.TYPE:
-        return createTypeFromString(eDataType, initialValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String convertToString(EDataType eDataType, Object instanceValue)
-  {
-    switch (eDataType.getClassifierID())
-    {
-      case MappingAssistancePackage.TYPE:
-        return convertTypeToString(eDataType, instanceValue);
-      default:
-        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -153,10 +114,10 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component createComponent()
+  public TestDriver createTestDriver()
   {
-    ComponentImpl component = new ComponentImpl();
-    return component;
+    TestDriverImpl testDriver = new TestDriverImpl();
+    return testDriver;
   }
 
   /**
@@ -164,10 +125,10 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public InstanceComp createInstanceComp()
+  public Observer createObserver()
   {
-    InstanceCompImpl instanceComp = new InstanceCompImpl();
-    return instanceComp;
+    ObserverImpl observer = new ObserverImpl();
+    return observer;
   }
 
   /**
@@ -175,76 +136,10 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable createVariable()
+  public Call createCall()
   {
-    VariableImpl variable = new VariableImpl();
-    return variable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Mapping createMapping()
-  {
-    MappingImpl mapping = new MappingImpl();
-    return mapping;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Bindings createBindings()
-  {
-    BindingsImpl bindings = new BindingsImpl();
-    return bindings;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RequiredService createRequiredService()
-  {
-    RequiredServiceImpl requiredService = new RequiredServiceImpl();
-    return requiredService;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ServiceName createServiceName()
-  {
-    ServiceNameImpl serviceName = new ServiceNameImpl();
-    return serviceName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Type createTypeFromString(EDataType eDataType, String initialValue)
-  {
-    Type result = Type.get(initialValue);
-    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertTypeToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
+    CallImpl call = new CallImpl();
+    return call;
   }
 
   /**
