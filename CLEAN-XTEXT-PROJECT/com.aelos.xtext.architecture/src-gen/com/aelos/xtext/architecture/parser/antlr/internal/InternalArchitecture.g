@@ -527,9 +527,9 @@ ruleArchitecture returns [EObject current=null]
 			)
 		)*
 		(
-			otherlv_3='bing'
+			otherlv_3='bind'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getArchitectureAccess().getBingKeyword_3_0());
+				newLeafNode(otherlv_3, grammarAccess.getArchitectureAccess().getBindKeyword_3_0());
 			}
 			(
 				(

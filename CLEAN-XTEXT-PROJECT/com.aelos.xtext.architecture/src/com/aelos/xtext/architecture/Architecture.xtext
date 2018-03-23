@@ -36,7 +36,7 @@ Component :
 Architecture:
 	{Architecture} "Architecture Definition"
 	(vars+=Variable)*
-	("bing"  receiver+=Call ":" provider+=Call)*
+	("bind"  receiver+=Call ":" provider+=Call)*
 ;
 
 Call : receiver=[Variable]'.'member+=[Operation];  

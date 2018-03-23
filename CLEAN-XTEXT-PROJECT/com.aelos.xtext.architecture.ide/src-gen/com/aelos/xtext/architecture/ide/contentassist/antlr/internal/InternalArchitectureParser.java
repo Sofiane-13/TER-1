@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalArchitectureParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'INT'", "'STRING'", "'Boolean'", "'Double'", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "')'", "','", "'Architecture Definition'", "'bing'", "':'", "'def'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'INT'", "'STRING'", "'Boolean'", "'Double'", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "')'", "','", "'Architecture Definition'", "'bind'", "':'", "'def'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -4486,24 +4486,24 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Architecture__Group_3__0__Impl"
-    // InternalArchitecture.g:1354:1: rule__Architecture__Group_3__0__Impl : ( 'bing' ) ;
+    // InternalArchitecture.g:1354:1: rule__Architecture__Group_3__0__Impl : ( 'bind' ) ;
     public final void rule__Architecture__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalArchitecture.g:1358:1: ( ( 'bing' ) )
-            // InternalArchitecture.g:1359:1: ( 'bing' )
+            // InternalArchitecture.g:1358:1: ( ( 'bind' ) )
+            // InternalArchitecture.g:1359:1: ( 'bind' )
             {
-            // InternalArchitecture.g:1359:1: ( 'bing' )
-            // InternalArchitecture.g:1360:2: 'bing'
+            // InternalArchitecture.g:1359:1: ( 'bind' )
+            // InternalArchitecture.g:1360:2: 'bind'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getArchitectureAccess().getBingKeyword_3_0()); 
+               before(grammarAccess.getArchitectureAccess().getBindKeyword_3_0()); 
             }
             match(input,27,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getArchitectureAccess().getBingKeyword_3_0()); 
+               after(grammarAccess.getArchitectureAccess().getBindKeyword_3_0()); 
             }
 
             }

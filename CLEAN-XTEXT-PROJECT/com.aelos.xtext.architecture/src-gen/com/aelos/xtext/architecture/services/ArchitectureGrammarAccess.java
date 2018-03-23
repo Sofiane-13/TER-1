@@ -300,7 +300,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cVarsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cVarsVariableParserRuleCall_2_0 = (RuleCall)cVarsAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cBingKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cBindKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cReceiverAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cReceiverCallParserRuleCall_3_1_0 = (RuleCall)cReceiverAssignment_3_1.eContents().get(0);
 		private final Keyword cColonKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
@@ -309,10 +309,10 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Architecture:
 		//	{Architecture} "Architecture Definition"
-		//	vars+=Variable* ("bing" receiver+=Call ":" provider+=Call)*;
+		//	vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Architecture} "Architecture Definition" vars+=Variable* ("bing" receiver+=Call ":" provider+=Call)*
+		//{Architecture} "Architecture Definition" vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*
 		public Group getGroup() { return cGroup; }
 		
 		//{Architecture}
@@ -327,11 +327,11 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//Variable
 		public RuleCall getVarsVariableParserRuleCall_2_0() { return cVarsVariableParserRuleCall_2_0; }
 		
-		//("bing" receiver+=Call ":" provider+=Call)*
+		//("bind" receiver+=Call ":" provider+=Call)*
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//"bing"
-		public Keyword getBingKeyword_3_0() { return cBingKeyword_3_0; }
+		//"bind"
+		public Keyword getBindKeyword_3_0() { return cBindKeyword_3_0; }
 		
 		//receiver+=Call
 		public Assignment getReceiverAssignment_3_1() { return cReceiverAssignment_3_1; }
@@ -709,7 +709,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Architecture:
 	//	{Architecture} "Architecture Definition"
-	//	vars+=Variable* ("bing" receiver+=Call ":" provider+=Call)*;
+	//	vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*;
 	public ArchitectureElements getArchitectureAccess() {
 		return pArchitecture;
 	}

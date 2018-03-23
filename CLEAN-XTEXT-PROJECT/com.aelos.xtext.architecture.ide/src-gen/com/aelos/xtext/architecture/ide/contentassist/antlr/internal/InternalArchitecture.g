@@ -1357,9 +1357,9 @@ rule__Architecture__Group_3__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getArchitectureAccess().getBingKeyword_3_0()); }
-	'bing'
-	{ after(grammarAccess.getArchitectureAccess().getBingKeyword_3_0()); }
+	{ before(grammarAccess.getArchitectureAccess().getBindKeyword_3_0()); }
+	'bind'
+	{ after(grammarAccess.getArchitectureAccess().getBindKeyword_3_0()); }
 )
 ;
 finally {
