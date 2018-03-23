@@ -306,9 +306,16 @@ ruleTestDriver returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='TestDriver:'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getTestDriverAccess().getTestDriverAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='TestDriver:'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getTestDriverAccess().getTestDriverKeyword_0());
+			newLeafNode(otherlv_1, grammarAccess.getTestDriverAccess().getTestDriverKeyword_1());
 		}
 		(
 			(
@@ -318,22 +325,22 @@ ruleTestDriver returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getTestDriverRule());
 						}
 					}
-					otherlv_1=RULE_ID
+					otherlv_2=RULE_ID
 					{
-						newLeafNode(otherlv_1, grammarAccess.getTestDriverAccess().getOutVarVariableCrossReference_1_0_0());
+						newLeafNode(otherlv_2, grammarAccess.getTestDriverAccess().getOutVarVariableCrossReference_2_0_0());
 					}
 				)
 			)
-			otherlv_2=':='
+			otherlv_3=':='
 			{
-				newLeafNode(otherlv_2, grammarAccess.getTestDriverAccess().getColonEqualsSignKeyword_1_1());
+				newLeafNode(otherlv_3, grammarAccess.getTestDriverAccess().getColonEqualsSignKeyword_2_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTestDriverAccess().getTagetedserviceCallParserRuleCall_1_2_0());
+						newCompositeNode(grammarAccess.getTestDriverAccess().getTagetedserviceCallParserRuleCall_2_2_0());
 					}
-					lv_tagetedservice_3_0=ruleCall
+					lv_tagetedservice_4_0=ruleCall
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTestDriverRule());
@@ -341,15 +348,15 @@ ruleTestDriver returns [EObject current=null]
 						add(
 							$current,
 							"tagetedservice",
-							lv_tagetedservice_3_0,
+							lv_tagetedservice_4_0,
 							"com.aelos.xtext.mappingassistance.MappingAssistance.Call");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_4='('
+			otherlv_5='('
 			{
-				newLeafNode(otherlv_4, grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_1_3());
+				newLeafNode(otherlv_5, grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_2_3());
 			}
 			(
 				(
@@ -360,15 +367,15 @@ ruleTestDriver returns [EObject current=null]
 									$current = createModelElement(grammarAccess.getTestDriverRule());
 								}
 							}
-							otherlv_5=RULE_ID
+							otherlv_6=RULE_ID
 							{
-								newLeafNode(otherlv_5, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_4_0_0_0());
+								newLeafNode(otherlv_6, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_2_4_0_0_0());
 							}
 						)
 					)
-					otherlv_6=','
+					otherlv_7=','
 					{
-						newLeafNode(otherlv_6, grammarAccess.getTestDriverAccess().getCommaKeyword_1_4_0_1());
+						newLeafNode(otherlv_7, grammarAccess.getTestDriverAccess().getCommaKeyword_2_4_0_1());
 					}
 				)*
 				(
@@ -378,16 +385,16 @@ ruleTestDriver returns [EObject current=null]
 								$current = createModelElement(grammarAccess.getTestDriverRule());
 							}
 						}
-						otherlv_7=RULE_ID
+						otherlv_8=RULE_ID
 						{
-							newLeafNode(otherlv_7, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_4_1_0());
+							newLeafNode(otherlv_8, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_2_4_1_0());
 						}
 					)
 				)
 			)*
-			otherlv_8=')'
+			otherlv_9=')'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_1_5());
+				newLeafNode(otherlv_9, grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_2_5());
 			}
 		)*
 	)

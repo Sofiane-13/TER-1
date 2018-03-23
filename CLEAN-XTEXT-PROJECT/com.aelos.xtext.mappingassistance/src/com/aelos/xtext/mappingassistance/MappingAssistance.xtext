@@ -19,12 +19,15 @@ QualifiedNameWithWildcard:
         
 QualifiedName:
     ID ('.' ID)*;
+    
 TestDriver :
-	"TestDriver:"
+	{TestDriver} "TestDriver:"
 	(outVar+=[testIntention::Variable]":="tagetedservice+=Call"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
 	;
+	
 Observer :
 	"observer:"name=ID"("serviceName1+=Call","serviceName2+=Call")"("("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*;	
+
 //	("Component" | "Mock" | "Observator")":" 
 //	inst+=InstanceComp":" name=ID
 //	"ProvidedServices:"
