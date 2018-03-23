@@ -16,7 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.AbstractModel#getImp <em>Imp</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.AbstractModel#getComp <em>Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.AbstractModel#getArch <em>Arch</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getAbstractModel()
@@ -25,6 +27,22 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface AbstractModel extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Imp</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Import}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Imp</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Imp</em>' containment reference list.
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getAbstractModel_Imp()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Import> getImp();
+
   /**
    * Returns the value of the '<em><b>Comp</b></em>' containment reference list.
    * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Component}.
@@ -40,5 +58,21 @@ public interface AbstractModel extends EObject
    * @generated
    */
   EList<Component> getComp();
+
+  /**
+   * Returns the value of the '<em><b>Arch</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Architecture}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Arch</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Arch</em>' containment reference list.
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getAbstractModel_Arch()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Architecture> getArch();
 
 } // AbstractModel

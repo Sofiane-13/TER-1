@@ -80,6 +80,13 @@ public class ArchitectureSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ArchitecturePackage.DOMAIN_DECLARATION:
+      {
+        DomainDeclaration domainDeclaration = (DomainDeclaration)theEObject;
+        T result = caseDomainDeclaration(domainDeclaration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ArchitecturePackage.ABSTRACT_MODEL:
       {
         AbstractModel abstractModel = (AbstractModel)theEObject;
@@ -91,7 +98,6 @@ public class ArchitectureSwitch<T> extends Switch<T>
       {
         Import import_ = (Import)theEObject;
         T result = caseImport(import_);
-        if (result == null) result = caseAbstractModel(import_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -102,10 +108,17 @@ public class ArchitectureSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ArchitecturePackage.INSTANCE_COMP:
+      case ArchitecturePackage.ARCHITECTURE:
       {
-        InstanceComp instanceComp = (InstanceComp)theEObject;
-        T result = caseInstanceComp(instanceComp);
+        Architecture architecture = (Architecture)theEObject;
+        T result = caseArchitecture(architecture);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ArchitecturePackage.CALL:
+      {
+        Call call = (Call)theEObject;
+        T result = caseCall(call);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -116,24 +129,17 @@ public class ArchitectureSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ArchitecturePackage.BINDINGS:
+      case ArchitecturePackage.OPERATION:
       {
-        Bindings bindings = (Bindings)theEObject;
-        T result = caseBindings(bindings);
+        Operation operation = (Operation)theEObject;
+        T result = caseOperation(operation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ArchitecturePackage.REQUIRED_SERVICE:
+      case ArchitecturePackage.ATOMIC_TYPE:
       {
-        RequiredService requiredService = (RequiredService)theEObject;
-        T result = caseRequiredService(requiredService);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ArchitecturePackage.SERVICE_NAME:
-      {
-        ServiceName serviceName = (ServiceName)theEObject;
-        T result = caseServiceName(serviceName);
+        AtomicType atomicType = (AtomicType)theEObject;
+        T result = caseAtomicType(atomicType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -153,6 +159,22 @@ public class ArchitectureSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseModel(Model object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Domain Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Domain Declaration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDomainDeclaration(DomainDeclaration object)
   {
     return null;
   }
@@ -206,17 +228,33 @@ public class ArchitectureSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Architecture</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Architecture</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInstanceComp(InstanceComp object)
+  public T caseArchitecture(Architecture object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Call</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Call</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCall(Call object)
   {
     return null;
   }
@@ -238,49 +276,33 @@ public class ArchitectureSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Bindings</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Bindings</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBindings(Bindings object)
+  public T caseOperation(Operation object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Required Service</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Atomic Type</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Required Service</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Atomic Type</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseRequiredService(RequiredService object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Service Name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Service Name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseServiceName(ServiceName object)
+  public T caseAtomicType(AtomicType object)
   {
     return null;
   }

@@ -4,8 +4,10 @@
 package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.AbstractModel;
+import com.aelos.xtext.architecture.architecture.Architecture;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.Component;
+import com.aelos.xtext.architecture.architecture.Import;
 
 import java.util.Collection;
 
@@ -29,13 +31,25 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.AbstractModelImpl#getImp <em>Imp</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.AbstractModelImpl#getComp <em>Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.AbstractModelImpl#getArch <em>Arch</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AbstractModelImpl extends MinimalEObjectImpl.Container implements AbstractModel
 {
+  /**
+   * The cached value of the '{@link #getImp() <em>Imp</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImp()
+   * @generated
+   * @ordered
+   */
+  protected EList<Import> imp;
+
   /**
    * The cached value of the '{@link #getComp() <em>Comp</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -45,6 +59,16 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
    * @ordered
    */
   protected EList<Component> comp;
+
+  /**
+   * The cached value of the '{@link #getArch() <em>Arch</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getArch()
+   * @generated
+   * @ordered
+   */
+  protected EList<Architecture> arch;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,6 +96,20 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Import> getImp()
+  {
+    if (imp == null)
+    {
+      imp = new EObjectContainmentEList<Import>(Import.class, this, ArchitecturePackage.ABSTRACT_MODEL__IMP);
+    }
+    return imp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Component> getComp()
   {
     if (comp == null)
@@ -86,13 +124,31 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Architecture> getArch()
+  {
+    if (arch == null)
+    {
+      arch = new EObjectContainmentEList<Architecture>(Architecture.class, this, ArchitecturePackage.ABSTRACT_MODEL__ARCH);
+    }
+    return arch;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
+      case ArchitecturePackage.ABSTRACT_MODEL__IMP:
+        return ((InternalEList<?>)getImp()).basicRemove(otherEnd, msgs);
       case ArchitecturePackage.ABSTRACT_MODEL__COMP:
         return ((InternalEList<?>)getComp()).basicRemove(otherEnd, msgs);
+      case ArchitecturePackage.ABSTRACT_MODEL__ARCH:
+        return ((InternalEList<?>)getArch()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +163,12 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
+      case ArchitecturePackage.ABSTRACT_MODEL__IMP:
+        return getImp();
       case ArchitecturePackage.ABSTRACT_MODEL__COMP:
         return getComp();
+      case ArchitecturePackage.ABSTRACT_MODEL__ARCH:
+        return getArch();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +184,17 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
+      case ArchitecturePackage.ABSTRACT_MODEL__IMP:
+        getImp().clear();
+        getImp().addAll((Collection<? extends Import>)newValue);
+        return;
       case ArchitecturePackage.ABSTRACT_MODEL__COMP:
         getComp().clear();
         getComp().addAll((Collection<? extends Component>)newValue);
+        return;
+      case ArchitecturePackage.ABSTRACT_MODEL__ARCH:
+        getArch().clear();
+        getArch().addAll((Collection<? extends Architecture>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +210,14 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
+      case ArchitecturePackage.ABSTRACT_MODEL__IMP:
+        getImp().clear();
+        return;
       case ArchitecturePackage.ABSTRACT_MODEL__COMP:
         getComp().clear();
+        return;
+      case ArchitecturePackage.ABSTRACT_MODEL__ARCH:
+        getArch().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +233,12 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
   {
     switch (featureID)
     {
+      case ArchitecturePackage.ABSTRACT_MODEL__IMP:
+        return imp != null && !imp.isEmpty();
       case ArchitecturePackage.ABSTRACT_MODEL__COMP:
         return comp != null && !comp.isEmpty();
+      case ArchitecturePackage.ABSTRACT_MODEL__ARCH:
+        return arch != null && !arch.isEmpty();
     }
     return super.eIsSet(featureID);
   }

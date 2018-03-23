@@ -4,13 +4,10 @@
 package com.aelos.xtext.architecture.scoping;
 
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.InstanceComp;
-import com.aelos.xtext.architecture.architecture.RequiredService;
-import com.aelos.xtext.architecture.architecture.ServiceName;
+import com.aelos.xtext.architecture.architecture.Call;
+import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.scoping.AbstractArchitectureScopeProvider;
 import com.google.common.base.Objects;
-import java.util.List;
-import javax.script.Bindings;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.EcoreUtil2;
@@ -27,26 +24,20 @@ import org.eclipse.xtext.scoping.Scopes;
 public class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if (((context instanceof RequiredService) && Objects.equal(reference, ArchitecturePackage.Literals.REQUIRED_SERVICE__NAME_SERV))) {
-      final EObject rootElement = EcoreUtil2.getRootContainer(context);
-      final List<ServiceName> candidates = EcoreUtil2.<ServiceName>getAllContentsOfType(rootElement, ServiceName.class);
-      return Scopes.scopeFor(candidates);
+    if (((context instanceof Component) && Objects.equal(reference, ArchitecturePackage.Literals.COMPONENT__OPS))) {
+      return this.scope_Comp_op(EcoreUtil2.<Component>getContainerOfType(context, Component.class));
     }
-    if (((context instanceof RequiredService) && Objects.equal(reference, ArchitecturePackage.Literals.REQUIRED_SERVICE__NAME_COMP))) {
-      final EObject rootElement_1 = EcoreUtil2.getRootContainer(context);
-      final List<InstanceComp> candidates_1 = EcoreUtil2.<InstanceComp>getAllContentsOfType(rootElement_1, InstanceComp.class);
-      return Scopes.scopeFor(candidates_1);
-    }
-    if (((context instanceof Bindings) && Objects.equal(reference, ArchitecturePackage.Literals.BINDINGS__NAME_SERV2))) {
-      final EObject rootElement_2 = EcoreUtil2.getRootContainer(context);
-      final List<ServiceName> candidates_2 = EcoreUtil2.<ServiceName>getAllContentsOfType(rootElement_2, ServiceName.class);
-      return Scopes.scopeFor(candidates_2);
-    }
-    if (((context instanceof Bindings) && Objects.equal(reference, ArchitecturePackage.Literals.BINDINGS__NAME_COMP))) {
-      final EObject rootElement_3 = EcoreUtil2.getRootContainer(context);
-      final List<InstanceComp> candidates_3 = EcoreUtil2.<InstanceComp>getAllContentsOfType(rootElement_3, InstanceComp.class);
-      return Scopes.scopeFor(candidates_3);
+    if (((context instanceof Call) && Objects.equal(reference, ArchitecturePackage.Literals.CALL__MEMBER))) {
+      return this.scope_Call_op(EcoreUtil2.<Call>getContainerOfType(context, Call.class));
     }
     return super.getScope(context, reference);
+  }
+  
+  public IScope scope_Comp_op(final Component selct) {
+    return Scopes.scopeFor(selct.getOperations());
+  }
+  
+  public IScope scope_Call_op(final Call selct) {
+    return Scopes.scopeFor(selct.getReceiver().getType().getCompType().getOps());
   }
 }

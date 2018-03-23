@@ -5,10 +5,14 @@ generate architecture "http://www.aelos.com/xtext/architecture/Architecture"
 import "http://www.aelos.com/xtext/testintentionsassistance/TestintentionsAssistance" as testIntention
 
 Model:
-	function+=AbstractModel*;
+	package+=DomainDeclaration*;
 
+DomainDeclaration:
+    'domain' name=QualifiedName '{'
+        (elements+=AbstractModel)*
+    '}';
 
-AbstractModel:Import? (comp+=Component )+ ;
+AbstractModel: (imp+=Import)* ((comp+=Component)+ | arch+=Architecture);
 
 Import:
     'import' importedNamespace=QualifiedNameWithWildcard;
@@ -18,35 +22,36 @@ QualifiedNameWithWildcard:
         
 QualifiedName:
     ID ('.' ID)*;
-Component :
-	"Component:" 
-	inst+=InstanceComp":" name=ID
-	"ProvidedServices:"
-	"conf("(arg+=Variable ",")*arg1+=Variable")"
-	(methode+=ServiceName "("((arg+=Variable ",")*arg+=Variable)*")"(":"arg+=Variable)?)*
-    "RequiredServices:"?
-    (req+=RequiredService)*
-	(bind+=Bindings)*
+    
+Component : 
+	"Component:" name=ID "{"
+		"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+		->(operations+=Operation)*
+		//(vars+=Variable)*
+		//"requiredService" "(" ((calls+=Call ",")*(calls+=Call))* ")"
+	"}"
 ;
 
-InstanceComp:
-	name=ID
+
+Architecture:
+	{Architecture} "Architecture Definition"
+	(vars+=Variable)*
+	("bind"  receiver+=Call ":" provider+=Call)*
 ;
+
+Call : receiver=[Variable]'.'member+=[Operation];  
+
 
 Variable:
-      name=ID ":" type=Type;
-      
-
-Bindings :
-	"bind(" nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
-	  
-RequiredService:
-		 
-		nameVarMethode+=Variable":="nameComp+=[InstanceComp]'.'nameServ+=[ServiceName]";";
-	  
-
-ServiceName : name=ID;
+      name=ID ":" type=AtomicType;
 
 
+Operation:
+    "def" name=ID "("((arg+=Variable ",")*arg+=Variable)*")" ":" type= AtomicType
+;
+
+AtomicType:
+	atomType=Type | 
+	compType=[Component];
       
 enum Type : INT | STRING | Boolean | Double;

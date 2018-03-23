@@ -3,8 +3,8 @@
  */
 package com.aelos.xtext.architecture.architecture.impl;
 
-import com.aelos.xtext.architecture.architecture.AbstractModel;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
+import com.aelos.xtext.architecture.architecture.DomainDeclaration;
 import com.aelos.xtext.architecture.architecture.Model;
 
 import java.util.Collection;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ModelImpl#getFunction <em>Function</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ModelImpl#getPackage <em>Package</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getFunction() <em>Function</em>}' containment reference list.
+   * The cached value of the '{@link #getPackage() <em>Package</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFunction()
+   * @see #getPackage()
    * @generated
    * @ordered
    */
-  protected EList<AbstractModel> function;
+  protected EList<DomainDeclaration> package_;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +72,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<AbstractModel> getFunction()
+  public EList<DomainDeclaration> getPackage()
   {
-    if (function == null)
+    if (package_ == null)
     {
-      function = new EObjectContainmentEList<AbstractModel>(AbstractModel.class, this, ArchitecturePackage.MODEL__FUNCTION);
+      package_ = new EObjectContainmentEList<DomainDeclaration>(DomainDeclaration.class, this, ArchitecturePackage.MODEL__PACKAGE);
     }
-    return function;
+    return package_;
   }
 
   /**
@@ -91,8 +91,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        return ((InternalEList<?>)getFunction()).basicRemove(otherEnd, msgs);
+      case ArchitecturePackage.MODEL__PACKAGE:
+        return ((InternalEList<?>)getPackage()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        return getFunction();
+      case ArchitecturePackage.MODEL__PACKAGE:
+        return getPackage();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        getFunction().clear();
-        getFunction().addAll((Collection<? extends AbstractModel>)newValue);
+      case ArchitecturePackage.MODEL__PACKAGE:
+        getPackage().clear();
+        getPackage().addAll((Collection<? extends DomainDeclaration>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        getFunction().clear();
+      case ArchitecturePackage.MODEL__PACKAGE:
+        getPackage().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +159,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case ArchitecturePackage.MODEL__FUNCTION:
-        return function != null && !function.isEmpty();
+      case ArchitecturePackage.MODEL__PACKAGE:
+        return package_ != null && !package_.isEmpty();
     }
     return super.eIsSet(featureID);
   }

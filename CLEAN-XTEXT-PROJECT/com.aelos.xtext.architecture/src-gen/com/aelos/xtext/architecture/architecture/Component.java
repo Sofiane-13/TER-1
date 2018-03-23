@@ -16,13 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getInst <em>Inst</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getName <em>Name</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getArg <em>Arg</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getArg1 <em>Arg1</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getMethode <em>Methode</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getReq <em>Req</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getBind <em>Bind</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getOps <em>Ops</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent()
@@ -31,22 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Component extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Inst</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.InstanceComp}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Inst</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Inst</em>' containment reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent_Inst()
-   * @model containment="true"
-   * @generated
-   */
-  EList<InstanceComp> getInst();
-
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -74,83 +54,35 @@ public interface Component extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Arg</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Variable}.
+   * Returns the value of the '<em><b>Ops</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Arg</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Ops</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arg</em>' containment reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent_Arg()
-   * @model containment="true"
+   * @return the value of the '<em>Ops</em>' reference list.
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent_Ops()
+   * @model
    * @generated
    */
-  EList<Variable> getArg();
+  EList<Operation> getOps();
 
   /**
-   * Returns the value of the '<em><b>Arg1</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Variable}.
+   * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Arg1</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Operations</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arg1</em>' containment reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent_Arg1()
+   * @return the value of the '<em>Operations</em>' containment reference list.
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent_Operations()
    * @model containment="true"
    * @generated
    */
-  EList<Variable> getArg1();
-
-  /**
-   * Returns the value of the '<em><b>Methode</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.ServiceName}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Methode</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Methode</em>' containment reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent_Methode()
-   * @model containment="true"
-   * @generated
-   */
-  EList<ServiceName> getMethode();
-
-  /**
-   * Returns the value of the '<em><b>Req</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.RequiredService}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Req</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Req</em>' containment reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent_Req()
-   * @model containment="true"
-   * @generated
-   */
-  EList<RequiredService> getReq();
-
-  /**
-   * Returns the value of the '<em><b>Bind</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Bindings}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Bind</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Bind</em>' containment reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent_Bind()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Bindings> getBind();
+  EList<Operation> getOperations();
 
 } // Component

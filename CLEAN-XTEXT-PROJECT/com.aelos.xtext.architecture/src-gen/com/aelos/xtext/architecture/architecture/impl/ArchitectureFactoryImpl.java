@@ -67,14 +67,15 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
     switch (eClass.getClassifierID())
     {
       case ArchitecturePackage.MODEL: return createModel();
+      case ArchitecturePackage.DOMAIN_DECLARATION: return createDomainDeclaration();
       case ArchitecturePackage.ABSTRACT_MODEL: return createAbstractModel();
       case ArchitecturePackage.IMPORT: return createImport();
       case ArchitecturePackage.COMPONENT: return createComponent();
-      case ArchitecturePackage.INSTANCE_COMP: return createInstanceComp();
+      case ArchitecturePackage.ARCHITECTURE: return createArchitecture();
+      case ArchitecturePackage.CALL: return createCall();
       case ArchitecturePackage.VARIABLE: return createVariable();
-      case ArchitecturePackage.BINDINGS: return createBindings();
-      case ArchitecturePackage.REQUIRED_SERVICE: return createRequiredService();
-      case ArchitecturePackage.SERVICE_NAME: return createServiceName();
+      case ArchitecturePackage.OPERATION: return createOperation();
+      case ArchitecturePackage.ATOMIC_TYPE: return createAtomicType();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -130,6 +131,17 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
+  public DomainDeclaration createDomainDeclaration()
+  {
+    DomainDeclarationImpl domainDeclaration = new DomainDeclarationImpl();
+    return domainDeclaration;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AbstractModel createAbstractModel()
   {
     AbstractModelImpl abstractModel = new AbstractModelImpl();
@@ -163,10 +175,21 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public InstanceComp createInstanceComp()
+  public Architecture createArchitecture()
   {
-    InstanceCompImpl instanceComp = new InstanceCompImpl();
-    return instanceComp;
+    ArchitectureImpl architecture = new ArchitectureImpl();
+    return architecture;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Call createCall()
+  {
+    CallImpl call = new CallImpl();
+    return call;
   }
 
   /**
@@ -185,10 +208,10 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public Bindings createBindings()
+  public Operation createOperation()
   {
-    BindingsImpl bindings = new BindingsImpl();
-    return bindings;
+    OperationImpl operation = new OperationImpl();
+    return operation;
   }
 
   /**
@@ -196,21 +219,10 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public RequiredService createRequiredService()
+  public AtomicType createAtomicType()
   {
-    RequiredServiceImpl requiredService = new RequiredServiceImpl();
-    return requiredService;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ServiceName createServiceName()
-  {
-    ServiceNameImpl serviceName = new ServiceNameImpl();
-    return serviceName;
+    AtomicTypeImpl atomicType = new AtomicTypeImpl();
+    return atomicType;
   }
 
   /**

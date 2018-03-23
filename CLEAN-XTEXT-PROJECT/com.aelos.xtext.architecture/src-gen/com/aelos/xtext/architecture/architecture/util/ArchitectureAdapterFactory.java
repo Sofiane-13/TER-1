@@ -81,6 +81,11 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseDomainDeclaration(DomainDeclaration object)
+      {
+        return createDomainDeclarationAdapter();
+      }
+      @Override
       public Adapter caseAbstractModel(AbstractModel object)
       {
         return createAbstractModelAdapter();
@@ -96,9 +101,14 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
         return createComponentAdapter();
       }
       @Override
-      public Adapter caseInstanceComp(InstanceComp object)
+      public Adapter caseArchitecture(Architecture object)
       {
-        return createInstanceCompAdapter();
+        return createArchitectureAdapter();
+      }
+      @Override
+      public Adapter caseCall(Call object)
+      {
+        return createCallAdapter();
       }
       @Override
       public Adapter caseVariable(Variable object)
@@ -106,19 +116,14 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
         return createVariableAdapter();
       }
       @Override
-      public Adapter caseBindings(Bindings object)
+      public Adapter caseOperation(Operation object)
       {
-        return createBindingsAdapter();
+        return createOperationAdapter();
       }
       @Override
-      public Adapter caseRequiredService(RequiredService object)
+      public Adapter caseAtomicType(AtomicType object)
       {
-        return createRequiredServiceAdapter();
-      }
-      @Override
-      public Adapter caseServiceName(ServiceName object)
-      {
-        return createServiceNameAdapter();
+        return createAtomicTypeAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -153,6 +158,21 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.DomainDeclaration <em>Domain Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.DomainDeclaration
+   * @generated
+   */
+  public Adapter createDomainDeclarationAdapter()
   {
     return null;
   }
@@ -203,16 +223,31 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.InstanceComp <em>Instance Comp</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Architecture <em>Architecture</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.InstanceComp
+   * @see com.aelos.xtext.architecture.architecture.Architecture
    * @generated
    */
-  public Adapter createInstanceCompAdapter()
+  public Adapter createArchitectureAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Call <em>Call</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.Call
+   * @generated
+   */
+  public Adapter createCallAdapter()
   {
     return null;
   }
@@ -233,46 +268,31 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Bindings <em>Bindings</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.Bindings
+   * @see com.aelos.xtext.architecture.architecture.Operation
    * @generated
    */
-  public Adapter createBindingsAdapter()
+  public Adapter createOperationAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.RequiredService <em>Required Service</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.AtomicType <em>Atomic Type</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.RequiredService
+   * @see com.aelos.xtext.architecture.architecture.AtomicType
    * @generated
    */
-  public Adapter createRequiredServiceAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.ServiceName <em>Service Name</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.ServiceName
-   * @generated
-   */
-  public Adapter createServiceNameAdapter()
+  public Adapter createAtomicTypeAdapter()
   {
     return null;
   }

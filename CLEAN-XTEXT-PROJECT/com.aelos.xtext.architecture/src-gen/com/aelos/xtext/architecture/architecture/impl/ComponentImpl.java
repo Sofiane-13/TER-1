@@ -4,12 +4,8 @@
 package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Bindings;
 import com.aelos.xtext.architecture.architecture.Component;
-import com.aelos.xtext.architecture.architecture.InstanceComp;
-import com.aelos.xtext.architecture.architecture.RequiredService;
-import com.aelos.xtext.architecture.architecture.ServiceName;
-import com.aelos.xtext.architecture.architecture.Variable;
+import com.aelos.xtext.architecture.architecture.Operation;
 
 import java.util.Collection;
 
@@ -25,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -35,29 +32,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getInst <em>Inst</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getArg <em>Arg</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getArg1 <em>Arg1</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getMethode <em>Methode</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getReq <em>Req</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getBind <em>Bind</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getOps <em>Ops</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ComponentImpl extends MinimalEObjectImpl.Container implements Component
 {
-  /**
-   * The cached value of the '{@link #getInst() <em>Inst</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInst()
-   * @generated
-   * @ordered
-   */
-  protected EList<InstanceComp> inst;
-
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -79,54 +62,24 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getArg() <em>Arg</em>}' containment reference list.
+   * The cached value of the '{@link #getOps() <em>Ops</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArg()
+   * @see #getOps()
    * @generated
    * @ordered
    */
-  protected EList<Variable> arg;
+  protected EList<Operation> ops;
 
   /**
-   * The cached value of the '{@link #getArg1() <em>Arg1</em>}' containment reference list.
+   * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getArg1()
+   * @see #getOperations()
    * @generated
    * @ordered
    */
-  protected EList<Variable> arg1;
-
-  /**
-   * The cached value of the '{@link #getMethode() <em>Methode</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMethode()
-   * @generated
-   * @ordered
-   */
-  protected EList<ServiceName> methode;
-
-  /**
-   * The cached value of the '{@link #getReq() <em>Req</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReq()
-   * @generated
-   * @ordered
-   */
-  protected EList<RequiredService> req;
-
-  /**
-   * The cached value of the '{@link #getBind() <em>Bind</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBind()
-   * @generated
-   * @ordered
-   */
-  protected EList<Bindings> bind;
+  protected EList<Operation> operations;
 
   /**
    * <!-- begin-user-doc -->
@@ -147,20 +100,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   protected EClass eStaticClass()
   {
     return ArchitecturePackage.Literals.COMPONENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<InstanceComp> getInst()
-  {
-    if (inst == null)
-    {
-      inst = new EObjectContainmentEList<InstanceComp>(InstanceComp.class, this, ArchitecturePackage.COMPONENT__INST);
-    }
-    return inst;
   }
 
   /**
@@ -191,13 +130,13 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getArg()
+  public EList<Operation> getOps()
   {
-    if (arg == null)
+    if (ops == null)
     {
-      arg = new EObjectContainmentEList<Variable>(Variable.class, this, ArchitecturePackage.COMPONENT__ARG);
+      ops = new EObjectResolvingEList<Operation>(Operation.class, this, ArchitecturePackage.COMPONENT__OPS);
     }
-    return arg;
+    return ops;
   }
 
   /**
@@ -205,55 +144,13 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getArg1()
+  public EList<Operation> getOperations()
   {
-    if (arg1 == null)
+    if (operations == null)
     {
-      arg1 = new EObjectContainmentEList<Variable>(Variable.class, this, ArchitecturePackage.COMPONENT__ARG1);
+      operations = new EObjectContainmentEList<Operation>(Operation.class, this, ArchitecturePackage.COMPONENT__OPERATIONS);
     }
-    return arg1;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ServiceName> getMethode()
-  {
-    if (methode == null)
-    {
-      methode = new EObjectContainmentEList<ServiceName>(ServiceName.class, this, ArchitecturePackage.COMPONENT__METHODE);
-    }
-    return methode;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<RequiredService> getReq()
-  {
-    if (req == null)
-    {
-      req = new EObjectContainmentEList<RequiredService>(RequiredService.class, this, ArchitecturePackage.COMPONENT__REQ);
-    }
-    return req;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Bindings> getBind()
-  {
-    if (bind == null)
-    {
-      bind = new EObjectContainmentEList<Bindings>(Bindings.class, this, ArchitecturePackage.COMPONENT__BIND);
-    }
-    return bind;
+    return operations;
   }
 
   /**
@@ -266,18 +163,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__INST:
-        return ((InternalEList<?>)getInst()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.COMPONENT__ARG:
-        return ((InternalEList<?>)getArg()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.COMPONENT__ARG1:
-        return ((InternalEList<?>)getArg1()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.COMPONENT__METHODE:
-        return ((InternalEList<?>)getMethode()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.COMPONENT__REQ:
-        return ((InternalEList<?>)getReq()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.COMPONENT__BIND:
-        return ((InternalEList<?>)getBind()).basicRemove(otherEnd, msgs);
+      case ArchitecturePackage.COMPONENT__OPERATIONS:
+        return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -292,20 +179,12 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__INST:
-        return getInst();
       case ArchitecturePackage.COMPONENT__NAME:
         return getName();
-      case ArchitecturePackage.COMPONENT__ARG:
-        return getArg();
-      case ArchitecturePackage.COMPONENT__ARG1:
-        return getArg1();
-      case ArchitecturePackage.COMPONENT__METHODE:
-        return getMethode();
-      case ArchitecturePackage.COMPONENT__REQ:
-        return getReq();
-      case ArchitecturePackage.COMPONENT__BIND:
-        return getBind();
+      case ArchitecturePackage.COMPONENT__OPS:
+        return getOps();
+      case ArchitecturePackage.COMPONENT__OPERATIONS:
+        return getOperations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -321,32 +200,16 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__INST:
-        getInst().clear();
-        getInst().addAll((Collection<? extends InstanceComp>)newValue);
-        return;
       case ArchitecturePackage.COMPONENT__NAME:
         setName((String)newValue);
         return;
-      case ArchitecturePackage.COMPONENT__ARG:
-        getArg().clear();
-        getArg().addAll((Collection<? extends Variable>)newValue);
+      case ArchitecturePackage.COMPONENT__OPS:
+        getOps().clear();
+        getOps().addAll((Collection<? extends Operation>)newValue);
         return;
-      case ArchitecturePackage.COMPONENT__ARG1:
-        getArg1().clear();
-        getArg1().addAll((Collection<? extends Variable>)newValue);
-        return;
-      case ArchitecturePackage.COMPONENT__METHODE:
-        getMethode().clear();
-        getMethode().addAll((Collection<? extends ServiceName>)newValue);
-        return;
-      case ArchitecturePackage.COMPONENT__REQ:
-        getReq().clear();
-        getReq().addAll((Collection<? extends RequiredService>)newValue);
-        return;
-      case ArchitecturePackage.COMPONENT__BIND:
-        getBind().clear();
-        getBind().addAll((Collection<? extends Bindings>)newValue);
+      case ArchitecturePackage.COMPONENT__OPERATIONS:
+        getOperations().clear();
+        getOperations().addAll((Collection<? extends Operation>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -362,26 +225,14 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__INST:
-        getInst().clear();
-        return;
       case ArchitecturePackage.COMPONENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ArchitecturePackage.COMPONENT__ARG:
-        getArg().clear();
+      case ArchitecturePackage.COMPONENT__OPS:
+        getOps().clear();
         return;
-      case ArchitecturePackage.COMPONENT__ARG1:
-        getArg1().clear();
-        return;
-      case ArchitecturePackage.COMPONENT__METHODE:
-        getMethode().clear();
-        return;
-      case ArchitecturePackage.COMPONENT__REQ:
-        getReq().clear();
-        return;
-      case ArchitecturePackage.COMPONENT__BIND:
-        getBind().clear();
+      case ArchitecturePackage.COMPONENT__OPERATIONS:
+        getOperations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -397,20 +248,12 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__INST:
-        return inst != null && !inst.isEmpty();
       case ArchitecturePackage.COMPONENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ArchitecturePackage.COMPONENT__ARG:
-        return arg != null && !arg.isEmpty();
-      case ArchitecturePackage.COMPONENT__ARG1:
-        return arg1 != null && !arg1.isEmpty();
-      case ArchitecturePackage.COMPONENT__METHODE:
-        return methode != null && !methode.isEmpty();
-      case ArchitecturePackage.COMPONENT__REQ:
-        return req != null && !req.isEmpty();
-      case ArchitecturePackage.COMPONENT__BIND:
-        return bind != null && !bind.isEmpty();
+      case ArchitecturePackage.COMPONENT__OPS:
+        return ops != null && !ops.isEmpty();
+      case ArchitecturePackage.COMPONENT__OPERATIONS:
+        return operations != null && !operations.isEmpty();
     }
     return super.eIsSet(featureID);
   }

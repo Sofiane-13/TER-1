@@ -51,32 +51,29 @@ public interface Variable extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Type</b></em>' attribute.
-   * The literals are from the enumeration {@link com.aelos.xtext.architecture.architecture.Type}.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' attribute isn't clear,
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' attribute.
-   * @see com.aelos.xtext.architecture.architecture.Type
-   * @see #setType(Type)
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(AtomicType)
    * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getVariable_Type()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  Type getType();
+  AtomicType getType();
 
   /**
-   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Variable#getType <em>Type</em>}' attribute.
+   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Variable#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' attribute.
-   * @see com.aelos.xtext.architecture.architecture.Type
+   * @param value the new value of the '<em>Type</em>' containment reference.
    * @see #getType()
    * @generated
    */
-  void setType(Type value);
+  void setType(AtomicType value);
 
 } // Variable

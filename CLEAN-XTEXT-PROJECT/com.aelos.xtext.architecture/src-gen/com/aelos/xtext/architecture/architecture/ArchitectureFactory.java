@@ -33,6 +33,15 @@ public interface ArchitectureFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Domain Declaration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Domain Declaration</em>'.
+   * @generated
+   */
+  DomainDeclaration createDomainDeclaration();
+
+  /**
    * Returns a new object of class '<em>Abstract Model</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -60,13 +69,22 @@ public interface ArchitectureFactory extends EFactory
   Component createComponent();
 
   /**
-   * Returns a new object of class '<em>Instance Comp</em>'.
+   * Returns a new object of class '<em>Architecture</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instance Comp</em>'.
+   * @return a new object of class '<em>Architecture</em>'.
    * @generated
    */
-  InstanceComp createInstanceComp();
+  Architecture createArchitecture();
+
+  /**
+   * Returns a new object of class '<em>Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Call</em>'.
+   * @generated
+   */
+  Call createCall();
 
   /**
    * Returns a new object of class '<em>Variable</em>'.
@@ -78,31 +96,22 @@ public interface ArchitectureFactory extends EFactory
   Variable createVariable();
 
   /**
-   * Returns a new object of class '<em>Bindings</em>'.
+   * Returns a new object of class '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bindings</em>'.
+   * @return a new object of class '<em>Operation</em>'.
    * @generated
    */
-  Bindings createBindings();
+  Operation createOperation();
 
   /**
-   * Returns a new object of class '<em>Required Service</em>'.
+   * Returns a new object of class '<em>Atomic Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Required Service</em>'.
+   * @return a new object of class '<em>Atomic Type</em>'.
    * @generated
    */
-  RequiredService createRequiredService();
-
-  /**
-   * Returns a new object of class '<em>Service Name</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Service Name</em>'.
-   * @generated
-   */
-  ServiceName createServiceName();
+  AtomicType createAtomicType();
 
   /**
    * Returns the package supported by this factory.
