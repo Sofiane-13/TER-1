@@ -43,6 +43,9 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComponentAccess().getGroup_5(), "rule__Component__Group_5__0");
 			builder.put(grammarAccess.getComponentAccess().getGroup_5_0(), "rule__Component__Group_5_0__0");
 			builder.put(grammarAccess.getComponentAccess().getGroup_7(), "rule__Component__Group_7__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_11(), "rule__Component__Group_11__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_11_0(), "rule__Component__Group_11_0__0");
+			builder.put(grammarAccess.getCallAccess().getGroup(), "rule__Call__Group__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 			builder.put(grammarAccess.getOperationAccess().getGroup(), "rule__Operation__Group__0");
 			builder.put(grammarAccess.getOperationAccess().getGroup_3(), "rule__Operation__Group_3__0");
@@ -58,6 +61,10 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComponentAccess().getOpsAssignment_5_1(), "rule__Component__OpsAssignment_5_1");
 			builder.put(grammarAccess.getComponentAccess().getOperationsAssignment_7_0(), "rule__Component__OperationsAssignment_7_0");
 			builder.put(grammarAccess.getComponentAccess().getVarsAssignment_8(), "rule__Component__VarsAssignment_8");
+			builder.put(grammarAccess.getComponentAccess().getCallsAssignment_11_0_0(), "rule__Component__CallsAssignment_11_0_0");
+			builder.put(grammarAccess.getComponentAccess().getCallsAssignment_11_1(), "rule__Component__CallsAssignment_11_1");
+			builder.put(grammarAccess.getCallAccess().getReceiverAssignment_0(), "rule__Call__ReceiverAssignment_0");
+			builder.put(grammarAccess.getCallAccess().getMemberAssignment_2(), "rule__Call__MemberAssignment_2");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
 			builder.put(grammarAccess.getVariableAccess().getTypeAssignment_2(), "rule__Variable__TypeAssignment_2");
 			builder.put(grammarAccess.getOperationAccess().getNameAssignment_1(), "rule__Operation__NameAssignment_1");

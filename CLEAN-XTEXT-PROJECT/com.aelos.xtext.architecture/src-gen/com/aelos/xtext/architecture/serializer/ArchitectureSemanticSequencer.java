@@ -6,6 +6,7 @@ package com.aelos.xtext.architecture.serializer;
 import com.aelos.xtext.architecture.architecture.AbstractModel;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.AtomicType;
+import com.aelos.xtext.architecture.architecture.Call;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.architecture.DomainDeclaration;
 import com.aelos.xtext.architecture.architecture.Import;
@@ -45,6 +46,9 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 				return; 
 			case ArchitecturePackage.ATOMIC_TYPE:
 				sequence_AtomicType(context, (AtomicType) semanticObject); 
+				return; 
+			case ArchitecturePackage.CALL:
+				sequence_Call(context, (Call) semanticObject); 
 				return; 
 			case ArchitecturePackage.COMPONENT:
 				sequence_Component(context, (Component) semanticObject); 
@@ -141,10 +145,22 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
+	 *     Call returns Call
+	 *
+	 * Constraint:
+	 *     (receiver=[Component|ID] member+=[Operation|ID])
+	 */
+	protected void sequence_Call(ISerializationContext context, Call semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Component returns Component
 	 *
 	 * Constraint:
-	 *     (name=ID (ops+=[Operation|ID]* ops+=[Operation|ID])* operations+=Operation* vars+=Variable*)
+	 *     (name=ID (ops+=[Operation|ID]* ops+=[Operation|ID])* operations+=Operation* vars+=Variable* (calls+=Call* calls+=Call)*)
 	 */
 	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

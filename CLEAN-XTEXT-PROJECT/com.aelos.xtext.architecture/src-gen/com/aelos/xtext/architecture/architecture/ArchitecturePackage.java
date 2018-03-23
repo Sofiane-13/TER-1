@@ -235,13 +235,59 @@ public interface ArchitecturePackage extends EPackage
   int COMPONENT__VARS = 3;
 
   /**
+   * The feature id for the '<em><b>Calls</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__CALLS = 4;
+
+  /**
    * The number of structural features of the '<em>Component</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = 4;
+  int COMPONENT_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.CallImpl <em>Call</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.architecture.architecture.impl.CallImpl
+   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getCall()
+   * @generated
+   */
+  int CALL = 5;
+
+  /**
+   * The feature id for the '<em><b>Receiver</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALL__RECEIVER = 0;
+
+  /**
+   * The feature id for the '<em><b>Member</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALL__MEMBER = 1;
+
+  /**
+   * The number of structural features of the '<em>Call</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableImpl <em>Variable</em>}' class.
@@ -251,7 +297,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 5;
+  int VARIABLE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -288,7 +334,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 6;
+  int OPERATION = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -334,7 +380,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getAtomicType()
    * @generated
    */
-  int ATOMIC_TYPE = 7;
+  int ATOMIC_TYPE = 8;
 
   /**
    * The feature id for the '<em><b>Atom Type</b></em>' attribute.
@@ -362,7 +408,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getVariableRef()
    * @generated
    */
-  int VARIABLE_REF = 8;
+  int VARIABLE_REF = 9;
 
   /**
    * The feature id for the '<em><b>Atom Type</b></em>' attribute.
@@ -399,7 +445,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getType()
    * @generated
    */
-  int TYPE = 9;
+  int TYPE = 10;
 
 
   /**
@@ -550,6 +596,49 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    */
   EReference getComponent_Vars();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getCalls <em>Calls</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Calls</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Component#getCalls()
+   * @see #getComponent()
+   * @generated
+   */
+  EReference getComponent_Calls();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Call <em>Call</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Call</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Call
+   * @generated
+   */
+  EClass getCall();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.architecture.architecture.Call#getReceiver <em>Receiver</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Receiver</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Call#getReceiver()
+   * @see #getCall()
+   * @generated
+   */
+  EReference getCall_Receiver();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Call#getMember <em>Member</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Member</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Call#getMember()
+   * @see #getCall()
+   * @generated
+   */
+  EReference getCall_Member();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Variable <em>Variable</em>}'.
@@ -822,6 +911,40 @@ public interface ArchitecturePackage extends EPackage
      * @generated
      */
     EReference COMPONENT__VARS = eINSTANCE.getComponent_Vars();
+
+    /**
+     * The meta object literal for the '<em><b>Calls</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT__CALLS = eINSTANCE.getComponent_Calls();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.CallImpl <em>Call</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.architecture.architecture.impl.CallImpl
+     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getCall()
+     * @generated
+     */
+    EClass CALL = eINSTANCE.getCall();
+
+    /**
+     * The meta object literal for the '<em><b>Receiver</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CALL__RECEIVER = eINSTANCE.getCall_Receiver();
+
+    /**
+     * The meta object literal for the '<em><b>Member</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CALL__MEMBER = eINSTANCE.getCall_Member();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableImpl <em>Variable</em>}' class.

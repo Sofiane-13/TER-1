@@ -4,6 +4,7 @@
 package com.aelos.xtext.architecture.scoping;
 
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
+import com.aelos.xtext.architecture.architecture.Call;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.scoping.AbstractArchitectureScopeProvider;
 import com.google.common.base.Objects;
@@ -24,13 +25,19 @@ public class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
     if (((context instanceof Component) && Objects.equal(reference, ArchitecturePackage.Literals.COMPONENT__OPS))) {
-      return this.scope_Call_op(EcoreUtil2.<Component>getContainerOfType(context, Component.class));
+      return this.scope_Comp_op(EcoreUtil2.<Component>getContainerOfType(context, Component.class));
+    }
+    if (((context instanceof Call) && Objects.equal(reference, ArchitecturePackage.Literals.CALL__MEMBER))) {
+      return this.scope_Call_op(EcoreUtil2.<Call>getContainerOfType(context, Call.class));
     }
     return super.getScope(context, reference);
   }
   
-  public IScope scope_Call_op(final Component selct) {
-    System.out.print("dsjkbc");
+  public IScope scope_Comp_op(final Component selct) {
     return Scopes.scopeFor(selct.getOperations());
+  }
+  
+  public IScope scope_Call_op(final Call selct) {
+    return Scopes.scopeFor(selct.getReceiver().getOperations());
   }
 }

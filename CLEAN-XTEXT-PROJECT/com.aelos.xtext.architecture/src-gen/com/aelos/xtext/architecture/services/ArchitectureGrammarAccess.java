@@ -199,20 +199,29 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cOperationsOperationParserRuleCall_7_0_0 = (RuleCall)cOperationsAssignment_7_0.eContents().get(0);
 		private final Assignment cVarsAssignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final RuleCall cVarsVariableParserRuleCall_8_0 = (RuleCall)cVarsAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cRequiredServiceKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cLeftParenthesisKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Group cGroup_11_0 = (Group)cGroup_11.eContents().get(0);
+		private final Assignment cCallsAssignment_11_0_0 = (Assignment)cGroup_11_0.eContents().get(0);
+		private final RuleCall cCallsCallParserRuleCall_11_0_0_0 = (RuleCall)cCallsAssignment_11_0_0.eContents().get(0);
+		private final Keyword cCommaKeyword_11_0_1 = (Keyword)cGroup_11_0.eContents().get(1);
+		private final Assignment cCallsAssignment_11_1 = (Assignment)cGroup_11.eContents().get(1);
+		private final RuleCall cCallsCallParserRuleCall_11_1_0 = (RuleCall)cCallsAssignment_11_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//Component:
 		//	"Component:" name=ID "{"
 		//	"providedServices" "(" ((ops+=[Operation] ",")* ops+=[Operation])* ")"
 		//	-> (operations+=Operation)*
 		//	vars+=Variable*
-		//	//"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+		//	"requiredService" "(" ((calls+=Call ",")* calls+=Call)* ")"
 		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"Component:" name=ID "{" "providedServices" "(" ((ops+=[Operation] ",")* ops+=[Operation])* ")" ->
-		//(operations+=Operation)* vars+=Variable* //"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
-		//"}"
+		//(operations+=Operation)* vars+=Variable* "requiredService" "(" ((calls+=Call ",")* calls+=Call)* ")" "}"
 		public Group getGroup() { return cGroup; }
 		
 		//"Component:"
@@ -278,9 +287,77 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//Variable
 		public RuleCall getVarsVariableParserRuleCall_8_0() { return cVarsVariableParserRuleCall_8_0; }
 		
-		////"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+		//"requiredService"
+		public Keyword getRequiredServiceKeyword_9() { return cRequiredServiceKeyword_9; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_10() { return cLeftParenthesisKeyword_10; }
+		
+		//((calls+=Call ",")* calls+=Call)*
+		public Group getGroup_11() { return cGroup_11; }
+		
+		//(calls+=Call ",")*
+		public Group getGroup_11_0() { return cGroup_11_0; }
+		
+		//calls+=Call
+		public Assignment getCallsAssignment_11_0_0() { return cCallsAssignment_11_0_0; }
+		
+		//Call
+		public RuleCall getCallsCallParserRuleCall_11_0_0_0() { return cCallsCallParserRuleCall_11_0_0_0; }
+		
+		//","
+		public Keyword getCommaKeyword_11_0_1() { return cCommaKeyword_11_0_1; }
+		
+		//calls+=Call
+		public Assignment getCallsAssignment_11_1() { return cCallsAssignment_11_1; }
+		
+		//Call
+		public RuleCall getCallsCallParserRuleCall_11_1_0() { return cCallsCallParserRuleCall_11_1_0; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_12() { return cRightParenthesisKeyword_12; }
+		
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+	}
+	public class CallElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Call");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cReceiverAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cReceiverComponentCrossReference_0_0 = (CrossReference)cReceiverAssignment_0.eContents().get(0);
+		private final RuleCall cReceiverComponentIDTerminalRuleCall_0_0_1 = (RuleCall)cReceiverComponentCrossReference_0_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cMemberAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cMemberOperationCrossReference_2_0 = (CrossReference)cMemberAssignment_2.eContents().get(0);
+		private final RuleCall cMemberOperationIDTerminalRuleCall_2_0_1 = (RuleCall)cMemberOperationCrossReference_2_0.eContents().get(1);
+		
+		//Call:
+		//	receiver=[Component] '.' member+=[Operation];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//receiver=[Component] '.' member+=[Operation]
+		public Group getGroup() { return cGroup; }
+		
+		//receiver=[Component]
+		public Assignment getReceiverAssignment_0() { return cReceiverAssignment_0; }
+		
+		//[Component]
+		public CrossReference getReceiverComponentCrossReference_0_0() { return cReceiverComponentCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getReceiverComponentIDTerminalRuleCall_0_0_1() { return cReceiverComponentIDTerminalRuleCall_0_0_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
+		
+		//member+=[Operation]
+		public Assignment getMemberAssignment_2() { return cMemberAssignment_2; }
+		
+		//[Operation]
+		public CrossReference getMemberOperationCrossReference_2_0() { return cMemberOperationCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getMemberOperationIDTerminalRuleCall_2_0_1() { return cMemberOperationIDTerminalRuleCall_2_0_1; }
 	}
 	public class VariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Variable");
@@ -475,6 +552,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
 	private final QualifiedNameElements pQualifiedName;
 	private final ComponentElements pComponent;
+	private final CallElements pCall;
 	private final VariableElements pVariable;
 	private final OperationElements pOperation;
 	private final AtomicTypeElements pAtomicType;
@@ -496,6 +574,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pComponent = new ComponentElements();
+		this.pCall = new CallElements();
 		this.pVariable = new VariableElements();
 		this.pOperation = new OperationElements();
 		this.pAtomicType = new AtomicTypeElements();
@@ -596,7 +675,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	//	"providedServices" "(" ((ops+=[Operation] ",")* ops+=[Operation])* ")"
 	//	-> (operations+=Operation)*
 	//	vars+=Variable*
-	//	//"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+	//	"requiredService" "(" ((calls+=Call ",")* calls+=Call)* ")"
 	//	"}";
 	public ComponentElements getComponentAccess() {
 		return pComponent;
@@ -604,6 +683,16 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getComponentRule() {
 		return getComponentAccess().getRule();
+	}
+	
+	//Call:
+	//	receiver=[Component] '.' member+=[Operation];
+	public CallElements getCallAccess() {
+		return pCall;
+	}
+	
+	public ParserRule getCallRule() {
+		return getCallAccess().getRule();
 	}
 	
 	//Variable:

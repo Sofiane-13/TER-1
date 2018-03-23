@@ -461,10 +461,117 @@ ruleComponent returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_11='}'
+		otherlv_11='requiredService'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_9());
+			newLeafNode(otherlv_11, grammarAccess.getComponentAccess().getRequiredServiceKeyword_9());
 		}
+		otherlv_12='('
+		{
+			newLeafNode(otherlv_12, grammarAccess.getComponentAccess().getLeftParenthesisKeyword_10());
+		}
+		(
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getComponentAccess().getCallsCallParserRuleCall_11_0_0_0());
+						}
+						lv_calls_13_0=ruleCall
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getComponentRule());
+							}
+							add(
+								$current,
+								"calls",
+								lv_calls_13_0,
+								"com.aelos.xtext.architecture.Architecture.Call");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				otherlv_14=','
+				{
+					newLeafNode(otherlv_14, grammarAccess.getComponentAccess().getCommaKeyword_11_0_1());
+				}
+			)*
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getComponentAccess().getCallsCallParserRuleCall_11_1_0());
+					}
+					lv_calls_15_0=ruleCall
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getComponentRule());
+						}
+						add(
+							$current,
+							"calls",
+							lv_calls_15_0,
+							"com.aelos.xtext.architecture.Architecture.Call");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_16=')'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getComponentAccess().getRightParenthesisKeyword_12());
+		}
+		otherlv_17='}'
+		{
+			newLeafNode(otherlv_17, grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_13());
+		}
+	)
+;
+
+// Entry rule entryRuleCall
+entryRuleCall returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCallRule()); }
+	iv_ruleCall=ruleCall
+	{ $current=$iv_ruleCall.current; }
+	EOF;
+
+// Rule Call
+ruleCall returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCallRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getCallAccess().getReceiverComponentCrossReference_0_0());
+				}
+			)
+		)
+		otherlv_1='.'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCallAccess().getFullStopKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCallRule());
+					}
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getCallAccess().getMemberOperationCrossReference_2_0());
+				}
+			)
+		)
 	)
 ;
 

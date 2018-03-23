@@ -8,9 +8,10 @@ import org.eclipse.emf.ecore.EReference
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage
 import com.aelos.xtext.architecture.architecture.Component
 import org.eclipse.xtext.EcoreUtil2
-import com.aelos.xtext.architecture.architecture.Operation
 import org.eclipse.xtext.scoping.Scopes
 import org.eclipse.xtext.scoping.IScope
+import com.aelos.xtext.architecture.architecture.Call
+import com.aelos.xtext.architecture.architecture.Operation
 
 /**
  * This class contains custom scoping description.
@@ -24,28 +25,28 @@ class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
 		if (context instanceof Component && reference == ArchitecturePackage.Literals.COMPONENT__OPS) {
 	        
 	          // Create IEObjectDescriptions and puts them into an IScope instance
-	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, Component))
+	          return scope_Comp_op(EcoreUtil2.getContainerOfType(context, Component))
 	    }
-	    return super.getScope(context, reference)
+	    //return super.getScope(context, reference)
 	    
 	    
     
     
-	    /*if (context instanceof Call && reference == MyDslPackage.Literals.CALL__OP) {
+	    if (context instanceof Call && reference == ArchitecturePackage.Literals.CALL__MEMBER) {
 	        
 	          // Create IEObjectDescriptions and puts them into an IScope instance
 	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, Call))
 	    }
-	    return super.getScope(context, reference);*/
+	    return super.getScope(context, reference);
 	}
 	
-	def  IScope scope_Call_op(Component selct) {
-	      System.out.print("dsjkbc")
+	def  IScope scope_Comp_op(Component selct) {
+	      //System.out.print("dsjkbc")
       return Scopes.scopeFor(selct.operations);
 	}
 
-	/*def  IScope scope_Call_op(VarDef selct) {
-      System.out.print("dsjkbc")
-      return Scopes.scopeFor(selct.getReceiver().getType().getOps());
-	}*/
+	def  IScope scope_Call_op(Call selct) {
+      //System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.receiver.operations);
+	}
 }

@@ -27,11 +27,13 @@ Component :
 	"Component:" name=ID "{"
 		"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
 		->(operations+=Operation)*
-		(vars+=Variable)*
-		//"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+		//(vars+=Variable)*
+		"requiredService" "(" ((calls+=Call ",")*(calls+=Call))* ")"
 	"}"
 ;
 
+
+Call : receiver=[Component]'.'member+=[Operation];  
 
 
 Variable:

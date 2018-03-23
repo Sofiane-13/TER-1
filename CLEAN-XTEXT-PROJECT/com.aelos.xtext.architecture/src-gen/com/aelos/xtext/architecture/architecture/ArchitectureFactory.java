@@ -69,6 +69,15 @@ public interface ArchitectureFactory extends EFactory
   Component createComponent();
 
   /**
+   * Returns a new object of class '<em>Call</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Call</em>'.
+   * @generated
+   */
+  Call createCall();
+
+  /**
    * Returns a new object of class '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

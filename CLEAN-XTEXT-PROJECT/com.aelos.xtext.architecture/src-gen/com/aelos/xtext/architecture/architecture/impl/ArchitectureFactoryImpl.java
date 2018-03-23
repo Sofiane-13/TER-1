@@ -71,6 +71,7 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
       case ArchitecturePackage.ABSTRACT_MODEL: return createAbstractModel();
       case ArchitecturePackage.IMPORT: return createImport();
       case ArchitecturePackage.COMPONENT: return createComponent();
+      case ArchitecturePackage.CALL: return createCall();
       case ArchitecturePackage.VARIABLE: return createVariable();
       case ArchitecturePackage.OPERATION: return createOperation();
       case ArchitecturePackage.ATOMIC_TYPE: return createAtomicType();
@@ -167,6 +168,17 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
   {
     ComponentImpl component = new ComponentImpl();
     return component;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Call createCall()
+  {
+    CallImpl call = new CallImpl();
+    return call;
   }
 
   /**
