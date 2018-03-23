@@ -12,7 +12,7 @@ DomainDeclaration:
         (elements+=AbstractModel)*
     '}';
 
-AbstractModel:Import? (comp+=Component )+ ;
+AbstractModel:Import? (comp+=Component)+ ;
 
 Import:
     'import' importedNamespace=QualifiedNameWithWildcard;
@@ -24,29 +24,22 @@ QualifiedName:
     ID ('.' ID)*;
     
 Component :
-	=> "Component:" inst+=InstanceComp":" => name=ID
-	"ProvidedServices:"
-	"conf("(arg+=Variable ",")*arg1+=Variable")"
-	(methode+=ServiceName "("((arg+=Variable ",")*arg+=Variable)*")"(":"arg+=Variable)?)*
-    "RequiredServices:"?
-    (req+=RequiredService)*
-	(bind+=Bindings)*
+	"Component:" name=ID "{"
+		"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+		->(operations+=Operation)*
+		(vars+=Variable)*
+		//"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+	"}"
 ;
 
-InstanceComp: name=ID;
+
 
 Variable:
       name=ID ":" type=Type;
-      
-
-Bindings :
-	"bind(" nameComp1+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp2+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
-	  
-RequiredService:
-		nameVarMethode+=Variable":="nameComp+=[InstanceComp]'.'nameServ+=[ServiceName]";";
-
-ServiceName : name=ID;
 
 
+Operation:
+    "def" name=ID "("((arg+=Variable ",")*arg+=Variable)*")" ":" type= Type | typeComp+=[Component]
+;
       
 enum Type : INT | STRING | Boolean | Double;

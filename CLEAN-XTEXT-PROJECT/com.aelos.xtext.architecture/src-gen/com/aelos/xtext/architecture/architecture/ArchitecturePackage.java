@@ -199,67 +199,40 @@ public interface ArchitecturePackage extends EPackage
   int COMPONENT = 4;
 
   /**
-   * The feature id for the '<em><b>Inst</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__INST = 0;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__NAME = 1;
+  int COMPONENT__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Arg</b></em>' containment reference list.
+   * The feature id for the '<em><b>Ops</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__ARG = 2;
+  int COMPONENT__OPS = 1;
 
   /**
-   * The feature id for the '<em><b>Arg1</b></em>' containment reference list.
+   * The feature id for the '<em><b>Operations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__ARG1 = 3;
+  int COMPONENT__OPERATIONS = 2;
 
   /**
-   * The feature id for the '<em><b>Methode</b></em>' containment reference list.
+   * The feature id for the '<em><b>Vars</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__METHODE = 4;
-
-  /**
-   * The feature id for the '<em><b>Req</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__REQ = 5;
-
-  /**
-   * The feature id for the '<em><b>Bind</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__BIND = 6;
+  int COMPONENT__VARS = 3;
 
   /**
    * The number of structural features of the '<em>Component</em>' class.
@@ -268,35 +241,7 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = 7;
-
-  /**
-   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.InstanceCompImpl <em>Instance Comp</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.aelos.xtext.architecture.architecture.impl.InstanceCompImpl
-   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getInstanceComp()
-   * @generated
-   */
-  int INSTANCE_COMP = 5;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTANCE_COMP__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Instance Comp</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INSTANCE_COMP_FEATURE_COUNT = 1;
+  int COMPONENT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableImpl <em>Variable</em>}' class.
@@ -306,7 +251,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 6;
+  int VARIABLE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -336,115 +281,14 @@ public interface ArchitecturePackage extends EPackage
   int VARIABLE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.BindingsImpl <em>Bindings</em>}' class.
+   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl <em>Operation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.aelos.xtext.architecture.architecture.impl.BindingsImpl
-   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getBindings()
+   * @see com.aelos.xtext.architecture.architecture.impl.OperationImpl
+   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getOperation()
    * @generated
    */
-  int BINDINGS = 7;
-
-  /**
-   * The feature id for the '<em><b>Name Comp1</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDINGS__NAME_COMP1 = 0;
-
-  /**
-   * The feature id for the '<em><b>Name Serv1</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDINGS__NAME_SERV1 = 1;
-
-  /**
-   * The feature id for the '<em><b>Name Comp2</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDINGS__NAME_COMP2 = 2;
-
-  /**
-   * The feature id for the '<em><b>Name Serv2</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDINGS__NAME_SERV2 = 3;
-
-  /**
-   * The number of structural features of the '<em>Bindings</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BINDINGS_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.RequiredServiceImpl <em>Required Service</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.aelos.xtext.architecture.architecture.impl.RequiredServiceImpl
-   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getRequiredService()
-   * @generated
-   */
-  int REQUIRED_SERVICE = 8;
-
-  /**
-   * The feature id for the '<em><b>Name Var Methode</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIRED_SERVICE__NAME_VAR_METHODE = 0;
-
-  /**
-   * The feature id for the '<em><b>Name Comp</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIRED_SERVICE__NAME_COMP = 1;
-
-  /**
-   * The feature id for the '<em><b>Name Serv</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIRED_SERVICE__NAME_SERV = 2;
-
-  /**
-   * The number of structural features of the '<em>Required Service</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIRED_SERVICE_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.ServiceNameImpl <em>Service Name</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.aelos.xtext.architecture.architecture.impl.ServiceNameImpl
-   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getServiceName()
-   * @generated
-   */
-  int SERVICE_NAME = 9;
+  int OPERATION = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -453,16 +297,43 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVICE_NAME__NAME = 0;
+  int OPERATION__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Service Name</em>' class.
+   * The feature id for the '<em><b>Arg</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SERVICE_NAME_FEATURE_COUNT = 1;
+  int OPERATION__ARG = 1;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__TYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Type Comp</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__TYPE_COMP = 3;
+
+  /**
+   * The number of structural features of the '<em>Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.Type <em>Type</em>}' enum.
@@ -472,7 +343,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getType()
    * @generated
    */
-  int TYPE = 10;
+  int TYPE = 7;
 
 
   /**
@@ -581,17 +452,6 @@ public interface ArchitecturePackage extends EPackage
   EClass getComponent();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getInst <em>Inst</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Inst</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Component#getInst()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Inst();
-
-  /**
    * Returns the meta object for the attribute '{@link com.aelos.xtext.architecture.architecture.Component#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -603,80 +463,37 @@ public interface ArchitecturePackage extends EPackage
   EAttribute getComponent_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getArg <em>Arg</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Component#getOps <em>Ops</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Arg</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Component#getArg()
+   * @return the meta object for the reference list '<em>Ops</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Component#getOps()
    * @see #getComponent()
    * @generated
    */
-  EReference getComponent_Arg();
+  EReference getComponent_Ops();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getArg1 <em>Arg1</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getOperations <em>Operations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Arg1</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Component#getArg1()
+   * @return the meta object for the containment reference list '<em>Operations</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Component#getOperations()
    * @see #getComponent()
    * @generated
    */
-  EReference getComponent_Arg1();
+  EReference getComponent_Operations();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getMethode <em>Methode</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getVars <em>Vars</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Methode</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Component#getMethode()
+   * @return the meta object for the containment reference list '<em>Vars</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Component#getVars()
    * @see #getComponent()
    * @generated
    */
-  EReference getComponent_Methode();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getReq <em>Req</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Req</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Component#getReq()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Req();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getBind <em>Bind</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Bind</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Component#getBind()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Bind();
-
-  /**
-   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.InstanceComp <em>Instance Comp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Instance Comp</em>'.
-   * @see com.aelos.xtext.architecture.architecture.InstanceComp
-   * @generated
-   */
-  EClass getInstanceComp();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.aelos.xtext.architecture.architecture.InstanceComp#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.aelos.xtext.architecture.architecture.InstanceComp#getName()
-   * @see #getInstanceComp()
-   * @generated
-   */
-  EAttribute getInstanceComp_Name();
+  EReference getComponent_Vars();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Variable <em>Variable</em>}'.
@@ -711,122 +528,58 @@ public interface ArchitecturePackage extends EPackage
   EAttribute getVariable_Type();
 
   /**
-   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Bindings <em>Bindings</em>}'.
+   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Bindings</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Bindings
+   * @return the meta object for class '<em>Operation</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Operation
    * @generated
    */
-  EClass getBindings();
+  EClass getOperation();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Bindings#getNameComp1 <em>Name Comp1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Name Comp1</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Bindings#getNameComp1()
-   * @see #getBindings()
-   * @generated
-   */
-  EReference getBindings_NameComp1();
-
-  /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Bindings#getNameServ1 <em>Name Serv1</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Name Serv1</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Bindings#getNameServ1()
-   * @see #getBindings()
-   * @generated
-   */
-  EReference getBindings_NameServ1();
-
-  /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Bindings#getNameComp2 <em>Name Comp2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Name Comp2</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Bindings#getNameComp2()
-   * @see #getBindings()
-   * @generated
-   */
-  EReference getBindings_NameComp2();
-
-  /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Bindings#getNameServ2 <em>Name Serv2</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Name Serv2</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Bindings#getNameServ2()
-   * @see #getBindings()
-   * @generated
-   */
-  EReference getBindings_NameServ2();
-
-  /**
-   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.RequiredService <em>Required Service</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Required Service</em>'.
-   * @see com.aelos.xtext.architecture.architecture.RequiredService
-   * @generated
-   */
-  EClass getRequiredService();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.RequiredService#getNameVarMethode <em>Name Var Methode</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Name Var Methode</em>'.
-   * @see com.aelos.xtext.architecture.architecture.RequiredService#getNameVarMethode()
-   * @see #getRequiredService()
-   * @generated
-   */
-  EReference getRequiredService_NameVarMethode();
-
-  /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.RequiredService#getNameComp <em>Name Comp</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Name Comp</em>'.
-   * @see com.aelos.xtext.architecture.architecture.RequiredService#getNameComp()
-   * @see #getRequiredService()
-   * @generated
-   */
-  EReference getRequiredService_NameComp();
-
-  /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.RequiredService#getNameServ <em>Name Serv</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Name Serv</em>'.
-   * @see com.aelos.xtext.architecture.architecture.RequiredService#getNameServ()
-   * @see #getRequiredService()
-   * @generated
-   */
-  EReference getRequiredService_NameServ();
-
-  /**
-   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.ServiceName <em>Service Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Service Name</em>'.
-   * @see com.aelos.xtext.architecture.architecture.ServiceName
-   * @generated
-   */
-  EClass getServiceName();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.aelos.xtext.architecture.architecture.ServiceName#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.architecture.architecture.Operation#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.aelos.xtext.architecture.architecture.ServiceName#getName()
-   * @see #getServiceName()
+   * @see com.aelos.xtext.architecture.architecture.Operation#getName()
+   * @see #getOperation()
    * @generated
    */
-  EAttribute getServiceName_Name();
+  EAttribute getOperation_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Operation#getArg <em>Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arg</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Operation#getArg()
+   * @see #getOperation()
+   * @generated
+   */
+  EReference getOperation_Arg();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.architecture.architecture.Operation#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Operation#getType()
+   * @see #getOperation()
+   * @generated
+   */
+  EAttribute getOperation_Type();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Operation#getTypeComp <em>Type Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Type Comp</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Operation#getTypeComp()
+   * @see #getOperation()
+   * @generated
+   */
+  EReference getOperation_TypeComp();
 
   /**
    * Returns the meta object for enum '{@link com.aelos.xtext.architecture.architecture.Type <em>Type</em>}'.
@@ -952,14 +705,6 @@ public interface ArchitecturePackage extends EPackage
     EClass COMPONENT = eINSTANCE.getComponent();
 
     /**
-     * The meta object literal for the '<em><b>Inst</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__INST = eINSTANCE.getComponent_Inst();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -968,62 +713,28 @@ public interface ArchitecturePackage extends EPackage
     EAttribute COMPONENT__NAME = eINSTANCE.getComponent_Name();
 
     /**
-     * The meta object literal for the '<em><b>Arg</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Ops</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__ARG = eINSTANCE.getComponent_Arg();
+    EReference COMPONENT__OPS = eINSTANCE.getComponent_Ops();
 
     /**
-     * The meta object literal for the '<em><b>Arg1</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__ARG1 = eINSTANCE.getComponent_Arg1();
+    EReference COMPONENT__OPERATIONS = eINSTANCE.getComponent_Operations();
 
     /**
-     * The meta object literal for the '<em><b>Methode</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Vars</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__METHODE = eINSTANCE.getComponent_Methode();
-
-    /**
-     * The meta object literal for the '<em><b>Req</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__REQ = eINSTANCE.getComponent_Req();
-
-    /**
-     * The meta object literal for the '<em><b>Bind</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__BIND = eINSTANCE.getComponent_Bind();
-
-    /**
-     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.InstanceCompImpl <em>Instance Comp</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.aelos.xtext.architecture.architecture.impl.InstanceCompImpl
-     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getInstanceComp()
-     * @generated
-     */
-    EClass INSTANCE_COMP = eINSTANCE.getInstanceComp();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INSTANCE_COMP__NAME = eINSTANCE.getInstanceComp_Name();
+    EReference COMPONENT__VARS = eINSTANCE.getComponent_Vars();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableImpl <em>Variable</em>}' class.
@@ -1052,90 +763,14 @@ public interface ArchitecturePackage extends EPackage
     EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
     /**
-     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.BindingsImpl <em>Bindings</em>}' class.
+     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl <em>Operation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.aelos.xtext.architecture.architecture.impl.BindingsImpl
-     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getBindings()
+     * @see com.aelos.xtext.architecture.architecture.impl.OperationImpl
+     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getOperation()
      * @generated
      */
-    EClass BINDINGS = eINSTANCE.getBindings();
-
-    /**
-     * The meta object literal for the '<em><b>Name Comp1</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BINDINGS__NAME_COMP1 = eINSTANCE.getBindings_NameComp1();
-
-    /**
-     * The meta object literal for the '<em><b>Name Serv1</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BINDINGS__NAME_SERV1 = eINSTANCE.getBindings_NameServ1();
-
-    /**
-     * The meta object literal for the '<em><b>Name Comp2</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BINDINGS__NAME_COMP2 = eINSTANCE.getBindings_NameComp2();
-
-    /**
-     * The meta object literal for the '<em><b>Name Serv2</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BINDINGS__NAME_SERV2 = eINSTANCE.getBindings_NameServ2();
-
-    /**
-     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.RequiredServiceImpl <em>Required Service</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.aelos.xtext.architecture.architecture.impl.RequiredServiceImpl
-     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getRequiredService()
-     * @generated
-     */
-    EClass REQUIRED_SERVICE = eINSTANCE.getRequiredService();
-
-    /**
-     * The meta object literal for the '<em><b>Name Var Methode</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIRED_SERVICE__NAME_VAR_METHODE = eINSTANCE.getRequiredService_NameVarMethode();
-
-    /**
-     * The meta object literal for the '<em><b>Name Comp</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIRED_SERVICE__NAME_COMP = eINSTANCE.getRequiredService_NameComp();
-
-    /**
-     * The meta object literal for the '<em><b>Name Serv</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIRED_SERVICE__NAME_SERV = eINSTANCE.getRequiredService_NameServ();
-
-    /**
-     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.ServiceNameImpl <em>Service Name</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.aelos.xtext.architecture.architecture.impl.ServiceNameImpl
-     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getServiceName()
-     * @generated
-     */
-    EClass SERVICE_NAME = eINSTANCE.getServiceName();
+    EClass OPERATION = eINSTANCE.getOperation();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1143,7 +778,31 @@ public interface ArchitecturePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SERVICE_NAME__NAME = eINSTANCE.getServiceName_Name();
+    EAttribute OPERATION__NAME = eINSTANCE.getOperation_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Arg</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION__ARG = eINSTANCE.getOperation_Arg();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERATION__TYPE = eINSTANCE.getOperation_Type();
+
+    /**
+     * The meta object literal for the '<em><b>Type Comp</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION__TYPE_COMP = eINSTANCE.getOperation_TypeComp();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.Type <em>Type</em>}' enum.

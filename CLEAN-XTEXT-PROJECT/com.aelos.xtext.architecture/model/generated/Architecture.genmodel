@@ -26,34 +26,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Import/importedNamespace"/>
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//Component">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/inst"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Component/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/arg"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/arg1"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/methode"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/req"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/bind"/>
-    </genClasses>
-    <genClasses ecoreClass="Architecture.ecore#//InstanceComp">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//InstanceComp/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/ops"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/vars"/>
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Variable/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Variable/type"/>
     </genClasses>
-    <genClasses ecoreClass="Architecture.ecore#//Bindings">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Bindings/nameComp1"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Bindings/nameServ1"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Bindings/nameComp2"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Bindings/nameServ2"/>
-    </genClasses>
-    <genClasses ecoreClass="Architecture.ecore#//RequiredService">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//RequiredService/nameVarMethode"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//RequiredService/nameComp"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//RequiredService/nameServ"/>
-    </genClasses>
-    <genClasses ecoreClass="Architecture.ecore#//ServiceName">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//ServiceName/name"/>
+    <genClasses ecoreClass="Architecture.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Operation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Operation/arg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Operation/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Operation/typeComp"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

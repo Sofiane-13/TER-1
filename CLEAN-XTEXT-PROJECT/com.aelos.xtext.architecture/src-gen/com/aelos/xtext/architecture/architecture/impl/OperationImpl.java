@@ -6,6 +6,7 @@ package com.aelos.xtext.architecture.architecture.impl;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.architecture.Operation;
+import com.aelos.xtext.architecture.architecture.Type;
 import com.aelos.xtext.architecture.architecture.Variable;
 
 import java.util.Collection;
@@ -27,21 +28,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component</b></em>'.
+ * An implementation of the model object '<em><b>Operation</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getOps <em>Ops</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getOperations <em>Operations</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getVars <em>Vars</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl#getArg <em>Arg</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl#getType <em>Type</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl#getTypeComp <em>Type Comp</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ComponentImpl extends MinimalEObjectImpl.Container implements Component
+public class OperationImpl extends MinimalEObjectImpl.Container implements Operation
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -64,41 +65,51 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getOps() <em>Ops</em>}' reference list.
+   * The cached value of the '{@link #getArg() <em>Arg</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOps()
+   * @see #getArg()
    * @generated
    * @ordered
    */
-  protected EList<Operation> ops;
+  protected EList<Variable> arg;
 
   /**
-   * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOperations()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected EList<Operation> operations;
+  protected static final Type TYPE_EDEFAULT = Type.INT;
 
   /**
-   * The cached value of the '{@link #getVars() <em>Vars</em>}' containment reference list.
+   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVars()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected EList<Variable> vars;
+  protected Type type = TYPE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getTypeComp() <em>Type Comp</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTypeComp()
+   * @generated
+   * @ordered
+   */
+  protected EList<Component> typeComp;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ComponentImpl()
+  protected OperationImpl()
   {
     super();
   }
@@ -111,7 +122,7 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   @Override
   protected EClass eStaticClass()
   {
-    return ArchitecturePackage.Literals.COMPONENT;
+    return ArchitecturePackage.Literals.OPERATION;
   }
 
   /**
@@ -134,7 +145,7 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.COMPONENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.OPERATION__NAME, oldName, name));
   }
 
   /**
@@ -142,13 +153,13 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Operation> getOps()
+  public EList<Variable> getArg()
   {
-    if (ops == null)
+    if (arg == null)
     {
-      ops = new EObjectResolvingEList<Operation>(Operation.class, this, ArchitecturePackage.COMPONENT__OPS);
+      arg = new EObjectContainmentEList<Variable>(Variable.class, this, ArchitecturePackage.OPERATION__ARG);
     }
-    return ops;
+    return arg;
   }
 
   /**
@@ -156,13 +167,9 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Operation> getOperations()
+  public Type getType()
   {
-    if (operations == null)
-    {
-      operations = new EObjectContainmentEList<Operation>(Operation.class, this, ArchitecturePackage.COMPONENT__OPERATIONS);
-    }
-    return operations;
+    return type;
   }
 
   /**
@@ -170,13 +177,26 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVars()
+  public void setType(Type newType)
   {
-    if (vars == null)
+    Type oldType = type;
+    type = newType == null ? TYPE_EDEFAULT : newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.OPERATION__TYPE, oldType, type));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Component> getTypeComp()
+  {
+    if (typeComp == null)
     {
-      vars = new EObjectContainmentEList<Variable>(Variable.class, this, ArchitecturePackage.COMPONENT__VARS);
+      typeComp = new EObjectResolvingEList<Component>(Component.class, this, ArchitecturePackage.OPERATION__TYPE_COMP);
     }
-    return vars;
+    return typeComp;
   }
 
   /**
@@ -189,10 +209,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__OPERATIONS:
-        return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.COMPONENT__VARS:
-        return ((InternalEList<?>)getVars()).basicRemove(otherEnd, msgs);
+      case ArchitecturePackage.OPERATION__ARG:
+        return ((InternalEList<?>)getArg()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -207,14 +225,14 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__NAME:
+      case ArchitecturePackage.OPERATION__NAME:
         return getName();
-      case ArchitecturePackage.COMPONENT__OPS:
-        return getOps();
-      case ArchitecturePackage.COMPONENT__OPERATIONS:
-        return getOperations();
-      case ArchitecturePackage.COMPONENT__VARS:
-        return getVars();
+      case ArchitecturePackage.OPERATION__ARG:
+        return getArg();
+      case ArchitecturePackage.OPERATION__TYPE:
+        return getType();
+      case ArchitecturePackage.OPERATION__TYPE_COMP:
+        return getTypeComp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -230,20 +248,19 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__NAME:
+      case ArchitecturePackage.OPERATION__NAME:
         setName((String)newValue);
         return;
-      case ArchitecturePackage.COMPONENT__OPS:
-        getOps().clear();
-        getOps().addAll((Collection<? extends Operation>)newValue);
+      case ArchitecturePackage.OPERATION__ARG:
+        getArg().clear();
+        getArg().addAll((Collection<? extends Variable>)newValue);
         return;
-      case ArchitecturePackage.COMPONENT__OPERATIONS:
-        getOperations().clear();
-        getOperations().addAll((Collection<? extends Operation>)newValue);
+      case ArchitecturePackage.OPERATION__TYPE:
+        setType((Type)newValue);
         return;
-      case ArchitecturePackage.COMPONENT__VARS:
-        getVars().clear();
-        getVars().addAll((Collection<? extends Variable>)newValue);
+      case ArchitecturePackage.OPERATION__TYPE_COMP:
+        getTypeComp().clear();
+        getTypeComp().addAll((Collection<? extends Component>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -259,17 +276,17 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__NAME:
+      case ArchitecturePackage.OPERATION__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case ArchitecturePackage.COMPONENT__OPS:
-        getOps().clear();
+      case ArchitecturePackage.OPERATION__ARG:
+        getArg().clear();
         return;
-      case ArchitecturePackage.COMPONENT__OPERATIONS:
-        getOperations().clear();
+      case ArchitecturePackage.OPERATION__TYPE:
+        setType(TYPE_EDEFAULT);
         return;
-      case ArchitecturePackage.COMPONENT__VARS:
-        getVars().clear();
+      case ArchitecturePackage.OPERATION__TYPE_COMP:
+        getTypeComp().clear();
         return;
     }
     super.eUnset(featureID);
@@ -285,14 +302,14 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
   {
     switch (featureID)
     {
-      case ArchitecturePackage.COMPONENT__NAME:
+      case ArchitecturePackage.OPERATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case ArchitecturePackage.COMPONENT__OPS:
-        return ops != null && !ops.isEmpty();
-      case ArchitecturePackage.COMPONENT__OPERATIONS:
-        return operations != null && !operations.isEmpty();
-      case ArchitecturePackage.COMPONENT__VARS:
-        return vars != null && !vars.isEmpty();
+      case ArchitecturePackage.OPERATION__ARG:
+        return arg != null && !arg.isEmpty();
+      case ArchitecturePackage.OPERATION__TYPE:
+        return type != TYPE_EDEFAULT;
+      case ArchitecturePackage.OPERATION__TYPE_COMP:
+        return typeComp != null && !typeComp.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -310,8 +327,10 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", type: ");
+    result.append(type);
     result.append(')');
     return result.toString();
   }
 
-} //ComponentImpl
+} //OperationImpl

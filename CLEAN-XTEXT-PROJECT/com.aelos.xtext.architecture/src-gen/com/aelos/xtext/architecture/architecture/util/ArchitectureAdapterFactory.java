@@ -101,29 +101,14 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
         return createComponentAdapter();
       }
       @Override
-      public Adapter caseInstanceComp(InstanceComp object)
-      {
-        return createInstanceCompAdapter();
-      }
-      @Override
       public Adapter caseVariable(Variable object)
       {
         return createVariableAdapter();
       }
       @Override
-      public Adapter caseBindings(Bindings object)
+      public Adapter caseOperation(Operation object)
       {
-        return createBindingsAdapter();
-      }
-      @Override
-      public Adapter caseRequiredService(RequiredService object)
-      {
-        return createRequiredServiceAdapter();
-      }
-      @Override
-      public Adapter caseServiceName(ServiceName object)
-      {
-        return createServiceNameAdapter();
+        return createOperationAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -223,21 +208,6 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.InstanceComp <em>Instance Comp</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.InstanceComp
-   * @generated
-   */
-  public Adapter createInstanceCompAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Variable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -253,46 +223,16 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Bindings <em>Bindings</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Operation <em>Operation</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.Bindings
+   * @see com.aelos.xtext.architecture.architecture.Operation
    * @generated
    */
-  public Adapter createBindingsAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.RequiredService <em>Required Service</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.RequiredService
-   * @generated
-   */
-  public Adapter createRequiredServiceAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.ServiceName <em>Service Name</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.ServiceName
-   * @generated
-   */
-  public Adapter createServiceNameAdapter()
+  public Adapter createOperationAdapter()
   {
     return null;
   }

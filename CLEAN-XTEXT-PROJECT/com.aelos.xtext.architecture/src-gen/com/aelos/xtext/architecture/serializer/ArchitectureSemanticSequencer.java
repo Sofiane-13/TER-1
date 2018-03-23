@@ -5,14 +5,11 @@ package com.aelos.xtext.architecture.serializer;
 
 import com.aelos.xtext.architecture.architecture.AbstractModel;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Bindings;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.architecture.DomainDeclaration;
 import com.aelos.xtext.architecture.architecture.Import;
-import com.aelos.xtext.architecture.architecture.InstanceComp;
 import com.aelos.xtext.architecture.architecture.Model;
-import com.aelos.xtext.architecture.architecture.RequiredService;
-import com.aelos.xtext.architecture.architecture.ServiceName;
+import com.aelos.xtext.architecture.architecture.Operation;
 import com.aelos.xtext.architecture.architecture.Variable;
 import com.aelos.xtext.architecture.services.ArchitectureGrammarAccess;
 import com.google.inject.Inject;
@@ -44,9 +41,6 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case ArchitecturePackage.ABSTRACT_MODEL:
 				sequence_AbstractModel(context, (AbstractModel) semanticObject); 
 				return; 
-			case ArchitecturePackage.BINDINGS:
-				sequence_Bindings(context, (Bindings) semanticObject); 
-				return; 
 			case ArchitecturePackage.COMPONENT:
 				sequence_Component(context, (Component) semanticObject); 
 				return; 
@@ -63,17 +57,11 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 					return; 
 				}
 				else break;
-			case ArchitecturePackage.INSTANCE_COMP:
-				sequence_InstanceComp(context, (InstanceComp) semanticObject); 
-				return; 
 			case ArchitecturePackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case ArchitecturePackage.REQUIRED_SERVICE:
-				sequence_RequiredService(context, (RequiredService) semanticObject); 
-				return; 
-			case ArchitecturePackage.SERVICE_NAME:
-				sequence_ServiceName(context, (ServiceName) semanticObject); 
+			case ArchitecturePackage.OPERATION:
+				sequence_Operation(context, (Operation) semanticObject); 
 				return; 
 			case ArchitecturePackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
@@ -109,30 +97,10 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     Bindings returns Bindings
-	 *
-	 * Constraint:
-	 *     (nameComp1+=[InstanceComp|ID] nameServ1+=[ServiceName|ID] nameComp2+=[InstanceComp|ID] nameServ2+=[ServiceName|ID])
-	 */
-	protected void sequence_Bindings(ISerializationContext context, Bindings semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Component returns Component
 	 *
 	 * Constraint:
-	 *     (
-	 *         inst+=InstanceComp 
-	 *         name=ID 
-	 *         arg+=Variable* 
-	 *         arg1+=Variable 
-	 *         (methode+=ServiceName (arg+=Variable* arg+=Variable)* arg+=Variable?)* 
-	 *         req+=RequiredService* 
-	 *         bind+=Bindings*
-	 *     )
+	 *     (name=ID (ops+=[Operation|ID]* ops+=[Operation|ID])* operations+=Operation* vars+=Variable*)
 	 */
 	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -171,24 +139,6 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     InstanceComp returns InstanceComp
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_InstanceComp(ISerializationContext context, InstanceComp semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.INSTANCE_COMP__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.INSTANCE_COMP__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInstanceCompAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
@@ -201,31 +151,13 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     RequiredService returns RequiredService
+	 *     Operation returns Operation
 	 *
 	 * Constraint:
-	 *     (nameVarMethode+=Variable nameComp+=[InstanceComp|ID] nameServ+=[ServiceName|ID])
+	 *     ((name=ID (arg+=Variable* arg+=Variable)* type=Type) | typeComp+=[Component|ID])
 	 */
-	protected void sequence_RequiredService(ISerializationContext context, RequiredService semanticObject) {
+	protected void sequence_Operation(ISerializationContext context, Operation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ServiceName returns ServiceName
-	 *
-	 * Constraint:
-	 *     name=ID
-	 */
-	protected void sequence_ServiceName(ISerializationContext context, ServiceName semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.SERVICE_NAME__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.SERVICE_NAME__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getServiceNameAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
 	}
 	
 	

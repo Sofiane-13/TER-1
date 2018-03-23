@@ -71,11 +71,8 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
       case ArchitecturePackage.ABSTRACT_MODEL: return createAbstractModel();
       case ArchitecturePackage.IMPORT: return createImport();
       case ArchitecturePackage.COMPONENT: return createComponent();
-      case ArchitecturePackage.INSTANCE_COMP: return createInstanceComp();
       case ArchitecturePackage.VARIABLE: return createVariable();
-      case ArchitecturePackage.BINDINGS: return createBindings();
-      case ArchitecturePackage.REQUIRED_SERVICE: return createRequiredService();
-      case ArchitecturePackage.SERVICE_NAME: return createServiceName();
+      case ArchitecturePackage.OPERATION: return createOperation();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -175,17 +172,6 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public InstanceComp createInstanceComp()
-  {
-    InstanceCompImpl instanceComp = new InstanceCompImpl();
-    return instanceComp;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Variable createVariable()
   {
     VariableImpl variable = new VariableImpl();
@@ -197,32 +183,10 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public Bindings createBindings()
+  public Operation createOperation()
   {
-    BindingsImpl bindings = new BindingsImpl();
-    return bindings;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public RequiredService createRequiredService()
-  {
-    RequiredServiceImpl requiredService = new RequiredServiceImpl();
-    return requiredService;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ServiceName createServiceName()
-  {
-    ServiceNameImpl serviceName = new ServiceNameImpl();
-    return serviceName;
+    OperationImpl operation = new OperationImpl();
+    return operation;
   }
 
   /**

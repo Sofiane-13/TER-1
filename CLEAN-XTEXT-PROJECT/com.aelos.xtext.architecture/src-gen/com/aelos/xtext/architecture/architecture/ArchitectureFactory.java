@@ -69,15 +69,6 @@ public interface ArchitectureFactory extends EFactory
   Component createComponent();
 
   /**
-   * Returns a new object of class '<em>Instance Comp</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Instance Comp</em>'.
-   * @generated
-   */
-  InstanceComp createInstanceComp();
-
-  /**
    * Returns a new object of class '<em>Variable</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -87,31 +78,13 @@ public interface ArchitectureFactory extends EFactory
   Variable createVariable();
 
   /**
-   * Returns a new object of class '<em>Bindings</em>'.
+   * Returns a new object of class '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bindings</em>'.
+   * @return a new object of class '<em>Operation</em>'.
    * @generated
    */
-  Bindings createBindings();
-
-  /**
-   * Returns a new object of class '<em>Required Service</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Required Service</em>'.
-   * @generated
-   */
-  RequiredService createRequiredService();
-
-  /**
-   * Returns a new object of class '<em>Service Name</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Service Name</em>'.
-   * @generated
-   */
-  ServiceName createServiceName();
+  Operation createOperation();
 
   /**
    * Returns the package supported by this factory.
