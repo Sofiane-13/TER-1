@@ -3,9 +3,10 @@
  */
 package com.aelos.xtext.mappingassistance.scoping;
 
-import com.aelos.xtext.architecture.architecture.Call;
+import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.scoping.AbstractMappingAssistanceScopeProvider;
+import com.google.common.base.Objects;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.EcoreUtil2;
@@ -22,14 +23,14 @@ import org.eclipse.xtext.scoping.Scopes;
 public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if ((context instanceof TestDriver)) {
+    if (((context instanceof TestDriver) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_DRIVER__MEMBER))) {
       System.out.print("dsjkbjjc");
-      return this.scope_Call_op(EcoreUtil2.<Call>getContainerOfType(context, Call.class));
+      return this.scope_Call_op(EcoreUtil2.<TestDriver>getContainerOfType(context, TestDriver.class));
     }
     return super.getScope(context, reference);
   }
   
-  public IScope scope_Call_op(final Call selct) {
+  public IScope scope_Call_op(final TestDriver selct) {
     System.out.print("dsjkbc");
     return Scopes.scopeFor(selct.getReceiver().getType().getCompType().getOps());
   }

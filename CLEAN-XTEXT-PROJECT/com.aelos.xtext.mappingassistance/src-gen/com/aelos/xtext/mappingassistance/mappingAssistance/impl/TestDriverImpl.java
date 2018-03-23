@@ -3,7 +3,8 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
+import com.aelos.xtext.architecture.architecture.Operation;
+
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 
@@ -11,18 +12,17 @@ import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variabl
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getOutVar <em>Out Var</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getTagetedservice <em>Tagetedservice</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getMember <em>Member</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getArg <em>Arg</em>}</li>
  * </ul>
  *
@@ -52,14 +53,24 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
   protected EList<Variable> outVar;
 
   /**
-   * The cached value of the '{@link #getTagetedservice() <em>Tagetedservice</em>}' containment reference list.
+   * The cached value of the '{@link #getReceiver() <em>Receiver</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTagetedservice()
+   * @see #getReceiver()
    * @generated
    * @ordered
    */
-  protected EList<Call> tagetedservice;
+  protected com.aelos.xtext.architecture.architecture.Variable receiver;
+
+  /**
+   * The cached value of the '{@link #getMember() <em>Member</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMember()
+   * @generated
+   * @ordered
+   */
+  protected EList<Operation> member;
 
   /**
    * The cached value of the '{@link #getArg() <em>Arg</em>}' reference list.
@@ -111,13 +122,56 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Call> getTagetedservice()
+  public com.aelos.xtext.architecture.architecture.Variable getReceiver()
   {
-    if (tagetedservice == null)
+    if (receiver != null && receiver.eIsProxy())
     {
-      tagetedservice = new EObjectContainmentEList<Call>(Call.class, this, MappingAssistancePackage.TEST_DRIVER__TAGETEDSERVICE);
+      InternalEObject oldReceiver = (InternalEObject)receiver;
+      receiver = (com.aelos.xtext.architecture.architecture.Variable)eResolveProxy(oldReceiver);
+      if (receiver != oldReceiver)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.TEST_DRIVER__RECEIVER, oldReceiver, receiver));
+      }
     }
-    return tagetedservice;
+    return receiver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public com.aelos.xtext.architecture.architecture.Variable basicGetReceiver()
+  {
+    return receiver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setReceiver(com.aelos.xtext.architecture.architecture.Variable newReceiver)
+  {
+    com.aelos.xtext.architecture.architecture.Variable oldReceiver = receiver;
+    receiver = newReceiver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.TEST_DRIVER__RECEIVER, oldReceiver, receiver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Operation> getMember()
+  {
+    if (member == null)
+    {
+      member = new EObjectResolvingEList<Operation>(Operation.class, this, MappingAssistancePackage.TEST_DRIVER__MEMBER);
+    }
+    return member;
   }
 
   /**
@@ -140,30 +194,17 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MappingAssistancePackage.TEST_DRIVER__TAGETEDSERVICE:
-        return ((InternalEList<?>)getTagetedservice()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case MappingAssistancePackage.TEST_DRIVER__OUT_VAR:
         return getOutVar();
-      case MappingAssistancePackage.TEST_DRIVER__TAGETEDSERVICE:
-        return getTagetedservice();
+      case MappingAssistancePackage.TEST_DRIVER__RECEIVER:
+        if (resolve) return getReceiver();
+        return basicGetReceiver();
+      case MappingAssistancePackage.TEST_DRIVER__MEMBER:
+        return getMember();
       case MappingAssistancePackage.TEST_DRIVER__ARG:
         return getArg();
     }
@@ -185,9 +226,12 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
         getOutVar().clear();
         getOutVar().addAll((Collection<? extends Variable>)newValue);
         return;
-      case MappingAssistancePackage.TEST_DRIVER__TAGETEDSERVICE:
-        getTagetedservice().clear();
-        getTagetedservice().addAll((Collection<? extends Call>)newValue);
+      case MappingAssistancePackage.TEST_DRIVER__RECEIVER:
+        setReceiver((com.aelos.xtext.architecture.architecture.Variable)newValue);
+        return;
+      case MappingAssistancePackage.TEST_DRIVER__MEMBER:
+        getMember().clear();
+        getMember().addAll((Collection<? extends Operation>)newValue);
         return;
       case MappingAssistancePackage.TEST_DRIVER__ARG:
         getArg().clear();
@@ -210,8 +254,11 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
       case MappingAssistancePackage.TEST_DRIVER__OUT_VAR:
         getOutVar().clear();
         return;
-      case MappingAssistancePackage.TEST_DRIVER__TAGETEDSERVICE:
-        getTagetedservice().clear();
+      case MappingAssistancePackage.TEST_DRIVER__RECEIVER:
+        setReceiver((com.aelos.xtext.architecture.architecture.Variable)null);
+        return;
+      case MappingAssistancePackage.TEST_DRIVER__MEMBER:
+        getMember().clear();
         return;
       case MappingAssistancePackage.TEST_DRIVER__ARG:
         getArg().clear();
@@ -232,8 +279,10 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
     {
       case MappingAssistancePackage.TEST_DRIVER__OUT_VAR:
         return outVar != null && !outVar.isEmpty();
-      case MappingAssistancePackage.TEST_DRIVER__TAGETEDSERVICE:
-        return tagetedservice != null && !tagetedservice.isEmpty();
+      case MappingAssistancePackage.TEST_DRIVER__RECEIVER:
+        return receiver != null;
+      case MappingAssistancePackage.TEST_DRIVER__MEMBER:
+        return member != null && !member.isEmpty();
       case MappingAssistancePackage.TEST_DRIVER__ARG:
         return arg != null && !arg.isEmpty();
     }

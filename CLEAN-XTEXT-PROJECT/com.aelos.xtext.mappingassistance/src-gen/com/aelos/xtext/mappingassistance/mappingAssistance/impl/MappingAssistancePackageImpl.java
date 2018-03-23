@@ -245,7 +245,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTestDriver_Tagetedservice()
+  public EReference getTestDriver_Receiver()
   {
     return (EReference)testDriverEClass.getEStructuralFeatures().get(1);
   }
@@ -255,9 +255,19 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTestDriver_Arg()
+  public EReference getTestDriver_Member()
   {
     return (EReference)testDriverEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTestDriver_Arg()
+  {
+    return (EReference)testDriverEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -383,7 +393,8 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
 
     testDriverEClass = createEClass(TEST_DRIVER);
     createEReference(testDriverEClass, TEST_DRIVER__OUT_VAR);
-    createEReference(testDriverEClass, TEST_DRIVER__TAGETEDSERVICE);
+    createEReference(testDriverEClass, TEST_DRIVER__RECEIVER);
+    createEReference(testDriverEClass, TEST_DRIVER__MEMBER);
     createEReference(testDriverEClass, TEST_DRIVER__ARG);
 
     observerEClass = createEClass(OBSERVER);
@@ -445,7 +456,8 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
 
     initEClass(testDriverEClass, TestDriver.class, "TestDriver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTestDriver_OutVar(), theTestintentionsAssistancePackage.getVariable(), null, "outVar", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTestDriver_Tagetedservice(), this.getCall(), null, "tagetedservice", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestDriver_Receiver(), theArchitecturePackage.getVariable(), null, "receiver", null, 0, 1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestDriver_Member(), theArchitecturePackage.getOperation(), null, "member", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTestDriver_Arg(), theTestintentionsAssistancePackage.getVariable(), null, "arg", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(observerEClass, Observer.class, "Observer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

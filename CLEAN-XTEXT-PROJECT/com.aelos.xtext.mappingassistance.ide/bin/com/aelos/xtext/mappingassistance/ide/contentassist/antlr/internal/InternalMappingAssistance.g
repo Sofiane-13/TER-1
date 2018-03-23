@@ -706,9 +706,15 @@ rule__TestDriver__Group_2__2__Impl
 	}
 :
 (
+<<<<<<< HEAD
 	{ before(grammarAccess.getTestDriverAccess().getTagetedserviceAssignment_2_2()); }
 	(rule__TestDriver__TagetedserviceAssignment_2_2)
 	{ after(grammarAccess.getTestDriverAccess().getTagetedserviceAssignment_2_2()); }
+=======
+	{ before(grammarAccess.getTestDriverAccess().getReceiverAssignment_1_2()); }
+	(rule__TestDriver__ReceiverAssignment_1_2)
+	{ after(grammarAccess.getTestDriverAccess().getReceiverAssignment_1_2()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 )
 ;
 finally {
@@ -733,9 +739,15 @@ rule__TestDriver__Group_2__3__Impl
 	}
 :
 (
+<<<<<<< HEAD
 	{ before(grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_2_3()); }
 	'('
 	{ after(grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_2_3()); }
+=======
+	{ before(grammarAccess.getTestDriverAccess().getFullStopKeyword_1_3()); }
+	'.'
+	{ after(grammarAccess.getTestDriverAccess().getFullStopKeyword_1_3()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 )
 ;
 finally {
@@ -760,9 +772,15 @@ rule__TestDriver__Group_2__4__Impl
 	}
 :
 (
+<<<<<<< HEAD
 	{ before(grammarAccess.getTestDriverAccess().getGroup_2_4()); }
 	(rule__TestDriver__Group_2_4__0)*
 	{ after(grammarAccess.getTestDriverAccess().getGroup_2_4()); }
+=======
+	{ before(grammarAccess.getTestDriverAccess().getMemberAssignment_1_4()); }
+	(rule__TestDriver__MemberAssignment_1_4)
+	{ after(grammarAccess.getTestDriverAccess().getMemberAssignment_1_4()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 )
 ;
 finally {
@@ -774,7 +792,12 @@ rule__TestDriver__Group_2__5
 		int stackSize = keepStackSize();
 	}
 :
+<<<<<<< HEAD
 	rule__TestDriver__Group_2__5__Impl
+=======
+	rule__TestDriver__Group_1__5__Impl
+	rule__TestDriver__Group_1__6
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -786,9 +809,68 @@ rule__TestDriver__Group_2__5__Impl
 	}
 :
 (
+<<<<<<< HEAD
 	{ before(grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_2_5()); }
 	')'
 	{ after(grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_2_5()); }
+=======
+	{ before(grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_1_5()); }
+	'('
+	{ after(grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_1_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TestDriver__Group_1__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__TestDriver__Group_1__6__Impl
+	rule__TestDriver__Group_1__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TestDriver__Group_1__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getTestDriverAccess().getGroup_1_6()); }
+	(rule__TestDriver__Group_1_6__0)*
+	{ after(grammarAccess.getTestDriverAccess().getGroup_1_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TestDriver__Group_1__7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__TestDriver__Group_1__7__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TestDriver__Group_1__7__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_1_7()); }
+	')'
+	{ after(grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_1_7()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 )
 ;
 finally {
@@ -796,53 +878,90 @@ finally {
 }
 
 
+<<<<<<< HEAD
 rule__TestDriver__Group_2_4__0
+=======
+rule__TestDriver__Group_1_6__0
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
+<<<<<<< HEAD
 	rule__TestDriver__Group_2_4__0__Impl
 	rule__TestDriver__Group_2_4__1
+=======
+	rule__TestDriver__Group_1_6__0__Impl
+	rule__TestDriver__Group_1_6__1
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
+<<<<<<< HEAD
 rule__TestDriver__Group_2_4__0__Impl
+=======
+rule__TestDriver__Group_1_6__0__Impl
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
+<<<<<<< HEAD
 	{ before(grammarAccess.getTestDriverAccess().getGroup_2_4_0()); }
 	(rule__TestDriver__Group_2_4_0__0)*
 	{ after(grammarAccess.getTestDriverAccess().getGroup_2_4_0()); }
+=======
+	{ before(grammarAccess.getTestDriverAccess().getGroup_1_6_0()); }
+	(rule__TestDriver__Group_1_6_0__0)*
+	{ after(grammarAccess.getTestDriverAccess().getGroup_1_6_0()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
+<<<<<<< HEAD
 rule__TestDriver__Group_2_4__1
+=======
+rule__TestDriver__Group_1_6__1
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
+<<<<<<< HEAD
 	rule__TestDriver__Group_2_4__1__Impl
+=======
+	rule__TestDriver__Group_1_6__1__Impl
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
+<<<<<<< HEAD
 rule__TestDriver__Group_2_4__1__Impl
+=======
+rule__TestDriver__Group_1_6__1__Impl
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
+<<<<<<< HEAD
 	{ before(grammarAccess.getTestDriverAccess().getArgAssignment_2_4_1()); }
 	(rule__TestDriver__ArgAssignment_2_4_1)
 	{ after(grammarAccess.getTestDriverAccess().getArgAssignment_2_4_1()); }
+=======
+	{ before(grammarAccess.getTestDriverAccess().getArgAssignment_1_6_1()); }
+	(rule__TestDriver__ArgAssignment_1_6_1)
+	{ after(grammarAccess.getTestDriverAccess().getArgAssignment_1_6_1()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 )
 ;
 finally {
@@ -850,53 +969,90 @@ finally {
 }
 
 
+<<<<<<< HEAD
 rule__TestDriver__Group_2_4_0__0
+=======
+rule__TestDriver__Group_1_6_0__0
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
+<<<<<<< HEAD
 	rule__TestDriver__Group_2_4_0__0__Impl
 	rule__TestDriver__Group_2_4_0__1
+=======
+	rule__TestDriver__Group_1_6_0__0__Impl
+	rule__TestDriver__Group_1_6_0__1
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
+<<<<<<< HEAD
 rule__TestDriver__Group_2_4_0__0__Impl
+=======
+rule__TestDriver__Group_1_6_0__0__Impl
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
+<<<<<<< HEAD
 	{ before(grammarAccess.getTestDriverAccess().getArgAssignment_2_4_0_0()); }
 	(rule__TestDriver__ArgAssignment_2_4_0_0)
 	{ after(grammarAccess.getTestDriverAccess().getArgAssignment_2_4_0_0()); }
+=======
+	{ before(grammarAccess.getTestDriverAccess().getArgAssignment_1_6_0_0()); }
+	(rule__TestDriver__ArgAssignment_1_6_0_0)
+	{ after(grammarAccess.getTestDriverAccess().getArgAssignment_1_6_0_0()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
+<<<<<<< HEAD
 rule__TestDriver__Group_2_4_0__1
+=======
+rule__TestDriver__Group_1_6_0__1
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
+<<<<<<< HEAD
 	rule__TestDriver__Group_2_4_0__1__Impl
+=======
+	rule__TestDriver__Group_1_6_0__1__Impl
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
+<<<<<<< HEAD
 rule__TestDriver__Group_2_4_0__1__Impl
+=======
+rule__TestDriver__Group_1_6_0__1__Impl
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
+<<<<<<< HEAD
 	{ before(grammarAccess.getTestDriverAccess().getCommaKeyword_2_4_0_1()); }
 	','
 	{ after(grammarAccess.getTestDriverAccess().getCommaKeyword_2_4_0_1()); }
+=======
+	{ before(grammarAccess.getTestDriverAccess().getCommaKeyword_1_6_0_1()); }
+	','
+	{ after(grammarAccess.getTestDriverAccess().getCommaKeyword_1_6_0_1()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 )
 ;
 finally {
@@ -1484,27 +1640,65 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+<<<<<<< HEAD
 rule__TestDriver__TagetedserviceAssignment_2_2
+=======
+rule__TestDriver__ReceiverAssignment_1_2
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
+<<<<<<< HEAD
 		{ before(grammarAccess.getTestDriverAccess().getTagetedserviceCallParserRuleCall_2_2_0()); }
 		ruleCall
 		{ after(grammarAccess.getTestDriverAccess().getTagetedserviceCallParserRuleCall_2_2_0()); }
+=======
+		{ before(grammarAccess.getTestDriverAccess().getReceiverVariableCrossReference_1_2_0()); }
+		(
+			{ before(grammarAccess.getTestDriverAccess().getReceiverVariableIDTerminalRuleCall_1_2_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getTestDriverAccess().getReceiverVariableIDTerminalRuleCall_1_2_0_1()); }
+		)
+		{ after(grammarAccess.getTestDriverAccess().getReceiverVariableCrossReference_1_2_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__TestDriver__ArgAssignment_2_4_0_0
+rule__TestDriver__MemberAssignment_1_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
+		{ before(grammarAccess.getTestDriverAccess().getMemberOperationCrossReference_1_4_0()); }
+		(
+			{ before(grammarAccess.getTestDriverAccess().getMemberOperationIDTerminalRuleCall_1_4_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getTestDriverAccess().getMemberOperationIDTerminalRuleCall_1_4_0_1()); }
+		)
+		{ after(grammarAccess.getTestDriverAccess().getMemberOperationCrossReference_1_4_0()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+<<<<<<< HEAD
+rule__TestDriver__ArgAssignment_2_4_0_0
+=======
+rule__TestDriver__ArgAssignment_1_6_0_0
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+<<<<<<< HEAD
 		{ before(grammarAccess.getTestDriverAccess().getArgVariableCrossReference_2_4_0_0_0()); }
 		(
 			{ before(grammarAccess.getTestDriverAccess().getArgVariableIDTerminalRuleCall_2_4_0_0_0_1()); }
@@ -1512,18 +1706,32 @@ rule__TestDriver__ArgAssignment_2_4_0_0
 			{ after(grammarAccess.getTestDriverAccess().getArgVariableIDTerminalRuleCall_2_4_0_0_0_1()); }
 		)
 		{ after(grammarAccess.getTestDriverAccess().getArgVariableCrossReference_2_4_0_0_0()); }
+=======
+		{ before(grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_6_0_0_0()); }
+		(
+			{ before(grammarAccess.getTestDriverAccess().getArgVariableIDTerminalRuleCall_1_6_0_0_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getTestDriverAccess().getArgVariableIDTerminalRuleCall_1_6_0_0_0_1()); }
+		)
+		{ after(grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_6_0_0_0()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
+<<<<<<< HEAD
 rule__TestDriver__ArgAssignment_2_4_1
+=======
+rule__TestDriver__ArgAssignment_1_6_1
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
+<<<<<<< HEAD
 		{ before(grammarAccess.getTestDriverAccess().getArgVariableCrossReference_2_4_1_0()); }
 		(
 			{ before(grammarAccess.getTestDriverAccess().getArgVariableIDTerminalRuleCall_2_4_1_0_1()); }
@@ -1531,6 +1739,15 @@ rule__TestDriver__ArgAssignment_2_4_1
 			{ after(grammarAccess.getTestDriverAccess().getArgVariableIDTerminalRuleCall_2_4_1_0_1()); }
 		)
 		{ after(grammarAccess.getTestDriverAccess().getArgVariableCrossReference_2_4_1_0()); }
+=======
+		{ before(grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_6_1_0()); }
+		(
+			{ before(grammarAccess.getTestDriverAccess().getArgVariableIDTerminalRuleCall_1_6_1_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getTestDriverAccess().getArgVariableIDTerminalRuleCall_1_6_1_0_1()); }
+		)
+		{ after(grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_6_1_0()); }
+>>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	)
 ;
 finally {
