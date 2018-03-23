@@ -19,12 +19,25 @@ QualifiedNameWithWildcard:
         
 QualifiedName:
     ID ('.' ID)*;
+    
 TestDriver :
+
 	"TestDriver:"
+<<<<<<< HEAD
 	(outVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member+=[arch::Operation]"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
+=======
+	(outVar+=[testIntention::Variable]":="receiver=[arch::Variable]'.'member+=[arch::Operation]"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
+
+>>>>>>> 455f6cf2131182125437c2fbd38599d390f6ae25
 	;
+	
 Observer :
+<<<<<<< HEAD
 	"observer:"name=ID"("service1=[arch::Variable]'.'member1+=[arch::Operation]","service2=[arch::Variable]'.'member2+=[arch::Operation]")"("("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*;	
+=======
+	"observer:"name=ID"("serviceName1+=Call","serviceName2+=Call")"("("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*;	
+
+>>>>>>> 455f6cf2131182125437c2fbd38599d390f6ae25
 //	("Component" | "Mock" | "Observator")":" 
 //	inst+=InstanceComp":" name=ID
 //	"ProvidedServices:"
