@@ -21,14 +21,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class MappingAssistanceSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MappingAssistanceGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a;
-	protected AbstractElementAlias match_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a;
+	protected AbstractElementAlias match_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a;
+	protected AbstractElementAlias match_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MappingAssistanceGrammarAccess) access;
-		match_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getObserverAccess().getRightParenthesisKeyword_7_2()));
-		match_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getObserverAccess().getRightParenthesisKeyword_7_2()), new TokenAlias(false, false, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_7_0()));
+		match_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_11_0()), new TokenAlias(false, false, grammarAccess.getObserverAccess().getRightParenthesisKeyword_11_2()));
+		match_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getObserverAccess().getRightParenthesisKeyword_11_2()), new TokenAlias(false, false, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_11_0()));
 	}
 	
 	@Override
@@ -43,10 +43,10 @@ public class MappingAssistanceSyntacticSequencer extends AbstractSyntacticSequen
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a.equals(syntax))
-				emit_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a.equals(syntax))
-				emit_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a.equals(syntax))
+				emit_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a.equals(syntax))
+				emit_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -57,9 +57,9 @@ public class MappingAssistanceSyntacticSequencer extends AbstractSyntacticSequen
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     arg+=[Variable|ID] ')' (ambiguity) (rule end)
-	 *     serviceName2+=Call ')' (ambiguity) (rule end)
+	 *     member2+=[Operation|ID] ')' (ambiguity) (rule end)
 	 */
-	protected void emit_Observer___LeftParenthesisKeyword_7_0_RightParenthesisKeyword_7_2__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -69,9 +69,9 @@ public class MappingAssistanceSyntacticSequencer extends AbstractSyntacticSequen
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     arg+=[Variable|ID] (ambiguity) arg+=[Variable|ID]
-	 *     serviceName2+=Call ')' '(' (ambiguity) arg+=[Variable|ID]
+	 *     member2+=[Operation|ID] ')' '(' (ambiguity) arg+=[Variable|ID]
 	 */
-	protected void emit_Observer___RightParenthesisKeyword_7_2_LeftParenthesisKeyword_7_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

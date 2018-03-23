@@ -41,9 +41,9 @@ public class MappingAssistanceParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTestDriverAccess().getGroup_1_6(), "rule__TestDriver__Group_1_6__0");
 			builder.put(grammarAccess.getTestDriverAccess().getGroup_1_6_0(), "rule__TestDriver__Group_1_6_0__0");
 			builder.put(grammarAccess.getObserverAccess().getGroup(), "rule__Observer__Group__0");
-			builder.put(grammarAccess.getObserverAccess().getGroup_7(), "rule__Observer__Group_7__0");
-			builder.put(grammarAccess.getObserverAccess().getGroup_7_1(), "rule__Observer__Group_7_1__0");
-			builder.put(grammarAccess.getObserverAccess().getGroup_7_1_0(), "rule__Observer__Group_7_1_0__0");
+			builder.put(grammarAccess.getObserverAccess().getGroup_11(), "rule__Observer__Group_11__0");
+			builder.put(grammarAccess.getObserverAccess().getGroup_11_1(), "rule__Observer__Group_11_1__0");
+			builder.put(grammarAccess.getObserverAccess().getGroup_11_1_0(), "rule__Observer__Group_11_1_0__0");
 			builder.put(grammarAccess.getCallAccess().getGroup(), "rule__Call__Group__0");
 			builder.put(grammarAccess.getModelAccess().getFunctionAssignment(), "rule__Model__FunctionAssignment");
 			builder.put(grammarAccess.getAbstractModelAccess().getImAssignment_0(), "rule__AbstractModel__ImAssignment_0");
@@ -51,15 +51,17 @@ public class MappingAssistanceParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAbstractModelAccess().getObsAssignment_2(), "rule__AbstractModel__ObsAssignment_2");
 			builder.put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
 			builder.put(grammarAccess.getTestDriverAccess().getOutVarAssignment_1_0(), "rule__TestDriver__OutVarAssignment_1_0");
-			builder.put(grammarAccess.getTestDriverAccess().getReceiverAssignment_1_2(), "rule__TestDriver__ReceiverAssignment_1_2");
+			builder.put(grammarAccess.getTestDriverAccess().getServiceAssignment_1_2(), "rule__TestDriver__ServiceAssignment_1_2");
 			builder.put(grammarAccess.getTestDriverAccess().getMemberAssignment_1_4(), "rule__TestDriver__MemberAssignment_1_4");
 			builder.put(grammarAccess.getTestDriverAccess().getArgAssignment_1_6_0_0(), "rule__TestDriver__ArgAssignment_1_6_0_0");
 			builder.put(grammarAccess.getTestDriverAccess().getArgAssignment_1_6_1(), "rule__TestDriver__ArgAssignment_1_6_1");
 			builder.put(grammarAccess.getObserverAccess().getNameAssignment_1(), "rule__Observer__NameAssignment_1");
-			builder.put(grammarAccess.getObserverAccess().getServiceName1Assignment_3(), "rule__Observer__ServiceName1Assignment_3");
-			builder.put(grammarAccess.getObserverAccess().getServiceName2Assignment_5(), "rule__Observer__ServiceName2Assignment_5");
-			builder.put(grammarAccess.getObserverAccess().getArgAssignment_7_1_0_0(), "rule__Observer__ArgAssignment_7_1_0_0");
-			builder.put(grammarAccess.getObserverAccess().getArgAssignment_7_1_1(), "rule__Observer__ArgAssignment_7_1_1");
+			builder.put(grammarAccess.getObserverAccess().getService1Assignment_3(), "rule__Observer__Service1Assignment_3");
+			builder.put(grammarAccess.getObserverAccess().getMember1Assignment_5(), "rule__Observer__Member1Assignment_5");
+			builder.put(grammarAccess.getObserverAccess().getService2Assignment_7(), "rule__Observer__Service2Assignment_7");
+			builder.put(grammarAccess.getObserverAccess().getMember2Assignment_9(), "rule__Observer__Member2Assignment_9");
+			builder.put(grammarAccess.getObserverAccess().getArgAssignment_11_1_0_0(), "rule__Observer__ArgAssignment_11_1_0_0");
+			builder.put(grammarAccess.getObserverAccess().getArgAssignment_11_1_1(), "rule__Observer__ArgAssignment_11_1_1");
 			builder.put(grammarAccess.getCallAccess().getReceiverAssignment_0(), "rule__Call__ReceiverAssignment_0");
 			builder.put(grammarAccess.getCallAccess().getMemberAssignment_2(), "rule__Call__MemberAssignment_2");
 		}

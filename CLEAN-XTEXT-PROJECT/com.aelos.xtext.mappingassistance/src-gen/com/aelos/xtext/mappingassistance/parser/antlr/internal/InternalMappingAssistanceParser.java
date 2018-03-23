@@ -878,7 +878,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
             	    					
             	    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_11); 
 
-            	    						newLeafNode(otherlv_3, grammarAccess.getTestDriverAccess().getReceiverVariableCrossReference_1_2_0());
+            	    						newLeafNode(otherlv_3, grammarAccess.getTestDriverAccess().getServiceVariableCrossReference_1_2_0());
             	    					
 
             	    }
@@ -1087,34 +1087,36 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
 
 
     // $ANTLR start "ruleObserver"
-    // InternalMappingAssistance.g:415:1: ruleObserver returns [EObject current=null] : (otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_serviceName1_3_0= ruleCall ) ) otherlv_4= ',' ( (lv_serviceName2_5_0= ruleCall ) ) otherlv_6= ')' (otherlv_7= '(' ( ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )* ( (otherlv_10= RULE_ID ) ) )* otherlv_11= ')' )* ) ;
+    // InternalMappingAssistance.g:415:1: ruleObserver returns [EObject current=null] : (otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) otherlv_6= ',' ( (otherlv_7= RULE_ID ) ) otherlv_8= '.' ( (otherlv_9= RULE_ID ) ) otherlv_10= ')' (otherlv_11= '(' ( ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )* ( (otherlv_14= RULE_ID ) ) )* otherlv_15= ')' )* ) ;
     public final EObject ruleObserver() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
         Token otherlv_2=null;
+        Token otherlv_3=null;
         Token otherlv_4=null;
+        Token otherlv_5=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
         Token otherlv_8=null;
         Token otherlv_9=null;
         Token otherlv_10=null;
         Token otherlv_11=null;
-        EObject lv_serviceName1_3_0 = null;
-
-        EObject lv_serviceName2_5_0 = null;
-
+        Token otherlv_12=null;
+        Token otherlv_13=null;
+        Token otherlv_14=null;
+        Token otherlv_15=null;
 
 
         	enterRule();
 
         try {
-            // InternalMappingAssistance.g:421:2: ( (otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_serviceName1_3_0= ruleCall ) ) otherlv_4= ',' ( (lv_serviceName2_5_0= ruleCall ) ) otherlv_6= ')' (otherlv_7= '(' ( ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )* ( (otherlv_10= RULE_ID ) ) )* otherlv_11= ')' )* ) )
-            // InternalMappingAssistance.g:422:2: (otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_serviceName1_3_0= ruleCall ) ) otherlv_4= ',' ( (lv_serviceName2_5_0= ruleCall ) ) otherlv_6= ')' (otherlv_7= '(' ( ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )* ( (otherlv_10= RULE_ID ) ) )* otherlv_11= ')' )* )
+            // InternalMappingAssistance.g:421:2: ( (otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) otherlv_6= ',' ( (otherlv_7= RULE_ID ) ) otherlv_8= '.' ( (otherlv_9= RULE_ID ) ) otherlv_10= ')' (otherlv_11= '(' ( ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )* ( (otherlv_14= RULE_ID ) ) )* otherlv_15= ')' )* ) )
+            // InternalMappingAssistance.g:422:2: (otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) otherlv_6= ',' ( (otherlv_7= RULE_ID ) ) otherlv_8= '.' ( (otherlv_9= RULE_ID ) ) otherlv_10= ')' (otherlv_11= '(' ( ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )* ( (otherlv_14= RULE_ID ) ) )* otherlv_15= ')' )* )
             {
-            // InternalMappingAssistance.g:422:2: (otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_serviceName1_3_0= ruleCall ) ) otherlv_4= ',' ( (lv_serviceName2_5_0= ruleCall ) ) otherlv_6= ')' (otherlv_7= '(' ( ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )* ( (otherlv_10= RULE_ID ) ) )* otherlv_11= ')' )* )
-            // InternalMappingAssistance.g:423:3: otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_serviceName1_3_0= ruleCall ) ) otherlv_4= ',' ( (lv_serviceName2_5_0= ruleCall ) ) otherlv_6= ')' (otherlv_7= '(' ( ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )* ( (otherlv_10= RULE_ID ) ) )* otherlv_11= ')' )*
+            // InternalMappingAssistance.g:422:2: (otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) otherlv_6= ',' ( (otherlv_7= RULE_ID ) ) otherlv_8= '.' ( (otherlv_9= RULE_ID ) ) otherlv_10= ')' (otherlv_11= '(' ( ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )* ( (otherlv_14= RULE_ID ) ) )* otherlv_15= ')' )* )
+            // InternalMappingAssistance.g:423:3: otherlv_0= 'observer:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (otherlv_3= RULE_ID ) ) otherlv_4= '.' ( (otherlv_5= RULE_ID ) ) otherlv_6= ',' ( (otherlv_7= RULE_ID ) ) otherlv_8= '.' ( (otherlv_9= RULE_ID ) ) otherlv_10= ')' (otherlv_11= '(' ( ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )* ( (otherlv_14= RULE_ID ) ) )* otherlv_15= ')' )*
             {
             otherlv_0=(Token)match(input,19,FOLLOW_6); 
 
@@ -1150,30 +1152,20 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
 
             			newLeafNode(otherlv_2, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_2());
             		
-            // InternalMappingAssistance.g:449:3: ( (lv_serviceName1_3_0= ruleCall ) )
-            // InternalMappingAssistance.g:450:4: (lv_serviceName1_3_0= ruleCall )
+            // InternalMappingAssistance.g:449:3: ( (otherlv_3= RULE_ID ) )
+            // InternalMappingAssistance.g:450:4: (otherlv_3= RULE_ID )
             {
-            // InternalMappingAssistance.g:450:4: (lv_serviceName1_3_0= ruleCall )
-            // InternalMappingAssistance.g:451:5: lv_serviceName1_3_0= ruleCall
+            // InternalMappingAssistance.g:450:4: (otherlv_3= RULE_ID )
+            // InternalMappingAssistance.g:451:5: otherlv_3= RULE_ID
             {
-
-            					newCompositeNode(grammarAccess.getObserverAccess().getServiceName1CallParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_14);
-            lv_serviceName1_3_0=ruleCall();
-
-            state._fsp--;
-
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getObserverRule());
+            						current = createModelElement(grammarAccess.getObserverRule());
             					}
-            					add(
-            						current,
-            						"serviceName1",
-            						lv_serviceName1_3_0,
-            						"com.aelos.xtext.mappingassistance.MappingAssistance.Call");
-            					afterParserOrEnumRuleCall();
+            				
+            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_11); 
+
+            					newLeafNode(otherlv_3, grammarAccess.getObserverAccess().getService1VariableCrossReference_3_0());
             				
 
             }
@@ -1181,34 +1173,24 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
 
             }
 
-            otherlv_4=(Token)match(input,17,FOLLOW_6); 
+            otherlv_4=(Token)match(input,13,FOLLOW_6); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getObserverAccess().getCommaKeyword_4());
+            			newLeafNode(otherlv_4, grammarAccess.getObserverAccess().getFullStopKeyword_4());
             		
-            // InternalMappingAssistance.g:472:3: ( (lv_serviceName2_5_0= ruleCall ) )
-            // InternalMappingAssistance.g:473:4: (lv_serviceName2_5_0= ruleCall )
+            // InternalMappingAssistance.g:466:3: ( (otherlv_5= RULE_ID ) )
+            // InternalMappingAssistance.g:467:4: (otherlv_5= RULE_ID )
             {
-            // InternalMappingAssistance.g:473:4: (lv_serviceName2_5_0= ruleCall )
-            // InternalMappingAssistance.g:474:5: lv_serviceName2_5_0= ruleCall
+            // InternalMappingAssistance.g:467:4: (otherlv_5= RULE_ID )
+            // InternalMappingAssistance.g:468:5: otherlv_5= RULE_ID
             {
-
-            					newCompositeNode(grammarAccess.getObserverAccess().getServiceName2CallParserRuleCall_5_0());
-            				
-            pushFollow(FOLLOW_15);
-            lv_serviceName2_5_0=ruleCall();
-
-            state._fsp--;
-
 
             					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getObserverRule());
+            						current = createModelElement(grammarAccess.getObserverRule());
             					}
-            					add(
-            						current,
-            						"serviceName2",
-            						lv_serviceName2_5_0,
-            						"com.aelos.xtext.mappingassistance.MappingAssistance.Call");
-            					afterParserOrEnumRuleCall();
+            				
+            otherlv_5=(Token)match(input,RULE_ID,FOLLOW_14); 
+
+            					newLeafNode(otherlv_5, grammarAccess.getObserverAccess().getMember1OperationCrossReference_5_0());
             				
 
             }
@@ -1216,11 +1198,61 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
 
             }
 
-            otherlv_6=(Token)match(input,18,FOLLOW_16); 
+            otherlv_6=(Token)match(input,17,FOLLOW_6); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getObserverAccess().getRightParenthesisKeyword_6());
+            			newLeafNode(otherlv_6, grammarAccess.getObserverAccess().getCommaKeyword_6());
             		
-            // InternalMappingAssistance.g:495:3: (otherlv_7= '(' ( ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )* ( (otherlv_10= RULE_ID ) ) )* otherlv_11= ')' )*
+            // InternalMappingAssistance.g:483:3: ( (otherlv_7= RULE_ID ) )
+            // InternalMappingAssistance.g:484:4: (otherlv_7= RULE_ID )
+            {
+            // InternalMappingAssistance.g:484:4: (otherlv_7= RULE_ID )
+            // InternalMappingAssistance.g:485:5: otherlv_7= RULE_ID
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getObserverRule());
+            					}
+            				
+            otherlv_7=(Token)match(input,RULE_ID,FOLLOW_11); 
+
+            					newLeafNode(otherlv_7, grammarAccess.getObserverAccess().getService2VariableCrossReference_7_0());
+            				
+
+            }
+
+
+            }
+
+            otherlv_8=(Token)match(input,13,FOLLOW_6); 
+
+            			newLeafNode(otherlv_8, grammarAccess.getObserverAccess().getFullStopKeyword_8());
+            		
+            // InternalMappingAssistance.g:500:3: ( (otherlv_9= RULE_ID ) )
+            // InternalMappingAssistance.g:501:4: (otherlv_9= RULE_ID )
+            {
+            // InternalMappingAssistance.g:501:4: (otherlv_9= RULE_ID )
+            // InternalMappingAssistance.g:502:5: otherlv_9= RULE_ID
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getObserverRule());
+            					}
+            				
+            otherlv_9=(Token)match(input,RULE_ID,FOLLOW_15); 
+
+            					newLeafNode(otherlv_9, grammarAccess.getObserverAccess().getMember2OperationCrossReference_9_0());
+            				
+
+            }
+
+
+            }
+
+            otherlv_10=(Token)match(input,18,FOLLOW_16); 
+
+            			newLeafNode(otherlv_10, grammarAccess.getObserverAccess().getRightParenthesisKeyword_10());
+            		
+            // InternalMappingAssistance.g:517:3: (otherlv_11= '(' ( ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )* ( (otherlv_14= RULE_ID ) ) )* otherlv_15= ')' )*
             loop11:
             do {
                 int alt11=2;
@@ -1233,13 +1265,13 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalMappingAssistance.g:496:4: otherlv_7= '(' ( ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )* ( (otherlv_10= RULE_ID ) ) )* otherlv_11= ')'
+            	    // InternalMappingAssistance.g:518:4: otherlv_11= '(' ( ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )* ( (otherlv_14= RULE_ID ) ) )* otherlv_15= ')'
             	    {
-            	    otherlv_7=(Token)match(input,16,FOLLOW_13); 
+            	    otherlv_11=(Token)match(input,16,FOLLOW_13); 
 
-            	    				newLeafNode(otherlv_7, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_7_0());
+            	    				newLeafNode(otherlv_11, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_11_0());
             	    			
-            	    // InternalMappingAssistance.g:500:4: ( ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )* ( (otherlv_10= RULE_ID ) ) )*
+            	    // InternalMappingAssistance.g:522:4: ( ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )* ( (otherlv_14= RULE_ID ) ) )*
             	    loop10:
             	    do {
             	        int alt10=2;
@@ -1252,9 +1284,9 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
 
             	        switch (alt10) {
             	    	case 1 :
-            	    	    // InternalMappingAssistance.g:501:5: ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )* ( (otherlv_10= RULE_ID ) )
+            	    	    // InternalMappingAssistance.g:523:5: ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )* ( (otherlv_14= RULE_ID ) )
             	    	    {
-            	    	    // InternalMappingAssistance.g:501:5: ( ( (otherlv_8= RULE_ID ) ) otherlv_9= ',' )*
+            	    	    // InternalMappingAssistance.g:523:5: ( ( (otherlv_12= RULE_ID ) ) otherlv_13= ',' )*
             	    	    loop9:
             	    	    do {
             	    	        int alt9=2;
@@ -1273,22 +1305,22 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
 
             	    	        switch (alt9) {
             	    	    	case 1 :
-            	    	    	    // InternalMappingAssistance.g:502:6: ( (otherlv_8= RULE_ID ) ) otherlv_9= ','
+            	    	    	    // InternalMappingAssistance.g:524:6: ( (otherlv_12= RULE_ID ) ) otherlv_13= ','
             	    	    	    {
-            	    	    	    // InternalMappingAssistance.g:502:6: ( (otherlv_8= RULE_ID ) )
-            	    	    	    // InternalMappingAssistance.g:503:7: (otherlv_8= RULE_ID )
+            	    	    	    // InternalMappingAssistance.g:524:6: ( (otherlv_12= RULE_ID ) )
+            	    	    	    // InternalMappingAssistance.g:525:7: (otherlv_12= RULE_ID )
             	    	    	    {
-            	    	    	    // InternalMappingAssistance.g:503:7: (otherlv_8= RULE_ID )
-            	    	    	    // InternalMappingAssistance.g:504:8: otherlv_8= RULE_ID
+            	    	    	    // InternalMappingAssistance.g:525:7: (otherlv_12= RULE_ID )
+            	    	    	    // InternalMappingAssistance.g:526:8: otherlv_12= RULE_ID
             	    	    	    {
 
             	    	    	    								if (current==null) {
             	    	    	    									current = createModelElement(grammarAccess.getObserverRule());
             	    	    	    								}
             	    	    	    							
-            	    	    	    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_14); 
+            	    	    	    otherlv_12=(Token)match(input,RULE_ID,FOLLOW_14); 
 
-            	    	    	    								newLeafNode(otherlv_8, grammarAccess.getObserverAccess().getArgVariableCrossReference_7_1_0_0_0());
+            	    	    	    								newLeafNode(otherlv_12, grammarAccess.getObserverAccess().getArgVariableCrossReference_11_1_0_0_0());
             	    	    	    							
 
             	    	    	    }
@@ -1296,9 +1328,9 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
 
             	    	    	    }
 
-            	    	    	    otherlv_9=(Token)match(input,17,FOLLOW_6); 
+            	    	    	    otherlv_13=(Token)match(input,17,FOLLOW_6); 
 
-            	    	    	    						newLeafNode(otherlv_9, grammarAccess.getObserverAccess().getCommaKeyword_7_1_0_1());
+            	    	    	    						newLeafNode(otherlv_13, grammarAccess.getObserverAccess().getCommaKeyword_11_1_0_1());
             	    	    	    					
 
             	    	    	    }
@@ -1309,20 +1341,20 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
             	    	        }
             	    	    } while (true);
 
-            	    	    // InternalMappingAssistance.g:520:5: ( (otherlv_10= RULE_ID ) )
-            	    	    // InternalMappingAssistance.g:521:6: (otherlv_10= RULE_ID )
+            	    	    // InternalMappingAssistance.g:542:5: ( (otherlv_14= RULE_ID ) )
+            	    	    // InternalMappingAssistance.g:543:6: (otherlv_14= RULE_ID )
             	    	    {
-            	    	    // InternalMappingAssistance.g:521:6: (otherlv_10= RULE_ID )
-            	    	    // InternalMappingAssistance.g:522:7: otherlv_10= RULE_ID
+            	    	    // InternalMappingAssistance.g:543:6: (otherlv_14= RULE_ID )
+            	    	    // InternalMappingAssistance.g:544:7: otherlv_14= RULE_ID
             	    	    {
 
             	    	    							if (current==null) {
             	    	    								current = createModelElement(grammarAccess.getObserverRule());
             	    	    							}
             	    	    						
-            	    	    otherlv_10=(Token)match(input,RULE_ID,FOLLOW_13); 
+            	    	    otherlv_14=(Token)match(input,RULE_ID,FOLLOW_13); 
 
-            	    	    							newLeafNode(otherlv_10, grammarAccess.getObserverAccess().getArgVariableCrossReference_7_1_1_0());
+            	    	    							newLeafNode(otherlv_14, grammarAccess.getObserverAccess().getArgVariableCrossReference_11_1_1_0());
             	    	    						
 
             	    	    }
@@ -1339,9 +1371,9 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
             	        }
             	    } while (true);
 
-            	    otherlv_11=(Token)match(input,18,FOLLOW_16); 
+            	    otherlv_15=(Token)match(input,18,FOLLOW_16); 
 
-            	    				newLeafNode(otherlv_11, grammarAccess.getObserverAccess().getRightParenthesisKeyword_7_2());
+            	    				newLeafNode(otherlv_15, grammarAccess.getObserverAccess().getRightParenthesisKeyword_11_2());
             	    			
 
             	    }
@@ -1372,129 +1404,6 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
         return current;
     }
     // $ANTLR end "ruleObserver"
-
-
-    // $ANTLR start "entryRuleCall"
-    // InternalMappingAssistance.g:543:1: entryRuleCall returns [EObject current=null] : iv_ruleCall= ruleCall EOF ;
-    public final EObject entryRuleCall() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleCall = null;
-
-
-        try {
-            // InternalMappingAssistance.g:543:45: (iv_ruleCall= ruleCall EOF )
-            // InternalMappingAssistance.g:544:2: iv_ruleCall= ruleCall EOF
-            {
-             newCompositeNode(grammarAccess.getCallRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleCall=ruleCall();
-
-            state._fsp--;
-
-             current =iv_ruleCall; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleCall"
-
-
-    // $ANTLR start "ruleCall"
-    // InternalMappingAssistance.g:550:1: ruleCall returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) ;
-    public final EObject ruleCall() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalMappingAssistance.g:556:2: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) ) )
-            // InternalMappingAssistance.g:557:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
-            {
-            // InternalMappingAssistance.g:557:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) ) )
-            // InternalMappingAssistance.g:558:3: ( (otherlv_0= RULE_ID ) ) otherlv_1= '.' ( (otherlv_2= RULE_ID ) )
-            {
-            // InternalMappingAssistance.g:558:3: ( (otherlv_0= RULE_ID ) )
-            // InternalMappingAssistance.g:559:4: (otherlv_0= RULE_ID )
-            {
-            // InternalMappingAssistance.g:559:4: (otherlv_0= RULE_ID )
-            // InternalMappingAssistance.g:560:5: otherlv_0= RULE_ID
-            {
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getCallRule());
-            					}
-            				
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_11); 
-
-            					newLeafNode(otherlv_0, grammarAccess.getCallAccess().getReceiverVariableCrossReference_0_0());
-            				
-
-            }
-
-
-            }
-
-            otherlv_1=(Token)match(input,13,FOLLOW_6); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getCallAccess().getFullStopKeyword_1());
-            		
-            // InternalMappingAssistance.g:575:3: ( (otherlv_2= RULE_ID ) )
-            // InternalMappingAssistance.g:576:4: (otherlv_2= RULE_ID )
-            {
-            // InternalMappingAssistance.g:576:4: (otherlv_2= RULE_ID )
-            // InternalMappingAssistance.g:577:5: otherlv_2= RULE_ID
-            {
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getCallRule());
-            					}
-            				
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_2); 
-
-            					newLeafNode(otherlv_2, grammarAccess.getCallAccess().getMemberOperationCrossReference_2_0());
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleCall"
 
     // Delegated rules
 

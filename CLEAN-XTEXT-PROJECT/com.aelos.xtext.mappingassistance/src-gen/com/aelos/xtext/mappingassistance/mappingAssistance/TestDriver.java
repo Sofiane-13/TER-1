@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getOutVar <em>Out Var</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getService <em>Service</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember <em>Member</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getArg <em>Arg</em>}</li>
  * </ul>
@@ -49,30 +49,30 @@ public interface TestDriver extends EObject
   EList<Variable> getOutVar();
 
   /**
-   * Returns the value of the '<em><b>Receiver</b></em>' reference.
+   * Returns the value of the '<em><b>Service</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Receiver</em>' reference isn't clear,
+   * If the meaning of the '<em>Service</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Receiver</em>' reference.
-   * @see #setReceiver(com.aelos.xtext.architecture.architecture.Variable)
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Receiver()
+   * @return the value of the '<em>Service</em>' reference.
+   * @see #setService(com.aelos.xtext.architecture.architecture.Variable)
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Service()
    * @model
    * @generated
    */
-  com.aelos.xtext.architecture.architecture.Variable getReceiver();
+  com.aelos.xtext.architecture.architecture.Variable getService();
 
   /**
-   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getReceiver <em>Receiver</em>}' reference.
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getService <em>Service</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Receiver</em>' reference.
-   * @see #getReceiver()
+   * @param value the new value of the '<em>Service</em>' reference.
+   * @see #getService()
    * @generated
    */
-  void setReceiver(com.aelos.xtext.architecture.architecture.Variable value);
+  void setService(com.aelos.xtext.architecture.architecture.Variable value);
 
   /**
    * Returns the value of the '<em><b>Member</b></em>' reference list.
