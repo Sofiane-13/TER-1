@@ -3,6 +3,7 @@
  */
 package com.aelos.xtext.architecture.architecture;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package com.aelos.xtext.architecture.architecture;
  * @model
  * @generated
  */
-public interface Import extends AbstractModel
+public interface Import extends EObject
 {
   /**
    * Returns the value of the '<em><b>Imported Namespace</b></em>' attribute.

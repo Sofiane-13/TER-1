@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.aelos.xtext.architecture.architecture.AtomicType#getAtomType <em>Atom Type</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.AtomicType#getCompType <em>Comp Type</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getAtomicType()
@@ -51,5 +52,31 @@ public interface AtomicType extends EObject
    * @generated
    */
   void setAtomType(Type value);
+
+  /**
+   * Returns the value of the '<em><b>Comp Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Comp Type</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Comp Type</em>' reference.
+   * @see #setCompType(Component)
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getAtomicType_CompType()
+   * @model
+   * @generated
+   */
+  Component getCompType();
+
+  /**
+   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.AtomicType#getCompType <em>Comp Type</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Comp Type</em>' reference.
+   * @see #getCompType()
+   * @generated
+   */
+  void setCompType(Component value);
 
 } // AtomicType

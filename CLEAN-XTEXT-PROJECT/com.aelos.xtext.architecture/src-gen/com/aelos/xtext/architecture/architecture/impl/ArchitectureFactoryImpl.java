@@ -71,11 +71,11 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
       case ArchitecturePackage.ABSTRACT_MODEL: return createAbstractModel();
       case ArchitecturePackage.IMPORT: return createImport();
       case ArchitecturePackage.COMPONENT: return createComponent();
+      case ArchitecturePackage.ARCHITECTURE: return createArchitecture();
       case ArchitecturePackage.CALL: return createCall();
       case ArchitecturePackage.VARIABLE: return createVariable();
       case ArchitecturePackage.OPERATION: return createOperation();
       case ArchitecturePackage.ATOMIC_TYPE: return createAtomicType();
-      case ArchitecturePackage.VARIABLE_REF: return createVariableRef();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -175,6 +175,17 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
+  public Architecture createArchitecture()
+  {
+    ArchitectureImpl architecture = new ArchitectureImpl();
+    return architecture;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Call createCall()
   {
     CallImpl call = new CallImpl();
@@ -212,17 +223,6 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
   {
     AtomicTypeImpl atomicType = new AtomicTypeImpl();
     return atomicType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public VariableRef createVariableRef()
-  {
-    VariableRefImpl variableRef = new VariableRefImpl();
-    return variableRef;
   }
 
   /**

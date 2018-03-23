@@ -4,6 +4,7 @@
 package com.aelos.xtext.architecture.serializer;
 
 import com.aelos.xtext.architecture.architecture.AbstractModel;
+import com.aelos.xtext.architecture.architecture.Architecture;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.AtomicType;
 import com.aelos.xtext.architecture.architecture.Call;
@@ -13,7 +14,6 @@ import com.aelos.xtext.architecture.architecture.Import;
 import com.aelos.xtext.architecture.architecture.Model;
 import com.aelos.xtext.architecture.architecture.Operation;
 import com.aelos.xtext.architecture.architecture.Variable;
-import com.aelos.xtext.architecture.architecture.VariableRef;
 import com.aelos.xtext.architecture.services.ArchitectureGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -44,6 +44,9 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case ArchitecturePackage.ABSTRACT_MODEL:
 				sequence_AbstractModel(context, (AbstractModel) semanticObject); 
 				return; 
+			case ArchitecturePackage.ARCHITECTURE:
+				sequence_Architecture(context, (Architecture) semanticObject); 
+				return; 
 			case ArchitecturePackage.ATOMIC_TYPE:
 				sequence_AtomicType(context, (AtomicType) semanticObject); 
 				return; 
@@ -57,15 +60,8 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 				sequence_DomainDeclaration(context, (DomainDeclaration) semanticObject); 
 				return; 
 			case ArchitecturePackage.IMPORT:
-				if (rule == grammarAccess.getAbstractModelRule()) {
-					sequence_AbstractModel_Import(context, (Import) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getImportRule()) {
-					sequence_Import(context, (Import) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Import(context, (Import) semanticObject); 
+				return; 
 			case ArchitecturePackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
@@ -74,9 +70,6 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 				return; 
 			case ArchitecturePackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
-				return; 
-			case ArchitecturePackage.VARIABLE_REF:
-				sequence_AtomicType(context, (VariableRef) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -88,7 +81,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     AbstractModel returns AbstractModel
 	 *
 	 * Constraint:
-	 *     comp+=Component+
+	 *     (imp+=Import* (comp+=Component+ | arch+=Architecture))
 	 */
 	protected void sequence_AbstractModel(ISerializationContext context, AbstractModel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -97,12 +90,12 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     AbstractModel returns Import
+	 *     Architecture returns Architecture
 	 *
 	 * Constraint:
-	 *     (importedNamespace=QualifiedNameWithWildcard comp+=Component+)
+	 *     (vars+=Variable* (receiver+=Call provider+=Call)*)
 	 */
-	protected void sequence_AbstractModel_Import(ISerializationContext context, Import semanticObject) {
+	protected void sequence_Architecture(ISerializationContext context, Architecture semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -112,34 +105,10 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     AtomicType returns AtomicType
 	 *
 	 * Constraint:
-	 *     atomType=Type
+	 *     (atomType=Type | compType=[Component|ID])
 	 */
 	protected void sequence_AtomicType(ISerializationContext context, AtomicType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.ATOMIC_TYPE__ATOM_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.ATOMIC_TYPE__ATOM_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicTypeAccess().getAtomTypeTypeEnumRuleCall_0_0(), semanticObject.getAtomType());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     AtomicType returns VariableRef
-	 *
-	 * Constraint:
-	 *     type=[Component|ID]
-	 */
-	protected void sequence_AtomicType(ISerializationContext context, VariableRef semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.VARIABLE_REF__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.VARIABLE_REF__TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicTypeAccess().getTypeComponentIDTerminalRuleCall_1_1_0_1(), semanticObject.eGet(ArchitecturePackage.Literals.VARIABLE_REF__TYPE, false));
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -148,7 +117,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Call returns Call
 	 *
 	 * Constraint:
-	 *     (receiver=[Component|ID] member+=[Operation|ID])
+	 *     (receiver=[Variable|ID] member+=[Operation|ID])
 	 */
 	protected void sequence_Call(ISerializationContext context, Call semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -160,7 +129,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Component returns Component
 	 *
 	 * Constraint:
-	 *     (name=ID (ops+=[Operation|ID]* ops+=[Operation|ID])* operations+=Operation* vars+=Variable* (calls+=Call* calls+=Call)*)
+	 *     (name=ID (ops+=[Operation|ID]* ops+=[Operation|ID])* operations+=Operation*)
 	 */
 	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

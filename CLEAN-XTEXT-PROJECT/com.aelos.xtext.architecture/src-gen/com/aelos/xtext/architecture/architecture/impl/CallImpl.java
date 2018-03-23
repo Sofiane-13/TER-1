@@ -5,8 +5,8 @@ package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.Call;
-import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.architecture.Operation;
+import com.aelos.xtext.architecture.architecture.Variable;
 
 import java.util.Collection;
 
@@ -46,7 +46,7 @@ public class CallImpl extends MinimalEObjectImpl.Container implements Call
    * @generated
    * @ordered
    */
-  protected Component receiver;
+  protected Variable receiver;
 
   /**
    * The cached value of the '{@link #getMember() <em>Member</em>}' reference list.
@@ -84,12 +84,12 @@ public class CallImpl extends MinimalEObjectImpl.Container implements Call
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component getReceiver()
+  public Variable getReceiver()
   {
     if (receiver != null && receiver.eIsProxy())
     {
       InternalEObject oldReceiver = (InternalEObject)receiver;
-      receiver = (Component)eResolveProxy(oldReceiver);
+      receiver = (Variable)eResolveProxy(oldReceiver);
       if (receiver != oldReceiver)
       {
         if (eNotificationRequired())
@@ -104,7 +104,7 @@ public class CallImpl extends MinimalEObjectImpl.Container implements Call
    * <!-- end-user-doc -->
    * @generated
    */
-  public Component basicGetReceiver()
+  public Variable basicGetReceiver()
   {
     return receiver;
   }
@@ -114,9 +114,9 @@ public class CallImpl extends MinimalEObjectImpl.Container implements Call
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setReceiver(Component newReceiver)
+  public void setReceiver(Variable newReceiver)
   {
-    Component oldReceiver = receiver;
+    Variable oldReceiver = receiver;
     receiver = newReceiver;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.CALL__RECEIVER, oldReceiver, receiver));
@@ -167,7 +167,7 @@ public class CallImpl extends MinimalEObjectImpl.Container implements Call
     switch (featureID)
     {
       case ArchitecturePackage.CALL__RECEIVER:
-        setReceiver((Component)newValue);
+        setReceiver((Variable)newValue);
         return;
       case ArchitecturePackage.CALL__MEMBER:
         getMember().clear();
@@ -188,7 +188,7 @@ public class CallImpl extends MinimalEObjectImpl.Container implements Call
     switch (featureID)
     {
       case ArchitecturePackage.CALL__RECEIVER:
-        setReceiver((Component)null);
+        setReceiver((Variable)null);
         return;
       case ArchitecturePackage.CALL__MEMBER:
         getMember().clear();

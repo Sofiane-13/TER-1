@@ -4,10 +4,8 @@
 package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Call;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.architecture.Operation;
-import com.aelos.xtext.architecture.architecture.Variable;
 
 import java.util.Collection;
 
@@ -37,8 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getOps <em>Ops</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getOperations <em>Operations</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getVars <em>Vars</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getCalls <em>Calls</em>}</li>
  * </ul>
  *
  * @generated
@@ -84,26 +80,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * @ordered
    */
   protected EList<Operation> operations;
-
-  /**
-   * The cached value of the '{@link #getVars() <em>Vars</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVars()
-   * @generated
-   * @ordered
-   */
-  protected EList<Variable> vars;
-
-  /**
-   * The cached value of the '{@link #getCalls() <em>Calls</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCalls()
-   * @generated
-   * @ordered
-   */
-  protected EList<Call> calls;
 
   /**
    * <!-- begin-user-doc -->
@@ -182,34 +158,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVars()
-  {
-    if (vars == null)
-    {
-      vars = new EObjectContainmentEList<Variable>(Variable.class, this, ArchitecturePackage.COMPONENT__VARS);
-    }
-    return vars;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Call> getCalls()
-  {
-    if (calls == null)
-    {
-      calls = new EObjectContainmentEList<Call>(Call.class, this, ArchitecturePackage.COMPONENT__CALLS);
-    }
-    return calls;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -217,10 +165,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
     {
       case ArchitecturePackage.COMPONENT__OPERATIONS:
         return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.COMPONENT__VARS:
-        return ((InternalEList<?>)getVars()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.COMPONENT__CALLS:
-        return ((InternalEList<?>)getCalls()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -241,10 +185,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
         return getOps();
       case ArchitecturePackage.COMPONENT__OPERATIONS:
         return getOperations();
-      case ArchitecturePackage.COMPONENT__VARS:
-        return getVars();
-      case ArchitecturePackage.COMPONENT__CALLS:
-        return getCalls();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -271,14 +211,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
         getOperations().clear();
         getOperations().addAll((Collection<? extends Operation>)newValue);
         return;
-      case ArchitecturePackage.COMPONENT__VARS:
-        getVars().clear();
-        getVars().addAll((Collection<? extends Variable>)newValue);
-        return;
-      case ArchitecturePackage.COMPONENT__CALLS:
-        getCalls().clear();
-        getCalls().addAll((Collection<? extends Call>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -302,12 +234,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
       case ArchitecturePackage.COMPONENT__OPERATIONS:
         getOperations().clear();
         return;
-      case ArchitecturePackage.COMPONENT__VARS:
-        getVars().clear();
-        return;
-      case ArchitecturePackage.COMPONENT__CALLS:
-        getCalls().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -328,10 +254,6 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
         return ops != null && !ops.isEmpty();
       case ArchitecturePackage.COMPONENT__OPERATIONS:
         return operations != null && !operations.isEmpty();
-      case ArchitecturePackage.COMPONENT__VARS:
-        return vars != null && !vars.isEmpty();
-      case ArchitecturePackage.COMPONENT__CALLS:
-        return calls != null && !calls.isEmpty();
     }
     return super.eIsSet(featureID);
   }

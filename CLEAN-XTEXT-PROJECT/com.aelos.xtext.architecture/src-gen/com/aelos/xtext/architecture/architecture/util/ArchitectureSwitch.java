@@ -98,7 +98,6 @@ public class ArchitectureSwitch<T> extends Switch<T>
       {
         Import import_ = (Import)theEObject;
         T result = caseImport(import_);
-        if (result == null) result = caseAbstractModel(import_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -106,6 +105,13 @@ public class ArchitectureSwitch<T> extends Switch<T>
       {
         Component component = (Component)theEObject;
         T result = caseComponent(component);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case ArchitecturePackage.ARCHITECTURE:
+      {
+        Architecture architecture = (Architecture)theEObject;
+        T result = caseArchitecture(architecture);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -134,14 +140,6 @@ public class ArchitectureSwitch<T> extends Switch<T>
       {
         AtomicType atomicType = (AtomicType)theEObject;
         T result = caseAtomicType(atomicType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case ArchitecturePackage.VARIABLE_REF:
-      {
-        VariableRef variableRef = (VariableRef)theEObject;
-        T result = caseVariableRef(variableRef);
-        if (result == null) result = caseAtomicType(variableRef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -230,6 +228,22 @@ public class ArchitectureSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Architecture</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Architecture</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArchitecture(Architecture object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -289,22 +303,6 @@ public class ArchitectureSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAtomicType(AtomicType object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variable Ref</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variable Ref</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariableRef(VariableRef object)
   {
     return null;
   }

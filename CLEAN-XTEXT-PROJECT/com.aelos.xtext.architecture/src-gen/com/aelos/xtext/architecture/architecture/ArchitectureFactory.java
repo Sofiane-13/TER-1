@@ -69,6 +69,15 @@ public interface ArchitectureFactory extends EFactory
   Component createComponent();
 
   /**
+   * Returns a new object of class '<em>Architecture</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Architecture</em>'.
+   * @generated
+   */
+  Architecture createArchitecture();
+
+  /**
    * Returns a new object of class '<em>Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,15 +112,6 @@ public interface ArchitectureFactory extends EFactory
    * @generated
    */
   AtomicType createAtomicType();
-
-  /**
-   * Returns a new object of class '<em>Variable Ref</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variable Ref</em>'.
-   * @generated
-   */
-  VariableRef createVariableRef();
 
   /**
    * Returns the package supported by this factory.

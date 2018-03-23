@@ -101,6 +101,11 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
         return createComponentAdapter();
       }
       @Override
+      public Adapter caseArchitecture(Architecture object)
+      {
+        return createArchitectureAdapter();
+      }
+      @Override
       public Adapter caseCall(Call object)
       {
         return createCallAdapter();
@@ -119,11 +124,6 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAtomicType(AtomicType object)
       {
         return createAtomicTypeAdapter();
-      }
-      @Override
-      public Adapter caseVariableRef(VariableRef object)
-      {
-        return createVariableRefAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -223,6 +223,21 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Architecture <em>Architecture</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.Architecture
+   * @generated
+   */
+  public Adapter createArchitectureAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Call <em>Call</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -278,21 +293,6 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAtomicTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.VariableRef <em>Variable Ref</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.VariableRef
-   * @generated
-   */
-  public Adapter createVariableRefAdapter()
   {
     return null;
   }

@@ -35,12 +35,12 @@ public interface Call extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Receiver</em>' reference.
-   * @see #setReceiver(Component)
+   * @see #setReceiver(Variable)
    * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getCall_Receiver()
    * @model
    * @generated
    */
-  Component getReceiver();
+  Variable getReceiver();
 
   /**
    * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Call#getReceiver <em>Receiver</em>}' reference.
@@ -50,7 +50,7 @@ public interface Call extends EObject
    * @see #getReceiver()
    * @generated
    */
-  void setReceiver(Component value);
+  void setReceiver(Variable value);
 
   /**
    * Returns the value of the '<em><b>Member</b></em>' reference list.

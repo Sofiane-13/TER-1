@@ -20,7 +20,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//DomainDeclaration/elements"/>
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//AbstractModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//AbstractModel/imp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//AbstractModel/comp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//AbstractModel/arch"/>
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Import/importedNamespace"/>
@@ -29,8 +31,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Component/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/ops"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/operations"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/vars"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/calls"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//Architecture">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Architecture/vars"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Architecture/receiver"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Architecture/provider"/>
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//Call">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Call/receiver"/>
@@ -47,9 +52,7 @@
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//AtomicType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//AtomicType/atomType"/>
-    </genClasses>
-    <genClasses ecoreClass="Architecture.ecore#//VariableRef">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//VariableRef/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//AtomicType/compType"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -4,6 +4,7 @@
 package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.AbstractModel;
+import com.aelos.xtext.architecture.architecture.Architecture;
 import com.aelos.xtext.architecture.architecture.ArchitectureFactory;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.AtomicType;
@@ -15,7 +16,6 @@ import com.aelos.xtext.architecture.architecture.Model;
 import com.aelos.xtext.architecture.architecture.Operation;
 import com.aelos.xtext.architecture.architecture.Type;
 import com.aelos.xtext.architecture.architecture.Variable;
-import com.aelos.xtext.architecture.architecture.VariableRef;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -73,6 +73,13 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass architectureEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass callEClass = null;
 
   /**
@@ -95,13 +102,6 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * @generated
    */
   private EClass atomicTypeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variableRefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -238,9 +238,29 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractModel_Comp()
+  public EReference getAbstractModel_Imp()
   {
     return (EReference)abstractModelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbstractModel_Comp()
+  {
+    return (EReference)abstractModelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAbstractModel_Arch()
+  {
+    return (EReference)abstractModelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -308,9 +328,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Vars()
+  public EClass getArchitecture()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(3);
+    return architectureEClass;
   }
 
   /**
@@ -318,9 +338,29 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Calls()
+  public EReference getArchitecture_Vars()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(4);
+    return (EReference)architectureEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getArchitecture_Receiver()
+  {
+    return (EReference)architectureEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getArchitecture_Provider()
+  {
+    return (EReference)architectureEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -448,19 +488,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getVariableRef()
+  public EReference getAtomicType_CompType()
   {
-    return variableRefEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getVariableRef_Type()
-  {
-    return (EReference)variableRefEClass.getEStructuralFeatures().get(0);
+    return (EReference)atomicTypeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -511,7 +541,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     createEReference(domainDeclarationEClass, DOMAIN_DECLARATION__ELEMENTS);
 
     abstractModelEClass = createEClass(ABSTRACT_MODEL);
+    createEReference(abstractModelEClass, ABSTRACT_MODEL__IMP);
     createEReference(abstractModelEClass, ABSTRACT_MODEL__COMP);
+    createEReference(abstractModelEClass, ABSTRACT_MODEL__ARCH);
 
     importEClass = createEClass(IMPORT);
     createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
@@ -520,8 +552,11 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     createEAttribute(componentEClass, COMPONENT__NAME);
     createEReference(componentEClass, COMPONENT__OPS);
     createEReference(componentEClass, COMPONENT__OPERATIONS);
-    createEReference(componentEClass, COMPONENT__VARS);
-    createEReference(componentEClass, COMPONENT__CALLS);
+
+    architectureEClass = createEClass(ARCHITECTURE);
+    createEReference(architectureEClass, ARCHITECTURE__VARS);
+    createEReference(architectureEClass, ARCHITECTURE__RECEIVER);
+    createEReference(architectureEClass, ARCHITECTURE__PROVIDER);
 
     callEClass = createEClass(CALL);
     createEReference(callEClass, CALL__RECEIVER);
@@ -538,9 +573,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
     atomicTypeEClass = createEClass(ATOMIC_TYPE);
     createEAttribute(atomicTypeEClass, ATOMIC_TYPE__ATOM_TYPE);
-
-    variableRefEClass = createEClass(VARIABLE_REF);
-    createEReference(variableRefEClass, VARIABLE_REF__TYPE);
+    createEReference(atomicTypeEClass, ATOMIC_TYPE__COMP_TYPE);
 
     // Create enums
     typeEEnum = createEEnum(TYPE);
@@ -575,8 +608,6 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    importEClass.getESuperTypes().add(this.getAbstractModel());
-    variableRefEClass.getESuperTypes().add(this.getAtomicType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -587,7 +618,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     initEReference(getDomainDeclaration_Elements(), this.getAbstractModel(), null, "elements", null, 0, -1, DomainDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractModelEClass, AbstractModel.class, "AbstractModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAbstractModel_Imp(), this.getImport(), null, "imp", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_Comp(), this.getComponent(), null, "comp", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractModel_Arch(), this.getArchitecture(), null, "arch", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -596,11 +629,14 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponent_Ops(), this.getOperation(), null, "ops", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponent_Operations(), this.getOperation(), null, "operations", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Vars(), this.getVariable(), null, "vars", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Calls(), this.getCall(), null, "calls", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(architectureEClass, Architecture.class, "Architecture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getArchitecture_Vars(), this.getVariable(), null, "vars", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArchitecture_Receiver(), this.getCall(), null, "receiver", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArchitecture_Provider(), this.getCall(), null, "provider", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCall_Receiver(), this.getComponent(), null, "receiver", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCall_Receiver(), this.getVariable(), null, "receiver", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCall_Member(), this.getOperation(), null, "member", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -614,9 +650,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
     initEClass(atomicTypeEClass, AtomicType.class, "AtomicType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAtomicType_AtomType(), this.getType(), "atomType", null, 0, 1, AtomicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(variableRefEClass, VariableRef.class, "VariableRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariableRef_Type(), this.getComponent(), null, "type", null, 0, 1, VariableRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAtomicType_CompType(), this.getComponent(), null, "compType", null, 0, 1, AtomicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(typeEEnum, Type.class, "Type");

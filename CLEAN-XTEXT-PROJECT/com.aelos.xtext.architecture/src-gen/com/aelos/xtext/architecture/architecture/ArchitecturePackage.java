@@ -134,13 +134,31 @@ public interface ArchitecturePackage extends EPackage
   int ABSTRACT_MODEL = 2;
 
   /**
+   * The feature id for the '<em><b>Imp</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_MODEL__IMP = 0;
+
+  /**
    * The feature id for the '<em><b>Comp</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_MODEL__COMP = 0;
+  int ABSTRACT_MODEL__COMP = 1;
+
+  /**
+   * The feature id for the '<em><b>Arch</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_MODEL__ARCH = 2;
 
   /**
    * The number of structural features of the '<em>Abstract Model</em>' class.
@@ -149,7 +167,7 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_MODEL_FEATURE_COUNT = 1;
+  int ABSTRACT_MODEL_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.ImportImpl <em>Import</em>}' class.
@@ -162,22 +180,13 @@ public interface ArchitecturePackage extends EPackage
   int IMPORT = 3;
 
   /**
-   * The feature id for the '<em><b>Comp</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMPORT__COMP = ABSTRACT_MODEL__COMP;
-
-  /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int IMPORT__IMPORTED_NAMESPACE = ABSTRACT_MODEL_FEATURE_COUNT + 0;
+  int IMPORT__IMPORTED_NAMESPACE = 0;
 
   /**
    * The number of structural features of the '<em>Import</em>' class.
@@ -186,7 +195,7 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMPORT_FEATURE_COUNT = ABSTRACT_MODEL_FEATURE_COUNT + 1;
+  int IMPORT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl <em>Component</em>}' class.
@@ -226,31 +235,59 @@ public interface ArchitecturePackage extends EPackage
   int COMPONENT__OPERATIONS = 2;
 
   /**
-   * The feature id for the '<em><b>Vars</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__VARS = 3;
-
-  /**
-   * The feature id for the '<em><b>Calls</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__CALLS = 4;
-
-  /**
    * The number of structural features of the '<em>Component</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = 5;
+  int COMPONENT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.ArchitectureImpl <em>Architecture</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.architecture.architecture.impl.ArchitectureImpl
+   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getArchitecture()
+   * @generated
+   */
+  int ARCHITECTURE = 5;
+
+  /**
+   * The feature id for the '<em><b>Vars</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARCHITECTURE__VARS = 0;
+
+  /**
+   * The feature id for the '<em><b>Receiver</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARCHITECTURE__RECEIVER = 1;
+
+  /**
+   * The feature id for the '<em><b>Provider</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARCHITECTURE__PROVIDER = 2;
+
+  /**
+   * The number of structural features of the '<em>Architecture</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARCHITECTURE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.CallImpl <em>Call</em>}' class.
@@ -260,7 +297,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getCall()
    * @generated
    */
-  int CALL = 5;
+  int CALL = 6;
 
   /**
    * The feature id for the '<em><b>Receiver</b></em>' reference.
@@ -297,7 +334,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 6;
+  int VARIABLE = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -334,7 +371,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getOperation()
    * @generated
    */
-  int OPERATION = 7;
+  int OPERATION = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -380,7 +417,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getAtomicType()
    * @generated
    */
-  int ATOMIC_TYPE = 8;
+  int ATOMIC_TYPE = 9;
 
   /**
    * The feature id for the '<em><b>Atom Type</b></em>' attribute.
@@ -392,50 +429,22 @@ public interface ArchitecturePackage extends EPackage
   int ATOMIC_TYPE__ATOM_TYPE = 0;
 
   /**
+   * The feature id for the '<em><b>Comp Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC_TYPE__COMP_TYPE = 1;
+
+  /**
    * The number of structural features of the '<em>Atomic Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATOMIC_TYPE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableRefImpl <em>Variable Ref</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.aelos.xtext.architecture.architecture.impl.VariableRefImpl
-   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getVariableRef()
-   * @generated
-   */
-  int VARIABLE_REF = 9;
-
-  /**
-   * The feature id for the '<em><b>Atom Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REF__ATOM_TYPE = ATOMIC_TYPE__ATOM_TYPE;
-
-  /**
-   * The feature id for the '<em><b>Type</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REF__TYPE = ATOMIC_TYPE_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Variable Ref</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE_REF_FEATURE_COUNT = ATOMIC_TYPE_FEATURE_COUNT + 1;
+  int ATOMIC_TYPE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.Type <em>Type</em>}' enum.
@@ -512,6 +521,17 @@ public interface ArchitecturePackage extends EPackage
   EClass getAbstractModel();
 
   /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.AbstractModel#getImp <em>Imp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Imp</em>'.
+   * @see com.aelos.xtext.architecture.architecture.AbstractModel#getImp()
+   * @see #getAbstractModel()
+   * @generated
+   */
+  EReference getAbstractModel_Imp();
+
+  /**
    * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.AbstractModel#getComp <em>Comp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -521,6 +541,17 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    */
   EReference getAbstractModel_Comp();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.AbstractModel#getArch <em>Arch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arch</em>'.
+   * @see com.aelos.xtext.architecture.architecture.AbstractModel#getArch()
+   * @see #getAbstractModel()
+   * @generated
+   */
+  EReference getAbstractModel_Arch();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Import <em>Import</em>}'.
@@ -587,26 +618,47 @@ public interface ArchitecturePackage extends EPackage
   EReference getComponent_Operations();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getVars <em>Vars</em>}'.
+   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Architecture <em>Architecture</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Architecture</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Architecture
+   * @generated
+   */
+  EClass getArchitecture();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Architecture#getVars <em>Vars</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Vars</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Component#getVars()
-   * @see #getComponent()
+   * @see com.aelos.xtext.architecture.architecture.Architecture#getVars()
+   * @see #getArchitecture()
    * @generated
    */
-  EReference getComponent_Vars();
+  EReference getArchitecture_Vars();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getCalls <em>Calls</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Architecture#getReceiver <em>Receiver</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Calls</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Component#getCalls()
-   * @see #getComponent()
+   * @return the meta object for the containment reference list '<em>Receiver</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Architecture#getReceiver()
+   * @see #getArchitecture()
    * @generated
    */
-  EReference getComponent_Calls();
+  EReference getArchitecture_Receiver();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Architecture#getProvider <em>Provider</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Provider</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Architecture#getProvider()
+   * @see #getArchitecture()
+   * @generated
+   */
+  EReference getArchitecture_Provider();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Call <em>Call</em>}'.
@@ -737,25 +789,15 @@ public interface ArchitecturePackage extends EPackage
   EAttribute getAtomicType_AtomType();
 
   /**
-   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.VariableRef <em>Variable Ref</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.architecture.architecture.AtomicType#getCompType <em>Comp Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Variable Ref</em>'.
-   * @see com.aelos.xtext.architecture.architecture.VariableRef
+   * @return the meta object for the reference '<em>Comp Type</em>'.
+   * @see com.aelos.xtext.architecture.architecture.AtomicType#getCompType()
+   * @see #getAtomicType()
    * @generated
    */
-  EClass getVariableRef();
-
-  /**
-   * Returns the meta object for the reference '{@link com.aelos.xtext.architecture.architecture.VariableRef#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Type</em>'.
-   * @see com.aelos.xtext.architecture.architecture.VariableRef#getType()
-   * @see #getVariableRef()
-   * @generated
-   */
-  EReference getVariableRef_Type();
+  EReference getAtomicType_CompType();
 
   /**
    * Returns the meta object for enum '{@link com.aelos.xtext.architecture.architecture.Type <em>Type</em>}'.
@@ -845,12 +887,28 @@ public interface ArchitecturePackage extends EPackage
     EClass ABSTRACT_MODEL = eINSTANCE.getAbstractModel();
 
     /**
+     * The meta object literal for the '<em><b>Imp</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_MODEL__IMP = eINSTANCE.getAbstractModel_Imp();
+
+    /**
      * The meta object literal for the '<em><b>Comp</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference ABSTRACT_MODEL__COMP = eINSTANCE.getAbstractModel_Comp();
+
+    /**
+     * The meta object literal for the '<em><b>Arch</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_MODEL__ARCH = eINSTANCE.getAbstractModel_Arch();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.ImportImpl <em>Import</em>}' class.
@@ -905,20 +963,38 @@ public interface ArchitecturePackage extends EPackage
     EReference COMPONENT__OPERATIONS = eINSTANCE.getComponent_Operations();
 
     /**
+     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.ArchitectureImpl <em>Architecture</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.architecture.architecture.impl.ArchitectureImpl
+     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getArchitecture()
+     * @generated
+     */
+    EClass ARCHITECTURE = eINSTANCE.getArchitecture();
+
+    /**
      * The meta object literal for the '<em><b>Vars</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__VARS = eINSTANCE.getComponent_Vars();
+    EReference ARCHITECTURE__VARS = eINSTANCE.getArchitecture_Vars();
 
     /**
-     * The meta object literal for the '<em><b>Calls</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Receiver</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__CALLS = eINSTANCE.getComponent_Calls();
+    EReference ARCHITECTURE__RECEIVER = eINSTANCE.getArchitecture_Receiver();
+
+    /**
+     * The meta object literal for the '<em><b>Provider</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARCHITECTURE__PROVIDER = eINSTANCE.getArchitecture_Provider();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.CallImpl <em>Call</em>}' class.
@@ -1025,22 +1101,12 @@ public interface ArchitecturePackage extends EPackage
     EAttribute ATOMIC_TYPE__ATOM_TYPE = eINSTANCE.getAtomicType_AtomType();
 
     /**
-     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableRefImpl <em>Variable Ref</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.aelos.xtext.architecture.architecture.impl.VariableRefImpl
-     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getVariableRef()
-     * @generated
-     */
-    EClass VARIABLE_REF = eINSTANCE.getVariableRef();
-
-    /**
-     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Comp Type</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference VARIABLE_REF__TYPE = eINSTANCE.getVariableRef_Type();
+    EReference ATOMIC_TYPE__COMP_TYPE = eINSTANCE.getAtomicType_CompType();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.Type <em>Type</em>}' enum.

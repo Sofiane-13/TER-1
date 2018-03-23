@@ -47,6 +47,6 @@ class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
 
 	def  IScope scope_Call_op(Call selct) {
       //System.out.print("dsjkbc")
-      return Scopes.scopeFor(selct.receiver.operations);
+      return Scopes.scopeFor(selct.receiver.type.compType.ops);
 	}
 }

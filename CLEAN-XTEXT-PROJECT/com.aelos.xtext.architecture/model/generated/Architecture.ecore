@@ -12,10 +12,14 @@
         eType="#//AbstractModel" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imp" upperBound="-1" eType="#//Import"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comp" upperBound="-1" eType="#//Component"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arch" upperBound="-1" eType="#//Architecture"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//AbstractModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Component">
@@ -24,13 +28,17 @@
         eType="#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
         eType="#//Operation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Architecture">
     <eStructuralFeatures xsi:type="ecore:EReference" name="vars" upperBound="-1" eType="#//Variable"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="calls" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" upperBound="-1"
+        eType="#//Call" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provider" upperBound="-1"
         eType="#//Call" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Call">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//Variable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="member" unique="false"
         upperBound="-1" eType="#//Operation"/>
   </eClassifiers>
@@ -48,14 +56,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="atomType" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="compType" eType="#//Component"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Type">
     <eLiterals name="INT" literal="INT"/>
     <eLiterals name="STRING" value="1" literal="STRING"/>
     <eLiterals name="Boolean" value="2" literal="Boolean"/>
     <eLiterals name="Double" value="3" literal="Double"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariableRef" eSuperTypes="#//AtomicType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Component"/>
   </eClassifiers>
 </ecore:EPackage>

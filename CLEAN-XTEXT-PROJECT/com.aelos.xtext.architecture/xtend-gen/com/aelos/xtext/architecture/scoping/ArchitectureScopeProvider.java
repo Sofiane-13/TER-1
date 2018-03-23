@@ -38,6 +38,6 @@ public class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider
   }
   
   public IScope scope_Call_op(final Call selct) {
-    return Scopes.scopeFor(selct.getReceiver().getOperations());
+    return Scopes.scopeFor(selct.getReceiver().getType().getCompType().getOps());
   }
 }
