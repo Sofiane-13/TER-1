@@ -21,7 +21,7 @@ QualifiedName:
     ID ('.' ID)*;
 TestDriver :
 	"TestDriver:"
-	(outVar+=[testIntention::Variable]":="tagetedservice+=Call"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
+	(outVar+=[testIntention::Variable]":="receiver=[arch::Variable]'.'member+=[arch::Operation]"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
 	;
 Observer :
 	"observer:"name=ID"("serviceName1+=Call","serviceName2+=Call")"("("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*;	

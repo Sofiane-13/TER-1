@@ -179,13 +179,22 @@ public interface MappingAssistancePackage extends EPackage
   int TEST_DRIVER__OUT_VAR = 0;
 
   /**
-   * The feature id for the '<em><b>Tagetedservice</b></em>' containment reference list.
+   * The feature id for the '<em><b>Receiver</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_DRIVER__TAGETEDSERVICE = 1;
+  int TEST_DRIVER__RECEIVER = 1;
+
+  /**
+   * The feature id for the '<em><b>Member</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEST_DRIVER__MEMBER = 2;
 
   /**
    * The feature id for the '<em><b>Arg</b></em>' reference list.
@@ -194,7 +203,7 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEST_DRIVER__ARG = 2;
+  int TEST_DRIVER__ARG = 3;
 
   /**
    * The number of structural features of the '<em>Test Driver</em>' class.
@@ -203,7 +212,7 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEST_DRIVER_FEATURE_COUNT = 3;
+  int TEST_DRIVER_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl <em>Observer</em>}' class.
@@ -405,15 +414,26 @@ public interface MappingAssistancePackage extends EPackage
   EReference getTestDriver_OutVar();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getTagetedservice <em>Tagetedservice</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getReceiver <em>Receiver</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Tagetedservice</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getTagetedservice()
+   * @return the meta object for the reference '<em>Receiver</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getReceiver()
    * @see #getTestDriver()
    * @generated
    */
-  EReference getTestDriver_Tagetedservice();
+  EReference getTestDriver_Receiver();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember <em>Member</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Member</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember()
+   * @see #getTestDriver()
+   * @generated
+   */
+  EReference getTestDriver_Member();
 
   /**
    * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getArg <em>Arg</em>}'.
@@ -624,12 +644,20 @@ public interface MappingAssistancePackage extends EPackage
     EReference TEST_DRIVER__OUT_VAR = eINSTANCE.getTestDriver_OutVar();
 
     /**
-     * The meta object literal for the '<em><b>Tagetedservice</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Receiver</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_DRIVER__TAGETEDSERVICE = eINSTANCE.getTestDriver_Tagetedservice();
+    EReference TEST_DRIVER__RECEIVER = eINSTANCE.getTestDriver_Receiver();
+
+    /**
+     * The meta object literal for the '<em><b>Member</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEST_DRIVER__MEMBER = eINSTANCE.getTestDriver_Member();
 
     /**
      * The meta object literal for the '<em><b>Arg</b></em>' reference list feature.

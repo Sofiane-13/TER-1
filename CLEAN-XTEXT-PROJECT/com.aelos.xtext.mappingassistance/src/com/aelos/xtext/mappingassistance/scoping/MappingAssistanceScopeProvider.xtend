@@ -76,16 +76,16 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
 		
 		
     
-	    if (context instanceof TestDriver ) {
+	    if (context instanceof TestDriver && reference == MappingAssistancePackage.Literals.TEST_DRIVER__MEMBER) {
 	        	System.out.print("dsjkbjjc")
 	          // Create IEObjectDescriptions and puts them into an IScope instance
-	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, Call))
+	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, TestDriver))
 	    }
 	    return super.getScope(context, reference);
 	}
 
 
-	def  IScope scope_Call_op(Call selct) {
+	def  IScope scope_Call_op(TestDriver selct) {
       System.out.print("dsjkbc")
       return Scopes.scopeFor(selct.receiver.type.compType.ops);
 	}

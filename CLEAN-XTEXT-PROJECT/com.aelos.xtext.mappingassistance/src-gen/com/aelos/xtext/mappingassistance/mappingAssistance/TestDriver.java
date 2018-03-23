@@ -3,6 +3,8 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance;
 
+import com.aelos.xtext.architecture.architecture.Operation;
+
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,7 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getOutVar <em>Out Var</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getTagetedservice <em>Tagetedservice</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember <em>Member</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getArg <em>Arg</em>}</li>
  * </ul>
  *
@@ -46,20 +49,46 @@ public interface TestDriver extends EObject
   EList<Variable> getOutVar();
 
   /**
-   * Returns the value of the '<em><b>Tagetedservice</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Call}.
+   * Returns the value of the '<em><b>Receiver</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Tagetedservice</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Receiver</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Tagetedservice</em>' containment reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Tagetedservice()
-   * @model containment="true"
+   * @return the value of the '<em>Receiver</em>' reference.
+   * @see #setReceiver(com.aelos.xtext.architecture.architecture.Variable)
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Receiver()
+   * @model
    * @generated
    */
-  EList<Call> getTagetedservice();
+  com.aelos.xtext.architecture.architecture.Variable getReceiver();
+
+  /**
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getReceiver <em>Receiver</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Receiver</em>' reference.
+   * @see #getReceiver()
+   * @generated
+   */
+  void setReceiver(com.aelos.xtext.architecture.architecture.Variable value);
+
+  /**
+   * Returns the value of the '<em><b>Member</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Member</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Member</em>' reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Member()
+   * @model
+   * @generated
+   */
+  EList<Operation> getMember();
 
   /**
    * Returns the value of the '<em><b>Arg</b></em>' reference list.

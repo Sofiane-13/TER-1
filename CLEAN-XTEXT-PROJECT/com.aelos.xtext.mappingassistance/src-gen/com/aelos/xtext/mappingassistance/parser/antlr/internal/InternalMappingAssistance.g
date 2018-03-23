@@ -331,25 +331,36 @@ ruleTestDriver returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTestDriverAccess().getTagetedserviceCallParserRuleCall_1_2_0());
-					}
-					lv_tagetedservice_3_0=ruleCall
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getTestDriverRule());
+							$current = createModelElement(grammarAccess.getTestDriverRule());
 						}
-						add(
-							$current,
-							"tagetedservice",
-							lv_tagetedservice_3_0,
-							"com.aelos.xtext.mappingassistance.MappingAssistance.Call");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_3=RULE_ID
+					{
+						newLeafNode(otherlv_3, grammarAccess.getTestDriverAccess().getReceiverVariableCrossReference_1_2_0());
 					}
 				)
 			)
-			otherlv_4='('
+			otherlv_4='.'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_1_3());
+				newLeafNode(otherlv_4, grammarAccess.getTestDriverAccess().getFullStopKeyword_1_3());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getTestDriverRule());
+						}
+					}
+					otherlv_5=RULE_ID
+					{
+						newLeafNode(otherlv_5, grammarAccess.getTestDriverAccess().getMemberOperationCrossReference_1_4_0());
+					}
+				)
+			)
+			otherlv_6='('
+			{
+				newLeafNode(otherlv_6, grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_1_5());
 			}
 			(
 				(
@@ -360,15 +371,15 @@ ruleTestDriver returns [EObject current=null]
 									$current = createModelElement(grammarAccess.getTestDriverRule());
 								}
 							}
-							otherlv_5=RULE_ID
+							otherlv_7=RULE_ID
 							{
-								newLeafNode(otherlv_5, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_4_0_0_0());
+								newLeafNode(otherlv_7, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_6_0_0_0());
 							}
 						)
 					)
-					otherlv_6=','
+					otherlv_8=','
 					{
-						newLeafNode(otherlv_6, grammarAccess.getTestDriverAccess().getCommaKeyword_1_4_0_1());
+						newLeafNode(otherlv_8, grammarAccess.getTestDriverAccess().getCommaKeyword_1_6_0_1());
 					}
 				)*
 				(
@@ -378,16 +389,16 @@ ruleTestDriver returns [EObject current=null]
 								$current = createModelElement(grammarAccess.getTestDriverRule());
 							}
 						}
-						otherlv_7=RULE_ID
+						otherlv_9=RULE_ID
 						{
-							newLeafNode(otherlv_7, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_4_1_0());
+							newLeafNode(otherlv_9, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_6_1_0());
 						}
 					)
 				)
 			)*
-			otherlv_8=')'
+			otherlv_10=')'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_1_5());
+				newLeafNode(otherlv_10, grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_1_7());
 			}
 		)*
 	)
