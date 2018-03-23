@@ -4,12 +4,14 @@
 package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Type;
+import com.aelos.xtext.architecture.architecture.AtomicType;
 import com.aelos.xtext.architecture.architecture.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -51,24 +53,14 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final Type TYPE_EDEFAULT = Type.INT;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected Type type = TYPE_EDEFAULT;
+  protected AtomicType type;
 
   /**
    * <!-- begin-user-doc -->
@@ -119,7 +111,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
+  public AtomicType getType()
   {
     return type;
   }
@@ -129,12 +121,53 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Type newType)
+  public NotificationChain basicSetType(AtomicType newType, NotificationChain msgs)
   {
-    Type oldType = type;
-    type = newType == null ? TYPE_EDEFAULT : newType;
+    AtomicType oldType = type;
+    type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.VARIABLE__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArchitecturePackage.VARIABLE__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(AtomicType newType)
+  {
+    if (newType != type)
+    {
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ArchitecturePackage.VARIABLE__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ArchitecturePackage.VARIABLE__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.VARIABLE__TYPE, newType, newType));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case ArchitecturePackage.VARIABLE__TYPE:
+        return basicSetType(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -169,7 +202,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
         setName((String)newValue);
         return;
       case ArchitecturePackage.VARIABLE__TYPE:
-        setType((Type)newValue);
+        setType((AtomicType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -189,7 +222,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
         setName(NAME_EDEFAULT);
         return;
       case ArchitecturePackage.VARIABLE__TYPE:
-        setType(TYPE_EDEFAULT);
+        setType((AtomicType)null);
         return;
     }
     super.eUnset(featureID);
@@ -208,7 +241,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
       case ArchitecturePackage.VARIABLE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ArchitecturePackage.VARIABLE__TYPE:
-        return type != TYPE_EDEFAULT;
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
@@ -226,8 +259,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", type: ");
-    result.append(type);
     result.append(')');
     return result.toString();
   }

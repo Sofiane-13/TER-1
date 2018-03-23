@@ -6,6 +6,7 @@ package com.aelos.xtext.architecture.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
@@ -288,13 +289,13 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeTypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final RuleCall cTypeAtomicTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		
 		//Variable:
-		//	name=ID ":" type=Type;
+		//	name=ID ":" type=AtomicType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID ":" type=Type
+		//name=ID ":" type=AtomicType
 		public Group getGroup() { return cGroup; }
 		
 		//name=ID
@@ -306,98 +307,121 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//type=Type
+		//type=AtomicType
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
-		//Type
-		public RuleCall getTypeTypeEnumRuleCall_2_0() { return cTypeTypeEnumRuleCall_2_0; }
+		//AtomicType
+		public RuleCall getTypeAtomicTypeParserRuleCall_2_0() { return cTypeAtomicTypeParserRuleCall_2_0; }
 	}
 	public class OperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Operation");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cDefKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Group cGroup_0_3 = (Group)cGroup_0.eContents().get(3);
-		private final Group cGroup_0_3_0 = (Group)cGroup_0_3.eContents().get(0);
-		private final Assignment cArgAssignment_0_3_0_0 = (Assignment)cGroup_0_3_0.eContents().get(0);
-		private final RuleCall cArgVariableParserRuleCall_0_3_0_0_0 = (RuleCall)cArgAssignment_0_3_0_0.eContents().get(0);
-		private final Keyword cCommaKeyword_0_3_0_1 = (Keyword)cGroup_0_3_0.eContents().get(1);
-		private final Assignment cArgAssignment_0_3_1 = (Assignment)cGroup_0_3.eContents().get(1);
-		private final RuleCall cArgVariableParserRuleCall_0_3_1_0 = (RuleCall)cArgAssignment_0_3_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
-		private final Keyword cColonKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
-		private final Assignment cTypeAssignment_0_6 = (Assignment)cGroup_0.eContents().get(6);
-		private final RuleCall cTypeTypeEnumRuleCall_0_6_0 = (RuleCall)cTypeAssignment_0_6.eContents().get(0);
-		private final Assignment cTypeCompAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final CrossReference cTypeCompComponentCrossReference_1_0 = (CrossReference)cTypeCompAssignment_1.eContents().get(0);
-		private final RuleCall cTypeCompComponentIDTerminalRuleCall_1_0_1 = (RuleCall)cTypeCompComponentCrossReference_1_0.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDefKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Group cGroup_3_0 = (Group)cGroup_3.eContents().get(0);
+		private final Assignment cArgAssignment_3_0_0 = (Assignment)cGroup_3_0.eContents().get(0);
+		private final RuleCall cArgVariableParserRuleCall_3_0_0_0 = (RuleCall)cArgAssignment_3_0_0.eContents().get(0);
+		private final Keyword cCommaKeyword_3_0_1 = (Keyword)cGroup_3_0.eContents().get(1);
+		private final Assignment cArgAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cArgVariableParserRuleCall_3_1_0 = (RuleCall)cArgAssignment_3_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cTypeAtomicTypeParserRuleCall_6_0 = (RuleCall)cTypeAssignment_6.eContents().get(0);
 		
 		//Operation:
-		//	"def" name=ID "(" ((arg+=Variable ",")* arg+=Variable)* ")" ":" type=Type | typeComp+=[Component];
+		//	"def" name=ID "(" ((arg+=Variable ",")* arg+=Variable)* ")" ":" type=AtomicType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"def" name=ID "(" ((arg+=Variable ",")* arg+=Variable)* ")" ":" type=Type | typeComp+=[Component]
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//"def" name=ID "(" ((arg+=Variable ",")* arg+=Variable)* ")" ":" type=Type
-		public Group getGroup_0() { return cGroup_0; }
+		//"def" name=ID "(" ((arg+=Variable ",")* arg+=Variable)* ")" ":" type=AtomicType
+		public Group getGroup() { return cGroup; }
 		
 		//"def"
-		public Keyword getDefKeyword_0_0() { return cDefKeyword_0_0; }
+		public Keyword getDefKeyword_0() { return cDefKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//"("
-		public Keyword getLeftParenthesisKeyword_0_2() { return cLeftParenthesisKeyword_0_2; }
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
 		//((arg+=Variable ",")* arg+=Variable)*
-		public Group getGroup_0_3() { return cGroup_0_3; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//(arg+=Variable ",")*
-		public Group getGroup_0_3_0() { return cGroup_0_3_0; }
+		public Group getGroup_3_0() { return cGroup_3_0; }
 		
 		//arg+=Variable
-		public Assignment getArgAssignment_0_3_0_0() { return cArgAssignment_0_3_0_0; }
+		public Assignment getArgAssignment_3_0_0() { return cArgAssignment_3_0_0; }
 		
 		//Variable
-		public RuleCall getArgVariableParserRuleCall_0_3_0_0_0() { return cArgVariableParserRuleCall_0_3_0_0_0; }
+		public RuleCall getArgVariableParserRuleCall_3_0_0_0() { return cArgVariableParserRuleCall_3_0_0_0; }
 		
 		//","
-		public Keyword getCommaKeyword_0_3_0_1() { return cCommaKeyword_0_3_0_1; }
+		public Keyword getCommaKeyword_3_0_1() { return cCommaKeyword_3_0_1; }
 		
 		//arg+=Variable
-		public Assignment getArgAssignment_0_3_1() { return cArgAssignment_0_3_1; }
+		public Assignment getArgAssignment_3_1() { return cArgAssignment_3_1; }
 		
 		//Variable
-		public RuleCall getArgVariableParserRuleCall_0_3_1_0() { return cArgVariableParserRuleCall_0_3_1_0; }
+		public RuleCall getArgVariableParserRuleCall_3_1_0() { return cArgVariableParserRuleCall_3_1_0; }
 		
 		//")"
-		public Keyword getRightParenthesisKeyword_0_4() { return cRightParenthesisKeyword_0_4; }
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 		
 		//":"
-		public Keyword getColonKeyword_0_5() { return cColonKeyword_0_5; }
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
 		
-		//type=Type
-		public Assignment getTypeAssignment_0_6() { return cTypeAssignment_0_6; }
+		//type=AtomicType
+		public Assignment getTypeAssignment_6() { return cTypeAssignment_6; }
+		
+		//AtomicType
+		public RuleCall getTypeAtomicTypeParserRuleCall_6_0() { return cTypeAtomicTypeParserRuleCall_6_0; }
+	}
+	public class AtomicTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.AtomicType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cAtomTypeAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cAtomTypeTypeEnumRuleCall_0_0 = (RuleCall)cAtomTypeAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cVariableRefAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cTypeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final CrossReference cTypeComponentCrossReference_1_1_0 = (CrossReference)cTypeAssignment_1_1.eContents().get(0);
+		private final RuleCall cTypeComponentIDTerminalRuleCall_1_1_0_1 = (RuleCall)cTypeComponentCrossReference_1_1_0.eContents().get(1);
+		
+		//AtomicType:
+		//	atomType=Type | {VariableRef} type=[Component];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//atomType=Type | {VariableRef} type=[Component]
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//atomType=Type
+		public Assignment getAtomTypeAssignment_0() { return cAtomTypeAssignment_0; }
 		
 		//Type
-		public RuleCall getTypeTypeEnumRuleCall_0_6_0() { return cTypeTypeEnumRuleCall_0_6_0; }
+		public RuleCall getAtomTypeTypeEnumRuleCall_0_0() { return cAtomTypeTypeEnumRuleCall_0_0; }
 		
-		//typeComp+=[Component]
-		public Assignment getTypeCompAssignment_1() { return cTypeCompAssignment_1; }
+		//{VariableRef} type=[Component]
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{VariableRef}
+		public Action getVariableRefAction_1_0() { return cVariableRefAction_1_0; }
+		
+		//type=[Component]
+		public Assignment getTypeAssignment_1_1() { return cTypeAssignment_1_1; }
 		
 		//[Component]
-		public CrossReference getTypeCompComponentCrossReference_1_0() { return cTypeCompComponentCrossReference_1_0; }
+		public CrossReference getTypeComponentCrossReference_1_1_0() { return cTypeComponentCrossReference_1_1_0; }
 		
 		//ID
-		public RuleCall getTypeCompComponentIDTerminalRuleCall_1_0_1() { return cTypeCompComponentIDTerminalRuleCall_1_0_1; }
+		public RuleCall getTypeComponentIDTerminalRuleCall_1_1_0_1() { return cTypeComponentIDTerminalRuleCall_1_1_0_1; }
 	}
 	
 	public class TypeElements extends AbstractEnumRuleElementFinder {
@@ -453,6 +477,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	private final ComponentElements pComponent;
 	private final VariableElements pVariable;
 	private final OperationElements pOperation;
+	private final AtomicTypeElements pAtomicType;
 	private final TypeElements eType;
 	
 	private final Grammar grammar;
@@ -473,6 +498,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		this.pComponent = new ComponentElements();
 		this.pVariable = new VariableElements();
 		this.pOperation = new OperationElements();
+		this.pAtomicType = new AtomicTypeElements();
 		this.eType = new TypeElements();
 	}
 	
@@ -581,7 +607,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Variable:
-	//	name=ID ":" type=Type;
+	//	name=ID ":" type=AtomicType;
 	public VariableElements getVariableAccess() {
 		return pVariable;
 	}
@@ -591,13 +617,23 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Operation:
-	//	"def" name=ID "(" ((arg+=Variable ",")* arg+=Variable)* ")" ":" type=Type | typeComp+=[Component];
+	//	"def" name=ID "(" ((arg+=Variable ",")* arg+=Variable)* ")" ":" type=AtomicType;
 	public OperationElements getOperationAccess() {
 		return pOperation;
 	}
 	
 	public ParserRule getOperationRule() {
 		return getOperationAccess().getRule();
+	}
+	
+	//AtomicType:
+	//	atomType=Type | {VariableRef} type=[Component];
+	public AtomicTypeElements getAtomicTypeAccess() {
+		return pAtomicType;
+	}
+	
+	public ParserRule getAtomicTypeRule() {
+		return getAtomicTypeAccess().getRule();
 	}
 	
 	//enum Type:

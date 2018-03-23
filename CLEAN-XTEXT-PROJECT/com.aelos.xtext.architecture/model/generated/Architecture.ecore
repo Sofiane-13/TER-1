@@ -29,20 +29,26 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//AtomicType"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="arg" upperBound="-1" eType="#//Variable"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="typeComp" unique="false"
-        upperBound="-1" eType="#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//AtomicType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtomicType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="atomType" eType="#//Type"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Type">
     <eLiterals name="INT" literal="INT"/>
     <eLiterals name="STRING" value="1" literal="STRING"/>
     <eLiterals name="Boolean" value="2" literal="Boolean"/>
     <eLiterals name="Double" value="3" literal="Double"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableRef" eSuperTypes="#//AtomicType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Component"/>
   </eClassifiers>
 </ecore:EPackage>

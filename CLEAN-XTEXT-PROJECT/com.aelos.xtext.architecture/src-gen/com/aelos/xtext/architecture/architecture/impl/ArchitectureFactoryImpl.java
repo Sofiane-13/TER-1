@@ -73,6 +73,8 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
       case ArchitecturePackage.COMPONENT: return createComponent();
       case ArchitecturePackage.VARIABLE: return createVariable();
       case ArchitecturePackage.OPERATION: return createOperation();
+      case ArchitecturePackage.ATOMIC_TYPE: return createAtomicType();
+      case ArchitecturePackage.VARIABLE_REF: return createVariableRef();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -187,6 +189,28 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
   {
     OperationImpl operation = new OperationImpl();
     return operation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AtomicType createAtomicType()
+  {
+    AtomicTypeImpl atomicType = new AtomicTypeImpl();
+    return atomicType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableRef createVariableRef()
+  {
+    VariableRefImpl variableRef = new VariableRefImpl();
+    return variableRef;
   }
 
   /**

@@ -421,7 +421,7 @@ ruleComponent returns [EObject current=null]
 			newLeafNode(otherlv_8, grammarAccess.getComponentAccess().getRightParenthesisKeyword_6());
 		}
 		(
-			('def' | RULE_ID)=>
+			('def')=>
 			(
 				(
 					{
@@ -509,9 +509,9 @@ ruleVariable returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getVariableAccess().getTypeTypeEnumRuleCall_2_0());
+					newCompositeNode(grammarAccess.getVariableAccess().getTypeAtomicTypeParserRuleCall_2_0());
 				}
-				lv_type_2_0=ruleType
+				lv_type_2_0=ruleAtomicType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getVariableRule());
@@ -520,7 +520,7 @@ ruleVariable returns [EObject current=null]
 						$current,
 						"type",
 						lv_type_2_0,
-						"com.aelos.xtext.architecture.Architecture.Type");
+						"com.aelos.xtext.architecture.Architecture.AtomicType");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -544,65 +544,40 @@ ruleOperation returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='def'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getOperationAccess().getDefKeyword_0());
+		}
 		(
-			otherlv_0='def'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getOperationAccess().getDefKeyword_0_0());
-			}
 			(
-				(
-					lv_name_1_0=RULE_ID
-					{
-						newLeafNode(lv_name_1_0, grammarAccess.getOperationAccess().getNameIDTerminalRuleCall_0_1_0());
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getOperationAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getOperationRule());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getOperationRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_1_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
 			)
-			otherlv_2='('
-			{
-				newLeafNode(otherlv_2, grammarAccess.getOperationAccess().getLeftParenthesisKeyword_0_2());
-			}
+		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getOperationAccess().getLeftParenthesisKeyword_2());
+		}
+		(
 			(
-				(
-					(
-						(
-							{
-								newCompositeNode(grammarAccess.getOperationAccess().getArgVariableParserRuleCall_0_3_0_0_0());
-							}
-							lv_arg_3_0=ruleVariable
-							{
-								if ($current==null) {
-									$current = createModelElementForParent(grammarAccess.getOperationRule());
-								}
-								add(
-									$current,
-									"arg",
-									lv_arg_3_0,
-									"com.aelos.xtext.architecture.Architecture.Variable");
-								afterParserOrEnumRuleCall();
-							}
-						)
-					)
-					otherlv_4=','
-					{
-						newLeafNode(otherlv_4, grammarAccess.getOperationAccess().getCommaKeyword_0_3_0_1());
-					}
-				)*
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getOperationAccess().getArgVariableParserRuleCall_0_3_1_0());
+							newCompositeNode(grammarAccess.getOperationAccess().getArgVariableParserRuleCall_3_0_0_0());
 						}
-						lv_arg_5_0=ruleVariable
+						lv_arg_3_0=ruleVariable
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getOperationRule());
@@ -610,53 +585,123 @@ ruleOperation returns [EObject current=null]
 							add(
 								$current,
 								"arg",
-								lv_arg_5_0,
+								lv_arg_3_0,
 								"com.aelos.xtext.architecture.Architecture.Variable");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
+				otherlv_4=','
+				{
+					newLeafNode(otherlv_4, grammarAccess.getOperationAccess().getCommaKeyword_3_0_1());
+				}
 			)*
-			otherlv_6=')'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getOperationAccess().getRightParenthesisKeyword_0_4());
-			}
-			otherlv_7=':'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getOperationAccess().getColonKeyword_0_5());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getOperationAccess().getTypeTypeEnumRuleCall_0_6_0());
+						newCompositeNode(grammarAccess.getOperationAccess().getArgVariableParserRuleCall_3_1_0());
 					}
-					lv_type_8_0=ruleType
+					lv_arg_5_0=ruleVariable
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getOperationRule());
 						}
-						set(
+						add(
 							$current,
-							"type",
-							lv_type_8_0,
-							"com.aelos.xtext.architecture.Architecture.Type");
+							"arg",
+							lv_arg_5_0,
+							"com.aelos.xtext.architecture.Architecture.Variable");
 						afterParserOrEnumRuleCall();
 					}
 				)
+			)
+		)*
+		otherlv_6=')'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getOperationAccess().getRightParenthesisKeyword_4());
+		}
+		otherlv_7=':'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getOperationAccess().getColonKeyword_5());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getOperationAccess().getTypeAtomicTypeParserRuleCall_6_0());
+				}
+				lv_type_8_0=ruleAtomicType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOperationRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_8_0,
+						"com.aelos.xtext.architecture.Architecture.AtomicType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleAtomicType
+entryRuleAtomicType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAtomicTypeRule()); }
+	iv_ruleAtomicType=ruleAtomicType
+	{ $current=$iv_ruleAtomicType.current; }
+	EOF;
+
+// Rule AtomicType
+ruleAtomicType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getAtomicTypeAccess().getAtomTypeTypeEnumRuleCall_0_0());
+				}
+				lv_atomType_0_0=ruleType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getAtomicTypeRule());
+					}
+					set(
+						$current,
+						"atomType",
+						lv_atomType_0_0,
+						"com.aelos.xtext.architecture.Architecture.Type");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
 		    |
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperationRule());
+					$current = forceCreateModelElement(
+						grammarAccess.getAtomicTypeAccess().getVariableRefAction_1_0(),
+						$current);
+				}
+			)
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAtomicTypeRule());
+						}
 					}
-				}
-				otherlv_9=RULE_ID
-				{
-					newLeafNode(otherlv_9, grammarAccess.getOperationAccess().getTypeCompComponentCrossReference_1_0());
-				}
+					otherlv_2=RULE_ID
+					{
+						newLeafNode(otherlv_2, grammarAccess.getAtomicTypeAccess().getTypeComponentCrossReference_1_1_0());
+					}
+				)
 			)
 		)
 	)

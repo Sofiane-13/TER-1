@@ -4,9 +4,8 @@
 package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Component;
+import com.aelos.xtext.architecture.architecture.AtomicType;
 import com.aelos.xtext.architecture.architecture.Operation;
-import com.aelos.xtext.architecture.architecture.Type;
 import com.aelos.xtext.architecture.architecture.Variable;
 
 import java.util.Collection;
@@ -23,7 +22,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -37,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl#getArg <em>Arg</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl#getType <em>Type</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl#getTypeComp <em>Type Comp</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,34 +72,14 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
   protected EList<Variable> arg;
 
   /**
-   * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+   * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getType()
    * @generated
    * @ordered
    */
-  protected static final Type TYPE_EDEFAULT = Type.INT;
-
-  /**
-   * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getType()
-   * @generated
-   * @ordered
-   */
-  protected Type type = TYPE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getTypeComp() <em>Type Comp</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTypeComp()
-   * @generated
-   * @ordered
-   */
-  protected EList<Component> typeComp;
+  protected AtomicType type;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,7 +144,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type getType()
+  public AtomicType getType()
   {
     return type;
   }
@@ -177,12 +154,16 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Type newType)
+  public NotificationChain basicSetType(AtomicType newType, NotificationChain msgs)
   {
-    Type oldType = type;
-    type = newType == null ? TYPE_EDEFAULT : newType;
+    AtomicType oldType = type;
+    type = newType;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.OPERATION__TYPE, oldType, type));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ArchitecturePackage.OPERATION__TYPE, oldType, newType);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -190,13 +171,20 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Component> getTypeComp()
+  public void setType(AtomicType newType)
   {
-    if (typeComp == null)
+    if (newType != type)
     {
-      typeComp = new EObjectResolvingEList<Component>(Component.class, this, ArchitecturePackage.OPERATION__TYPE_COMP);
+      NotificationChain msgs = null;
+      if (type != null)
+        msgs = ((InternalEObject)type).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ArchitecturePackage.OPERATION__TYPE, null, msgs);
+      if (newType != null)
+        msgs = ((InternalEObject)newType).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ArchitecturePackage.OPERATION__TYPE, null, msgs);
+      msgs = basicSetType(newType, msgs);
+      if (msgs != null) msgs.dispatch();
     }
-    return typeComp;
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.OPERATION__TYPE, newType, newType));
   }
 
   /**
@@ -211,6 +199,8 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
     {
       case ArchitecturePackage.OPERATION__ARG:
         return ((InternalEList<?>)getArg()).basicRemove(otherEnd, msgs);
+      case ArchitecturePackage.OPERATION__TYPE:
+        return basicSetType(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -231,8 +221,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
         return getArg();
       case ArchitecturePackage.OPERATION__TYPE:
         return getType();
-      case ArchitecturePackage.OPERATION__TYPE_COMP:
-        return getTypeComp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -256,11 +244,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
         getArg().addAll((Collection<? extends Variable>)newValue);
         return;
       case ArchitecturePackage.OPERATION__TYPE:
-        setType((Type)newValue);
-        return;
-      case ArchitecturePackage.OPERATION__TYPE_COMP:
-        getTypeComp().clear();
-        getTypeComp().addAll((Collection<? extends Component>)newValue);
+        setType((AtomicType)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -283,10 +267,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
         getArg().clear();
         return;
       case ArchitecturePackage.OPERATION__TYPE:
-        setType(TYPE_EDEFAULT);
-        return;
-      case ArchitecturePackage.OPERATION__TYPE_COMP:
-        getTypeComp().clear();
+        setType((AtomicType)null);
         return;
     }
     super.eUnset(featureID);
@@ -307,9 +288,7 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
       case ArchitecturePackage.OPERATION__ARG:
         return arg != null && !arg.isEmpty();
       case ArchitecturePackage.OPERATION__TYPE:
-        return type != TYPE_EDEFAULT;
-      case ArchitecturePackage.OPERATION__TYPE_COMP:
-        return typeComp != null && !typeComp.isEmpty();
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
@@ -327,8 +306,6 @@ public class OperationImpl extends MinimalEObjectImpl.Container implements Opera
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", type: ");
-    result.append(type);
     result.append(')');
     return result.toString();
   }

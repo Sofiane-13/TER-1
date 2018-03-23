@@ -87,6 +87,24 @@ public interface ArchitectureFactory extends EFactory
   Operation createOperation();
 
   /**
+   * Returns a new object of class '<em>Atomic Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atomic Type</em>'.
+   * @generated
+   */
+  AtomicType createAtomicType();
+
+  /**
+   * Returns a new object of class '<em>Variable Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Ref</em>'.
+   * @generated
+   */
+  VariableRef createVariableRef();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

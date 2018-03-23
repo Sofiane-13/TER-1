@@ -6,6 +6,7 @@ package com.aelos.xtext.architecture.architecture.impl;
 import com.aelos.xtext.architecture.architecture.AbstractModel;
 import com.aelos.xtext.architecture.architecture.ArchitectureFactory;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
+import com.aelos.xtext.architecture.architecture.AtomicType;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.architecture.DomainDeclaration;
 import com.aelos.xtext.architecture.architecture.Import;
@@ -13,6 +14,7 @@ import com.aelos.xtext.architecture.architecture.Model;
 import com.aelos.xtext.architecture.architecture.Operation;
 import com.aelos.xtext.architecture.architecture.Type;
 import com.aelos.xtext.architecture.architecture.Variable;
+import com.aelos.xtext.architecture.architecture.VariableRef;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -78,6 +80,20 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * @generated
    */
   private EClass operationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atomicTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableRefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -314,9 +330,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariable_Type()
+  public EReference getVariable_Type()
   {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
+    return (EReference)variableEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -354,9 +370,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getOperation_Type()
+  public EReference getOperation_Type()
   {
-    return (EAttribute)operationEClass.getEStructuralFeatures().get(2);
+    return (EReference)operationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -364,9 +380,39 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getOperation_TypeComp()
+  public EClass getAtomicType()
   {
-    return (EReference)operationEClass.getEStructuralFeatures().get(3);
+    return atomicTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getAtomicType_AtomType()
+  {
+    return (EAttribute)atomicTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getVariableRef()
+  {
+    return variableRefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getVariableRef_Type()
+  {
+    return (EReference)variableRefEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -430,13 +476,18 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__NAME);
-    createEAttribute(variableEClass, VARIABLE__TYPE);
+    createEReference(variableEClass, VARIABLE__TYPE);
 
     operationEClass = createEClass(OPERATION);
     createEAttribute(operationEClass, OPERATION__NAME);
     createEReference(operationEClass, OPERATION__ARG);
-    createEAttribute(operationEClass, OPERATION__TYPE);
-    createEReference(operationEClass, OPERATION__TYPE_COMP);
+    createEReference(operationEClass, OPERATION__TYPE);
+
+    atomicTypeEClass = createEClass(ATOMIC_TYPE);
+    createEAttribute(atomicTypeEClass, ATOMIC_TYPE__ATOM_TYPE);
+
+    variableRefEClass = createEClass(VARIABLE_REF);
+    createEReference(variableRefEClass, VARIABLE_REF__TYPE);
 
     // Create enums
     typeEEnum = createEEnum(TYPE);
@@ -472,6 +523,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
     // Add supertypes to classes
     importEClass.getESuperTypes().add(this.getAbstractModel());
+    variableRefEClass.getESuperTypes().add(this.getAtomicType());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -495,13 +547,18 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariable_Type(), this.getType(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariable_Type(), this.getAtomicType(), null, "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getOperation_Arg(), this.getVariable(), null, "arg", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOperation_Type(), this.getType(), "type", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getOperation_TypeComp(), this.getComponent(), null, "typeComp", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperation_Type(), this.getAtomicType(), null, "type", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atomicTypeEClass, AtomicType.class, "AtomicType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtomicType_AtomType(), this.getType(), "atomType", null, 0, 1, AtomicType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(variableRefEClass, VariableRef.class, "VariableRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVariableRef_Type(), this.getComponent(), null, "type", null, 0, 1, VariableRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(typeEEnum, Type.class, "Type");

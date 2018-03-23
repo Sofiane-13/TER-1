@@ -23,7 +23,7 @@ QualifiedNameWithWildcard:
 QualifiedName:
     ID ('.' ID)*;
     
-Component :
+Component : 
 	"Component:" name=ID "{"
 		"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
 		->(operations+=Operation)*
@@ -35,11 +35,15 @@ Component :
 
 
 Variable:
-      name=ID ":" type=Type;
+      name=ID ":" type=AtomicType;
 
 
 Operation:
-    "def" name=ID "("((arg+=Variable ",")*arg+=Variable)*")" ":" type= Type | typeComp+=[Component]
+    "def" name=ID "("((arg+=Variable ",")*arg+=Variable)*")" ":" type= AtomicType
 ;
+
+AtomicType:
+	atomType=Type | 
+	{VariableRef} type=[Component];
       
 enum Type : INT | STRING | Boolean | Double;

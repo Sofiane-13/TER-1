@@ -33,13 +33,18 @@
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Variable/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Variable/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Variable/type"/>
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Operation/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Operation/arg"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Operation/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Operation/typeComp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Operation/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//AtomicType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//AtomicType/atomType"/>
+    </genClasses>
+    <genClasses ecoreClass="Architecture.ecore#//VariableRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//VariableRef/type"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

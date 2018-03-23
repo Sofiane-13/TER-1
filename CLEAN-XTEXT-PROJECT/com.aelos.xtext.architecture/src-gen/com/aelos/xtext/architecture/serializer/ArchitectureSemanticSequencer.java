@@ -5,12 +5,14 @@ package com.aelos.xtext.architecture.serializer;
 
 import com.aelos.xtext.architecture.architecture.AbstractModel;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
+import com.aelos.xtext.architecture.architecture.AtomicType;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.architecture.DomainDeclaration;
 import com.aelos.xtext.architecture.architecture.Import;
 import com.aelos.xtext.architecture.architecture.Model;
 import com.aelos.xtext.architecture.architecture.Operation;
 import com.aelos.xtext.architecture.architecture.Variable;
+import com.aelos.xtext.architecture.architecture.VariableRef;
 import com.aelos.xtext.architecture.services.ArchitectureGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -41,6 +43,9 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case ArchitecturePackage.ABSTRACT_MODEL:
 				sequence_AbstractModel(context, (AbstractModel) semanticObject); 
 				return; 
+			case ArchitecturePackage.ATOMIC_TYPE:
+				sequence_AtomicType(context, (AtomicType) semanticObject); 
+				return; 
 			case ArchitecturePackage.COMPONENT:
 				sequence_Component(context, (Component) semanticObject); 
 				return; 
@@ -65,6 +70,9 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 				return; 
 			case ArchitecturePackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
+				return; 
+			case ArchitecturePackage.VARIABLE_REF:
+				sequence_AtomicType(context, (VariableRef) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -92,6 +100,42 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 */
 	protected void sequence_AbstractModel_Import(ISerializationContext context, Import semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AtomicType returns AtomicType
+	 *
+	 * Constraint:
+	 *     atomType=Type
+	 */
+	protected void sequence_AtomicType(ISerializationContext context, AtomicType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.ATOMIC_TYPE__ATOM_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.ATOMIC_TYPE__ATOM_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtomicTypeAccess().getAtomTypeTypeEnumRuleCall_0_0(), semanticObject.getAtomType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AtomicType returns VariableRef
+	 *
+	 * Constraint:
+	 *     type=[Component|ID]
+	 */
+	protected void sequence_AtomicType(ISerializationContext context, VariableRef semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.VARIABLE_REF__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.VARIABLE_REF__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtomicTypeAccess().getTypeComponentIDTerminalRuleCall_1_1_0_1(), semanticObject.eGet(ArchitecturePackage.Literals.VARIABLE_REF__TYPE, false));
+		feeder.finish();
 	}
 	
 	
@@ -154,7 +198,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Operation returns Operation
 	 *
 	 * Constraint:
-	 *     ((name=ID (arg+=Variable* arg+=Variable)* type=Type) | typeComp+=[Component|ID])
+	 *     (name=ID (arg+=Variable* arg+=Variable)* type=AtomicType)
 	 */
 	protected void sequence_Operation(ISerializationContext context, Operation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -166,7 +210,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
-	 *     (name=ID type=Type)
+	 *     (name=ID type=AtomicType)
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
 		if (errorAcceptor != null) {
@@ -177,7 +221,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getVariableAccess().getTypeTypeEnumRuleCall_2_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getVariableAccess().getTypeAtomicTypeParserRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	

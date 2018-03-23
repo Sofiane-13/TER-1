@@ -111,6 +111,16 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
         return createOperationAdapter();
       }
       @Override
+      public Adapter caseAtomicType(AtomicType object)
+      {
+        return createAtomicTypeAdapter();
+      }
+      @Override
+      public Adapter caseVariableRef(VariableRef object)
+      {
+        return createVariableRefAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -233,6 +243,36 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOperationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.AtomicType <em>Atomic Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.AtomicType
+   * @generated
+   */
+  public Adapter createAtomicTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.VariableRef <em>Variable Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.architecture.architecture.VariableRef
+   * @generated
+   */
+  public Adapter createVariableRefAdapter()
   {
     return null;
   }

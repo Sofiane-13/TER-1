@@ -263,7 +263,7 @@ public interface ArchitecturePackage extends EPackage
   int VARIABLE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -309,7 +309,7 @@ public interface ArchitecturePackage extends EPackage
   int OPERATION__ARG = 1;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -318,22 +318,78 @@ public interface ArchitecturePackage extends EPackage
   int OPERATION__TYPE = 2;
 
   /**
-   * The feature id for the '<em><b>Type Comp</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPERATION__TYPE_COMP = 3;
-
-  /**
    * The number of structural features of the '<em>Operation</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATION_FEATURE_COUNT = 4;
+  int OPERATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.AtomicTypeImpl <em>Atomic Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.architecture.architecture.impl.AtomicTypeImpl
+   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getAtomicType()
+   * @generated
+   */
+  int ATOMIC_TYPE = 7;
+
+  /**
+   * The feature id for the '<em><b>Atom Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC_TYPE__ATOM_TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Atomic Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableRefImpl <em>Variable Ref</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.architecture.architecture.impl.VariableRefImpl
+   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getVariableRef()
+   * @generated
+   */
+  int VARIABLE_REF = 8;
+
+  /**
+   * The feature id for the '<em><b>Atom Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REF__ATOM_TYPE = ATOMIC_TYPE__ATOM_TYPE;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REF__TYPE = ATOMIC_TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Variable Ref</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REF_FEATURE_COUNT = ATOMIC_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.Type <em>Type</em>}' enum.
@@ -343,7 +399,7 @@ public interface ArchitecturePackage extends EPackage
    * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getType()
    * @generated
    */
-  int TYPE = 7;
+  int TYPE = 9;
 
 
   /**
@@ -517,15 +573,15 @@ public interface ArchitecturePackage extends EPackage
   EAttribute getVariable_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link com.aelos.xtext.architecture.architecture.Variable#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link com.aelos.xtext.architecture.architecture.Variable#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see com.aelos.xtext.architecture.architecture.Variable#getType()
    * @see #getVariable()
    * @generated
    */
-  EAttribute getVariable_Type();
+  EReference getVariable_Type();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Operation <em>Operation</em>}'.
@@ -560,26 +616,57 @@ public interface ArchitecturePackage extends EPackage
   EReference getOperation_Arg();
 
   /**
-   * Returns the meta object for the attribute '{@link com.aelos.xtext.architecture.architecture.Operation#getType <em>Type</em>}'.
+   * Returns the meta object for the containment reference '{@link com.aelos.xtext.architecture.architecture.Operation#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
+   * @return the meta object for the containment reference '<em>Type</em>'.
    * @see com.aelos.xtext.architecture.architecture.Operation#getType()
    * @see #getOperation()
    * @generated
    */
-  EAttribute getOperation_Type();
+  EReference getOperation_Type();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Operation#getTypeComp <em>Type Comp</em>}'.
+   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.AtomicType <em>Atomic Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Type Comp</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Operation#getTypeComp()
-   * @see #getOperation()
+   * @return the meta object for class '<em>Atomic Type</em>'.
+   * @see com.aelos.xtext.architecture.architecture.AtomicType
    * @generated
    */
-  EReference getOperation_TypeComp();
+  EClass getAtomicType();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.architecture.architecture.AtomicType#getAtomType <em>Atom Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Atom Type</em>'.
+   * @see com.aelos.xtext.architecture.architecture.AtomicType#getAtomType()
+   * @see #getAtomicType()
+   * @generated
+   */
+  EAttribute getAtomicType_AtomType();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.VariableRef <em>Variable Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable Ref</em>'.
+   * @see com.aelos.xtext.architecture.architecture.VariableRef
+   * @generated
+   */
+  EClass getVariableRef();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.architecture.architecture.VariableRef#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see com.aelos.xtext.architecture.architecture.VariableRef#getType()
+   * @see #getVariableRef()
+   * @generated
+   */
+  EReference getVariableRef_Type();
 
   /**
    * Returns the meta object for enum '{@link com.aelos.xtext.architecture.architecture.Type <em>Type</em>}'.
@@ -755,12 +842,12 @@ public interface ArchitecturePackage extends EPackage
     EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
+    EReference VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.OperationImpl <em>Operation</em>}' class.
@@ -789,20 +876,48 @@ public interface ArchitecturePackage extends EPackage
     EReference OPERATION__ARG = eINSTANCE.getOperation_Arg();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OPERATION__TYPE = eINSTANCE.getOperation_Type();
+    EReference OPERATION__TYPE = eINSTANCE.getOperation_Type();
 
     /**
-     * The meta object literal for the '<em><b>Type Comp</b></em>' reference list feature.
+     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.AtomicTypeImpl <em>Atomic Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.architecture.architecture.impl.AtomicTypeImpl
+     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getAtomicType()
+     * @generated
+     */
+    EClass ATOMIC_TYPE = eINSTANCE.getAtomicType();
+
+    /**
+     * The meta object literal for the '<em><b>Atom Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OPERATION__TYPE_COMP = eINSTANCE.getOperation_TypeComp();
+    EAttribute ATOMIC_TYPE__ATOM_TYPE = eINSTANCE.getAtomicType_AtomType();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableRefImpl <em>Variable Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.architecture.architecture.impl.VariableRefImpl
+     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getVariableRef()
+     * @generated
+     */
+    EClass VARIABLE_REF = eINSTANCE.getVariableRef();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_REF__TYPE = eINSTANCE.getVariableRef_Type();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.Type <em>Type</em>}' enum.

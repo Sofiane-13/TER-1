@@ -31,7 +31,7 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ArchitectureGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getOperationAccess().getAlternatives(), "rule__Operation__Alternatives");
+			builder.put(grammarAccess.getAtomicTypeAccess().getAlternatives(), "rule__AtomicType__Alternatives");
 			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 			builder.put(grammarAccess.getDomainDeclarationAccess().getGroup(), "rule__DomainDeclaration__Group__0");
 			builder.put(grammarAccess.getAbstractModelAccess().getGroup(), "rule__AbstractModel__Group__0");
@@ -44,9 +44,10 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComponentAccess().getGroup_5_0(), "rule__Component__Group_5_0__0");
 			builder.put(grammarAccess.getComponentAccess().getGroup_7(), "rule__Component__Group_7__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
-			builder.put(grammarAccess.getOperationAccess().getGroup_0(), "rule__Operation__Group_0__0");
-			builder.put(grammarAccess.getOperationAccess().getGroup_0_3(), "rule__Operation__Group_0_3__0");
-			builder.put(grammarAccess.getOperationAccess().getGroup_0_3_0(), "rule__Operation__Group_0_3_0__0");
+			builder.put(grammarAccess.getOperationAccess().getGroup(), "rule__Operation__Group__0");
+			builder.put(grammarAccess.getOperationAccess().getGroup_3(), "rule__Operation__Group_3__0");
+			builder.put(grammarAccess.getOperationAccess().getGroup_3_0(), "rule__Operation__Group_3_0__0");
+			builder.put(grammarAccess.getAtomicTypeAccess().getGroup_1(), "rule__AtomicType__Group_1__0");
 			builder.put(grammarAccess.getModelAccess().getPackageAssignment(), "rule__Model__PackageAssignment");
 			builder.put(grammarAccess.getDomainDeclarationAccess().getNameAssignment_1(), "rule__DomainDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getDomainDeclarationAccess().getElementsAssignment_3(), "rule__DomainDeclaration__ElementsAssignment_3");
@@ -59,11 +60,12 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComponentAccess().getVarsAssignment_8(), "rule__Component__VarsAssignment_8");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
 			builder.put(grammarAccess.getVariableAccess().getTypeAssignment_2(), "rule__Variable__TypeAssignment_2");
-			builder.put(grammarAccess.getOperationAccess().getNameAssignment_0_1(), "rule__Operation__NameAssignment_0_1");
-			builder.put(grammarAccess.getOperationAccess().getArgAssignment_0_3_0_0(), "rule__Operation__ArgAssignment_0_3_0_0");
-			builder.put(grammarAccess.getOperationAccess().getArgAssignment_0_3_1(), "rule__Operation__ArgAssignment_0_3_1");
-			builder.put(grammarAccess.getOperationAccess().getTypeAssignment_0_6(), "rule__Operation__TypeAssignment_0_6");
-			builder.put(grammarAccess.getOperationAccess().getTypeCompAssignment_1(), "rule__Operation__TypeCompAssignment_1");
+			builder.put(grammarAccess.getOperationAccess().getNameAssignment_1(), "rule__Operation__NameAssignment_1");
+			builder.put(grammarAccess.getOperationAccess().getArgAssignment_3_0_0(), "rule__Operation__ArgAssignment_3_0_0");
+			builder.put(grammarAccess.getOperationAccess().getArgAssignment_3_1(), "rule__Operation__ArgAssignment_3_1");
+			builder.put(grammarAccess.getOperationAccess().getTypeAssignment_6(), "rule__Operation__TypeAssignment_6");
+			builder.put(grammarAccess.getAtomicTypeAccess().getAtomTypeAssignment_0(), "rule__AtomicType__AtomTypeAssignment_0");
+			builder.put(grammarAccess.getAtomicTypeAccess().getTypeAssignment_1_1(), "rule__AtomicType__TypeAssignment_1_1");
 		}
 	}
 	
