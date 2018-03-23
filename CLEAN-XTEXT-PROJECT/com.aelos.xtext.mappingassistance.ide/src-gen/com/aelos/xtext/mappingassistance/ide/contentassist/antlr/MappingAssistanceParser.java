@@ -37,15 +37,9 @@ public class MappingAssistanceParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getTestDriverAccess().getGroup(), "rule__TestDriver__Group__0");
-<<<<<<< HEAD
-			builder.put(grammarAccess.getTestDriverAccess().getGroup_2(), "rule__TestDriver__Group_2__0");
-			builder.put(grammarAccess.getTestDriverAccess().getGroup_2_4(), "rule__TestDriver__Group_2_4__0");
-			builder.put(grammarAccess.getTestDriverAccess().getGroup_2_4_0(), "rule__TestDriver__Group_2_4_0__0");
-=======
 			builder.put(grammarAccess.getTestDriverAccess().getGroup_1(), "rule__TestDriver__Group_1__0");
 			builder.put(grammarAccess.getTestDriverAccess().getGroup_1_6(), "rule__TestDriver__Group_1_6__0");
 			builder.put(grammarAccess.getTestDriverAccess().getGroup_1_6_0(), "rule__TestDriver__Group_1_6_0__0");
->>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 			builder.put(grammarAccess.getObserverAccess().getGroup(), "rule__Observer__Group__0");
 			builder.put(grammarAccess.getObserverAccess().getGroup_7(), "rule__Observer__Group_7__0");
 			builder.put(grammarAccess.getObserverAccess().getGroup_7_1(), "rule__Observer__Group_7_1__0");
@@ -56,18 +50,11 @@ public class MappingAssistanceParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAbstractModelAccess().getTestDrAssignment_1(), "rule__AbstractModel__TestDrAssignment_1");
 			builder.put(grammarAccess.getAbstractModelAccess().getObsAssignment_2(), "rule__AbstractModel__ObsAssignment_2");
 			builder.put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
-<<<<<<< HEAD
-			builder.put(grammarAccess.getTestDriverAccess().getOutVarAssignment_2_0(), "rule__TestDriver__OutVarAssignment_2_0");
-			builder.put(grammarAccess.getTestDriverAccess().getTagetedserviceAssignment_2_2(), "rule__TestDriver__TagetedserviceAssignment_2_2");
-			builder.put(grammarAccess.getTestDriverAccess().getArgAssignment_2_4_0_0(), "rule__TestDriver__ArgAssignment_2_4_0_0");
-			builder.put(grammarAccess.getTestDriverAccess().getArgAssignment_2_4_1(), "rule__TestDriver__ArgAssignment_2_4_1");
-=======
 			builder.put(grammarAccess.getTestDriverAccess().getOutVarAssignment_1_0(), "rule__TestDriver__OutVarAssignment_1_0");
 			builder.put(grammarAccess.getTestDriverAccess().getReceiverAssignment_1_2(), "rule__TestDriver__ReceiverAssignment_1_2");
 			builder.put(grammarAccess.getTestDriverAccess().getMemberAssignment_1_4(), "rule__TestDriver__MemberAssignment_1_4");
 			builder.put(grammarAccess.getTestDriverAccess().getArgAssignment_1_6_0_0(), "rule__TestDriver__ArgAssignment_1_6_0_0");
 			builder.put(grammarAccess.getTestDriverAccess().getArgAssignment_1_6_1(), "rule__TestDriver__ArgAssignment_1_6_1");
->>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 			builder.put(grammarAccess.getObserverAccess().getNameAssignment_1(), "rule__Observer__NameAssignment_1");
 			builder.put(grammarAccess.getObserverAccess().getServiceName1Assignment_3(), "rule__Observer__ServiceName1Assignment_3");
 			builder.put(grammarAccess.getObserverAccess().getServiceName2Assignment_5(), "rule__Observer__ServiceName2Assignment_5");

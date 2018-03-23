@@ -306,16 +306,9 @@ ruleTestDriver returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getTestDriverAccess().getTestDriverAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='TestDriver:'
+		otherlv_0='TestDriver:'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getTestDriverAccess().getTestDriverKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getTestDriverAccess().getTestDriverKeyword_0());
 		}
 		(
 			(
@@ -325,24 +318,19 @@ ruleTestDriver returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getTestDriverRule());
 						}
 					}
-					otherlv_2=RULE_ID
+					otherlv_1=RULE_ID
 					{
-						newLeafNode(otherlv_2, grammarAccess.getTestDriverAccess().getOutVarVariableCrossReference_2_0_0());
+						newLeafNode(otherlv_1, grammarAccess.getTestDriverAccess().getOutVarVariableCrossReference_1_0_0());
 					}
 				)
 			)
-			otherlv_3=':='
+			otherlv_2=':='
 			{
-				newLeafNode(otherlv_3, grammarAccess.getTestDriverAccess().getColonEqualsSignKeyword_2_1());
+				newLeafNode(otherlv_2, grammarAccess.getTestDriverAccess().getColonEqualsSignKeyword_1_1());
 			}
 			(
 				(
 					{
-<<<<<<< HEAD
-						newCompositeNode(grammarAccess.getTestDriverAccess().getTagetedserviceCallParserRuleCall_2_2_0());
-					}
-					lv_tagetedservice_4_0=ruleCall
-=======
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getTestDriverRule());
 						}
@@ -359,25 +347,10 @@ ruleTestDriver returns [EObject current=null]
 			}
 			(
 				(
->>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getTestDriverRule());
 						}
-<<<<<<< HEAD
-						add(
-							$current,
-							"tagetedservice",
-							lv_tagetedservice_4_0,
-							"com.aelos.xtext.mappingassistance.MappingAssistance.Call");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_5='('
-			{
-				newLeafNode(otherlv_5, grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_2_3());
-=======
 					}
 					otherlv_5=RULE_ID
 					{
@@ -388,7 +361,6 @@ ruleTestDriver returns [EObject current=null]
 			otherlv_6='('
 			{
 				newLeafNode(otherlv_6, grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_1_5());
->>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 			}
 			(
 				(
@@ -399,17 +371,6 @@ ruleTestDriver returns [EObject current=null]
 									$current = createModelElement(grammarAccess.getTestDriverRule());
 								}
 							}
-<<<<<<< HEAD
-							otherlv_6=RULE_ID
-							{
-								newLeafNode(otherlv_6, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_2_4_0_0_0());
-							}
-						)
-					)
-					otherlv_7=','
-					{
-						newLeafNode(otherlv_7, grammarAccess.getTestDriverAccess().getCommaKeyword_2_4_0_1());
-=======
 							otherlv_7=RULE_ID
 							{
 								newLeafNode(otherlv_7, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_6_0_0_0());
@@ -419,7 +380,6 @@ ruleTestDriver returns [EObject current=null]
 					otherlv_8=','
 					{
 						newLeafNode(otherlv_8, grammarAccess.getTestDriverAccess().getCommaKeyword_1_6_0_1());
->>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 					}
 				)*
 				(
@@ -429,28 +389,16 @@ ruleTestDriver returns [EObject current=null]
 								$current = createModelElement(grammarAccess.getTestDriverRule());
 							}
 						}
-<<<<<<< HEAD
-						otherlv_8=RULE_ID
-						{
-							newLeafNode(otherlv_8, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_2_4_1_0());
-=======
 						otherlv_9=RULE_ID
 						{
 							newLeafNode(otherlv_9, grammarAccess.getTestDriverAccess().getArgVariableCrossReference_1_6_1_0());
->>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 						}
 					)
 				)
 			)*
-<<<<<<< HEAD
-			otherlv_9=')'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_2_5());
-=======
 			otherlv_10=')'
 			{
 				newLeafNode(otherlv_10, grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_1_7());
->>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 			}
 		)*
 	)

@@ -131,11 +131,7 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     TestDriver returns TestDriver
 	 *
 	 * Constraint:
-<<<<<<< HEAD
-	 *     (outVar+=[Variable|ID] tagetedservice+=Call (arg+=[Variable|ID]* arg+=[Variable|ID])*)*
-=======
 	 *     (outVar+=[Variable|ID] receiver=[Variable|ID] member+=[Operation|ID] (arg+=[Variable|ID]* arg+=[Variable|ID])*)+
->>>>>>> b067e7f7a0d0f905c61ea055d86ffae341dfaa23
 	 */
 	protected void sequence_TestDriver(ISerializationContext context, TestDriver semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
