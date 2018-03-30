@@ -150,9 +150,9 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final CrossReference cOutVarVariableCrossReference_1_0_0 = (CrossReference)cOutVarAssignment_1_0.eContents().get(0);
 		private final RuleCall cOutVarVariableIDTerminalRuleCall_1_0_0_1 = (RuleCall)cOutVarVariableCrossReference_1_0_0.eContents().get(1);
 		private final Keyword cColonEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cReceiverAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final CrossReference cReceiverVariableCrossReference_1_2_0 = (CrossReference)cReceiverAssignment_1_2.eContents().get(0);
-		private final RuleCall cReceiverVariableIDTerminalRuleCall_1_2_0_1 = (RuleCall)cReceiverVariableCrossReference_1_2_0.eContents().get(1);
+		private final Assignment cServiceAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final CrossReference cServiceVariableCrossReference_1_2_0 = (CrossReference)cServiceAssignment_1_2.eContents().get(0);
+		private final RuleCall cServiceVariableIDTerminalRuleCall_1_2_0_1 = (RuleCall)cServiceVariableCrossReference_1_2_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		private final Assignment cMemberAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
 		private final CrossReference cMemberOperationCrossReference_1_4_0 = (CrossReference)cMemberAssignment_1_4.eContents().get(0);
@@ -170,18 +170,18 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Keyword cRightParenthesisKeyword_1_7 = (Keyword)cGroup_1.eContents().get(7);
 		
 		//TestDriver:
-		//	"TestDriver:" (outVar+=[testIntention::Variable] ":=" receiver=[arch::Variable] '.' member+=[arch::Operation] "("
+		//	"TestDriver:" (outVar+=[testIntention::Variable] ":=" service=[arch::Variable] '.' member+=[arch::Operation] "("
 		//	((arg+=[testIntention::Variable] ",")* arg+=[testIntention::Variable])* ")")*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"TestDriver:" (outVar+=[testIntention::Variable] ":=" receiver=[arch::Variable] '.' member+=[arch::Operation] "("
+		//"TestDriver:" (outVar+=[testIntention::Variable] ":=" service=[arch::Variable] '.' member+=[arch::Operation] "("
 		//((arg+=[testIntention::Variable] ",")* arg+=[testIntention::Variable])* ")")*
 		public Group getGroup() { return cGroup; }
 		
 		//"TestDriver:"
 		public Keyword getTestDriverKeyword_0() { return cTestDriverKeyword_0; }
 		
-		//(outVar+=[testIntention::Variable] ":=" receiver=[arch::Variable] '.' member+=[arch::Operation] "("
+		//(outVar+=[testIntention::Variable] ":=" service=[arch::Variable] '.' member+=[arch::Operation] "("
 		//((arg+=[testIntention::Variable] ",")* arg+=[testIntention::Variable])* ")")*
 		public Group getGroup_1() { return cGroup_1; }
 		
@@ -197,14 +197,14 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//":="
 		public Keyword getColonEqualsSignKeyword_1_1() { return cColonEqualsSignKeyword_1_1; }
 		
-		//receiver=[arch::Variable]
-		public Assignment getReceiverAssignment_1_2() { return cReceiverAssignment_1_2; }
+		//service=[arch::Variable]
+		public Assignment getServiceAssignment_1_2() { return cServiceAssignment_1_2; }
 		
 		//[arch::Variable]
-		public CrossReference getReceiverVariableCrossReference_1_2_0() { return cReceiverVariableCrossReference_1_2_0; }
+		public CrossReference getServiceVariableCrossReference_1_2_0() { return cServiceVariableCrossReference_1_2_0; }
 		
 		//ID
-		public RuleCall getReceiverVariableIDTerminalRuleCall_1_2_0_1() { return cReceiverVariableIDTerminalRuleCall_1_2_0_1; }
+		public RuleCall getServiceVariableIDTerminalRuleCall_1_2_0_1() { return cServiceVariableIDTerminalRuleCall_1_2_0_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_1_3() { return cFullStopKeyword_1_3; }
@@ -258,32 +258,42 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cServiceName1Assignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cServiceName1CallParserRuleCall_3_0 = (RuleCall)cServiceName1Assignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cServiceName2Assignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cServiceName2CallParserRuleCall_5_0 = (RuleCall)cServiceName2Assignment_5.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cLeftParenthesisKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Group cGroup_7_1 = (Group)cGroup_7.eContents().get(1);
-		private final Group cGroup_7_1_0 = (Group)cGroup_7_1.eContents().get(0);
-		private final Assignment cArgAssignment_7_1_0_0 = (Assignment)cGroup_7_1_0.eContents().get(0);
-		private final CrossReference cArgVariableCrossReference_7_1_0_0_0 = (CrossReference)cArgAssignment_7_1_0_0.eContents().get(0);
-		private final RuleCall cArgVariableIDTerminalRuleCall_7_1_0_0_0_1 = (RuleCall)cArgVariableCrossReference_7_1_0_0_0.eContents().get(1);
-		private final Keyword cCommaKeyword_7_1_0_1 = (Keyword)cGroup_7_1_0.eContents().get(1);
-		private final Assignment cArgAssignment_7_1_1 = (Assignment)cGroup_7_1.eContents().get(1);
-		private final CrossReference cArgVariableCrossReference_7_1_1_0 = (CrossReference)cArgAssignment_7_1_1.eContents().get(0);
-		private final RuleCall cArgVariableIDTerminalRuleCall_7_1_1_0_1 = (RuleCall)cArgVariableCrossReference_7_1_1_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
+		private final Assignment cService1Assignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cService1VariableCrossReference_3_0 = (CrossReference)cService1Assignment_3.eContents().get(0);
+		private final RuleCall cService1VariableIDTerminalRuleCall_3_0_1 = (RuleCall)cService1VariableCrossReference_3_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cMember1Assignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cMember1OperationCrossReference_5_0 = (CrossReference)cMember1Assignment_5.eContents().get(0);
+		private final RuleCall cMember1OperationIDTerminalRuleCall_5_0_1 = (RuleCall)cMember1OperationCrossReference_5_0.eContents().get(1);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cService2Assignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cService2VariableCrossReference_7_0 = (CrossReference)cService2Assignment_7.eContents().get(0);
+		private final RuleCall cService2VariableIDTerminalRuleCall_7_0_1 = (RuleCall)cService2VariableCrossReference_7_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cMember2Assignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final CrossReference cMember2OperationCrossReference_9_0 = (CrossReference)cMember2Assignment_9.eContents().get(0);
+		private final RuleCall cMember2OperationIDTerminalRuleCall_9_0_1 = (RuleCall)cMember2OperationCrossReference_9_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Keyword cLeftParenthesisKeyword_11_0 = (Keyword)cGroup_11.eContents().get(0);
+		private final Group cGroup_11_1 = (Group)cGroup_11.eContents().get(1);
+		private final Group cGroup_11_1_0 = (Group)cGroup_11_1.eContents().get(0);
+		private final Assignment cArgAssignment_11_1_0_0 = (Assignment)cGroup_11_1_0.eContents().get(0);
+		private final CrossReference cArgVariableCrossReference_11_1_0_0_0 = (CrossReference)cArgAssignment_11_1_0_0.eContents().get(0);
+		private final RuleCall cArgVariableIDTerminalRuleCall_11_1_0_0_0_1 = (RuleCall)cArgVariableCrossReference_11_1_0_0_0.eContents().get(1);
+		private final Keyword cCommaKeyword_11_1_0_1 = (Keyword)cGroup_11_1_0.eContents().get(1);
+		private final Assignment cArgAssignment_11_1_1 = (Assignment)cGroup_11_1.eContents().get(1);
+		private final CrossReference cArgVariableCrossReference_11_1_1_0 = (CrossReference)cArgAssignment_11_1_1.eContents().get(0);
+		private final RuleCall cArgVariableIDTerminalRuleCall_11_1_1_0_1 = (RuleCall)cArgVariableCrossReference_11_1_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_11_2 = (Keyword)cGroup_11.eContents().get(2);
 		
 		//Observer:
-		//	"observer:" name=ID "(" serviceName1+=Call "," serviceName2+=Call ")" ("(" ((arg+=[testIntention::Variable] ",")*
-		//	arg+=[testIntention::Variable])* ")")*;
+		//	"observer:" name=ID "(" service1=[arch::Variable] '.' member1+=[arch::Operation] "," service2=[arch::Variable] '.'
+		//	member2+=[arch::Operation] ")" ("(" ((arg+=[testIntention::Variable] ",")* arg+=[testIntention::Variable])* ")")*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"observer:" name=ID "(" serviceName1+=Call "," serviceName2+=Call ")" ("(" ((arg+=[testIntention::Variable] ",")*
-		//arg+=[testIntention::Variable])* ")")*
+		//"observer:" name=ID "(" service1=[arch::Variable] '.' member1+=[arch::Operation] "," service2=[arch::Variable] '.'
+		//member2+=[arch::Operation] ")" ("(" ((arg+=[testIntention::Variable] ",")* arg+=[testIntention::Variable])* ")")*
 		public Group getGroup() { return cGroup; }
 		
 		//"observer:"
@@ -298,59 +308,89 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//"("
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//serviceName1+=Call
-		public Assignment getServiceName1Assignment_3() { return cServiceName1Assignment_3; }
+		//service1=[arch::Variable]
+		public Assignment getService1Assignment_3() { return cService1Assignment_3; }
 		
-		//Call
-		public RuleCall getServiceName1CallParserRuleCall_3_0() { return cServiceName1CallParserRuleCall_3_0; }
+		//[arch::Variable]
+		public CrossReference getService1VariableCrossReference_3_0() { return cService1VariableCrossReference_3_0; }
+		
+		//ID
+		public RuleCall getService1VariableIDTerminalRuleCall_3_0_1() { return cService1VariableIDTerminalRuleCall_3_0_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_4() { return cFullStopKeyword_4; }
+		
+		//member1+=[arch::Operation]
+		public Assignment getMember1Assignment_5() { return cMember1Assignment_5; }
+		
+		//[arch::Operation]
+		public CrossReference getMember1OperationCrossReference_5_0() { return cMember1OperationCrossReference_5_0; }
+		
+		//ID
+		public RuleCall getMember1OperationIDTerminalRuleCall_5_0_1() { return cMember1OperationIDTerminalRuleCall_5_0_1; }
 		
 		//","
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
 		
-		//serviceName2+=Call
-		public Assignment getServiceName2Assignment_5() { return cServiceName2Assignment_5; }
+		//service2=[arch::Variable]
+		public Assignment getService2Assignment_7() { return cService2Assignment_7; }
 		
-		//Call
-		public RuleCall getServiceName2CallParserRuleCall_5_0() { return cServiceName2CallParserRuleCall_5_0; }
+		//[arch::Variable]
+		public CrossReference getService2VariableCrossReference_7_0() { return cService2VariableCrossReference_7_0; }
+		
+		//ID
+		public RuleCall getService2VariableIDTerminalRuleCall_7_0_1() { return cService2VariableIDTerminalRuleCall_7_0_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_8() { return cFullStopKeyword_8; }
+		
+		//member2+=[arch::Operation]
+		public Assignment getMember2Assignment_9() { return cMember2Assignment_9; }
+		
+		//[arch::Operation]
+		public CrossReference getMember2OperationCrossReference_9_0() { return cMember2OperationCrossReference_9_0; }
+		
+		//ID
+		public RuleCall getMember2OperationIDTerminalRuleCall_9_0_1() { return cMember2OperationIDTerminalRuleCall_9_0_1; }
 		
 		//")"
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+		public Keyword getRightParenthesisKeyword_10() { return cRightParenthesisKeyword_10; }
 		
 		//("(" ((arg+=[testIntention::Variable] ",")* arg+=[testIntention::Variable])* ")")*
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_11() { return cGroup_11; }
 		
 		//"("
-		public Keyword getLeftParenthesisKeyword_7_0() { return cLeftParenthesisKeyword_7_0; }
+		public Keyword getLeftParenthesisKeyword_11_0() { return cLeftParenthesisKeyword_11_0; }
 		
 		//((arg+=[testIntention::Variable] ",")* arg+=[testIntention::Variable])*
-		public Group getGroup_7_1() { return cGroup_7_1; }
+		public Group getGroup_11_1() { return cGroup_11_1; }
 		
 		//(arg+=[testIntention::Variable] ",")*
-		public Group getGroup_7_1_0() { return cGroup_7_1_0; }
+		public Group getGroup_11_1_0() { return cGroup_11_1_0; }
 		
 		//arg+=[testIntention::Variable]
-		public Assignment getArgAssignment_7_1_0_0() { return cArgAssignment_7_1_0_0; }
+		public Assignment getArgAssignment_11_1_0_0() { return cArgAssignment_11_1_0_0; }
 		
 		//[testIntention::Variable]
-		public CrossReference getArgVariableCrossReference_7_1_0_0_0() { return cArgVariableCrossReference_7_1_0_0_0; }
+		public CrossReference getArgVariableCrossReference_11_1_0_0_0() { return cArgVariableCrossReference_11_1_0_0_0; }
 		
 		//ID
-		public RuleCall getArgVariableIDTerminalRuleCall_7_1_0_0_0_1() { return cArgVariableIDTerminalRuleCall_7_1_0_0_0_1; }
+		public RuleCall getArgVariableIDTerminalRuleCall_11_1_0_0_0_1() { return cArgVariableIDTerminalRuleCall_11_1_0_0_0_1; }
 		
 		//","
-		public Keyword getCommaKeyword_7_1_0_1() { return cCommaKeyword_7_1_0_1; }
+		public Keyword getCommaKeyword_11_1_0_1() { return cCommaKeyword_11_1_0_1; }
 		
 		//arg+=[testIntention::Variable]
-		public Assignment getArgAssignment_7_1_1() { return cArgAssignment_7_1_1; }
+		public Assignment getArgAssignment_11_1_1() { return cArgAssignment_11_1_1; }
 		
 		//[testIntention::Variable]
-		public CrossReference getArgVariableCrossReference_7_1_1_0() { return cArgVariableCrossReference_7_1_1_0; }
+		public CrossReference getArgVariableCrossReference_11_1_1_0() { return cArgVariableCrossReference_11_1_1_0; }
 		
 		//ID
-		public RuleCall getArgVariableIDTerminalRuleCall_7_1_1_0_1() { return cArgVariableIDTerminalRuleCall_7_1_1_0_1; }
+		public RuleCall getArgVariableIDTerminalRuleCall_11_1_1_0_1() { return cArgVariableIDTerminalRuleCall_11_1_1_0_1; }
 		
 		//")"
-		public Keyword getRightParenthesisKeyword_7_2() { return cRightParenthesisKeyword_7_2; }
+		public Keyword getRightParenthesisKeyword_11_2() { return cRightParenthesisKeyword_11_2; }
 	}
 	public class CallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.mappingassistance.MappingAssistance.Call");
@@ -530,7 +570,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//TestDriver:
-	//	"TestDriver:" (outVar+=[testIntention::Variable] ":=" receiver=[arch::Variable] '.' member+=[arch::Operation] "("
+	//	"TestDriver:" (outVar+=[testIntention::Variable] ":=" service=[arch::Variable] '.' member+=[arch::Operation] "("
 	//	((arg+=[testIntention::Variable] ",")* arg+=[testIntention::Variable])* ")")*;
 	public TestDriverElements getTestDriverAccess() {
 		return pTestDriver;
@@ -541,8 +581,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//Observer:
-	//	"observer:" name=ID "(" serviceName1+=Call "," serviceName2+=Call ")" ("(" ((arg+=[testIntention::Variable] ",")*
-	//	arg+=[testIntention::Variable])* ")")*;
+	//	"observer:" name=ID "(" service1=[arch::Variable] '.' member1+=[arch::Operation] "," service2=[arch::Variable] '.'
+	//	member2+=[arch::Operation] ")" ("(" ((arg+=[testIntention::Variable] ",")* arg+=[testIntention::Variable])* ")")*;
 	public ObserverElements getObserverAccess() {
 		return pObserver;
 	}

@@ -179,13 +179,13 @@ public interface MappingAssistancePackage extends EPackage
   int TEST_DRIVER__OUT_VAR = 0;
 
   /**
-   * The feature id for the '<em><b>Receiver</b></em>' reference.
+   * The feature id for the '<em><b>Service</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_DRIVER__RECEIVER = 1;
+  int TEST_DRIVER__SERVICE = 1;
 
   /**
    * The feature id for the '<em><b>Member</b></em>' reference list.
@@ -234,22 +234,40 @@ public interface MappingAssistancePackage extends EPackage
   int OBSERVER__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Service Name1</b></em>' containment reference list.
+   * The feature id for the '<em><b>Service1</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBSERVER__SERVICE_NAME1 = 1;
+  int OBSERVER__SERVICE1 = 1;
 
   /**
-   * The feature id for the '<em><b>Service Name2</b></em>' containment reference list.
+   * The feature id for the '<em><b>Member1</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBSERVER__SERVICE_NAME2 = 2;
+  int OBSERVER__MEMBER1 = 2;
+
+  /**
+   * The feature id for the '<em><b>Service2</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBSERVER__SERVICE2 = 3;
+
+  /**
+   * The feature id for the '<em><b>Member2</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBSERVER__MEMBER2 = 4;
 
   /**
    * The feature id for the '<em><b>Arg</b></em>' reference list.
@@ -258,7 +276,7 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBSERVER__ARG = 3;
+  int OBSERVER__ARG = 5;
 
   /**
    * The number of structural features of the '<em>Observer</em>' class.
@@ -267,7 +285,7 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBSERVER_FEATURE_COUNT = 4;
+  int OBSERVER_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.CallImpl <em>Call</em>}' class.
@@ -414,15 +432,15 @@ public interface MappingAssistancePackage extends EPackage
   EReference getTestDriver_OutVar();
 
   /**
-   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getReceiver <em>Receiver</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getService <em>Service</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Receiver</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getReceiver()
+   * @return the meta object for the reference '<em>Service</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getService()
    * @see #getTestDriver()
    * @generated
    */
-  EReference getTestDriver_Receiver();
+  EReference getTestDriver_Service();
 
   /**
    * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember <em>Member</em>}'.
@@ -468,26 +486,48 @@ public interface MappingAssistancePackage extends EPackage
   EAttribute getObserver_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getServiceName1 <em>Service Name1</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getService1 <em>Service1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Service Name1</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getServiceName1()
+   * @return the meta object for the reference '<em>Service1</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getService1()
    * @see #getObserver()
    * @generated
    */
-  EReference getObserver_ServiceName1();
+  EReference getObserver_Service1();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getServiceName2 <em>Service Name2</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember1 <em>Member1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Service Name2</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getServiceName2()
+   * @return the meta object for the reference list '<em>Member1</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember1()
    * @see #getObserver()
    * @generated
    */
-  EReference getObserver_ServiceName2();
+  EReference getObserver_Member1();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getService2 <em>Service2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Service2</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getService2()
+   * @see #getObserver()
+   * @generated
+   */
+  EReference getObserver_Service2();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember2 <em>Member2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Member2</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember2()
+   * @see #getObserver()
+   * @generated
+   */
+  EReference getObserver_Member2();
 
   /**
    * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getArg <em>Arg</em>}'.
@@ -644,12 +684,12 @@ public interface MappingAssistancePackage extends EPackage
     EReference TEST_DRIVER__OUT_VAR = eINSTANCE.getTestDriver_OutVar();
 
     /**
-     * The meta object literal for the '<em><b>Receiver</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Service</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_DRIVER__RECEIVER = eINSTANCE.getTestDriver_Receiver();
+    EReference TEST_DRIVER__SERVICE = eINSTANCE.getTestDriver_Service();
 
     /**
      * The meta object literal for the '<em><b>Member</b></em>' reference list feature.
@@ -686,20 +726,36 @@ public interface MappingAssistancePackage extends EPackage
     EAttribute OBSERVER__NAME = eINSTANCE.getObserver_Name();
 
     /**
-     * The meta object literal for the '<em><b>Service Name1</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Service1</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OBSERVER__SERVICE_NAME1 = eINSTANCE.getObserver_ServiceName1();
+    EReference OBSERVER__SERVICE1 = eINSTANCE.getObserver_Service1();
 
     /**
-     * The meta object literal for the '<em><b>Service Name2</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Member1</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference OBSERVER__SERVICE_NAME2 = eINSTANCE.getObserver_ServiceName2();
+    EReference OBSERVER__MEMBER1 = eINSTANCE.getObserver_Member1();
+
+    /**
+     * The meta object literal for the '<em><b>Service2</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OBSERVER__SERVICE2 = eINSTANCE.getObserver_Service2();
+
+    /**
+     * The meta object literal for the '<em><b>Member2</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OBSERVER__MEMBER2 = eINSTANCE.getObserver_Member2();
 
     /**
      * The meta object literal for the '<em><b>Arg</b></em>' reference list feature.

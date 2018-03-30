@@ -4,6 +4,7 @@
 package com.aelos.xtext.mappingassistance.scoping;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.scoping.AbstractMappingAssistanceScopeProvider;
 import com.google.common.base.Objects;
@@ -24,14 +25,26 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
     if (((context instanceof TestDriver) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_DRIVER__MEMBER))) {
-      System.out.print("dsjkbjjc");
       return this.scope_Call_op(EcoreUtil2.<TestDriver>getContainerOfType(context, TestDriver.class));
+    }
+    if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__MEMBER1))) {
+      return this.scope_Call_op1(EcoreUtil2.<Observer>getContainerOfType(context, Observer.class));
+    }
+    if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__MEMBER2))) {
+      return this.scope_Call_op2(EcoreUtil2.<Observer>getContainerOfType(context, Observer.class));
     }
     return super.getScope(context, reference);
   }
   
+  public IScope scope_Call_op2(final Observer selct) {
+    return Scopes.scopeFor(selct.getService2().getType().getCompType().getOps());
+  }
+  
+  public IScope scope_Call_op1(final Observer selct) {
+    return Scopes.scopeFor(selct.getService1().getType().getCompType().getOps());
+  }
+  
   public IScope scope_Call_op(final TestDriver selct) {
-    System.out.print("dsjkbc");
-    return Scopes.scopeFor(selct.getReceiver().getType().getCompType().getOps());
+    return Scopes.scopeFor(selct.getService().getType().getCompType().getOps());
   }
 }

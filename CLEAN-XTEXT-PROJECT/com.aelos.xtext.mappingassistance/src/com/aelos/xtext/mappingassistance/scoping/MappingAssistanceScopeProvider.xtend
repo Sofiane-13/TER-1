@@ -13,6 +13,7 @@ import com.aelos.xtext.architecture.architecture.Call
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observer
 
 //import com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService
 //import com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName
@@ -77,16 +78,33 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
 		
     
 	    if (context instanceof TestDriver && reference == MappingAssistancePackage.Literals.TEST_DRIVER__MEMBER) {
-	        	System.out.print("dsjkbjjc")
+	        	
 	          // Create IEObjectDescriptions and puts them into an IScope instance
 	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, TestDriver))
+	    }
+	     if (context instanceof Observer && reference == MappingAssistancePackage.Literals.OBSERVER__MEMBER1) {
+	        	
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Call_op1(EcoreUtil2.getContainerOfType(context, Observer))
+	    }
+	    if (context instanceof Observer && reference == MappingAssistancePackage.Literals.OBSERVER__MEMBER2) {
+	        	
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Call_op2(EcoreUtil2.getContainerOfType(context, Observer))
 	    }
 	    return super.getScope(context, reference);
 	}
 
-
+   	def  IScope scope_Call_op2(Observer selct) {
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.service2.type.compType.ops);
+	}
+   	def  IScope scope_Call_op1(Observer selct) {
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.service1.type.compType.ops);
+	}
 	def  IScope scope_Call_op(TestDriver selct) {
-      System.out.print("dsjkbc")
-      return Scopes.scopeFor(selct.receiver.type.compType.ops);
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.service.type.compType.ops);
 	}
 }

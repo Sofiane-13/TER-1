@@ -337,7 +337,7 @@ ruleTestDriver returns [EObject current=null]
 					}
 					otherlv_3=RULE_ID
 					{
-						newLeafNode(otherlv_3, grammarAccess.getTestDriverAccess().getReceiverVariableCrossReference_1_2_0());
+						newLeafNode(otherlv_3, grammarAccess.getTestDriverAccess().getServiceVariableCrossReference_1_2_0());
 					}
 				)
 			)
@@ -449,53 +449,75 @@ ruleObserver returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getObserverAccess().getServiceName1CallParserRuleCall_3_0());
-				}
-				lv_serviceName1_3_0=ruleCall
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getObserverRule());
+						$current = createModelElement(grammarAccess.getObserverRule());
 					}
-					add(
-						$current,
-						"serviceName1",
-						lv_serviceName1_3_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.Call");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_3=RULE_ID
+				{
+					newLeafNode(otherlv_3, grammarAccess.getObserverAccess().getService1VariableCrossReference_3_0());
 				}
 			)
 		)
-		otherlv_4=','
+		otherlv_4='.'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getObserverAccess().getCommaKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getObserverAccess().getFullStopKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getObserverAccess().getServiceName2CallParserRuleCall_5_0());
-				}
-				lv_serviceName2_5_0=ruleCall
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getObserverRule());
+						$current = createModelElement(grammarAccess.getObserverRule());
 					}
-					add(
-						$current,
-						"serviceName2",
-						lv_serviceName2_5_0,
-						"com.aelos.xtext.mappingassistance.MappingAssistance.Call");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_5=RULE_ID
+				{
+					newLeafNode(otherlv_5, grammarAccess.getObserverAccess().getMember1OperationCrossReference_5_0());
 				}
 			)
 		)
-		otherlv_6=')'
+		otherlv_6=','
 		{
-			newLeafNode(otherlv_6, grammarAccess.getObserverAccess().getRightParenthesisKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getObserverAccess().getCommaKeyword_6());
 		}
 		(
-			otherlv_7='('
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getObserverRule());
+					}
+				}
+				otherlv_7=RULE_ID
+				{
+					newLeafNode(otherlv_7, grammarAccess.getObserverAccess().getService2VariableCrossReference_7_0());
+				}
+			)
+		)
+		otherlv_8='.'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getObserverAccess().getFullStopKeyword_8());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getObserverRule());
+					}
+				}
+				otherlv_9=RULE_ID
+				{
+					newLeafNode(otherlv_9, grammarAccess.getObserverAccess().getMember2OperationCrossReference_9_0());
+				}
+			)
+		)
+		otherlv_10=')'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getObserverAccess().getRightParenthesisKeyword_10());
+		}
+		(
+			otherlv_11='('
 			{
-				newLeafNode(otherlv_7, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_7_0());
+				newLeafNode(otherlv_11, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_11_0());
 			}
 			(
 				(
@@ -506,15 +528,15 @@ ruleObserver returns [EObject current=null]
 									$current = createModelElement(grammarAccess.getObserverRule());
 								}
 							}
-							otherlv_8=RULE_ID
+							otherlv_12=RULE_ID
 							{
-								newLeafNode(otherlv_8, grammarAccess.getObserverAccess().getArgVariableCrossReference_7_1_0_0_0());
+								newLeafNode(otherlv_12, grammarAccess.getObserverAccess().getArgVariableCrossReference_11_1_0_0_0());
 							}
 						)
 					)
-					otherlv_9=','
+					otherlv_13=','
 					{
-						newLeafNode(otherlv_9, grammarAccess.getObserverAccess().getCommaKeyword_7_1_0_1());
+						newLeafNode(otherlv_13, grammarAccess.getObserverAccess().getCommaKeyword_11_1_0_1());
 					}
 				)*
 				(
@@ -524,67 +546,18 @@ ruleObserver returns [EObject current=null]
 								$current = createModelElement(grammarAccess.getObserverRule());
 							}
 						}
-						otherlv_10=RULE_ID
+						otherlv_14=RULE_ID
 						{
-							newLeafNode(otherlv_10, grammarAccess.getObserverAccess().getArgVariableCrossReference_7_1_1_0());
+							newLeafNode(otherlv_14, grammarAccess.getObserverAccess().getArgVariableCrossReference_11_1_1_0());
 						}
 					)
 				)
 			)*
-			otherlv_11=')'
+			otherlv_15=')'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getObserverAccess().getRightParenthesisKeyword_7_2());
+				newLeafNode(otherlv_15, grammarAccess.getObserverAccess().getRightParenthesisKeyword_11_2());
 			}
 		)*
-	)
-;
-
-// Entry rule entryRuleCall
-entryRuleCall returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getCallRule()); }
-	iv_ruleCall=ruleCall
-	{ $current=$iv_ruleCall.current; }
-	EOF;
-
-// Rule Call
-ruleCall returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCallRule());
-					}
-				}
-				otherlv_0=RULE_ID
-				{
-					newLeafNode(otherlv_0, grammarAccess.getCallAccess().getReceiverVariableCrossReference_0_0());
-				}
-			)
-		)
-		otherlv_1='.'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getCallAccess().getFullStopKeyword_1());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCallRule());
-					}
-				}
-				otherlv_2=RULE_ID
-				{
-					newLeafNode(otherlv_2, grammarAccess.getCallAccess().getMemberOperationCrossReference_2_0());
-				}
-			)
-		)
 	)
 ;
 

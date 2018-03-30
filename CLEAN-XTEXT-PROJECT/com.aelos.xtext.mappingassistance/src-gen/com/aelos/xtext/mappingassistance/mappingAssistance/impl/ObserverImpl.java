@@ -3,16 +3,15 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
+import com.aelos.xtext.architecture.architecture.Operation;
+import com.aelos.xtext.architecture.architecture.Variable;
+
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
-
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -22,9 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,8 +32,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl#getServiceName1 <em>Service Name1</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl#getServiceName2 <em>Service Name2</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl#getService1 <em>Service1</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl#getMember1 <em>Member1</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl#getService2 <em>Service2</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl#getMember2 <em>Member2</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl#getArg <em>Arg</em>}</li>
  * </ul>
  *
@@ -65,24 +64,44 @@ public class ObserverImpl extends MinimalEObjectImpl.Container implements Observ
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getServiceName1() <em>Service Name1</em>}' containment reference list.
+   * The cached value of the '{@link #getService1() <em>Service1</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getServiceName1()
+   * @see #getService1()
    * @generated
    * @ordered
    */
-  protected EList<Call> serviceName1;
+  protected Variable service1;
 
   /**
-   * The cached value of the '{@link #getServiceName2() <em>Service Name2</em>}' containment reference list.
+   * The cached value of the '{@link #getMember1() <em>Member1</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getServiceName2()
+   * @see #getMember1()
    * @generated
    * @ordered
    */
-  protected EList<Call> serviceName2;
+  protected EList<Operation> member1;
+
+  /**
+   * The cached value of the '{@link #getService2() <em>Service2</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getService2()
+   * @generated
+   * @ordered
+   */
+  protected Variable service2;
+
+  /**
+   * The cached value of the '{@link #getMember2() <em>Member2</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMember2()
+   * @generated
+   * @ordered
+   */
+  protected EList<Operation> member2;
 
   /**
    * The cached value of the '{@link #getArg() <em>Arg</em>}' reference list.
@@ -92,7 +111,7 @@ public class ObserverImpl extends MinimalEObjectImpl.Container implements Observ
    * @generated
    * @ordered
    */
-  protected EList<Variable> arg;
+  protected EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> arg;
 
   /**
    * <!-- begin-user-doc -->
@@ -143,13 +162,19 @@ public class ObserverImpl extends MinimalEObjectImpl.Container implements Observ
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Call> getServiceName1()
+  public Variable getService1()
   {
-    if (serviceName1 == null)
+    if (service1 != null && service1.eIsProxy())
     {
-      serviceName1 = new EObjectContainmentEList<Call>(Call.class, this, MappingAssistancePackage.OBSERVER__SERVICE_NAME1);
+      InternalEObject oldService1 = (InternalEObject)service1;
+      service1 = (Variable)eResolveProxy(oldService1);
+      if (service1 != oldService1)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.OBSERVER__SERVICE1, oldService1, service1));
+      }
     }
-    return serviceName1;
+    return service1;
   }
 
   /**
@@ -157,13 +182,9 @@ public class ObserverImpl extends MinimalEObjectImpl.Container implements Observ
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Call> getServiceName2()
+  public Variable basicGetService1()
   {
-    if (serviceName2 == null)
-    {
-      serviceName2 = new EObjectContainmentEList<Call>(Call.class, this, MappingAssistancePackage.OBSERVER__SERVICE_NAME2);
-    }
-    return serviceName2;
+    return service1;
   }
 
   /**
@@ -171,31 +192,97 @@ public class ObserverImpl extends MinimalEObjectImpl.Container implements Observ
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getArg()
+  public void setService1(Variable newService1)
+  {
+    Variable oldService1 = service1;
+    service1 = newService1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.OBSERVER__SERVICE1, oldService1, service1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Operation> getMember1()
+  {
+    if (member1 == null)
+    {
+      member1 = new EObjectResolvingEList<Operation>(Operation.class, this, MappingAssistancePackage.OBSERVER__MEMBER1);
+    }
+    return member1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable getService2()
+  {
+    if (service2 != null && service2.eIsProxy())
+    {
+      InternalEObject oldService2 = (InternalEObject)service2;
+      service2 = (Variable)eResolveProxy(oldService2);
+      if (service2 != oldService2)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.OBSERVER__SERVICE2, oldService2, service2));
+      }
+    }
+    return service2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable basicGetService2()
+  {
+    return service2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setService2(Variable newService2)
+  {
+    Variable oldService2 = service2;
+    service2 = newService2;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.OBSERVER__SERVICE2, oldService2, service2));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Operation> getMember2()
+  {
+    if (member2 == null)
+    {
+      member2 = new EObjectResolvingEList<Operation>(Operation.class, this, MappingAssistancePackage.OBSERVER__MEMBER2);
+    }
+    return member2;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> getArg()
   {
     if (arg == null)
     {
-      arg = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.OBSERVER__ARG);
+      arg = new EObjectResolvingEList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable.class, this, MappingAssistancePackage.OBSERVER__ARG);
     }
     return arg;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME1:
-        return ((InternalEList<?>)getServiceName1()).basicRemove(otherEnd, msgs);
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME2:
-        return ((InternalEList<?>)getServiceName2()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -210,10 +297,16 @@ public class ObserverImpl extends MinimalEObjectImpl.Container implements Observ
     {
       case MappingAssistancePackage.OBSERVER__NAME:
         return getName();
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME1:
-        return getServiceName1();
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME2:
-        return getServiceName2();
+      case MappingAssistancePackage.OBSERVER__SERVICE1:
+        if (resolve) return getService1();
+        return basicGetService1();
+      case MappingAssistancePackage.OBSERVER__MEMBER1:
+        return getMember1();
+      case MappingAssistancePackage.OBSERVER__SERVICE2:
+        if (resolve) return getService2();
+        return basicGetService2();
+      case MappingAssistancePackage.OBSERVER__MEMBER2:
+        return getMember2();
       case MappingAssistancePackage.OBSERVER__ARG:
         return getArg();
     }
@@ -234,17 +327,23 @@ public class ObserverImpl extends MinimalEObjectImpl.Container implements Observ
       case MappingAssistancePackage.OBSERVER__NAME:
         setName((String)newValue);
         return;
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME1:
-        getServiceName1().clear();
-        getServiceName1().addAll((Collection<? extends Call>)newValue);
+      case MappingAssistancePackage.OBSERVER__SERVICE1:
+        setService1((Variable)newValue);
         return;
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME2:
-        getServiceName2().clear();
-        getServiceName2().addAll((Collection<? extends Call>)newValue);
+      case MappingAssistancePackage.OBSERVER__MEMBER1:
+        getMember1().clear();
+        getMember1().addAll((Collection<? extends Operation>)newValue);
+        return;
+      case MappingAssistancePackage.OBSERVER__SERVICE2:
+        setService2((Variable)newValue);
+        return;
+      case MappingAssistancePackage.OBSERVER__MEMBER2:
+        getMember2().clear();
+        getMember2().addAll((Collection<? extends Operation>)newValue);
         return;
       case MappingAssistancePackage.OBSERVER__ARG:
         getArg().clear();
-        getArg().addAll((Collection<? extends Variable>)newValue);
+        getArg().addAll((Collection<? extends com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -263,11 +362,17 @@ public class ObserverImpl extends MinimalEObjectImpl.Container implements Observ
       case MappingAssistancePackage.OBSERVER__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME1:
-        getServiceName1().clear();
+      case MappingAssistancePackage.OBSERVER__SERVICE1:
+        setService1((Variable)null);
         return;
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME2:
-        getServiceName2().clear();
+      case MappingAssistancePackage.OBSERVER__MEMBER1:
+        getMember1().clear();
+        return;
+      case MappingAssistancePackage.OBSERVER__SERVICE2:
+        setService2((Variable)null);
+        return;
+      case MappingAssistancePackage.OBSERVER__MEMBER2:
+        getMember2().clear();
         return;
       case MappingAssistancePackage.OBSERVER__ARG:
         getArg().clear();
@@ -288,10 +393,14 @@ public class ObserverImpl extends MinimalEObjectImpl.Container implements Observ
     {
       case MappingAssistancePackage.OBSERVER__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME1:
-        return serviceName1 != null && !serviceName1.isEmpty();
-      case MappingAssistancePackage.OBSERVER__SERVICE_NAME2:
-        return serviceName2 != null && !serviceName2.isEmpty();
+      case MappingAssistancePackage.OBSERVER__SERVICE1:
+        return service1 != null;
+      case MappingAssistancePackage.OBSERVER__MEMBER1:
+        return member1 != null && !member1.isEmpty();
+      case MappingAssistancePackage.OBSERVER__SERVICE2:
+        return service2 != null;
+      case MappingAssistancePackage.OBSERVER__MEMBER2:
+        return member2 != null && !member2.isEmpty();
       case MappingAssistancePackage.OBSERVER__ARG:
         return arg != null && !arg.isEmpty();
     }
