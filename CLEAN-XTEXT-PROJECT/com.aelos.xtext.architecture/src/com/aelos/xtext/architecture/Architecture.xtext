@@ -34,7 +34,7 @@ Component :
 
 
 Architecture:
-	{Architecture} "Architecture Definition"
+	{Architecture} "ArchitectureDefinition"
 	(vars+=Variable)*
 	("bind"  receiver+=Call ":" provider+=Call)*
 ;

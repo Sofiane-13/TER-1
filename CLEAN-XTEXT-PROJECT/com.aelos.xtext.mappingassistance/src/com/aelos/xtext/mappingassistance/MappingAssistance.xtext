@@ -74,8 +74,6 @@ Bindings :
 InstanceComp:
 "def"
  name=ID ":"type=[Comopnent];	
-
-
 Call : receiver=[arch::Variable]'.'member+=[arch::Operation]; 
 
       
