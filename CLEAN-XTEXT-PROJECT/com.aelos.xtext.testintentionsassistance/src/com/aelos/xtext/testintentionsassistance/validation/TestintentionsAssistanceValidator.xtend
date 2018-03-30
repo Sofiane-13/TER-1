@@ -21,7 +21,7 @@ class TestintentionsAssistanceValidator extends AbstractTestintentionsAssistance
 	def checkMappingSameType(Inst data) {
 		var x=0;
 		for(variable:data.variable){
-			System.out.println(data.valeur.get(x).eClass.name.toString+" : "+variable.type.literal)
+			//System.out.println(data.valeur.get(x).eClass.name.toString+" : "+variable.type.literal)
 			if(!( (data.valeur.get(x).eClass.name.toString).equals(variable.type.literal))){
 				
 				error("the variables must have the same Type",TestintentionsAssistancePackage.Literals.INST__VARIABLE)
