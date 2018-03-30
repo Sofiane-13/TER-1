@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTestintentionsAssistanceParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'domain'", "'{'", "'}'", "'.'", "'import'", "'.*'", "'='", "'('", "','", "')'", "'input:('", "':='", "'description:'", "'datapredicate:'", "'oracle:'", "'\\u2228'", "'\\u2227'", "'<>'", "'\\u2265'", "'\\u2264'", "'>'", "'<'", "'+'", "'-'", "'*'", "'/'", "':'", "'!'", "'true'", "'false'", "'INT'", "'STRING'", "'Boolean'", "'Double'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'domain'", "'{'", "'}'", "'.'", "'import'", "'.*'", "'='", "'('", "','", "')'", "'input:('", "':='", "'description:'", "'datapredicate:'", "'oracle:'", "'\\u2228'", "'\\u2227'", "'<>'", "'\\u2265'", "'\\u2264'", "'>'", "'<'", "'+'", "'-'", "'*'", "'/'", "':'", "'true'", "'false'", "'!'", "'INT'", "'STRING'", "'Boolean'", "'Double'"
     };
     public static final int T__19=19;
     public static final int T__15=15;
@@ -3128,8 +3128,215 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
     // $ANTLR end "ruleVariable"
 
 
+    // $ANTLR start "entryRuleBoolean"
+    // InternalTestintentionsAssistance.g:1217:1: entryRuleBoolean returns [String current=null] : iv_ruleBoolean= ruleBoolean EOF ;
+    public final String entryRuleBoolean() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleBoolean = null;
+
+
+        try {
+            // InternalTestintentionsAssistance.g:1217:47: (iv_ruleBoolean= ruleBoolean EOF )
+            // InternalTestintentionsAssistance.g:1218:2: iv_ruleBoolean= ruleBoolean EOF
+            {
+             newCompositeNode(grammarAccess.getBooleanRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleBoolean=ruleBoolean();
+
+            state._fsp--;
+
+             current =iv_ruleBoolean.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleBoolean"
+
+
+    // $ANTLR start "ruleBoolean"
+    // InternalTestintentionsAssistance.g:1224:1: ruleBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    public final AntlrDatatypeRuleToken ruleBoolean() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalTestintentionsAssistance.g:1230:2: ( (kw= 'true' | kw= 'false' ) )
+            // InternalTestintentionsAssistance.g:1231:2: (kw= 'true' | kw= 'false' )
+            {
+            // InternalTestintentionsAssistance.g:1231:2: (kw= 'true' | kw= 'false' )
+            int alt20=2;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==38) ) {
+                alt20=1;
+            }
+            else if ( (LA20_0==39) ) {
+                alt20=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 20, 0, input);
+
+                throw nvae;
+            }
+            switch (alt20) {
+                case 1 :
+                    // InternalTestintentionsAssistance.g:1232:3: kw= 'true'
+                    {
+                    kw=(Token)match(input,38,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getBooleanAccess().getTrueKeyword_0());
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalTestintentionsAssistance.g:1238:3: kw= 'false'
+                    {
+                    kw=(Token)match(input,39,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getBooleanAccess().getFalseKeyword_1());
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleBoolean"
+
+
+    // $ANTLR start "entryRuleDouble"
+    // InternalTestintentionsAssistance.g:1247:1: entryRuleDouble returns [String current=null] : iv_ruleDouble= ruleDouble EOF ;
+    public final String entryRuleDouble() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleDouble = null;
+
+
+        try {
+            // InternalTestintentionsAssistance.g:1247:46: (iv_ruleDouble= ruleDouble EOF )
+            // InternalTestintentionsAssistance.g:1248:2: iv_ruleDouble= ruleDouble EOF
+            {
+             newCompositeNode(grammarAccess.getDoubleRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleDouble=ruleDouble();
+
+            state._fsp--;
+
+             current =iv_ruleDouble.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleDouble"
+
+
+    // $ANTLR start "ruleDouble"
+    // InternalTestintentionsAssistance.g:1254:1: ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) ;
+    public final AntlrDatatypeRuleToken ruleDouble() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_INT_0=null;
+        Token kw=null;
+        Token this_INT_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalTestintentionsAssistance.g:1260:2: ( (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT ) )
+            // InternalTestintentionsAssistance.g:1261:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            {
+            // InternalTestintentionsAssistance.g:1261:2: (this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT )
+            // InternalTestintentionsAssistance.g:1262:3: this_INT_0= RULE_INT kw= '.' this_INT_2= RULE_INT
+            {
+            this_INT_0=(Token)match(input,RULE_INT,FOLLOW_29); 
+
+            			current.merge(this_INT_0);
+            		
+
+            			newLeafNode(this_INT_0, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_0());
+            		
+            kw=(Token)match(input,14,FOLLOW_30); 
+
+            			current.merge(kw);
+            			newLeafNode(kw, grammarAccess.getDoubleAccess().getFullStopKeyword_1());
+            		
+            this_INT_2=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            			current.merge(this_INT_2);
+            		
+
+            			newLeafNode(this_INT_2, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_2());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleDouble"
+
+
     // $ANTLR start "entryRulePrimary"
-    // InternalTestintentionsAssistance.g:1217:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
+    // InternalTestintentionsAssistance.g:1285:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
     public final EObject entryRulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -3137,8 +3344,8 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
 
 
         try {
-            // InternalTestintentionsAssistance.g:1217:48: (iv_rulePrimary= rulePrimary EOF )
-            // InternalTestintentionsAssistance.g:1218:2: iv_rulePrimary= rulePrimary EOF
+            // InternalTestintentionsAssistance.g:1285:48: (iv_rulePrimary= rulePrimary EOF )
+            // InternalTestintentionsAssistance.g:1286:2: iv_rulePrimary= rulePrimary EOF
             {
              newCompositeNode(grammarAccess.getPrimaryRule()); 
             pushFollow(FOLLOW_1);
@@ -3165,7 +3372,7 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
 
 
     // $ANTLR start "rulePrimary"
-    // InternalTestintentionsAssistance.g:1224:1: rulePrimary returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic ) ;
+    // InternalTestintentionsAssistance.g:1292:1: rulePrimary returns [EObject current=null] : ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic ) ;
     public final EObject rulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -3183,44 +3390,44 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
         	enterRule();
 
         try {
-            // InternalTestintentionsAssistance.g:1230:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic ) )
-            // InternalTestintentionsAssistance.g:1231:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic )
+            // InternalTestintentionsAssistance.g:1298:2: ( ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic ) )
+            // InternalTestintentionsAssistance.g:1299:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic )
             {
-            // InternalTestintentionsAssistance.g:1231:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic )
-            int alt20=3;
+            // InternalTestintentionsAssistance.g:1299:2: ( (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' ) | ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) ) | this_Atomic_6= ruleAtomic )
+            int alt21=3;
             switch ( input.LA(1) ) {
             case 18:
                 {
-                alt20=1;
+                alt21=1;
                 }
                 break;
-            case 38:
+            case 40:
                 {
-                alt20=2;
+                alt21=2;
                 }
                 break;
             case RULE_ID:
             case RULE_STRING:
             case RULE_INT:
+            case 38:
             case 39:
-            case 40:
                 {
-                alt20=3;
+                alt21=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
-                    // InternalTestintentionsAssistance.g:1232:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // InternalTestintentionsAssistance.g:1300:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
                     {
-                    // InternalTestintentionsAssistance.g:1232:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
-                    // InternalTestintentionsAssistance.g:1233:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
+                    // InternalTestintentionsAssistance.g:1300:3: (otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')' )
+                    // InternalTestintentionsAssistance.g:1301:4: otherlv_0= '(' this_Expression_1= ruleExpression otherlv_2= ')'
                     {
                     otherlv_0=(Token)match(input,18,FOLLOW_19); 
 
@@ -3249,13 +3456,13 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
                     }
                     break;
                 case 2 :
-                    // InternalTestintentionsAssistance.g:1251:3: ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) )
+                    // InternalTestintentionsAssistance.g:1319:3: ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) )
                     {
-                    // InternalTestintentionsAssistance.g:1251:3: ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) )
-                    // InternalTestintentionsAssistance.g:1252:4: () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) )
+                    // InternalTestintentionsAssistance.g:1319:3: ( () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) ) )
+                    // InternalTestintentionsAssistance.g:1320:4: () otherlv_4= '!' ( (lv_expression_5_0= rulePrimary ) )
                     {
-                    // InternalTestintentionsAssistance.g:1252:4: ()
-                    // InternalTestintentionsAssistance.g:1253:5: 
+                    // InternalTestintentionsAssistance.g:1320:4: ()
+                    // InternalTestintentionsAssistance.g:1321:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3265,15 +3472,15 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
 
                     }
 
-                    otherlv_4=(Token)match(input,38,FOLLOW_19); 
+                    otherlv_4=(Token)match(input,40,FOLLOW_19); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getPrimaryAccess().getExclamationMarkKeyword_1_1());
                     			
-                    // InternalTestintentionsAssistance.g:1263:4: ( (lv_expression_5_0= rulePrimary ) )
-                    // InternalTestintentionsAssistance.g:1264:5: (lv_expression_5_0= rulePrimary )
+                    // InternalTestintentionsAssistance.g:1331:4: ( (lv_expression_5_0= rulePrimary ) )
+                    // InternalTestintentionsAssistance.g:1332:5: (lv_expression_5_0= rulePrimary )
                     {
-                    // InternalTestintentionsAssistance.g:1264:5: (lv_expression_5_0= rulePrimary )
-                    // InternalTestintentionsAssistance.g:1265:6: lv_expression_5_0= rulePrimary
+                    // InternalTestintentionsAssistance.g:1332:5: (lv_expression_5_0= rulePrimary )
+                    // InternalTestintentionsAssistance.g:1333:6: lv_expression_5_0= rulePrimary
                     {
 
                     						newCompositeNode(grammarAccess.getPrimaryAccess().getExpressionPrimaryParserRuleCall_1_2_0());
@@ -3307,7 +3514,7 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
                     }
                     break;
                 case 3 :
-                    // InternalTestintentionsAssistance.g:1284:3: this_Atomic_6= ruleAtomic
+                    // InternalTestintentionsAssistance.g:1352:3: this_Atomic_6= ruleAtomic
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getAtomicParserRuleCall_2());
@@ -3347,7 +3554,7 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
 
 
     // $ANTLR start "entryRuleAtomic"
-    // InternalTestintentionsAssistance.g:1296:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
+    // InternalTestintentionsAssistance.g:1364:1: entryRuleAtomic returns [EObject current=null] : iv_ruleAtomic= ruleAtomic EOF ;
     public final EObject entryRuleAtomic() throws RecognitionException {
         EObject current = null;
 
@@ -3355,8 +3562,8 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
 
 
         try {
-            // InternalTestintentionsAssistance.g:1296:47: (iv_ruleAtomic= ruleAtomic EOF )
-            // InternalTestintentionsAssistance.g:1297:2: iv_ruleAtomic= ruleAtomic EOF
+            // InternalTestintentionsAssistance.g:1364:47: (iv_ruleAtomic= ruleAtomic EOF )
+            // InternalTestintentionsAssistance.g:1365:2: iv_ruleAtomic= ruleAtomic EOF
             {
              newCompositeNode(grammarAccess.getAtomicRule()); 
             pushFollow(FOLLOW_1);
@@ -3383,29 +3590,44 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
 
 
     // $ANTLR start "ruleAtomic"
-    // InternalTestintentionsAssistance.g:1303:1: ruleAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) ) ;
+    // InternalTestintentionsAssistance.g:1371:1: ruleAtomic returns [EObject current=null] : ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_value_5_0= ruleBoolean ) ) ) | ( () ( (lv_value_7_0= ruleDouble ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) ) ;
     public final EObject ruleAtomic() throws RecognitionException {
         EObject current = null;
 
         Token lv_value_1_0=null;
         Token lv_value_3_0=null;
-        Token lv_value_5_1=null;
-        Token lv_value_5_2=null;
-        Token otherlv_7=null;
+        Token otherlv_9=null;
+        AntlrDatatypeRuleToken lv_value_5_0 = null;
+
+        AntlrDatatypeRuleToken lv_value_7_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalTestintentionsAssistance.g:1309:2: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) ) )
-            // InternalTestintentionsAssistance.g:1310:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) )
+            // InternalTestintentionsAssistance.g:1377:2: ( ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_value_5_0= ruleBoolean ) ) ) | ( () ( (lv_value_7_0= ruleDouble ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) ) )
+            // InternalTestintentionsAssistance.g:1378:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_value_5_0= ruleBoolean ) ) ) | ( () ( (lv_value_7_0= ruleDouble ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) )
             {
-            // InternalTestintentionsAssistance.g:1310:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) ) | ( () ( (otherlv_7= RULE_ID ) ) ) )
-            int alt22=4;
+            // InternalTestintentionsAssistance.g:1378:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) | ( () ( (lv_value_3_0= RULE_STRING ) ) ) | ( () ( (lv_value_5_0= ruleBoolean ) ) ) | ( () ( (lv_value_7_0= ruleDouble ) ) ) | ( () ( (otherlv_9= RULE_ID ) ) ) )
+            int alt22=5;
             switch ( input.LA(1) ) {
             case RULE_INT:
                 {
-                alt22=1;
+                int LA22_1 = input.LA(2);
+
+                if ( (LA22_1==14) ) {
+                    alt22=4;
+                }
+                else if ( (LA22_1==EOF||LA22_1==RULE_ID||LA22_1==11||LA22_1==13||LA22_1==15||LA22_1==17||(LA22_1>=19 && LA22_1<=21)||LA22_1==23||(LA22_1>=25 && LA22_1<=36)) ) {
+                    alt22=1;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 22, 1, input);
+
+                    throw nvae;
+                }
                 }
                 break;
             case RULE_STRING:
@@ -3413,15 +3635,15 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
                 alt22=2;
                 }
                 break;
+            case 38:
             case 39:
-            case 40:
                 {
                 alt22=3;
                 }
                 break;
             case RULE_ID:
                 {
-                alt22=4;
+                alt22=5;
                 }
                 break;
             default:
@@ -3433,27 +3655,27 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
 
             switch (alt22) {
                 case 1 :
-                    // InternalTestintentionsAssistance.g:1311:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // InternalTestintentionsAssistance.g:1379:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
                     {
-                    // InternalTestintentionsAssistance.g:1311:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
-                    // InternalTestintentionsAssistance.g:1312:4: () ( (lv_value_1_0= RULE_INT ) )
+                    // InternalTestintentionsAssistance.g:1379:3: ( () ( (lv_value_1_0= RULE_INT ) ) )
+                    // InternalTestintentionsAssistance.g:1380:4: () ( (lv_value_1_0= RULE_INT ) )
                     {
-                    // InternalTestintentionsAssistance.g:1312:4: ()
-                    // InternalTestintentionsAssistance.g:1313:5: 
+                    // InternalTestintentionsAssistance.g:1380:4: ()
+                    // InternalTestintentionsAssistance.g:1381:5: 
                     {
 
                     					current = forceCreateModelElement(
-                    						grammarAccess.getAtomicAccess().getIntConstantAction_0_0(),
+                    						grammarAccess.getAtomicAccess().getINTAction_0_0(),
                     						current);
                     				
 
                     }
 
-                    // InternalTestintentionsAssistance.g:1319:4: ( (lv_value_1_0= RULE_INT ) )
-                    // InternalTestintentionsAssistance.g:1320:5: (lv_value_1_0= RULE_INT )
+                    // InternalTestintentionsAssistance.g:1387:4: ( (lv_value_1_0= RULE_INT ) )
+                    // InternalTestintentionsAssistance.g:1388:5: (lv_value_1_0= RULE_INT )
                     {
-                    // InternalTestintentionsAssistance.g:1320:5: (lv_value_1_0= RULE_INT )
-                    // InternalTestintentionsAssistance.g:1321:6: lv_value_1_0= RULE_INT
+                    // InternalTestintentionsAssistance.g:1388:5: (lv_value_1_0= RULE_INT )
+                    // InternalTestintentionsAssistance.g:1389:6: lv_value_1_0= RULE_INT
                     {
                     lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -3482,27 +3704,27 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
                     }
                     break;
                 case 2 :
-                    // InternalTestintentionsAssistance.g:1339:3: ( () ( (lv_value_3_0= RULE_STRING ) ) )
+                    // InternalTestintentionsAssistance.g:1407:3: ( () ( (lv_value_3_0= RULE_STRING ) ) )
                     {
-                    // InternalTestintentionsAssistance.g:1339:3: ( () ( (lv_value_3_0= RULE_STRING ) ) )
-                    // InternalTestintentionsAssistance.g:1340:4: () ( (lv_value_3_0= RULE_STRING ) )
+                    // InternalTestintentionsAssistance.g:1407:3: ( () ( (lv_value_3_0= RULE_STRING ) ) )
+                    // InternalTestintentionsAssistance.g:1408:4: () ( (lv_value_3_0= RULE_STRING ) )
                     {
-                    // InternalTestintentionsAssistance.g:1340:4: ()
-                    // InternalTestintentionsAssistance.g:1341:5: 
+                    // InternalTestintentionsAssistance.g:1408:4: ()
+                    // InternalTestintentionsAssistance.g:1409:5: 
                     {
 
                     					current = forceCreateModelElement(
-                    						grammarAccess.getAtomicAccess().getStringConstantAction_1_0(),
+                    						grammarAccess.getAtomicAccess().getSTRINGAction_1_0(),
                     						current);
                     				
 
                     }
 
-                    // InternalTestintentionsAssistance.g:1347:4: ( (lv_value_3_0= RULE_STRING ) )
-                    // InternalTestintentionsAssistance.g:1348:5: (lv_value_3_0= RULE_STRING )
+                    // InternalTestintentionsAssistance.g:1415:4: ( (lv_value_3_0= RULE_STRING ) )
+                    // InternalTestintentionsAssistance.g:1416:5: (lv_value_3_0= RULE_STRING )
                     {
-                    // InternalTestintentionsAssistance.g:1348:5: (lv_value_3_0= RULE_STRING )
-                    // InternalTestintentionsAssistance.g:1349:6: lv_value_3_0= RULE_STRING
+                    // InternalTestintentionsAssistance.g:1416:5: (lv_value_3_0= RULE_STRING )
+                    // InternalTestintentionsAssistance.g:1417:6: lv_value_3_0= RULE_STRING
                     {
                     lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -3531,80 +3753,47 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
                     }
                     break;
                 case 3 :
-                    // InternalTestintentionsAssistance.g:1367:3: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
+                    // InternalTestintentionsAssistance.g:1435:3: ( () ( (lv_value_5_0= ruleBoolean ) ) )
                     {
-                    // InternalTestintentionsAssistance.g:1367:3: ( () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) ) )
-                    // InternalTestintentionsAssistance.g:1368:4: () ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
+                    // InternalTestintentionsAssistance.g:1435:3: ( () ( (lv_value_5_0= ruleBoolean ) ) )
+                    // InternalTestintentionsAssistance.g:1436:4: () ( (lv_value_5_0= ruleBoolean ) )
                     {
-                    // InternalTestintentionsAssistance.g:1368:4: ()
-                    // InternalTestintentionsAssistance.g:1369:5: 
+                    // InternalTestintentionsAssistance.g:1436:4: ()
+                    // InternalTestintentionsAssistance.g:1437:5: 
                     {
 
                     					current = forceCreateModelElement(
-                    						grammarAccess.getAtomicAccess().getBoolConstantAction_2_0(),
+                    						grammarAccess.getAtomicAccess().getBooleanAction_2_0(),
                     						current);
                     				
 
                     }
 
-                    // InternalTestintentionsAssistance.g:1375:4: ( ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) ) )
-                    // InternalTestintentionsAssistance.g:1376:5: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
+                    // InternalTestintentionsAssistance.g:1443:4: ( (lv_value_5_0= ruleBoolean ) )
+                    // InternalTestintentionsAssistance.g:1444:5: (lv_value_5_0= ruleBoolean )
                     {
-                    // InternalTestintentionsAssistance.g:1376:5: ( (lv_value_5_1= 'true' | lv_value_5_2= 'false' ) )
-                    // InternalTestintentionsAssistance.g:1377:6: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
+                    // InternalTestintentionsAssistance.g:1444:5: (lv_value_5_0= ruleBoolean )
+                    // InternalTestintentionsAssistance.g:1445:6: lv_value_5_0= ruleBoolean
                     {
-                    // InternalTestintentionsAssistance.g:1377:6: (lv_value_5_1= 'true' | lv_value_5_2= 'false' )
-                    int alt21=2;
-                    int LA21_0 = input.LA(1);
 
-                    if ( (LA21_0==39) ) {
-                        alt21=1;
-                    }
-                    else if ( (LA21_0==40) ) {
-                        alt21=2;
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 21, 0, input);
+                    						newCompositeNode(grammarAccess.getAtomicAccess().getValueBooleanParserRuleCall_2_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_value_5_0=ruleBoolean();
 
-                        throw nvae;
-                    }
-                    switch (alt21) {
-                        case 1 :
-                            // InternalTestintentionsAssistance.g:1378:7: lv_value_5_1= 'true'
-                            {
-                            lv_value_5_1=(Token)match(input,39,FOLLOW_2); 
+                    state._fsp--;
 
-                            							newLeafNode(lv_value_5_1, grammarAccess.getAtomicAccess().getValueTrueKeyword_2_1_0_0());
-                            						
 
-                            							if (current==null) {
-                            								current = createModelElement(grammarAccess.getAtomicRule());
-                            							}
-                            							setWithLastConsumed(current, "value", lv_value_5_1, null);
-                            						
-
-                            }
-                            break;
-                        case 2 :
-                            // InternalTestintentionsAssistance.g:1389:7: lv_value_5_2= 'false'
-                            {
-                            lv_value_5_2=(Token)match(input,40,FOLLOW_2); 
-
-                            							newLeafNode(lv_value_5_2, grammarAccess.getAtomicAccess().getValueFalseKeyword_2_1_0_1());
-                            						
-
-                            							if (current==null) {
-                            								current = createModelElement(grammarAccess.getAtomicRule());
-                            							}
-                            							setWithLastConsumed(current, "value", lv_value_5_2, null);
-                            						
-
-                            }
-                            break;
-
-                    }
-
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getAtomicRule());
+                    						}
+                    						set(
+                    							current,
+                    							"value",
+                    							lv_value_5_0,
+                    							"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Boolean");
+                    						afterParserOrEnumRuleCall();
+                    					
 
                     }
 
@@ -3618,36 +3807,90 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
                     }
                     break;
                 case 4 :
-                    // InternalTestintentionsAssistance.g:1404:3: ( () ( (otherlv_7= RULE_ID ) ) )
+                    // InternalTestintentionsAssistance.g:1464:3: ( () ( (lv_value_7_0= ruleDouble ) ) )
                     {
-                    // InternalTestintentionsAssistance.g:1404:3: ( () ( (otherlv_7= RULE_ID ) ) )
-                    // InternalTestintentionsAssistance.g:1405:4: () ( (otherlv_7= RULE_ID ) )
+                    // InternalTestintentionsAssistance.g:1464:3: ( () ( (lv_value_7_0= ruleDouble ) ) )
+                    // InternalTestintentionsAssistance.g:1465:4: () ( (lv_value_7_0= ruleDouble ) )
                     {
-                    // InternalTestintentionsAssistance.g:1405:4: ()
-                    // InternalTestintentionsAssistance.g:1406:5: 
+                    // InternalTestintentionsAssistance.g:1465:4: ()
+                    // InternalTestintentionsAssistance.g:1466:5: 
                     {
 
                     					current = forceCreateModelElement(
-                    						grammarAccess.getAtomicAccess().getVariableRefAction_3_0(),
+                    						grammarAccess.getAtomicAccess().getDoubleAction_3_0(),
                     						current);
                     				
 
                     }
 
-                    // InternalTestintentionsAssistance.g:1412:4: ( (otherlv_7= RULE_ID ) )
-                    // InternalTestintentionsAssistance.g:1413:5: (otherlv_7= RULE_ID )
+                    // InternalTestintentionsAssistance.g:1472:4: ( (lv_value_7_0= ruleDouble ) )
+                    // InternalTestintentionsAssistance.g:1473:5: (lv_value_7_0= ruleDouble )
                     {
-                    // InternalTestintentionsAssistance.g:1413:5: (otherlv_7= RULE_ID )
-                    // InternalTestintentionsAssistance.g:1414:6: otherlv_7= RULE_ID
+                    // InternalTestintentionsAssistance.g:1473:5: (lv_value_7_0= ruleDouble )
+                    // InternalTestintentionsAssistance.g:1474:6: lv_value_7_0= ruleDouble
+                    {
+
+                    						newCompositeNode(grammarAccess.getAtomicAccess().getValueDoubleParserRuleCall_3_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_value_7_0=ruleDouble();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getAtomicRule());
+                    						}
+                    						set(
+                    							current,
+                    							"value",
+                    							lv_value_7_0,
+                    							"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Double");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalTestintentionsAssistance.g:1493:3: ( () ( (otherlv_9= RULE_ID ) ) )
+                    {
+                    // InternalTestintentionsAssistance.g:1493:3: ( () ( (otherlv_9= RULE_ID ) ) )
+                    // InternalTestintentionsAssistance.g:1494:4: () ( (otherlv_9= RULE_ID ) )
+                    {
+                    // InternalTestintentionsAssistance.g:1494:4: ()
+                    // InternalTestintentionsAssistance.g:1495:5: 
+                    {
+
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getAtomicAccess().getVariableRefAction_4_0(),
+                    						current);
+                    				
+
+                    }
+
+                    // InternalTestintentionsAssistance.g:1501:4: ( (otherlv_9= RULE_ID ) )
+                    // InternalTestintentionsAssistance.g:1502:5: (otherlv_9= RULE_ID )
+                    {
+                    // InternalTestintentionsAssistance.g:1502:5: (otherlv_9= RULE_ID )
+                    // InternalTestintentionsAssistance.g:1503:6: otherlv_9= RULE_ID
                     {
 
                     						if (current==null) {
                     							current = createModelElement(grammarAccess.getAtomicRule());
                     						}
                     					
-                    otherlv_7=(Token)match(input,RULE_ID,FOLLOW_2); 
+                    otherlv_9=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-                    						newLeafNode(otherlv_7, grammarAccess.getAtomicAccess().getVariableVariableCrossReference_3_1_0());
+                    						newLeafNode(otherlv_9, grammarAccess.getAtomicAccess().getVariableVariableCrossReference_4_1_0());
                     					
 
                     }
@@ -3684,7 +3927,7 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
 
 
     // $ANTLR start "ruleType"
-    // InternalTestintentionsAssistance.g:1430:1: ruleType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) ) ;
+    // InternalTestintentionsAssistance.g:1519:1: ruleType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) ) ;
     public final Enumerator ruleType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3697,10 +3940,10 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
         	enterRule();
 
         try {
-            // InternalTestintentionsAssistance.g:1436:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) ) )
-            // InternalTestintentionsAssistance.g:1437:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) )
+            // InternalTestintentionsAssistance.g:1525:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) ) )
+            // InternalTestintentionsAssistance.g:1526:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) )
             {
-            // InternalTestintentionsAssistance.g:1437:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) )
+            // InternalTestintentionsAssistance.g:1526:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) )
             int alt23=4;
             switch ( input.LA(1) ) {
             case 41:
@@ -3732,10 +3975,10 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
 
             switch (alt23) {
                 case 1 :
-                    // InternalTestintentionsAssistance.g:1438:3: (enumLiteral_0= 'INT' )
+                    // InternalTestintentionsAssistance.g:1527:3: (enumLiteral_0= 'INT' )
                     {
-                    // InternalTestintentionsAssistance.g:1438:3: (enumLiteral_0= 'INT' )
-                    // InternalTestintentionsAssistance.g:1439:4: enumLiteral_0= 'INT'
+                    // InternalTestintentionsAssistance.g:1527:3: (enumLiteral_0= 'INT' )
+                    // InternalTestintentionsAssistance.g:1528:4: enumLiteral_0= 'INT'
                     {
                     enumLiteral_0=(Token)match(input,41,FOLLOW_2); 
 
@@ -3749,10 +3992,10 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
                     }
                     break;
                 case 2 :
-                    // InternalTestintentionsAssistance.g:1446:3: (enumLiteral_1= 'STRING' )
+                    // InternalTestintentionsAssistance.g:1535:3: (enumLiteral_1= 'STRING' )
                     {
-                    // InternalTestintentionsAssistance.g:1446:3: (enumLiteral_1= 'STRING' )
-                    // InternalTestintentionsAssistance.g:1447:4: enumLiteral_1= 'STRING'
+                    // InternalTestintentionsAssistance.g:1535:3: (enumLiteral_1= 'STRING' )
+                    // InternalTestintentionsAssistance.g:1536:4: enumLiteral_1= 'STRING'
                     {
                     enumLiteral_1=(Token)match(input,42,FOLLOW_2); 
 
@@ -3766,10 +4009,10 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
                     }
                     break;
                 case 3 :
-                    // InternalTestintentionsAssistance.g:1454:3: (enumLiteral_2= 'Boolean' )
+                    // InternalTestintentionsAssistance.g:1543:3: (enumLiteral_2= 'Boolean' )
                     {
-                    // InternalTestintentionsAssistance.g:1454:3: (enumLiteral_2= 'Boolean' )
-                    // InternalTestintentionsAssistance.g:1455:4: enumLiteral_2= 'Boolean'
+                    // InternalTestintentionsAssistance.g:1543:3: (enumLiteral_2= 'Boolean' )
+                    // InternalTestintentionsAssistance.g:1544:4: enumLiteral_2= 'Boolean'
                     {
                     enumLiteral_2=(Token)match(input,43,FOLLOW_2); 
 
@@ -3783,10 +4026,10 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
                     }
                     break;
                 case 4 :
-                    // InternalTestintentionsAssistance.g:1462:3: (enumLiteral_3= 'Double' )
+                    // InternalTestintentionsAssistance.g:1551:3: (enumLiteral_3= 'Double' )
                     {
-                    // InternalTestintentionsAssistance.g:1462:3: (enumLiteral_3= 'Double' )
-                    // InternalTestintentionsAssistance.g:1463:4: enumLiteral_3= 'Double'
+                    // InternalTestintentionsAssistance.g:1551:3: (enumLiteral_3= 'Double' )
+                    // InternalTestintentionsAssistance.g:1552:4: enumLiteral_3= 'Double'
                     {
                     enumLiteral_3=(Token)match(input,44,FOLLOW_2); 
 
@@ -3869,12 +4112,12 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
             return "302:2: (this_TestIntention_0= ruleTestIntention | this_Function_1= ruleFunction | this_Data_2= ruleData | this_Import_3= ruleImport | this_DomainDeclaration_4= ruleDomainDeclaration )";
         }
     }
-    static final String dfa_7s = "\17\uffff";
-    static final String dfa_8s = "\1\1\16\uffff";
-    static final String dfa_9s = "\1\4\1\uffff\1\45\1\51\4\21\6\4\1\uffff";
-    static final String dfa_10s = "\1\27\1\uffff\1\45\1\54\4\26\1\50\5\27\1\uffff";
-    static final String dfa_11s = "\1\uffff\1\2\14\uffff\1\1";
-    static final String dfa_12s = "\17\uffff}>";
+    static final String dfa_7s = "\21\uffff";
+    static final String dfa_8s = "\1\1\20\uffff";
+    static final String dfa_9s = "\1\4\1\uffff\1\45\1\51\4\21\6\4\1\uffff\1\6\1\4";
+    static final String dfa_10s = "\1\27\1\uffff\1\45\1\54\4\26\1\47\5\27\1\uffff\1\6\1\27";
+    static final String dfa_11s = "\1\uffff\1\2\14\uffff\1\1\2\uffff";
+    static final String dfa_12s = "\21\uffff}>";
     static final String[] dfa_13s = {
             "\1\2\6\uffff\1\1\1\uffff\1\1\1\uffff\1\1\5\uffff\1\1\1\uffff\1\1",
             "",
@@ -3884,13 +4127,15 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
             "\1\1\4\uffff\1\10",
             "\1\1\4\uffff\1\10",
             "\1\1\4\uffff\1\10",
-            "\1\15\1\12\1\11\40\uffff\1\13\1\14",
+            "\1\15\1\12\1\11\37\uffff\1\13\1\14",
+            "\1\1\6\uffff\1\1\1\uffff\1\1\1\17\1\1\3\uffff\1\16\2\1\1\uffff\1\1",
             "\1\1\6\uffff\1\1\1\uffff\1\1\1\uffff\1\1\3\uffff\1\16\2\1\1\uffff\1\1",
             "\1\1\6\uffff\1\1\1\uffff\1\1\1\uffff\1\1\3\uffff\1\16\2\1\1\uffff\1\1",
             "\1\1\6\uffff\1\1\1\uffff\1\1\1\uffff\1\1\3\uffff\1\16\2\1\1\uffff\1\1",
             "\1\1\6\uffff\1\1\1\uffff\1\1\1\uffff\1\1\3\uffff\1\16\2\1\1\uffff\1\1",
-            "\1\1\6\uffff\1\1\1\uffff\1\1\1\uffff\1\1\3\uffff\1\16\2\1\1\uffff\1\1",
-            ""
+            "",
+            "\1\20",
+            "\1\1\6\uffff\1\1\1\uffff\1\1\1\uffff\1\1\3\uffff\1\16\2\1\1\uffff\1\1"
     };
 
     static final short[] dfa_7 = DFA.unpackEncodedString(dfa_7s);
@@ -3934,7 +4179,7 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000018000000070L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x000000C000000070L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000100002L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000000L});
@@ -3948,5 +4193,7 @@ public class InternalTestintentionsAssistanceParser extends AbstractInternalAntl
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000001800000002L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000002000000000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x00001E0000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000040L});
 
 }

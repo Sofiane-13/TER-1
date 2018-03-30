@@ -799,39 +799,41 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Atomic");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cIntConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Action cINTAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cValueINTTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cStringConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cSTRINGAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cValueSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cBoolConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Action cBooleanAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final Alternatives cValueAlternatives_2_1_0 = (Alternatives)cValueAssignment_2_1.eContents().get(0);
-		private final Keyword cValueTrueKeyword_2_1_0_0 = (Keyword)cValueAlternatives_2_1_0.eContents().get(0);
-		private final Keyword cValueFalseKeyword_2_1_0_1 = (Keyword)cValueAlternatives_2_1_0.eContents().get(1);
+		private final RuleCall cValueBooleanParserRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cVariableRefAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Assignment cVariableAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cVariableVariableCrossReference_3_1_0 = (CrossReference)cVariableAssignment_3_1.eContents().get(0);
-		private final RuleCall cVariableVariableIDTerminalRuleCall_3_1_0_1 = (RuleCall)cVariableVariableCrossReference_3_1_0.eContents().get(1);
+		private final Action cDoubleAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cValueDoubleParserRuleCall_3_1_0 = (RuleCall)cValueAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Action cVariableRefAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Assignment cVariableAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cVariableVariableCrossReference_4_1_0 = (CrossReference)cVariableAssignment_4_1.eContents().get(0);
+		private final RuleCall cVariableVariableIDTerminalRuleCall_4_1_0_1 = (RuleCall)cVariableVariableCrossReference_4_1_0.eContents().get(1);
 		
 		//Atomic Expression:
-		//	{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=('true' | 'false') | {VariableRef}
+		//	{INT} value=INT | {STRING} value=STRING | {Boolean} value=Boolean | {Double} value=Double | {VariableRef}
 		//	variable=[Variable];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=('true' | 'false') | {VariableRef}
+		//{INT} value=INT | {STRING} value=STRING | {Boolean} value=Boolean | {Double} value=Double | {VariableRef}
 		//variable=[Variable]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{IntConstant} value=INT
+		//{INT} value=INT
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//{IntConstant}
-		public Action getIntConstantAction_0_0() { return cIntConstantAction_0_0; }
+		//{INT}
+		public Action getINTAction_0_0() { return cINTAction_0_0; }
 		
 		//value=INT
 		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
@@ -839,11 +841,11 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_0_1_0() { return cValueINTTerminalRuleCall_0_1_0; }
 		
-		//{StringConstant} value=STRING
+		//{STRING} value=STRING
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//{StringConstant}
-		public Action getStringConstantAction_1_0() { return cStringConstantAction_1_0; }
+		//{STRING}
+		public Action getSTRINGAction_1_0() { return cSTRINGAction_1_0; }
 		
 		//value=STRING
 		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
@@ -851,38 +853,44 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_1_1_0() { return cValueSTRINGTerminalRuleCall_1_1_0; }
 		
-		//{BoolConstant} value=('true' | 'false')
+		//{Boolean} value=Boolean
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//{BoolConstant}
-		public Action getBoolConstantAction_2_0() { return cBoolConstantAction_2_0; }
+		//{Boolean}
+		public Action getBooleanAction_2_0() { return cBooleanAction_2_0; }
 		
-		//value=('true' | 'false')
+		//value=Boolean
 		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
 		
-		//('true' | 'false')
-		public Alternatives getValueAlternatives_2_1_0() { return cValueAlternatives_2_1_0; }
+		//Boolean
+		public RuleCall getValueBooleanParserRuleCall_2_1_0() { return cValueBooleanParserRuleCall_2_1_0; }
 		
-		//'true'
-		public Keyword getValueTrueKeyword_2_1_0_0() { return cValueTrueKeyword_2_1_0_0; }
-		
-		//'false'
-		public Keyword getValueFalseKeyword_2_1_0_1() { return cValueFalseKeyword_2_1_0_1; }
-		
-		//{VariableRef} variable=[Variable]
+		//{Double} value=Double
 		public Group getGroup_3() { return cGroup_3; }
 		
+		//{Double}
+		public Action getDoubleAction_3_0() { return cDoubleAction_3_0; }
+		
+		//value=Double
+		public Assignment getValueAssignment_3_1() { return cValueAssignment_3_1; }
+		
+		//Double
+		public RuleCall getValueDoubleParserRuleCall_3_1_0() { return cValueDoubleParserRuleCall_3_1_0; }
+		
+		//{VariableRef} variable=[Variable]
+		public Group getGroup_4() { return cGroup_4; }
+		
 		//{VariableRef}
-		public Action getVariableRefAction_3_0() { return cVariableRefAction_3_0; }
+		public Action getVariableRefAction_4_0() { return cVariableRefAction_4_0; }
 		
 		//variable=[Variable]
-		public Assignment getVariableAssignment_3_1() { return cVariableAssignment_3_1; }
+		public Assignment getVariableAssignment_4_1() { return cVariableAssignment_4_1; }
 		
 		//[Variable]
-		public CrossReference getVariableVariableCrossReference_3_1_0() { return cVariableVariableCrossReference_3_1_0; }
+		public CrossReference getVariableVariableCrossReference_4_1_0() { return cVariableVariableCrossReference_4_1_0; }
 		
 		//ID
-		public RuleCall getVariableVariableIDTerminalRuleCall_3_1_0_1() { return cVariableVariableIDTerminalRuleCall_3_1_0_1; }
+		public RuleCall getVariableVariableIDTerminalRuleCall_4_1_0_1() { return cVariableVariableIDTerminalRuleCall_4_1_0_1; }
 	}
 	
 	public class TypeElements extends AbstractEnumRuleElementFinder {
@@ -1231,7 +1239,7 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 	}
 	
 	//Atomic Expression:
-	//	{IntConstant} value=INT | {StringConstant} value=STRING | {BoolConstant} value=('true' | 'false') | {VariableRef}
+	//	{INT} value=INT | {STRING} value=STRING | {Boolean} value=Boolean | {Double} value=Double | {VariableRef}
 	//	variable=[Variable];
 	public AtomicElements getAtomicAccess() {
 		return pAtomic;

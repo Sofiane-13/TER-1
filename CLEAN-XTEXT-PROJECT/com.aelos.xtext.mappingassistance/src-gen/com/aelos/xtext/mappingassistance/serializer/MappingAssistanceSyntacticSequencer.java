@@ -11,9 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -21,14 +18,10 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class MappingAssistanceSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected MappingAssistanceGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a;
-	protected AbstractElementAlias match_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (MappingAssistanceGrammarAccess) access;
-		match_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_11_0()), new TokenAlias(false, false, grammarAccess.getObserverAccess().getRightParenthesisKeyword_11_2()));
-		match_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a = new GroupAlias(true, true, new TokenAlias(false, false, grammarAccess.getObserverAccess().getRightParenthesisKeyword_11_2()), new TokenAlias(false, false, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_11_0()));
 	}
 	
 	@Override
@@ -43,36 +36,8 @@ public class MappingAssistanceSyntacticSequencer extends AbstractSyntacticSequen
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a.equals(syntax))
-				emit_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a.equals(syntax))
-				emit_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     ('(' ')')*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     arg+=[Variable|ID] ')' (ambiguity) (rule end)
-	 *     member2+=[Operation|ID] ')' (ambiguity) (rule end)
-	 */
-	protected void emit_Observer___LeftParenthesisKeyword_11_0_RightParenthesisKeyword_11_2__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     (')' '(')*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     arg+=[Variable|ID] (ambiguity) arg+=[Variable|ID]
-	 *     member2+=[Operation|ID] ')' '(' (ambiguity) arg+=[Variable|ID]
-	 */
-	protected void emit_Observer___RightParenthesisKeyword_11_2_LeftParenthesisKeyword_11_0__a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }

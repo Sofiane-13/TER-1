@@ -84,8 +84,9 @@ Primary returns Expression:
 	{Not} "!" expression=Primary | Atomic;
 	
 Atomic returns Expression:
-	{IntConstant} value=INT | 
-	{StringConstant} value=STRING | 
-	{BoolConstant} value=('true'|'false') | 
+	{INT} value=INT | 
+	{STRING} value=STRING | 
+	{Boolean} value=Boolean | 
+	{Double} value=Double | 
 	{VariableRef} variable=[Variable];
 	

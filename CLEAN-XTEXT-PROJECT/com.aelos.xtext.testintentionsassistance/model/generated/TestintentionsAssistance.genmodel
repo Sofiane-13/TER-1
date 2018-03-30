@@ -76,14 +76,17 @@
     <genClasses ecoreClass="TestintentionsAssistance.ecore#//Not">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestintentionsAssistance.ecore#//Not/expression"/>
     </genClasses>
-    <genClasses ecoreClass="TestintentionsAssistance.ecore#//IntConstant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//IntConstant/value"/>
+    <genClasses ecoreClass="TestintentionsAssistance.ecore#//INT">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//INT/value"/>
     </genClasses>
-    <genClasses ecoreClass="TestintentionsAssistance.ecore#//StringConstant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//StringConstant/value"/>
+    <genClasses ecoreClass="TestintentionsAssistance.ecore#//STRING">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//STRING/value"/>
     </genClasses>
-    <genClasses ecoreClass="TestintentionsAssistance.ecore#//BoolConstant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//BoolConstant/value"/>
+    <genClasses ecoreClass="TestintentionsAssistance.ecore#//Boolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//Boolean/value"/>
+    </genClasses>
+    <genClasses ecoreClass="TestintentionsAssistance.ecore#//Double">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//Double/value"/>
     </genClasses>
     <genClasses ecoreClass="TestintentionsAssistance.ecore#//VariableRef">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestintentionsAssistance.ecore#//VariableRef/variable"/>

@@ -4,8 +4,13 @@
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
+import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 
@@ -34,6 +39,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getIm <em>Im</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getTestDr <em>Test Dr</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getObs <em>Obs</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getComp <em>Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getMock <em>Mock</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getConf <em>Conf</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getBind <em>Bind</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AbstractModelImpl#getInst <em>Inst</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,6 +79,56 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
    * @ordered
    */
   protected EList<Observer> obs;
+
+  /**
+   * The cached value of the '{@link #getComp() <em>Comp</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getComp()
+   * @generated
+   * @ordered
+   */
+  protected EList<Comopnent> comp;
+
+  /**
+   * The cached value of the '{@link #getMock() <em>Mock</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMock()
+   * @generated
+   * @ordered
+   */
+  protected EList<Mock> mock;
+
+  /**
+   * The cached value of the '{@link #getConf() <em>Conf</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConf()
+   * @generated
+   * @ordered
+   */
+  protected EList<Conf> conf;
+
+  /**
+   * The cached value of the '{@link #getBind() <em>Bind</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBind()
+   * @generated
+   * @ordered
+   */
+  protected EList<Bindings> bind;
+
+  /**
+   * The cached value of the '{@link #getInst() <em>Inst</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInst()
+   * @generated
+   * @ordered
+   */
+  protected EList<InstanceComp> inst;
 
   /**
    * <!-- begin-user-doc -->
@@ -138,6 +198,76 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Comopnent> getComp()
+  {
+    if (comp == null)
+    {
+      comp = new EObjectContainmentEList<Comopnent>(Comopnent.class, this, MappingAssistancePackage.ABSTRACT_MODEL__COMP);
+    }
+    return comp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Mock> getMock()
+  {
+    if (mock == null)
+    {
+      mock = new EObjectContainmentEList<Mock>(Mock.class, this, MappingAssistancePackage.ABSTRACT_MODEL__MOCK);
+    }
+    return mock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Conf> getConf()
+  {
+    if (conf == null)
+    {
+      conf = new EObjectContainmentEList<Conf>(Conf.class, this, MappingAssistancePackage.ABSTRACT_MODEL__CONF);
+    }
+    return conf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Bindings> getBind()
+  {
+    if (bind == null)
+    {
+      bind = new EObjectContainmentEList<Bindings>(Bindings.class, this, MappingAssistancePackage.ABSTRACT_MODEL__BIND);
+    }
+    return bind;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<InstanceComp> getInst()
+  {
+    if (inst == null)
+    {
+      inst = new EObjectContainmentEList<InstanceComp>(InstanceComp.class, this, MappingAssistancePackage.ABSTRACT_MODEL__INST);
+    }
+    return inst;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -149,6 +279,16 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
         return ((InternalEList<?>)getTestDr()).basicRemove(otherEnd, msgs);
       case MappingAssistancePackage.ABSTRACT_MODEL__OBS:
         return ((InternalEList<?>)getObs()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.ABSTRACT_MODEL__COMP:
+        return ((InternalEList<?>)getComp()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.ABSTRACT_MODEL__MOCK:
+        return ((InternalEList<?>)getMock()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.ABSTRACT_MODEL__CONF:
+        return ((InternalEList<?>)getConf()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.ABSTRACT_MODEL__BIND:
+        return ((InternalEList<?>)getBind()).basicRemove(otherEnd, msgs);
+      case MappingAssistancePackage.ABSTRACT_MODEL__INST:
+        return ((InternalEList<?>)getInst()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -169,6 +309,16 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
         return getTestDr();
       case MappingAssistancePackage.ABSTRACT_MODEL__OBS:
         return getObs();
+      case MappingAssistancePackage.ABSTRACT_MODEL__COMP:
+        return getComp();
+      case MappingAssistancePackage.ABSTRACT_MODEL__MOCK:
+        return getMock();
+      case MappingAssistancePackage.ABSTRACT_MODEL__CONF:
+        return getConf();
+      case MappingAssistancePackage.ABSTRACT_MODEL__BIND:
+        return getBind();
+      case MappingAssistancePackage.ABSTRACT_MODEL__INST:
+        return getInst();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -196,6 +346,26 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
         getObs().clear();
         getObs().addAll((Collection<? extends Observer>)newValue);
         return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__COMP:
+        getComp().clear();
+        getComp().addAll((Collection<? extends Comopnent>)newValue);
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__MOCK:
+        getMock().clear();
+        getMock().addAll((Collection<? extends Mock>)newValue);
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__CONF:
+        getConf().clear();
+        getConf().addAll((Collection<? extends Conf>)newValue);
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__BIND:
+        getBind().clear();
+        getBind().addAll((Collection<? extends Bindings>)newValue);
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__INST:
+        getInst().clear();
+        getInst().addAll((Collection<? extends InstanceComp>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -219,6 +389,21 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
       case MappingAssistancePackage.ABSTRACT_MODEL__OBS:
         getObs().clear();
         return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__COMP:
+        getComp().clear();
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__MOCK:
+        getMock().clear();
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__CONF:
+        getConf().clear();
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__BIND:
+        getBind().clear();
+        return;
+      case MappingAssistancePackage.ABSTRACT_MODEL__INST:
+        getInst().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -239,6 +424,16 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
         return testDr != null && !testDr.isEmpty();
       case MappingAssistancePackage.ABSTRACT_MODEL__OBS:
         return obs != null && !obs.isEmpty();
+      case MappingAssistancePackage.ABSTRACT_MODEL__COMP:
+        return comp != null && !comp.isEmpty();
+      case MappingAssistancePackage.ABSTRACT_MODEL__MOCK:
+        return mock != null && !mock.isEmpty();
+      case MappingAssistancePackage.ABSTRACT_MODEL__CONF:
+        return conf != null && !conf.isEmpty();
+      case MappingAssistancePackage.ABSTRACT_MODEL__BIND:
+        return bind != null && !bind.isEmpty();
+      case MappingAssistancePackage.ABSTRACT_MODEL__INST:
+        return inst != null && !inst.isEmpty();
     }
     return super.eIsSet(featureID);
   }
