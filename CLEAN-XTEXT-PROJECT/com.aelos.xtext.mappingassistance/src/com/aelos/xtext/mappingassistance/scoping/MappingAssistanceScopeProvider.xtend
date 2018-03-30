@@ -92,6 +92,7 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
 	          // Create IEObjectDescriptions and puts them into an IScope instance
 	          return scope_Call_op2(EcoreUtil2.getContainerOfType(context, Observer))
 	    }
+	    
 	    return super.getScope(context, reference);
 	}
 

@@ -24,7 +24,7 @@ TestDriver :
 
 	{TestDriver} "TestDriver:"
 
-	(outVar+=[testIntention::Variable]":="service+=[arch::Variable]'.'member+=[arch::Operation]"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
+	(outVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member+=[arch::Operation]"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
 
 	;
 	
