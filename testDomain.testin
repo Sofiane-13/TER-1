@@ -1,0 +1,4 @@
+domain my.exemple.testDomain{
+	import my.exemple.testData.*
+	ExpectedValue:Double = computeSpeed(safeDistance)
+}

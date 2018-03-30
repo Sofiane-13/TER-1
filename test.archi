@@ -1,0 +1,40 @@
+domain my.exemple.comp{
+	import my.exemple.testData.*
+	
+	
+	Component:SimpleViehcle{
+		
+		providedServices(conf,getPos,getSpeed,computeSpeed)
+		def conf(pos:INT, speed:INT):INT
+		def getPos():INT
+		def getSpeed():INT
+		def computeSpeed():INT
+	
+	}
+	
+	Component:SimplePilote{
+		providedServices(conf,getPos,getSpeed)
+		def conf(test:INT):STRING
+		def getPos():INT
+		def getSpeed():INT
+	}
+		
+}
+
+domain my.exemple.architecture{
+	import my.exemple.comp.*
+	Architecture Definition
+	first : SimpleViehcle
+	mid : SimpleViehcle
+	last : SimpleViehcle
+	p : SimplePilote
+	
+	bind first.computeSpeed : p.getSpeed
+	bind first.computeSpeed : p.getPos
+	
+	bind mid.computeSpeed : first.getSpeed
+	bind mid.computeSpeed : first.getPos
+	
+	bind last.computeSpeed : mid.getSpeed
+	bind last.computeSpeed : mid.getPos
+}
