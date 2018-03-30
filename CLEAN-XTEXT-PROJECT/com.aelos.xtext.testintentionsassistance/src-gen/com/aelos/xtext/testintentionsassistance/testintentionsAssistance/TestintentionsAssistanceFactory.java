@@ -78,6 +78,15 @@ public interface TestintentionsAssistanceFactory extends EFactory
   Data createData();
 
   /**
+   * Returns a new object of class '<em>Inst</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inst</em>'.
+   * @generated
+   */
+  Inst createInst();
+
+  /**
    * Returns a new object of class '<em>Test Intention</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

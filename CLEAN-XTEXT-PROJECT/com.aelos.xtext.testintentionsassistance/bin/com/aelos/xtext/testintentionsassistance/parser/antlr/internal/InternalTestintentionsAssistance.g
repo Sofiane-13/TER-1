@@ -479,48 +479,25 @@ ruleData returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getDataAccess().getVariableVariableParserRuleCall_0_2_0_0());
+							newCompositeNode(grammarAccess.getDataAccess().getInstInstParserRuleCall_0_2_0_0());
 						}
-						lv_variable_2_0=ruleVariable
+						lv_inst_2_0=ruleInst
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getDataRule());
 							}
 							add(
 								$current,
-								"variable",
-								lv_variable_2_0,
-								"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Variable");
+								"inst",
+								lv_inst_2_0,
+								"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Inst");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
-				otherlv_3=':='
+				otherlv_3=','
 				{
-					newLeafNode(otherlv_3, grammarAccess.getDataAccess().getColonEqualsSignKeyword_0_2_1());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getDataAccess().getValAtomicParserRuleCall_0_2_2_0());
-						}
-						lv_val_4_0=ruleAtomic
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getDataRule());
-							}
-							add(
-								$current,
-								"val",
-								lv_val_4_0,
-								"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Atomic");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				otherlv_5=','
-				{
-					newLeafNode(otherlv_5, grammarAccess.getDataAccess().getCommaKeyword_0_2_3());
+					newLeafNode(otherlv_3, grammarAccess.getDataAccess().getCommaKeyword_0_2_1());
 				}
 			)*
 		)
@@ -529,51 +506,89 @@ ruleData returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getDataAccess().getVariableVariableParserRuleCall_1_0_0());
+						newCompositeNode(grammarAccess.getDataAccess().getInstInstParserRuleCall_1_0_0());
 					}
-					lv_variable_6_0=ruleVariable
+					lv_inst_4_0=ruleInst
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getDataRule());
 						}
 						add(
 							$current,
-							"variable",
-							lv_variable_6_0,
-							"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Variable");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_7=':='
-			{
-				newLeafNode(otherlv_7, grammarAccess.getDataAccess().getColonEqualsSignKeyword_1_1());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getDataAccess().getValAtomicParserRuleCall_1_2_0());
-					}
-					lv_val_8_0=ruleAtomic
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getDataRule());
-						}
-						add(
-							$current,
-							"val",
-							lv_val_8_0,
-							"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Atomic");
+							"inst",
+							lv_inst_4_0,
+							"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Inst");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_9=')'
+				otherlv_5=')'
 				{
-					newLeafNode(otherlv_9, grammarAccess.getDataAccess().getRightParenthesisKeyword_1_3());
+					newLeafNode(otherlv_5, grammarAccess.getDataAccess().getRightParenthesisKeyword_1_1());
 				}
 			)*
+		)
+	)
+;
+
+// Entry rule entryRuleInst
+entryRuleInst returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getInstRule()); }
+	iv_ruleInst=ruleInst
+	{ $current=$iv_ruleInst.current; }
+	EOF;
+
+// Rule Inst
+ruleInst returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getInstAccess().getVariableVariableParserRuleCall_0_0());
+				}
+				lv_variable_0_0=ruleVariable
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getInstRule());
+					}
+					add(
+						$current,
+						"variable",
+						lv_variable_0_0,
+						"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Variable");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_1=':='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getInstAccess().getColonEqualsSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getInstAccess().getValeurAtomicParserRuleCall_2_0());
+				}
+				lv_valeur_2_0=ruleAtomic
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getInstRule());
+					}
+					add(
+						$current,
+						"valeur",
+						lv_valeur_2_0,
+						"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Atomic");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)
 	)
 ;

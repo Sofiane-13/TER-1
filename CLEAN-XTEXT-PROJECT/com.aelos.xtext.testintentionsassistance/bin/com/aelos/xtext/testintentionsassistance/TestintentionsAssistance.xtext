@@ -29,7 +29,11 @@ Function:
 	
 //Pour le test data 	
 Data: {Data}
-	'input:('(variable+=Variable ':=' val+=Atomic "," )*|variable+=Variable ':=' val+=Atomic")"*;
+	'input:('(inst+=Inst "," )*|inst+=Inst")"*;
+	
+Inst:
+	variable+=Variable ':=' valeur+=Atomic
+;	
 	
 //Pour le test intention           
 TestIntention:

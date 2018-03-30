@@ -13,6 +13,7 @@ import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Express
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.INT;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Import;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Minus;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
@@ -124,6 +125,11 @@ public class TestintentionsAssistanceAdapterFactory extends AdapterFactoryImpl
       public Adapter caseData(Data object)
       {
         return createDataAdapter();
+      }
+      @Override
+      public Adapter caseInst(Inst object)
+      {
+        return createInstAdapter();
       }
       @Override
       public Adapter caseTestIntention(TestIntention object)
@@ -313,6 +319,21 @@ public class TestintentionsAssistanceAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDataAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst <em>Inst</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst
+   * @generated
+   */
+  public Adapter createInstAdapter()
   {
     return null;
   }

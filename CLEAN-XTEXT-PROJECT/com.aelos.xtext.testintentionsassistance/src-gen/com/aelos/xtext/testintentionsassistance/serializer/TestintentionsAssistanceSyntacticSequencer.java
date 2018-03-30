@@ -20,14 +20,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class TestintentionsAssistanceSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TestintentionsAssistanceGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Data_RightParenthesisKeyword_1_3_a;
+	protected AbstractElementAlias match_Data_RightParenthesisKeyword_1_1_a;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_a;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TestintentionsAssistanceGrammarAccess) access;
-		match_Data_RightParenthesisKeyword_1_3_a = new TokenAlias(true, true, grammarAccess.getDataAccess().getRightParenthesisKeyword_1_3());
+		match_Data_RightParenthesisKeyword_1_1_a = new TokenAlias(true, true, grammarAccess.getDataAccess().getRightParenthesisKeyword_1_1());
 		match_Primary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
 		match_Primary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
 	}
@@ -44,8 +44,8 @@ public class TestintentionsAssistanceSyntacticSequencer extends AbstractSyntacti
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Data_RightParenthesisKeyword_1_3_a.equals(syntax))
-				emit_Data_RightParenthesisKeyword_1_3_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Data_RightParenthesisKeyword_1_1_a.equals(syntax))
+				emit_Data_RightParenthesisKeyword_1_1_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Primary_LeftParenthesisKeyword_0_0_a.equals(syntax))
 				emit_Primary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Primary_LeftParenthesisKeyword_0_0_p.equals(syntax))
@@ -59,9 +59,9 @@ public class TestintentionsAssistanceSyntacticSequencer extends AbstractSyntacti
 	 *     ')'*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     val+=Atomic (ambiguity) (rule end)
+	 *     inst+=Inst (ambiguity) (rule end)
 	 */
-	protected void emit_Data_RightParenthesisKeyword_1_3_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Data_RightParenthesisKeyword_1_1_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

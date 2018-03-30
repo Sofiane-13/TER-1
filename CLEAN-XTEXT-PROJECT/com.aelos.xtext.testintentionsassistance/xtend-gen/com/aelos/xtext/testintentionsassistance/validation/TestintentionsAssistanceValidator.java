@@ -3,7 +3,12 @@
  */
 package com.aelos.xtext.testintentionsassistance.validation;
 
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
 import com.aelos.xtext.testintentionsassistance.validation.AbstractTestintentionsAssistanceValidator;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +17,24 @@ import com.aelos.xtext.testintentionsassistance.validation.AbstractTestintention
  */
 @SuppressWarnings("all")
 public class TestintentionsAssistanceValidator extends AbstractTestintentionsAssistanceValidator {
+  @Check
+  public void checkMappingSameType(final Inst data) {
+    int x = 0;
+    EList<Variable> _variable = data.getVariable();
+    for (final Variable variable : _variable) {
+      {
+        String _string = data.getValeur().get(x).eClass().getName().toString();
+        String _plus = (_string + " : ");
+        String _literal = variable.getType().getLiteral();
+        String _plus_1 = (_plus + _literal);
+        System.out.println(_plus_1);
+        boolean _equals = data.getValeur().get(x).eClass().getName().toString().equals(variable.getType().getLiteral());
+        boolean _not = (!_equals);
+        if (_not) {
+          this.error("the variables must have the same Type", TestintentionsAssistancePackage.Literals.INST__VARIABLE);
+        }
+        x++;
+      }
+    }
+  }
 }

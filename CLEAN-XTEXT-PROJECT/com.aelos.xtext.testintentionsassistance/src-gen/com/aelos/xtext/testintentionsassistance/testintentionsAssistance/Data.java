@@ -14,8 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data#getVariable <em>Variable</em>}</li>
- *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data#getVal <em>Val</em>}</li>
+ *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data#getInst <em>Inst</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage#getData()
@@ -25,35 +24,19 @@ import org.eclipse.emf.common.util.EList;
 public interface Data extends AbstractElement
 {
   /**
-   * Returns the value of the '<em><b>Variable</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
+   * Returns the value of the '<em><b>Inst</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Variable</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Inst</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variable</em>' containment reference list.
-   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage#getData_Variable()
+   * @return the value of the '<em>Inst</em>' containment reference list.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage#getData_Inst()
    * @model containment="true"
    * @generated
    */
-  EList<Variable> getVariable();
-
-  /**
-   * Returns the value of the '<em><b>Val</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Expression}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Val</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Val</em>' containment reference list.
-   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage#getData_Val()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Expression> getVal();
+  EList<Inst> getInst();
 
 } // Data

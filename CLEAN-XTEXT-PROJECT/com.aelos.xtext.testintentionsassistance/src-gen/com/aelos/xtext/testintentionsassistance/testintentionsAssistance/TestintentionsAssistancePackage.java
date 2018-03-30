@@ -236,22 +236,13 @@ public interface TestintentionsAssistancePackage extends EPackage
   int DATA = 5;
 
   /**
-   * The feature id for the '<em><b>Variable</b></em>' containment reference list.
+   * The feature id for the '<em><b>Inst</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DATA__VARIABLE = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Val</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DATA__VAL = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int DATA__INST = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Data</em>' class.
@@ -260,7 +251,44 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATA_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int DATA_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.InstImpl <em>Inst</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.InstImpl
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getInst()
+   * @generated
+   */
+  int INST = 6;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INST__VARIABLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Valeur</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INST__VALEUR = 1;
+
+  /**
+   * The number of structural features of the '<em>Inst</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INST_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestIntentionImpl <em>Test Intention</em>}' class.
@@ -270,7 +298,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getTestIntention()
    * @generated
    */
-  int TEST_INTENTION = 6;
+  int TEST_INTENTION = 7;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -307,7 +335,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 7;
+  int EXPRESSION = 8;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -326,7 +354,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 8;
+  int VARIABLE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -363,7 +391,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getOr()
    * @generated
    */
-  int OR = 9;
+  int OR = 10;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -400,7 +428,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getAnd()
    * @generated
    */
-  int AND = 10;
+  int AND = 11;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -437,7 +465,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getEquality()
    * @generated
    */
-  int EQUALITY = 11;
+  int EQUALITY = 12;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -483,7 +511,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 12;
+  int COMPARISON = 13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -529,7 +557,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 13;
+  int PLUS = 14;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -566,7 +594,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 14;
+  int MINUS = 15;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -603,7 +631,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getMulOrDiv()
    * @generated
    */
-  int MUL_OR_DIV = 15;
+  int MUL_OR_DIV = 16;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -649,7 +677,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getNot()
    * @generated
    */
-  int NOT = 16;
+  int NOT = 17;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -677,7 +705,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getINT()
    * @generated
    */
-  int INT = 17;
+  int INT = 18;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -705,7 +733,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getSTRING()
    * @generated
    */
-  int STRING = 18;
+  int STRING = 19;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -733,7 +761,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getBoolean()
    * @generated
    */
-  int BOOLEAN = 19;
+  int BOOLEAN = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -761,7 +789,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getDouble()
    * @generated
    */
-  int DOUBLE = 20;
+  int DOUBLE = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -789,7 +817,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getVariableRef()
    * @generated
    */
-  int VARIABLE_REF = 21;
+  int VARIABLE_REF = 22;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -817,7 +845,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getType()
    * @generated
    */
-  int TYPE = 22;
+  int TYPE = 23;
 
 
   /**
@@ -969,26 +997,47 @@ public interface TestintentionsAssistancePackage extends EPackage
   EClass getData();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data#getVariable <em>Variable</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data#getInst <em>Inst</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Inst</em>'.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data#getInst()
+   * @see #getData()
+   * @generated
+   */
+  EReference getData_Inst();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst <em>Inst</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Inst</em>'.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst
+   * @generated
+   */
+  EClass getInst();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst#getVariable <em>Variable</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Variable</em>'.
-   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data#getVariable()
-   * @see #getData()
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst#getVariable()
+   * @see #getInst()
    * @generated
    */
-  EReference getData_Variable();
+  EReference getInst_Variable();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data#getVal <em>Val</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst#getValeur <em>Valeur</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Val</em>'.
-   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data#getVal()
-   * @see #getData()
+   * @return the meta object for the containment reference list '<em>Valeur</em>'.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst#getValeur()
+   * @see #getInst()
    * @generated
    */
-  EReference getData_Val();
+  EReference getInst_Valeur();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention <em>Test Intention</em>}'.
@@ -1605,20 +1654,38 @@ public interface TestintentionsAssistancePackage extends EPackage
     EClass DATA = eINSTANCE.getData();
 
     /**
+     * The meta object literal for the '<em><b>Inst</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DATA__INST = eINSTANCE.getData_Inst();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.InstImpl <em>Inst</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.InstImpl
+     * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getInst()
+     * @generated
+     */
+    EClass INST = eINSTANCE.getInst();
+
+    /**
      * The meta object literal for the '<em><b>Variable</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DATA__VARIABLE = eINSTANCE.getData_Variable();
+    EReference INST__VARIABLE = eINSTANCE.getInst_Variable();
 
     /**
-     * The meta object literal for the '<em><b>Val</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Valeur</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DATA__VAL = eINSTANCE.getData_Val();
+    EReference INST__VALEUR = eINSTANCE.getInst_Valeur();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestIntentionImpl <em>Test Intention</em>}' class.

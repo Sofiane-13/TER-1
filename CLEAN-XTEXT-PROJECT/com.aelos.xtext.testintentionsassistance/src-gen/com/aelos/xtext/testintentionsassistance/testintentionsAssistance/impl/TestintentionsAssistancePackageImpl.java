@@ -12,6 +12,7 @@ import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Equalit
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Expression;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Import;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Minus;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
@@ -82,6 +83,13 @@ public class TestintentionsAssistancePackageImpl extends EPackageImpl implements
    * @generated
    */
   private EClass dataEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass instEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -410,7 +418,7 @@ public class TestintentionsAssistancePackageImpl extends EPackageImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getData_Variable()
+  public EReference getData_Inst()
   {
     return (EReference)dataEClass.getEStructuralFeatures().get(0);
   }
@@ -420,9 +428,29 @@ public class TestintentionsAssistancePackageImpl extends EPackageImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getData_Val()
+  public EClass getInst()
   {
-    return (EReference)dataEClass.getEStructuralFeatures().get(1);
+    return instEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInst_Variable()
+  {
+    return (EReference)instEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInst_Valeur()
+  {
+    return (EReference)instEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -914,8 +942,11 @@ public class TestintentionsAssistancePackageImpl extends EPackageImpl implements
     createEReference(functionEClass, FUNCTION__ARG1);
 
     dataEClass = createEClass(DATA);
-    createEReference(dataEClass, DATA__VARIABLE);
-    createEReference(dataEClass, DATA__VAL);
+    createEReference(dataEClass, DATA__INST);
+
+    instEClass = createEClass(INST);
+    createEReference(instEClass, INST__VARIABLE);
+    createEReference(instEClass, INST__VALEUR);
 
     testIntentionEClass = createEClass(TEST_INTENTION);
     createEAttribute(testIntentionEClass, TEST_INTENTION__DESCRIPTION);
@@ -1048,8 +1079,11 @@ public class TestintentionsAssistancePackageImpl extends EPackageImpl implements
     initEReference(getFunction_Arg1(), this.getVariable(), null, "arg1", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getData_Variable(), this.getVariable(), null, "variable", null, 0, -1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getData_Val(), this.getExpression(), null, "val", null, 0, -1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getData_Inst(), this.getInst(), null, "inst", null, 0, -1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(instEClass, Inst.class, "Inst", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInst_Variable(), this.getVariable(), null, "variable", null, 0, -1, Inst.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInst_Valeur(), this.getExpression(), null, "valeur", null, 0, -1, Inst.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(testIntentionEClass, TestIntention.class, "TestIntention", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTestIntention_Description(), ecorePackage.getEString(), "description", null, 0, 1, TestIntention.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -13,6 +13,7 @@ import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Express
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.INT;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Import;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Minus;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
@@ -94,6 +95,7 @@ public class TestintentionsAssistanceFactoryImpl extends EFactoryImpl implements
       case TestintentionsAssistancePackage.ABSTRACT_ELEMENT: return createAbstractElement();
       case TestintentionsAssistancePackage.FUNCTION: return createFunction();
       case TestintentionsAssistancePackage.DATA: return createData();
+      case TestintentionsAssistancePackage.INST: return createInst();
       case TestintentionsAssistancePackage.TEST_INTENTION: return createTestIntention();
       case TestintentionsAssistancePackage.EXPRESSION: return createExpression();
       case TestintentionsAssistancePackage.VARIABLE: return createVariable();
@@ -213,6 +215,17 @@ public class TestintentionsAssistanceFactoryImpl extends EFactoryImpl implements
   {
     DataImpl data = new DataImpl();
     return data;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Inst createInst()
+  {
+    InstImpl inst = new InstImpl();
+    return inst;
   }
 
   /**

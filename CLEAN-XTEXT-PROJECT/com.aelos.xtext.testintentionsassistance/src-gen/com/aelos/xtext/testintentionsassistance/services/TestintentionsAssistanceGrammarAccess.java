@@ -262,30 +262,24 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		private final Action cDataAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Keyword cInputKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Group cGroup_0_2 = (Group)cGroup_0.eContents().get(2);
-		private final Assignment cVariableAssignment_0_2_0 = (Assignment)cGroup_0_2.eContents().get(0);
-		private final RuleCall cVariableVariableParserRuleCall_0_2_0_0 = (RuleCall)cVariableAssignment_0_2_0.eContents().get(0);
-		private final Keyword cColonEqualsSignKeyword_0_2_1 = (Keyword)cGroup_0_2.eContents().get(1);
-		private final Assignment cValAssignment_0_2_2 = (Assignment)cGroup_0_2.eContents().get(2);
-		private final RuleCall cValAtomicParserRuleCall_0_2_2_0 = (RuleCall)cValAssignment_0_2_2.eContents().get(0);
-		private final Keyword cCommaKeyword_0_2_3 = (Keyword)cGroup_0_2.eContents().get(3);
+		private final Assignment cInstAssignment_0_2_0 = (Assignment)cGroup_0_2.eContents().get(0);
+		private final RuleCall cInstInstParserRuleCall_0_2_0_0 = (RuleCall)cInstAssignment_0_2_0.eContents().get(0);
+		private final Keyword cCommaKeyword_0_2_1 = (Keyword)cGroup_0_2.eContents().get(1);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cVariableAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cVariableVariableParserRuleCall_1_0_0 = (RuleCall)cVariableAssignment_1_0.eContents().get(0);
-		private final Keyword cColonEqualsSignKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cValAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cValAtomicParserRuleCall_1_2_0 = (RuleCall)cValAssignment_1_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Assignment cInstAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final RuleCall cInstInstParserRuleCall_1_0_0 = (RuleCall)cInstAssignment_1_0.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		////Pour le test data 	
 		//Data:
 		//	{Data}
-		//	'input:(' (variable+=Variable ':=' val+=Atomic ",")* | variable+=Variable ':=' val+=Atomic ")"*;
+		//	'input:(' (inst+=Inst ",")* | inst+=Inst ")"*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Data} 'input:(' (variable+=Variable ':=' val+=Atomic ",")* | variable+=Variable ':=' val+=Atomic ")"*
+		//{Data} 'input:(' (inst+=Inst ",")* | inst+=Inst ")"*
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{Data} 'input:(' (variable+=Variable ':=' val+=Atomic ",")*
+		//{Data} 'input:(' (inst+=Inst ",")*
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{Data}
@@ -294,47 +288,60 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		//'input:('
 		public Keyword getInputKeyword_0_1() { return cInputKeyword_0_1; }
 		
-		//(variable+=Variable ':=' val+=Atomic ",")*
+		//(inst+=Inst ",")*
 		public Group getGroup_0_2() { return cGroup_0_2; }
 		
-		//variable+=Variable
-		public Assignment getVariableAssignment_0_2_0() { return cVariableAssignment_0_2_0; }
+		//inst+=Inst
+		public Assignment getInstAssignment_0_2_0() { return cInstAssignment_0_2_0; }
 		
-		//Variable
-		public RuleCall getVariableVariableParserRuleCall_0_2_0_0() { return cVariableVariableParserRuleCall_0_2_0_0; }
-		
-		//':='
-		public Keyword getColonEqualsSignKeyword_0_2_1() { return cColonEqualsSignKeyword_0_2_1; }
-		
-		//val+=Atomic
-		public Assignment getValAssignment_0_2_2() { return cValAssignment_0_2_2; }
-		
-		//Atomic
-		public RuleCall getValAtomicParserRuleCall_0_2_2_0() { return cValAtomicParserRuleCall_0_2_2_0; }
+		//Inst
+		public RuleCall getInstInstParserRuleCall_0_2_0_0() { return cInstInstParserRuleCall_0_2_0_0; }
 		
 		//","
-		public Keyword getCommaKeyword_0_2_3() { return cCommaKeyword_0_2_3; }
+		public Keyword getCommaKeyword_0_2_1() { return cCommaKeyword_0_2_1; }
 		
-		//variable+=Variable ':=' val+=Atomic ")"*
+		//inst+=Inst ")"*
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//variable+=Variable
-		public Assignment getVariableAssignment_1_0() { return cVariableAssignment_1_0; }
+		//inst+=Inst
+		public Assignment getInstAssignment_1_0() { return cInstAssignment_1_0; }
 		
-		//Variable
-		public RuleCall getVariableVariableParserRuleCall_1_0_0() { return cVariableVariableParserRuleCall_1_0_0; }
-		
-		//':='
-		public Keyword getColonEqualsSignKeyword_1_1() { return cColonEqualsSignKeyword_1_1; }
-		
-		//val+=Atomic
-		public Assignment getValAssignment_1_2() { return cValAssignment_1_2; }
-		
-		//Atomic
-		public RuleCall getValAtomicParserRuleCall_1_2_0() { return cValAtomicParserRuleCall_1_2_0; }
+		//Inst
+		public RuleCall getInstInstParserRuleCall_1_0_0() { return cInstInstParserRuleCall_1_0_0; }
 		
 		//")"*
-		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
+		public Keyword getRightParenthesisKeyword_1_1() { return cRightParenthesisKeyword_1_1; }
+	}
+	public class InstElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Inst");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cVariableAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cVariableVariableParserRuleCall_0_0 = (RuleCall)cVariableAssignment_0.eContents().get(0);
+		private final Keyword cColonEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValeurAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValeurAtomicParserRuleCall_2_0 = (RuleCall)cValeurAssignment_2.eContents().get(0);
+		
+		//Inst:
+		//	variable+=Variable ':=' valeur+=Atomic;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//variable+=Variable ':=' valeur+=Atomic
+		public Group getGroup() { return cGroup; }
+		
+		//variable+=Variable
+		public Assignment getVariableAssignment_0() { return cVariableAssignment_0; }
+		
+		//Variable
+		public RuleCall getVariableVariableParserRuleCall_0_0() { return cVariableVariableParserRuleCall_0_0; }
+		
+		//':='
+		public Keyword getColonEqualsSignKeyword_1() { return cColonEqualsSignKeyword_1; }
+		
+		//valeur+=Atomic
+		public Assignment getValeurAssignment_2() { return cValeurAssignment_2; }
+		
+		//Atomic
+		public RuleCall getValeurAtomicParserRuleCall_2_0() { return cValeurAtomicParserRuleCall_2_0; }
 	}
 	public class TestIntentionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.TestIntention");
@@ -945,6 +952,7 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 	private final AbstractElementElements pAbstractElement;
 	private final FunctionElements pFunction;
 	private final DataElements pData;
+	private final InstElements pInst;
 	private final TestIntentionElements pTestIntention;
 	private final ExpressionElements pExpression;
 	private final OrElements pOr;
@@ -977,6 +985,7 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		this.pAbstractElement = new AbstractElementElements();
 		this.pFunction = new FunctionElements();
 		this.pData = new DataElements();
+		this.pInst = new InstElements();
 		this.pTestIntention = new TestIntentionElements();
 		this.pExpression = new ExpressionElements();
 		this.pOr = new OrElements();
@@ -1096,13 +1105,23 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 	////Pour le test data 	
 	//Data:
 	//	{Data}
-	//	'input:(' (variable+=Variable ':=' val+=Atomic ",")* | variable+=Variable ':=' val+=Atomic ")"*;
+	//	'input:(' (inst+=Inst ",")* | inst+=Inst ")"*;
 	public DataElements getDataAccess() {
 		return pData;
 	}
 	
 	public ParserRule getDataRule() {
 		return getDataAccess().getRule();
+	}
+	
+	//Inst:
+	//	variable+=Variable ':=' valeur+=Atomic;
+	public InstElements getInstAccess() {
+		return pInst;
+	}
+	
+	public ParserRule getInstRule() {
+		return getInstAccess().getRule();
 	}
 	
 	////Pour le test intention           

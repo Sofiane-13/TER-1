@@ -12,6 +12,7 @@ import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Equalit
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.INT;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Import;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Minus;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
@@ -78,6 +79,9 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 				return; 
 			case TestintentionsAssistancePackage.IMPORT:
 				sequence_Import(context, (Import) semanticObject); 
+				return; 
+			case TestintentionsAssistancePackage.INST:
+				sequence_Inst(context, (Inst) semanticObject); 
 				return; 
 			case TestintentionsAssistancePackage.MINUS:
 				sequence_PlusOrMinus(context, (Minus) semanticObject); 
@@ -346,7 +350,7 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 	 *     Data returns Data
 	 *
 	 * Constraint:
-	 *     ((variable+=Variable val+=Atomic)+ | (variable+=Variable val+=Atomic))?
+	 *     (inst+=Inst+ | inst+=Inst)?
 	 */
 	protected void sequence_Data(ISerializationContext context, Data semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -421,6 +425,18 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Inst returns Inst
+	 *
+	 * Constraint:
+	 *     (variable+=Variable valeur+=Atomic)
+	 */
+	protected void sequence_Inst(ISerializationContext context, Inst semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
