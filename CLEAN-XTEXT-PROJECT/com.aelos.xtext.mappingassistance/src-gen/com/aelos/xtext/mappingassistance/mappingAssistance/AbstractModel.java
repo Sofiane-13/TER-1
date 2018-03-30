@@ -19,6 +19,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getIm <em>Im</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getTestDr <em>Test Dr</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getObs <em>Obs</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getComp <em>Comp</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getMock <em>Mock</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getConf <em>Conf</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getBind <em>Bind</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getInst <em>Inst</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel()
@@ -74,5 +79,85 @@ public interface AbstractModel extends EObject
    * @generated
    */
   EList<Observer> getObs();
+
+  /**
+   * Returns the value of the '<em><b>Comp</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Comp</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Comp</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel_Comp()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Comopnent> getComp();
+
+  /**
+   * Returns the value of the '<em><b>Mock</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Mock</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mock</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel_Mock()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Mock> getMock();
+
+  /**
+   * Returns the value of the '<em><b>Conf</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Conf</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Conf</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel_Conf()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Conf> getConf();
+
+  /**
+   * Returns the value of the '<em><b>Bind</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Bind</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Bind</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel_Bind()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Bindings> getBind();
+
+  /**
+   * Returns the value of the '<em><b>Inst</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Inst</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Inst</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAbstractModel_Inst()
+   * @model containment="true"
+   * @generated
+   */
+  EList<InstanceComp> getInst();
 
 } // AbstractModel

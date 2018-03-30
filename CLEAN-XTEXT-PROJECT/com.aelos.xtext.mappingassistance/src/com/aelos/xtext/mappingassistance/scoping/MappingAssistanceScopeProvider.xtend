@@ -14,6 +14,9 @@ import com.aelos.xtext.architecture.architecture.ArchitecturePackage
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer
+import com.aelos.xtext.mappingassistance.mappingAssistance.Conf
+import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings
+import com.aelos.xtext.mappingassistance.mappingAssistance.Mock
 
 //import com.aelos.xtext.mappingassistance.mappingAssistance.RequiredService
 //import com.aelos.xtext.mappingassistance.mappingAssistance.ServiceName
@@ -90,7 +93,32 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
 	    if (context instanceof Observer && reference == MappingAssistancePackage.Literals.OBSERVER__MEMBER2) {
 	        	
 	          // Create IEObjectDescriptions and puts them into an IScope instance
-	          return scope_Call_op2(EcoreUtil2.getContainerOfType(context, Observer))
+	          return scope_Call_op2(EcoreUtil2.getContainerOfType(context, Observer))      
+	    }
+	    if (context instanceof Conf && reference == MappingAssistancePackage.Literals.CONF__MEMBER) {
+	        	
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Call_op_conf(EcoreUtil2.getContainerOfType(context, Conf))   
+	    }
+	     if (context instanceof Bindings && reference == MappingAssistancePackage.Literals.BINDINGS__NAME_SERV1) {
+	        	
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Call_op_bind(EcoreUtil2.getContainerOfType(context, Bindings))   
+	    }
+	    if (context instanceof Bindings && reference == MappingAssistancePackage.Literals.BINDINGS__NAME_SERV2) {
+	        	
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Call_op_bind2(EcoreUtil2.getContainerOfType(context, Bindings))   
+	    }
+	    if (context instanceof Conf && reference == MappingAssistancePackage.Literals.CONF__VAR_CONF) {
+	        	
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Call_op_conf2(EcoreUtil2.getContainerOfType(context, Conf))   
+	    }
+	     if (context instanceof Mock && reference == MappingAssistancePackage.Literals.MOCK__MEMBER) {
+	        	
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Call_op_mock(EcoreUtil2.getContainerOfType(context, Mock))   
 	    }
 	    return super.getScope(context, reference);
 	}
@@ -104,6 +132,26 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
       return Scopes.scopeFor(selct.service1.type.compType.ops);
 	}
 	def  IScope scope_Call_op(TestDriver selct) {
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.service.type.compType.ops);
+	}
+	def  IScope scope_Call_op_conf(Conf selct) {
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.service.type.compType.ops);
+	}
+	def  IScope scope_Call_op_conf2(Conf selct) {
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.member.arg);
+	}
+	def  IScope scope_Call_op_bind(Bindings selct) {
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.nameComp.type.ops);
+	}
+	def  IScope scope_Call_op_bind2(Bindings selct) {
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.nameComp1.type.compType.ops);
+	}
+	def  IScope scope_Call_op_mock(Mock selct) {
      // System.out.print("dsjkbc")
       return Scopes.scopeFor(selct.service.type.compType.ops);
 	}

@@ -40,7 +40,6 @@ public class TestintentionsAssistanceParser extends AbstractContentAssistParser 
 			builder.put(grammarAccess.getBooleanAccess().getAlternatives(), "rule__Boolean__Alternatives");
 			builder.put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
 			builder.put(grammarAccess.getAtomicAccess().getAlternatives(), "rule__Atomic__Alternatives");
-			builder.put(grammarAccess.getAtomicAccess().getValueAlternatives_2_1_0(), "rule__Atomic__ValueAlternatives_2_1_0");
 			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 			builder.put(grammarAccess.getDomainDeclarationAccess().getGroup(), "rule__DomainDeclaration__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
@@ -75,6 +74,7 @@ public class TestintentionsAssistanceParser extends AbstractContentAssistParser 
 			builder.put(grammarAccess.getAtomicAccess().getGroup_1(), "rule__Atomic__Group_1__0");
 			builder.put(grammarAccess.getAtomicAccess().getGroup_2(), "rule__Atomic__Group_2__0");
 			builder.put(grammarAccess.getAtomicAccess().getGroup_3(), "rule__Atomic__Group_3__0");
+			builder.put(grammarAccess.getAtomicAccess().getGroup_4(), "rule__Atomic__Group_4__0");
 			builder.put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
 			builder.put(grammarAccess.getDomainDeclarationAccess().getNameAssignment_1(), "rule__DomainDeclaration__NameAssignment_1");
 			builder.put(grammarAccess.getDomainDeclarationAccess().getElementsAssignment_3(), "rule__DomainDeclaration__ElementsAssignment_3");
@@ -105,7 +105,8 @@ public class TestintentionsAssistanceParser extends AbstractContentAssistParser 
 			builder.put(grammarAccess.getAtomicAccess().getValueAssignment_0_1(), "rule__Atomic__ValueAssignment_0_1");
 			builder.put(grammarAccess.getAtomicAccess().getValueAssignment_1_1(), "rule__Atomic__ValueAssignment_1_1");
 			builder.put(grammarAccess.getAtomicAccess().getValueAssignment_2_1(), "rule__Atomic__ValueAssignment_2_1");
-			builder.put(grammarAccess.getAtomicAccess().getVariableAssignment_3_1(), "rule__Atomic__VariableAssignment_3_1");
+			builder.put(grammarAccess.getAtomicAccess().getValueAssignment_3_1(), "rule__Atomic__ValueAssignment_3_1");
+			builder.put(grammarAccess.getAtomicAccess().getVariableAssignment_4_1(), "rule__Atomic__VariableAssignment_4_1");
 		}
 	}
 	

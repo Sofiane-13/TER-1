@@ -9,7 +9,14 @@ Model:
 	function+=AbstractModel*;
 
 
-AbstractModel:(im+=Import)+ (testDr+=TestDriver ) (obs+=Observer)* ;
+AbstractModel:(im+=Import)+ ((testDr+=TestDriver ) | 
+	(obs+=Observer)| 
+	(comp+=Comopnent)| 
+	(mock+=Mock)| 
+	(conf+=Conf)| 
+	(bind+=Bindings)| 
+	(inst+=InstanceComp)
+)* ;
 
 Import:
     'import' importedNamespace=QualifiedNameWithWildcard;
@@ -22,54 +29,61 @@ QualifiedName:
     
 TestDriver :
 
-	"TestDriver:"
-<<<<<<< HEAD
-	(outVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member+=[arch::Operation]"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
-=======
-	(outVar+=[testIntention::Variable]":="receiver=[arch::Variable]'.'member+=[arch::Operation]"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
+	{TestDriver} "TestDriver" "{"
 
->>>>>>> 455f6cf2131182125437c2fbd38599d390f6ae25
+	(outVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member+=[arch::Operation]"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*"}"
+
 	;
 	
 Observer :
-<<<<<<< HEAD
-	"observer:"name=ID"("service1=[arch::Variable]'.'member1+=[arch::Operation]","service2=[arch::Variable]'.'member2+=[arch::Operation]")"("("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*;	
-=======
-	"observer:"name=ID"("serviceName1+=Call","serviceName2+=Call")"("("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*;	
+	"observer:"name=ID"("service1=[arch::Variable]'.'member1+=[arch::Operation]","service2=[arch::Variable]'.'member2+=[arch::Operation]")""("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")";	
+Mock:
+"mock:"IntentionVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member+=[arch::Operation]
+;
+Conf:
+"replaceConf:"service=[arch::Variable]'.'member=[arch::Operation]"("((varConf+=[arch::Variable]":="instVar+=Atomic",")*(varConf+=[arch::Variable]":="instVar+=Atomic))*")"
+; 
 
->>>>>>> 455f6cf2131182125437c2fbd38599d390f6ae25
-//	("Component" | "Mock" | "Observator")":" 
-//	inst+=InstanceComp":" name=ID
-//	"ProvidedServices:"
-//	"conf("(arg+=Variable ",")*arg1+=Variable")"
-//	(methode+=ServiceName "("((arg+=Variable ",")*arg+=Variable)*")"(":"arg+=Variable)?)*
-//    "RequiredServices:"?
-//    (req+=RequiredService)*
-//	(map+=Mapping)*
-//	(bind+=Bindings)*
-//;
-//
-//InstanceComp:
-//	name=ID
-//;
-//
-//Variable:
-//      name=ID ":" type=Type;
-//      
-//Mapping :
-//	 'varModel:' nameVarMode+=[Variable] 'ref' 'varTest:' nameVarTest+=[testIntention::Variable]
-//;
-//
-//Bindings :
-//	"bind(" nameComp+=[InstanceComp]'.'nameServ1+=[ServiceName] "," nameComp+=[InstanceComp]'.'nameServ2+=[ServiceName] ")";
-//	  
-//RequiredService:
-//		 
-//		nameVarMethode+=Variable":="nameComp+=[InstanceComp]'.'nameServ+=[ServiceName]";";
-//	  
-//
-//ServiceName : name=ID;
+Atomic:
+	{INT} value=INT | 
+	{STRING} value=STRING | 
+	{Boolean} value=Boolean | 
+	{Double} value=Double | 
+	{VariableRef} variable=[Variable];
+	
+	
+Comopnent:
+	"AddComponent:"
+	name=ID "{"
+		"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+		->(operations+=Operation)*
+		//(vars+=Variable)*
+		//"requiredService" "(" ((calls+=Call ",")*(calls+=Call))* ")"
+	"}"
+
+;
+Operation:
+    "def" name=ID "("((arg+=Variable ",")*arg+=Variable)*")" ":" type= Type
+;
+Variable:
+      name=ID ":" type=Type;
+      
+Bindings :
+	"addBind(" nameComp=[InstanceComp]'.'nameServ1+=[Operation] "," nameComp1=[arch::Variable]'.'nameServ2+=[arch::Operation] ")";
+      
+InstanceComp:
+"def"
+ name=ID ":"type=[Comopnent];	
+
+
 Call : receiver=[arch::Variable]'.'member+=[arch::Operation]; 
 
       
-// enum Type : INT | STRING | Boolean | Double;
+ enum Type : INT | STRING | Boolean | Double;
+ Boolean:
+	'true'|'false';
+
+Double:
+	INT'.'INT;
+ 
+ 

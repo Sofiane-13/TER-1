@@ -3,7 +3,29 @@
  */
 package com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl;
 
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.*;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.AbstractElement;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.And;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Comparison;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.DomainDeclaration;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Equality;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Expression;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.INT;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Import;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Minus;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Not;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Or;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Plus;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.STRING;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistanceFactory;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Type;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.VariableRef;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -83,9 +105,10 @@ public class TestintentionsAssistanceFactoryImpl extends EFactoryImpl implements
       case TestintentionsAssistancePackage.MINUS: return createMinus();
       case TestintentionsAssistancePackage.MUL_OR_DIV: return createMulOrDiv();
       case TestintentionsAssistancePackage.NOT: return createNot();
-      case TestintentionsAssistancePackage.INT_CONSTANT: return createIntConstant();
-      case TestintentionsAssistancePackage.STRING_CONSTANT: return createStringConstant();
-      case TestintentionsAssistancePackage.BOOL_CONSTANT: return createBoolConstant();
+      case TestintentionsAssistancePackage.INT: return createINT();
+      case TestintentionsAssistancePackage.STRING: return createSTRING();
+      case TestintentionsAssistancePackage.BOOLEAN: return createBoolean();
+      case TestintentionsAssistancePackage.DOUBLE: return createDouble();
       case TestintentionsAssistancePackage.VARIABLE_REF: return createVariableRef();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -318,10 +341,10 @@ public class TestintentionsAssistanceFactoryImpl extends EFactoryImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public IntConstant createIntConstant()
+  public INT createINT()
   {
-    IntConstantImpl intConstant = new IntConstantImpl();
-    return intConstant;
+    INTImpl int_ = new INTImpl();
+    return int_;
   }
 
   /**
@@ -329,10 +352,10 @@ public class TestintentionsAssistanceFactoryImpl extends EFactoryImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringConstant createStringConstant()
+  public STRING createSTRING()
   {
-    StringConstantImpl stringConstant = new StringConstantImpl();
-    return stringConstant;
+    STRINGImpl string = new STRINGImpl();
+    return string;
   }
 
   /**
@@ -340,10 +363,21 @@ public class TestintentionsAssistanceFactoryImpl extends EFactoryImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public BoolConstant createBoolConstant()
+  public com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Boolean createBoolean()
   {
-    BoolConstantImpl boolConstant = new BoolConstantImpl();
-    return boolConstant;
+    BooleanImpl boolean_ = new BooleanImpl();
+    return boolean_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Double createDouble()
+  {
+    DoubleImpl double_ = new DoubleImpl();
+    return double_;
   }
 
   /**

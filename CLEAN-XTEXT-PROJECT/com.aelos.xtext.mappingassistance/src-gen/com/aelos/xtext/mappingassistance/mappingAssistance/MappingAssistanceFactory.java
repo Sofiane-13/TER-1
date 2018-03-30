@@ -69,6 +69,78 @@ public interface MappingAssistanceFactory extends EFactory
   Observer createObserver();
 
   /**
+   * Returns a new object of class '<em>Mock</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mock</em>'.
+   * @generated
+   */
+  Mock createMock();
+
+  /**
+   * Returns a new object of class '<em>Conf</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Conf</em>'.
+   * @generated
+   */
+  Conf createConf();
+
+  /**
+   * Returns a new object of class '<em>Atomic</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Atomic</em>'.
+   * @generated
+   */
+  Atomic createAtomic();
+
+  /**
+   * Returns a new object of class '<em>Comopnent</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Comopnent</em>'.
+   * @generated
+   */
+  Comopnent createComopnent();
+
+  /**
+   * Returns a new object of class '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation</em>'.
+   * @generated
+   */
+  Operation createOperation();
+
+  /**
+   * Returns a new object of class '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable</em>'.
+   * @generated
+   */
+  Variable createVariable();
+
+  /**
+   * Returns a new object of class '<em>Bindings</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bindings</em>'.
+   * @generated
+   */
+  Bindings createBindings();
+
+  /**
+   * Returns a new object of class '<em>Instance Comp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Instance Comp</em>'.
+   * @generated
+   */
+  InstanceComp createInstanceComp();
+
+  /**
    * Returns a new object of class '<em>Call</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,6 +148,51 @@ public interface MappingAssistanceFactory extends EFactory
    * @generated
    */
   Call createCall();
+
+  /**
+   * Returns a new object of class '<em>INT</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>INT</em>'.
+   * @generated
+   */
+  INT createINT();
+
+  /**
+   * Returns a new object of class '<em>STRING</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>STRING</em>'.
+   * @generated
+   */
+  STRING createSTRING();
+
+  /**
+   * Returns a new object of class '<em>Boolean</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean</em>'.
+   * @generated
+   */
+  Boolean createBoolean();
+
+  /**
+   * Returns a new object of class '<em>Double</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double</em>'.
+   * @generated
+   */
+  Double createDouble();
+
+  /**
+   * Returns a new object of class '<em>Variable Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Ref</em>'.
+   * @generated
+   */
+  VariableRef createVariableRef();
 
   /**
    * Returns the package supported by this factory.

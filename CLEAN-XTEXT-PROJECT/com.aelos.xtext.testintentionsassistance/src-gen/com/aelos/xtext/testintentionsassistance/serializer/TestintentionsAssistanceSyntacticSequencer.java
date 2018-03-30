@@ -71,8 +71,8 @@ public class TestintentionsAssistanceSyntacticSequencer extends AbstractSyntacti
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) '!' expression=Primary
-	 *     (rule start) (ambiguity) value='false'
-	 *     (rule start) (ambiguity) value='true'
+	 *     (rule start) (ambiguity) value=Boolean
+	 *     (rule start) (ambiguity) value=Double
 	 *     (rule start) (ambiguity) value=INT
 	 *     (rule start) (ambiguity) value=STRING
 	 *     (rule start) (ambiguity) variable=[Variable|ID]

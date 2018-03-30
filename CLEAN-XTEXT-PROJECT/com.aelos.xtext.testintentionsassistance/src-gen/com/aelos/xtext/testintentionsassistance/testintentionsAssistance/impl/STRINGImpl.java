@@ -3,7 +3,7 @@
  */
 package com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl;
 
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.BoolConstant;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.STRING;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Bool Constant</b></em>'.
+ * An implementation of the model object '<em><b>STRING</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.BoolConstantImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.STRINGImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BoolConstantImpl extends ExpressionImpl implements BoolConstant
+public class STRINGImpl extends ExpressionImpl implements STRING
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -52,7 +52,7 @@ public class BoolConstantImpl extends ExpressionImpl implements BoolConstant
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BoolConstantImpl()
+  protected STRINGImpl()
   {
     super();
   }
@@ -65,7 +65,7 @@ public class BoolConstantImpl extends ExpressionImpl implements BoolConstant
   @Override
   protected EClass eStaticClass()
   {
-    return TestintentionsAssistancePackage.Literals.BOOL_CONSTANT;
+    return TestintentionsAssistancePackage.Literals.STRING;
   }
 
   /**
@@ -88,7 +88,7 @@ public class BoolConstantImpl extends ExpressionImpl implements BoolConstant
     String oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TestintentionsAssistancePackage.BOOL_CONSTANT__VALUE, oldValue, value));
+      eNotify(new ENotificationImpl(this, Notification.SET, TestintentionsAssistancePackage.STRING__VALUE, oldValue, value));
   }
 
   /**
@@ -101,7 +101,7 @@ public class BoolConstantImpl extends ExpressionImpl implements BoolConstant
   {
     switch (featureID)
     {
-      case TestintentionsAssistancePackage.BOOL_CONSTANT__VALUE:
+      case TestintentionsAssistancePackage.STRING__VALUE:
         return getValue();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -117,7 +117,7 @@ public class BoolConstantImpl extends ExpressionImpl implements BoolConstant
   {
     switch (featureID)
     {
-      case TestintentionsAssistancePackage.BOOL_CONSTANT__VALUE:
+      case TestintentionsAssistancePackage.STRING__VALUE:
         setValue((String)newValue);
         return;
     }
@@ -134,7 +134,7 @@ public class BoolConstantImpl extends ExpressionImpl implements BoolConstant
   {
     switch (featureID)
     {
-      case TestintentionsAssistancePackage.BOOL_CONSTANT__VALUE:
+      case TestintentionsAssistancePackage.STRING__VALUE:
         setValue(VALUE_EDEFAULT);
         return;
     }
@@ -151,7 +151,7 @@ public class BoolConstantImpl extends ExpressionImpl implements BoolConstant
   {
     switch (featureID)
     {
-      case TestintentionsAssistancePackage.BOOL_CONSTANT__VALUE:
+      case TestintentionsAssistancePackage.STRING__VALUE:
         return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
     }
     return super.eIsSet(featureID);
@@ -174,4 +174,4 @@ public class BoolConstantImpl extends ExpressionImpl implements BoolConstant
     return result.toString();
   }
 
-} //BoolConstantImpl
+} //STRINGImpl

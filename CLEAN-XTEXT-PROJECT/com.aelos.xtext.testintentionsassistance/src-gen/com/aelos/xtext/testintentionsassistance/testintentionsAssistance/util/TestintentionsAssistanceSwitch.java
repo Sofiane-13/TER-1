@@ -3,7 +3,27 @@
  */
 package com.aelos.xtext.testintentionsassistance.testintentionsAssistance.util;
 
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.*;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.AbstractElement;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.And;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Comparison;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.DomainDeclaration;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Equality;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Expression;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.INT;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Import;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Minus;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Not;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Or;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Plus;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.STRING;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.VariableRef;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -205,27 +225,35 @@ public class TestintentionsAssistanceSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TestintentionsAssistancePackage.INT_CONSTANT:
+      case TestintentionsAssistancePackage.INT:
       {
-        IntConstant intConstant = (IntConstant)theEObject;
-        T result = caseIntConstant(intConstant);
-        if (result == null) result = caseExpression(intConstant);
+        INT int_ = (INT)theEObject;
+        T result = caseINT(int_);
+        if (result == null) result = caseExpression(int_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TestintentionsAssistancePackage.STRING_CONSTANT:
+      case TestintentionsAssistancePackage.STRING:
       {
-        StringConstant stringConstant = (StringConstant)theEObject;
-        T result = caseStringConstant(stringConstant);
-        if (result == null) result = caseExpression(stringConstant);
+        STRING string = (STRING)theEObject;
+        T result = caseSTRING(string);
+        if (result == null) result = caseExpression(string);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TestintentionsAssistancePackage.BOOL_CONSTANT:
+      case TestintentionsAssistancePackage.BOOLEAN:
       {
-        BoolConstant boolConstant = (BoolConstant)theEObject;
-        T result = caseBoolConstant(boolConstant);
-        if (result == null) result = caseExpression(boolConstant);
+        com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Boolean boolean_ = (com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Boolean)theEObject;
+        T result = caseBoolean(boolean_);
+        if (result == null) result = caseExpression(boolean_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TestintentionsAssistancePackage.DOUBLE:
+      {
+        com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Double double_ = (com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Double)theEObject;
+        T result = caseDouble(double_);
+        if (result == null) result = caseExpression(double_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -514,49 +542,65 @@ public class TestintentionsAssistanceSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Int Constant</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>INT</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Int Constant</em>'.
+   * @return the result of interpreting the object as an instance of '<em>INT</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseIntConstant(IntConstant object)
+  public T caseINT(INT object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>String Constant</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>STRING</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>String Constant</em>'.
+   * @return the result of interpreting the object as an instance of '<em>STRING</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStringConstant(StringConstant object)
+  public T caseSTRING(STRING object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Bool Constant</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Boolean</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Bool Constant</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Boolean</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBoolConstant(BoolConstant object)
+  public T caseBoolean(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Boolean object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Double</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Double</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDouble(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Double object)
   {
     return null;
   }

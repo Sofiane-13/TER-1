@@ -3,9 +3,29 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.*;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
+import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
+import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
+import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistanceFactory;
+import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
+import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Type;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Variable;
+import com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -70,9 +90,56 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
       case MappingAssistancePackage.IMPORT: return createImport();
       case MappingAssistancePackage.TEST_DRIVER: return createTestDriver();
       case MappingAssistancePackage.OBSERVER: return createObserver();
+      case MappingAssistancePackage.MOCK: return createMock();
+      case MappingAssistancePackage.CONF: return createConf();
+      case MappingAssistancePackage.ATOMIC: return createAtomic();
+      case MappingAssistancePackage.COMOPNENT: return createComopnent();
+      case MappingAssistancePackage.OPERATION: return createOperation();
+      case MappingAssistancePackage.VARIABLE: return createVariable();
+      case MappingAssistancePackage.BINDINGS: return createBindings();
+      case MappingAssistancePackage.INSTANCE_COMP: return createInstanceComp();
       case MappingAssistancePackage.CALL: return createCall();
+      case MappingAssistancePackage.INT: return createINT();
+      case MappingAssistancePackage.STRING: return createSTRING();
+      case MappingAssistancePackage.BOOLEAN: return createBoolean();
+      case MappingAssistancePackage.DOUBLE: return createDouble();
+      case MappingAssistancePackage.VARIABLE_REF: return createVariableRef();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case MappingAssistancePackage.TYPE:
+        return createTypeFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case MappingAssistancePackage.TYPE:
+        return convertTypeToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -136,10 +203,175 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
+  public Mock createMock()
+  {
+    MockImpl mock = new MockImpl();
+    return mock;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Conf createConf()
+  {
+    ConfImpl conf = new ConfImpl();
+    return conf;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Atomic createAtomic()
+  {
+    AtomicImpl atomic = new AtomicImpl();
+    return atomic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Comopnent createComopnent()
+  {
+    ComopnentImpl comopnent = new ComopnentImpl();
+    return comopnent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operation createOperation()
+  {
+    OperationImpl operation = new OperationImpl();
+    return operation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Bindings createBindings()
+  {
+    BindingsImpl bindings = new BindingsImpl();
+    return bindings;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InstanceComp createInstanceComp()
+  {
+    InstanceCompImpl instanceComp = new InstanceCompImpl();
+    return instanceComp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Call createCall()
   {
     CallImpl call = new CallImpl();
     return call;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public INT createINT()
+  {
+    INTImpl int_ = new INTImpl();
+    return int_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public STRING createSTRING()
+  {
+    STRINGImpl string = new STRINGImpl();
+    return string;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public com.aelos.xtext.mappingassistance.mappingAssistance.Boolean createBoolean()
+  {
+    BooleanImpl boolean_ = new BooleanImpl();
+    return boolean_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public com.aelos.xtext.mappingassistance.mappingAssistance.Double createDouble()
+  {
+    DoubleImpl double_ = new DoubleImpl();
+    return double_;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public VariableRef createVariableRef()
+  {
+    VariableRefImpl variableRef = new VariableRefImpl();
+    return variableRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Type createTypeFromString(EDataType eDataType, String initialValue)
+  {
+    Type result = Type.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

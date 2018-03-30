@@ -3,7 +3,24 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.util;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.*;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
+import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
+import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
+import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
+import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Variable;
+import com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -108,10 +125,106 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MappingAssistancePackage.MOCK:
+      {
+        Mock mock = (Mock)theEObject;
+        T result = caseMock(mock);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.CONF:
+      {
+        Conf conf = (Conf)theEObject;
+        T result = caseConf(conf);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.ATOMIC:
+      {
+        Atomic atomic = (Atomic)theEObject;
+        T result = caseAtomic(atomic);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.COMOPNENT:
+      {
+        Comopnent comopnent = (Comopnent)theEObject;
+        T result = caseComopnent(comopnent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.OPERATION:
+      {
+        Operation operation = (Operation)theEObject;
+        T result = caseOperation(operation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.VARIABLE:
+      {
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.BINDINGS:
+      {
+        Bindings bindings = (Bindings)theEObject;
+        T result = caseBindings(bindings);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.INSTANCE_COMP:
+      {
+        InstanceComp instanceComp = (InstanceComp)theEObject;
+        T result = caseInstanceComp(instanceComp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MappingAssistancePackage.CALL:
       {
         Call call = (Call)theEObject;
         T result = caseCall(call);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.INT:
+      {
+        INT int_ = (INT)theEObject;
+        T result = caseINT(int_);
+        if (result == null) result = caseAtomic(int_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.STRING:
+      {
+        STRING string = (STRING)theEObject;
+        T result = caseSTRING(string);
+        if (result == null) result = caseAtomic(string);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.BOOLEAN:
+      {
+        com.aelos.xtext.mappingassistance.mappingAssistance.Boolean boolean_ = (com.aelos.xtext.mappingassistance.mappingAssistance.Boolean)theEObject;
+        T result = caseBoolean(boolean_);
+        if (result == null) result = caseAtomic(boolean_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.DOUBLE:
+      {
+        com.aelos.xtext.mappingassistance.mappingAssistance.Double double_ = (com.aelos.xtext.mappingassistance.mappingAssistance.Double)theEObject;
+        T result = caseDouble(double_);
+        if (result == null) result = caseAtomic(double_);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.VARIABLE_REF:
+      {
+        VariableRef variableRef = (VariableRef)theEObject;
+        T result = caseVariableRef(variableRef);
+        if (result == null) result = caseAtomic(variableRef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -200,6 +313,134 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Mock</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mock</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMock(Mock object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Conf</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Conf</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConf(Conf object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Atomic</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Atomic</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtomic(Atomic object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Comopnent</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Comopnent</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComopnent(Comopnent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperation(Operation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariable(Variable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Bindings</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Bindings</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBindings(Bindings object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Instance Comp</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstanceComp(InstanceComp object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Call</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -211,6 +452,86 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseCall(Call object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>INT</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>INT</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseINT(INT object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>STRING</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>STRING</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSTRING(STRING object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBoolean(com.aelos.xtext.mappingassistance.mappingAssistance.Boolean object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Double</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Double</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDouble(com.aelos.xtext.mappingassistance.mappingAssistance.Double object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableRef(VariableRef object)
   {
     return null;
   }

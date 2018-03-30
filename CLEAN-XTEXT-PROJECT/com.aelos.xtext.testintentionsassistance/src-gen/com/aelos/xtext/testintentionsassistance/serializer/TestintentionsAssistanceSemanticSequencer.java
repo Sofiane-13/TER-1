@@ -5,21 +5,20 @@ package com.aelos.xtext.testintentionsassistance.serializer;
 
 import com.aelos.xtext.testintentionsassistance.services.TestintentionsAssistanceGrammarAccess;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.And;
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.BoolConstant;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Comparison;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.DomainDeclaration;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Equality;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.INT;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Import;
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.IntConstant;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Minus;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Not;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Or;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Plus;
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.StringConstant;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.STRING;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
@@ -53,8 +52,8 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 			case TestintentionsAssistancePackage.AND:
 				sequence_And(context, (And) semanticObject); 
 				return; 
-			case TestintentionsAssistancePackage.BOOL_CONSTANT:
-				sequence_Atomic(context, (BoolConstant) semanticObject); 
+			case TestintentionsAssistancePackage.BOOLEAN:
+				sequence_Atomic(context, (com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Boolean) semanticObject); 
 				return; 
 			case TestintentionsAssistancePackage.COMPARISON:
 				sequence_Comparison(context, (Comparison) semanticObject); 
@@ -65,17 +64,20 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 			case TestintentionsAssistancePackage.DOMAIN_DECLARATION:
 				sequence_DomainDeclaration(context, (DomainDeclaration) semanticObject); 
 				return; 
+			case TestintentionsAssistancePackage.DOUBLE:
+				sequence_Atomic(context, (com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Double) semanticObject); 
+				return; 
 			case TestintentionsAssistancePackage.EQUALITY:
 				sequence_Equality(context, (Equality) semanticObject); 
 				return; 
 			case TestintentionsAssistancePackage.FUNCTION:
 				sequence_Function(context, (Function) semanticObject); 
 				return; 
+			case TestintentionsAssistancePackage.INT:
+				sequence_Atomic(context, (INT) semanticObject); 
+				return; 
 			case TestintentionsAssistancePackage.IMPORT:
 				sequence_Import(context, (Import) semanticObject); 
-				return; 
-			case TestintentionsAssistancePackage.INT_CONSTANT:
-				sequence_Atomic(context, (IntConstant) semanticObject); 
 				return; 
 			case TestintentionsAssistancePackage.MINUS:
 				sequence_PlusOrMinus(context, (Minus) semanticObject); 
@@ -95,8 +97,8 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 			case TestintentionsAssistancePackage.PLUS:
 				sequence_PlusOrMinus(context, (Plus) semanticObject); 
 				return; 
-			case TestintentionsAssistancePackage.STRING_CONSTANT:
-				sequence_Atomic(context, (StringConstant) semanticObject); 
+			case TestintentionsAssistancePackage.STRING:
+				sequence_Atomic(context, (STRING) semanticObject); 
 				return; 
 			case TestintentionsAssistancePackage.TEST_INTENTION:
 				sequence_TestIntention(context, (TestIntention) semanticObject); 
@@ -149,57 +151,96 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Contexts:
-	 *     Expression returns BoolConstant
-	 *     Or returns BoolConstant
-	 *     Or.Or_1_0 returns BoolConstant
-	 *     And returns BoolConstant
-	 *     And.And_1_0 returns BoolConstant
-	 *     Equality returns BoolConstant
-	 *     Equality.Equality_1_0 returns BoolConstant
-	 *     Comparison returns BoolConstant
-	 *     Comparison.Comparison_1_0 returns BoolConstant
-	 *     PlusOrMinus returns BoolConstant
-	 *     PlusOrMinus.Plus_1_0_0_0 returns BoolConstant
-	 *     PlusOrMinus.Minus_1_0_1_0 returns BoolConstant
-	 *     MulOrDiv returns BoolConstant
-	 *     MulOrDiv.MulOrDiv_1_0 returns BoolConstant
-	 *     Primary returns BoolConstant
-	 *     Atomic returns BoolConstant
+	 *     Expression returns Boolean
+	 *     Or returns Boolean
+	 *     Or.Or_1_0 returns Boolean
+	 *     And returns Boolean
+	 *     And.And_1_0 returns Boolean
+	 *     Equality returns Boolean
+	 *     Equality.Equality_1_0 returns Boolean
+	 *     Comparison returns Boolean
+	 *     Comparison.Comparison_1_0 returns Boolean
+	 *     PlusOrMinus returns Boolean
+	 *     PlusOrMinus.Plus_1_0_0_0 returns Boolean
+	 *     PlusOrMinus.Minus_1_0_1_0 returns Boolean
+	 *     MulOrDiv returns Boolean
+	 *     MulOrDiv.MulOrDiv_1_0 returns Boolean
+	 *     Primary returns Boolean
+	 *     Atomic returns Boolean
 	 *
 	 * Constraint:
-	 *     (value='true' | value='false')
+	 *     value=Boolean
 	 */
-	protected void sequence_Atomic(ISerializationContext context, BoolConstant semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_Atomic(ISerializationContext context, com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Boolean semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TestintentionsAssistancePackage.Literals.BOOLEAN__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestintentionsAssistancePackage.Literals.BOOLEAN__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtomicAccess().getValueBooleanParserRuleCall_2_1_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Expression returns IntConstant
-	 *     Or returns IntConstant
-	 *     Or.Or_1_0 returns IntConstant
-	 *     And returns IntConstant
-	 *     And.And_1_0 returns IntConstant
-	 *     Equality returns IntConstant
-	 *     Equality.Equality_1_0 returns IntConstant
-	 *     Comparison returns IntConstant
-	 *     Comparison.Comparison_1_0 returns IntConstant
-	 *     PlusOrMinus returns IntConstant
-	 *     PlusOrMinus.Plus_1_0_0_0 returns IntConstant
-	 *     PlusOrMinus.Minus_1_0_1_0 returns IntConstant
-	 *     MulOrDiv returns IntConstant
-	 *     MulOrDiv.MulOrDiv_1_0 returns IntConstant
-	 *     Primary returns IntConstant
-	 *     Atomic returns IntConstant
+	 *     Expression returns Double
+	 *     Or returns Double
+	 *     Or.Or_1_0 returns Double
+	 *     And returns Double
+	 *     And.And_1_0 returns Double
+	 *     Equality returns Double
+	 *     Equality.Equality_1_0 returns Double
+	 *     Comparison returns Double
+	 *     Comparison.Comparison_1_0 returns Double
+	 *     PlusOrMinus returns Double
+	 *     PlusOrMinus.Plus_1_0_0_0 returns Double
+	 *     PlusOrMinus.Minus_1_0_1_0 returns Double
+	 *     MulOrDiv returns Double
+	 *     MulOrDiv.MulOrDiv_1_0 returns Double
+	 *     Primary returns Double
+	 *     Atomic returns Double
+	 *
+	 * Constraint:
+	 *     value=Double
+	 */
+	protected void sequence_Atomic(ISerializationContext context, com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Double semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TestintentionsAssistancePackage.Literals.DOUBLE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestintentionsAssistancePackage.Literals.DOUBLE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAtomicAccess().getValueDoubleParserRuleCall_3_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns INT
+	 *     Or returns INT
+	 *     Or.Or_1_0 returns INT
+	 *     And returns INT
+	 *     And.And_1_0 returns INT
+	 *     Equality returns INT
+	 *     Equality.Equality_1_0 returns INT
+	 *     Comparison returns INT
+	 *     Comparison.Comparison_1_0 returns INT
+	 *     PlusOrMinus returns INT
+	 *     PlusOrMinus.Plus_1_0_0_0 returns INT
+	 *     PlusOrMinus.Minus_1_0_1_0 returns INT
+	 *     MulOrDiv returns INT
+	 *     MulOrDiv.MulOrDiv_1_0 returns INT
+	 *     Primary returns INT
+	 *     Atomic returns INT
 	 *
 	 * Constraint:
 	 *     value=INT
 	 */
-	protected void sequence_Atomic(ISerializationContext context, IntConstant semanticObject) {
+	protected void sequence_Atomic(ISerializationContext context, INT semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TestintentionsAssistancePackage.Literals.INT_CONSTANT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestintentionsAssistancePackage.Literals.INT_CONSTANT__VALUE));
+			if (transientValues.isValueTransient(semanticObject, TestintentionsAssistancePackage.Literals.INT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestintentionsAssistancePackage.Literals.INT__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_0_1_0(), semanticObject.getValue());
@@ -209,30 +250,30 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Contexts:
-	 *     Expression returns StringConstant
-	 *     Or returns StringConstant
-	 *     Or.Or_1_0 returns StringConstant
-	 *     And returns StringConstant
-	 *     And.And_1_0 returns StringConstant
-	 *     Equality returns StringConstant
-	 *     Equality.Equality_1_0 returns StringConstant
-	 *     Comparison returns StringConstant
-	 *     Comparison.Comparison_1_0 returns StringConstant
-	 *     PlusOrMinus returns StringConstant
-	 *     PlusOrMinus.Plus_1_0_0_0 returns StringConstant
-	 *     PlusOrMinus.Minus_1_0_1_0 returns StringConstant
-	 *     MulOrDiv returns StringConstant
-	 *     MulOrDiv.MulOrDiv_1_0 returns StringConstant
-	 *     Primary returns StringConstant
-	 *     Atomic returns StringConstant
+	 *     Expression returns STRING
+	 *     Or returns STRING
+	 *     Or.Or_1_0 returns STRING
+	 *     And returns STRING
+	 *     And.And_1_0 returns STRING
+	 *     Equality returns STRING
+	 *     Equality.Equality_1_0 returns STRING
+	 *     Comparison returns STRING
+	 *     Comparison.Comparison_1_0 returns STRING
+	 *     PlusOrMinus returns STRING
+	 *     PlusOrMinus.Plus_1_0_0_0 returns STRING
+	 *     PlusOrMinus.Minus_1_0_1_0 returns STRING
+	 *     MulOrDiv returns STRING
+	 *     MulOrDiv.MulOrDiv_1_0 returns STRING
+	 *     Primary returns STRING
+	 *     Atomic returns STRING
 	 *
 	 * Constraint:
 	 *     value=STRING
 	 */
-	protected void sequence_Atomic(ISerializationContext context, StringConstant semanticObject) {
+	protected void sequence_Atomic(ISerializationContext context, STRING semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TestintentionsAssistancePackage.Literals.STRING_CONSTANT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestintentionsAssistancePackage.Literals.STRING_CONSTANT__VALUE));
+			if (transientValues.isValueTransient(semanticObject, TestintentionsAssistancePackage.Literals.STRING__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestintentionsAssistancePackage.Literals.STRING__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAtomicAccess().getValueSTRINGTerminalRuleCall_1_1_0(), semanticObject.getValue());
@@ -268,7 +309,7 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestintentionsAssistancePackage.Literals.VARIABLE_REF__VARIABLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicAccess().getVariableVariableIDTerminalRuleCall_3_1_0_1(), semanticObject.eGet(TestintentionsAssistancePackage.Literals.VARIABLE_REF__VARIABLE, false));
+		feeder.accept(grammarAccess.getAtomicAccess().getVariableVariableIDTerminalRuleCall_4_1_0_1(), semanticObject.eGet(TestintentionsAssistancePackage.Literals.VARIABLE_REF__VARIABLE, false));
 		feeder.finish();
 	}
 	
