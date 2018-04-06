@@ -1,0 +1,10 @@
+import my.exemple.testData.*
+import my.exemple.testDomain.*
+import my.exemple.architecture.*
+import my.exemple.comp.*
+TestDriver{
+	ExpectedValue:=mid.computeSpeed(safeDistance)
+}
+replaceConf:mid.conf(pos:=12,speed:=23)
+mock:pilotPos:=first.getPos
+mock:piloteSpeed:=first.getSpeed

@@ -3,7 +3,28 @@
  */
 package com.aelos.xtext.testintentionsassistance.testintentionsAssistance.util;
 
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.*;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.AbstractElement;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.And;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Comparison;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.DomainDeclaration;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Equality;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Expression;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.INT;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Import;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Minus;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Not;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Or;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Plus;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.STRING;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.VariableRef;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -106,6 +127,11 @@ public class TestintentionsAssistanceAdapterFactory extends AdapterFactoryImpl
         return createDataAdapter();
       }
       @Override
+      public Adapter caseInst(Inst object)
+      {
+        return createInstAdapter();
+      }
+      @Override
       public Adapter caseTestIntention(TestIntention object)
       {
         return createTestIntentionAdapter();
@@ -161,19 +187,24 @@ public class TestintentionsAssistanceAdapterFactory extends AdapterFactoryImpl
         return createNotAdapter();
       }
       @Override
-      public Adapter caseIntConstant(IntConstant object)
+      public Adapter caseINT(INT object)
       {
-        return createIntConstantAdapter();
+        return createINTAdapter();
       }
       @Override
-      public Adapter caseStringConstant(StringConstant object)
+      public Adapter caseSTRING(STRING object)
       {
-        return createStringConstantAdapter();
+        return createSTRINGAdapter();
       }
       @Override
-      public Adapter caseBoolConstant(BoolConstant object)
+      public Adapter caseBoolean(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Boolean object)
       {
-        return createBoolConstantAdapter();
+        return createBooleanAdapter();
+      }
+      @Override
+      public Adapter caseDouble(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Double object)
+      {
+        return createDoubleAdapter();
       }
       @Override
       public Adapter caseVariableRef(VariableRef object)
@@ -288,6 +319,21 @@ public class TestintentionsAssistanceAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDataAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst <em>Inst</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst
+   * @generated
+   */
+  public Adapter createInstAdapter()
   {
     return null;
   }
@@ -458,46 +504,61 @@ public class TestintentionsAssistanceAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.IntConstant <em>Int Constant</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.INT <em>INT</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.IntConstant
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.INT
    * @generated
    */
-  public Adapter createIntConstantAdapter()
+  public Adapter createINTAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.StringConstant <em>String Constant</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.STRING <em>STRING</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.StringConstant
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.STRING
    * @generated
    */
-  public Adapter createStringConstantAdapter()
+  public Adapter createSTRINGAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.BoolConstant <em>Bool Constant</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Boolean <em>Boolean</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.BoolConstant
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Boolean
    * @generated
    */
-  public Adapter createBoolConstantAdapter()
+  public Adapter createBooleanAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Double <em>Double</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Double
+   * @generated
+   */
+  public Adapter createDoubleAdapter()
   {
     return null;
   }

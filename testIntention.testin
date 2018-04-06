@@ -1,0 +1,7 @@
+domain my.exemple.testIntention{
+	import my.exemple.testData.*
+	import my.exemple.testDomain.*
+	description:""
+	datapredicate: 2>lastPos
+	oracle: ExpectedValue=0
+}

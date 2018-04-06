@@ -3,6 +3,10 @@
  */
 package com.aelos.xtext.testintentionsassistance.validation
 
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Data
+import org.eclipse.xtext.validation.Check
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst
 
 /**
  * This class contains custom validation rules. 
@@ -12,13 +16,29 @@ package com.aelos.xtext.testintentionsassistance.validation
 class TestintentionsAssistanceValidator extends AbstractTestintentionsAssistanceValidator {
 	
 //	public static val INVALID_NAME = 'invalidName'
+
+@Check
+	def checkMappingSameType(Inst data) {
+		var x=0;
+		for(variable:data.variable){
+			//System.out.println(data.valeur.get(x).eClass.name.toString+" : "+variable.type.literal)
+			if(!( (data.valeur.get(x).eClass.name.toString).equals(variable.type.literal))){
+				
+				error("the variables must have the same Type",TestintentionsAssistancePackage.Literals.INST__VARIABLE)
+			}
+			x++
+		}
+
+	}
 //
 //	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					TestintentionsAssistancePackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
+//	def checkMappingSameType(Mapping map) {
+//		var x=0;
+//		for(varmod:map.nameVarMode){
+//			if(!((varmod.type.literal).equals(map.nameVarTest.get(x).type.literal))){
+//				error("the variables must have the same Type",MappingAssistancePackage.Literals.MAPPING__NAME_VAR_MODE)
+//			}
+//			x++
 //		}
 //	}
 	

@@ -1,0 +1,4 @@
+domain my.exemple.testData{
+	input:(pilotPos:INT:=23,safeDistance:INT:=2,vSpeed:INT:=3,lastPos:INT:=10,piloteSpeed:INT:=2)
+	 
+}

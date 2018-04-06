@@ -3,7 +3,10 @@
  */
 package com.aelos.xtext.mappingassistance.scoping;
 
+import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.scoping.AbstractMappingAssistanceScopeProvider;
@@ -33,6 +36,21 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
     if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__MEMBER2))) {
       return this.scope_Call_op2(EcoreUtil2.<Observer>getContainerOfType(context, Observer.class));
     }
+    if (((context instanceof Conf) && Objects.equal(reference, MappingAssistancePackage.Literals.CONF__MEMBER))) {
+      return this.scope_Call_op_conf(EcoreUtil2.<Conf>getContainerOfType(context, Conf.class));
+    }
+    if (((context instanceof Bindings) && Objects.equal(reference, MappingAssistancePackage.Literals.BINDINGS__NAME_SERV1))) {
+      return this.scope_Call_op_bind(EcoreUtil2.<Bindings>getContainerOfType(context, Bindings.class));
+    }
+    if (((context instanceof Bindings) && Objects.equal(reference, MappingAssistancePackage.Literals.BINDINGS__NAME_SERV2))) {
+      return this.scope_Call_op_bind2(EcoreUtil2.<Bindings>getContainerOfType(context, Bindings.class));
+    }
+    if (((context instanceof Conf) && Objects.equal(reference, MappingAssistancePackage.Literals.CONF__VAR_CONF))) {
+      return this.scope_Call_op_conf2(EcoreUtil2.<Conf>getContainerOfType(context, Conf.class));
+    }
+    if (((context instanceof Mock) && Objects.equal(reference, MappingAssistancePackage.Literals.MOCK__MEMBER))) {
+      return this.scope_Call_op_mock(EcoreUtil2.<Mock>getContainerOfType(context, Mock.class));
+    }
     return super.getScope(context, reference);
   }
   
@@ -45,6 +63,26 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
   }
   
   public IScope scope_Call_op(final TestDriver selct) {
+    return Scopes.scopeFor(selct.getService().getType().getCompType().getOps());
+  }
+  
+  public IScope scope_Call_op_conf(final Conf selct) {
+    return Scopes.scopeFor(selct.getService().getType().getCompType().getOps());
+  }
+  
+  public IScope scope_Call_op_conf2(final Conf selct) {
+    return Scopes.scopeFor(selct.getMember().getArg());
+  }
+  
+  public IScope scope_Call_op_bind(final Bindings selct) {
+    return Scopes.scopeFor(selct.getNameComp().getType().getOps());
+  }
+  
+  public IScope scope_Call_op_bind2(final Bindings selct) {
+    return Scopes.scopeFor(selct.getNameComp1().getType().getCompType().getOps());
+  }
+  
+  public IScope scope_Call_op_mock(final Mock selct) {
     return Scopes.scopeFor(selct.getService().getType().getCompType().getOps());
   }
 }

@@ -78,6 +78,15 @@ public interface TestintentionsAssistanceFactory extends EFactory
   Data createData();
 
   /**
+   * Returns a new object of class '<em>Inst</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inst</em>'.
+   * @generated
+   */
+  Inst createInst();
+
+  /**
    * Returns a new object of class '<em>Test Intention</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -177,31 +186,40 @@ public interface TestintentionsAssistanceFactory extends EFactory
   Not createNot();
 
   /**
-   * Returns a new object of class '<em>Int Constant</em>'.
+   * Returns a new object of class '<em>INT</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Int Constant</em>'.
+   * @return a new object of class '<em>INT</em>'.
    * @generated
    */
-  IntConstant createIntConstant();
+  INT createINT();
 
   /**
-   * Returns a new object of class '<em>String Constant</em>'.
+   * Returns a new object of class '<em>STRING</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>String Constant</em>'.
+   * @return a new object of class '<em>STRING</em>'.
    * @generated
    */
-  StringConstant createStringConstant();
+  STRING createSTRING();
 
   /**
-   * Returns a new object of class '<em>Bool Constant</em>'.
+   * Returns a new object of class '<em>Boolean</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bool Constant</em>'.
+   * @return a new object of class '<em>Boolean</em>'.
    * @generated
    */
-  BoolConstant createBoolConstant();
+  Boolean createBoolean();
+
+  /**
+   * Returns a new object of class '<em>Double</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double</em>'.
+   * @generated
+   */
+  Double createDouble();
 
   /**
    * Returns a new object of class '<em>Variable Ref</em>'.

@@ -29,7 +29,11 @@ Function:
 	
 //Pour le test data 	
 Data: {Data}
-	'input:('(variable+=Variable ':=' val+=Atomic "," )*|variable+=Variable ':=' val+=Atomic")"*;
+	'input:('(inst+=Inst "," )*|inst+=Inst")"*;
+	
+Inst:
+	variable+=Variable ':=' valeur+=Atomic
+;	
 	
 //Pour le test intention           
 TestIntention:
@@ -84,8 +88,9 @@ Primary returns Expression:
 	{Not} "!" expression=Primary | Atomic;
 	
 Atomic returns Expression:
-	{IntConstant} value=INT | 
-	{StringConstant} value=STRING | 
-	{BoolConstant} value=('true'|'false') | 
+	{INT} value=INT | 
+	{STRING} value=STRING | 
+	{Boolean} value=Boolean | 
+	{Double} value=Double | 
 	{VariableRef} variable=[Variable];
 	

@@ -1,4 +1,4 @@
-'!'=38
+'!'=40
 '('=18
 ')'=20
 '*'=35
@@ -25,11 +25,11 @@
 'datapredicate:'=24
 'description:'=23
 'domain'=11
-'false'=40
+'false'=39
 'import'=15
 'input:('=21
 'oracle:'=25
-'true'=39
+'true'=38
 '{'=12
 '}'=13
 RULE_ANY_OTHER=10

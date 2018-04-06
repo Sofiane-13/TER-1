@@ -5,6 +5,7 @@ package com.aelos.xtext.mappingassistance.mappingAssistance;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -123,13 +124,58 @@ public interface MappingAssistancePackage extends EPackage
   int ABSTRACT_MODEL__OBS = 2;
 
   /**
+   * The feature id for the '<em><b>Comp</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_MODEL__COMP = 3;
+
+  /**
+   * The feature id for the '<em><b>Mock</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_MODEL__MOCK = 4;
+
+  /**
+   * The feature id for the '<em><b>Conf</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_MODEL__CONF = 5;
+
+  /**
+   * The feature id for the '<em><b>Bind</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_MODEL__BIND = 6;
+
+  /**
+   * The feature id for the '<em><b>Inst</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_MODEL__INST = 7;
+
+  /**
    * The number of structural features of the '<em>Abstract Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_MODEL_FEATURE_COUNT = 3;
+  int ABSTRACT_MODEL_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ImportImpl <em>Import</em>}' class.
@@ -288,6 +334,347 @@ public interface MappingAssistancePackage extends EPackage
   int OBSERVER_FEATURE_COUNT = 6;
 
   /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.MockImpl <em>Mock</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MockImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getMock()
+   * @generated
+   */
+  int MOCK = 5;
+
+  /**
+   * The feature id for the '<em><b>Intention Var</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOCK__INTENTION_VAR = 0;
+
+  /**
+   * The feature id for the '<em><b>Service</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOCK__SERVICE = 1;
+
+  /**
+   * The feature id for the '<em><b>Member</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOCK__MEMBER = 2;
+
+  /**
+   * The number of structural features of the '<em>Mock</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MOCK_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl <em>Conf</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getConf()
+   * @generated
+   */
+  int CONF = 6;
+
+  /**
+   * The feature id for the '<em><b>Service</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONF__SERVICE = 0;
+
+  /**
+   * The feature id for the '<em><b>Member</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONF__MEMBER = 1;
+
+  /**
+   * The feature id for the '<em><b>Var Conf</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONF__VAR_CONF = 2;
+
+  /**
+   * The feature id for the '<em><b>Inst Var</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONF__INST_VAR = 3;
+
+  /**
+   * The number of structural features of the '<em>Conf</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONF_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AtomicImpl <em>Atomic</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.AtomicImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getAtomic()
+   * @generated
+   */
+  int ATOMIC = 7;
+
+  /**
+   * The number of structural features of the '<em>Atomic</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ATOMIC_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl <em>Comopnent</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getComopnent()
+   * @generated
+   */
+  int COMOPNENT = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMOPNENT__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Ops</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMOPNENT__OPS = 1;
+
+  /**
+   * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMOPNENT__OPERATIONS = 2;
+
+  /**
+   * The number of structural features of the '<em>Comopnent</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMOPNENT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.OperationImpl <em>Operation</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.OperationImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getOperation()
+   * @generated
+   */
+  int OPERATION = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Arg</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__ARG = 1;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION__TYPE = 2;
+
+  /**
+   * The number of structural features of the '<em>Operation</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.VariableImpl <em>Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.VariableImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getVariable()
+   * @generated
+   */
+  int VARIABLE = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.BindingsImpl <em>Bindings</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.BindingsImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getBindings()
+   * @generated
+   */
+  int BINDINGS = 11;
+
+  /**
+   * The feature id for the '<em><b>Name Comp</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDINGS__NAME_COMP = 0;
+
+  /**
+   * The feature id for the '<em><b>Name Serv1</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDINGS__NAME_SERV1 = 1;
+
+  /**
+   * The feature id for the '<em><b>Name Comp1</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDINGS__NAME_COMP1 = 2;
+
+  /**
+   * The feature id for the '<em><b>Name Serv2</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDINGS__NAME_SERV2 = 3;
+
+  /**
+   * The number of structural features of the '<em>Bindings</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDINGS_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.InstanceCompImpl <em>Instance Comp</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.InstanceCompImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getInstanceComp()
+   * @generated
+   */
+  int INSTANCE_COMP = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCE_COMP__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCE_COMP__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>Instance Comp</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTANCE_COMP_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.CallImpl <em>Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -295,7 +682,7 @@ public interface MappingAssistancePackage extends EPackage
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getCall()
    * @generated
    */
-  int CALL = 5;
+  int CALL = 13;
 
   /**
    * The feature id for the '<em><b>Receiver</b></em>' reference.
@@ -323,6 +710,156 @@ public interface MappingAssistancePackage extends EPackage
    * @ordered
    */
   int CALL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.INTImpl <em>INT</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.INTImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getINT()
+   * @generated
+   */
+  int INT = 14;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT__VALUE = ATOMIC_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>INT</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_FEATURE_COUNT = ATOMIC_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.STRINGImpl <em>STRING</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.STRINGImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getSTRING()
+   * @generated
+   */
+  int STRING = 15;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING__VALUE = ATOMIC_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>STRING</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_FEATURE_COUNT = ATOMIC_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.BooleanImpl <em>Boolean</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.BooleanImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getBoolean()
+   * @generated
+   */
+  int BOOLEAN = 16;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN__VALUE = ATOMIC_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Boolean</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_FEATURE_COUNT = ATOMIC_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.DoubleImpl <em>Double</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.DoubleImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getDouble()
+   * @generated
+   */
+  int DOUBLE = 17;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE__VALUE = ATOMIC_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Double</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_FEATURE_COUNT = ATOMIC_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.VariableRefImpl <em>Variable Ref</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.VariableRefImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getVariableRef()
+   * @generated
+   */
+  int VARIABLE_REF = 18;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REF__VARIABLE = ATOMIC_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Variable Ref</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_REF_FEATURE_COUNT = ATOMIC_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Type <em>Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Type
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getType()
+   * @generated
+   */
+  int TYPE = 19;
 
 
   /**
@@ -388,6 +925,61 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    */
   EReference getAbstractModel_Obs();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getComp <em>Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Comp</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getComp()
+   * @see #getAbstractModel()
+   * @generated
+   */
+  EReference getAbstractModel_Comp();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getMock <em>Mock</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Mock</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getMock()
+   * @see #getAbstractModel()
+   * @generated
+   */
+  EReference getAbstractModel_Mock();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getConf <em>Conf</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Conf</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getConf()
+   * @see #getAbstractModel()
+   * @generated
+   */
+  EReference getAbstractModel_Conf();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getBind <em>Bind</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Bind</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getBind()
+   * @see #getAbstractModel()
+   * @generated
+   */
+  EReference getAbstractModel_Bind();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getInst <em>Inst</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Inst</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel#getInst()
+   * @see #getAbstractModel()
+   * @generated
+   */
+  EReference getAbstractModel_Inst();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Import <em>Import</em>}'.
@@ -541,6 +1133,317 @@ public interface MappingAssistancePackage extends EPackage
   EReference getObserver_Arg();
 
   /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock <em>Mock</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mock</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Mock
+   * @generated
+   */
+  EClass getMock();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getIntentionVar <em>Intention Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Intention Var</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getIntentionVar()
+   * @see #getMock()
+   * @generated
+   */
+  EReference getMock_IntentionVar();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getService <em>Service</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Service</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getService()
+   * @see #getMock()
+   * @generated
+   */
+  EReference getMock_Service();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getMember <em>Member</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Member</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getMember()
+   * @see #getMock()
+   * @generated
+   */
+  EReference getMock_Member();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf <em>Conf</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Conf</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf
+   * @generated
+   */
+  EClass getConf();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getService <em>Service</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Service</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getService()
+   * @see #getConf()
+   * @generated
+   */
+  EReference getConf_Service();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getMember <em>Member</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Member</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getMember()
+   * @see #getConf()
+   * @generated
+   */
+  EReference getConf_Member();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getVarConf <em>Var Conf</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Var Conf</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getVarConf()
+   * @see #getConf()
+   * @generated
+   */
+  EReference getConf_VarConf();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getInstVar <em>Inst Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Inst Var</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getInstVar()
+   * @see #getConf()
+   * @generated
+   */
+  EReference getConf_InstVar();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Atomic <em>Atomic</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Atomic</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Atomic
+   * @generated
+   */
+  EClass getAtomic();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent <em>Comopnent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Comopnent</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent
+   * @generated
+   */
+  EClass getComopnent();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getName()
+   * @see #getComopnent()
+   * @generated
+   */
+  EAttribute getComopnent_Name();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOps <em>Ops</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Ops</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOps()
+   * @see #getComopnent()
+   * @generated
+   */
+  EReference getComopnent_Ops();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOperations <em>Operations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operations</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOperations()
+   * @see #getComopnent()
+   * @generated
+   */
+  EReference getComopnent_Operations();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Operation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operation</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Operation
+   * @generated
+   */
+  EClass getOperation();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Operation#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Operation#getName()
+   * @see #getOperation()
+   * @generated
+   */
+  EAttribute getOperation_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Operation#getArg <em>Arg</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Arg</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Operation#getArg()
+   * @see #getOperation()
+   * @generated
+   */
+  EReference getOperation_Arg();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Operation#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Operation#getType()
+   * @see #getOperation()
+   * @generated
+   */
+  EAttribute getOperation_Type();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Variable
+   * @generated
+   */
+  EClass getVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Variable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Variable#getName()
+   * @see #getVariable()
+   * @generated
+   */
+  EAttribute getVariable_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Variable#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Variable#getType()
+   * @see #getVariable()
+   * @generated
+   */
+  EAttribute getVariable_Type();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings <em>Bindings</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Bindings</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Bindings
+   * @generated
+   */
+  EClass getBindings();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameComp <em>Name Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Name Comp</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameComp()
+   * @see #getBindings()
+   * @generated
+   */
+  EReference getBindings_NameComp();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameServ1 <em>Name Serv1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Name Serv1</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameServ1()
+   * @see #getBindings()
+   * @generated
+   */
+  EReference getBindings_NameServ1();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameComp1 <em>Name Comp1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Name Comp1</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameComp1()
+   * @see #getBindings()
+   * @generated
+   */
+  EReference getBindings_NameComp1();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameServ2 <em>Name Serv2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Name Serv2</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Bindings#getNameServ2()
+   * @see #getBindings()
+   * @generated
+   */
+  EReference getBindings_NameServ2();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp <em>Instance Comp</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Instance Comp</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp
+   * @generated
+   */
+  EClass getInstanceComp();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp#getName()
+   * @see #getInstanceComp()
+   * @generated
+   */
+  EAttribute getInstanceComp_Name();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp#getType()
+   * @see #getInstanceComp()
+   * @generated
+   */
+  EReference getInstanceComp_Type();
+
+  /**
    * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Call <em>Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -571,6 +1474,121 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    */
   EReference getCall_Member();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.INT <em>INT</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>INT</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.INT
+   * @generated
+   */
+  EClass getINT();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.INT#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.INT#getValue()
+   * @see #getINT()
+   * @generated
+   */
+  EAttribute getINT_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.STRING <em>STRING</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>STRING</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.STRING
+   * @generated
+   */
+  EClass getSTRING();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.STRING#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.STRING#getValue()
+   * @see #getSTRING()
+   * @generated
+   */
+  EAttribute getSTRING_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Boolean <em>Boolean</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Boolean
+   * @generated
+   */
+  EClass getBoolean();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Boolean#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Boolean#getValue()
+   * @see #getBoolean()
+   * @generated
+   */
+  EAttribute getBoolean_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Double <em>Double</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Double</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Double
+   * @generated
+   */
+  EClass getDouble();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Double#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Double#getValue()
+   * @see #getDouble()
+   * @generated
+   */
+  EAttribute getDouble_Value();
+
+  /**
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef <em>Variable Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable Ref</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef
+   * @generated
+   */
+  EClass getVariableRef();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Variable</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef#getVariable()
+   * @see #getVariableRef()
+   * @generated
+   */
+  EReference getVariableRef_Variable();
+
+  /**
+   * Returns the meta object for enum '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Type <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Type</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Type
+   * @generated
+   */
+  EEnum getType();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -646,6 +1664,46 @@ public interface MappingAssistancePackage extends EPackage
      * @generated
      */
     EReference ABSTRACT_MODEL__OBS = eINSTANCE.getAbstractModel_Obs();
+
+    /**
+     * The meta object literal for the '<em><b>Comp</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_MODEL__COMP = eINSTANCE.getAbstractModel_Comp();
+
+    /**
+     * The meta object literal for the '<em><b>Mock</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_MODEL__MOCK = eINSTANCE.getAbstractModel_Mock();
+
+    /**
+     * The meta object literal for the '<em><b>Conf</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_MODEL__CONF = eINSTANCE.getAbstractModel_Conf();
+
+    /**
+     * The meta object literal for the '<em><b>Bind</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_MODEL__BIND = eINSTANCE.getAbstractModel_Bind();
+
+    /**
+     * The meta object literal for the '<em><b>Inst</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_MODEL__INST = eINSTANCE.getAbstractModel_Inst();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ImportImpl <em>Import</em>}' class.
@@ -766,6 +1824,254 @@ public interface MappingAssistancePackage extends EPackage
     EReference OBSERVER__ARG = eINSTANCE.getObserver_Arg();
 
     /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.MockImpl <em>Mock</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MockImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getMock()
+     * @generated
+     */
+    EClass MOCK = eINSTANCE.getMock();
+
+    /**
+     * The meta object literal for the '<em><b>Intention Var</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MOCK__INTENTION_VAR = eINSTANCE.getMock_IntentionVar();
+
+    /**
+     * The meta object literal for the '<em><b>Service</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MOCK__SERVICE = eINSTANCE.getMock_Service();
+
+    /**
+     * The meta object literal for the '<em><b>Member</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MOCK__MEMBER = eINSTANCE.getMock_Member();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl <em>Conf</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getConf()
+     * @generated
+     */
+    EClass CONF = eINSTANCE.getConf();
+
+    /**
+     * The meta object literal for the '<em><b>Service</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONF__SERVICE = eINSTANCE.getConf_Service();
+
+    /**
+     * The meta object literal for the '<em><b>Member</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONF__MEMBER = eINSTANCE.getConf_Member();
+
+    /**
+     * The meta object literal for the '<em><b>Var Conf</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONF__VAR_CONF = eINSTANCE.getConf_VarConf();
+
+    /**
+     * The meta object literal for the '<em><b>Inst Var</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONF__INST_VAR = eINSTANCE.getConf_InstVar();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AtomicImpl <em>Atomic</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.AtomicImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getAtomic()
+     * @generated
+     */
+    EClass ATOMIC = eINSTANCE.getAtomic();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl <em>Comopnent</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getComopnent()
+     * @generated
+     */
+    EClass COMOPNENT = eINSTANCE.getComopnent();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMOPNENT__NAME = eINSTANCE.getComopnent_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Ops</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMOPNENT__OPS = eINSTANCE.getComopnent_Ops();
+
+    /**
+     * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMOPNENT__OPERATIONS = eINSTANCE.getComopnent_Operations();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.OperationImpl <em>Operation</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.OperationImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getOperation()
+     * @generated
+     */
+    EClass OPERATION = eINSTANCE.getOperation();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERATION__NAME = eINSTANCE.getOperation_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Arg</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION__ARG = eINSTANCE.getOperation_Arg();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERATION__TYPE = eINSTANCE.getOperation_Type();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.VariableImpl <em>Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.VariableImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getVariable()
+     * @generated
+     */
+    EClass VARIABLE = eINSTANCE.getVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.BindingsImpl <em>Bindings</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.BindingsImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getBindings()
+     * @generated
+     */
+    EClass BINDINGS = eINSTANCE.getBindings();
+
+    /**
+     * The meta object literal for the '<em><b>Name Comp</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDINGS__NAME_COMP = eINSTANCE.getBindings_NameComp();
+
+    /**
+     * The meta object literal for the '<em><b>Name Serv1</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDINGS__NAME_SERV1 = eINSTANCE.getBindings_NameServ1();
+
+    /**
+     * The meta object literal for the '<em><b>Name Comp1</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDINGS__NAME_COMP1 = eINSTANCE.getBindings_NameComp1();
+
+    /**
+     * The meta object literal for the '<em><b>Name Serv2</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDINGS__NAME_SERV2 = eINSTANCE.getBindings_NameServ2();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.InstanceCompImpl <em>Instance Comp</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.InstanceCompImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getInstanceComp()
+     * @generated
+     */
+    EClass INSTANCE_COMP = eINSTANCE.getInstanceComp();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTANCE_COMP__NAME = eINSTANCE.getInstanceComp_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INSTANCE_COMP__TYPE = eINSTANCE.getInstanceComp_Type();
+
+    /**
      * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.CallImpl <em>Call</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -790,6 +2096,106 @@ public interface MappingAssistancePackage extends EPackage
      * @generated
      */
     EReference CALL__MEMBER = eINSTANCE.getCall_Member();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.INTImpl <em>INT</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.INTImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getINT()
+     * @generated
+     */
+    EClass INT = eINSTANCE.getINT();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INT__VALUE = eINSTANCE.getINT_Value();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.STRINGImpl <em>STRING</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.STRINGImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getSTRING()
+     * @generated
+     */
+    EClass STRING = eINSTANCE.getSTRING();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING__VALUE = eINSTANCE.getSTRING_Value();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.BooleanImpl <em>Boolean</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.BooleanImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getBoolean()
+     * @generated
+     */
+    EClass BOOLEAN = eINSTANCE.getBoolean();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOLEAN__VALUE = eINSTANCE.getBoolean_Value();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.DoubleImpl <em>Double</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.DoubleImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getDouble()
+     * @generated
+     */
+    EClass DOUBLE = eINSTANCE.getDouble();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOUBLE__VALUE = eINSTANCE.getDouble_Value();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.VariableRefImpl <em>Variable Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.VariableRefImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getVariableRef()
+     * @generated
+     */
+    EClass VARIABLE_REF = eINSTANCE.getVariableRef();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_REF__VARIABLE = eINSTANCE.getVariableRef_Variable();
+
+    /**
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Type <em>Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.Type
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getType()
+     * @generated
+     */
+    EEnum TYPE = eINSTANCE.getType();
 
   }
 

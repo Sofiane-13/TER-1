@@ -4,8 +4,11 @@
 package com.aelos.xtext.mappingassistance.validation
 
 import org.eclipse.xtext.validation.Check
-//import com.aelos.xtext.mappingassistance.mappingAssistance.Mapping
+import com.aelos.xtext.mappingassistance.mappingAssistance.Conf
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
+
+//import com.aelos.xtext.mappingassistance.mappingAssistance.Mapping
+//import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
 
 /**
  * This class contains custom validation rules. 
@@ -24,6 +27,18 @@ class MappingAssistanceValidator extends AbstractMappingAssistanceValidator {
 //					INVALID_NAME)
 //		}
 //	}
+	@Check
+	def checkMappingSameType(Conf conf) {
+		var x=0;
+		for(varconf:conf.varConf){
+			//System.out.println(conf.instVar.get(x).eClass.name+" : "+varconf.type.atomType.literal)
+			if(!( (conf.instVar.get(x).type.literal).equals(varconf.type.atomType.literal))){
+				
+				error("the variables must have the same Type",MappingAssistancePackage.Literals.CONF__VAR_CONF)
+			}
+			x++
+		}
+	}
 //
 //	@Check
 //	def checkMappingSameType(Mapping map) {
