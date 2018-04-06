@@ -260,7 +260,7 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     Conf returns Conf
 	 *
 	 * Constraint:
-	 *     (service=[Variable|ID] member=[Operation|ID] ((varConf+=[Variable|ID] instVar+=Atomic)* varConf+=[Variable|ID] instVar+=Atomic)*)
+	 *     (service=[Variable|ID] member=[Operation|ID] ((varConf+=[Variable|ID] instVar+=[Variable|ID])* varConf+=[Variable|ID] instVar+=[Variable|ID])*)
 	 */
 	protected void sequence_Conf(ISerializationContext context, Conf semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

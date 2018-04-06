@@ -6,14 +6,12 @@ package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 import com.aelos.xtext.architecture.architecture.Operation;
 import com.aelos.xtext.architecture.architecture.Variable;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -23,9 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,14 +72,14 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   protected EList<Variable> varConf;
 
   /**
-   * The cached value of the '{@link #getInstVar() <em>Inst Var</em>}' containment reference list.
+   * The cached value of the '{@link #getInstVar() <em>Inst Var</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getInstVar()
    * @generated
    * @ordered
    */
-  protected EList<Atomic> instVar;
+  protected EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> instVar;
 
   /**
    * <!-- begin-user-doc -->
@@ -211,29 +207,13 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Atomic> getInstVar()
+  public EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> getInstVar()
   {
     if (instVar == null)
     {
-      instVar = new EObjectContainmentEList<Atomic>(Atomic.class, this, MappingAssistancePackage.CONF__INST_VAR);
+      instVar = new EObjectResolvingEList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable.class, this, MappingAssistancePackage.CONF__INST_VAR);
     }
     return instVar;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case MappingAssistancePackage.CONF__INST_VAR:
-        return ((InternalEList<?>)getInstVar()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -283,7 +263,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
         return;
       case MappingAssistancePackage.CONF__INST_VAR:
         getInstVar().clear();
-        getInstVar().addAll((Collection<? extends Atomic>)newValue);
+        getInstVar().addAll((Collection<? extends com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

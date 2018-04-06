@@ -23,7 +23,7 @@ public class MappingAssistanceValidator extends AbstractMappingAssistanceValidat
     EList<Variable> _varConf = conf.getVarConf();
     for (final Variable varconf : _varConf) {
       {
-        boolean _equals = conf.getInstVar().get(x).eClass().getName().equals(varconf.getType().getAtomType().getLiteral());
+        boolean _equals = conf.getInstVar().get(x).getType().getLiteral().equals(varconf.getType().getAtomType().getLiteral());
         boolean _not = (!_equals);
         if (_not) {
           this.error("the variables must have the same Type", MappingAssistancePackage.Literals.CONF__VAR_CONF);

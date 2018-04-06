@@ -530,7 +530,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final RuleCall cVarConfVariableIDTerminalRuleCall_5_0_0_0_1 = (RuleCall)cVarConfVariableCrossReference_5_0_0_0.eContents().get(1);
 		private final Keyword cColonEqualsSignKeyword_5_0_1 = (Keyword)cGroup_5_0.eContents().get(1);
 		private final Assignment cInstVarAssignment_5_0_2 = (Assignment)cGroup_5_0.eContents().get(2);
-		private final RuleCall cInstVarAtomicParserRuleCall_5_0_2_0 = (RuleCall)cInstVarAssignment_5_0_2.eContents().get(0);
+		private final CrossReference cInstVarVariableCrossReference_5_0_2_0 = (CrossReference)cInstVarAssignment_5_0_2.eContents().get(0);
+		private final RuleCall cInstVarVariableIDTerminalRuleCall_5_0_2_0_1 = (RuleCall)cInstVarVariableCrossReference_5_0_2_0.eContents().get(1);
 		private final Keyword cCommaKeyword_5_0_3 = (Keyword)cGroup_5_0.eContents().get(3);
 		private final Group cGroup_5_1 = (Group)cGroup_5.eContents().get(1);
 		private final Assignment cVarConfAssignment_5_1_0 = (Assignment)cGroup_5_1.eContents().get(0);
@@ -538,16 +539,17 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final RuleCall cVarConfVariableIDTerminalRuleCall_5_1_0_0_1 = (RuleCall)cVarConfVariableCrossReference_5_1_0_0.eContents().get(1);
 		private final Keyword cColonEqualsSignKeyword_5_1_1 = (Keyword)cGroup_5_1.eContents().get(1);
 		private final Assignment cInstVarAssignment_5_1_2 = (Assignment)cGroup_5_1.eContents().get(2);
-		private final RuleCall cInstVarAtomicParserRuleCall_5_1_2_0 = (RuleCall)cInstVarAssignment_5_1_2.eContents().get(0);
+		private final CrossReference cInstVarVariableCrossReference_5_1_2_0 = (CrossReference)cInstVarAssignment_5_1_2.eContents().get(0);
+		private final RuleCall cInstVarVariableIDTerminalRuleCall_5_1_2_0_1 = (RuleCall)cInstVarVariableCrossReference_5_1_2_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Conf:
 		//	"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] ":="
-		//	instVar+=Atomic ",")* (varConf+=[arch::Variable] ":=" instVar+=Atomic))* ")";
+		//	instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]))* ")";
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] ":="
-		//instVar+=Atomic ",")* (varConf+=[arch::Variable] ":=" instVar+=Atomic))* ")"
+		//instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]))* ")"
 		public Group getGroup() { return cGroup; }
 		
 		//"replaceConf:"
@@ -577,10 +579,11 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//"("
 		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
 		
-		//((varConf+=[arch::Variable] ":=" instVar+=Atomic ",")* (varConf+=[arch::Variable] ":=" instVar+=Atomic))*
+		//((varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":="
+		//instVar+=[testIntention::Variable]))*
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//(varConf+=[arch::Variable] ":=" instVar+=Atomic ",")*
+		//(varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable] ",")*
 		public Group getGroup_5_0() { return cGroup_5_0; }
 		
 		//varConf+=[arch::Variable]
@@ -595,16 +598,19 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//":="
 		public Keyword getColonEqualsSignKeyword_5_0_1() { return cColonEqualsSignKeyword_5_0_1; }
 		
-		//instVar+=Atomic
+		//instVar+=[testIntention::Variable]
 		public Assignment getInstVarAssignment_5_0_2() { return cInstVarAssignment_5_0_2; }
 		
-		//Atomic
-		public RuleCall getInstVarAtomicParserRuleCall_5_0_2_0() { return cInstVarAtomicParserRuleCall_5_0_2_0; }
+		//[testIntention::Variable]
+		public CrossReference getInstVarVariableCrossReference_5_0_2_0() { return cInstVarVariableCrossReference_5_0_2_0; }
+		
+		//ID
+		public RuleCall getInstVarVariableIDTerminalRuleCall_5_0_2_0_1() { return cInstVarVariableIDTerminalRuleCall_5_0_2_0_1; }
 		
 		//","
 		public Keyword getCommaKeyword_5_0_3() { return cCommaKeyword_5_0_3; }
 		
-		//varConf+=[arch::Variable] ":=" instVar+=Atomic
+		//varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]
 		public Group getGroup_5_1() { return cGroup_5_1; }
 		
 		//varConf+=[arch::Variable]
@@ -619,11 +625,14 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//":="
 		public Keyword getColonEqualsSignKeyword_5_1_1() { return cColonEqualsSignKeyword_5_1_1; }
 		
-		//instVar+=Atomic
+		//instVar+=[testIntention::Variable]
 		public Assignment getInstVarAssignment_5_1_2() { return cInstVarAssignment_5_1_2; }
 		
-		//Atomic
-		public RuleCall getInstVarAtomicParserRuleCall_5_1_2_0() { return cInstVarAtomicParserRuleCall_5_1_2_0; }
+		//[testIntention::Variable]
+		public CrossReference getInstVarVariableCrossReference_5_1_2_0() { return cInstVarVariableCrossReference_5_1_2_0; }
+		
+		//ID
+		public RuleCall getInstVarVariableIDTerminalRuleCall_5_1_2_0_1() { return cInstVarVariableIDTerminalRuleCall_5_1_2_0_1; }
 		
 		//")"
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
@@ -1339,7 +1348,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	
 	//Conf:
 	//	"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] ":="
-	//	instVar+=Atomic ",")* (varConf+=[arch::Variable] ":=" instVar+=Atomic))* ")";
+	//	instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]))* ")";
 	public ConfElements getConfAccess() {
 		return pConf;
 	}

@@ -59,8 +59,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="varConf" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instVar" upperBound="-1"
-        eType="#//Atomic" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instVar" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Atomic"/>
   <eClassifiers xsi:type="ecore:EClass" name="Comopnent">

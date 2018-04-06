@@ -42,7 +42,7 @@ Mock:
 "mock:"IntentionVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member+=[arch::Operation]
 ;
 Conf:
-"replaceConf:"service=[arch::Variable]'.'member=[arch::Operation]"("((varConf+=[arch::Variable]":="instVar+=Atomic",")*(varConf+=[arch::Variable]":="instVar+=Atomic))*")"
+"replaceConf:"service=[arch::Variable]'.'member=[arch::Operation]"("((varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]",")*(varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]))*")"
 ; 
 
 Atomic:

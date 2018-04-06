@@ -823,19 +823,13 @@ ruleConf returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getConfAccess().getInstVarAtomicParserRuleCall_5_0_2_0());
-						}
-						lv_instVar_7_0=ruleAtomic
-						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getConfRule());
+								$current = createModelElement(grammarAccess.getConfRule());
 							}
-							add(
-								$current,
-								"instVar",
-								lv_instVar_7_0,
-								"com.aelos.xtext.mappingassistance.MappingAssistance.Atomic");
-							afterParserOrEnumRuleCall();
+						}
+						otherlv_7=RULE_ID
+						{
+							newLeafNode(otherlv_7, grammarAccess.getConfAccess().getInstVarVariableCrossReference_5_0_2_0());
 						}
 					)
 				)
@@ -865,19 +859,13 @@ ruleConf returns [EObject current=null]
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getConfAccess().getInstVarAtomicParserRuleCall_5_1_2_0());
-						}
-						lv_instVar_11_0=ruleAtomic
-						{
 							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getConfRule());
+								$current = createModelElement(grammarAccess.getConfRule());
 							}
-							add(
-								$current,
-								"instVar",
-								lv_instVar_11_0,
-								"com.aelos.xtext.mappingassistance.MappingAssistance.Atomic");
-							afterParserOrEnumRuleCall();
+						}
+						otherlv_11=RULE_ID
+						{
+							newLeafNode(otherlv_11, grammarAccess.getConfAccess().getInstVarVariableCrossReference_5_1_2_0());
 						}
 					)
 				)
@@ -887,161 +875,6 @@ ruleConf returns [EObject current=null]
 		{
 			newLeafNode(otherlv_12, grammarAccess.getConfAccess().getRightParenthesisKeyword_6());
 		}
-	)
-;
-
-// Entry rule entryRuleAtomic
-entryRuleAtomic returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAtomicRule()); }
-	iv_ruleAtomic=ruleAtomic
-	{ $current=$iv_ruleAtomic.current; }
-	EOF;
-
-// Rule Atomic
-ruleAtomic returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getINTAction_0_0(),
-						$current);
-				}
-			)
-			(
-				(
-					lv_value_1_0=RULE_INT
-					{
-						newLeafNode(lv_value_1_0, grammarAccess.getAtomicAccess().getValueINTTerminalRuleCall_0_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtomicRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"value",
-							lv_value_1_0,
-							"org.eclipse.xtext.common.Terminals.INT");
-					}
-				)
-			)
-		)
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getSTRINGAction_1_0(),
-						$current);
-				}
-			)
-			(
-				(
-					lv_value_3_0=RULE_STRING
-					{
-						newLeafNode(lv_value_3_0, grammarAccess.getAtomicAccess().getValueSTRINGTerminalRuleCall_1_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtomicRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"value",
-							lv_value_3_0,
-							"org.eclipse.xtext.common.Terminals.STRING");
-					}
-				)
-			)
-		)
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getBooleanAction_2_0(),
-						$current);
-				}
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getValueBooleanParserRuleCall_2_1_0());
-					}
-					lv_value_5_0=ruleBoolean
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAtomicRule());
-						}
-						set(
-							$current,
-							"value",
-							lv_value_5_0,
-							"com.aelos.xtext.mappingassistance.MappingAssistance.Boolean");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getDoubleAction_3_0(),
-						$current);
-				}
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getAtomicAccess().getValueDoubleParserRuleCall_3_1_0());
-					}
-					lv_value_7_0=ruleDouble
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getAtomicRule());
-						}
-						set(
-							$current,
-							"value",
-							lv_value_7_0,
-							"com.aelos.xtext.mappingassistance.MappingAssistance.Double");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getAtomicAccess().getVariableRefAction_4_0(),
-						$current);
-				}
-			)
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getAtomicRule());
-						}
-					}
-					otherlv_9=RULE_ID
-					{
-						newLeafNode(otherlv_9, grammarAccess.getAtomicAccess().getVariableVariableCrossReference_4_1_0());
-					}
-				)
-			)
-		)
 	)
 ;
 

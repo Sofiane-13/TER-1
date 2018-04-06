@@ -417,7 +417,7 @@ public interface MappingAssistancePackage extends EPackage
   int CONF__VAR_CONF = 2;
 
   /**
-   * The feature id for the '<em><b>Inst Var</b></em>' containment reference list.
+   * The feature id for the '<em><b>Inst Var</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1219,10 +1219,10 @@ public interface MappingAssistancePackage extends EPackage
   EReference getConf_VarConf();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getInstVar <em>Inst Var</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getInstVar <em>Inst Var</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Inst Var</em>'.
+   * @return the meta object for the reference list '<em>Inst Var</em>'.
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getInstVar()
    * @see #getConf()
    * @generated
@@ -1892,7 +1892,7 @@ public interface MappingAssistancePackage extends EPackage
     EReference CONF__VAR_CONF = eINSTANCE.getConf_VarConf();
 
     /**
-     * The meta object literal for the '<em><b>Inst Var</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Inst Var</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

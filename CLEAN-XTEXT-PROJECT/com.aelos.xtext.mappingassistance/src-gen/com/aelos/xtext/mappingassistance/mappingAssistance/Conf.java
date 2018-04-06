@@ -100,19 +100,19 @@ public interface Conf extends EObject
   EList<Variable> getVarConf();
 
   /**
-   * Returns the value of the '<em><b>Inst Var</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Atomic}.
+   * Returns the value of the '<em><b>Inst Var</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Inst Var</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Inst Var</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Inst Var</em>' containment reference list.
+   * @return the value of the '<em>Inst Var</em>' reference list.
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf_InstVar()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  EList<Atomic> getInstVar();
+  EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> getInstVar();
 
 } // Conf
