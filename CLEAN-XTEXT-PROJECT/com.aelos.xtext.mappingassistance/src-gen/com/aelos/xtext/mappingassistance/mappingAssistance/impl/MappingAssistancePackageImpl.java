@@ -424,9 +424,19 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTestDriver_Arg()
+  public EReference getTestDriver_VarConf()
   {
     return (EReference)testDriverEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTestDriver_InstVar()
+  {
+    return (EReference)testDriverEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -444,19 +454,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getObserver_Name()
-  {
-    return (EAttribute)observerEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getObserver_Service1()
   {
-    return (EReference)observerEClass.getEStructuralFeatures().get(1);
+    return (EReference)observerEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -466,6 +466,16 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    */
   public EReference getObserver_Member1()
   {
+    return (EReference)observerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getObserver_InstVar()
+  {
     return (EReference)observerEClass.getEStructuralFeatures().get(2);
   }
 
@@ -474,7 +484,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getObserver_Service2()
+  public EReference getObserver_VarOp()
   {
     return (EReference)observerEClass.getEStructuralFeatures().get(3);
   }
@@ -484,7 +494,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getObserver_Member2()
+  public EReference getObserver_Service2()
   {
     return (EReference)observerEClass.getEStructuralFeatures().get(4);
   }
@@ -494,7 +504,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getObserver_Arg()
+  public EReference getObserver_Member2()
   {
     return (EReference)observerEClass.getEStructuralFeatures().get(5);
   }
@@ -979,15 +989,16 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     createEReference(testDriverEClass, TEST_DRIVER__OUT_VAR);
     createEReference(testDriverEClass, TEST_DRIVER__SERVICE);
     createEReference(testDriverEClass, TEST_DRIVER__MEMBER);
-    createEReference(testDriverEClass, TEST_DRIVER__ARG);
+    createEReference(testDriverEClass, TEST_DRIVER__VAR_CONF);
+    createEReference(testDriverEClass, TEST_DRIVER__INST_VAR);
 
     observerEClass = createEClass(OBSERVER);
-    createEAttribute(observerEClass, OBSERVER__NAME);
     createEReference(observerEClass, OBSERVER__SERVICE1);
     createEReference(observerEClass, OBSERVER__MEMBER1);
+    createEReference(observerEClass, OBSERVER__INST_VAR);
+    createEReference(observerEClass, OBSERVER__VAR_OP);
     createEReference(observerEClass, OBSERVER__SERVICE2);
     createEReference(observerEClass, OBSERVER__MEMBER2);
-    createEReference(observerEClass, OBSERVER__ARG);
 
     mockEClass = createEClass(MOCK);
     createEReference(mockEClass, MOCK__INTENTION_VAR);
@@ -1108,16 +1119,17 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     initEClass(testDriverEClass, TestDriver.class, "TestDriver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTestDriver_OutVar(), theTestintentionsAssistancePackage.getVariable(), null, "outVar", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTestDriver_Service(), theArchitecturePackage.getVariable(), null, "service", null, 0, 1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTestDriver_Member(), theArchitecturePackage.getOperation(), null, "member", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTestDriver_Arg(), theTestintentionsAssistancePackage.getVariable(), null, "arg", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestDriver_Member(), theArchitecturePackage.getOperation(), null, "member", null, 0, 1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestDriver_VarConf(), theArchitecturePackage.getVariable(), null, "varConf", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestDriver_InstVar(), theTestintentionsAssistancePackage.getVariable(), null, "instVar", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(observerEClass, Observer.class, "Observer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getObserver_Name(), ecorePackage.getEString(), "name", null, 0, 1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObserver_Service1(), theArchitecturePackage.getVariable(), null, "service1", null, 0, 1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObserver_Member1(), theArchitecturePackage.getOperation(), null, "member1", null, 0, -1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObserver_Member1(), theArchitecturePackage.getOperation(), null, "member1", null, 0, 1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObserver_InstVar(), theTestintentionsAssistancePackage.getVariable(), null, "instVar", null, 0, -1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObserver_VarOp(), theArchitecturePackage.getVariable(), null, "varOp", null, 0, -1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getObserver_Service2(), theArchitecturePackage.getVariable(), null, "service2", null, 0, 1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObserver_Member2(), theArchitecturePackage.getOperation(), null, "member2", null, 0, -1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getObserver_Arg(), theTestintentionsAssistancePackage.getVariable(), null, "arg", null, 0, -1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getObserver_Member2(), theArchitecturePackage.getOperation(), null, "member2", null, 0, 1, Observer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mockEClass, Mock.class, "Mock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMock_IntentionVar(), theTestintentionsAssistancePackage.getVariable(), null, "IntentionVar", null, 0, -1, Mock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

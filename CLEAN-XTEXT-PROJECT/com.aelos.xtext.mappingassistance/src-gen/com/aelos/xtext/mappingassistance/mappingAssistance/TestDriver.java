@@ -23,7 +23,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getOutVar <em>Out Var</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getService <em>Service</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember <em>Member</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getArg <em>Arg</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getVarConf <em>Var Conf</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getInstVar <em>Inst Var</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver()
@@ -75,35 +76,61 @@ public interface TestDriver extends EObject
   void setService(com.aelos.xtext.architecture.architecture.Variable value);
 
   /**
-   * Returns the value of the '<em><b>Member</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
+   * Returns the value of the '<em><b>Member</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Member</em>' reference list isn't clear,
+   * If the meaning of the '<em>Member</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Member</em>' reference list.
+   * @return the value of the '<em>Member</em>' reference.
+   * @see #setMember(Operation)
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Member()
    * @model
    * @generated
    */
-  EList<Operation> getMember();
+  Operation getMember();
 
   /**
-   * Returns the value of the '<em><b>Arg</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember <em>Member</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Member</em>' reference.
+   * @see #getMember()
+   * @generated
+   */
+  void setMember(Operation value);
+
+  /**
+   * Returns the value of the '<em><b>Var Conf</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Variable}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Arg</em>' reference list isn't clear,
+   * If the meaning of the '<em>Var Conf</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arg</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Arg()
+   * @return the value of the '<em>Var Conf</em>' reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_VarConf()
    * @model
    * @generated
    */
-  EList<Variable> getArg();
+  EList<com.aelos.xtext.architecture.architecture.Variable> getVarConf();
+
+  /**
+   * Returns the value of the '<em><b>Inst Var</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Inst Var</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Inst Var</em>' reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_InstVar()
+   * @model
+   * @generated
+   */
+  EList<Variable> getInstVar();
 
 } // TestDriver

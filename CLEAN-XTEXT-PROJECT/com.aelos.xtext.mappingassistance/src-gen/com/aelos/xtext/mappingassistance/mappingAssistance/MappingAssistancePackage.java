@@ -234,7 +234,7 @@ public interface MappingAssistancePackage extends EPackage
   int TEST_DRIVER__SERVICE = 1;
 
   /**
-   * The feature id for the '<em><b>Member</b></em>' reference list.
+   * The feature id for the '<em><b>Member</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -243,13 +243,22 @@ public interface MappingAssistancePackage extends EPackage
   int TEST_DRIVER__MEMBER = 2;
 
   /**
-   * The feature id for the '<em><b>Arg</b></em>' reference list.
+   * The feature id for the '<em><b>Var Conf</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_DRIVER__ARG = 3;
+  int TEST_DRIVER__VAR_CONF = 3;
+
+  /**
+   * The feature id for the '<em><b>Inst Var</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEST_DRIVER__INST_VAR = 4;
 
   /**
    * The number of structural features of the '<em>Test Driver</em>' class.
@@ -258,7 +267,7 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEST_DRIVER_FEATURE_COUNT = 4;
+  int TEST_DRIVER_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl <em>Observer</em>}' class.
@@ -271,31 +280,40 @@ public interface MappingAssistancePackage extends EPackage
   int OBSERVER = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBSERVER__NAME = 0;
-
-  /**
    * The feature id for the '<em><b>Service1</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBSERVER__SERVICE1 = 1;
+  int OBSERVER__SERVICE1 = 0;
 
   /**
-   * The feature id for the '<em><b>Member1</b></em>' reference list.
+   * The feature id for the '<em><b>Member1</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBSERVER__MEMBER1 = 2;
+  int OBSERVER__MEMBER1 = 1;
+
+  /**
+   * The feature id for the '<em><b>Inst Var</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBSERVER__INST_VAR = 2;
+
+  /**
+   * The feature id for the '<em><b>Var Op</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OBSERVER__VAR_OP = 3;
 
   /**
    * The feature id for the '<em><b>Service2</b></em>' reference.
@@ -304,25 +322,16 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int OBSERVER__SERVICE2 = 3;
+  int OBSERVER__SERVICE2 = 4;
 
   /**
-   * The feature id for the '<em><b>Member2</b></em>' reference list.
+   * The feature id for the '<em><b>Member2</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OBSERVER__MEMBER2 = 4;
-
-  /**
-   * The feature id for the '<em><b>Arg</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OBSERVER__ARG = 5;
+  int OBSERVER__MEMBER2 = 5;
 
   /**
    * The number of structural features of the '<em>Observer</em>' class.
@@ -1035,10 +1044,10 @@ public interface MappingAssistancePackage extends EPackage
   EReference getTestDriver_Service();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember <em>Member</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember <em>Member</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Member</em>'.
+   * @return the meta object for the reference '<em>Member</em>'.
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember()
    * @see #getTestDriver()
    * @generated
@@ -1046,15 +1055,26 @@ public interface MappingAssistancePackage extends EPackage
   EReference getTestDriver_Member();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getArg <em>Arg</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getVarConf <em>Var Conf</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Arg</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getArg()
+   * @return the meta object for the reference list '<em>Var Conf</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getVarConf()
    * @see #getTestDriver()
    * @generated
    */
-  EReference getTestDriver_Arg();
+  EReference getTestDriver_VarConf();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getInstVar <em>Inst Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Inst Var</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getInstVar()
+   * @see #getTestDriver()
+   * @generated
+   */
+  EReference getTestDriver_InstVar();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer <em>Observer</em>}'.
@@ -1065,17 +1085,6 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    */
   EClass getObserver();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getName()
-   * @see #getObserver()
-   * @generated
-   */
-  EAttribute getObserver_Name();
 
   /**
    * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getService1 <em>Service1</em>}'.
@@ -1089,15 +1098,37 @@ public interface MappingAssistancePackage extends EPackage
   EReference getObserver_Service1();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember1 <em>Member1</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember1 <em>Member1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Member1</em>'.
+   * @return the meta object for the reference '<em>Member1</em>'.
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember1()
    * @see #getObserver()
    * @generated
    */
   EReference getObserver_Member1();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getInstVar <em>Inst Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Inst Var</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getInstVar()
+   * @see #getObserver()
+   * @generated
+   */
+  EReference getObserver_InstVar();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getVarOp <em>Var Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Var Op</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getVarOp()
+   * @see #getObserver()
+   * @generated
+   */
+  EReference getObserver_VarOp();
 
   /**
    * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getService2 <em>Service2</em>}'.
@@ -1111,26 +1142,15 @@ public interface MappingAssistancePackage extends EPackage
   EReference getObserver_Service2();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember2 <em>Member2</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember2 <em>Member2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Member2</em>'.
+   * @return the meta object for the reference '<em>Member2</em>'.
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember2()
    * @see #getObserver()
    * @generated
    */
   EReference getObserver_Member2();
-
-  /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getArg <em>Arg</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Arg</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getArg()
-   * @see #getObserver()
-   * @generated
-   */
-  EReference getObserver_Arg();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock <em>Mock</em>}'.
@@ -1750,7 +1770,7 @@ public interface MappingAssistancePackage extends EPackage
     EReference TEST_DRIVER__SERVICE = eINSTANCE.getTestDriver_Service();
 
     /**
-     * The meta object literal for the '<em><b>Member</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Member</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1758,12 +1778,20 @@ public interface MappingAssistancePackage extends EPackage
     EReference TEST_DRIVER__MEMBER = eINSTANCE.getTestDriver_Member();
 
     /**
-     * The meta object literal for the '<em><b>Arg</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Var Conf</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_DRIVER__ARG = eINSTANCE.getTestDriver_Arg();
+    EReference TEST_DRIVER__VAR_CONF = eINSTANCE.getTestDriver_VarConf();
+
+    /**
+     * The meta object literal for the '<em><b>Inst Var</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEST_DRIVER__INST_VAR = eINSTANCE.getTestDriver_InstVar();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ObserverImpl <em>Observer</em>}' class.
@@ -1776,14 +1804,6 @@ public interface MappingAssistancePackage extends EPackage
     EClass OBSERVER = eINSTANCE.getObserver();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute OBSERVER__NAME = eINSTANCE.getObserver_Name();
-
-    /**
      * The meta object literal for the '<em><b>Service1</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1792,12 +1812,28 @@ public interface MappingAssistancePackage extends EPackage
     EReference OBSERVER__SERVICE1 = eINSTANCE.getObserver_Service1();
 
     /**
-     * The meta object literal for the '<em><b>Member1</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Member1</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference OBSERVER__MEMBER1 = eINSTANCE.getObserver_Member1();
+
+    /**
+     * The meta object literal for the '<em><b>Inst Var</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OBSERVER__INST_VAR = eINSTANCE.getObserver_InstVar();
+
+    /**
+     * The meta object literal for the '<em><b>Var Op</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OBSERVER__VAR_OP = eINSTANCE.getObserver_VarOp();
 
     /**
      * The meta object literal for the '<em><b>Service2</b></em>' reference feature.
@@ -1808,20 +1844,12 @@ public interface MappingAssistancePackage extends EPackage
     EReference OBSERVER__SERVICE2 = eINSTANCE.getObserver_Service2();
 
     /**
-     * The meta object literal for the '<em><b>Member2</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Member2</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference OBSERVER__MEMBER2 = eINSTANCE.getObserver_Member2();
-
-    /**
-     * The meta object literal for the '<em><b>Arg</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OBSERVER__ARG = eINSTANCE.getObserver_Arg();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.MockImpl <em>Mock</em>}' class.

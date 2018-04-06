@@ -6,6 +6,7 @@ package com.aelos.xtext.mappingassistance.validation;
 import com.aelos.xtext.architecture.architecture.Variable;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.validation.AbstractMappingAssistanceValidator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
@@ -24,6 +25,22 @@ public class MappingAssistanceValidator extends AbstractMappingAssistanceValidat
     for (final Variable varconf : _varConf) {
       {
         boolean _equals = conf.getInstVar().get(x).getType().getLiteral().equals(varconf.getType().getAtomType().getLiteral());
+        boolean _not = (!_equals);
+        if (_not) {
+          this.error("the variables must have the same Type", MappingAssistancePackage.Literals.CONF__VAR_CONF);
+        }
+        x++;
+      }
+    }
+  }
+  
+  @Check
+  public void checkMappingTestDriver(final TestDriver td) {
+    int x = 0;
+    EList<Variable> _varConf = td.getVarConf();
+    for (final Variable varconf : _varConf) {
+      {
+        boolean _equals = td.getInstVar().get(x).getType().getLiteral().equals(varconf.getType().getAtomType().getLiteral());
         boolean _not = (!_equals);
         if (_not) {
           this.error("the variables must have the same Type", MappingAssistancePackage.Literals.CONF__VAR_CONF);

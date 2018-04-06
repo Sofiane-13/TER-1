@@ -31,13 +31,14 @@ TestDriver :
 
 	{TestDriver} "TestDriver" "{"
 
-		(outVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member+=[arch::Operation]"("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")")*
+		(outVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member=[arch::Operation]"("((varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]",")*(varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]))*")")*
 	
 	"}"
 	;
 	
 Observer :
-	"observer:"name=ID"("service1=[arch::Variable]'.'member1+=[arch::Operation]","service2=[arch::Variable]'.'member2+=[arch::Operation]")""("((arg+=[testIntention::Variable] ",")*arg+=[testIntention::Variable])*")";	
+	"observer:"service1=[arch::Variable]'.'member1=[arch::Operation]"("((instVar+=[testIntention::Variable]":="varOp+=[arch::Variable]",")*(instVar+=[testIntention::Variable]":="varOp+=[arch::Variable]))*")""("service2=[arch::Variable]'.'member2=[arch::Operation]")";	
+	
 Mock:
 "mock:"IntentionVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member+=[arch::Operation]
 ;
@@ -63,6 +64,7 @@ Comopnent:
 	"}"
 
 ;
+
 Operation:
     "def" name=ID "("((arg+=Variable ",")*arg+=Variable)*")" ":" type= Type
 ;

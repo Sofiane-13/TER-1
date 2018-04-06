@@ -318,9 +318,19 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Operations()
+  public EReference getComponent_OpsReq()
   {
     return (EReference)componentEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getComponent_Operations()
+  {
+    return (EReference)componentEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -551,6 +561,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     componentEClass = createEClass(COMPONENT);
     createEAttribute(componentEClass, COMPONENT__NAME);
     createEReference(componentEClass, COMPONENT__OPS);
+    createEReference(componentEClass, COMPONENT__OPS_REQ);
     createEReference(componentEClass, COMPONENT__OPERATIONS);
 
     architectureEClass = createEClass(ARCHITECTURE);
@@ -628,6 +639,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponent_Ops(), this.getOperation(), null, "ops", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getComponent_OpsReq(), this.getOperation(), null, "opsReq", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getComponent_Operations(), this.getOperation(), null, "operations", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(architectureEClass, Architecture.class, "Architecture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

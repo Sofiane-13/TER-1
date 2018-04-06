@@ -19,12 +19,12 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getName <em>Name</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getService1 <em>Service1</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember1 <em>Member1</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getInstVar <em>Inst Var</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getVarOp <em>Var Op</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getService2 <em>Service2</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember2 <em>Member2</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getArg <em>Arg</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserver()
@@ -33,32 +33,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Observer extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserver_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
   /**
    * Returns the value of the '<em><b>Service1</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -86,20 +60,62 @@ public interface Observer extends EObject
   void setService1(Variable value);
 
   /**
-   * Returns the value of the '<em><b>Member1</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
+   * Returns the value of the '<em><b>Member1</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Member1</em>' reference list isn't clear,
+   * If the meaning of the '<em>Member1</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Member1</em>' reference list.
+   * @return the value of the '<em>Member1</em>' reference.
+   * @see #setMember1(Operation)
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserver_Member1()
    * @model
    * @generated
    */
-  EList<Operation> getMember1();
+  Operation getMember1();
+
+  /**
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember1 <em>Member1</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Member1</em>' reference.
+   * @see #getMember1()
+   * @generated
+   */
+  void setMember1(Operation value);
+
+  /**
+   * Returns the value of the '<em><b>Inst Var</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Inst Var</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Inst Var</em>' reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserver_InstVar()
+   * @model
+   * @generated
+   */
+  EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> getInstVar();
+
+  /**
+   * Returns the value of the '<em><b>Var Op</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Variable}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Var Op</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Var Op</em>' reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserver_VarOp()
+   * @model
+   * @generated
+   */
+  EList<Variable> getVarOp();
 
   /**
    * Returns the value of the '<em><b>Service2</b></em>' reference.
@@ -128,35 +144,29 @@ public interface Observer extends EObject
   void setService2(Variable value);
 
   /**
-   * Returns the value of the '<em><b>Member2</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
+   * Returns the value of the '<em><b>Member2</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Member2</em>' reference list isn't clear,
+   * If the meaning of the '<em>Member2</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Member2</em>' reference list.
+   * @return the value of the '<em>Member2</em>' reference.
+   * @see #setMember2(Operation)
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserver_Member2()
    * @model
    * @generated
    */
-  EList<Operation> getMember2();
+  Operation getMember2();
 
   /**
-   * Returns the value of the '<em><b>Arg</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Observer#getMember2 <em>Member2</em>}' reference.
    * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Arg</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Arg</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getObserver_Arg()
-   * @model
+   * @param value the new value of the '<em>Member2</em>' reference.
+   * @see #getMember2()
    * @generated
    */
-  EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> getArg();
+  void setMember2(Operation value);
 
 } // Observer

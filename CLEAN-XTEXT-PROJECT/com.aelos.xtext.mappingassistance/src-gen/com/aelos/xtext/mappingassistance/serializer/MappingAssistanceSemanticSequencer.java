@@ -336,12 +336,11 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=ID 
 	 *         service1=[Variable|ID] 
-	 *         member1+=[Operation|ID] 
+	 *         member1=[Operation|ID] 
+	 *         ((instVar+=[Variable|ID] varOp+=[Variable|ID])* instVar+=[Variable|ID] varOp+=[Variable|ID])* 
 	 *         service2=[Variable|ID] 
-	 *         member2+=[Operation|ID] 
-	 *         (arg+=[Variable|ID]* arg+=[Variable|ID])*
+	 *         member2=[Operation|ID]
 	 *     )
 	 */
 	protected void sequence_Observer(ISerializationContext context, Observer semanticObject) {
@@ -366,7 +365,12 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     TestDriver returns TestDriver
 	 *
 	 * Constraint:
-	 *     (outVar+=[Variable|ID] service=[Variable|ID] member+=[Operation|ID] (arg+=[Variable|ID]* arg+=[Variable|ID])*)*
+	 *     (
+	 *         outVar+=[Variable|ID] 
+	 *         service=[Variable|ID] 
+	 *         member=[Operation|ID] 
+	 *         ((varConf+=[Variable|ID] instVar+=[Variable|ID])* varConf+=[Variable|ID] instVar+=[Variable|ID])*
+	 *     )*
 	 */
 	protected void sequence_TestDriver(ISerializationContext context, TestDriver semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

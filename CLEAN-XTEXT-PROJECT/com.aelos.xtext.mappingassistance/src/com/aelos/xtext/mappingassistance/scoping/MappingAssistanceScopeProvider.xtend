@@ -83,10 +83,20 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
 	          // Create IEObjectDescriptions and puts them into an IScope instance
 	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, TestDriver))
 	    }
-	     if (context instanceof Observer && reference == MappingAssistancePackage.Literals.OBSERVER__MEMBER1) {
+	    if (context instanceof TestDriver && reference == MappingAssistancePackage.Literals.TEST_DRIVER__VAR_CONF) {
+	        	
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_TestDriver_InstVar(EcoreUtil2.getContainerOfType(context, TestDriver))   
+	    }
+	    if (context instanceof Observer && reference == MappingAssistancePackage.Literals.OBSERVER__MEMBER1) {
 	        	
 	          // Create IEObjectDescriptions and puts them into an IScope instance
 	          return scope_Call_op1(EcoreUtil2.getContainerOfType(context, Observer))
+	    }
+	    if (context instanceof Observer && reference == MappingAssistancePackage.Literals.OBSERVER__VAR_OP) {
+	        	
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Observer_VarOp(EcoreUtil2.getContainerOfType(context, Observer))
 	    }
 	    if (context instanceof Observer && reference == MappingAssistancePackage.Literals.OBSERVER__MEMBER2) {
 	        	
@@ -152,6 +162,14 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
 	}
 	def  IScope scope_Call_op_mock(Mock selct) {
      // System.out.print("dsjkbc")
-      return Scopes.scopeFor(selct.service.type.compType.ops);
+      return Scopes.scopeFor(selct.service.type.compType.opsReq);
+	}
+	def  IScope scope_TestDriver_InstVar(TestDriver selct) {
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.member.arg);
+	}
+	def  IScope scope_Observer_VarOp(Observer selct) {
+     // System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.member1.arg);
 	}
 }

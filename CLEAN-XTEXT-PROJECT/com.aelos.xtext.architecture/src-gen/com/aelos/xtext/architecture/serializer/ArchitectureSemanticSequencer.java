@@ -129,7 +129,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Component returns Component
 	 *
 	 * Constraint:
-	 *     (name=ID (ops+=[Operation|ID]* ops+=[Operation|ID])* operations+=Operation*)
+	 *     (name=ID (ops+=[Operation|ID]* ops+=[Operation|ID])* (opsReq+=[Operation|ID]* opsReq+=[Operation|ID])* operations+=Operation*)
 	 */
 	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

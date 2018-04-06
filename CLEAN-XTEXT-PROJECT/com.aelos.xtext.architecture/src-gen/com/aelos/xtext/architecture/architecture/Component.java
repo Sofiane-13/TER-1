@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getName <em>Name</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getOps <em>Ops</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getOpsReq <em>Ops Req</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.Component#getOperations <em>Operations</em>}</li>
  * </ul>
  *
@@ -68,6 +69,22 @@ public interface Component extends EObject
    * @generated
    */
   EList<Operation> getOps();
+
+  /**
+   * Returns the value of the '<em><b>Ops Req</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ops Req</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ops Req</em>' reference list.
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getComponent_OpsReq()
+   * @model
+   * @generated
+   */
+  EList<Operation> getOpsReq();
 
   /**
    * Returns the value of the '<em><b>Operations</b></em>' containment reference list.

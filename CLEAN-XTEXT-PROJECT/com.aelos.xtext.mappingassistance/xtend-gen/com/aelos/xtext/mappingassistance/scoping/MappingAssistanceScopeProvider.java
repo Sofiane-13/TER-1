@@ -30,8 +30,14 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
     if (((context instanceof TestDriver) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_DRIVER__MEMBER))) {
       return this.scope_Call_op(EcoreUtil2.<TestDriver>getContainerOfType(context, TestDriver.class));
     }
+    if (((context instanceof TestDriver) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_DRIVER__VAR_CONF))) {
+      return this.scope_TestDriver_InstVar(EcoreUtil2.<TestDriver>getContainerOfType(context, TestDriver.class));
+    }
     if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__MEMBER1))) {
       return this.scope_Call_op1(EcoreUtil2.<Observer>getContainerOfType(context, Observer.class));
+    }
+    if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__VAR_OP))) {
+      return this.scope_Observer_VarOp(EcoreUtil2.<Observer>getContainerOfType(context, Observer.class));
     }
     if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__MEMBER2))) {
       return this.scope_Call_op2(EcoreUtil2.<Observer>getContainerOfType(context, Observer.class));
@@ -83,6 +89,14 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
   }
   
   public IScope scope_Call_op_mock(final Mock selct) {
-    return Scopes.scopeFor(selct.getService().getType().getCompType().getOps());
+    return Scopes.scopeFor(selct.getService().getType().getCompType().getOpsReq());
+  }
+  
+  public IScope scope_TestDriver_InstVar(final TestDriver selct) {
+    return Scopes.scopeFor(selct.getMember().getArg());
+  }
+  
+  public IScope scope_Observer_VarOp(final Observer selct) {
+    return Scopes.scopeFor(selct.getMember1().getArg());
   }
 }

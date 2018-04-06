@@ -26,7 +26,9 @@ QualifiedName:
 Component : 
 	"Component:" name=ID "{"
 		"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+		"requeredServices" "(" ((opsReq+=[Operation] ",")*(opsReq+=[Operation]))* ")"
 		->(operations+=Operation)*
+		
 		//(vars+=Variable)*
 		//"requiredService" "(" ((calls+=Call ",")*(calls+=Call))* ")"
 	"}"

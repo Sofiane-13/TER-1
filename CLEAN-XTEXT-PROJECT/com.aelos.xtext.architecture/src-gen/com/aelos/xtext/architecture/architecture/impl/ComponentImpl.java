@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getOps <em>Ops</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getOpsReq <em>Ops Req</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ComponentImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
@@ -70,6 +71,16 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * @ordered
    */
   protected EList<Operation> ops;
+
+  /**
+   * The cached value of the '{@link #getOpsReq() <em>Ops Req</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOpsReq()
+   * @generated
+   * @ordered
+   */
+  protected EList<Operation> opsReq;
 
   /**
    * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
@@ -144,6 +155,20 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Operation> getOpsReq()
+  {
+    if (opsReq == null)
+    {
+      opsReq = new EObjectResolvingEList<Operation>(Operation.class, this, ArchitecturePackage.COMPONENT__OPS_REQ);
+    }
+    return opsReq;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Operation> getOperations()
   {
     if (operations == null)
@@ -183,6 +208,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
         return getName();
       case ArchitecturePackage.COMPONENT__OPS:
         return getOps();
+      case ArchitecturePackage.COMPONENT__OPS_REQ:
+        return getOpsReq();
       case ArchitecturePackage.COMPONENT__OPERATIONS:
         return getOperations();
     }
@@ -206,6 +233,10 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
       case ArchitecturePackage.COMPONENT__OPS:
         getOps().clear();
         getOps().addAll((Collection<? extends Operation>)newValue);
+        return;
+      case ArchitecturePackage.COMPONENT__OPS_REQ:
+        getOpsReq().clear();
+        getOpsReq().addAll((Collection<? extends Operation>)newValue);
         return;
       case ArchitecturePackage.COMPONENT__OPERATIONS:
         getOperations().clear();
@@ -231,6 +262,9 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
       case ArchitecturePackage.COMPONENT__OPS:
         getOps().clear();
         return;
+      case ArchitecturePackage.COMPONENT__OPS_REQ:
+        getOpsReq().clear();
+        return;
       case ArchitecturePackage.COMPONENT__OPERATIONS:
         getOperations().clear();
         return;
@@ -252,6 +286,8 @@ public class ComponentImpl extends MinimalEObjectImpl.Container implements Compo
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case ArchitecturePackage.COMPONENT__OPS:
         return ops != null && !ops.isEmpty();
+      case ArchitecturePackage.COMPONENT__OPS_REQ:
+        return opsReq != null && !opsReq.isEmpty();
       case ArchitecturePackage.COMPONENT__OPERATIONS:
         return operations != null && !operations.isEmpty();
     }
