@@ -503,7 +503,7 @@ ruleArchitecture returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='Architecture Definition'
+		otherlv_1='ArchitectureDefinition'
 		{
 			newLeafNode(otherlv_1, grammarAccess.getArchitectureAccess().getArchitectureDefinitionKeyword_1());
 		}

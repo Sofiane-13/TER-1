@@ -308,17 +308,17 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cProviderCallParserRuleCall_3_3_0 = (RuleCall)cProviderAssignment_3_3.eContents().get(0);
 		
 		//Architecture:
-		//	{Architecture} "Architecture Definition"
+		//	{Architecture} "ArchitectureDefinition"
 		//	vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Architecture} "Architecture Definition" vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*
+		//{Architecture} "ArchitectureDefinition" vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*
 		public Group getGroup() { return cGroup; }
 		
 		//{Architecture}
 		public Action getArchitectureAction_0() { return cArchitectureAction_0; }
 		
-		//"Architecture Definition"
+		//"ArchitectureDefinition"
 		public Keyword getArchitectureDefinitionKeyword_1() { return cArchitectureDefinitionKeyword_1; }
 		
 		//vars+=Variable*
@@ -708,7 +708,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Architecture:
-	//	{Architecture} "Architecture Definition"
+	//	{Architecture} "ArchitectureDefinition"
 	//	vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*;
 	public ArchitectureElements getArchitectureAccess() {
 		return pArchitecture;

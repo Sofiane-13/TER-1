@@ -1277,7 +1277,7 @@ rule__Architecture__Group__1__Impl
 :
 (
 	{ before(grammarAccess.getArchitectureAccess().getArchitectureDefinitionKeyword_1()); }
-	'Architecture Definition'
+	'ArchitectureDefinition'
 	{ after(grammarAccess.getArchitectureAccess().getArchitectureDefinitionKeyword_1()); }
 )
 ;

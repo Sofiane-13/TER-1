@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalArchitectureParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "','", "')'", "'Architecture Definition'", "'bind'", "':'", "'def'", "'INT'", "'STRING'", "'Boolean'", "'Double'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "','", "')'", "'ArchitectureDefinition'", "'bind'", "':'", "'def'", "'INT'", "'STRING'", "'Boolean'", "'Double'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -1435,7 +1435,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArchitecture"
-    // InternalArchitecture.g:491:1: ruleArchitecture returns [EObject current=null] : ( () otherlv_1= 'Architecture Definition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )* ) ;
+    // InternalArchitecture.g:491:1: ruleArchitecture returns [EObject current=null] : ( () otherlv_1= 'ArchitectureDefinition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )* ) ;
     public final EObject ruleArchitecture() throws RecognitionException {
         EObject current = null;
 
@@ -1453,11 +1453,11 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalArchitecture.g:497:2: ( ( () otherlv_1= 'Architecture Definition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )* ) )
-            // InternalArchitecture.g:498:2: ( () otherlv_1= 'Architecture Definition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )* )
+            // InternalArchitecture.g:497:2: ( ( () otherlv_1= 'ArchitectureDefinition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )* ) )
+            // InternalArchitecture.g:498:2: ( () otherlv_1= 'ArchitectureDefinition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )* )
             {
-            // InternalArchitecture.g:498:2: ( () otherlv_1= 'Architecture Definition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )* )
-            // InternalArchitecture.g:499:3: () otherlv_1= 'Architecture Definition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )*
+            // InternalArchitecture.g:498:2: ( () otherlv_1= 'ArchitectureDefinition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )* )
+            // InternalArchitecture.g:499:3: () otherlv_1= 'ArchitectureDefinition' ( (lv_vars_2_0= ruleVariable ) )* (otherlv_3= 'bind' ( (lv_receiver_4_0= ruleCall ) ) otherlv_5= ':' ( (lv_provider_6_0= ruleCall ) ) )*
             {
             // InternalArchitecture.g:499:3: ()
             // InternalArchitecture.g:500:4: 

@@ -4,7 +4,7 @@
 '.'=16
 '.*'=15
 ':'=24
-'Architecture Definition'=22
+'ArchitectureDefinition'=22
 'Boolean'=28
 'Component:'=17
 'Double'=29

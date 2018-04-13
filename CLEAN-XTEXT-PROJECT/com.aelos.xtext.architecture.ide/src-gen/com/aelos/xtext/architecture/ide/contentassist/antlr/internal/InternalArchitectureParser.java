@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalArchitectureParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'INT'", "'STRING'", "'Boolean'", "'Double'", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "')'", "','", "'Architecture Definition'", "'bind'", "':'", "'def'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'INT'", "'STRING'", "'Boolean'", "'Double'", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "')'", "','", "'ArchitectureDefinition'", "'bind'", "':'", "'def'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -4198,17 +4198,17 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Architecture__Group__1__Impl"
-    // InternalArchitecture.g:1273:1: rule__Architecture__Group__1__Impl : ( 'Architecture Definition' ) ;
+    // InternalArchitecture.g:1273:1: rule__Architecture__Group__1__Impl : ( 'ArchitectureDefinition' ) ;
     public final void rule__Architecture__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalArchitecture.g:1277:1: ( ( 'Architecture Definition' ) )
-            // InternalArchitecture.g:1278:1: ( 'Architecture Definition' )
+            // InternalArchitecture.g:1277:1: ( ( 'ArchitectureDefinition' ) )
+            // InternalArchitecture.g:1278:1: ( 'ArchitectureDefinition' )
             {
-            // InternalArchitecture.g:1278:1: ( 'Architecture Definition' )
-            // InternalArchitecture.g:1279:2: 'Architecture Definition'
+            // InternalArchitecture.g:1278:1: ( 'ArchitectureDefinition' )
+            // InternalArchitecture.g:1279:2: 'ArchitectureDefinition'
             {
             if ( state.backtracking==0 ) {
                before(grammarAccess.getArchitectureAccess().getArchitectureDefinitionKeyword_1()); 
