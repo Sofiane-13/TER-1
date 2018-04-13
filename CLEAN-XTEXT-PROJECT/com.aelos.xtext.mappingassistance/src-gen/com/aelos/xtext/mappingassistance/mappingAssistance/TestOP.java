@@ -12,24 +12,24 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Conf</b></em>'.
+ * A representation of the model object '<em><b>Test OP</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getService <em>Service</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getMember <em>Member</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getVarConf <em>Var Conf</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getInstVar <em>Inst Var</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getService <em>Service</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getName <em>Name</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getVarConf <em>Var Conf</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getInstVar <em>Inst Var</em>}</li>
  * </ul>
  *
- * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf()
+ * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestOP()
  * @model
  * @generated
  */
-public interface Conf extends EObject
+public interface TestOP extends EObject
 {
   /**
    * Returns the value of the '<em><b>Service</b></em>' reference.
@@ -41,14 +41,14 @@ public interface Conf extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Service</em>' reference.
    * @see #setService(Variable)
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf_Service()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestOP_Service()
    * @model
    * @generated
    */
   Variable getService();
 
   /**
-   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getService <em>Service</em>}' reference.
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getService <em>Service</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Service</em>' reference.
@@ -58,30 +58,30 @@ public interface Conf extends EObject
   void setService(Variable value);
 
   /**
-   * Returns the value of the '<em><b>Member</b></em>' reference.
+   * Returns the value of the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Member</em>' reference isn't clear,
+   * If the meaning of the '<em>Name</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Member</em>' reference.
-   * @see #setMember(Operation)
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf_Member()
+   * @return the value of the '<em>Name</em>' reference.
+   * @see #setName(Operation)
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestOP_Name()
    * @model
    * @generated
    */
-  Operation getMember();
+  Operation getName();
 
   /**
-   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getMember <em>Member</em>}' reference.
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getName <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Member</em>' reference.
-   * @see #getMember()
+   * @param value the new value of the '<em>Name</em>' reference.
+   * @see #getName()
    * @generated
    */
-  void setMember(Operation value);
+  void setName(Operation value);
 
   /**
    * Returns the value of the '<em><b>Var Conf</b></em>' reference list.
@@ -93,7 +93,7 @@ public interface Conf extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Var Conf</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf_VarConf()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestOP_VarConf()
    * @model
    * @generated
    */
@@ -109,10 +109,10 @@ public interface Conf extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Inst Var</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf_InstVar()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestOP_InstVar()
    * @model
    * @generated
    */
   EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> getInstVar();
 
-} // Conf
+} // TestOP

@@ -6,6 +6,8 @@ package com.aelos.xtext.mappingassistance.validation
 import org.eclipse.xtext.validation.Check
 import com.aelos.xtext.mappingassistance.mappingAssistance.Conf
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP
 
 //import com.aelos.xtext.mappingassistance.mappingAssistance.Mapping
 //import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
@@ -32,7 +34,25 @@ class MappingAssistanceValidator extends AbstractMappingAssistanceValidator {
 		var x=0;
 		for(varconf:conf.varConf){
 			//System.out.println(conf.instVar.get(x).eClass.name+" : "+varconf.type.atomType.literal)
-			if(!( (conf.instVar.get(x).eClass.name).equals(varconf.type.atomType.literal))){
+			if(!( (conf.instVar.get(x).type.literal).equals(varconf.type.atomType.literal))){
+				
+				error("the variables must have the same Type",MappingAssistancePackage.Literals.CONF__VAR_CONF)
+			}
+			x++
+		}
+	}
+	
+	@Check
+	def checkMappingTestDriver(TestOP td) {
+
+		if(td.name.arg.size < td.varConf.size){
+			error("size varconf > function args",MappingAssistancePackage.Literals.CONF__VAR_CONF)
+		}
+		
+		var x=0;
+		for(varconf:td.varConf){
+			//System.out.println(conf.instVar.get(x).eClass.name+" : "+varconf.type.atomType.literal)
+			if(td.instVar.length!=0 && !( (varconf.type.atomType.literal).equals(td.instVar.get(x).type.literal))){
 				
 				error("the variables must have the same Type",MappingAssistancePackage.Literals.CONF__VAR_CONF)
 			}

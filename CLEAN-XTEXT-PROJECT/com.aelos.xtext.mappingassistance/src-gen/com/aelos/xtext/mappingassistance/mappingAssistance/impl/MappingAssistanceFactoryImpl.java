@@ -20,6 +20,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
 import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Type;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Variable;
 import com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef;
@@ -94,6 +95,7 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
       case MappingAssistancePackage.CONF: return createConf();
       case MappingAssistancePackage.ATOMIC: return createAtomic();
       case MappingAssistancePackage.COMOPNENT: return createComopnent();
+      case MappingAssistancePackage.TEST_OP: return createTestOP();
       case MappingAssistancePackage.OPERATION: return createOperation();
       case MappingAssistancePackage.VARIABLE: return createVariable();
       case MappingAssistancePackage.BINDINGS: return createBindings();
@@ -240,6 +242,17 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
   {
     ComopnentImpl comopnent = new ComopnentImpl();
     return comopnent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TestOP createTestOP()
+  {
+    TestOPImpl testOP = new TestOPImpl();
+    return testOP;
   }
 
   /**

@@ -3,8 +3,6 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance;
 
-import com.aelos.xtext.architecture.architecture.Operation;
-
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
 
 import org.eclipse.emf.common.util.EList;
@@ -21,9 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getOutVar <em>Out Var</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getService <em>Service</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getMember <em>Member</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getArg <em>Arg</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getTestOp <em>Test Op</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver()
@@ -49,61 +45,19 @@ public interface TestDriver extends EObject
   EList<Variable> getOutVar();
 
   /**
-   * Returns the value of the '<em><b>Service</b></em>' reference.
+   * Returns the value of the '<em><b>Test Op</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Service</em>' reference isn't clear,
+   * If the meaning of the '<em>Test Op</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Service</em>' reference.
-   * @see #setService(com.aelos.xtext.architecture.architecture.Variable)
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Service()
-   * @model
+   * @return the value of the '<em>Test Op</em>' containment reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_TestOp()
+   * @model containment="true"
    * @generated
    */
-  com.aelos.xtext.architecture.architecture.Variable getService();
-
-  /**
-   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver#getService <em>Service</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Service</em>' reference.
-   * @see #getService()
-   * @generated
-   */
-  void setService(com.aelos.xtext.architecture.architecture.Variable value);
-
-  /**
-   * Returns the value of the '<em><b>Member</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Member</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Member</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Member()
-   * @model
-   * @generated
-   */
-  EList<Operation> getMember();
-
-  /**
-   * Returns the value of the '<em><b>Arg</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Arg</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Arg</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestDriver_Arg()
-   * @model
-   * @generated
-   */
-  EList<Variable> getArg();
+  EList<TestOP> getTestOp();
 
 } // TestDriver

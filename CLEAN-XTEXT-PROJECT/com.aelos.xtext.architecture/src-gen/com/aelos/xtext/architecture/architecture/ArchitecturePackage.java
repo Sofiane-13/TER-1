@@ -226,13 +226,22 @@ public interface ArchitecturePackage extends EPackage
   int COMPONENT__OPS = 1;
 
   /**
+   * The feature id for the '<em><b>Ops Req</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT__OPS_REQ = 2;
+
+  /**
    * The feature id for the '<em><b>Operations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__OPERATIONS = 2;
+  int COMPONENT__OPERATIONS = 3;
 
   /**
    * The number of structural features of the '<em>Component</em>' class.
@@ -241,7 +250,7 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = 3;
+  int COMPONENT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.ArchitectureImpl <em>Architecture</em>}' class.
@@ -607,6 +616,17 @@ public interface ArchitecturePackage extends EPackage
   EReference getComponent_Ops();
 
   /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Component#getOpsReq <em>Ops Req</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Ops Req</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Component#getOpsReq()
+   * @see #getComponent()
+   * @generated
+   */
+  EReference getComponent_OpsReq();
+
+  /**
    * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Component#getOperations <em>Operations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -953,6 +973,14 @@ public interface ArchitecturePackage extends EPackage
      * @generated
      */
     EReference COMPONENT__OPS = eINSTANCE.getComponent_Ops();
+
+    /**
+     * The meta object literal for the '<em><b>Ops Req</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT__OPS_REQ = eINSTANCE.getComponent_OpsReq();
 
     /**
      * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.

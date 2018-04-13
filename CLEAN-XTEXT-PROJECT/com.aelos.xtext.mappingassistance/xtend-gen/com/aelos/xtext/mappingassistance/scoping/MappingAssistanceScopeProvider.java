@@ -8,7 +8,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
-import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 import com.aelos.xtext.mappingassistance.scoping.AbstractMappingAssistanceScopeProvider;
 import com.google.common.base.Objects;
 import org.eclipse.emf.ecore.EObject;
@@ -27,11 +27,17 @@ import org.eclipse.xtext.scoping.Scopes;
 public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if (((context instanceof TestDriver) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_DRIVER__MEMBER))) {
-      return this.scope_Call_op(EcoreUtil2.<TestDriver>getContainerOfType(context, TestDriver.class));
+    if (((context instanceof TestOP) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_OP__NAME))) {
+      return this.scope_Call_op(EcoreUtil2.<TestOP>getContainerOfType(context, TestOP.class));
+    }
+    if (((context instanceof TestOP) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_OP__VAR_CONF))) {
+      return this.scope_TestDriver_InstVar(EcoreUtil2.<TestOP>getContainerOfType(context, TestOP.class));
     }
     if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__MEMBER1))) {
       return this.scope_Call_op1(EcoreUtil2.<Observer>getContainerOfType(context, Observer.class));
+    }
+    if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__VAR_OP))) {
+      return this.scope_Observer_VarOp(EcoreUtil2.<Observer>getContainerOfType(context, Observer.class));
     }
     if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__MEMBER2))) {
       return this.scope_Call_op2(EcoreUtil2.<Observer>getContainerOfType(context, Observer.class));
@@ -62,7 +68,7 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
     return Scopes.scopeFor(selct.getService1().getType().getCompType().getOps());
   }
   
-  public IScope scope_Call_op(final TestDriver selct) {
+  public IScope scope_Call_op(final TestOP selct) {
     return Scopes.scopeFor(selct.getService().getType().getCompType().getOps());
   }
   
@@ -83,6 +89,19 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
   }
   
   public IScope scope_Call_op_mock(final Mock selct) {
-    return Scopes.scopeFor(selct.getService().getType().getCompType().getOps());
+    return Scopes.scopeFor(selct.getService().getType().getCompType().getOpsReq());
+  }
+  
+  public IScope scope_TestDriver_InstVar(final TestOP selct) {
+    int _size = selct.getName().getArg().size();
+    String _plus = (Integer.valueOf(_size) + " : ");
+    int _size_1 = selct.getVarConf().size();
+    String _plus_1 = (_plus + Integer.valueOf(_size_1));
+    System.out.println(_plus_1);
+    return Scopes.scopeFor(selct.getName().getArg());
+  }
+  
+  public IScope scope_Observer_VarOp(final Observer selct) {
+    return Scopes.scopeFor(selct.getMember1().getArg());
   }
 }

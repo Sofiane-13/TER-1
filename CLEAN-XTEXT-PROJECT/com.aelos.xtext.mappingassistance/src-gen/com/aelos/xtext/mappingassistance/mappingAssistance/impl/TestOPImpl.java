@@ -6,8 +6,8 @@ package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 import com.aelos.xtext.architecture.architecture.Operation;
 import com.aelos.xtext.architecture.architecture.Variable;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 
 import java.util.Collection;
 
@@ -25,21 +25,21 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Conf</b></em>'.
+ * An implementation of the model object '<em><b>Test OP</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl#getService <em>Service</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl#getMember <em>Member</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl#getVarConf <em>Var Conf</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl#getInstVar <em>Inst Var</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl#getService <em>Service</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl#getVarConf <em>Var Conf</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl#getInstVar <em>Inst Var</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
+public class TestOPImpl extends MinimalEObjectImpl.Container implements TestOP
 {
   /**
    * The cached value of the '{@link #getService() <em>Service</em>}' reference.
@@ -52,14 +52,14 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   protected Variable service;
 
   /**
-   * The cached value of the '{@link #getMember() <em>Member</em>}' reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMember()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected Operation member;
+  protected Operation name;
 
   /**
    * The cached value of the '{@link #getVarConf() <em>Var Conf</em>}' reference list.
@@ -86,7 +86,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ConfImpl()
+  protected TestOPImpl()
   {
     super();
   }
@@ -99,7 +99,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   @Override
   protected EClass eStaticClass()
   {
-    return MappingAssistancePackage.Literals.CONF;
+    return MappingAssistancePackage.Literals.TEST_OP;
   }
 
   /**
@@ -116,7 +116,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
       if (service != oldService)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.CONF__SERVICE, oldService, service));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.TEST_OP__SERVICE, oldService, service));
       }
     }
     return service;
@@ -142,7 +142,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
     Variable oldService = service;
     service = newService;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.CONF__SERVICE, oldService, service));
+      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.TEST_OP__SERVICE, oldService, service));
   }
 
   /**
@@ -150,19 +150,19 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
    * <!-- end-user-doc -->
    * @generated
    */
-  public Operation getMember()
+  public Operation getName()
   {
-    if (member != null && member.eIsProxy())
+    if (name != null && name.eIsProxy())
     {
-      InternalEObject oldMember = (InternalEObject)member;
-      member = (Operation)eResolveProxy(oldMember);
-      if (member != oldMember)
+      InternalEObject oldName = (InternalEObject)name;
+      name = (Operation)eResolveProxy(oldName);
+      if (name != oldName)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.CONF__MEMBER, oldMember, member));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.TEST_OP__NAME, oldName, name));
       }
     }
-    return member;
+    return name;
   }
 
   /**
@@ -170,9 +170,9 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
    * <!-- end-user-doc -->
    * @generated
    */
-  public Operation basicGetMember()
+  public Operation basicGetName()
   {
-    return member;
+    return name;
   }
 
   /**
@@ -180,12 +180,12 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMember(Operation newMember)
+  public void setName(Operation newName)
   {
-    Operation oldMember = member;
-    member = newMember;
+    Operation oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.CONF__MEMBER, oldMember, member));
+      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.TEST_OP__NAME, oldName, name));
   }
 
   /**
@@ -197,7 +197,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     if (varConf == null)
     {
-      varConf = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.CONF__VAR_CONF);
+      varConf = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.TEST_OP__VAR_CONF);
     }
     return varConf;
   }
@@ -211,7 +211,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     if (instVar == null)
     {
-      instVar = new EObjectResolvingEList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable.class, this, MappingAssistancePackage.CONF__INST_VAR);
+      instVar = new EObjectResolvingEList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable.class, this, MappingAssistancePackage.TEST_OP__INST_VAR);
     }
     return instVar;
   }
@@ -226,15 +226,15 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.CONF__SERVICE:
+      case MappingAssistancePackage.TEST_OP__SERVICE:
         if (resolve) return getService();
         return basicGetService();
-      case MappingAssistancePackage.CONF__MEMBER:
-        if (resolve) return getMember();
-        return basicGetMember();
-      case MappingAssistancePackage.CONF__VAR_CONF:
+      case MappingAssistancePackage.TEST_OP__NAME:
+        if (resolve) return getName();
+        return basicGetName();
+      case MappingAssistancePackage.TEST_OP__VAR_CONF:
         return getVarConf();
-      case MappingAssistancePackage.CONF__INST_VAR:
+      case MappingAssistancePackage.TEST_OP__INST_VAR:
         return getInstVar();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -251,17 +251,17 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.CONF__SERVICE:
+      case MappingAssistancePackage.TEST_OP__SERVICE:
         setService((Variable)newValue);
         return;
-      case MappingAssistancePackage.CONF__MEMBER:
-        setMember((Operation)newValue);
+      case MappingAssistancePackage.TEST_OP__NAME:
+        setName((Operation)newValue);
         return;
-      case MappingAssistancePackage.CONF__VAR_CONF:
+      case MappingAssistancePackage.TEST_OP__VAR_CONF:
         getVarConf().clear();
         getVarConf().addAll((Collection<? extends Variable>)newValue);
         return;
-      case MappingAssistancePackage.CONF__INST_VAR:
+      case MappingAssistancePackage.TEST_OP__INST_VAR:
         getInstVar().clear();
         getInstVar().addAll((Collection<? extends com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>)newValue);
         return;
@@ -279,16 +279,16 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.CONF__SERVICE:
+      case MappingAssistancePackage.TEST_OP__SERVICE:
         setService((Variable)null);
         return;
-      case MappingAssistancePackage.CONF__MEMBER:
-        setMember((Operation)null);
+      case MappingAssistancePackage.TEST_OP__NAME:
+        setName((Operation)null);
         return;
-      case MappingAssistancePackage.CONF__VAR_CONF:
+      case MappingAssistancePackage.TEST_OP__VAR_CONF:
         getVarConf().clear();
         return;
-      case MappingAssistancePackage.CONF__INST_VAR:
+      case MappingAssistancePackage.TEST_OP__INST_VAR:
         getInstVar().clear();
         return;
     }
@@ -305,16 +305,16 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.CONF__SERVICE:
+      case MappingAssistancePackage.TEST_OP__SERVICE:
         return service != null;
-      case MappingAssistancePackage.CONF__MEMBER:
-        return member != null;
-      case MappingAssistancePackage.CONF__VAR_CONF:
+      case MappingAssistancePackage.TEST_OP__NAME:
+        return name != null;
+      case MappingAssistancePackage.TEST_OP__VAR_CONF:
         return varConf != null && !varConf.isEmpty();
-      case MappingAssistancePackage.CONF__INST_VAR:
+      case MappingAssistancePackage.TEST_OP__INST_VAR:
         return instVar != null && !instVar.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ConfImpl
+} //TestOPImpl

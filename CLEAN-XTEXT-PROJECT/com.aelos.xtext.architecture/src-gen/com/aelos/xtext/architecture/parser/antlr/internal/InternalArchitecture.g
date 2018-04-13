@@ -451,14 +451,60 @@ ruleComponent returns [EObject current=null]
 		{
 			newLeafNode(otherlv_8, grammarAccess.getComponentAccess().getRightParenthesisKeyword_6());
 		}
+		otherlv_9='requeredServices'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getComponentAccess().getRequeredServicesKeyword_7());
+		}
+		otherlv_10='('
+		{
+			newLeafNode(otherlv_10, grammarAccess.getComponentAccess().getLeftParenthesisKeyword_8());
+		}
+		(
+			(
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getComponentRule());
+							}
+						}
+						otherlv_11=RULE_ID
+						{
+							newLeafNode(otherlv_11, grammarAccess.getComponentAccess().getOpsReqOperationCrossReference_9_0_0_0());
+						}
+					)
+				)
+				otherlv_12=','
+				{
+					newLeafNode(otherlv_12, grammarAccess.getComponentAccess().getCommaKeyword_9_0_1());
+				}
+			)*
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getComponentRule());
+						}
+					}
+					otherlv_13=RULE_ID
+					{
+						newLeafNode(otherlv_13, grammarAccess.getComponentAccess().getOpsReqOperationCrossReference_9_1_0());
+					}
+				)
+			)
+		)*
+		otherlv_14=')'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getComponentAccess().getRightParenthesisKeyword_10());
+		}
 		(
 			('def')=>
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getComponentAccess().getOperationsOperationParserRuleCall_7_0_0());
+						newCompositeNode(grammarAccess.getComponentAccess().getOperationsOperationParserRuleCall_11_0_0());
 					}
-					lv_operations_9_0=ruleOperation
+					lv_operations_15_0=ruleOperation
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getComponentRule());
@@ -466,16 +512,16 @@ ruleComponent returns [EObject current=null]
 						add(
 							$current,
 							"operations",
-							lv_operations_9_0,
+							lv_operations_15_0,
 							"com.aelos.xtext.architecture.Architecture.Operation");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)*
-		otherlv_10='}'
+		otherlv_16='}'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_16, grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;

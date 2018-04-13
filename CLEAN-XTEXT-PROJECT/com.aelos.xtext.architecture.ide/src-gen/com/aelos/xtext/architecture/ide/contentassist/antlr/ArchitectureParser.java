@@ -43,7 +43,9 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComponentAccess().getGroup(), "rule__Component__Group__0");
 			builder.put(grammarAccess.getComponentAccess().getGroup_5(), "rule__Component__Group_5__0");
 			builder.put(grammarAccess.getComponentAccess().getGroup_5_0(), "rule__Component__Group_5_0__0");
-			builder.put(grammarAccess.getComponentAccess().getGroup_7(), "rule__Component__Group_7__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_9(), "rule__Component__Group_9__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_9_0(), "rule__Component__Group_9_0__0");
+			builder.put(grammarAccess.getComponentAccess().getGroup_11(), "rule__Component__Group_11__0");
 			builder.put(grammarAccess.getArchitectureAccess().getGroup(), "rule__Architecture__Group__0");
 			builder.put(grammarAccess.getArchitectureAccess().getGroup_3(), "rule__Architecture__Group_3__0");
 			builder.put(grammarAccess.getCallAccess().getGroup(), "rule__Call__Group__0");
@@ -61,7 +63,9 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComponentAccess().getNameAssignment_1(), "rule__Component__NameAssignment_1");
 			builder.put(grammarAccess.getComponentAccess().getOpsAssignment_5_0_0(), "rule__Component__OpsAssignment_5_0_0");
 			builder.put(grammarAccess.getComponentAccess().getOpsAssignment_5_1(), "rule__Component__OpsAssignment_5_1");
-			builder.put(grammarAccess.getComponentAccess().getOperationsAssignment_7_0(), "rule__Component__OperationsAssignment_7_0");
+			builder.put(grammarAccess.getComponentAccess().getOpsReqAssignment_9_0_0(), "rule__Component__OpsReqAssignment_9_0_0");
+			builder.put(grammarAccess.getComponentAccess().getOpsReqAssignment_9_1(), "rule__Component__OpsReqAssignment_9_1");
+			builder.put(grammarAccess.getComponentAccess().getOperationsAssignment_11_0(), "rule__Component__OperationsAssignment_11_0");
 			builder.put(grammarAccess.getArchitectureAccess().getVarsAssignment_2(), "rule__Architecture__VarsAssignment_2");
 			builder.put(grammarAccess.getArchitectureAccess().getReceiverAssignment_3_1(), "rule__Architecture__ReceiverAssignment_3_1");
 			builder.put(grammarAccess.getArchitectureAccess().getProviderAssignment_3_3(), "rule__Architecture__ProviderAssignment_3_3");

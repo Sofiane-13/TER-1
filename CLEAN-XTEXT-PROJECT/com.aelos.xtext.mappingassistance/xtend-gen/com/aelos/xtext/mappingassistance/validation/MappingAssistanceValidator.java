@@ -6,9 +6,11 @@ package com.aelos.xtext.mappingassistance.validation;
 import com.aelos.xtext.architecture.architecture.Variable;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 import com.aelos.xtext.mappingassistance.validation.AbstractMappingAssistanceValidator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Conversions;
 
 /**
  * This class contains custom validation rules.
@@ -23,9 +25,29 @@ public class MappingAssistanceValidator extends AbstractMappingAssistanceValidat
     EList<Variable> _varConf = conf.getVarConf();
     for (final Variable varconf : _varConf) {
       {
-        boolean _equals = conf.getInstVar().get(x).eClass().getName().equals(varconf.getType().getAtomType().getLiteral());
+        boolean _equals = conf.getInstVar().get(x).getType().getLiteral().equals(varconf.getType().getAtomType().getLiteral());
         boolean _not = (!_equals);
         if (_not) {
+          this.error("the variables must have the same Type", MappingAssistancePackage.Literals.CONF__VAR_CONF);
+        }
+        x++;
+      }
+    }
+  }
+  
+  @Check
+  public void checkMappingTestDriver(final TestOP td) {
+    int _size = td.getName().getArg().size();
+    int _size_1 = td.getVarConf().size();
+    boolean _lessThan = (_size < _size_1);
+    if (_lessThan) {
+      this.error("size varconf > function args", MappingAssistancePackage.Literals.CONF__VAR_CONF);
+    }
+    int x = 0;
+    EList<Variable> _varConf = td.getVarConf();
+    for (final Variable varconf : _varConf) {
+      {
+        if (((((Object[])Conversions.unwrapArray(td.getInstVar(), Object.class)).length != 0) && (!varconf.getType().getAtomType().getLiteral().equals(td.getInstVar().get(x).getType().getLiteral())))) {
           this.error("the variables must have the same Type", MappingAssistancePackage.Literals.CONF__VAR_CONF);
         }
         x++;

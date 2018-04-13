@@ -210,22 +210,35 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cOpsOperationCrossReference_5_1_0 = (CrossReference)cOpsAssignment_5_1.eContents().get(0);
 		private final RuleCall cOpsOperationIDTerminalRuleCall_5_1_0_1 = (RuleCall)cOpsOperationCrossReference_5_1_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Assignment cOperationsAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
-		private final RuleCall cOperationsOperationParserRuleCall_7_0_0 = (RuleCall)cOperationsAssignment_7_0.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cRequeredServicesKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cLeftParenthesisKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Group cGroup_9_0 = (Group)cGroup_9.eContents().get(0);
+		private final Assignment cOpsReqAssignment_9_0_0 = (Assignment)cGroup_9_0.eContents().get(0);
+		private final CrossReference cOpsReqOperationCrossReference_9_0_0_0 = (CrossReference)cOpsReqAssignment_9_0_0.eContents().get(0);
+		private final RuleCall cOpsReqOperationIDTerminalRuleCall_9_0_0_0_1 = (RuleCall)cOpsReqOperationCrossReference_9_0_0_0.eContents().get(1);
+		private final Keyword cCommaKeyword_9_0_1 = (Keyword)cGroup_9_0.eContents().get(1);
+		private final Assignment cOpsReqAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final CrossReference cOpsReqOperationCrossReference_9_1_0 = (CrossReference)cOpsReqAssignment_9_1.eContents().get(0);
+		private final RuleCall cOpsReqOperationIDTerminalRuleCall_9_1_0_1 = (RuleCall)cOpsReqOperationCrossReference_9_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Group cGroup_11 = (Group)cGroup.eContents().get(11);
+		private final Assignment cOperationsAssignment_11_0 = (Assignment)cGroup_11.eContents().get(0);
+		private final RuleCall cOperationsOperationParserRuleCall_11_0_0 = (RuleCall)cOperationsAssignment_11_0.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Component:
 		//	"Component:" name=ID "{"
 		//	"providedServices" "(" ((ops+=[Operation] ",")* ops+=[Operation])* ")"
+		//	"requeredServices" "(" ((opsReq+=[Operation] ",")* opsReq+=[Operation])* ")"
 		//	-> (operations+=Operation)*
 		//	//(vars+=Variable)*
 		//	//"requiredService" "(" ((calls+=Call ",")*(calls+=Call))* ")"
 		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"Component:" name=ID "{" "providedServices" "(" ((ops+=[Operation] ",")* ops+=[Operation])* ")" ->
-		//(operations+=Operation)* //(vars+=Variable)*
+		//"Component:" name=ID "{" "providedServices" "(" ((ops+=[Operation] ",")* ops+=[Operation])* ")" "requeredServices" "("
+		//((opsReq+=[Operation] ",")* opsReq+=[Operation])* ")" -> (operations+=Operation)* //(vars+=Variable)*
 		////"requiredService" "(" ((calls+=Call ",")*(calls+=Call))* ")"
 		//"}"
 		public Group getGroup() { return cGroup; }
@@ -278,19 +291,55 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 		
+		//"requeredServices"
+		public Keyword getRequeredServicesKeyword_7() { return cRequeredServicesKeyword_7; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_8() { return cLeftParenthesisKeyword_8; }
+		
+		//((opsReq+=[Operation] ",")* opsReq+=[Operation])*
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//(opsReq+=[Operation] ",")*
+		public Group getGroup_9_0() { return cGroup_9_0; }
+		
+		//opsReq+=[Operation]
+		public Assignment getOpsReqAssignment_9_0_0() { return cOpsReqAssignment_9_0_0; }
+		
+		//[Operation]
+		public CrossReference getOpsReqOperationCrossReference_9_0_0_0() { return cOpsReqOperationCrossReference_9_0_0_0; }
+		
+		//ID
+		public RuleCall getOpsReqOperationIDTerminalRuleCall_9_0_0_0_1() { return cOpsReqOperationIDTerminalRuleCall_9_0_0_0_1; }
+		
+		//","
+		public Keyword getCommaKeyword_9_0_1() { return cCommaKeyword_9_0_1; }
+		
+		//opsReq+=[Operation]
+		public Assignment getOpsReqAssignment_9_1() { return cOpsReqAssignment_9_1; }
+		
+		//[Operation]
+		public CrossReference getOpsReqOperationCrossReference_9_1_0() { return cOpsReqOperationCrossReference_9_1_0; }
+		
+		//ID
+		public RuleCall getOpsReqOperationIDTerminalRuleCall_9_1_0_1() { return cOpsReqOperationIDTerminalRuleCall_9_1_0_1; }
+		
+		//")"
+		public Keyword getRightParenthesisKeyword_10() { return cRightParenthesisKeyword_10; }
+		
 		//-> (operations+=Operation)*
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_11() { return cGroup_11; }
 		
 		//operations+=Operation
-		public Assignment getOperationsAssignment_7_0() { return cOperationsAssignment_7_0; }
+		public Assignment getOperationsAssignment_11_0() { return cOperationsAssignment_11_0; }
 		
 		//Operation
-		public RuleCall getOperationsOperationParserRuleCall_7_0_0() { return cOperationsOperationParserRuleCall_7_0_0; }
+		public RuleCall getOperationsOperationParserRuleCall_11_0_0() { return cOperationsOperationParserRuleCall_11_0_0; }
 		
 		////(vars+=Variable)*
 		////"requiredService" "(" ((calls+=Call ",")*(calls+=Call))* ")"
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 	public class ArchitectureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Architecture");
@@ -695,6 +744,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	//Component:
 	//	"Component:" name=ID "{"
 	//	"providedServices" "(" ((ops+=[Operation] ",")* ops+=[Operation])* ")"
+	//	"requeredServices" "(" ((opsReq+=[Operation] ",")* opsReq+=[Operation])* ")"
 	//	-> (operations+=Operation)*
 	//	//(vars+=Variable)*
 	//	//"requiredService" "(" ((calls+=Call ",")*(calls+=Call))* ")"
