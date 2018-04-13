@@ -77,8 +77,6 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
 
 	override getScope(EObject context, EReference reference) {
 		
-		
-    
 	    if (context instanceof TestOP && reference == MappingAssistancePackage.Literals.TEST_OP__NAME) {
 	        	
 	          // Create IEObjectDescriptions and puts them into an IScope instance
