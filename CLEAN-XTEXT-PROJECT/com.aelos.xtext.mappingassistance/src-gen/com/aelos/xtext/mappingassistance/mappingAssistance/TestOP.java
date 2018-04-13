@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getService <em>Service</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getName <em>Name</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getVarConf <em>Var Conf</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getVarConf1 <em>Var Conf1</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getInstVar <em>Inst Var</em>}</li>
  * </ul>
  *
@@ -84,20 +84,20 @@ public interface TestOP extends EObject
   void setName(Operation value);
 
   /**
-   * Returns the value of the '<em><b>Var Conf</b></em>' reference list.
+   * Returns the value of the '<em><b>Var Conf1</b></em>' reference list.
    * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Variable}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Var Conf</em>' reference list isn't clear,
+   * If the meaning of the '<em>Var Conf1</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Var Conf</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestOP_VarConf()
+   * @return the value of the '<em>Var Conf1</em>' reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getTestOP_VarConf1()
    * @model
    * @generated
    */
-  EList<Variable> getVarConf();
+  EList<Variable> getVarConf1();
 
   /**
    * Returns the value of the '<em><b>Inst Var</b></em>' reference list.

@@ -112,9 +112,9 @@ public class MappingAssistanceParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getComopnentAccess().getOperationsAssignment_7_0(), "rule__Comopnent__OperationsAssignment_7_0");
 			builder.put(grammarAccess.getTestOPAccess().getServiceAssignment_0(), "rule__TestOP__ServiceAssignment_0");
 			builder.put(grammarAccess.getTestOPAccess().getNameAssignment_2(), "rule__TestOP__NameAssignment_2");
-			builder.put(grammarAccess.getTestOPAccess().getVarConfAssignment_4_0_0(), "rule__TestOP__VarConfAssignment_4_0_0");
+			builder.put(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_0_0(), "rule__TestOP__VarConf1Assignment_4_0_0");
 			builder.put(grammarAccess.getTestOPAccess().getInstVarAssignment_4_0_2(), "rule__TestOP__InstVarAssignment_4_0_2");
-			builder.put(grammarAccess.getTestOPAccess().getVarConfAssignment_4_1_0(), "rule__TestOP__VarConfAssignment_4_1_0");
+			builder.put(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_1_0(), "rule__TestOP__VarConf1Assignment_4_1_0");
 			builder.put(grammarAccess.getTestOPAccess().getInstVarAssignment_4_1_2(), "rule__TestOP__InstVarAssignment_4_1_2");
 			builder.put(grammarAccess.getOperationAccess().getNameAssignment_1(), "rule__Operation__NameAssignment_1");
 			builder.put(grammarAccess.getOperationAccess().getArgAssignment_3_0_0(), "rule__Operation__ArgAssignment_3_0_0");

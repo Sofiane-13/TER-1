@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl#getService <em>Service</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl#getVarConf <em>Var Conf</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl#getVarConf1 <em>Var Conf1</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl#getInstVar <em>Inst Var</em>}</li>
  * </ul>
  *
@@ -62,14 +62,14 @@ public class TestOPImpl extends MinimalEObjectImpl.Container implements TestOP
   protected Operation name;
 
   /**
-   * The cached value of the '{@link #getVarConf() <em>Var Conf</em>}' reference list.
+   * The cached value of the '{@link #getVarConf1() <em>Var Conf1</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVarConf()
+   * @see #getVarConf1()
    * @generated
    * @ordered
    */
-  protected EList<Variable> varConf;
+  protected EList<Variable> varConf1;
 
   /**
    * The cached value of the '{@link #getInstVar() <em>Inst Var</em>}' reference list.
@@ -193,13 +193,13 @@ public class TestOPImpl extends MinimalEObjectImpl.Container implements TestOP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVarConf()
+  public EList<Variable> getVarConf1()
   {
-    if (varConf == null)
+    if (varConf1 == null)
     {
-      varConf = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.TEST_OP__VAR_CONF);
+      varConf1 = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.TEST_OP__VAR_CONF1);
     }
-    return varConf;
+    return varConf1;
   }
 
   /**
@@ -232,8 +232,8 @@ public class TestOPImpl extends MinimalEObjectImpl.Container implements TestOP
       case MappingAssistancePackage.TEST_OP__NAME:
         if (resolve) return getName();
         return basicGetName();
-      case MappingAssistancePackage.TEST_OP__VAR_CONF:
-        return getVarConf();
+      case MappingAssistancePackage.TEST_OP__VAR_CONF1:
+        return getVarConf1();
       case MappingAssistancePackage.TEST_OP__INST_VAR:
         return getInstVar();
     }
@@ -257,9 +257,9 @@ public class TestOPImpl extends MinimalEObjectImpl.Container implements TestOP
       case MappingAssistancePackage.TEST_OP__NAME:
         setName((Operation)newValue);
         return;
-      case MappingAssistancePackage.TEST_OP__VAR_CONF:
-        getVarConf().clear();
-        getVarConf().addAll((Collection<? extends Variable>)newValue);
+      case MappingAssistancePackage.TEST_OP__VAR_CONF1:
+        getVarConf1().clear();
+        getVarConf1().addAll((Collection<? extends Variable>)newValue);
         return;
       case MappingAssistancePackage.TEST_OP__INST_VAR:
         getInstVar().clear();
@@ -285,8 +285,8 @@ public class TestOPImpl extends MinimalEObjectImpl.Container implements TestOP
       case MappingAssistancePackage.TEST_OP__NAME:
         setName((Operation)null);
         return;
-      case MappingAssistancePackage.TEST_OP__VAR_CONF:
-        getVarConf().clear();
+      case MappingAssistancePackage.TEST_OP__VAR_CONF1:
+        getVarConf1().clear();
         return;
       case MappingAssistancePackage.TEST_OP__INST_VAR:
         getInstVar().clear();
@@ -309,8 +309,8 @@ public class TestOPImpl extends MinimalEObjectImpl.Container implements TestOP
         return service != null;
       case MappingAssistancePackage.TEST_OP__NAME:
         return name != null;
-      case MappingAssistancePackage.TEST_OP__VAR_CONF:
-        return varConf != null && !varConf.isEmpty();
+      case MappingAssistancePackage.TEST_OP__VAR_CONF1:
+        return varConf1 != null && !varConf1.isEmpty();
       case MappingAssistancePackage.TEST_OP__INST_VAR:
         return instVar != null && !instVar.isEmpty();
     }

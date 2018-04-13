@@ -82,7 +82,7 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
 	          // Create IEObjectDescriptions and puts them into an IScope instance
 	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, TestOP))
 	    }
-	    if (context instanceof TestOP && reference == MappingAssistancePackage.Literals.TEST_OP__VAR_CONF) {
+	    if (context instanceof TestOP && reference == MappingAssistancePackage.Literals.TEST_OP__VAR_CONF1) {
 	        	
 	          // Create IEObjectDescriptions and puts them into an IScope instance
 	          return scope_TestDriver_InstVar(EcoreUtil2.getContainerOfType(context, TestOP))   
@@ -164,7 +164,7 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
       return Scopes.scopeFor(selct.service.type.compType.opsReq);
 	}
 	def  IScope scope_TestDriver_InstVar(TestOP selct) {
-     System.out.println(selct.name.arg.size+" : "+selct.varConf.size)
+     System.out.println(selct.name.arg.size+" : "+selct.varConf1.size)
       return Scopes.scopeFor(selct.name.arg);
 	}
 	def  IScope scope_Observer_VarOp(Observer selct) {

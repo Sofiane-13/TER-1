@@ -2789,7 +2789,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
             	    	    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_11); if (state.failed) return current;
             	    	    if ( state.backtracking==0 ) {
 
-            	    	      							newLeafNode(otherlv_4, grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_0_0_0());
+            	    	      							newLeafNode(otherlv_4, grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_0_0_0());
             	    	      						
             	    	    }
 
@@ -2863,7 +2863,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalAntlrParser
             	    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_11); if (state.failed) return current;
             	    if ( state.backtracking==0 ) {
 
-            	      							newLeafNode(otherlv_8, grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_1_0_0());
+            	      							newLeafNode(otherlv_8, grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_1_0_0());
             	      						
             	    }
 

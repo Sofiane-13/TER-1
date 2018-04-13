@@ -60,7 +60,7 @@
     <genClasses ecoreClass="MappingAssistance.ecore#//TestOP">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//TestOP/service"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//TestOP/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//TestOP/varConf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//TestOP/varConf1"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//TestOP/instVar"/>
     </genClasses>
     <genClasses ecoreClass="MappingAssistance.ecore#//Operation">

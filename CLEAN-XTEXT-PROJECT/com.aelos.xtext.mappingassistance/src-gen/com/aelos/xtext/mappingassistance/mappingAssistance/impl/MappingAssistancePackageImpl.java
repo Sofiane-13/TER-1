@@ -662,7 +662,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTestOP_VarConf()
+  public EReference getTestOP_VarConf1()
   {
     return (EReference)testOPEClass.getEStructuralFeatures().get(2);
   }
@@ -1046,7 +1046,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     testOPEClass = createEClass(TEST_OP);
     createEReference(testOPEClass, TEST_OP__SERVICE);
     createEReference(testOPEClass, TEST_OP__NAME);
-    createEReference(testOPEClass, TEST_OP__VAR_CONF);
+    createEReference(testOPEClass, TEST_OP__VAR_CONF1);
     createEReference(testOPEClass, TEST_OP__INST_VAR);
 
     operationEClass = createEClass(OPERATION);
@@ -1180,7 +1180,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     initEClass(testOPEClass, TestOP.class, "TestOP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTestOP_Service(), theArchitecturePackage.getVariable(), null, "service", null, 0, 1, TestOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTestOP_Name(), theArchitecturePackage.getOperation(), null, "name", null, 0, 1, TestOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTestOP_VarConf(), theArchitecturePackage.getVariable(), null, "varConf", null, 0, -1, TestOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestOP_VarConf1(), theArchitecturePackage.getVariable(), null, "varConf1", null, 0, -1, TestOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTestOP_InstVar(), theTestintentionsAssistancePackage.getVariable(), null, "instVar", null, 0, -1, TestOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

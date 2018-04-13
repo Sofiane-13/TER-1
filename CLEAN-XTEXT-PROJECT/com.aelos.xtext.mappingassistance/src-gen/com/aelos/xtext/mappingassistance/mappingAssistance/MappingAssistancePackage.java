@@ -510,13 +510,13 @@ public interface MappingAssistancePackage extends EPackage
   int TEST_OP__NAME = 1;
 
   /**
-   * The feature id for the '<em><b>Var Conf</b></em>' reference list.
+   * The feature id for the '<em><b>Var Conf1</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_OP__VAR_CONF = 2;
+  int TEST_OP__VAR_CONF1 = 2;
 
   /**
    * The feature id for the '<em><b>Inst Var</b></em>' reference list.
@@ -1330,15 +1330,15 @@ public interface MappingAssistancePackage extends EPackage
   EReference getTestOP_Name();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getVarConf <em>Var Conf</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getVarConf1 <em>Var Conf1</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Var Conf</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getVarConf()
+   * @return the meta object for the reference list '<em>Var Conf1</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getVarConf1()
    * @see #getTestOP()
    * @generated
    */
-  EReference getTestOP_VarConf();
+  EReference getTestOP_VarConf1();
 
   /**
    * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP#getInstVar <em>Inst Var</em>}'.
@@ -2023,12 +2023,12 @@ public interface MappingAssistancePackage extends EPackage
     EReference TEST_OP__NAME = eINSTANCE.getTestOP_Name();
 
     /**
-     * The meta object literal for the '<em><b>Var Conf</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Var Conf1</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TEST_OP__VAR_CONF = eINSTANCE.getTestOP_VarConf();
+    EReference TEST_OP__VAR_CONF1 = eINSTANCE.getTestOP_VarConf1();
 
     /**
      * The meta object literal for the '<em><b>Inst Var</b></em>' reference list feature.

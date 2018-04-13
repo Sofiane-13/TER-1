@@ -69,7 +69,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TestOP">
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="varConf" unique="false"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varConf1" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instVar" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>

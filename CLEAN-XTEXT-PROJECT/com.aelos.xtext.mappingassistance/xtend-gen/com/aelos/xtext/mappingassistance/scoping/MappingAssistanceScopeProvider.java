@@ -30,7 +30,7 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
     if (((context instanceof TestOP) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_OP__NAME))) {
       return this.scope_Call_op(EcoreUtil2.<TestOP>getContainerOfType(context, TestOP.class));
     }
-    if (((context instanceof TestOP) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_OP__VAR_CONF))) {
+    if (((context instanceof TestOP) && Objects.equal(reference, MappingAssistancePackage.Literals.TEST_OP__VAR_CONF1))) {
       return this.scope_TestDriver_InstVar(EcoreUtil2.<TestOP>getContainerOfType(context, TestOP.class));
     }
     if (((context instanceof Observer) && Objects.equal(reference, MappingAssistancePackage.Literals.OBSERVER__MEMBER1))) {
@@ -95,7 +95,7 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
   public IScope scope_TestDriver_InstVar(final TestOP selct) {
     int _size = selct.getName().getArg().size();
     String _plus = (Integer.valueOf(_size) + " : ");
-    int _size_1 = selct.getVarConf().size();
+    int _size_1 = selct.getVarConf1().size();
     String _plus_1 = (_plus + Integer.valueOf(_size_1));
     System.out.println(_plus_1);
     return Scopes.scopeFor(selct.getName().getArg());
