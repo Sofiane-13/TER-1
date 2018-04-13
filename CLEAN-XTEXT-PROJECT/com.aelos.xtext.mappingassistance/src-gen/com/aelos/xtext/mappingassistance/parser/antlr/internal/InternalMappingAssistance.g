@@ -1017,7 +1017,7 @@ ruleTestOP returns [EObject current=null]
 						}
 						otherlv_4=RULE_ID
 						{
-							newLeafNode(otherlv_4, grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_0_0_0());
+							newLeafNode(otherlv_4, grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_0_0_0());
 						}
 					)
 				)
@@ -1053,7 +1053,7 @@ ruleTestOP returns [EObject current=null]
 						}
 						otherlv_8=RULE_ID
 						{
-							newLeafNode(otherlv_8, grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_1_0_0());
+							newLeafNode(otherlv_8, grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_1_0_0());
 						}
 					)
 				)

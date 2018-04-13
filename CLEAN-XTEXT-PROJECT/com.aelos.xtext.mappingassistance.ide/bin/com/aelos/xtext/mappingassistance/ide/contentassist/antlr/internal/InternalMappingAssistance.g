@@ -2883,9 +2883,9 @@ rule__TestOP__Group_4_0__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTestOPAccess().getVarConfAssignment_4_0_0()); }
-	(rule__TestOP__VarConfAssignment_4_0_0)
-	{ after(grammarAccess.getTestOPAccess().getVarConfAssignment_4_0_0()); }
+	{ before(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_0_0()); }
+	(rule__TestOP__VarConf1Assignment_4_0_0)
+	{ after(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_0_0()); }
 )
 ;
 finally {
@@ -2991,9 +2991,9 @@ rule__TestOP__Group_4_1__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getTestOPAccess().getVarConfAssignment_4_1_0()); }
-	(rule__TestOP__VarConfAssignment_4_1_0)
-	{ after(grammarAccess.getTestOPAccess().getVarConfAssignment_4_1_0()); }
+	{ before(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_1_0()); }
+	(rule__TestOP__VarConf1Assignment_4_1_0)
+	{ after(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_1_0()); }
 )
 ;
 finally {
@@ -4477,19 +4477,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__TestOP__VarConfAssignment_4_0_0
+rule__TestOP__VarConf1Assignment_4_0_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_0_0_0()); }
+		{ before(grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_0_0_0()); }
 		(
-			{ before(grammarAccess.getTestOPAccess().getVarConfVariableIDTerminalRuleCall_4_0_0_0_1()); }
+			{ before(grammarAccess.getTestOPAccess().getVarConf1VariableIDTerminalRuleCall_4_0_0_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getTestOPAccess().getVarConfVariableIDTerminalRuleCall_4_0_0_0_1()); }
+			{ after(grammarAccess.getTestOPAccess().getVarConf1VariableIDTerminalRuleCall_4_0_0_0_1()); }
 		)
-		{ after(grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_0_0_0()); }
+		{ after(grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_0_0_0()); }
 	)
 ;
 finally {
@@ -4515,19 +4515,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__TestOP__VarConfAssignment_4_1_0
+rule__TestOP__VarConf1Assignment_4_1_0
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_1_0_0()); }
+		{ before(grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_1_0_0()); }
 		(
-			{ before(grammarAccess.getTestOPAccess().getVarConfVariableIDTerminalRuleCall_4_1_0_0_1()); }
+			{ before(grammarAccess.getTestOPAccess().getVarConf1VariableIDTerminalRuleCall_4_1_0_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getTestOPAccess().getVarConfVariableIDTerminalRuleCall_4_1_0_0_1()); }
+			{ after(grammarAccess.getTestOPAccess().getVarConf1VariableIDTerminalRuleCall_4_1_0_0_1()); }
 		)
-		{ after(grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_1_0_0()); }
+		{ after(grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_1_0_0()); }
 	)
 ;
 finally {

@@ -381,7 +381,7 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     TestOP returns TestOP
 	 *
 	 * Constraint:
-	 *     (service=[Variable|ID] name=[Operation|ID] ((varConf+=[Variable|ID] instVar+=[Variable|ID])* varConf+=[Variable|ID] instVar+=[Variable|ID])*)
+	 *     (service=[Variable|ID] name=[Operation|ID] ((varConf1+=[Variable|ID] instVar+=[Variable|ID])* varConf1+=[Variable|ID] instVar+=[Variable|ID])*)
 	 */
 	protected void sequence_TestOP(ISerializationContext context, TestOP semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

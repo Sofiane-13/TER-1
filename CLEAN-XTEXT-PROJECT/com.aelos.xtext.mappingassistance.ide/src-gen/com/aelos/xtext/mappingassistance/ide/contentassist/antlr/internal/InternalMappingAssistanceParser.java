@@ -9422,26 +9422,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__TestOP__Group_4_0__0__Impl"
-    // InternalMappingAssistance.g:2880:1: rule__TestOP__Group_4_0__0__Impl : ( ( rule__TestOP__VarConfAssignment_4_0_0 ) ) ;
+    // InternalMappingAssistance.g:2880:1: rule__TestOP__Group_4_0__0__Impl : ( ( rule__TestOP__VarConf1Assignment_4_0_0 ) ) ;
     public final void rule__TestOP__Group_4_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2884:1: ( ( ( rule__TestOP__VarConfAssignment_4_0_0 ) ) )
-            // InternalMappingAssistance.g:2885:1: ( ( rule__TestOP__VarConfAssignment_4_0_0 ) )
+            // InternalMappingAssistance.g:2884:1: ( ( ( rule__TestOP__VarConf1Assignment_4_0_0 ) ) )
+            // InternalMappingAssistance.g:2885:1: ( ( rule__TestOP__VarConf1Assignment_4_0_0 ) )
             {
-            // InternalMappingAssistance.g:2885:1: ( ( rule__TestOP__VarConfAssignment_4_0_0 ) )
-            // InternalMappingAssistance.g:2886:2: ( rule__TestOP__VarConfAssignment_4_0_0 )
+            // InternalMappingAssistance.g:2885:1: ( ( rule__TestOP__VarConf1Assignment_4_0_0 ) )
+            // InternalMappingAssistance.g:2886:2: ( rule__TestOP__VarConf1Assignment_4_0_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTestOPAccess().getVarConfAssignment_4_0_0()); 
+               before(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_0_0()); 
             }
-            // InternalMappingAssistance.g:2887:2: ( rule__TestOP__VarConfAssignment_4_0_0 )
-            // InternalMappingAssistance.g:2887:3: rule__TestOP__VarConfAssignment_4_0_0
+            // InternalMappingAssistance.g:2887:2: ( rule__TestOP__VarConf1Assignment_4_0_0 )
+            // InternalMappingAssistance.g:2887:3: rule__TestOP__VarConf1Assignment_4_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__TestOP__VarConfAssignment_4_0_0();
+            rule__TestOP__VarConf1Assignment_4_0_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9449,7 +9449,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTestOPAccess().getVarConfAssignment_4_0_0()); 
+               after(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_0_0()); 
             }
 
             }
@@ -9753,26 +9753,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__TestOP__Group_4_1__0__Impl"
-    // InternalMappingAssistance.g:2988:1: rule__TestOP__Group_4_1__0__Impl : ( ( rule__TestOP__VarConfAssignment_4_1_0 ) ) ;
+    // InternalMappingAssistance.g:2988:1: rule__TestOP__Group_4_1__0__Impl : ( ( rule__TestOP__VarConf1Assignment_4_1_0 ) ) ;
     public final void rule__TestOP__Group_4_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2992:1: ( ( ( rule__TestOP__VarConfAssignment_4_1_0 ) ) )
-            // InternalMappingAssistance.g:2993:1: ( ( rule__TestOP__VarConfAssignment_4_1_0 ) )
+            // InternalMappingAssistance.g:2992:1: ( ( ( rule__TestOP__VarConf1Assignment_4_1_0 ) ) )
+            // InternalMappingAssistance.g:2993:1: ( ( rule__TestOP__VarConf1Assignment_4_1_0 ) )
             {
-            // InternalMappingAssistance.g:2993:1: ( ( rule__TestOP__VarConfAssignment_4_1_0 ) )
-            // InternalMappingAssistance.g:2994:2: ( rule__TestOP__VarConfAssignment_4_1_0 )
+            // InternalMappingAssistance.g:2993:1: ( ( rule__TestOP__VarConf1Assignment_4_1_0 ) )
+            // InternalMappingAssistance.g:2994:2: ( rule__TestOP__VarConf1Assignment_4_1_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTestOPAccess().getVarConfAssignment_4_1_0()); 
+               before(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_1_0()); 
             }
-            // InternalMappingAssistance.g:2995:2: ( rule__TestOP__VarConfAssignment_4_1_0 )
-            // InternalMappingAssistance.g:2995:3: rule__TestOP__VarConfAssignment_4_1_0
+            // InternalMappingAssistance.g:2995:2: ( rule__TestOP__VarConf1Assignment_4_1_0 )
+            // InternalMappingAssistance.g:2995:3: rule__TestOP__VarConf1Assignment_4_1_0
             {
             pushFollow(FOLLOW_2);
-            rule__TestOP__VarConfAssignment_4_1_0();
+            rule__TestOP__VarConf1Assignment_4_1_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -9780,7 +9780,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTestOPAccess().getVarConfAssignment_4_1_0()); 
+               after(grammarAccess.getTestOPAccess().getVarConf1Assignment_4_1_0()); 
             }
 
             }
@@ -14277,9 +14277,9 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__TestOP__NameAssignment_2"
 
 
-    // $ANTLR start "rule__TestOP__VarConfAssignment_4_0_0"
-    // InternalMappingAssistance.g:4480:1: rule__TestOP__VarConfAssignment_4_0_0 : ( ( RULE_ID ) ) ;
-    public final void rule__TestOP__VarConfAssignment_4_0_0() throws RecognitionException {
+    // $ANTLR start "rule__TestOP__VarConf1Assignment_4_0_0"
+    // InternalMappingAssistance.g:4480:1: rule__TestOP__VarConf1Assignment_4_0_0 : ( ( RULE_ID ) ) ;
+    public final void rule__TestOP__VarConf1Assignment_4_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -14291,23 +14291,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:4486:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_0_0_0()); 
+               before(grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_0_0_0()); 
             }
             // InternalMappingAssistance.g:4487:3: ( RULE_ID )
             // InternalMappingAssistance.g:4488:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTestOPAccess().getVarConfVariableIDTerminalRuleCall_4_0_0_0_1()); 
+               before(grammarAccess.getTestOPAccess().getVarConf1VariableIDTerminalRuleCall_4_0_0_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTestOPAccess().getVarConfVariableIDTerminalRuleCall_4_0_0_0_1()); 
+               after(grammarAccess.getTestOPAccess().getVarConf1VariableIDTerminalRuleCall_4_0_0_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_0_0_0()); 
+               after(grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_0_0_0()); 
             }
 
             }
@@ -14327,7 +14327,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TestOP__VarConfAssignment_4_0_0"
+    // $ANTLR end "rule__TestOP__VarConf1Assignment_4_0_0"
 
 
     // $ANTLR start "rule__TestOP__InstVarAssignment_4_0_2"
@@ -14383,9 +14383,9 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__TestOP__InstVarAssignment_4_0_2"
 
 
-    // $ANTLR start "rule__TestOP__VarConfAssignment_4_1_0"
-    // InternalMappingAssistance.g:4518:1: rule__TestOP__VarConfAssignment_4_1_0 : ( ( RULE_ID ) ) ;
-    public final void rule__TestOP__VarConfAssignment_4_1_0() throws RecognitionException {
+    // $ANTLR start "rule__TestOP__VarConf1Assignment_4_1_0"
+    // InternalMappingAssistance.g:4518:1: rule__TestOP__VarConf1Assignment_4_1_0 : ( ( RULE_ID ) ) ;
+    public final void rule__TestOP__VarConf1Assignment_4_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -14397,23 +14397,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:4524:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_1_0_0()); 
+               before(grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_1_0_0()); 
             }
             // InternalMappingAssistance.g:4525:3: ( RULE_ID )
             // InternalMappingAssistance.g:4526:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getTestOPAccess().getVarConfVariableIDTerminalRuleCall_4_1_0_0_1()); 
+               before(grammarAccess.getTestOPAccess().getVarConf1VariableIDTerminalRuleCall_4_1_0_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTestOPAccess().getVarConfVariableIDTerminalRuleCall_4_1_0_0_1()); 
+               after(grammarAccess.getTestOPAccess().getVarConf1VariableIDTerminalRuleCall_4_1_0_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_1_0_0()); 
+               after(grammarAccess.getTestOPAccess().getVarConf1VariableCrossReference_4_1_0_0()); 
             }
 
             }
@@ -14433,7 +14433,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__TestOP__VarConfAssignment_4_1_0"
+    // $ANTLR end "rule__TestOP__VarConf1Assignment_4_1_0"
 
 
     // $ANTLR start "rule__TestOP__InstVarAssignment_4_1_2"
