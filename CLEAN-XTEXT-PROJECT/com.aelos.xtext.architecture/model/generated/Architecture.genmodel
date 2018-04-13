@@ -30,6 +30,7 @@
     <genClasses ecoreClass="Architecture.ecore#//Component">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Architecture.ecore#//Component/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/ops"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/opsReq"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Component/operations"/>
     </genClasses>
     <genClasses ecoreClass="Architecture.ecore#//Architecture">

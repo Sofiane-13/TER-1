@@ -30,29 +30,25 @@
   <eClassifiers xsi:type="ecore:EClass" name="TestDriver">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outVar" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="member" unique="false"
-        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arg" unique="false" upperBound="-1"
-        eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testOp" upperBound="-1"
+        eType="#//TestOP" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Observer">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="service1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="member1" unique="false"
-        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instVar" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varOp" unique="false" upperBound="-1"
+        eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="service2" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="member2" unique="false"
-        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="arg" unique="false" upperBound="-1"
-        eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member2" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mock">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="IntentionVar" unique="false"
-        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="member" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="IntentionVar" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conf">
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
@@ -69,6 +65,14 @@
         eType="#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
         eType="#//Operation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestOP">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="varConf1" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instVar" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

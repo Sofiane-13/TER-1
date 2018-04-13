@@ -1,6 +1,6 @@
-'('=24
-')'=25
-','=26
+'('=25
+')'=26
+','=27
 '.'=19
 '.*'=18
 ':'=33
@@ -16,7 +16,7 @@
 'false'=12
 'import'=17
 'mock:'=28
-'observer:'=27
+'observer:'=24
 'providedServices'=31
 'replaceConf:'=29
 'true'=11

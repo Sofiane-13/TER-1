@@ -6,9 +6,11 @@ package com.aelos.xtext.mappingassistance.validation;
 import com.aelos.xtext.architecture.architecture.Variable;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 import com.aelos.xtext.mappingassistance.validation.AbstractMappingAssistanceValidator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Conversions;
 
 /**
  * This class contains custom validation rules.
@@ -27,6 +29,58 @@ public class MappingAssistanceValidator extends AbstractMappingAssistanceValidat
         boolean _not = (!_equals);
         if (_not) {
           this.error("the variables must have the same Type", MappingAssistancePackage.Literals.CONF__VAR_CONF);
+        }
+        x++;
+      }
+    }
+    int y = 0;
+    x = 0;
+    EList<Variable> _varConf_1 = conf.getVarConf();
+    for (final Variable varconf_1 : _varConf_1) {
+      {
+        y = 0;
+        EList<Variable> _varConf_2 = conf.getVarConf();
+        for (final Variable varconfy : _varConf_2) {
+          boolean _equals = varconf_1.getName().equals(varconfy.getName());
+          if (_equals) {
+            y++;
+          }
+        }
+        if ((y > 1)) {
+          this.error("you can not use the same twice", MappingAssistancePackage.Literals.CONF__VAR_CONF);
+        }
+        x++;
+      }
+    }
+  }
+  
+  @Check
+  public void checkMappingTestDriver(final TestOP td) {
+    int _size = td.getName().getArg().size();
+    int _size_1 = td.getVarConf1().size();
+    boolean _lessThan = (_size < _size_1);
+    if (_lessThan) {
+      this.error("size varconf > function args", MappingAssistancePackage.Literals.TEST_OP__VAR_CONF1);
+    }
+    int x = 0;
+    int y = 0;
+    EList<Variable> _varConf1 = td.getVarConf1();
+    for (final Variable varconf : _varConf1) {
+      {
+        y = 0;
+        if (((((Object[])Conversions.unwrapArray(td.getInstVar(), Object.class)).length > x) && (!td.getInstVar().get(x).getType().getLiteral().equals(varconf.getType().getAtomType().getLiteral())))) {
+          System.out.println(MappingAssistancePackage.Literals.TEST_OP__VAR_CONF1);
+          this.error("the variables must have the same Type", MappingAssistancePackage.Literals.TEST_OP__VAR_CONF1);
+        }
+        EList<Variable> _varConf1_1 = td.getVarConf1();
+        for (final Variable varconfy : _varConf1_1) {
+          boolean _equals = varconf.getName().equals(varconfy.getName());
+          if (_equals) {
+            y++;
+          }
+        }
+        if ((y > 1)) {
+          this.error("you can not use the same variabe twice", MappingAssistancePackage.Literals.TEST_OP__VAR_CONF1);
         }
         x++;
       }

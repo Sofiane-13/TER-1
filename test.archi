@@ -5,25 +5,31 @@ domain my.exemple.comp{
 	Component:SimpleViehcle{
 		
 		providedServices(conf,getPos,getSpeed,computeSpeed)
+		requeredServices(getPos)
 		def conf(pos:INT, speed:INT):INT
 		def getPos():INT
 		def getSpeed():INT
-		def computeSpeed():INT
+		def computeSpeed(safeDist:INT, pos:INT):INT
+		def getPilotePos():INT
+		
 	
 	}
 	
 	Component:SimplePilote{
+		
 		providedServices(conf,getPos,getSpeed)
+		requeredServices()
 		def conf(test:INT):STRING
 		def getPos():INT
 		def getSpeed():INT
+		
 	}
 		
 }
 
 domain my.exemple.architecture{
 	import my.exemple.comp.*
-	Architecture Definition
+	ArchitectureDefinition
 	first : SimpleViehcle
 	mid : SimpleViehcle
 	last : SimpleViehcle
