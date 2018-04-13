@@ -3,26 +3,26 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
-import com.aelos.xtext.architecture.architecture.Operation;
-
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,10 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * </p>
  * <ul>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getOutVar <em>Out Var</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getService <em>Service</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getMember <em>Member</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getVarConf <em>Var Conf</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getInstVar <em>Inst Var</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestDriverImpl#getTestOp <em>Test Op</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,44 +51,14 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
   protected EList<Variable> outVar;
 
   /**
-   * The cached value of the '{@link #getService() <em>Service</em>}' reference.
+   * The cached value of the '{@link #getTestOp() <em>Test Op</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getService()
+   * @see #getTestOp()
    * @generated
    * @ordered
    */
-  protected com.aelos.xtext.architecture.architecture.Variable service;
-
-  /**
-   * The cached value of the '{@link #getMember() <em>Member</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMember()
-   * @generated
-   * @ordered
-   */
-  protected Operation member;
-
-  /**
-   * The cached value of the '{@link #getVarConf() <em>Var Conf</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVarConf()
-   * @generated
-   * @ordered
-   */
-  protected EList<com.aelos.xtext.architecture.architecture.Variable> varConf;
-
-  /**
-   * The cached value of the '{@link #getInstVar() <em>Inst Var</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInstVar()
-   * @generated
-   * @ordered
-   */
-  protected EList<Variable> instVar;
+  protected EList<TestOP> testOp;
 
   /**
    * <!-- begin-user-doc -->
@@ -133,19 +100,13 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
    * <!-- end-user-doc -->
    * @generated
    */
-  public com.aelos.xtext.architecture.architecture.Variable getService()
+  public EList<TestOP> getTestOp()
   {
-    if (service != null && service.eIsProxy())
+    if (testOp == null)
     {
-      InternalEObject oldService = (InternalEObject)service;
-      service = (com.aelos.xtext.architecture.architecture.Variable)eResolveProxy(oldService);
-      if (service != oldService)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.TEST_DRIVER__SERVICE, oldService, service));
-      }
+      testOp = new EObjectContainmentEList<TestOP>(TestOP.class, this, MappingAssistancePackage.TEST_DRIVER__TEST_OP);
     }
-    return service;
+    return testOp;
   }
 
   /**
@@ -153,93 +114,15 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
    * <!-- end-user-doc -->
    * @generated
    */
-  public com.aelos.xtext.architecture.architecture.Variable basicGetService()
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    return service;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setService(com.aelos.xtext.architecture.architecture.Variable newService)
-  {
-    com.aelos.xtext.architecture.architecture.Variable oldService = service;
-    service = newService;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.TEST_DRIVER__SERVICE, oldService, service));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operation getMember()
-  {
-    if (member != null && member.eIsProxy())
+    switch (featureID)
     {
-      InternalEObject oldMember = (InternalEObject)member;
-      member = (Operation)eResolveProxy(oldMember);
-      if (member != oldMember)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.TEST_DRIVER__MEMBER, oldMember, member));
-      }
+      case MappingAssistancePackage.TEST_DRIVER__TEST_OP:
+        return ((InternalEList<?>)getTestOp()).basicRemove(otherEnd, msgs);
     }
-    return member;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operation basicGetMember()
-  {
-    return member;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMember(Operation newMember)
-  {
-    Operation oldMember = member;
-    member = newMember;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.TEST_DRIVER__MEMBER, oldMember, member));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<com.aelos.xtext.architecture.architecture.Variable> getVarConf()
-  {
-    if (varConf == null)
-    {
-      varConf = new EObjectResolvingEList<com.aelos.xtext.architecture.architecture.Variable>(com.aelos.xtext.architecture.architecture.Variable.class, this, MappingAssistancePackage.TEST_DRIVER__VAR_CONF);
-    }
-    return varConf;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Variable> getInstVar()
-  {
-    if (instVar == null)
-    {
-      instVar = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.TEST_DRIVER__INST_VAR);
-    }
-    return instVar;
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -254,16 +137,8 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
     {
       case MappingAssistancePackage.TEST_DRIVER__OUT_VAR:
         return getOutVar();
-      case MappingAssistancePackage.TEST_DRIVER__SERVICE:
-        if (resolve) return getService();
-        return basicGetService();
-      case MappingAssistancePackage.TEST_DRIVER__MEMBER:
-        if (resolve) return getMember();
-        return basicGetMember();
-      case MappingAssistancePackage.TEST_DRIVER__VAR_CONF:
-        return getVarConf();
-      case MappingAssistancePackage.TEST_DRIVER__INST_VAR:
-        return getInstVar();
+      case MappingAssistancePackage.TEST_DRIVER__TEST_OP:
+        return getTestOp();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -283,19 +158,9 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
         getOutVar().clear();
         getOutVar().addAll((Collection<? extends Variable>)newValue);
         return;
-      case MappingAssistancePackage.TEST_DRIVER__SERVICE:
-        setService((com.aelos.xtext.architecture.architecture.Variable)newValue);
-        return;
-      case MappingAssistancePackage.TEST_DRIVER__MEMBER:
-        setMember((Operation)newValue);
-        return;
-      case MappingAssistancePackage.TEST_DRIVER__VAR_CONF:
-        getVarConf().clear();
-        getVarConf().addAll((Collection<? extends com.aelos.xtext.architecture.architecture.Variable>)newValue);
-        return;
-      case MappingAssistancePackage.TEST_DRIVER__INST_VAR:
-        getInstVar().clear();
-        getInstVar().addAll((Collection<? extends Variable>)newValue);
+      case MappingAssistancePackage.TEST_DRIVER__TEST_OP:
+        getTestOp().clear();
+        getTestOp().addAll((Collection<? extends TestOP>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -314,17 +179,8 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
       case MappingAssistancePackage.TEST_DRIVER__OUT_VAR:
         getOutVar().clear();
         return;
-      case MappingAssistancePackage.TEST_DRIVER__SERVICE:
-        setService((com.aelos.xtext.architecture.architecture.Variable)null);
-        return;
-      case MappingAssistancePackage.TEST_DRIVER__MEMBER:
-        setMember((Operation)null);
-        return;
-      case MappingAssistancePackage.TEST_DRIVER__VAR_CONF:
-        getVarConf().clear();
-        return;
-      case MappingAssistancePackage.TEST_DRIVER__INST_VAR:
-        getInstVar().clear();
+      case MappingAssistancePackage.TEST_DRIVER__TEST_OP:
+        getTestOp().clear();
         return;
     }
     super.eUnset(featureID);
@@ -342,14 +198,8 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
     {
       case MappingAssistancePackage.TEST_DRIVER__OUT_VAR:
         return outVar != null && !outVar.isEmpty();
-      case MappingAssistancePackage.TEST_DRIVER__SERVICE:
-        return service != null;
-      case MappingAssistancePackage.TEST_DRIVER__MEMBER:
-        return member != null;
-      case MappingAssistancePackage.TEST_DRIVER__VAR_CONF:
-        return varConf != null && !varConf.isEmpty();
-      case MappingAssistancePackage.TEST_DRIVER__INST_VAR:
-        return instVar != null && !instVar.isEmpty();
+      case MappingAssistancePackage.TEST_DRIVER__TEST_OP:
+        return testOp != null && !testOp.isEmpty();
     }
     return super.eIsSet(featureID);
   }

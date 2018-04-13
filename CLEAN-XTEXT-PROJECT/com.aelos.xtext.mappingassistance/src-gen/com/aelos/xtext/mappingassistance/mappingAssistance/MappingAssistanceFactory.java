@@ -105,6 +105,15 @@ public interface MappingAssistanceFactory extends EFactory
   Comopnent createComopnent();
 
   /**
+   * Returns a new object of class '<em>Test OP</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Test OP</em>'.
+   * @generated
+   */
+  TestOP createTestOP();
+
+  /**
    * Returns a new object of class '<em>Operation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

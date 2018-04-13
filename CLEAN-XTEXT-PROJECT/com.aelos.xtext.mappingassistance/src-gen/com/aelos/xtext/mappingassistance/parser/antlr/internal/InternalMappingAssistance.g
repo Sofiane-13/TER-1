@@ -445,115 +445,26 @@ ruleTestDriver returns [EObject current=null]
 			(
 				(
 					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTestDriverRule());
-						}
+						newCompositeNode(grammarAccess.getTestDriverAccess().getTestOpTestOPParserRuleCall_3_2_0());
 					}
-					otherlv_5=RULE_ID
+					lv_testOp_5_0=ruleTestOP
 					{
-						newLeafNode(otherlv_5, grammarAccess.getTestDriverAccess().getServiceVariableCrossReference_3_2_0());
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTestDriverRule());
+						}
+						add(
+							$current,
+							"testOp",
+							lv_testOp_5_0,
+							"com.aelos.xtext.mappingassistance.MappingAssistance.TestOP");
+						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_6='.'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getTestDriverAccess().getFullStopKeyword_3_3());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTestDriverRule());
-						}
-					}
-					otherlv_7=RULE_ID
-					{
-						newLeafNode(otherlv_7, grammarAccess.getTestDriverAccess().getMemberOperationCrossReference_3_4_0());
-					}
-				)
-			)
-			otherlv_8='('
-			{
-				newLeafNode(otherlv_8, grammarAccess.getTestDriverAccess().getLeftParenthesisKeyword_3_5());
-			}
-			(
-				(
-					(
-						(
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getTestDriverRule());
-								}
-							}
-							otherlv_9=RULE_ID
-							{
-								newLeafNode(otherlv_9, grammarAccess.getTestDriverAccess().getVarConfVariableCrossReference_3_6_0_0_0());
-							}
-						)
-					)
-					otherlv_10=':='
-					{
-						newLeafNode(otherlv_10, grammarAccess.getTestDriverAccess().getColonEqualsSignKeyword_3_6_0_1());
-					}
-					(
-						(
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getTestDriverRule());
-								}
-							}
-							otherlv_11=RULE_ID
-							{
-								newLeafNode(otherlv_11, grammarAccess.getTestDriverAccess().getInstVarVariableCrossReference_3_6_0_2_0());
-							}
-						)
-					)
-					otherlv_12=','
-					{
-						newLeafNode(otherlv_12, grammarAccess.getTestDriverAccess().getCommaKeyword_3_6_0_3());
-					}
-				)*
-				(
-					(
-						(
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getTestDriverRule());
-								}
-							}
-							otherlv_13=RULE_ID
-							{
-								newLeafNode(otherlv_13, grammarAccess.getTestDriverAccess().getVarConfVariableCrossReference_3_6_1_0_0());
-							}
-						)
-					)
-					otherlv_14=':='
-					{
-						newLeafNode(otherlv_14, grammarAccess.getTestDriverAccess().getColonEqualsSignKeyword_3_6_1_1());
-					}
-					(
-						(
-							{
-								if ($current==null) {
-									$current = createModelElement(grammarAccess.getTestDriverRule());
-								}
-							}
-							otherlv_15=RULE_ID
-							{
-								newLeafNode(otherlv_15, grammarAccess.getTestDriverAccess().getInstVarVariableCrossReference_3_6_1_2_0());
-							}
-						)
-					)
-				)
-			)*
-			otherlv_16=')'
-			{
-				newLeafNode(otherlv_16, grammarAccess.getTestDriverAccess().getRightParenthesisKeyword_3_7());
-			}
 		)*
-		otherlv_17='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getTestDriverAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getTestDriverAccess().getRightCurlyBracketKeyword_4());
 		}
 	)
 ;
@@ -756,13 +667,13 @@ ruleMock returns [EObject current=null]
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getMockAccess().getIntentionVarVariableCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getMockAccess().getServiceVariableCrossReference_1_0());
 				}
 			)
 		)
-		otherlv_2=':='
+		otherlv_2='.'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getMockAccess().getColonEqualsSignKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getMockAccess().getFullStopKeyword_2());
 		}
 		(
 			(
@@ -773,13 +684,13 @@ ruleMock returns [EObject current=null]
 				}
 				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getMockAccess().getServiceVariableCrossReference_3_0());
+					newLeafNode(otherlv_3, grammarAccess.getMockAccess().getMemberOperationCrossReference_3_0());
 				}
 			)
 		)
-		otherlv_4='.'
+		otherlv_4=':='
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMockAccess().getFullStopKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getMockAccess().getColonEqualsSignKeyword_4());
 		}
 		(
 			(
@@ -790,7 +701,7 @@ ruleMock returns [EObject current=null]
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getMockAccess().getMemberOperationCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getMockAccess().getIntentionVarVariableCrossReference_5_0());
 				}
 			)
 		)
@@ -1041,6 +952,133 @@ ruleComopnent returns [EObject current=null]
 		otherlv_10='}'
 		{
 			newLeafNode(otherlv_10, grammarAccess.getComopnentAccess().getRightCurlyBracketKeyword_8());
+		}
+	)
+;
+
+// Entry rule entryRuleTestOP
+entryRuleTestOP returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTestOPRule()); }
+	iv_ruleTestOP=ruleTestOP
+	{ $current=$iv_ruleTestOP.current; }
+	EOF;
+
+// Rule TestOP
+ruleTestOP returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestOPRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getTestOPAccess().getServiceVariableCrossReference_0_0());
+				}
+			)
+		)
+		otherlv_1='.'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTestOPAccess().getFullStopKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestOPRule());
+					}
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getTestOPAccess().getNameOperationCrossReference_2_0());
+				}
+			)
+		)
+		otherlv_3='('
+		{
+			newLeafNode(otherlv_3, grammarAccess.getTestOPAccess().getLeftParenthesisKeyword_3());
+		}
+		(
+			(
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestOPRule());
+							}
+						}
+						otherlv_4=RULE_ID
+						{
+							newLeafNode(otherlv_4, grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_0_0_0());
+						}
+					)
+				)
+				otherlv_5=':='
+				{
+					newLeafNode(otherlv_5, grammarAccess.getTestOPAccess().getColonEqualsSignKeyword_4_0_1());
+				}
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestOPRule());
+							}
+						}
+						otherlv_6=RULE_ID
+						{
+							newLeafNode(otherlv_6, grammarAccess.getTestOPAccess().getInstVarVariableCrossReference_4_0_2_0());
+						}
+					)
+				)
+				otherlv_7=','
+				{
+					newLeafNode(otherlv_7, grammarAccess.getTestOPAccess().getCommaKeyword_4_0_3());
+				}
+			)*
+			(
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestOPRule());
+							}
+						}
+						otherlv_8=RULE_ID
+						{
+							newLeafNode(otherlv_8, grammarAccess.getTestOPAccess().getVarConfVariableCrossReference_4_1_0_0());
+						}
+					)
+				)
+				otherlv_9=':='
+				{
+					newLeafNode(otherlv_9, grammarAccess.getTestOPAccess().getColonEqualsSignKeyword_4_1_1());
+				}
+				(
+					(
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getTestOPRule());
+							}
+						}
+						otherlv_10=RULE_ID
+						{
+							newLeafNode(otherlv_10, grammarAccess.getTestOPAccess().getInstVarVariableCrossReference_4_1_2_0());
+						}
+					)
+				)
+			)
+		)*
+		otherlv_11=')'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getTestOPAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;

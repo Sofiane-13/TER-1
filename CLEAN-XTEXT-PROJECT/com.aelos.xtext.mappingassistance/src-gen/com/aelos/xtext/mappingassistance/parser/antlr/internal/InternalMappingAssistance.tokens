@@ -1,6 +1,6 @@
-'('=17
-')'=19
-','=18
+'('=19
+')'=21
+','=20
 '.'=13
 '.*'=12
 ':'=27
@@ -16,12 +16,12 @@
 'false'=30
 'import'=11
 'mock:'=22
-'observer:'=21
+'observer:'=18
 'providedServices'=25
 'replaceConf:'=23
 'true'=29
 '{'=15
-'}'=20
+'}'=17
 RULE_ANY_OTHER=10
 RULE_ID=4
 RULE_INT=5

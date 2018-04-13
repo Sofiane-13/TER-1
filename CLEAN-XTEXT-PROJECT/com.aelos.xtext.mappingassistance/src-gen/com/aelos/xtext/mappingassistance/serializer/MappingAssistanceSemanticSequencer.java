@@ -18,6 +18,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
 import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Variable;
 import com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef;
 import com.aelos.xtext.mappingassistance.services.MappingAssistanceGrammarAccess;
@@ -94,6 +95,9 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 				return; 
 			case MappingAssistancePackage.TEST_DRIVER:
 				sequence_TestDriver(context, (TestDriver) semanticObject); 
+				return; 
+			case MappingAssistancePackage.TEST_OP:
+				sequence_TestOP(context, (TestOP) semanticObject); 
 				return; 
 			case MappingAssistancePackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
@@ -311,7 +315,7 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     Mock returns Mock
 	 *
 	 * Constraint:
-	 *     (IntentionVar+=[Variable|ID] service=[Variable|ID] member+=[Operation|ID])
+	 *     (service=[Variable|ID] member+=[Operation|ID] IntentionVar+=[Variable|ID])
 	 */
 	protected void sequence_Mock(ISerializationContext context, Mock semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -365,14 +369,21 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     TestDriver returns TestDriver
 	 *
 	 * Constraint:
-	 *     (
-	 *         outVar+=[Variable|ID] 
-	 *         service=[Variable|ID] 
-	 *         member=[Operation|ID] 
-	 *         ((varConf+=[Variable|ID] instVar+=[Variable|ID])* varConf+=[Variable|ID] instVar+=[Variable|ID])*
-	 *     )*
+	 *     (outVar+=[Variable|ID] testOp+=TestOP)*
 	 */
 	protected void sequence_TestDriver(ISerializationContext context, TestDriver semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TestOP returns TestOP
+	 *
+	 * Constraint:
+	 *     (service=[Variable|ID] name=[Operation|ID] ((varConf+=[Variable|ID] instVar+=[Variable|ID])* varConf+=[Variable|ID] instVar+=[Variable|ID])*)
+	 */
+	protected void sequence_TestOP(ISerializationContext context, TestOP semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

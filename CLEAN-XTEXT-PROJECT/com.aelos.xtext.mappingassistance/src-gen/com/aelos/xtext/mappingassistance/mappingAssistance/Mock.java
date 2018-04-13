@@ -4,8 +4,7 @@
 package com.aelos.xtext.mappingassistance.mappingAssistance;
 
 import com.aelos.xtext.architecture.architecture.Operation;
-
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
+import com.aelos.xtext.architecture.architecture.Variable;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -20,9 +19,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getIntentionVar <em>Intention Var</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getService <em>Service</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getMember <em>Member</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getIntentionVar <em>Intention Var</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getMock()
@@ -32,22 +31,6 @@ import org.eclipse.emf.ecore.EObject;
 public interface Mock extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Intention Var</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Intention Var</em>' reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Intention Var</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getMock_IntentionVar()
-   * @model
-   * @generated
-   */
-  EList<Variable> getIntentionVar();
-
-  /**
    * Returns the value of the '<em><b>Service</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -56,12 +39,12 @@ public interface Mock extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Service</em>' reference.
-   * @see #setService(com.aelos.xtext.architecture.architecture.Variable)
+   * @see #setService(Variable)
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getMock_Service()
    * @model
    * @generated
    */
-  com.aelos.xtext.architecture.architecture.Variable getService();
+  Variable getService();
 
   /**
    * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Mock#getService <em>Service</em>}' reference.
@@ -71,7 +54,7 @@ public interface Mock extends EObject
    * @see #getService()
    * @generated
    */
-  void setService(com.aelos.xtext.architecture.architecture.Variable value);
+  void setService(Variable value);
 
   /**
    * Returns the value of the '<em><b>Member</b></em>' reference list.
@@ -88,5 +71,21 @@ public interface Mock extends EObject
    * @generated
    */
   EList<Operation> getMember();
+
+  /**
+   * Returns the value of the '<em><b>Intention Var</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Intention Var</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Intention Var</em>' reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getMock_IntentionVar()
+   * @model
+   * @generated
+   */
+  EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> getIntentionVar();
 
 } // Mock

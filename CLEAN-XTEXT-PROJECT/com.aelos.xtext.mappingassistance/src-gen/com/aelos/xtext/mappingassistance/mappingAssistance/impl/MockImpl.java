@@ -4,11 +4,10 @@
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
 import com.aelos.xtext.architecture.architecture.Operation;
+import com.aelos.xtext.architecture.architecture.Variable;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
-
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
 
 import java.util.Collection;
 
@@ -32,25 +31,15 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.MockImpl#getIntentionVar <em>Intention Var</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.MockImpl#getService <em>Service</em>}</li>
  *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.MockImpl#getMember <em>Member</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.MockImpl#getIntentionVar <em>Intention Var</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class MockImpl extends MinimalEObjectImpl.Container implements Mock
 {
-  /**
-   * The cached value of the '{@link #getIntentionVar() <em>Intention Var</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getIntentionVar()
-   * @generated
-   * @ordered
-   */
-  protected EList<Variable> intentionVar;
-
   /**
    * The cached value of the '{@link #getService() <em>Service</em>}' reference.
    * <!-- begin-user-doc -->
@@ -59,7 +48,7 @@ public class MockImpl extends MinimalEObjectImpl.Container implements Mock
    * @generated
    * @ordered
    */
-  protected com.aelos.xtext.architecture.architecture.Variable service;
+  protected Variable service;
 
   /**
    * The cached value of the '{@link #getMember() <em>Member</em>}' reference list.
@@ -70,6 +59,16 @@ public class MockImpl extends MinimalEObjectImpl.Container implements Mock
    * @ordered
    */
   protected EList<Operation> member;
+
+  /**
+   * The cached value of the '{@link #getIntentionVar() <em>Intention Var</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIntentionVar()
+   * @generated
+   * @ordered
+   */
+  protected EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> intentionVar;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,26 +96,12 @@ public class MockImpl extends MinimalEObjectImpl.Container implements Mock
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getIntentionVar()
-  {
-    if (intentionVar == null)
-    {
-      intentionVar = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.MOCK__INTENTION_VAR);
-    }
-    return intentionVar;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public com.aelos.xtext.architecture.architecture.Variable getService()
+  public Variable getService()
   {
     if (service != null && service.eIsProxy())
     {
       InternalEObject oldService = (InternalEObject)service;
-      service = (com.aelos.xtext.architecture.architecture.Variable)eResolveProxy(oldService);
+      service = (Variable)eResolveProxy(oldService);
       if (service != oldService)
       {
         if (eNotificationRequired())
@@ -131,7 +116,7 @@ public class MockImpl extends MinimalEObjectImpl.Container implements Mock
    * <!-- end-user-doc -->
    * @generated
    */
-  public com.aelos.xtext.architecture.architecture.Variable basicGetService()
+  public Variable basicGetService()
   {
     return service;
   }
@@ -141,9 +126,9 @@ public class MockImpl extends MinimalEObjectImpl.Container implements Mock
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setService(com.aelos.xtext.architecture.architecture.Variable newService)
+  public void setService(Variable newService)
   {
-    com.aelos.xtext.architecture.architecture.Variable oldService = service;
+    Variable oldService = service;
     service = newService;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.MOCK__SERVICE, oldService, service));
@@ -168,18 +153,32 @@ public class MockImpl extends MinimalEObjectImpl.Container implements Mock
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> getIntentionVar()
+  {
+    if (intentionVar == null)
+    {
+      intentionVar = new EObjectResolvingEList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable.class, this, MappingAssistancePackage.MOCK__INTENTION_VAR);
+    }
+    return intentionVar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.MOCK__INTENTION_VAR:
-        return getIntentionVar();
       case MappingAssistancePackage.MOCK__SERVICE:
         if (resolve) return getService();
         return basicGetService();
       case MappingAssistancePackage.MOCK__MEMBER:
         return getMember();
+      case MappingAssistancePackage.MOCK__INTENTION_VAR:
+        return getIntentionVar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -195,16 +194,16 @@ public class MockImpl extends MinimalEObjectImpl.Container implements Mock
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.MOCK__INTENTION_VAR:
-        getIntentionVar().clear();
-        getIntentionVar().addAll((Collection<? extends Variable>)newValue);
-        return;
       case MappingAssistancePackage.MOCK__SERVICE:
-        setService((com.aelos.xtext.architecture.architecture.Variable)newValue);
+        setService((Variable)newValue);
         return;
       case MappingAssistancePackage.MOCK__MEMBER:
         getMember().clear();
         getMember().addAll((Collection<? extends Operation>)newValue);
+        return;
+      case MappingAssistancePackage.MOCK__INTENTION_VAR:
+        getIntentionVar().clear();
+        getIntentionVar().addAll((Collection<? extends com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -220,14 +219,14 @@ public class MockImpl extends MinimalEObjectImpl.Container implements Mock
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.MOCK__INTENTION_VAR:
-        getIntentionVar().clear();
-        return;
       case MappingAssistancePackage.MOCK__SERVICE:
-        setService((com.aelos.xtext.architecture.architecture.Variable)null);
+        setService((Variable)null);
         return;
       case MappingAssistancePackage.MOCK__MEMBER:
         getMember().clear();
+        return;
+      case MappingAssistancePackage.MOCK__INTENTION_VAR:
+        getIntentionVar().clear();
         return;
     }
     super.eUnset(featureID);
@@ -243,12 +242,12 @@ public class MockImpl extends MinimalEObjectImpl.Container implements Mock
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.MOCK__INTENTION_VAR:
-        return intentionVar != null && !intentionVar.isEmpty();
       case MappingAssistancePackage.MOCK__SERVICE:
         return service != null;
       case MappingAssistancePackage.MOCK__MEMBER:
         return member != null && !member.isEmpty();
+      case MappingAssistancePackage.MOCK__INTENTION_VAR:
+        return intentionVar != null && !intentionVar.isEmpty();
     }
     return super.eIsSet(featureID);
   }

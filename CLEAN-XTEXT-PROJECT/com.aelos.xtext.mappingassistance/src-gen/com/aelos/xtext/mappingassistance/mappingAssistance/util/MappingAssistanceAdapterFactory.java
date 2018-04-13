@@ -19,6 +19,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
 import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Variable;
 import com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef;
 
@@ -136,6 +137,11 @@ public class MappingAssistanceAdapterFactory extends AdapterFactoryImpl
       public Adapter caseComopnent(Comopnent object)
       {
         return createComopnentAdapter();
+      }
+      @Override
+      public Adapter caseTestOP(TestOP object)
+      {
+        return createTestOPAdapter();
       }
       @Override
       public Adapter caseOperation(Operation object)
@@ -340,6 +346,21 @@ public class MappingAssistanceAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createComopnentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP <em>Test OP</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.TestOP
+   * @generated
+   */
+  public Adapter createTestOPAdapter()
   {
     return null;
   }

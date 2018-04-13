@@ -19,6 +19,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
 import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
+import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Variable;
 import com.aelos.xtext.mappingassistance.mappingAssistance.VariableRef;
 
@@ -150,6 +151,13 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
       {
         Comopnent comopnent = (Comopnent)theEObject;
         T result = caseComopnent(comopnent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MappingAssistancePackage.TEST_OP:
+      {
+        TestOP testOP = (TestOP)theEObject;
+        T result = caseTestOP(testOP);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -372,6 +380,22 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseComopnent(Comopnent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Test OP</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Test OP</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTestOP(TestOP object)
   {
     return null;
   }

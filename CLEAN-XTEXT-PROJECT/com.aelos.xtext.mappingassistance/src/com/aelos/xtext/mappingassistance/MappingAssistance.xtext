@@ -31,7 +31,7 @@ TestDriver :
 
 	{TestDriver} "TestDriver" "{"
 
-		(outVar+=[testIntention::Variable]":="service=[arch::Variable]'.'member=[arch::Operation]"("((varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]",")*(varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]))*")")*
+		(outVar+=[testIntention::Variable]":="testOp+=TestOP)*
 	
 	"}"
 	;
@@ -65,9 +65,15 @@ Comopnent:
 
 ;
 
+TestOP:
+ 	service=[arch::Variable]'.'name=[arch::Operation]"("((varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]",")*(varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]))*")"
+;
+
 Operation:
     "def" name=ID "("((arg+=Variable ",")*arg+=Variable)*")" ":" type= Type
 ;
+
+
 Variable:
       name=ID ":" type=Type;
       

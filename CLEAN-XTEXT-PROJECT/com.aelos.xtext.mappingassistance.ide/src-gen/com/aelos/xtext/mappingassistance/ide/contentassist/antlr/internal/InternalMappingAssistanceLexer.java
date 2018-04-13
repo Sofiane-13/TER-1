@@ -333,10 +333,11 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:24:7: ( '(' )
-            // InternalMappingAssistance.g:24:9: '('
+            // InternalMappingAssistance.g:24:7: ( 'observer:' )
+            // InternalMappingAssistance.g:24:9: 'observer:'
             {
-            match('('); 
+            match("observer:"); 
+
 
             }
 
@@ -353,10 +354,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:25:7: ( ')' )
-            // InternalMappingAssistance.g:25:9: ')'
+            // InternalMappingAssistance.g:25:7: ( '(' )
+            // InternalMappingAssistance.g:25:9: '('
             {
-            match(')'); 
+            match('('); 
 
             }
 
@@ -373,10 +374,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:26:7: ( ',' )
-            // InternalMappingAssistance.g:26:9: ','
+            // InternalMappingAssistance.g:26:7: ( ')' )
+            // InternalMappingAssistance.g:26:9: ')'
             {
-            match(','); 
+            match(')'); 
 
             }
 
@@ -393,11 +394,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:27:7: ( 'observer:' )
-            // InternalMappingAssistance.g:27:9: 'observer:'
+            // InternalMappingAssistance.g:27:7: ( ',' )
+            // InternalMappingAssistance.g:27:9: ','
             {
-            match("observer:"); 
-
+            match(','); 
 
             }
 
@@ -560,10 +560,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:4689:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalMappingAssistance.g:4689:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMappingAssistance.g:4756:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalMappingAssistance.g:4756:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalMappingAssistance.g:4689:11: ( '^' )?
+            // InternalMappingAssistance.g:4756:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -572,7 +572,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalMappingAssistance.g:4689:11: '^'
+                    // InternalMappingAssistance.g:4756:11: '^'
                     {
                     match('^'); 
 
@@ -590,7 +590,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalMappingAssistance.g:4689:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMappingAssistance.g:4756:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -639,10 +639,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:4691:10: ( ( '0' .. '9' )+ )
-            // InternalMappingAssistance.g:4691:12: ( '0' .. '9' )+
+            // InternalMappingAssistance.g:4758:10: ( ( '0' .. '9' )+ )
+            // InternalMappingAssistance.g:4758:12: ( '0' .. '9' )+
             {
-            // InternalMappingAssistance.g:4691:12: ( '0' .. '9' )+
+            // InternalMappingAssistance.g:4758:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -656,7 +656,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalMappingAssistance.g:4691:13: '0' .. '9'
+            	    // InternalMappingAssistance.g:4758:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -688,10 +688,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:4693:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalMappingAssistance.g:4693:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMappingAssistance.g:4760:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalMappingAssistance.g:4760:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalMappingAssistance.g:4693:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMappingAssistance.g:4760:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -709,10 +709,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalMappingAssistance.g:4693:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalMappingAssistance.g:4760:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalMappingAssistance.g:4693:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalMappingAssistance.g:4760:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -728,7 +728,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalMappingAssistance.g:4693:21: '\\\\' .
+                    	    // InternalMappingAssistance.g:4760:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -736,7 +736,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMappingAssistance.g:4693:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalMappingAssistance.g:4760:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -761,10 +761,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMappingAssistance.g:4693:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalMappingAssistance.g:4760:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalMappingAssistance.g:4693:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalMappingAssistance.g:4760:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -780,7 +780,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalMappingAssistance.g:4693:54: '\\\\' .
+                    	    // InternalMappingAssistance.g:4760:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -788,7 +788,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMappingAssistance.g:4693:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalMappingAssistance.g:4760:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -831,12 +831,12 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:4695:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMappingAssistance.g:4695:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMappingAssistance.g:4762:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMappingAssistance.g:4762:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMappingAssistance.g:4695:24: ( options {greedy=false; } : . )*
+            // InternalMappingAssistance.g:4762:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -861,7 +861,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalMappingAssistance.g:4695:52: .
+            	    // InternalMappingAssistance.g:4762:52: .
             	    {
             	    matchAny(); 
 
@@ -891,12 +891,12 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:4697:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMappingAssistance.g:4697:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMappingAssistance.g:4764:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMappingAssistance.g:4764:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMappingAssistance.g:4697:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMappingAssistance.g:4764:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -909,7 +909,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalMappingAssistance.g:4697:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMappingAssistance.g:4764:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -929,7 +929,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMappingAssistance.g:4697:40: ( ( '\\r' )? '\\n' )?
+            // InternalMappingAssistance.g:4764:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -938,9 +938,9 @@ public class InternalMappingAssistanceLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalMappingAssistance.g:4697:41: ( '\\r' )? '\\n'
+                    // InternalMappingAssistance.g:4764:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMappingAssistance.g:4697:41: ( '\\r' )?
+                    // InternalMappingAssistance.g:4764:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -949,7 +949,7 @@ public class InternalMappingAssistanceLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalMappingAssistance.g:4697:41: '\\r'
+                            // InternalMappingAssistance.g:4764:41: '\\r'
                             {
                             match('\r'); 
 
@@ -981,10 +981,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:4699:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMappingAssistance.g:4699:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMappingAssistance.g:4766:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMappingAssistance.g:4766:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMappingAssistance.g:4699:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMappingAssistance.g:4766:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1038,8 +1038,8 @@ public class InternalMappingAssistanceLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMappingAssistance.g:4701:16: ( . )
-            // InternalMappingAssistance.g:4701:18: .
+            // InternalMappingAssistance.g:4768:16: ( . )
+            // InternalMappingAssistance.g:4768:18: .
             {
             matchAny(); 
 
@@ -1283,19 +1283,19 @@ public class InternalMappingAssistanceLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\7\40\1\50\1\40\2\uffff\1\55\3\uffff\7\40\1\36\2\uffff\3\36\2\uffff\1\40\1\uffff\6\40\2\uffff\1\40\7\uffff\7\40\5\uffff\2\40\1\116\12\40\1\131\1\40\1\133\1\40\1\uffff\12\40\1\uffff\1\40\1\uffff\1\150\6\40\1\uffff\4\40\1\uffff\1\163\1\40\1\165\1\166\6\40\1\uffff\1\175\2\uffff\6\40\1\uffff\5\40\1\uffff\1\40\1\uffff\3\40\1\u008d\3\40\1\uffff\3\40\1\uffff\2\40\1\uffff\3\40\1\u0099\1\uffff";
+        "\1\uffff\7\40\1\50\1\40\2\uffff\1\55\1\40\3\uffff\6\40\1\36\2\uffff\3\36\2\uffff\1\40\1\uffff\6\40\2\uffff\1\40\4\uffff\1\40\3\uffff\6\40\5\uffff\2\40\1\116\12\40\1\131\1\40\1\133\1\40\1\uffff\12\40\1\uffff\1\40\1\uffff\1\150\6\40\1\uffff\4\40\1\uffff\1\163\1\40\1\165\1\166\6\40\1\uffff\1\175\2\uffff\6\40\1\uffff\5\40\1\uffff\1\40\1\uffff\3\40\1\u008d\3\40\1\uffff\3\40\1\uffff\2\40\1\uffff\3\40\1\u0099\1\uffff";
     static final String DFA12_eofS =
         "\u009a\uffff";
     static final String DFA12_minS =
-        "\1\0\1\162\1\141\1\116\1\124\2\157\1\155\1\52\1\145\2\uffff\1\75\3\uffff\1\142\1\157\1\145\1\144\1\162\1\145\1\144\1\101\2\uffff\2\0\1\52\2\uffff\1\165\1\uffff\1\154\1\124\1\122\1\157\1\165\1\160\2\uffff\1\163\7\uffff\1\163\1\143\1\160\1\144\1\157\1\146\1\144\5\uffff\1\145\1\163\1\60\1\111\1\154\1\142\1\157\1\164\1\145\1\153\1\154\1\103\1\166\1\60\1\102\1\60\1\145\1\uffff\1\116\1\145\1\154\1\162\1\104\1\162\1\72\1\141\1\157\1\151\1\uffff\1\151\1\uffff\1\60\1\107\1\141\1\145\1\164\1\162\1\166\1\uffff\1\143\1\155\1\144\1\156\1\uffff\1\60\1\156\2\60\1\151\2\145\1\160\1\145\1\144\1\uffff\1\60\2\uffff\1\166\1\162\1\103\1\157\1\144\1\50\1\uffff\1\145\1\72\1\157\1\156\1\123\1\uffff\1\162\1\uffff\1\156\2\145\1\60\1\146\1\156\1\162\1\uffff\1\72\1\164\1\166\1\uffff\1\72\1\151\1\uffff\1\143\1\145\1\163\1\60\1\uffff";
+        "\1\0\1\162\1\141\1\116\1\124\2\157\1\155\1\52\1\145\2\uffff\1\75\1\142\3\uffff\1\157\1\145\1\144\1\162\1\145\1\144\1\101\2\uffff\2\0\1\52\2\uffff\1\165\1\uffff\1\154\1\124\1\122\1\157\1\165\1\160\2\uffff\1\163\4\uffff\1\163\3\uffff\1\143\1\160\1\144\1\157\1\146\1\144\5\uffff\1\145\1\163\1\60\1\111\1\154\1\142\1\157\1\164\1\145\1\153\1\154\1\103\1\166\1\60\1\102\1\60\1\145\1\uffff\1\116\1\145\1\154\1\162\1\104\1\162\1\72\1\141\1\157\1\151\1\uffff\1\151\1\uffff\1\60\1\107\1\141\1\145\1\164\1\162\1\166\1\uffff\1\143\1\155\1\144\1\156\1\uffff\1\60\1\156\2\60\1\151\2\145\1\160\1\145\1\144\1\uffff\1\60\2\uffff\1\166\1\162\1\103\1\157\1\144\1\50\1\uffff\1\145\1\72\1\157\1\156\1\123\1\uffff\1\162\1\uffff\1\156\2\145\1\60\1\146\1\156\1\162\1\uffff\1\72\1\164\1\166\1\uffff\1\72\1\151\1\uffff\1\143\1\145\1\163\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\162\1\141\1\116\1\124\2\157\1\155\1\52\1\145\2\uffff\1\75\3\uffff\1\142\1\157\1\145\1\144\1\162\1\145\1\144\1\172\2\uffff\2\uffff\1\57\2\uffff\1\165\1\uffff\1\154\1\124\1\122\1\157\1\165\1\160\2\uffff\1\163\7\uffff\1\163\1\143\1\160\1\144\1\157\1\146\1\144\5\uffff\1\145\1\163\1\172\1\111\1\154\1\142\1\157\1\164\1\145\1\153\1\154\1\103\1\166\1\172\1\102\1\172\1\145\1\uffff\1\116\1\145\1\154\1\162\1\104\1\162\1\72\1\141\1\157\1\151\1\uffff\1\151\1\uffff\1\172\1\107\1\141\1\145\1\164\1\162\1\166\1\uffff\1\143\1\155\1\144\1\156\1\uffff\1\172\1\156\2\172\1\151\2\145\1\160\1\145\1\144\1\uffff\1\172\2\uffff\1\166\1\162\1\103\1\157\1\144\1\50\1\uffff\1\145\1\72\1\157\1\156\1\123\1\uffff\1\162\1\uffff\1\156\2\145\1\172\1\146\1\156\1\162\1\uffff\1\72\1\164\1\166\1\uffff\1\72\1\151\1\uffff\1\143\1\145\1\163\1\172\1\uffff";
+        "\1\uffff\1\162\1\141\1\116\1\124\2\157\1\155\1\52\1\145\2\uffff\1\75\1\142\3\uffff\1\157\1\145\1\144\1\162\1\145\1\144\1\172\2\uffff\2\uffff\1\57\2\uffff\1\165\1\uffff\1\154\1\124\1\122\1\157\1\165\1\160\2\uffff\1\163\4\uffff\1\163\3\uffff\1\143\1\160\1\144\1\157\1\146\1\144\5\uffff\1\145\1\163\1\172\1\111\1\154\1\142\1\157\1\164\1\145\1\153\1\154\1\103\1\166\1\172\1\102\1\172\1\145\1\uffff\1\116\1\145\1\154\1\162\1\104\1\162\1\72\1\141\1\157\1\151\1\uffff\1\151\1\uffff\1\172\1\107\1\141\1\145\1\164\1\162\1\166\1\uffff\1\143\1\155\1\144\1\156\1\uffff\1\172\1\156\2\172\1\151\2\145\1\160\1\145\1\144\1\uffff\1\172\2\uffff\1\166\1\162\1\103\1\157\1\144\1\50\1\uffff\1\145\1\72\1\157\1\156\1\123\1\uffff\1\162\1\uffff\1\156\2\145\1\172\1\146\1\156\1\162\1\uffff\1\72\1\164\1\166\1\uffff\1\72\1\151\1\uffff\1\143\1\145\1\163\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\12\uffff\1\13\1\14\1\uffff\1\16\1\17\1\20\10\uffff\1\31\1\32\3\uffff\1\36\1\37\1\uffff\1\31\6\uffff\1\10\1\11\1\uffff\1\13\1\14\1\15\1\27\1\16\1\17\1\20\7\uffff\1\32\1\33\1\34\1\35\1\36\21\uffff\1\3\12\uffff\1\26\1\uffff\1\1\7\uffff\1\22\4\uffff\1\2\12\uffff\1\4\1\uffff\1\6\1\7\6\uffff\1\5\5\uffff\1\30\1\uffff\1\21\7\uffff\1\12\3\uffff\1\23\2\uffff\1\24\4\uffff\1\25";
+        "\12\uffff\1\13\1\14\2\uffff\1\17\1\20\1\21\7\uffff\1\31\1\32\3\uffff\1\36\1\37\1\uffff\1\31\6\uffff\1\10\1\11\1\uffff\1\13\1\14\1\15\1\27\1\uffff\1\17\1\20\1\21\6\uffff\1\32\1\33\1\34\1\35\1\36\21\uffff\1\3\12\uffff\1\26\1\uffff\1\1\7\uffff\1\22\4\uffff\1\2\12\uffff\1\4\1\uffff\1\6\1\7\6\uffff\1\5\5\uffff\1\30\1\uffff\1\16\7\uffff\1\12\3\uffff\1\23\2\uffff\1\24\4\uffff\1\25";
     static final String DFA12_specialS =
-        "\1\1\31\uffff\1\2\1\0\176\uffff}>";
+        "\1\2\31\uffff\1\1\1\0\176\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\36\2\35\2\36\1\35\22\36\1\35\1\36\1\32\4\36\1\33\1\15\1\16\2\36\1\17\1\36\1\10\1\34\12\31\1\14\6\36\1\23\1\5\1\30\1\6\4\30\1\3\11\30\1\4\1\11\6\30\3\36\1\27\1\30\1\36\1\26\2\30\1\25\1\30\1\2\2\30\1\7\3\30\1\21\1\30\1\20\1\24\1\30\1\22\1\30\1\1\6\30\1\12\1\36\1\13\uff82\36",
+            "\11\36\2\35\2\36\1\35\22\36\1\35\1\36\1\32\4\36\1\33\1\16\1\17\2\36\1\20\1\36\1\10\1\34\12\31\1\14\6\36\1\23\1\5\1\30\1\6\4\30\1\3\11\30\1\4\1\11\6\30\3\36\1\27\1\30\1\36\1\26\2\30\1\25\1\30\1\2\2\30\1\7\3\30\1\21\1\30\1\15\1\24\1\30\1\22\1\30\1\1\6\30\1\12\1\36\1\13\uff82\36",
             "\1\37",
             "\1\41",
             "\1\42",
@@ -1308,10 +1308,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
             "",
             "",
             "\1\54",
+            "\1\56",
             "",
             "",
             "",
-            "\1\61",
             "\1\62",
             "\1\63",
             "\1\64",
@@ -1341,10 +1341,10 @@ public class InternalMappingAssistanceLexer extends Lexer {
             "",
             "",
             "",
-            "",
-            "",
-            "",
             "\1\105",
+            "",
+            "",
+            "",
             "\1\106",
             "\1\107",
             "\1\110",
@@ -1498,6 +1498,16 @@ public class InternalMappingAssistanceLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
+                        int LA12_26 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_26>='\u0000' && LA12_26<='\uFFFF')) ) {s = 57;}
+
+                        else s = 30;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -1525,13 +1535,13 @@ public class InternalMappingAssistanceLexer extends Lexer {
 
                         else if ( (LA12_0==':') ) {s = 12;}
 
-                        else if ( (LA12_0=='(') ) {s = 13;}
+                        else if ( (LA12_0=='o') ) {s = 13;}
 
-                        else if ( (LA12_0==')') ) {s = 14;}
+                        else if ( (LA12_0=='(') ) {s = 14;}
 
-                        else if ( (LA12_0==',') ) {s = 15;}
+                        else if ( (LA12_0==')') ) {s = 15;}
 
-                        else if ( (LA12_0=='o') ) {s = 16;}
+                        else if ( (LA12_0==',') ) {s = 16;}
 
                         else if ( (LA12_0=='m') ) {s = 17;}
 
@@ -1560,16 +1570,6 @@ public class InternalMappingAssistanceLexer extends Lexer {
                         else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 29;}
 
                         else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='*' && LA12_0<='+')||LA12_0=='-'||(LA12_0>=';' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||LA12_0=='|'||(LA12_0>='~' && LA12_0<='\uFFFF')) ) {s = 30;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA12_26 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_26>='\u0000' && LA12_26<='\uFFFF')) ) {s = 57;}
-
-                        else s = 30;
 
                         if ( s>=0 ) return s;
                         break;
