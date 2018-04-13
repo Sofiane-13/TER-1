@@ -41,14 +41,14 @@ public class MappingAssistanceValidator extends AbstractMappingAssistanceValidat
     int _size_1 = td.getVarConf().size();
     boolean _lessThan = (_size < _size_1);
     if (_lessThan) {
-      this.error("size varconf > function args", MappingAssistancePackage.Literals.CONF__VAR_CONF);
+      this.error("size varconf > function args", MappingAssistancePackage.Literals.TEST_OP__VAR_CONF);
     }
     int x = 0;
     EList<Variable> _varConf = td.getVarConf();
     for (final Variable varconf : _varConf) {
       {
         if (((((Object[])Conversions.unwrapArray(td.getInstVar(), Object.class)).length != 0) && (!varconf.getType().getAtomType().getLiteral().equals(td.getInstVar().get(x).getType().getLiteral())))) {
-          this.error("the variables must have the same Type", MappingAssistancePackage.Literals.CONF__VAR_CONF);
+          this.error("the variables must have the same Type", MappingAssistancePackage.Literals.TEST_OP__VAR_CONF);
         }
         x++;
       }

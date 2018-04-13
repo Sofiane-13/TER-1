@@ -46,7 +46,7 @@ class MappingAssistanceValidator extends AbstractMappingAssistanceValidator {
 	def checkMappingTestDriver(TestOP td) {
 
 		if(td.name.arg.size < td.varConf.size){
-			error("size varconf > function args",MappingAssistancePackage.Literals.CONF__VAR_CONF)
+			error("size varconf > function args",MappingAssistancePackage.Literals.TEST_OP__VAR_CONF)
 		}
 		
 		var x=0;
@@ -54,7 +54,7 @@ class MappingAssistanceValidator extends AbstractMappingAssistanceValidator {
 			//System.out.println(conf.instVar.get(x).eClass.name+" : "+varconf.type.atomType.literal)
 			if(td.instVar.length!=0 && !( (varconf.type.atomType.literal).equals(td.instVar.get(x).type.literal))){
 				
-				error("the variables must have the same Type",MappingAssistancePackage.Literals.CONF__VAR_CONF)
+				error("the variables must have the same Type",MappingAssistancePackage.Literals.TEST_OP__VAR_CONF)
 			}
 			x++
 		}
