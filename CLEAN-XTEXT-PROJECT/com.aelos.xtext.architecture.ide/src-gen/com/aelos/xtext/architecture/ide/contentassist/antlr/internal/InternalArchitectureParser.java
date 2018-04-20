@@ -5270,26 +5270,26 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Binding__Group__1__Impl"
-    // InternalArchitecture.g:1597:1: rule__Binding__Group__1__Impl : ( ( rule__Binding__ReceiverAssignment_1 ) ) ;
+    // InternalArchitecture.g:1597:1: rule__Binding__Group__1__Impl : ( ( rule__Binding__ProviderAssignment_1 ) ) ;
     public final void rule__Binding__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalArchitecture.g:1601:1: ( ( ( rule__Binding__ReceiverAssignment_1 ) ) )
-            // InternalArchitecture.g:1602:1: ( ( rule__Binding__ReceiverAssignment_1 ) )
+            // InternalArchitecture.g:1601:1: ( ( ( rule__Binding__ProviderAssignment_1 ) ) )
+            // InternalArchitecture.g:1602:1: ( ( rule__Binding__ProviderAssignment_1 ) )
             {
-            // InternalArchitecture.g:1602:1: ( ( rule__Binding__ReceiverAssignment_1 ) )
-            // InternalArchitecture.g:1603:2: ( rule__Binding__ReceiverAssignment_1 )
+            // InternalArchitecture.g:1602:1: ( ( rule__Binding__ProviderAssignment_1 ) )
+            // InternalArchitecture.g:1603:2: ( rule__Binding__ProviderAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getReceiverAssignment_1()); 
+               before(grammarAccess.getBindingAccess().getProviderAssignment_1()); 
             }
-            // InternalArchitecture.g:1604:2: ( rule__Binding__ReceiverAssignment_1 )
-            // InternalArchitecture.g:1604:3: rule__Binding__ReceiverAssignment_1
+            // InternalArchitecture.g:1604:2: ( rule__Binding__ProviderAssignment_1 )
+            // InternalArchitecture.g:1604:3: rule__Binding__ProviderAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Binding__ReceiverAssignment_1();
+            rule__Binding__ProviderAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -5297,7 +5297,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getReceiverAssignment_1()); 
+               after(grammarAccess.getBindingAccess().getProviderAssignment_1()); 
             }
 
             }
@@ -5438,26 +5438,26 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Binding__Group__3__Impl"
-    // InternalArchitecture.g:1651:1: rule__Binding__Group__3__Impl : ( ( rule__Binding__RecMemberAssignment_3 ) ) ;
+    // InternalArchitecture.g:1651:1: rule__Binding__Group__3__Impl : ( ( rule__Binding__ProMemberAssignment_3 ) ) ;
     public final void rule__Binding__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalArchitecture.g:1655:1: ( ( ( rule__Binding__RecMemberAssignment_3 ) ) )
-            // InternalArchitecture.g:1656:1: ( ( rule__Binding__RecMemberAssignment_3 ) )
+            // InternalArchitecture.g:1655:1: ( ( ( rule__Binding__ProMemberAssignment_3 ) ) )
+            // InternalArchitecture.g:1656:1: ( ( rule__Binding__ProMemberAssignment_3 ) )
             {
-            // InternalArchitecture.g:1656:1: ( ( rule__Binding__RecMemberAssignment_3 ) )
-            // InternalArchitecture.g:1657:2: ( rule__Binding__RecMemberAssignment_3 )
+            // InternalArchitecture.g:1656:1: ( ( rule__Binding__ProMemberAssignment_3 ) )
+            // InternalArchitecture.g:1657:2: ( rule__Binding__ProMemberAssignment_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getRecMemberAssignment_3()); 
+               before(grammarAccess.getBindingAccess().getProMemberAssignment_3()); 
             }
-            // InternalArchitecture.g:1658:2: ( rule__Binding__RecMemberAssignment_3 )
-            // InternalArchitecture.g:1658:3: rule__Binding__RecMemberAssignment_3
+            // InternalArchitecture.g:1658:2: ( rule__Binding__ProMemberAssignment_3 )
+            // InternalArchitecture.g:1658:3: rule__Binding__ProMemberAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Binding__RecMemberAssignment_3();
+            rule__Binding__ProMemberAssignment_3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -5465,7 +5465,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getRecMemberAssignment_3()); 
+               after(grammarAccess.getBindingAccess().getProMemberAssignment_3()); 
             }
 
             }
@@ -5606,26 +5606,26 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Binding__Group__5__Impl"
-    // InternalArchitecture.g:1705:1: rule__Binding__Group__5__Impl : ( ( rule__Binding__ProviderAssignment_5 ) ) ;
+    // InternalArchitecture.g:1705:1: rule__Binding__Group__5__Impl : ( ( rule__Binding__ReceiverAssignment_5 ) ) ;
     public final void rule__Binding__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalArchitecture.g:1709:1: ( ( ( rule__Binding__ProviderAssignment_5 ) ) )
-            // InternalArchitecture.g:1710:1: ( ( rule__Binding__ProviderAssignment_5 ) )
+            // InternalArchitecture.g:1709:1: ( ( ( rule__Binding__ReceiverAssignment_5 ) ) )
+            // InternalArchitecture.g:1710:1: ( ( rule__Binding__ReceiverAssignment_5 ) )
             {
-            // InternalArchitecture.g:1710:1: ( ( rule__Binding__ProviderAssignment_5 ) )
-            // InternalArchitecture.g:1711:2: ( rule__Binding__ProviderAssignment_5 )
+            // InternalArchitecture.g:1710:1: ( ( rule__Binding__ReceiverAssignment_5 ) )
+            // InternalArchitecture.g:1711:2: ( rule__Binding__ReceiverAssignment_5 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getProviderAssignment_5()); 
+               before(grammarAccess.getBindingAccess().getReceiverAssignment_5()); 
             }
-            // InternalArchitecture.g:1712:2: ( rule__Binding__ProviderAssignment_5 )
-            // InternalArchitecture.g:1712:3: rule__Binding__ProviderAssignment_5
+            // InternalArchitecture.g:1712:2: ( rule__Binding__ReceiverAssignment_5 )
+            // InternalArchitecture.g:1712:3: rule__Binding__ReceiverAssignment_5
             {
             pushFollow(FOLLOW_2);
-            rule__Binding__ProviderAssignment_5();
+            rule__Binding__ReceiverAssignment_5();
 
             state._fsp--;
             if (state.failed) return ;
@@ -5633,7 +5633,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getProviderAssignment_5()); 
+               after(grammarAccess.getBindingAccess().getReceiverAssignment_5()); 
             }
 
             }
@@ -5769,26 +5769,26 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Binding__Group__7__Impl"
-    // InternalArchitecture.g:1758:1: rule__Binding__Group__7__Impl : ( ( rule__Binding__ProMemberAssignment_7 ) ) ;
+    // InternalArchitecture.g:1758:1: rule__Binding__Group__7__Impl : ( ( rule__Binding__RecMemberAssignment_7 ) ) ;
     public final void rule__Binding__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalArchitecture.g:1762:1: ( ( ( rule__Binding__ProMemberAssignment_7 ) ) )
-            // InternalArchitecture.g:1763:1: ( ( rule__Binding__ProMemberAssignment_7 ) )
+            // InternalArchitecture.g:1762:1: ( ( ( rule__Binding__RecMemberAssignment_7 ) ) )
+            // InternalArchitecture.g:1763:1: ( ( rule__Binding__RecMemberAssignment_7 ) )
             {
-            // InternalArchitecture.g:1763:1: ( ( rule__Binding__ProMemberAssignment_7 ) )
-            // InternalArchitecture.g:1764:2: ( rule__Binding__ProMemberAssignment_7 )
+            // InternalArchitecture.g:1763:1: ( ( rule__Binding__RecMemberAssignment_7 ) )
+            // InternalArchitecture.g:1764:2: ( rule__Binding__RecMemberAssignment_7 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getProMemberAssignment_7()); 
+               before(grammarAccess.getBindingAccess().getRecMemberAssignment_7()); 
             }
-            // InternalArchitecture.g:1765:2: ( rule__Binding__ProMemberAssignment_7 )
-            // InternalArchitecture.g:1765:3: rule__Binding__ProMemberAssignment_7
+            // InternalArchitecture.g:1765:2: ( rule__Binding__RecMemberAssignment_7 )
+            // InternalArchitecture.g:1765:3: rule__Binding__RecMemberAssignment_7
             {
             pushFollow(FOLLOW_2);
-            rule__Binding__ProMemberAssignment_7();
+            rule__Binding__RecMemberAssignment_7();
 
             state._fsp--;
             if (state.failed) return ;
@@ -5796,7 +5796,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getProMemberAssignment_7()); 
+               after(grammarAccess.getBindingAccess().getRecMemberAssignment_7()); 
             }
 
             }
@@ -7718,9 +7718,9 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
     // $ANTLR end "rule__Architecture__BindAssignment_3"
 
 
-    // $ANTLR start "rule__Binding__ReceiverAssignment_1"
-    // InternalArchitecture.g:2393:1: rule__Binding__ReceiverAssignment_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Binding__ReceiverAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Binding__ProviderAssignment_1"
+    // InternalArchitecture.g:2393:1: rule__Binding__ProviderAssignment_1 : ( ( RULE_ID ) ) ;
+    public final void rule__Binding__ProviderAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7732,23 +7732,23 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             // InternalArchitecture.g:2399:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getReceiverVariableCrossReference_1_0()); 
+               before(grammarAccess.getBindingAccess().getProviderVariableCrossReference_1_0()); 
             }
             // InternalArchitecture.g:2400:3: ( RULE_ID )
             // InternalArchitecture.g:2401:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getReceiverVariableIDTerminalRuleCall_1_0_1()); 
+               before(grammarAccess.getBindingAccess().getProviderVariableIDTerminalRuleCall_1_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getReceiverVariableIDTerminalRuleCall_1_0_1()); 
+               after(grammarAccess.getBindingAccess().getProviderVariableIDTerminalRuleCall_1_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getReceiverVariableCrossReference_1_0()); 
+               after(grammarAccess.getBindingAccess().getProviderVariableCrossReference_1_0()); 
             }
 
             }
@@ -7768,12 +7768,12 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Binding__ReceiverAssignment_1"
+    // $ANTLR end "rule__Binding__ProviderAssignment_1"
 
 
-    // $ANTLR start "rule__Binding__RecMemberAssignment_3"
-    // InternalArchitecture.g:2412:1: rule__Binding__RecMemberAssignment_3 : ( ( RULE_ID ) ) ;
-    public final void rule__Binding__RecMemberAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Binding__ProMemberAssignment_3"
+    // InternalArchitecture.g:2412:1: rule__Binding__ProMemberAssignment_3 : ( ( RULE_ID ) ) ;
+    public final void rule__Binding__ProMemberAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7785,23 +7785,23 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             // InternalArchitecture.g:2418:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getRecMemberOperationCrossReference_3_0()); 
+               before(grammarAccess.getBindingAccess().getProMemberOperationCrossReference_3_0()); 
             }
             // InternalArchitecture.g:2419:3: ( RULE_ID )
             // InternalArchitecture.g:2420:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getRecMemberOperationIDTerminalRuleCall_3_0_1()); 
+               before(grammarAccess.getBindingAccess().getProMemberOperationIDTerminalRuleCall_3_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getRecMemberOperationIDTerminalRuleCall_3_0_1()); 
+               after(grammarAccess.getBindingAccess().getProMemberOperationIDTerminalRuleCall_3_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getRecMemberOperationCrossReference_3_0()); 
+               after(grammarAccess.getBindingAccess().getProMemberOperationCrossReference_3_0()); 
             }
 
             }
@@ -7821,12 +7821,12 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Binding__RecMemberAssignment_3"
+    // $ANTLR end "rule__Binding__ProMemberAssignment_3"
 
 
-    // $ANTLR start "rule__Binding__ProviderAssignment_5"
-    // InternalArchitecture.g:2431:1: rule__Binding__ProviderAssignment_5 : ( ( RULE_ID ) ) ;
-    public final void rule__Binding__ProviderAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Binding__ReceiverAssignment_5"
+    // InternalArchitecture.g:2431:1: rule__Binding__ReceiverAssignment_5 : ( ( RULE_ID ) ) ;
+    public final void rule__Binding__ReceiverAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7838,23 +7838,23 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             // InternalArchitecture.g:2437:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getProviderVariableCrossReference_5_0()); 
+               before(grammarAccess.getBindingAccess().getReceiverVariableCrossReference_5_0()); 
             }
             // InternalArchitecture.g:2438:3: ( RULE_ID )
             // InternalArchitecture.g:2439:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getProviderVariableIDTerminalRuleCall_5_0_1()); 
+               before(grammarAccess.getBindingAccess().getReceiverVariableIDTerminalRuleCall_5_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getProviderVariableIDTerminalRuleCall_5_0_1()); 
+               after(grammarAccess.getBindingAccess().getReceiverVariableIDTerminalRuleCall_5_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getProviderVariableCrossReference_5_0()); 
+               after(grammarAccess.getBindingAccess().getReceiverVariableCrossReference_5_0()); 
             }
 
             }
@@ -7874,12 +7874,12 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Binding__ProviderAssignment_5"
+    // $ANTLR end "rule__Binding__ReceiverAssignment_5"
 
 
-    // $ANTLR start "rule__Binding__ProMemberAssignment_7"
-    // InternalArchitecture.g:2450:1: rule__Binding__ProMemberAssignment_7 : ( ( RULE_ID ) ) ;
-    public final void rule__Binding__ProMemberAssignment_7() throws RecognitionException {
+    // $ANTLR start "rule__Binding__RecMemberAssignment_7"
+    // InternalArchitecture.g:2450:1: rule__Binding__RecMemberAssignment_7 : ( ( RULE_ID ) ) ;
+    public final void rule__Binding__RecMemberAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7891,23 +7891,23 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             // InternalArchitecture.g:2456:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getProMemberOperationCrossReference_7_0()); 
+               before(grammarAccess.getBindingAccess().getRecMemberOperationCrossReference_7_0()); 
             }
             // InternalArchitecture.g:2457:3: ( RULE_ID )
             // InternalArchitecture.g:2458:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getBindingAccess().getProMemberOperationIDTerminalRuleCall_7_0_1()); 
+               before(grammarAccess.getBindingAccess().getRecMemberOperationIDTerminalRuleCall_7_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getProMemberOperationIDTerminalRuleCall_7_0_1()); 
+               after(grammarAccess.getBindingAccess().getRecMemberOperationIDTerminalRuleCall_7_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getBindingAccess().getProMemberOperationCrossReference_7_0()); 
+               after(grammarAccess.getBindingAccess().getRecMemberOperationCrossReference_7_0()); 
             }
 
             }
@@ -7927,7 +7927,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
         }
         return ;
     }
-    // $ANTLR end "rule__Binding__ProMemberAssignment_7"
+    // $ANTLR end "rule__Binding__RecMemberAssignment_7"
 
 
     // $ANTLR start "rule__Variable__NameAssignment_0"

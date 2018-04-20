@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Binding#getReceiver <em>Receiver</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Binding#getRecMember <em>Rec Member</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.Binding#getProvider <em>Provider</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.Binding#getProMember <em>Pro Member</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.Binding#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.Binding#getRecMember <em>Rec Member</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBinding()
@@ -26,58 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Binding extends EObject
 {
-  /**
-   * Returns the value of the '<em><b>Receiver</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Receiver</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Receiver</em>' reference.
-   * @see #setReceiver(Variable)
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBinding_Receiver()
-   * @model
-   * @generated
-   */
-  Variable getReceiver();
-
-  /**
-   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Binding#getReceiver <em>Receiver</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Receiver</em>' reference.
-   * @see #getReceiver()
-   * @generated
-   */
-  void setReceiver(Variable value);
-
-  /**
-   * Returns the value of the '<em><b>Rec Member</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Rec Member</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Rec Member</em>' reference.
-   * @see #setRecMember(Operation)
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBinding_RecMember()
-   * @model
-   * @generated
-   */
-  Operation getRecMember();
-
-  /**
-   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Binding#getRecMember <em>Rec Member</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Rec Member</em>' reference.
-   * @see #getRecMember()
-   * @generated
-   */
-  void setRecMember(Operation value);
-
   /**
    * Returns the value of the '<em><b>Provider</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -129,5 +77,57 @@ public interface Binding extends EObject
    * @generated
    */
   void setProMember(Operation value);
+
+  /**
+   * Returns the value of the '<em><b>Receiver</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Receiver</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Receiver</em>' reference.
+   * @see #setReceiver(Variable)
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBinding_Receiver()
+   * @model
+   * @generated
+   */
+  Variable getReceiver();
+
+  /**
+   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Binding#getReceiver <em>Receiver</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Receiver</em>' reference.
+   * @see #getReceiver()
+   * @generated
+   */
+  void setReceiver(Variable value);
+
+  /**
+   * Returns the value of the '<em><b>Rec Member</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Rec Member</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rec Member</em>' reference.
+   * @see #setRecMember(Operation)
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBinding_RecMember()
+   * @model
+   * @generated
+   */
+  Operation getRecMember();
+
+  /**
+   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Binding#getRecMember <em>Rec Member</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rec Member</em>' reference.
+   * @see #getRecMember()
+   * @generated
+   */
+  void setRecMember(Operation value);
 
 } // Binding

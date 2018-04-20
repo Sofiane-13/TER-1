@@ -382,76 +382,76 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Binding");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBindKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cReceiverAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cReceiverVariableCrossReference_1_0 = (CrossReference)cReceiverAssignment_1.eContents().get(0);
-		private final RuleCall cReceiverVariableIDTerminalRuleCall_1_0_1 = (RuleCall)cReceiverVariableCrossReference_1_0.eContents().get(1);
+		private final Assignment cProviderAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cProviderVariableCrossReference_1_0 = (CrossReference)cProviderAssignment_1.eContents().get(0);
+		private final RuleCall cProviderVariableIDTerminalRuleCall_1_0_1 = (RuleCall)cProviderVariableCrossReference_1_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cRecMemberAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cRecMemberOperationCrossReference_3_0 = (CrossReference)cRecMemberAssignment_3.eContents().get(0);
-		private final RuleCall cRecMemberOperationIDTerminalRuleCall_3_0_1 = (RuleCall)cRecMemberOperationCrossReference_3_0.eContents().get(1);
+		private final Assignment cProMemberAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cProMemberOperationCrossReference_3_0 = (CrossReference)cProMemberAssignment_3.eContents().get(0);
+		private final RuleCall cProMemberOperationIDTerminalRuleCall_3_0_1 = (RuleCall)cProMemberOperationCrossReference_3_0.eContents().get(1);
 		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cProviderAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cProviderVariableCrossReference_5_0 = (CrossReference)cProviderAssignment_5.eContents().get(0);
-		private final RuleCall cProviderVariableIDTerminalRuleCall_5_0_1 = (RuleCall)cProviderVariableCrossReference_5_0.eContents().get(1);
+		private final Assignment cReceiverAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cReceiverVariableCrossReference_5_0 = (CrossReference)cReceiverAssignment_5.eContents().get(0);
+		private final RuleCall cReceiverVariableIDTerminalRuleCall_5_0_1 = (RuleCall)cReceiverVariableCrossReference_5_0.eContents().get(1);
 		private final Keyword cFullStopKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cProMemberAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cProMemberOperationCrossReference_7_0 = (CrossReference)cProMemberAssignment_7.eContents().get(0);
-		private final RuleCall cProMemberOperationIDTerminalRuleCall_7_0_1 = (RuleCall)cProMemberOperationCrossReference_7_0.eContents().get(1);
+		private final Assignment cRecMemberAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cRecMemberOperationCrossReference_7_0 = (CrossReference)cRecMemberAssignment_7.eContents().get(0);
+		private final RuleCall cRecMemberOperationIDTerminalRuleCall_7_0_1 = (RuleCall)cRecMemberOperationCrossReference_7_0.eContents().get(1);
 		
 		//Binding:
-		//	"bind" receiver=[Variable] '.' recMember=[Operation] ":" provider=[Variable] '.' proMember=[Operation];
+		//	"bind" provider=[Variable] '.' proMember=[Operation] ":" receiver=[Variable] '.' recMember=[Operation];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"bind" receiver=[Variable] '.' recMember=[Operation] ":" provider=[Variable] '.' proMember=[Operation]
+		//"bind" provider=[Variable] '.' proMember=[Operation] ":" receiver=[Variable] '.' recMember=[Operation]
 		public Group getGroup() { return cGroup; }
 		
 		//"bind"
 		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
 		
-		//receiver=[Variable]
-		public Assignment getReceiverAssignment_1() { return cReceiverAssignment_1; }
+		//provider=[Variable]
+		public Assignment getProviderAssignment_1() { return cProviderAssignment_1; }
 		
 		//[Variable]
-		public CrossReference getReceiverVariableCrossReference_1_0() { return cReceiverVariableCrossReference_1_0; }
+		public CrossReference getProviderVariableCrossReference_1_0() { return cProviderVariableCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getReceiverVariableIDTerminalRuleCall_1_0_1() { return cReceiverVariableIDTerminalRuleCall_1_0_1; }
+		public RuleCall getProviderVariableIDTerminalRuleCall_1_0_1() { return cProviderVariableIDTerminalRuleCall_1_0_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
 		
-		//recMember=[Operation]
-		public Assignment getRecMemberAssignment_3() { return cRecMemberAssignment_3; }
+		//proMember=[Operation]
+		public Assignment getProMemberAssignment_3() { return cProMemberAssignment_3; }
 		
 		//[Operation]
-		public CrossReference getRecMemberOperationCrossReference_3_0() { return cRecMemberOperationCrossReference_3_0; }
+		public CrossReference getProMemberOperationCrossReference_3_0() { return cProMemberOperationCrossReference_3_0; }
 		
 		//ID
-		public RuleCall getRecMemberOperationIDTerminalRuleCall_3_0_1() { return cRecMemberOperationIDTerminalRuleCall_3_0_1; }
+		public RuleCall getProMemberOperationIDTerminalRuleCall_3_0_1() { return cProMemberOperationIDTerminalRuleCall_3_0_1; }
 		
 		//":"
 		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
 		
-		//provider=[Variable]
-		public Assignment getProviderAssignment_5() { return cProviderAssignment_5; }
+		//receiver=[Variable]
+		public Assignment getReceiverAssignment_5() { return cReceiverAssignment_5; }
 		
 		//[Variable]
-		public CrossReference getProviderVariableCrossReference_5_0() { return cProviderVariableCrossReference_5_0; }
+		public CrossReference getReceiverVariableCrossReference_5_0() { return cReceiverVariableCrossReference_5_0; }
 		
 		//ID
-		public RuleCall getProviderVariableIDTerminalRuleCall_5_0_1() { return cProviderVariableIDTerminalRuleCall_5_0_1; }
+		public RuleCall getReceiverVariableIDTerminalRuleCall_5_0_1() { return cReceiverVariableIDTerminalRuleCall_5_0_1; }
 		
 		//'.'
 		public Keyword getFullStopKeyword_6() { return cFullStopKeyword_6; }
 		
-		//proMember=[Operation]
-		public Assignment getProMemberAssignment_7() { return cProMemberAssignment_7; }
+		//recMember=[Operation]
+		public Assignment getRecMemberAssignment_7() { return cRecMemberAssignment_7; }
 		
 		//[Operation]
-		public CrossReference getProMemberOperationCrossReference_7_0() { return cProMemberOperationCrossReference_7_0; }
+		public CrossReference getRecMemberOperationCrossReference_7_0() { return cRecMemberOperationCrossReference_7_0; }
 		
 		//ID
-		public RuleCall getProMemberOperationIDTerminalRuleCall_7_0_1() { return cProMemberOperationIDTerminalRuleCall_7_0_1; }
+		public RuleCall getRecMemberOperationIDTerminalRuleCall_7_0_1() { return cRecMemberOperationIDTerminalRuleCall_7_0_1; }
 	}
 	public class VariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Variable");
@@ -787,7 +787,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Binding:
-	//	"bind" receiver=[Variable] '.' recMember=[Operation] ":" provider=[Variable] '.' proMember=[Operation];
+	//	"bind" provider=[Variable] '.' proMember=[Operation] ":" receiver=[Variable] '.' recMember=[Operation];
 	public BindingElements getBindingAccess() {
 		return pBinding;
 	}

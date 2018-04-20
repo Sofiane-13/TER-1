@@ -44,7 +44,7 @@ Architecture:
 
 ;
 Binding:
-	"bind"  receiver=[Variable]'.'recMember=[Operation] ":" provider=[Variable]'.'proMember=[Operation]
+	"bind"  provider=[Variable]'.'proMember=[Operation] "-" receiver=[Variable]'.'recMember=[Operation]
 ;
  
 
