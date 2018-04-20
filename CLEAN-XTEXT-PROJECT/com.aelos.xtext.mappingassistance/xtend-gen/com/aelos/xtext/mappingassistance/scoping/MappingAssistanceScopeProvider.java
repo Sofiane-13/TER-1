@@ -61,7 +61,7 @@ public class MappingAssistanceScopeProvider extends AbstractMappingAssistanceSco
   }
   
   public IScope scope_Call_op2(final Observer selct) {
-    return Scopes.scopeFor(selct.getService2().getType().getCompType().getOps());
+    return Scopes.scopeFor(selct.getService2().getType().getCompType().getOpsReq());
   }
   
   public IScope scope_Call_op1(final Observer selct) {

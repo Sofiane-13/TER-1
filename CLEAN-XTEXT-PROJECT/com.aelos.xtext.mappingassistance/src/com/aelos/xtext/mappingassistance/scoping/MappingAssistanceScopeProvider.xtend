@@ -132,7 +132,7 @@ class MappingAssistanceScopeProvider extends AbstractMappingAssistanceScopeProvi
 
    	def  IScope scope_Call_op2(Observer selct) {
      // System.out.print("dsjkbc")
-      return Scopes.scopeFor(selct.service2.type.compType.ops);
+      return Scopes.scopeFor(selct.service2.type.compType.opsReq);
 	}
    	def  IScope scope_Call_op1(Observer selct) {
      // System.out.print("dsjkbc")
