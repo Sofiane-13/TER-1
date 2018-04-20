@@ -1825,7 +1825,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             otherlv_1=(Token)match(input,RULE_ID,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(otherlv_1, grammarAccess.getBindingAccess().getReceiverVariableCrossReference_1_0());
+              					newLeafNode(otherlv_1, grammarAccess.getBindingAccess().getProviderVariableCrossReference_1_0());
               				
             }
 
@@ -1856,7 +1856,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             otherlv_3=(Token)match(input,RULE_ID,FOLLOW_20); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(otherlv_3, grammarAccess.getBindingAccess().getRecMemberOperationCrossReference_3_0());
+              					newLeafNode(otherlv_3, grammarAccess.getBindingAccess().getProMemberOperationCrossReference_3_0());
               				
             }
 
@@ -1887,7 +1887,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             otherlv_5=(Token)match(input,RULE_ID,FOLLOW_19); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(otherlv_5, grammarAccess.getBindingAccess().getProviderVariableCrossReference_5_0());
+              					newLeafNode(otherlv_5, grammarAccess.getBindingAccess().getReceiverVariableCrossReference_5_0());
               				
             }
 
@@ -1918,7 +1918,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             otherlv_7=(Token)match(input,RULE_ID,FOLLOW_2); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              					newLeafNode(otherlv_7, grammarAccess.getBindingAccess().getProMemberOperationCrossReference_7_0());
+              					newLeafNode(otherlv_7, grammarAccess.getBindingAccess().getRecMemberOperationCrossReference_7_0());
               				
             }
 

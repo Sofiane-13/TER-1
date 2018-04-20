@@ -623,7 +623,7 @@ ruleBinding returns [EObject current=null]
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getBindingAccess().getReceiverVariableCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getBindingAccess().getProviderVariableCrossReference_1_0());
 				}
 			)
 		)
@@ -640,7 +640,7 @@ ruleBinding returns [EObject current=null]
 				}
 				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getBindingAccess().getRecMemberOperationCrossReference_3_0());
+					newLeafNode(otherlv_3, grammarAccess.getBindingAccess().getProMemberOperationCrossReference_3_0());
 				}
 			)
 		)
@@ -657,7 +657,7 @@ ruleBinding returns [EObject current=null]
 				}
 				otherlv_5=RULE_ID
 				{
-					newLeafNode(otherlv_5, grammarAccess.getBindingAccess().getProviderVariableCrossReference_5_0());
+					newLeafNode(otherlv_5, grammarAccess.getBindingAccess().getReceiverVariableCrossReference_5_0());
 				}
 			)
 		)
@@ -674,7 +674,7 @@ ruleBinding returns [EObject current=null]
 				}
 				otherlv_7=RULE_ID
 				{
-					newLeafNode(otherlv_7, grammarAccess.getBindingAccess().getProMemberOperationCrossReference_7_0());
+					newLeafNode(otherlv_7, grammarAccess.getBindingAccess().getRecMemberOperationCrossReference_7_0());
 				}
 			)
 		)

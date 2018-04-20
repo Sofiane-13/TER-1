@@ -24,36 +24,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingImpl#getReceiver <em>Receiver</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingImpl#getRecMember <em>Rec Member</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingImpl#getProvider <em>Provider</em>}</li>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingImpl#getProMember <em>Pro Member</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingImpl#getReceiver <em>Receiver</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.BindingImpl#getRecMember <em>Rec Member</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
 {
-  /**
-   * The cached value of the '{@link #getReceiver() <em>Receiver</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getReceiver()
-   * @generated
-   * @ordered
-   */
-  protected Variable receiver;
-
-  /**
-   * The cached value of the '{@link #getRecMember() <em>Rec Member</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getRecMember()
-   * @generated
-   * @ordered
-   */
-  protected Operation recMember;
-
   /**
    * The cached value of the '{@link #getProvider() <em>Provider</em>}' reference.
    * <!-- begin-user-doc -->
@@ -75,6 +55,26 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   protected Operation proMember;
 
   /**
+   * The cached value of the '{@link #getReceiver() <em>Receiver</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getReceiver()
+   * @generated
+   * @ordered
+   */
+  protected Variable receiver;
+
+  /**
+   * The cached value of the '{@link #getRecMember() <em>Rec Member</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRecMember()
+   * @generated
+   * @ordered
+   */
+  protected Operation recMember;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -93,92 +93,6 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   protected EClass eStaticClass()
   {
     return ArchitecturePackage.Literals.BINDING;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Variable getReceiver()
-  {
-    if (receiver != null && receiver.eIsProxy())
-    {
-      InternalEObject oldReceiver = (InternalEObject)receiver;
-      receiver = (Variable)eResolveProxy(oldReceiver);
-      if (receiver != oldReceiver)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArchitecturePackage.BINDING__RECEIVER, oldReceiver, receiver));
-      }
-    }
-    return receiver;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Variable basicGetReceiver()
-  {
-    return receiver;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setReceiver(Variable newReceiver)
-  {
-    Variable oldReceiver = receiver;
-    receiver = newReceiver;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.BINDING__RECEIVER, oldReceiver, receiver));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operation getRecMember()
-  {
-    if (recMember != null && recMember.eIsProxy())
-    {
-      InternalEObject oldRecMember = (InternalEObject)recMember;
-      recMember = (Operation)eResolveProxy(oldRecMember);
-      if (recMember != oldRecMember)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArchitecturePackage.BINDING__REC_MEMBER, oldRecMember, recMember));
-      }
-    }
-    return recMember;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Operation basicGetRecMember()
-  {
-    return recMember;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setRecMember(Operation newRecMember)
-  {
-    Operation oldRecMember = recMember;
-    recMember = newRecMember;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.BINDING__REC_MEMBER, oldRecMember, recMember));
   }
 
   /**
@@ -272,23 +186,109 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
    * <!-- end-user-doc -->
    * @generated
    */
+  public Variable getReceiver()
+  {
+    if (receiver != null && receiver.eIsProxy())
+    {
+      InternalEObject oldReceiver = (InternalEObject)receiver;
+      receiver = (Variable)eResolveProxy(oldReceiver);
+      if (receiver != oldReceiver)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArchitecturePackage.BINDING__RECEIVER, oldReceiver, receiver));
+      }
+    }
+    return receiver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Variable basicGetReceiver()
+  {
+    return receiver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setReceiver(Variable newReceiver)
+  {
+    Variable oldReceiver = receiver;
+    receiver = newReceiver;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.BINDING__RECEIVER, oldReceiver, receiver));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operation getRecMember()
+  {
+    if (recMember != null && recMember.eIsProxy())
+    {
+      InternalEObject oldRecMember = (InternalEObject)recMember;
+      recMember = (Operation)eResolveProxy(oldRecMember);
+      if (recMember != oldRecMember)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ArchitecturePackage.BINDING__REC_MEMBER, oldRecMember, recMember));
+      }
+    }
+    return recMember;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operation basicGetRecMember()
+  {
+    return recMember;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRecMember(Operation newRecMember)
+  {
+    Operation oldRecMember = recMember;
+    recMember = newRecMember;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ArchitecturePackage.BINDING__REC_MEMBER, oldRecMember, recMember));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case ArchitecturePackage.BINDING__RECEIVER:
-        if (resolve) return getReceiver();
-        return basicGetReceiver();
-      case ArchitecturePackage.BINDING__REC_MEMBER:
-        if (resolve) return getRecMember();
-        return basicGetRecMember();
       case ArchitecturePackage.BINDING__PROVIDER:
         if (resolve) return getProvider();
         return basicGetProvider();
       case ArchitecturePackage.BINDING__PRO_MEMBER:
         if (resolve) return getProMember();
         return basicGetProMember();
+      case ArchitecturePackage.BINDING__RECEIVER:
+        if (resolve) return getReceiver();
+        return basicGetReceiver();
+      case ArchitecturePackage.BINDING__REC_MEMBER:
+        if (resolve) return getRecMember();
+        return basicGetRecMember();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -303,17 +303,17 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case ArchitecturePackage.BINDING__RECEIVER:
-        setReceiver((Variable)newValue);
-        return;
-      case ArchitecturePackage.BINDING__REC_MEMBER:
-        setRecMember((Operation)newValue);
-        return;
       case ArchitecturePackage.BINDING__PROVIDER:
         setProvider((Variable)newValue);
         return;
       case ArchitecturePackage.BINDING__PRO_MEMBER:
         setProMember((Operation)newValue);
+        return;
+      case ArchitecturePackage.BINDING__RECEIVER:
+        setReceiver((Variable)newValue);
+        return;
+      case ArchitecturePackage.BINDING__REC_MEMBER:
+        setRecMember((Operation)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -329,17 +329,17 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case ArchitecturePackage.BINDING__RECEIVER:
-        setReceiver((Variable)null);
-        return;
-      case ArchitecturePackage.BINDING__REC_MEMBER:
-        setRecMember((Operation)null);
-        return;
       case ArchitecturePackage.BINDING__PROVIDER:
         setProvider((Variable)null);
         return;
       case ArchitecturePackage.BINDING__PRO_MEMBER:
         setProMember((Operation)null);
+        return;
+      case ArchitecturePackage.BINDING__RECEIVER:
+        setReceiver((Variable)null);
+        return;
+      case ArchitecturePackage.BINDING__REC_MEMBER:
+        setRecMember((Operation)null);
         return;
     }
     super.eUnset(featureID);
@@ -355,14 +355,14 @@ public class BindingImpl extends MinimalEObjectImpl.Container implements Binding
   {
     switch (featureID)
     {
-      case ArchitecturePackage.BINDING__RECEIVER:
-        return receiver != null;
-      case ArchitecturePackage.BINDING__REC_MEMBER:
-        return recMember != null;
       case ArchitecturePackage.BINDING__PROVIDER:
         return provider != null;
       case ArchitecturePackage.BINDING__PRO_MEMBER:
         return proMember != null;
+      case ArchitecturePackage.BINDING__RECEIVER:
+        return receiver != null;
+      case ArchitecturePackage.BINDING__REC_MEMBER:
+        return recMember != null;
     }
     return super.eIsSet(featureID);
   }
