@@ -10,8 +10,8 @@ import com.aelos.xtext.architecture.architecture.Component
 import org.eclipse.xtext.EcoreUtil2
 import org.eclipse.xtext.scoping.Scopes
 import org.eclipse.xtext.scoping.IScope
-import com.aelos.xtext.architecture.architecture.Call
 import com.aelos.xtext.architecture.architecture.Operation
+import com.aelos.xtext.architecture.architecture.Binding
 
 /**
  * This class contains custom scoping description.
@@ -29,13 +29,17 @@ class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
 	    }
 	    //return super.getScope(context, reference)
 	    
-	    
-    
-    
-	    if (context instanceof Call && reference == ArchitecturePackage.Literals.CALL__MEMBER) {
+	     if (context instanceof Binding && reference == ArchitecturePackage.Literals.BINDING__REC_MEMBER) {
 	        
 	          // Create IEObjectDescriptions and puts them into an IScope instance
-	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, Call))
+	          return scope_rec_member(EcoreUtil2.getContainerOfType(context, Binding))
+	    }   
+    
+    
+	    if (context instanceof Binding && reference == ArchitecturePackage.Literals.BINDING__PRO_MEMBER) {
+	        
+	          // Create IEObjectDescriptions and puts them into an IScope instance
+	          return scope_Call_op(EcoreUtil2.getContainerOfType(context, Binding))
 	    }
 	    return super.getScope(context, reference);
 	}
@@ -45,8 +49,12 @@ class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
       return Scopes.scopeFor(selct.operations);
 	}
 
-	def  IScope scope_Call_op(Call selct) {
+	def  IScope scope_Call_op(Binding selct) {
       //System.out.print("dsjkbc")
-      return Scopes.scopeFor(selct.receiver.type.compType.ops);
+      return Scopes.scopeFor(selct.provider.type.compType.ops);
+	}
+	def  IScope scope_rec_member(Binding selct) {
+      //System.out.print("dsjkbc")
+      return Scopes.scopeFor(selct.receiver.type.compType.opsReq);
 	}
 }

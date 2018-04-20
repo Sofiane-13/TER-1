@@ -13,7 +13,7 @@ AbstractModel:(im+=Import)+ (testDr+=TestDriver ) (
 	(obs+=Observer)| 
 	(comp+=Comopnent)| 
 	(mock+=Mock)| 
-	(conf+=Conf)| 
+	(conf+=ReplaceConf)| 
 	(bind+=Bindings)| 
 	(inst+=InstanceComp)
 )* ;
@@ -31,19 +31,20 @@ TestDriver :
 
 	{TestDriver} "TestDriver" "{"
 
-		(outVar+=[testIntention::Variable]":="testOp+=TestOP)*
+		(outVar+=[testIntention::Variable]"<-"testOp+=TestOP)*
 	
 	"}"
 	;
 	
 Observer :
-	"observer:"service1=[arch::Variable]'.'member1=[arch::Operation]"("((instVar+=[testIntention::Variable]":="varOp+=[arch::Variable]",")*(instVar+=[testIntention::Variable]":="varOp+=[arch::Variable]))*")""("service2=[arch::Variable]'.'member2=[arch::Operation]")";	
+	"observer:"service1=[arch::Variable]'.'member1=[arch::Operation]"("((instVar+=[testIntention::Variable]"<-"varOp+=[arch::Variable]",")*(instVar+=[testIntention::Variable]"<-"varOp+=[arch::Variable]))*")" "-" service2=[arch::Variable]'.'member2=[arch::Operation];	
 	
 Mock:
-"mock:"service=[arch::Variable]'.'member+=[arch::Operation]":="IntentionVar+=[testIntention::Variable]
+"mock:"service=[arch::Variable]'.'member+=[arch::Operation]"<-"IntentionVar+=[testIntention::Variable]
 ;
-Conf:
-"replaceConf:"service=[arch::Variable]'.'member=[arch::Operation]"("((varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]",")*(varConf+=[arch::Variable]":="instVar+=[testIntention::Variable]))*")"
+
+ReplaceConf:
+	"replaceConf:"service=[arch::Variable]'.'member=[arch::Operation]"("((varConf+=[arch::Variable]"<-"instVar+=[testIntention::Variable]",")*(varConf+=[arch::Variable]"<-"instVar+=[testIntention::Variable]))*")"
 ; 
 
 Atomic:

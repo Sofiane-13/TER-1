@@ -78,13 +78,13 @@ public interface MappingAssistanceFactory extends EFactory
   Mock createMock();
 
   /**
-   * Returns a new object of class '<em>Conf</em>'.
+   * Returns a new object of class '<em>Replace Conf</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Conf</em>'.
+   * @return a new object of class '<em>Replace Conf</em>'.
    * @generated
    */
-  Conf createConf();
+  ReplaceConf createReplaceConf();
 
   /**
    * Returns a new object of class '<em>Atomic</em>'.

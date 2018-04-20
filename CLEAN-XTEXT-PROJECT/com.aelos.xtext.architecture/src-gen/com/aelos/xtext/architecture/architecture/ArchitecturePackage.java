@@ -300,7 +300,7 @@ public interface ArchitecturePackage extends EPackage
   int BINDING = 6;
 
   /**
-   * The feature id for the '<em><b>Receiver</b></em>' reference list.
+   * The feature id for the '<em><b>Receiver</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -309,7 +309,7 @@ public interface ArchitecturePackage extends EPackage
   int BINDING__RECEIVER = 0;
 
   /**
-   * The feature id for the '<em><b>Rec Member</b></em>' reference list.
+   * The feature id for the '<em><b>Rec Member</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -318,7 +318,7 @@ public interface ArchitecturePackage extends EPackage
   int BINDING__REC_MEMBER = 1;
 
   /**
-   * The feature id for the '<em><b>Provider</b></em>' reference list.
+   * The feature id for the '<em><b>Provider</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -327,7 +327,7 @@ public interface ArchitecturePackage extends EPackage
   int BINDING__PROVIDER = 2;
 
   /**
-   * The feature id for the '<em><b>Pro Member</b></em>' reference list.
+   * The feature id for the '<em><b>Pro Member</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -689,10 +689,10 @@ public interface ArchitecturePackage extends EPackage
   EClass getBinding();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Binding#getReceiver <em>Receiver</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.architecture.architecture.Binding#getReceiver <em>Receiver</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Receiver</em>'.
+   * @return the meta object for the reference '<em>Receiver</em>'.
    * @see com.aelos.xtext.architecture.architecture.Binding#getReceiver()
    * @see #getBinding()
    * @generated
@@ -700,10 +700,10 @@ public interface ArchitecturePackage extends EPackage
   EReference getBinding_Receiver();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Binding#getRecMember <em>Rec Member</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.architecture.architecture.Binding#getRecMember <em>Rec Member</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Rec Member</em>'.
+   * @return the meta object for the reference '<em>Rec Member</em>'.
    * @see com.aelos.xtext.architecture.architecture.Binding#getRecMember()
    * @see #getBinding()
    * @generated
@@ -711,10 +711,10 @@ public interface ArchitecturePackage extends EPackage
   EReference getBinding_RecMember();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Binding#getProvider <em>Provider</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.architecture.architecture.Binding#getProvider <em>Provider</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Provider</em>'.
+   * @return the meta object for the reference '<em>Provider</em>'.
    * @see com.aelos.xtext.architecture.architecture.Binding#getProvider()
    * @see #getBinding()
    * @generated
@@ -722,10 +722,10 @@ public interface ArchitecturePackage extends EPackage
   EReference getBinding_Provider();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Binding#getProMember <em>Pro Member</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.architecture.architecture.Binding#getProMember <em>Pro Member</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Pro Member</em>'.
+   * @return the meta object for the reference '<em>Pro Member</em>'.
    * @see com.aelos.xtext.architecture.architecture.Binding#getProMember()
    * @see #getBinding()
    * @generated
@@ -1047,7 +1047,7 @@ public interface ArchitecturePackage extends EPackage
     EClass BINDING = eINSTANCE.getBinding();
 
     /**
-     * The meta object literal for the '<em><b>Receiver</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Receiver</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1055,7 +1055,7 @@ public interface ArchitecturePackage extends EPackage
     EReference BINDING__RECEIVER = eINSTANCE.getBinding_Receiver();
 
     /**
-     * The meta object literal for the '<em><b>Rec Member</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Rec Member</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1063,7 +1063,7 @@ public interface ArchitecturePackage extends EPackage
     EReference BINDING__REC_MEMBER = eINSTANCE.getBinding_RecMember();
 
     /**
-     * The meta object literal for the '<em><b>Provider</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Provider</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1071,7 +1071,7 @@ public interface ArchitecturePackage extends EPackage
     EReference BINDING__PROVIDER = eINSTANCE.getBinding_Provider();
 
     /**
-     * The meta object literal for the '<em><b>Pro Member</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Pro Member</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

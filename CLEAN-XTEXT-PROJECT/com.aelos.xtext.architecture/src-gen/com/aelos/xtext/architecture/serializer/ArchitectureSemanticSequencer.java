@@ -117,10 +117,25 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Binding returns Binding
 	 *
 	 * Constraint:
-	 *     (receiver+=[Variable|ID] recMember+=[Operation|ID] provider+=[Variable|ID] proMember+=[Operation|ID])
+	 *     (receiver=[Variable|ID] recMember=[Operation|ID] provider=[Variable|ID] proMember=[Operation|ID])
 	 */
 	protected void sequence_Binding(ISerializationContext context, Binding semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.BINDING__RECEIVER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.BINDING__RECEIVER));
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.BINDING__REC_MEMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.BINDING__REC_MEMBER));
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.BINDING__PROVIDER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.BINDING__PROVIDER));
+			if (transientValues.isValueTransient(semanticObject, ArchitecturePackage.Literals.BINDING__PRO_MEMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ArchitecturePackage.Literals.BINDING__PRO_MEMBER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBindingAccess().getReceiverVariableIDTerminalRuleCall_1_0_1(), semanticObject.eGet(ArchitecturePackage.Literals.BINDING__RECEIVER, false));
+		feeder.accept(grammarAccess.getBindingAccess().getRecMemberOperationIDTerminalRuleCall_3_0_1(), semanticObject.eGet(ArchitecturePackage.Literals.BINDING__REC_MEMBER, false));
+		feeder.accept(grammarAccess.getBindingAccess().getProviderVariableIDTerminalRuleCall_5_0_1(), semanticObject.eGet(ArchitecturePackage.Literals.BINDING__PROVIDER, false));
+		feeder.accept(grammarAccess.getBindingAccess().getProMemberOperationIDTerminalRuleCall_7_0_1(), semanticObject.eGet(ArchitecturePackage.Literals.BINDING__PRO_MEMBER, false));
+		feeder.finish();
 	}
 	
 	

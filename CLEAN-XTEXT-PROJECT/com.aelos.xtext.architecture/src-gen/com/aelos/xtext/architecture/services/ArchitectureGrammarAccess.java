@@ -399,16 +399,16 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cProMemberOperationIDTerminalRuleCall_7_0_1 = (RuleCall)cProMemberOperationCrossReference_7_0.eContents().get(1);
 		
 		//Binding:
-		//	"bind" receiver+=[Variable] '.' recMember+=[Operation] ":" provider+=[Variable] '.' proMember+=[Operation];
+		//	"bind" receiver=[Variable] '.' recMember=[Operation] ":" provider=[Variable] '.' proMember=[Operation];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"bind" receiver+=[Variable] '.' recMember+=[Operation] ":" provider+=[Variable] '.' proMember+=[Operation]
+		//"bind" receiver=[Variable] '.' recMember=[Operation] ":" provider=[Variable] '.' proMember=[Operation]
 		public Group getGroup() { return cGroup; }
 		
 		//"bind"
 		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
 		
-		//receiver+=[Variable]
+		//receiver=[Variable]
 		public Assignment getReceiverAssignment_1() { return cReceiverAssignment_1; }
 		
 		//[Variable]
@@ -420,7 +420,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
 		
-		//recMember+=[Operation]
+		//recMember=[Operation]
 		public Assignment getRecMemberAssignment_3() { return cRecMemberAssignment_3; }
 		
 		//[Operation]
@@ -432,7 +432,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
 		
-		//provider+=[Variable]
+		//provider=[Variable]
 		public Assignment getProviderAssignment_5() { return cProviderAssignment_5; }
 		
 		//[Variable]
@@ -444,7 +444,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//'.'
 		public Keyword getFullStopKeyword_6() { return cFullStopKeyword_6; }
 		
-		//proMember+=[Operation]
+		//proMember=[Operation]
 		public Assignment getProMemberAssignment_7() { return cProMemberAssignment_7; }
 		
 		//[Operation]
@@ -787,7 +787,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Binding:
-	//	"bind" receiver+=[Variable] '.' recMember+=[Operation] ":" provider+=[Variable] '.' proMember+=[Operation];
+	//	"bind" receiver=[Variable] '.' recMember=[Operation] ":" provider=[Variable] '.' proMember=[Operation];
 	public BindingElements getBindingAccess() {
 		return pBinding;
 	}

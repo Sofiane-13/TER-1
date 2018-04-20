@@ -6,12 +6,12 @@ package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 
 import java.util.Collection;
@@ -108,7 +108,7 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
    * @generated
    * @ordered
    */
-  protected EList<Conf> conf;
+  protected EList<ReplaceConf> conf;
 
   /**
    * The cached value of the '{@link #getBind() <em>Bind</em>}' containment reference list.
@@ -226,11 +226,11 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Conf> getConf()
+  public EList<ReplaceConf> getConf()
   {
     if (conf == null)
     {
-      conf = new EObjectContainmentEList<Conf>(Conf.class, this, MappingAssistancePackage.ABSTRACT_MODEL__CONF);
+      conf = new EObjectContainmentEList<ReplaceConf>(ReplaceConf.class, this, MappingAssistancePackage.ABSTRACT_MODEL__CONF);
     }
     return conf;
   }
@@ -356,7 +356,7 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
         return;
       case MappingAssistancePackage.ABSTRACT_MODEL__CONF:
         getConf().clear();
-        getConf().addAll((Collection<? extends Conf>)newValue);
+        getConf().addAll((Collection<? extends ReplaceConf>)newValue);
         return;
       case MappingAssistancePackage.ABSTRACT_MODEL__BIND:
         getBind().clear();

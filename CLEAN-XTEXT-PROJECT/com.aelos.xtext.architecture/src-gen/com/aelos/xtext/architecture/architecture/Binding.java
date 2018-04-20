@@ -3,8 +3,6 @@
  */
 package com.aelos.xtext.architecture.architecture;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -29,67 +27,107 @@ import org.eclipse.emf.ecore.EObject;
 public interface Binding extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Receiver</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Variable}.
+   * Returns the value of the '<em><b>Receiver</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Receiver</em>' reference list isn't clear,
+   * If the meaning of the '<em>Receiver</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Receiver</em>' reference list.
+   * @return the value of the '<em>Receiver</em>' reference.
+   * @see #setReceiver(Variable)
    * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBinding_Receiver()
    * @model
    * @generated
    */
-  EList<Variable> getReceiver();
+  Variable getReceiver();
 
   /**
-   * Returns the value of the '<em><b>Rec Member</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
+   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Binding#getReceiver <em>Receiver</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Receiver</em>' reference.
+   * @see #getReceiver()
+   * @generated
+   */
+  void setReceiver(Variable value);
+
+  /**
+   * Returns the value of the '<em><b>Rec Member</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Rec Member</em>' reference list isn't clear,
+   * If the meaning of the '<em>Rec Member</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Rec Member</em>' reference list.
+   * @return the value of the '<em>Rec Member</em>' reference.
+   * @see #setRecMember(Operation)
    * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBinding_RecMember()
    * @model
    * @generated
    */
-  EList<Operation> getRecMember();
+  Operation getRecMember();
 
   /**
-   * Returns the value of the '<em><b>Provider</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Variable}.
+   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Binding#getRecMember <em>Rec Member</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rec Member</em>' reference.
+   * @see #getRecMember()
+   * @generated
+   */
+  void setRecMember(Operation value);
+
+  /**
+   * Returns the value of the '<em><b>Provider</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Provider</em>' reference list isn't clear,
+   * If the meaning of the '<em>Provider</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Provider</em>' reference list.
+   * @return the value of the '<em>Provider</em>' reference.
+   * @see #setProvider(Variable)
    * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBinding_Provider()
    * @model
    * @generated
    */
-  EList<Variable> getProvider();
+  Variable getProvider();
 
   /**
-   * Returns the value of the '<em><b>Pro Member</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Operation}.
+   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Binding#getProvider <em>Provider</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Provider</em>' reference.
+   * @see #getProvider()
+   * @generated
+   */
+  void setProvider(Variable value);
+
+  /**
+   * Returns the value of the '<em><b>Pro Member</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Pro Member</em>' reference list isn't clear,
+   * If the meaning of the '<em>Pro Member</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Pro Member</em>' reference list.
+   * @return the value of the '<em>Pro Member</em>' reference.
+   * @see #setProMember(Operation)
    * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getBinding_ProMember()
    * @model
    * @generated
    */
-  EList<Operation> getProMember();
+  Operation getProMember();
+
+  /**
+   * Sets the value of the '{@link com.aelos.xtext.architecture.architecture.Binding#getProMember <em>Pro Member</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Pro Member</em>' reference.
+   * @see #getProMember()
+   * @generated
+   */
+  void setProMember(Operation value);
 
 } // Binding

@@ -4,11 +4,9 @@
 package com.aelos.xtext.mappingassistance.validation
 
 import org.eclipse.xtext.validation.Check
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
-import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP
-import com.aelos.xtext.mappingassistance.mappingAssistance.Operation
+import com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf
 
 //import com.aelos.xtext.mappingassistance.mappingAssistance.Mapping
 //import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage
@@ -31,13 +29,13 @@ class MappingAssistanceValidator extends AbstractMappingAssistanceValidator {
 //		}
 //	}
 	@Check
-	def checkMappingSameType(Conf conf) {
+	def checkMappingSameType(ReplaceConf conf) {
 		var x=0;
 		for(varconf:conf.varConf){
 			//System.out.println(conf.instVar.get(x).eClass.name+" : "+varconf.type.atomType.literal)
 			if(!( (conf.instVar.get(x).type.literal).equals(varconf.type.atomType.literal))){
 				
-				error("the variables must have the same Type",MappingAssistancePackage.Literals.CONF__VAR_CONF)
+				error("the variables must have the same Type",MappingAssistancePackage.Literals.REPLACE_CONF__VAR_CONF)
 			}
 			x++
 		}
@@ -52,7 +50,7 @@ class MappingAssistanceValidator extends AbstractMappingAssistanceValidator {
 				}
 			}
 			if(y>1){
-			error("you can not use the same twice",MappingAssistancePackage.Literals.CONF__VAR_CONF)	
+			error("you can not use the same twice",MappingAssistancePackage.Literals.REPLACE_CONF__VAR_CONF)	
 				}
 			x++
 			}

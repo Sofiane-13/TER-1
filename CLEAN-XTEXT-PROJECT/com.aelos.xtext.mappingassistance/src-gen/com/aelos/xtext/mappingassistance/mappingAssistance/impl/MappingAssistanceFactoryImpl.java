@@ -8,7 +8,6 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
@@ -18,6 +17,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
@@ -92,7 +92,7 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
       case MappingAssistancePackage.TEST_DRIVER: return createTestDriver();
       case MappingAssistancePackage.OBSERVER: return createObserver();
       case MappingAssistancePackage.MOCK: return createMock();
-      case MappingAssistancePackage.CONF: return createConf();
+      case MappingAssistancePackage.REPLACE_CONF: return createReplaceConf();
       case MappingAssistancePackage.ATOMIC: return createAtomic();
       case MappingAssistancePackage.COMOPNENT: return createComopnent();
       case MappingAssistancePackage.TEST_OP: return createTestOP();
@@ -216,10 +216,10 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public Conf createConf()
+  public ReplaceConf createReplaceConf()
   {
-    ConfImpl conf = new ConfImpl();
-    return conf;
+    ReplaceConfImpl replaceConf = new ReplaceConfImpl();
+    return replaceConf;
   }
 
   /**

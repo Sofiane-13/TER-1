@@ -362,14 +362,14 @@ public interface MappingAssistancePackage extends EPackage
   int MOCK_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl <em>Conf</em>}' class.
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ReplaceConfImpl <em>Replace Conf</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getConf()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ReplaceConfImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getReplaceConf()
    * @generated
    */
-  int CONF = 6;
+  int REPLACE_CONF = 6;
 
   /**
    * The feature id for the '<em><b>Service</b></em>' reference.
@@ -378,7 +378,7 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONF__SERVICE = 0;
+  int REPLACE_CONF__SERVICE = 0;
 
   /**
    * The feature id for the '<em><b>Member</b></em>' reference.
@@ -387,7 +387,7 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONF__MEMBER = 1;
+  int REPLACE_CONF__MEMBER = 1;
 
   /**
    * The feature id for the '<em><b>Var Conf</b></em>' reference list.
@@ -396,7 +396,7 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONF__VAR_CONF = 2;
+  int REPLACE_CONF__VAR_CONF = 2;
 
   /**
    * The feature id for the '<em><b>Inst Var</b></em>' reference list.
@@ -405,16 +405,16 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONF__INST_VAR = 3;
+  int REPLACE_CONF__INST_VAR = 3;
 
   /**
-   * The number of structural features of the '<em>Conf</em>' class.
+   * The number of structural features of the '<em>Replace Conf</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONF_FEATURE_COUNT = 4;
+  int REPLACE_CONF_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AtomicImpl <em>Atomic</em>}' class.
@@ -1191,58 +1191,58 @@ public interface MappingAssistancePackage extends EPackage
   EReference getMock_IntentionVar();
 
   /**
-   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf <em>Conf</em>}'.
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf <em>Replace Conf</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Conf</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf
+   * @return the meta object for class '<em>Replace Conf</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf
    * @generated
    */
-  EClass getConf();
+  EClass getReplaceConf();
 
   /**
-   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getService <em>Service</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getService <em>Service</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Service</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getService()
-   * @see #getConf()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getService()
+   * @see #getReplaceConf()
    * @generated
    */
-  EReference getConf_Service();
+  EReference getReplaceConf_Service();
 
   /**
-   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getMember <em>Member</em>}'.
+   * Returns the meta object for the reference '{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getMember <em>Member</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Member</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getMember()
-   * @see #getConf()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getMember()
+   * @see #getReplaceConf()
    * @generated
    */
-  EReference getConf_Member();
+  EReference getReplaceConf_Member();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getVarConf <em>Var Conf</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getVarConf <em>Var Conf</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Var Conf</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getVarConf()
-   * @see #getConf()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getVarConf()
+   * @see #getReplaceConf()
    * @generated
    */
-  EReference getConf_VarConf();
+  EReference getReplaceConf_VarConf();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getInstVar <em>Inst Var</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getInstVar <em>Inst Var</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Inst Var</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getInstVar()
-   * @see #getConf()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getInstVar()
+   * @see #getReplaceConf()
    * @generated
    */
-  EReference getConf_InstVar();
+  EReference getReplaceConf_InstVar();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Atomic <em>Atomic</em>}'.
@@ -1911,14 +1911,14 @@ public interface MappingAssistancePackage extends EPackage
     EReference MOCK__INTENTION_VAR = eINSTANCE.getMock_IntentionVar();
 
     /**
-     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl <em>Conf</em>}' class.
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ReplaceConfImpl <em>Replace Conf</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl
-     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getConf()
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ReplaceConfImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getReplaceConf()
      * @generated
      */
-    EClass CONF = eINSTANCE.getConf();
+    EClass REPLACE_CONF = eINSTANCE.getReplaceConf();
 
     /**
      * The meta object literal for the '<em><b>Service</b></em>' reference feature.
@@ -1926,7 +1926,7 @@ public interface MappingAssistancePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONF__SERVICE = eINSTANCE.getConf_Service();
+    EReference REPLACE_CONF__SERVICE = eINSTANCE.getReplaceConf_Service();
 
     /**
      * The meta object literal for the '<em><b>Member</b></em>' reference feature.
@@ -1934,7 +1934,7 @@ public interface MappingAssistancePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONF__MEMBER = eINSTANCE.getConf_Member();
+    EReference REPLACE_CONF__MEMBER = eINSTANCE.getReplaceConf_Member();
 
     /**
      * The meta object literal for the '<em><b>Var Conf</b></em>' reference list feature.
@@ -1942,7 +1942,7 @@ public interface MappingAssistancePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONF__VAR_CONF = eINSTANCE.getConf_VarConf();
+    EReference REPLACE_CONF__VAR_CONF = eINSTANCE.getReplaceConf_VarConf();
 
     /**
      * The meta object literal for the '<em><b>Inst Var</b></em>' reference list feature.
@@ -1950,7 +1950,7 @@ public interface MappingAssistancePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONF__INST_VAR = eINSTANCE.getConf_InstVar();
+    EReference REPLACE_CONF__INST_VAR = eINSTANCE.getReplaceConf_InstVar();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AtomicImpl <em>Atomic</em>}' class.

@@ -114,7 +114,7 @@ public interface AbstractModel extends EObject
 
   /**
    * Returns the value of the '<em><b>Conf</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf}.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Conf</em>' containment reference list isn't clear,
@@ -126,7 +126,7 @@ public interface AbstractModel extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Conf> getConf();
+  EList<ReplaceConf> getConf();
 
   /**
    * Returns the value of the '<em><b>Bind</b></em>' containment reference list.

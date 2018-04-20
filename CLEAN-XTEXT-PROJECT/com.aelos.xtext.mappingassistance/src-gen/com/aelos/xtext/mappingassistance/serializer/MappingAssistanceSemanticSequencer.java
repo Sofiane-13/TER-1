@@ -7,7 +7,6 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
@@ -16,6 +15,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
@@ -63,9 +63,6 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 			case MappingAssistancePackage.COMOPNENT:
 				sequence_Comopnent(context, (Comopnent) semanticObject); 
 				return; 
-			case MappingAssistancePackage.CONF:
-				sequence_Conf(context, (Conf) semanticObject); 
-				return; 
 			case MappingAssistancePackage.DOUBLE:
 				sequence_Atomic(context, (com.aelos.xtext.mappingassistance.mappingAssistance.Double) semanticObject); 
 				return; 
@@ -89,6 +86,9 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 				return; 
 			case MappingAssistancePackage.OPERATION:
 				sequence_Operation(context, (Operation) semanticObject); 
+				return; 
+			case MappingAssistancePackage.REPLACE_CONF:
+				sequence_ReplaceConf(context, (ReplaceConf) semanticObject); 
 				return; 
 			case MappingAssistancePackage.STRING:
 				sequence_Atomic(context, (STRING) semanticObject); 
@@ -122,7 +122,7 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *             obs+=Observer | 
 	 *             comp+=Comopnent | 
 	 *             mock+=Mock | 
-	 *             conf+=Conf | 
+	 *             conf+=ReplaceConf | 
 	 *             bind+=Bindings | 
 	 *             inst+=InstanceComp
 	 *         )*
@@ -261,18 +261,6 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     Conf returns Conf
-	 *
-	 * Constraint:
-	 *     (service=[Variable|ID] member=[Operation|ID] ((varConf+=[Variable|ID] instVar+=[Variable|ID])* varConf+=[Variable|ID] instVar+=[Variable|ID])*)
-	 */
-	protected void sequence_Conf(ISerializationContext context, Conf semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Import returns Import
 	 *
 	 * Constraint:
@@ -360,6 +348,18 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     (name=ID (arg+=Variable* arg+=Variable)* type=Type)
 	 */
 	protected void sequence_Operation(ISerializationContext context, Operation semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ReplaceConf returns ReplaceConf
+	 *
+	 * Constraint:
+	 *     (service=[Variable|ID] member=[Operation|ID] ((varConf+=[Variable|ID] instVar+=[Variable|ID])* varConf+=[Variable|ID] instVar+=[Variable|ID])*)
+	 */
+	protected void sequence_ReplaceConf(ISerializationContext context, ReplaceConf semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

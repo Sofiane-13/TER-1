@@ -215,9 +215,9 @@ ruleAbstractModel returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAbstractModelAccess().getConfConfParserRuleCall_2_3_0());
+						newCompositeNode(grammarAccess.getAbstractModelAccess().getConfReplaceConfParserRuleCall_2_3_0());
 					}
-					lv_conf_5_0=ruleConf
+					lv_conf_5_0=ruleReplaceConf
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAbstractModelRule());
@@ -226,7 +226,7 @@ ruleAbstractModel returns [EObject current=null]
 							$current,
 							"conf",
 							lv_conf_5_0,
-							"com.aelos.xtext.mappingassistance.MappingAssistance.Conf");
+							"com.aelos.xtext.mappingassistance.MappingAssistance.ReplaceConf");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -438,9 +438,9 @@ ruleTestDriver returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_4=':='
+			otherlv_4='<-'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getTestDriverAccess().getColonEqualsSignKeyword_3_1());
+				newLeafNode(otherlv_4, grammarAccess.getTestDriverAccess().getLessThanSignHyphenMinusKeyword_3_1());
 			}
 			(
 				(
@@ -538,9 +538,9 @@ ruleObserver returns [EObject current=null]
 						}
 					)
 				)
-				otherlv_6=':='
+				otherlv_6='<-'
 				{
-					newLeafNode(otherlv_6, grammarAccess.getObserverAccess().getColonEqualsSignKeyword_5_0_1());
+					newLeafNode(otherlv_6, grammarAccess.getObserverAccess().getLessThanSignHyphenMinusKeyword_5_0_1());
 				}
 				(
 					(
@@ -574,9 +574,9 @@ ruleObserver returns [EObject current=null]
 						}
 					)
 				)
-				otherlv_10=':='
+				otherlv_10='<-'
 				{
-					newLeafNode(otherlv_10, grammarAccess.getObserverAccess().getColonEqualsSignKeyword_5_1_1());
+					newLeafNode(otherlv_10, grammarAccess.getObserverAccess().getLessThanSignHyphenMinusKeyword_5_1_1());
 				}
 				(
 					(
@@ -597,9 +597,9 @@ ruleObserver returns [EObject current=null]
 		{
 			newLeafNode(otherlv_12, grammarAccess.getObserverAccess().getRightParenthesisKeyword_6());
 		}
-		otherlv_13='('
+		otherlv_13='-'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_7());
+			newLeafNode(otherlv_13, grammarAccess.getObserverAccess().getHyphenMinusKeyword_7());
 		}
 		(
 			(
@@ -631,10 +631,6 @@ ruleObserver returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_17=')'
-		{
-			newLeafNode(otherlv_17, grammarAccess.getObserverAccess().getRightParenthesisKeyword_11());
-		}
 	)
 ;
 
@@ -688,9 +684,9 @@ ruleMock returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=':='
+		otherlv_4='<-'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMockAccess().getColonEqualsSignKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getMockAccess().getLessThanSignHyphenMinusKeyword_4());
 		}
 		(
 			(
@@ -708,15 +704,15 @@ ruleMock returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleConf
-entryRuleConf returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getConfRule()); }
-	iv_ruleConf=ruleConf
-	{ $current=$iv_ruleConf.current; }
+// Entry rule entryRuleReplaceConf
+entryRuleReplaceConf returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getReplaceConfRule()); }
+	iv_ruleReplaceConf=ruleReplaceConf
+	{ $current=$iv_ruleReplaceConf.current; }
 	EOF;
 
-// Rule Conf
-ruleConf returns [EObject current=null]
+// Rule ReplaceConf
+ruleReplaceConf returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -726,41 +722,41 @@ ruleConf returns [EObject current=null]
 	(
 		otherlv_0='replaceConf:'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getConfAccess().getReplaceConfKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getReplaceConfAccess().getReplaceConfKeyword_0());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getConfRule());
+						$current = createModelElement(grammarAccess.getReplaceConfRule());
 					}
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getConfAccess().getServiceVariableCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getReplaceConfAccess().getServiceVariableCrossReference_1_0());
 				}
 			)
 		)
 		otherlv_2='.'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getConfAccess().getFullStopKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getReplaceConfAccess().getFullStopKeyword_2());
 		}
 		(
 			(
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getConfRule());
+						$current = createModelElement(grammarAccess.getReplaceConfRule());
 					}
 				}
 				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_3, grammarAccess.getConfAccess().getMemberOperationCrossReference_3_0());
+					newLeafNode(otherlv_3, grammarAccess.getReplaceConfAccess().getMemberOperationCrossReference_3_0());
 				}
 			)
 		)
 		otherlv_4='('
 		{
-			newLeafNode(otherlv_4, grammarAccess.getConfAccess().getLeftParenthesisKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getReplaceConfAccess().getLeftParenthesisKeyword_4());
 		}
 		(
 			(
@@ -768,35 +764,35 @@ ruleConf returns [EObject current=null]
 					(
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getConfRule());
+								$current = createModelElement(grammarAccess.getReplaceConfRule());
 							}
 						}
 						otherlv_5=RULE_ID
 						{
-							newLeafNode(otherlv_5, grammarAccess.getConfAccess().getVarConfVariableCrossReference_5_0_0_0());
+							newLeafNode(otherlv_5, grammarAccess.getReplaceConfAccess().getVarConfVariableCrossReference_5_0_0_0());
 						}
 					)
 				)
-				otherlv_6=':='
+				otherlv_6='<-'
 				{
-					newLeafNode(otherlv_6, grammarAccess.getConfAccess().getColonEqualsSignKeyword_5_0_1());
+					newLeafNode(otherlv_6, grammarAccess.getReplaceConfAccess().getLessThanSignHyphenMinusKeyword_5_0_1());
 				}
 				(
 					(
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getConfRule());
+								$current = createModelElement(grammarAccess.getReplaceConfRule());
 							}
 						}
 						otherlv_7=RULE_ID
 						{
-							newLeafNode(otherlv_7, grammarAccess.getConfAccess().getInstVarVariableCrossReference_5_0_2_0());
+							newLeafNode(otherlv_7, grammarAccess.getReplaceConfAccess().getInstVarVariableCrossReference_5_0_2_0());
 						}
 					)
 				)
 				otherlv_8=','
 				{
-					newLeafNode(otherlv_8, grammarAccess.getConfAccess().getCommaKeyword_5_0_3());
+					newLeafNode(otherlv_8, grammarAccess.getReplaceConfAccess().getCommaKeyword_5_0_3());
 				}
 			)*
 			(
@@ -804,29 +800,29 @@ ruleConf returns [EObject current=null]
 					(
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getConfRule());
+								$current = createModelElement(grammarAccess.getReplaceConfRule());
 							}
 						}
 						otherlv_9=RULE_ID
 						{
-							newLeafNode(otherlv_9, grammarAccess.getConfAccess().getVarConfVariableCrossReference_5_1_0_0());
+							newLeafNode(otherlv_9, grammarAccess.getReplaceConfAccess().getVarConfVariableCrossReference_5_1_0_0());
 						}
 					)
 				)
-				otherlv_10=':='
+				otherlv_10='<-'
 				{
-					newLeafNode(otherlv_10, grammarAccess.getConfAccess().getColonEqualsSignKeyword_5_1_1());
+					newLeafNode(otherlv_10, grammarAccess.getReplaceConfAccess().getLessThanSignHyphenMinusKeyword_5_1_1());
 				}
 				(
 					(
 						{
 							if ($current==null) {
-								$current = createModelElement(grammarAccess.getConfRule());
+								$current = createModelElement(grammarAccess.getReplaceConfRule());
 							}
 						}
 						otherlv_11=RULE_ID
 						{
-							newLeafNode(otherlv_11, grammarAccess.getConfAccess().getInstVarVariableCrossReference_5_1_2_0());
+							newLeafNode(otherlv_11, grammarAccess.getReplaceConfAccess().getInstVarVariableCrossReference_5_1_2_0());
 						}
 					)
 				)
@@ -834,7 +830,7 @@ ruleConf returns [EObject current=null]
 		)*
 		otherlv_12=')'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getConfAccess().getRightParenthesisKeyword_6());
+			newLeafNode(otherlv_12, grammarAccess.getReplaceConfAccess().getRightParenthesisKeyword_6());
 		}
 	)
 ;
