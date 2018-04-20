@@ -7,7 +7,7 @@ import com.aelos.xtext.architecture.architecture.AbstractModel;
 import com.aelos.xtext.architecture.architecture.Architecture;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.AtomicType;
-import com.aelos.xtext.architecture.architecture.Call;
+import com.aelos.xtext.architecture.architecture.Binding;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.architecture.DomainDeclaration;
 import com.aelos.xtext.architecture.architecture.Import;
@@ -50,8 +50,8 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case ArchitecturePackage.ATOMIC_TYPE:
 				sequence_AtomicType(context, (AtomicType) semanticObject); 
 				return; 
-			case ArchitecturePackage.CALL:
-				sequence_Call(context, (Call) semanticObject); 
+			case ArchitecturePackage.BINDING:
+				sequence_Binding(context, (Binding) semanticObject); 
 				return; 
 			case ArchitecturePackage.COMPONENT:
 				sequence_Component(context, (Component) semanticObject); 
@@ -93,7 +93,7 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *     Architecture returns Architecture
 	 *
 	 * Constraint:
-	 *     (vars+=Variable* (receiver+=Call provider+=Call)*)
+	 *     (vars+=Variable* bind+=Binding*)
 	 */
 	protected void sequence_Architecture(ISerializationContext context, Architecture semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -114,12 +114,12 @@ public class ArchitectureSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Contexts:
-	 *     Call returns Call
+	 *     Binding returns Binding
 	 *
 	 * Constraint:
-	 *     (receiver=[Variable|ID] member+=[Operation|ID])
+	 *     (receiver+=[Variable|ID] recMember+=[Operation|ID] provider+=[Variable|ID] proMember+=[Operation|ID])
 	 */
-	protected void sequence_Call(ISerializationContext context, Call semanticObject) {
+	protected void sequence_Binding(ISerializationContext context, Binding semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

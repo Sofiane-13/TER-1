@@ -8,7 +8,7 @@ import com.aelos.xtext.architecture.architecture.Architecture;
 import com.aelos.xtext.architecture.architecture.ArchitectureFactory;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 import com.aelos.xtext.architecture.architecture.AtomicType;
-import com.aelos.xtext.architecture.architecture.Call;
+import com.aelos.xtext.architecture.architecture.Binding;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.architecture.DomainDeclaration;
 import com.aelos.xtext.architecture.architecture.Import;
@@ -80,7 +80,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass callEClass = null;
+  private EClass bindingEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -358,7 +358,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getArchitecture_Receiver()
+  public EReference getArchitecture_Bind()
   {
     return (EReference)architectureEClass.getEStructuralFeatures().get(1);
   }
@@ -368,9 +368,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getArchitecture_Provider()
+  public EClass getBinding()
   {
-    return (EReference)architectureEClass.getEStructuralFeatures().get(2);
+    return bindingEClass;
   }
 
   /**
@@ -378,9 +378,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getCall()
+  public EReference getBinding_Receiver()
   {
-    return callEClass;
+    return (EReference)bindingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -388,9 +388,9 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCall_Receiver()
+  public EReference getBinding_RecMember()
   {
-    return (EReference)callEClass.getEStructuralFeatures().get(0);
+    return (EReference)bindingEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -398,9 +398,19 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCall_Member()
+  public EReference getBinding_Provider()
   {
-    return (EReference)callEClass.getEStructuralFeatures().get(1);
+    return (EReference)bindingEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBinding_ProMember()
+  {
+    return (EReference)bindingEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -566,12 +576,13 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
     architectureEClass = createEClass(ARCHITECTURE);
     createEReference(architectureEClass, ARCHITECTURE__VARS);
-    createEReference(architectureEClass, ARCHITECTURE__RECEIVER);
-    createEReference(architectureEClass, ARCHITECTURE__PROVIDER);
+    createEReference(architectureEClass, ARCHITECTURE__BIND);
 
-    callEClass = createEClass(CALL);
-    createEReference(callEClass, CALL__RECEIVER);
-    createEReference(callEClass, CALL__MEMBER);
+    bindingEClass = createEClass(BINDING);
+    createEReference(bindingEClass, BINDING__RECEIVER);
+    createEReference(bindingEClass, BINDING__REC_MEMBER);
+    createEReference(bindingEClass, BINDING__PROVIDER);
+    createEReference(bindingEClass, BINDING__PRO_MEMBER);
 
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__NAME);
@@ -644,12 +655,13 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
 
     initEClass(architectureEClass, Architecture.class, "Architecture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArchitecture_Vars(), this.getVariable(), null, "vars", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getArchitecture_Receiver(), this.getCall(), null, "receiver", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getArchitecture_Provider(), this.getCall(), null, "provider", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArchitecture_Bind(), this.getBinding(), null, "bind", null, 0, -1, Architecture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCall_Receiver(), this.getVariable(), null, "receiver", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCall_Member(), this.getOperation(), null, "member", null, 0, -1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(bindingEClass, Binding.class, "Binding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBinding_Receiver(), this.getVariable(), null, "receiver", null, 0, -1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinding_RecMember(), this.getOperation(), null, "recMember", null, 0, -1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinding_Provider(), this.getVariable(), null, "provider", null, 0, -1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBinding_ProMember(), this.getOperation(), null, "proMember", null, 0, -1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

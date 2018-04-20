@@ -38,10 +38,12 @@ Component :
 Architecture:
 	{Architecture} "ArchitectureDefinition"
 	(vars+=Variable)*
-	("bind"  receiver+=Call ":" provider+=Call)*
+	(bind+=Binding)*
 ;
-
-Call : receiver=[Variable]'.'member+=[Operation];  
+Binding:
+	"bind"  receiver+=[Variable]'.'recMember+=[Operation] ":" provider+=[Variable]'.'proMember+=[Operation]
+;
+ 
 
 
 Variable:

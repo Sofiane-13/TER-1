@@ -272,22 +272,13 @@ public interface ArchitecturePackage extends EPackage
   int ARCHITECTURE__VARS = 0;
 
   /**
-   * The feature id for the '<em><b>Receiver</b></em>' containment reference list.
+   * The feature id for the '<em><b>Bind</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARCHITECTURE__RECEIVER = 1;
-
-  /**
-   * The feature id for the '<em><b>Provider</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARCHITECTURE__PROVIDER = 2;
+  int ARCHITECTURE__BIND = 1;
 
   /**
    * The number of structural features of the '<em>Architecture</em>' class.
@@ -296,44 +287,62 @@ public interface ArchitecturePackage extends EPackage
    * @generated
    * @ordered
    */
-  int ARCHITECTURE_FEATURE_COUNT = 3;
+  int ARCHITECTURE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.CallImpl <em>Call</em>}' class.
+   * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.BindingImpl <em>Binding</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.aelos.xtext.architecture.architecture.impl.CallImpl
-   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getCall()
+   * @see com.aelos.xtext.architecture.architecture.impl.BindingImpl
+   * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getBinding()
    * @generated
    */
-  int CALL = 6;
+  int BINDING = 6;
 
   /**
-   * The feature id for the '<em><b>Receiver</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CALL__RECEIVER = 0;
-
-  /**
-   * The feature id for the '<em><b>Member</b></em>' reference list.
+   * The feature id for the '<em><b>Receiver</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CALL__MEMBER = 1;
+  int BINDING__RECEIVER = 0;
 
   /**
-   * The number of structural features of the '<em>Call</em>' class.
+   * The feature id for the '<em><b>Rec Member</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CALL_FEATURE_COUNT = 2;
+  int BINDING__REC_MEMBER = 1;
+
+  /**
+   * The feature id for the '<em><b>Provider</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING__PROVIDER = 2;
+
+  /**
+   * The feature id for the '<em><b>Pro Member</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING__PRO_MEMBER = 3;
+
+  /**
+   * The number of structural features of the '<em>Binding</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINDING_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableImpl <em>Variable</em>}' class.
@@ -659,58 +668,69 @@ public interface ArchitecturePackage extends EPackage
   EReference getArchitecture_Vars();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Architecture#getReceiver <em>Receiver</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Architecture#getBind <em>Bind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Receiver</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Architecture#getReceiver()
+   * @return the meta object for the containment reference list '<em>Bind</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Architecture#getBind()
    * @see #getArchitecture()
    * @generated
    */
-  EReference getArchitecture_Receiver();
+  EReference getArchitecture_Bind();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.architecture.architecture.Architecture#getProvider <em>Provider</em>}'.
+   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Binding <em>Binding</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Provider</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Architecture#getProvider()
-   * @see #getArchitecture()
+   * @return the meta object for class '<em>Binding</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Binding
    * @generated
    */
-  EReference getArchitecture_Provider();
+  EClass getBinding();
 
   /**
-   * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Call <em>Call</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Binding#getReceiver <em>Receiver</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Call</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Call
+   * @return the meta object for the reference list '<em>Receiver</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Binding#getReceiver()
+   * @see #getBinding()
    * @generated
    */
-  EClass getCall();
+  EReference getBinding_Receiver();
 
   /**
-   * Returns the meta object for the reference '{@link com.aelos.xtext.architecture.architecture.Call#getReceiver <em>Receiver</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Binding#getRecMember <em>Rec Member</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Receiver</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Call#getReceiver()
-   * @see #getCall()
+   * @return the meta object for the reference list '<em>Rec Member</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Binding#getRecMember()
+   * @see #getBinding()
    * @generated
    */
-  EReference getCall_Receiver();
+  EReference getBinding_RecMember();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Call#getMember <em>Member</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Binding#getProvider <em>Provider</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Member</em>'.
-   * @see com.aelos.xtext.architecture.architecture.Call#getMember()
-   * @see #getCall()
+   * @return the meta object for the reference list '<em>Provider</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Binding#getProvider()
+   * @see #getBinding()
    * @generated
    */
-  EReference getCall_Member();
+  EReference getBinding_Provider();
+
+  /**
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.architecture.architecture.Binding#getProMember <em>Pro Member</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Pro Member</em>'.
+   * @see com.aelos.xtext.architecture.architecture.Binding#getProMember()
+   * @see #getBinding()
+   * @generated
+   */
+  EReference getBinding_ProMember();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.architecture.architecture.Variable <em>Variable</em>}'.
@@ -1009,46 +1029,54 @@ public interface ArchitecturePackage extends EPackage
     EReference ARCHITECTURE__VARS = eINSTANCE.getArchitecture_Vars();
 
     /**
-     * The meta object literal for the '<em><b>Receiver</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Bind</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ARCHITECTURE__RECEIVER = eINSTANCE.getArchitecture_Receiver();
+    EReference ARCHITECTURE__BIND = eINSTANCE.getArchitecture_Bind();
 
     /**
-     * The meta object literal for the '<em><b>Provider</b></em>' containment reference list feature.
+     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.BindingImpl <em>Binding</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see com.aelos.xtext.architecture.architecture.impl.BindingImpl
+     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getBinding()
      * @generated
      */
-    EReference ARCHITECTURE__PROVIDER = eINSTANCE.getArchitecture_Provider();
+    EClass BINDING = eINSTANCE.getBinding();
 
     /**
-     * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.CallImpl <em>Call</em>}' class.
+     * The meta object literal for the '<em><b>Receiver</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.aelos.xtext.architecture.architecture.impl.CallImpl
-     * @see com.aelos.xtext.architecture.architecture.impl.ArchitecturePackageImpl#getCall()
      * @generated
      */
-    EClass CALL = eINSTANCE.getCall();
+    EReference BINDING__RECEIVER = eINSTANCE.getBinding_Receiver();
 
     /**
-     * The meta object literal for the '<em><b>Receiver</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Rec Member</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CALL__RECEIVER = eINSTANCE.getCall_Receiver();
+    EReference BINDING__REC_MEMBER = eINSTANCE.getBinding_RecMember();
 
     /**
-     * The meta object literal for the '<em><b>Member</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Provider</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CALL__MEMBER = eINSTANCE.getCall_Member();
+    EReference BINDING__PROVIDER = eINSTANCE.getBinding_Provider();
+
+    /**
+     * The meta object literal for the '<em><b>Pro Member</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINDING__PRO_MEMBER = eINSTANCE.getBinding_ProMember();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.architecture.architecture.impl.VariableImpl <em>Variable</em>}' class.

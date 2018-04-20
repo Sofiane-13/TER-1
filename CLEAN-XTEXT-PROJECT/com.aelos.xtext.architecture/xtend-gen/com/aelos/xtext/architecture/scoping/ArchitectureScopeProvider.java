@@ -3,14 +3,10 @@
  */
 package com.aelos.xtext.architecture.scoping;
 
-import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Call;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.scoping.AbstractArchitectureScopeProvider;
-import com.google.common.base.Objects;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
 
@@ -24,20 +20,22 @@ import org.eclipse.xtext.scoping.Scopes;
 public class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
   @Override
   public IScope getScope(final EObject context, final EReference reference) {
-    if (((context instanceof Component) && Objects.equal(reference, ArchitecturePackage.Literals.COMPONENT__OPS))) {
-      return this.scope_Comp_op(EcoreUtil2.<Component>getContainerOfType(context, Component.class));
-    }
-    if (((context instanceof Call) && Objects.equal(reference, ArchitecturePackage.Literals.CALL__MEMBER))) {
-      return this.scope_Call_op(EcoreUtil2.<Call>getContainerOfType(context, Call.class));
-    }
-    return super.getScope(context, reference);
+    throw new Error("Unresolved compilation problems:"
+      + "\nCall cannot be resolved to a type."
+      + "\nThe method or field CALL__MEMBER is undefined for the type Class<Literals>"
+      + "\nThe method or field Call is undefined"
+      + "\nThe method scope_Call_op(Call) from the type ArchitectureScopeProvider refers to the missing type Call");
   }
   
   public IScope scope_Comp_op(final Component selct) {
     return Scopes.scopeFor(selct.getOperations());
   }
   
-  public IScope scope_Call_op(final Call selct) {
-    return Scopes.scopeFor(selct.getReceiver().getType().getCompType().getOps());
+  public IScope scope_Call_op(final /* Call */Object selct) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nreceiver cannot be resolved"
+      + "\ntype cannot be resolved"
+      + "\ncompType cannot be resolved"
+      + "\nops cannot be resolved");
   }
 }
