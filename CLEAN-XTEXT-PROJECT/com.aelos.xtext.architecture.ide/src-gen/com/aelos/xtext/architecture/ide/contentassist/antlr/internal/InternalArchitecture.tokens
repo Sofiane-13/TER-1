@@ -11,8 +11,9 @@
 'Double'=14
 'INT'=11
 'STRING'=12
+'_'=31
 'bind'=28
-'def'=31
+'def'=32
 'domain'=15
 'import'=18
 'providedServices'=22
@@ -47,3 +48,4 @@ T__28=28
 T__29=29
 T__30=30
 T__31=31
+T__32=32

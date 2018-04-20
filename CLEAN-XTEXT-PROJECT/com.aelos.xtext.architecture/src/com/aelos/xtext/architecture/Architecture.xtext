@@ -48,6 +48,7 @@ Variable:
       name=ID ":" type=AtomicType;
 
 
+
 Operation:
     "def" name=ID "("((arg+=Variable ",")*arg+=Variable)*")" ":" type= AtomicType
 ;

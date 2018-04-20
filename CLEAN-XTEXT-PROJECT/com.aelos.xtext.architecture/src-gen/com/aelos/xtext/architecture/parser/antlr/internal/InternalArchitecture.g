@@ -690,19 +690,20 @@ ruleVariable returns [EObject current=null]
 	(
 		(
 			(
-				lv_name_0_0=RULE_ID
 				{
-					newLeafNode(lv_name_0_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0());
+					newCompositeNode(grammarAccess.getVariableAccess().getNamePIDParserRuleCall_0_0());
 				}
+				lv_name_0_0=rulePID
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getVariableRule());
+						$current = createModelElementForParent(grammarAccess.getVariableRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"name",
 						lv_name_0_0,
-						"org.eclipse.xtext.common.Terminals.ID");
+						"com.aelos.xtext.architecture.Architecture.PID");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -729,6 +730,37 @@ ruleVariable returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRulePID
+entryRulePID returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getPIDRule()); }
+	iv_rulePID=rulePID
+	{ $current=$iv_rulePID.current.getText(); }
+	EOF;
+
+// Rule PID
+rulePID returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='_'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getPIDAccess().get_Keyword_0());
+		}
+		this_ID_1=RULE_ID
+		{
+			$current.merge(this_ID_1);
+		}
+		{
+			newLeafNode(this_ID_1, grammarAccess.getPIDAccess().getIDTerminalRuleCall_1());
+		}
 	)
 ;
 
