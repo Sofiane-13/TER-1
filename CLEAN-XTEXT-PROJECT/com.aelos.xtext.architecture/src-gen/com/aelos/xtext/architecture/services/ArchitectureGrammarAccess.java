@@ -457,23 +457,23 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Variable");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNamePIDParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeAtomicTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		
 		//Variable:
-		//	name=PID ":" type=AtomicType;
+		//	name=ID ":" type=AtomicType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=PID ":" type=AtomicType
+		//name=ID ":" type=AtomicType
 		public Group getGroup() { return cGroup; }
 		
-		//name=PID
+		//name=ID
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//PID
-		public RuleCall getNamePIDParserRuleCall_0_0() { return cNamePIDParserRuleCall_0_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 		
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -483,25 +483,6 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//AtomicType
 		public RuleCall getTypeAtomicTypeParserRuleCall_2_0() { return cTypeAtomicTypeParserRuleCall_2_0; }
-	}
-	public class PIDElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.PID");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword c_Keyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		//PID:
-		//	"_" ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"_" ID
-		public Group getGroup() { return cGroup; }
-		
-		//"_"
-		public Keyword get_Keyword_0() { return c_Keyword_0; }
-		
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
 	}
 	public class OperationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Operation");
@@ -660,7 +641,6 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	private final ArchitectureElements pArchitecture;
 	private final BindingElements pBinding;
 	private final VariableElements pVariable;
-	private final PIDElements pPID;
 	private final OperationElements pOperation;
 	private final AtomicTypeElements pAtomicType;
 	private final TypeElements eType;
@@ -684,7 +664,6 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		this.pArchitecture = new ArchitectureElements();
 		this.pBinding = new BindingElements();
 		this.pVariable = new VariableElements();
-		this.pPID = new PIDElements();
 		this.pOperation = new OperationElements();
 		this.pAtomicType = new AtomicTypeElements();
 		this.eType = new TypeElements();
@@ -818,23 +797,13 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Variable:
-	//	name=PID ":" type=AtomicType;
+	//	name=ID ":" type=AtomicType;
 	public VariableElements getVariableAccess() {
 		return pVariable;
 	}
 	
 	public ParserRule getVariableRule() {
 		return getVariableAccess().getRule();
-	}
-	
-	//PID:
-	//	"_" ID;
-	public PIDElements getPIDAccess() {
-		return pPID;
-	}
-	
-	public ParserRule getPIDRule() {
-		return getPIDAccess().getRule();
 	}
 	
 	//Operation:

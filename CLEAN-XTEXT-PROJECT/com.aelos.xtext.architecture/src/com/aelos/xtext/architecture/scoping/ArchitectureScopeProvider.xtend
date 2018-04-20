@@ -51,10 +51,11 @@ class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider {
 
 	def  IScope scope_Call_op(Binding selct) {
       //System.out.print("dsjkbc")
-      return Scopes.scopeFor(selct.provider.type.compType.ops);
+      return Scopes.scopeFor(selct.receiver.type.compType.opsReq);
 	}
 	def  IScope scope_rec_member(Binding selct) {
       //System.out.print("dsjkbc")
-      return Scopes.scopeFor(selct.receiver.type.compType.opsReq);
+      
+      return Scopes.scopeFor(selct.provider.type.compType.ops);
 	}
 }

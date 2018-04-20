@@ -49,7 +49,6 @@ public class ArchitectureParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getArchitectureAccess().getGroup(), "rule__Architecture__Group__0");
 			builder.put(grammarAccess.getBindingAccess().getGroup(), "rule__Binding__Group__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
-			builder.put(grammarAccess.getPIDAccess().getGroup(), "rule__PID__Group__0");
 			builder.put(grammarAccess.getOperationAccess().getGroup(), "rule__Operation__Group__0");
 			builder.put(grammarAccess.getOperationAccess().getGroup_3(), "rule__Operation__Group_3__0");
 			builder.put(grammarAccess.getOperationAccess().getGroup_3_0(), "rule__Operation__Group_3_0__0");

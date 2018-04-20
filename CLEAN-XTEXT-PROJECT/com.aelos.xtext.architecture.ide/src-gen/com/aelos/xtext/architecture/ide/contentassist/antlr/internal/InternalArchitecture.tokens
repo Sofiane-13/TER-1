@@ -10,13 +10,8 @@
 'Double'=14
 'INT'=11
 'STRING'=12
-'_'=31
 'bind'=28
-<<<<<<< HEAD
-'def'=32
-=======
 'def'=30
->>>>>>> c52701ca9356ad092567bfcbb2bbade96af0a78c
 'domain'=15
 'import'=18
 'providedServices'=22
@@ -50,8 +45,3 @@ T__27=27
 T__28=28
 T__29=29
 T__30=30
-<<<<<<< HEAD
-T__31=31
-T__32=32
-=======
->>>>>>> c52701ca9356ad092567bfcbb2bbade96af0a78c

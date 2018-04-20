@@ -41,10 +41,10 @@ public class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider
   }
   
   public IScope scope_Call_op(final Binding selct) {
-    return Scopes.scopeFor(selct.getProvider().getType().getCompType().getOps());
+    return Scopes.scopeFor(selct.getReceiver().getType().getCompType().getOpsReq());
   }
   
   public IScope scope_rec_member(final Binding selct) {
-    return Scopes.scopeFor(selct.getReceiver().getType().getCompType().getOpsReq());
+    return Scopes.scopeFor(selct.getProvider().getType().getCompType().getOps());
   }
 }

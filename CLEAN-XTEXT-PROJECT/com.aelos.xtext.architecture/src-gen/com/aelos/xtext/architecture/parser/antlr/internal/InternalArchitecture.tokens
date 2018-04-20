@@ -5,16 +5,6 @@
 '.*'=15
 ':'=25
 'ArchitectureDefinition'=23
-<<<<<<< HEAD
-'Boolean'=31
-'Component:'=17
-'Double'=32
-'INT'=29
-'STRING'=30
-'_'=27
-'bind'=24
-'def'=28
-=======
 'Boolean'=29
 'Component:'=17
 'Double'=30
@@ -22,7 +12,6 @@
 'STRING'=28
 'bind'=24
 'def'=26
->>>>>>> c52701ca9356ad092567bfcbb2bbade96af0a78c
 'domain'=11
 'import'=14
 'providedServices'=18
@@ -56,8 +45,3 @@ T__27=27
 T__28=28
 T__29=29
 T__30=30
-<<<<<<< HEAD
-T__31=31
-T__32=32
-=======
->>>>>>> c52701ca9356ad092567bfcbb2bbade96af0a78c
