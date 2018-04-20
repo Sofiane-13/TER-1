@@ -19,7 +19,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,14 +42,14 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 public class FunctionImpl extends AbstractElementImpl implements Function
 {
   /**
-   * The cached value of the '{@link #getOut() <em>Out</em>}' containment reference.
+   * The cached value of the '{@link #getOut() <em>Out</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOut()
    * @generated
    * @ordered
    */
-  protected Variable out;
+  protected EList<Variable> out;
 
   /**
    * The default value of the '{@link #getMethode() <em>Methode</em>}' attribute.
@@ -115,47 +117,13 @@ public class FunctionImpl extends AbstractElementImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  public Variable getOut()
+  public EList<Variable> getOut()
   {
+    if (out == null)
+    {
+      out = new EObjectContainmentEList<Variable>(Variable.class, this, TestintentionsAssistancePackage.FUNCTION__OUT);
+    }
     return out;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetOut(Variable newOut, NotificationChain msgs)
-  {
-    Variable oldOut = out;
-    out = newOut;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TestintentionsAssistancePackage.FUNCTION__OUT, oldOut, newOut);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOut(Variable newOut)
-  {
-    if (newOut != out)
-    {
-      NotificationChain msgs = null;
-      if (out != null)
-        msgs = ((InternalEObject)out).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TestintentionsAssistancePackage.FUNCTION__OUT, null, msgs);
-      if (newOut != null)
-        msgs = ((InternalEObject)newOut).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TestintentionsAssistancePackage.FUNCTION__OUT, null, msgs);
-      msgs = basicSetOut(newOut, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TestintentionsAssistancePackage.FUNCTION__OUT, newOut, newOut));
   }
 
   /**
@@ -249,7 +217,7 @@ public class FunctionImpl extends AbstractElementImpl implements Function
     switch (featureID)
     {
       case TestintentionsAssistancePackage.FUNCTION__OUT:
-        return basicSetOut(null, msgs);
+        return ((InternalEList<?>)getOut()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -289,7 +257,8 @@ public class FunctionImpl extends AbstractElementImpl implements Function
     switch (featureID)
     {
       case TestintentionsAssistancePackage.FUNCTION__OUT:
-        setOut((Variable)newValue);
+        getOut().clear();
+        getOut().addAll((Collection<? extends Variable>)newValue);
         return;
       case TestintentionsAssistancePackage.FUNCTION__METHODE:
         setMethode((String)newValue);
@@ -316,7 +285,7 @@ public class FunctionImpl extends AbstractElementImpl implements Function
     switch (featureID)
     {
       case TestintentionsAssistancePackage.FUNCTION__OUT:
-        setOut((Variable)null);
+        getOut().clear();
         return;
       case TestintentionsAssistancePackage.FUNCTION__METHODE:
         setMethode(METHODE_EDEFAULT);
@@ -342,7 +311,7 @@ public class FunctionImpl extends AbstractElementImpl implements Function
     switch (featureID)
     {
       case TestintentionsAssistancePackage.FUNCTION__OUT:
-        return out != null;
+        return out != null && !out.isEmpty();
       case TestintentionsAssistancePackage.FUNCTION__METHODE:
         return METHODE_EDEFAULT == null ? methode != null : !METHODE_EDEFAULT.equals(methode);
       case TestintentionsAssistancePackage.FUNCTION__ARG:

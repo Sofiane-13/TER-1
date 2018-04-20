@@ -402,7 +402,7 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 	 *     Function returns Function
 	 *
 	 * Constraint:
-	 *     (out=Variable methode=ID arg+=[Variable|ID]* arg1=[Variable|ID])
+	 *     (out+=Variable out+=Variable* methode=ID arg+=[Variable|ID]* arg1=[Variable|ID])
 	 */
 	protected void sequence_Function(ISerializationContext context, Function semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

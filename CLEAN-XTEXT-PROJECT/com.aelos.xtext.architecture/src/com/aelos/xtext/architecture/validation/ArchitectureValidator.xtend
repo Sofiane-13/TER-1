@@ -5,6 +5,7 @@ package com.aelos.xtext.architecture.validation
 
 import org.eclipse.xtext.validation.Check
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage
+import com.aelos.xtext.architecture.architecture.Binding
 
 /**
  * This class contains custom validation rules. 
@@ -24,15 +25,24 @@ class ArchitectureValidator extends AbstractArchitectureValidator {
 //		}
 //	}
 	
-	/*@Check
-	def checkMappingSameType(Mapping map) {
+    @Check
+	def checkBindingSign(Binding bind) {
+		//System.out.println("why")
+		if(bind.proMember.arg.size != bind.recMember.arg.size){
+			error("services must have the same signature",ArchitecturePackage.Literals.BINDING__PRO_MEMBER)
+		}
+		else{
+		if(!((bind.proMember.type.atomType.literal).equals(bind.recMember.type.atomType.literal))){
+			error("services must have the same signature",ArchitecturePackage.Literals.BINDING__PRO_MEMBER)
+		}	
 		var x=0;
-		for(varmod:map.nameVarMode){
-			if(!((varmod.type.literal).equals(map.nameVarTest.get(x).type.literal))){
-				error("the variables must have the same Type",ArchitecturePackage.Literals.MAPPING__NAME_VAR_MODE)
+		for(providerArg:bind.proMember.arg){
+			if(!((providerArg.type.atomType.literal).equals(bind.recMember.arg.get(x).type.atomType.literal))){
+				error("the service parameters must have the same Type",ArchitecturePackage.Literals.BINDING__PRO_MEMBER)
 			}
 			x++
 		}
-	}*/
 	
+	   }
+	}
 }

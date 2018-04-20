@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 '('=24
 ')'=25
 ','=27
@@ -6,11 +7,22 @@
 '.*'=20
 ':'=31
 'ArchitectureDefinition'=28
+=======
+'('=23
+')'=24
+','=26
+'-'=29
+'.'=20
+'.*'=19
+':'=30
+'ArchitectureDefinition'=27
+>>>>>>> 505b338afb4dcb44173278413e7e9e0d960a1960
 'Boolean'=13
 'Component:'=22
 'Double'=14
 'INT'=11
 'STRING'=12
+<<<<<<< HEAD
 'Void'=15
 'bind'=29
 'def'=32
@@ -20,6 +32,16 @@
 'requeredServices'=26
 '{'=17
 '}'=18
+=======
+'bind'=28
+'def'=31
+'domain'=15
+'import'=18
+'providedServices'=22
+'requeredServices'=25
+'{'=16
+'}'=17
+>>>>>>> 505b338afb4dcb44173278413e7e9e0d960a1960
 RULE_ANY_OTHER=10
 RULE_ID=4
 RULE_INT=5
@@ -48,4 +70,7 @@ T__28=28
 T__29=29
 T__30=30
 T__31=31
+<<<<<<< HEAD
 T__32=32
+=======
+>>>>>>> 505b338afb4dcb44173278413e7e9e0d960a1960

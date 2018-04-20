@@ -23,7 +23,11 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalArchitectureParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
+<<<<<<< HEAD
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "','", "')'", "'requeredServices'", "'ArchitectureDefinition'", "'bind'", "'-'", "':'", "'def'", "'INT'", "'STRING'", "'Boolean'", "'Double'", "'Void'"
+=======
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "','", "')'", "'requeredServices'", "'ArchitectureDefinition'", "'bind'", "'-'", "':'", "'def'", "'INT'", "'STRING'", "'Boolean'", "'Double'"
+>>>>>>> 505b338afb4dcb44173278413e7e9e0d960a1960
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -39,7 +43,10 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
+<<<<<<< HEAD
     public static final int T__32=32;
+=======
+>>>>>>> 505b338afb4dcb44173278413e7e9e0d960a1960
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -2467,7 +2474,11 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             int alt17=2;
             int LA17_0 = input.LA(1);
 
+<<<<<<< HEAD
             if ( ((LA17_0>=28 && LA17_0<=32)) ) {
+=======
+            if ( ((LA17_0>=28 && LA17_0<=31)) ) {
+>>>>>>> 505b338afb4dcb44173278413e7e9e0d960a1960
                 alt17=1;
             }
             else if ( (LA17_0==RULE_ID) ) {
@@ -2780,6 +2791,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
 
 
     protected DFA15 dfa15 = new DFA15(this);
+<<<<<<< HEAD
     static final String dfa_1s = "\13\uffff";
     static final String dfa_2s = "\1\4\1\32\7\4\2\uffff";
     static final String dfa_3s = "\1\4\1\32\1\40\6\25\2\uffff";
@@ -2795,6 +2807,22 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             "\1\11\17\uffff\1\12\1\11",
             "\1\11\17\uffff\1\12\1\11",
             "\1\11\17\uffff\1\12\1\11",
+=======
+    static final String dfa_1s = "\12\uffff";
+    static final String dfa_2s = "\1\4\1\32\6\4\2\uffff";
+    static final String dfa_3s = "\1\4\1\32\1\37\5\25\2\uffff";
+    static final String dfa_4s = "\10\uffff\1\2\1\1";
+    static final String dfa_5s = "\12\uffff}>";
+    static final String[] dfa_6s = {
+            "\1\1",
+            "\1\2",
+            "\1\7\27\uffff\1\3\1\4\1\5\1\6",
+            "\1\10\17\uffff\1\11\1\10",
+            "\1\10\17\uffff\1\11\1\10",
+            "\1\10\17\uffff\1\11\1\10",
+            "\1\10\17\uffff\1\11\1\10",
+            "\1\10\17\uffff\1\11\1\10",
+>>>>>>> 505b338afb4dcb44173278413e7e9e0d960a1960
             "",
             ""
     };
@@ -2846,6 +2874,10 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
+<<<<<<< HEAD
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000001F0000010L});
+=======
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000000F0000010L});
+>>>>>>> 505b338afb4dcb44173278413e7e9e0d960a1960
 
 }

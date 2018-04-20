@@ -25,7 +25,7 @@ AbstractElement:
 
 //Pour le test domain 
 Function:
-	out = Variable "=" methode = ID "("(arg+=[Variable] ",")*arg1=[Variable]")";
+	out += Variable(","out+=Variable)* "=" methode = ID "("(arg+=[Variable] ",")*arg1=[Variable]")";
 	
 //Pour le test data 	
 Data: {Data}
