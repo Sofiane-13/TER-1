@@ -17,7 +17,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mock" upperBound="-1" eType="#//Mock"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conf" upperBound="-1" eType="#//Conf"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conf" upperBound="-1" eType="#//ReplaceConf"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bind" upperBound="-1" eType="#//Bindings"
         containment="true"/>
@@ -50,7 +50,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="IntentionVar" unique="false"
         upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Conf">
+  <eClassifiers xsi:type="ecore:EClass" name="ReplaceConf">
     <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="member" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="varConf" unique="false"

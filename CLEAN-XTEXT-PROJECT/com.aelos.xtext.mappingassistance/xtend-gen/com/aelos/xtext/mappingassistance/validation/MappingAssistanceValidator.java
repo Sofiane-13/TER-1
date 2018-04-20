@@ -4,8 +4,8 @@
 package com.aelos.xtext.mappingassistance.validation;
 
 import com.aelos.xtext.architecture.architecture.Variable;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 import com.aelos.xtext.mappingassistance.validation.AbstractMappingAssistanceValidator;
 import org.eclipse.emf.common.util.EList;
@@ -20,7 +20,7 @@ import org.eclipse.xtext.xbase.lib.Conversions;
 @SuppressWarnings("all")
 public class MappingAssistanceValidator extends AbstractMappingAssistanceValidator {
   @Check
-  public void checkMappingSameType(final Conf conf) {
+  public void checkMappingSameType(final ReplaceConf conf) {
     int x = 0;
     EList<Variable> _varConf = conf.getVarConf();
     for (final Variable varconf : _varConf) {
@@ -28,7 +28,7 @@ public class MappingAssistanceValidator extends AbstractMappingAssistanceValidat
         boolean _equals = conf.getInstVar().get(x).getType().getLiteral().equals(varconf.getType().getAtomType().getLiteral());
         boolean _not = (!_equals);
         if (_not) {
-          this.error("the variables must have the same Type", MappingAssistancePackage.Literals.CONF__VAR_CONF);
+          this.error("the variables must have the same Type", MappingAssistancePackage.Literals.REPLACE_CONF__VAR_CONF);
         }
         x++;
       }
@@ -47,7 +47,7 @@ public class MappingAssistanceValidator extends AbstractMappingAssistanceValidat
           }
         }
         if ((y > 1)) {
-          this.error("you can not use the same twice", MappingAssistancePackage.Literals.CONF__VAR_CONF);
+          this.error("you can not use the same twice", MappingAssistancePackage.Literals.REPLACE_CONF__VAR_CONF);
         }
         x++;
       }

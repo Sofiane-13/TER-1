@@ -12,24 +12,24 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Conf</b></em>'.
+ * A representation of the model object '<em><b>Replace Conf</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getService <em>Service</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getMember <em>Member</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getVarConf <em>Var Conf</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getInstVar <em>Inst Var</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getService <em>Service</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getMember <em>Member</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getVarConf <em>Var Conf</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getInstVar <em>Inst Var</em>}</li>
  * </ul>
  *
- * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf()
+ * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getReplaceConf()
  * @model
  * @generated
  */
-public interface Conf extends EObject
+public interface ReplaceConf extends EObject
 {
   /**
    * Returns the value of the '<em><b>Service</b></em>' reference.
@@ -41,14 +41,14 @@ public interface Conf extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Service</em>' reference.
    * @see #setService(Variable)
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf_Service()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getReplaceConf_Service()
    * @model
    * @generated
    */
   Variable getService();
 
   /**
-   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getService <em>Service</em>}' reference.
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getService <em>Service</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Service</em>' reference.
@@ -67,14 +67,14 @@ public interface Conf extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Member</em>' reference.
    * @see #setMember(Operation)
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf_Member()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getReplaceConf_Member()
    * @model
    * @generated
    */
   Operation getMember();
 
   /**
-   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf#getMember <em>Member</em>}' reference.
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf#getMember <em>Member</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Member</em>' reference.
@@ -93,7 +93,7 @@ public interface Conf extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Var Conf</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf_VarConf()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getReplaceConf_VarConf()
    * @model
    * @generated
    */
@@ -109,10 +109,10 @@ public interface Conf extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Inst Var</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getConf_InstVar()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getReplaceConf_InstVar()
    * @model
    * @generated
    */
   EList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable> getInstVar();
 
-} // Conf
+} // ReplaceConf

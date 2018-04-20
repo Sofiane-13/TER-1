@@ -6,8 +6,8 @@ package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 import com.aelos.xtext.architecture.architecture.Operation;
 import com.aelos.xtext.architecture.architecture.Variable;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf;
 
 import java.util.Collection;
 
@@ -25,21 +25,21 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Conf</b></em>'.
+ * An implementation of the model object '<em><b>Replace Conf</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl#getService <em>Service</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl#getMember <em>Member</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl#getVarConf <em>Var Conf</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ConfImpl#getInstVar <em>Inst Var</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ReplaceConfImpl#getService <em>Service</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ReplaceConfImpl#getMember <em>Member</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ReplaceConfImpl#getVarConf <em>Var Conf</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ReplaceConfImpl#getInstVar <em>Inst Var</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
+public class ReplaceConfImpl extends MinimalEObjectImpl.Container implements ReplaceConf
 {
   /**
    * The cached value of the '{@link #getService() <em>Service</em>}' reference.
@@ -86,7 +86,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ConfImpl()
+  protected ReplaceConfImpl()
   {
     super();
   }
@@ -99,7 +99,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   @Override
   protected EClass eStaticClass()
   {
-    return MappingAssistancePackage.Literals.CONF;
+    return MappingAssistancePackage.Literals.REPLACE_CONF;
   }
 
   /**
@@ -116,7 +116,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
       if (service != oldService)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.CONF__SERVICE, oldService, service));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.REPLACE_CONF__SERVICE, oldService, service));
       }
     }
     return service;
@@ -142,7 +142,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
     Variable oldService = service;
     service = newService;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.CONF__SERVICE, oldService, service));
+      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.REPLACE_CONF__SERVICE, oldService, service));
   }
 
   /**
@@ -159,7 +159,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
       if (member != oldMember)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.CONF__MEMBER, oldMember, member));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MappingAssistancePackage.REPLACE_CONF__MEMBER, oldMember, member));
       }
     }
     return member;
@@ -185,7 +185,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
     Operation oldMember = member;
     member = newMember;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.CONF__MEMBER, oldMember, member));
+      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.REPLACE_CONF__MEMBER, oldMember, member));
   }
 
   /**
@@ -197,7 +197,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     if (varConf == null)
     {
-      varConf = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.CONF__VAR_CONF);
+      varConf = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.REPLACE_CONF__VAR_CONF);
     }
     return varConf;
   }
@@ -211,7 +211,7 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     if (instVar == null)
     {
-      instVar = new EObjectResolvingEList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable.class, this, MappingAssistancePackage.CONF__INST_VAR);
+      instVar = new EObjectResolvingEList<com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>(com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable.class, this, MappingAssistancePackage.REPLACE_CONF__INST_VAR);
     }
     return instVar;
   }
@@ -226,15 +226,15 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.CONF__SERVICE:
+      case MappingAssistancePackage.REPLACE_CONF__SERVICE:
         if (resolve) return getService();
         return basicGetService();
-      case MappingAssistancePackage.CONF__MEMBER:
+      case MappingAssistancePackage.REPLACE_CONF__MEMBER:
         if (resolve) return getMember();
         return basicGetMember();
-      case MappingAssistancePackage.CONF__VAR_CONF:
+      case MappingAssistancePackage.REPLACE_CONF__VAR_CONF:
         return getVarConf();
-      case MappingAssistancePackage.CONF__INST_VAR:
+      case MappingAssistancePackage.REPLACE_CONF__INST_VAR:
         return getInstVar();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -251,17 +251,17 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.CONF__SERVICE:
+      case MappingAssistancePackage.REPLACE_CONF__SERVICE:
         setService((Variable)newValue);
         return;
-      case MappingAssistancePackage.CONF__MEMBER:
+      case MappingAssistancePackage.REPLACE_CONF__MEMBER:
         setMember((Operation)newValue);
         return;
-      case MappingAssistancePackage.CONF__VAR_CONF:
+      case MappingAssistancePackage.REPLACE_CONF__VAR_CONF:
         getVarConf().clear();
         getVarConf().addAll((Collection<? extends Variable>)newValue);
         return;
-      case MappingAssistancePackage.CONF__INST_VAR:
+      case MappingAssistancePackage.REPLACE_CONF__INST_VAR:
         getInstVar().clear();
         getInstVar().addAll((Collection<? extends com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable>)newValue);
         return;
@@ -279,16 +279,16 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.CONF__SERVICE:
+      case MappingAssistancePackage.REPLACE_CONF__SERVICE:
         setService((Variable)null);
         return;
-      case MappingAssistancePackage.CONF__MEMBER:
+      case MappingAssistancePackage.REPLACE_CONF__MEMBER:
         setMember((Operation)null);
         return;
-      case MappingAssistancePackage.CONF__VAR_CONF:
+      case MappingAssistancePackage.REPLACE_CONF__VAR_CONF:
         getVarConf().clear();
         return;
-      case MappingAssistancePackage.CONF__INST_VAR:
+      case MappingAssistancePackage.REPLACE_CONF__INST_VAR:
         getInstVar().clear();
         return;
     }
@@ -305,16 +305,16 @@ public class ConfImpl extends MinimalEObjectImpl.Container implements Conf
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.CONF__SERVICE:
+      case MappingAssistancePackage.REPLACE_CONF__SERVICE:
         return service != null;
-      case MappingAssistancePackage.CONF__MEMBER:
+      case MappingAssistancePackage.REPLACE_CONF__MEMBER:
         return member != null;
-      case MappingAssistancePackage.CONF__VAR_CONF:
+      case MappingAssistancePackage.REPLACE_CONF__VAR_CONF:
         return varConf != null && !varConf.isEmpty();
-      case MappingAssistancePackage.CONF__INST_VAR:
+      case MappingAssistancePackage.REPLACE_CONF__INST_VAR:
         return instVar != null && !instVar.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ConfImpl
+} //ReplaceConfImpl

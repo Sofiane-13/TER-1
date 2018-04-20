@@ -791,23 +791,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
     // $ANTLR end "ruleMock"
 
 
-    // $ANTLR start "entryRuleConf"
-    // InternalMappingAssistance.g:254:1: entryRuleConf : ruleConf EOF ;
-    public final void entryRuleConf() throws RecognitionException {
+    // $ANTLR start "entryRuleReplaceConf"
+    // InternalMappingAssistance.g:254:1: entryRuleReplaceConf : ruleReplaceConf EOF ;
+    public final void entryRuleReplaceConf() throws RecognitionException {
         try {
-            // InternalMappingAssistance.g:255:1: ( ruleConf EOF )
-            // InternalMappingAssistance.g:256:1: ruleConf EOF
+            // InternalMappingAssistance.g:255:1: ( ruleReplaceConf EOF )
+            // InternalMappingAssistance.g:256:1: ruleReplaceConf EOF
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfRule()); 
+               before(grammarAccess.getReplaceConfRule()); 
             }
             pushFollow(FOLLOW_1);
-            ruleConf();
+            ruleReplaceConf();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfRule()); 
+               after(grammarAccess.getReplaceConfRule()); 
             }
             match(input,EOF,FOLLOW_2); if (state.failed) return ;
 
@@ -822,30 +822,30 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "entryRuleConf"
+    // $ANTLR end "entryRuleReplaceConf"
 
 
-    // $ANTLR start "ruleConf"
-    // InternalMappingAssistance.g:263:1: ruleConf : ( ( rule__Conf__Group__0 ) ) ;
-    public final void ruleConf() throws RecognitionException {
+    // $ANTLR start "ruleReplaceConf"
+    // InternalMappingAssistance.g:263:1: ruleReplaceConf : ( ( rule__ReplaceConf__Group__0 ) ) ;
+    public final void ruleReplaceConf() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:267:2: ( ( ( rule__Conf__Group__0 ) ) )
-            // InternalMappingAssistance.g:268:2: ( ( rule__Conf__Group__0 ) )
+            // InternalMappingAssistance.g:267:2: ( ( ( rule__ReplaceConf__Group__0 ) ) )
+            // InternalMappingAssistance.g:268:2: ( ( rule__ReplaceConf__Group__0 ) )
             {
-            // InternalMappingAssistance.g:268:2: ( ( rule__Conf__Group__0 ) )
-            // InternalMappingAssistance.g:269:3: ( rule__Conf__Group__0 )
+            // InternalMappingAssistance.g:268:2: ( ( rule__ReplaceConf__Group__0 ) )
+            // InternalMappingAssistance.g:269:3: ( rule__ReplaceConf__Group__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getGroup()); 
+               before(grammarAccess.getReplaceConfAccess().getGroup()); 
             }
-            // InternalMappingAssistance.g:270:3: ( rule__Conf__Group__0 )
-            // InternalMappingAssistance.g:270:4: rule__Conf__Group__0
+            // InternalMappingAssistance.g:270:3: ( rule__ReplaceConf__Group__0 )
+            // InternalMappingAssistance.g:270:4: rule__ReplaceConf__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__Group__0();
+            rule__ReplaceConf__Group__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -853,7 +853,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getGroup()); 
+               after(grammarAccess.getReplaceConfAccess().getGroup()); 
             }
 
             }
@@ -873,7 +873,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "ruleConf"
+    // $ANTLR end "ruleReplaceConf"
 
 
     // $ANTLR start "entryRuleComopnent"
@@ -6053,23 +6053,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__Mock__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group__0"
-    // InternalMappingAssistance.g:1842:1: rule__Conf__Group__0 : rule__Conf__Group__0__Impl rule__Conf__Group__1 ;
-    public final void rule__Conf__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__0"
+    // InternalMappingAssistance.g:1842:1: rule__ReplaceConf__Group__0 : rule__ReplaceConf__Group__0__Impl rule__ReplaceConf__Group__1 ;
+    public final void rule__ReplaceConf__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:1846:1: ( rule__Conf__Group__0__Impl rule__Conf__Group__1 )
-            // InternalMappingAssistance.g:1847:2: rule__Conf__Group__0__Impl rule__Conf__Group__1
+            // InternalMappingAssistance.g:1846:1: ( rule__ReplaceConf__Group__0__Impl rule__ReplaceConf__Group__1 )
+            // InternalMappingAssistance.g:1847:2: rule__ReplaceConf__Group__0__Impl rule__ReplaceConf__Group__1
             {
             pushFollow(FOLLOW_8);
-            rule__Conf__Group__0__Impl();
+            rule__ReplaceConf__Group__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group__1();
+            rule__ReplaceConf__Group__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6088,12 +6088,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__0"
+    // $ANTLR end "rule__ReplaceConf__Group__0"
 
 
-    // $ANTLR start "rule__Conf__Group__0__Impl"
-    // InternalMappingAssistance.g:1854:1: rule__Conf__Group__0__Impl : ( 'replaceConf:' ) ;
-    public final void rule__Conf__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__0__Impl"
+    // InternalMappingAssistance.g:1854:1: rule__ReplaceConf__Group__0__Impl : ( 'replaceConf:' ) ;
+    public final void rule__ReplaceConf__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -6105,11 +6105,11 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:1860:2: 'replaceConf:'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getReplaceConfKeyword_0()); 
+               before(grammarAccess.getReplaceConfAccess().getReplaceConfKeyword_0()); 
             }
             match(input,29,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getReplaceConfKeyword_0()); 
+               after(grammarAccess.getReplaceConfAccess().getReplaceConfKeyword_0()); 
             }
 
             }
@@ -6129,26 +6129,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__0__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group__1"
-    // InternalMappingAssistance.g:1869:1: rule__Conf__Group__1 : rule__Conf__Group__1__Impl rule__Conf__Group__2 ;
-    public final void rule__Conf__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__1"
+    // InternalMappingAssistance.g:1869:1: rule__ReplaceConf__Group__1 : rule__ReplaceConf__Group__1__Impl rule__ReplaceConf__Group__2 ;
+    public final void rule__ReplaceConf__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:1873:1: ( rule__Conf__Group__1__Impl rule__Conf__Group__2 )
-            // InternalMappingAssistance.g:1874:2: rule__Conf__Group__1__Impl rule__Conf__Group__2
+            // InternalMappingAssistance.g:1873:1: ( rule__ReplaceConf__Group__1__Impl rule__ReplaceConf__Group__2 )
+            // InternalMappingAssistance.g:1874:2: rule__ReplaceConf__Group__1__Impl rule__ReplaceConf__Group__2
             {
             pushFollow(FOLLOW_10);
-            rule__Conf__Group__1__Impl();
+            rule__ReplaceConf__Group__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group__2();
+            rule__ReplaceConf__Group__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6167,30 +6167,30 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__1"
+    // $ANTLR end "rule__ReplaceConf__Group__1"
 
 
-    // $ANTLR start "rule__Conf__Group__1__Impl"
-    // InternalMappingAssistance.g:1881:1: rule__Conf__Group__1__Impl : ( ( rule__Conf__ServiceAssignment_1 ) ) ;
-    public final void rule__Conf__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__1__Impl"
+    // InternalMappingAssistance.g:1881:1: rule__ReplaceConf__Group__1__Impl : ( ( rule__ReplaceConf__ServiceAssignment_1 ) ) ;
+    public final void rule__ReplaceConf__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:1885:1: ( ( ( rule__Conf__ServiceAssignment_1 ) ) )
-            // InternalMappingAssistance.g:1886:1: ( ( rule__Conf__ServiceAssignment_1 ) )
+            // InternalMappingAssistance.g:1885:1: ( ( ( rule__ReplaceConf__ServiceAssignment_1 ) ) )
+            // InternalMappingAssistance.g:1886:1: ( ( rule__ReplaceConf__ServiceAssignment_1 ) )
             {
-            // InternalMappingAssistance.g:1886:1: ( ( rule__Conf__ServiceAssignment_1 ) )
-            // InternalMappingAssistance.g:1887:2: ( rule__Conf__ServiceAssignment_1 )
+            // InternalMappingAssistance.g:1886:1: ( ( rule__ReplaceConf__ServiceAssignment_1 ) )
+            // InternalMappingAssistance.g:1887:2: ( rule__ReplaceConf__ServiceAssignment_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getServiceAssignment_1()); 
+               before(grammarAccess.getReplaceConfAccess().getServiceAssignment_1()); 
             }
-            // InternalMappingAssistance.g:1888:2: ( rule__Conf__ServiceAssignment_1 )
-            // InternalMappingAssistance.g:1888:3: rule__Conf__ServiceAssignment_1
+            // InternalMappingAssistance.g:1888:2: ( rule__ReplaceConf__ServiceAssignment_1 )
+            // InternalMappingAssistance.g:1888:3: rule__ReplaceConf__ServiceAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__ServiceAssignment_1();
+            rule__ReplaceConf__ServiceAssignment_1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6198,7 +6198,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getServiceAssignment_1()); 
+               after(grammarAccess.getReplaceConfAccess().getServiceAssignment_1()); 
             }
 
             }
@@ -6218,26 +6218,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__1__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group__2"
-    // InternalMappingAssistance.g:1896:1: rule__Conf__Group__2 : rule__Conf__Group__2__Impl rule__Conf__Group__3 ;
-    public final void rule__Conf__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__2"
+    // InternalMappingAssistance.g:1896:1: rule__ReplaceConf__Group__2 : rule__ReplaceConf__Group__2__Impl rule__ReplaceConf__Group__3 ;
+    public final void rule__ReplaceConf__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:1900:1: ( rule__Conf__Group__2__Impl rule__Conf__Group__3 )
-            // InternalMappingAssistance.g:1901:2: rule__Conf__Group__2__Impl rule__Conf__Group__3
+            // InternalMappingAssistance.g:1900:1: ( rule__ReplaceConf__Group__2__Impl rule__ReplaceConf__Group__3 )
+            // InternalMappingAssistance.g:1901:2: rule__ReplaceConf__Group__2__Impl rule__ReplaceConf__Group__3
             {
             pushFollow(FOLLOW_8);
-            rule__Conf__Group__2__Impl();
+            rule__ReplaceConf__Group__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group__3();
+            rule__ReplaceConf__Group__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6256,12 +6256,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__2"
+    // $ANTLR end "rule__ReplaceConf__Group__2"
 
 
-    // $ANTLR start "rule__Conf__Group__2__Impl"
-    // InternalMappingAssistance.g:1908:1: rule__Conf__Group__2__Impl : ( '.' ) ;
-    public final void rule__Conf__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__2__Impl"
+    // InternalMappingAssistance.g:1908:1: rule__ReplaceConf__Group__2__Impl : ( '.' ) ;
+    public final void rule__ReplaceConf__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -6273,11 +6273,11 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:1914:2: '.'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getFullStopKeyword_2()); 
+               before(grammarAccess.getReplaceConfAccess().getFullStopKeyword_2()); 
             }
             match(input,19,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getFullStopKeyword_2()); 
+               after(grammarAccess.getReplaceConfAccess().getFullStopKeyword_2()); 
             }
 
             }
@@ -6297,26 +6297,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__2__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group__3"
-    // InternalMappingAssistance.g:1923:1: rule__Conf__Group__3 : rule__Conf__Group__3__Impl rule__Conf__Group__4 ;
-    public final void rule__Conf__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__3"
+    // InternalMappingAssistance.g:1923:1: rule__ReplaceConf__Group__3 : rule__ReplaceConf__Group__3__Impl rule__ReplaceConf__Group__4 ;
+    public final void rule__ReplaceConf__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:1927:1: ( rule__Conf__Group__3__Impl rule__Conf__Group__4 )
-            // InternalMappingAssistance.g:1928:2: rule__Conf__Group__3__Impl rule__Conf__Group__4
+            // InternalMappingAssistance.g:1927:1: ( rule__ReplaceConf__Group__3__Impl rule__ReplaceConf__Group__4 )
+            // InternalMappingAssistance.g:1928:2: rule__ReplaceConf__Group__3__Impl rule__ReplaceConf__Group__4
             {
             pushFollow(FOLLOW_16);
-            rule__Conf__Group__3__Impl();
+            rule__ReplaceConf__Group__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group__4();
+            rule__ReplaceConf__Group__4();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6335,30 +6335,30 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__3"
+    // $ANTLR end "rule__ReplaceConf__Group__3"
 
 
-    // $ANTLR start "rule__Conf__Group__3__Impl"
-    // InternalMappingAssistance.g:1935:1: rule__Conf__Group__3__Impl : ( ( rule__Conf__MemberAssignment_3 ) ) ;
-    public final void rule__Conf__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__3__Impl"
+    // InternalMappingAssistance.g:1935:1: rule__ReplaceConf__Group__3__Impl : ( ( rule__ReplaceConf__MemberAssignment_3 ) ) ;
+    public final void rule__ReplaceConf__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:1939:1: ( ( ( rule__Conf__MemberAssignment_3 ) ) )
-            // InternalMappingAssistance.g:1940:1: ( ( rule__Conf__MemberAssignment_3 ) )
+            // InternalMappingAssistance.g:1939:1: ( ( ( rule__ReplaceConf__MemberAssignment_3 ) ) )
+            // InternalMappingAssistance.g:1940:1: ( ( rule__ReplaceConf__MemberAssignment_3 ) )
             {
-            // InternalMappingAssistance.g:1940:1: ( ( rule__Conf__MemberAssignment_3 ) )
-            // InternalMappingAssistance.g:1941:2: ( rule__Conf__MemberAssignment_3 )
+            // InternalMappingAssistance.g:1940:1: ( ( rule__ReplaceConf__MemberAssignment_3 ) )
+            // InternalMappingAssistance.g:1941:2: ( rule__ReplaceConf__MemberAssignment_3 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getMemberAssignment_3()); 
+               before(grammarAccess.getReplaceConfAccess().getMemberAssignment_3()); 
             }
-            // InternalMappingAssistance.g:1942:2: ( rule__Conf__MemberAssignment_3 )
-            // InternalMappingAssistance.g:1942:3: rule__Conf__MemberAssignment_3
+            // InternalMappingAssistance.g:1942:2: ( rule__ReplaceConf__MemberAssignment_3 )
+            // InternalMappingAssistance.g:1942:3: rule__ReplaceConf__MemberAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__MemberAssignment_3();
+            rule__ReplaceConf__MemberAssignment_3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6366,7 +6366,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getMemberAssignment_3()); 
+               after(grammarAccess.getReplaceConfAccess().getMemberAssignment_3()); 
             }
 
             }
@@ -6386,26 +6386,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__3__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group__4"
-    // InternalMappingAssistance.g:1950:1: rule__Conf__Group__4 : rule__Conf__Group__4__Impl rule__Conf__Group__5 ;
-    public final void rule__Conf__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__4"
+    // InternalMappingAssistance.g:1950:1: rule__ReplaceConf__Group__4 : rule__ReplaceConf__Group__4__Impl rule__ReplaceConf__Group__5 ;
+    public final void rule__ReplaceConf__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:1954:1: ( rule__Conf__Group__4__Impl rule__Conf__Group__5 )
-            // InternalMappingAssistance.g:1955:2: rule__Conf__Group__4__Impl rule__Conf__Group__5
+            // InternalMappingAssistance.g:1954:1: ( rule__ReplaceConf__Group__4__Impl rule__ReplaceConf__Group__5 )
+            // InternalMappingAssistance.g:1955:2: rule__ReplaceConf__Group__4__Impl rule__ReplaceConf__Group__5
             {
             pushFollow(FOLLOW_17);
-            rule__Conf__Group__4__Impl();
+            rule__ReplaceConf__Group__4__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group__5();
+            rule__ReplaceConf__Group__5();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6424,12 +6424,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__4"
+    // $ANTLR end "rule__ReplaceConf__Group__4"
 
 
-    // $ANTLR start "rule__Conf__Group__4__Impl"
-    // InternalMappingAssistance.g:1962:1: rule__Conf__Group__4__Impl : ( '(' ) ;
-    public final void rule__Conf__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__4__Impl"
+    // InternalMappingAssistance.g:1962:1: rule__ReplaceConf__Group__4__Impl : ( '(' ) ;
+    public final void rule__ReplaceConf__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -6441,11 +6441,11 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:1968:2: '('
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getLeftParenthesisKeyword_4()); 
+               before(grammarAccess.getReplaceConfAccess().getLeftParenthesisKeyword_4()); 
             }
             match(input,25,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getLeftParenthesisKeyword_4()); 
+               after(grammarAccess.getReplaceConfAccess().getLeftParenthesisKeyword_4()); 
             }
 
             }
@@ -6465,26 +6465,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__4__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group__5"
-    // InternalMappingAssistance.g:1977:1: rule__Conf__Group__5 : rule__Conf__Group__5__Impl rule__Conf__Group__6 ;
-    public final void rule__Conf__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__5"
+    // InternalMappingAssistance.g:1977:1: rule__ReplaceConf__Group__5 : rule__ReplaceConf__Group__5__Impl rule__ReplaceConf__Group__6 ;
+    public final void rule__ReplaceConf__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:1981:1: ( rule__Conf__Group__5__Impl rule__Conf__Group__6 )
-            // InternalMappingAssistance.g:1982:2: rule__Conf__Group__5__Impl rule__Conf__Group__6
+            // InternalMappingAssistance.g:1981:1: ( rule__ReplaceConf__Group__5__Impl rule__ReplaceConf__Group__6 )
+            // InternalMappingAssistance.g:1982:2: rule__ReplaceConf__Group__5__Impl rule__ReplaceConf__Group__6
             {
             pushFollow(FOLLOW_17);
-            rule__Conf__Group__5__Impl();
+            rule__ReplaceConf__Group__5__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group__6();
+            rule__ReplaceConf__Group__6();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6503,26 +6503,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__5"
+    // $ANTLR end "rule__ReplaceConf__Group__5"
 
 
-    // $ANTLR start "rule__Conf__Group__5__Impl"
-    // InternalMappingAssistance.g:1989:1: rule__Conf__Group__5__Impl : ( ( rule__Conf__Group_5__0 )* ) ;
-    public final void rule__Conf__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__5__Impl"
+    // InternalMappingAssistance.g:1989:1: rule__ReplaceConf__Group__5__Impl : ( ( rule__ReplaceConf__Group_5__0 )* ) ;
+    public final void rule__ReplaceConf__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:1993:1: ( ( ( rule__Conf__Group_5__0 )* ) )
-            // InternalMappingAssistance.g:1994:1: ( ( rule__Conf__Group_5__0 )* )
+            // InternalMappingAssistance.g:1993:1: ( ( ( rule__ReplaceConf__Group_5__0 )* ) )
+            // InternalMappingAssistance.g:1994:1: ( ( rule__ReplaceConf__Group_5__0 )* )
             {
-            // InternalMappingAssistance.g:1994:1: ( ( rule__Conf__Group_5__0 )* )
-            // InternalMappingAssistance.g:1995:2: ( rule__Conf__Group_5__0 )*
+            // InternalMappingAssistance.g:1994:1: ( ( rule__ReplaceConf__Group_5__0 )* )
+            // InternalMappingAssistance.g:1995:2: ( rule__ReplaceConf__Group_5__0 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getGroup_5()); 
+               before(grammarAccess.getReplaceConfAccess().getGroup_5()); 
             }
-            // InternalMappingAssistance.g:1996:2: ( rule__Conf__Group_5__0 )*
+            // InternalMappingAssistance.g:1996:2: ( rule__ReplaceConf__Group_5__0 )*
             loop12:
             do {
                 int alt12=2;
@@ -6535,10 +6535,10 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalMappingAssistance.g:1996:3: rule__Conf__Group_5__0
+            	    // InternalMappingAssistance.g:1996:3: rule__ReplaceConf__Group_5__0
             	    {
             	    pushFollow(FOLLOW_14);
-            	    rule__Conf__Group_5__0();
+            	    rule__ReplaceConf__Group_5__0();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -6552,7 +6552,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getGroup_5()); 
+               after(grammarAccess.getReplaceConfAccess().getGroup_5()); 
             }
 
             }
@@ -6572,21 +6572,21 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__5__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group__6"
-    // InternalMappingAssistance.g:2004:1: rule__Conf__Group__6 : rule__Conf__Group__6__Impl ;
-    public final void rule__Conf__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__6"
+    // InternalMappingAssistance.g:2004:1: rule__ReplaceConf__Group__6 : rule__ReplaceConf__Group__6__Impl ;
+    public final void rule__ReplaceConf__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2008:1: ( rule__Conf__Group__6__Impl )
-            // InternalMappingAssistance.g:2009:2: rule__Conf__Group__6__Impl
+            // InternalMappingAssistance.g:2008:1: ( rule__ReplaceConf__Group__6__Impl )
+            // InternalMappingAssistance.g:2009:2: rule__ReplaceConf__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__Group__6__Impl();
+            rule__ReplaceConf__Group__6__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6605,12 +6605,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__6"
+    // $ANTLR end "rule__ReplaceConf__Group__6"
 
 
-    // $ANTLR start "rule__Conf__Group__6__Impl"
-    // InternalMappingAssistance.g:2015:1: rule__Conf__Group__6__Impl : ( ')' ) ;
-    public final void rule__Conf__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group__6__Impl"
+    // InternalMappingAssistance.g:2015:1: rule__ReplaceConf__Group__6__Impl : ( ')' ) ;
+    public final void rule__ReplaceConf__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -6622,11 +6622,11 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:2021:2: ')'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getRightParenthesisKeyword_6()); 
+               before(grammarAccess.getReplaceConfAccess().getRightParenthesisKeyword_6()); 
             }
             match(input,26,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getRightParenthesisKeyword_6()); 
+               after(grammarAccess.getReplaceConfAccess().getRightParenthesisKeyword_6()); 
             }
 
             }
@@ -6646,26 +6646,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group__6__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group_5__0"
-    // InternalMappingAssistance.g:2031:1: rule__Conf__Group_5__0 : rule__Conf__Group_5__0__Impl rule__Conf__Group_5__1 ;
-    public final void rule__Conf__Group_5__0() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5__0"
+    // InternalMappingAssistance.g:2031:1: rule__ReplaceConf__Group_5__0 : rule__ReplaceConf__Group_5__0__Impl rule__ReplaceConf__Group_5__1 ;
+    public final void rule__ReplaceConf__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2035:1: ( rule__Conf__Group_5__0__Impl rule__Conf__Group_5__1 )
-            // InternalMappingAssistance.g:2036:2: rule__Conf__Group_5__0__Impl rule__Conf__Group_5__1
+            // InternalMappingAssistance.g:2035:1: ( rule__ReplaceConf__Group_5__0__Impl rule__ReplaceConf__Group_5__1 )
+            // InternalMappingAssistance.g:2036:2: rule__ReplaceConf__Group_5__0__Impl rule__ReplaceConf__Group_5__1
             {
             pushFollow(FOLLOW_8);
-            rule__Conf__Group_5__0__Impl();
+            rule__ReplaceConf__Group_5__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5__1();
+            rule__ReplaceConf__Group_5__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6684,26 +6684,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5__0"
+    // $ANTLR end "rule__ReplaceConf__Group_5__0"
 
 
-    // $ANTLR start "rule__Conf__Group_5__0__Impl"
-    // InternalMappingAssistance.g:2043:1: rule__Conf__Group_5__0__Impl : ( ( rule__Conf__Group_5_0__0 )* ) ;
-    public final void rule__Conf__Group_5__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5__0__Impl"
+    // InternalMappingAssistance.g:2043:1: rule__ReplaceConf__Group_5__0__Impl : ( ( rule__ReplaceConf__Group_5_0__0 )* ) ;
+    public final void rule__ReplaceConf__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2047:1: ( ( ( rule__Conf__Group_5_0__0 )* ) )
-            // InternalMappingAssistance.g:2048:1: ( ( rule__Conf__Group_5_0__0 )* )
+            // InternalMappingAssistance.g:2047:1: ( ( ( rule__ReplaceConf__Group_5_0__0 )* ) )
+            // InternalMappingAssistance.g:2048:1: ( ( rule__ReplaceConf__Group_5_0__0 )* )
             {
-            // InternalMappingAssistance.g:2048:1: ( ( rule__Conf__Group_5_0__0 )* )
-            // InternalMappingAssistance.g:2049:2: ( rule__Conf__Group_5_0__0 )*
+            // InternalMappingAssistance.g:2048:1: ( ( rule__ReplaceConf__Group_5_0__0 )* )
+            // InternalMappingAssistance.g:2049:2: ( rule__ReplaceConf__Group_5_0__0 )*
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getGroup_5_0()); 
+               before(grammarAccess.getReplaceConfAccess().getGroup_5_0()); 
             }
-            // InternalMappingAssistance.g:2050:2: ( rule__Conf__Group_5_0__0 )*
+            // InternalMappingAssistance.g:2050:2: ( rule__ReplaceConf__Group_5_0__0 )*
             loop13:
             do {
                 int alt13=2;
@@ -6734,10 +6734,10 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
 
                 switch (alt13) {
             	case 1 :
-            	    // InternalMappingAssistance.g:2050:3: rule__Conf__Group_5_0__0
+            	    // InternalMappingAssistance.g:2050:3: rule__ReplaceConf__Group_5_0__0
             	    {
             	    pushFollow(FOLLOW_14);
-            	    rule__Conf__Group_5_0__0();
+            	    rule__ReplaceConf__Group_5_0__0();
 
             	    state._fsp--;
             	    if (state.failed) return ;
@@ -6751,7 +6751,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             } while (true);
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getGroup_5_0()); 
+               after(grammarAccess.getReplaceConfAccess().getGroup_5_0()); 
             }
 
             }
@@ -6771,21 +6771,21 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5__0__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group_5__0__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group_5__1"
-    // InternalMappingAssistance.g:2058:1: rule__Conf__Group_5__1 : rule__Conf__Group_5__1__Impl ;
-    public final void rule__Conf__Group_5__1() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5__1"
+    // InternalMappingAssistance.g:2058:1: rule__ReplaceConf__Group_5__1 : rule__ReplaceConf__Group_5__1__Impl ;
+    public final void rule__ReplaceConf__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2062:1: ( rule__Conf__Group_5__1__Impl )
-            // InternalMappingAssistance.g:2063:2: rule__Conf__Group_5__1__Impl
+            // InternalMappingAssistance.g:2062:1: ( rule__ReplaceConf__Group_5__1__Impl )
+            // InternalMappingAssistance.g:2063:2: rule__ReplaceConf__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5__1__Impl();
+            rule__ReplaceConf__Group_5__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6804,30 +6804,30 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5__1"
+    // $ANTLR end "rule__ReplaceConf__Group_5__1"
 
 
-    // $ANTLR start "rule__Conf__Group_5__1__Impl"
-    // InternalMappingAssistance.g:2069:1: rule__Conf__Group_5__1__Impl : ( ( rule__Conf__Group_5_1__0 ) ) ;
-    public final void rule__Conf__Group_5__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5__1__Impl"
+    // InternalMappingAssistance.g:2069:1: rule__ReplaceConf__Group_5__1__Impl : ( ( rule__ReplaceConf__Group_5_1__0 ) ) ;
+    public final void rule__ReplaceConf__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2073:1: ( ( ( rule__Conf__Group_5_1__0 ) ) )
-            // InternalMappingAssistance.g:2074:1: ( ( rule__Conf__Group_5_1__0 ) )
+            // InternalMappingAssistance.g:2073:1: ( ( ( rule__ReplaceConf__Group_5_1__0 ) ) )
+            // InternalMappingAssistance.g:2074:1: ( ( rule__ReplaceConf__Group_5_1__0 ) )
             {
-            // InternalMappingAssistance.g:2074:1: ( ( rule__Conf__Group_5_1__0 ) )
-            // InternalMappingAssistance.g:2075:2: ( rule__Conf__Group_5_1__0 )
+            // InternalMappingAssistance.g:2074:1: ( ( rule__ReplaceConf__Group_5_1__0 ) )
+            // InternalMappingAssistance.g:2075:2: ( rule__ReplaceConf__Group_5_1__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getGroup_5_1()); 
+               before(grammarAccess.getReplaceConfAccess().getGroup_5_1()); 
             }
-            // InternalMappingAssistance.g:2076:2: ( rule__Conf__Group_5_1__0 )
-            // InternalMappingAssistance.g:2076:3: rule__Conf__Group_5_1__0
+            // InternalMappingAssistance.g:2076:2: ( rule__ReplaceConf__Group_5_1__0 )
+            // InternalMappingAssistance.g:2076:3: rule__ReplaceConf__Group_5_1__0
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5_1__0();
+            rule__ReplaceConf__Group_5_1__0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6835,7 +6835,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getGroup_5_1()); 
+               after(grammarAccess.getReplaceConfAccess().getGroup_5_1()); 
             }
 
             }
@@ -6855,26 +6855,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5__1__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group_5__1__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group_5_0__0"
-    // InternalMappingAssistance.g:2085:1: rule__Conf__Group_5_0__0 : rule__Conf__Group_5_0__0__Impl rule__Conf__Group_5_0__1 ;
-    public final void rule__Conf__Group_5_0__0() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_0__0"
+    // InternalMappingAssistance.g:2085:1: rule__ReplaceConf__Group_5_0__0 : rule__ReplaceConf__Group_5_0__0__Impl rule__ReplaceConf__Group_5_0__1 ;
+    public final void rule__ReplaceConf__Group_5_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2089:1: ( rule__Conf__Group_5_0__0__Impl rule__Conf__Group_5_0__1 )
-            // InternalMappingAssistance.g:2090:2: rule__Conf__Group_5_0__0__Impl rule__Conf__Group_5_0__1
+            // InternalMappingAssistance.g:2089:1: ( rule__ReplaceConf__Group_5_0__0__Impl rule__ReplaceConf__Group_5_0__1 )
+            // InternalMappingAssistance.g:2090:2: rule__ReplaceConf__Group_5_0__0__Impl rule__ReplaceConf__Group_5_0__1
             {
             pushFollow(FOLLOW_15);
-            rule__Conf__Group_5_0__0__Impl();
+            rule__ReplaceConf__Group_5_0__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5_0__1();
+            rule__ReplaceConf__Group_5_0__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6893,30 +6893,30 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_0__0"
+    // $ANTLR end "rule__ReplaceConf__Group_5_0__0"
 
 
-    // $ANTLR start "rule__Conf__Group_5_0__0__Impl"
-    // InternalMappingAssistance.g:2097:1: rule__Conf__Group_5_0__0__Impl : ( ( rule__Conf__VarConfAssignment_5_0_0 ) ) ;
-    public final void rule__Conf__Group_5_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_0__0__Impl"
+    // InternalMappingAssistance.g:2097:1: rule__ReplaceConf__Group_5_0__0__Impl : ( ( rule__ReplaceConf__VarConfAssignment_5_0_0 ) ) ;
+    public final void rule__ReplaceConf__Group_5_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2101:1: ( ( ( rule__Conf__VarConfAssignment_5_0_0 ) ) )
-            // InternalMappingAssistance.g:2102:1: ( ( rule__Conf__VarConfAssignment_5_0_0 ) )
+            // InternalMappingAssistance.g:2101:1: ( ( ( rule__ReplaceConf__VarConfAssignment_5_0_0 ) ) )
+            // InternalMappingAssistance.g:2102:1: ( ( rule__ReplaceConf__VarConfAssignment_5_0_0 ) )
             {
-            // InternalMappingAssistance.g:2102:1: ( ( rule__Conf__VarConfAssignment_5_0_0 ) )
-            // InternalMappingAssistance.g:2103:2: ( rule__Conf__VarConfAssignment_5_0_0 )
+            // InternalMappingAssistance.g:2102:1: ( ( rule__ReplaceConf__VarConfAssignment_5_0_0 ) )
+            // InternalMappingAssistance.g:2103:2: ( rule__ReplaceConf__VarConfAssignment_5_0_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getVarConfAssignment_5_0_0()); 
+               before(grammarAccess.getReplaceConfAccess().getVarConfAssignment_5_0_0()); 
             }
-            // InternalMappingAssistance.g:2104:2: ( rule__Conf__VarConfAssignment_5_0_0 )
-            // InternalMappingAssistance.g:2104:3: rule__Conf__VarConfAssignment_5_0_0
+            // InternalMappingAssistance.g:2104:2: ( rule__ReplaceConf__VarConfAssignment_5_0_0 )
+            // InternalMappingAssistance.g:2104:3: rule__ReplaceConf__VarConfAssignment_5_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__VarConfAssignment_5_0_0();
+            rule__ReplaceConf__VarConfAssignment_5_0_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6924,7 +6924,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getVarConfAssignment_5_0_0()); 
+               after(grammarAccess.getReplaceConfAccess().getVarConfAssignment_5_0_0()); 
             }
 
             }
@@ -6944,26 +6944,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_0__0__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group_5_0__0__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group_5_0__1"
-    // InternalMappingAssistance.g:2112:1: rule__Conf__Group_5_0__1 : rule__Conf__Group_5_0__1__Impl rule__Conf__Group_5_0__2 ;
-    public final void rule__Conf__Group_5_0__1() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_0__1"
+    // InternalMappingAssistance.g:2112:1: rule__ReplaceConf__Group_5_0__1 : rule__ReplaceConf__Group_5_0__1__Impl rule__ReplaceConf__Group_5_0__2 ;
+    public final void rule__ReplaceConf__Group_5_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2116:1: ( rule__Conf__Group_5_0__1__Impl rule__Conf__Group_5_0__2 )
-            // InternalMappingAssistance.g:2117:2: rule__Conf__Group_5_0__1__Impl rule__Conf__Group_5_0__2
+            // InternalMappingAssistance.g:2116:1: ( rule__ReplaceConf__Group_5_0__1__Impl rule__ReplaceConf__Group_5_0__2 )
+            // InternalMappingAssistance.g:2117:2: rule__ReplaceConf__Group_5_0__1__Impl rule__ReplaceConf__Group_5_0__2
             {
             pushFollow(FOLLOW_8);
-            rule__Conf__Group_5_0__1__Impl();
+            rule__ReplaceConf__Group_5_0__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5_0__2();
+            rule__ReplaceConf__Group_5_0__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -6982,12 +6982,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_0__1"
+    // $ANTLR end "rule__ReplaceConf__Group_5_0__1"
 
 
-    // $ANTLR start "rule__Conf__Group_5_0__1__Impl"
-    // InternalMappingAssistance.g:2124:1: rule__Conf__Group_5_0__1__Impl : ( ':=' ) ;
-    public final void rule__Conf__Group_5_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_0__1__Impl"
+    // InternalMappingAssistance.g:2124:1: rule__ReplaceConf__Group_5_0__1__Impl : ( ':=' ) ;
+    public final void rule__ReplaceConf__Group_5_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -6999,11 +6999,11 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:2130:2: ':='
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getColonEqualsSignKeyword_5_0_1()); 
+               before(grammarAccess.getReplaceConfAccess().getColonEqualsSignKeyword_5_0_1()); 
             }
             match(input,23,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getColonEqualsSignKeyword_5_0_1()); 
+               after(grammarAccess.getReplaceConfAccess().getColonEqualsSignKeyword_5_0_1()); 
             }
 
             }
@@ -7023,26 +7023,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_0__1__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group_5_0__1__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group_5_0__2"
-    // InternalMappingAssistance.g:2139:1: rule__Conf__Group_5_0__2 : rule__Conf__Group_5_0__2__Impl rule__Conf__Group_5_0__3 ;
-    public final void rule__Conf__Group_5_0__2() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_0__2"
+    // InternalMappingAssistance.g:2139:1: rule__ReplaceConf__Group_5_0__2 : rule__ReplaceConf__Group_5_0__2__Impl rule__ReplaceConf__Group_5_0__3 ;
+    public final void rule__ReplaceConf__Group_5_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2143:1: ( rule__Conf__Group_5_0__2__Impl rule__Conf__Group_5_0__3 )
-            // InternalMappingAssistance.g:2144:2: rule__Conf__Group_5_0__2__Impl rule__Conf__Group_5_0__3
+            // InternalMappingAssistance.g:2143:1: ( rule__ReplaceConf__Group_5_0__2__Impl rule__ReplaceConf__Group_5_0__3 )
+            // InternalMappingAssistance.g:2144:2: rule__ReplaceConf__Group_5_0__2__Impl rule__ReplaceConf__Group_5_0__3
             {
             pushFollow(FOLLOW_19);
-            rule__Conf__Group_5_0__2__Impl();
+            rule__ReplaceConf__Group_5_0__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5_0__3();
+            rule__ReplaceConf__Group_5_0__3();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7061,30 +7061,30 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_0__2"
+    // $ANTLR end "rule__ReplaceConf__Group_5_0__2"
 
 
-    // $ANTLR start "rule__Conf__Group_5_0__2__Impl"
-    // InternalMappingAssistance.g:2151:1: rule__Conf__Group_5_0__2__Impl : ( ( rule__Conf__InstVarAssignment_5_0_2 ) ) ;
-    public final void rule__Conf__Group_5_0__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_0__2__Impl"
+    // InternalMappingAssistance.g:2151:1: rule__ReplaceConf__Group_5_0__2__Impl : ( ( rule__ReplaceConf__InstVarAssignment_5_0_2 ) ) ;
+    public final void rule__ReplaceConf__Group_5_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2155:1: ( ( ( rule__Conf__InstVarAssignment_5_0_2 ) ) )
-            // InternalMappingAssistance.g:2156:1: ( ( rule__Conf__InstVarAssignment_5_0_2 ) )
+            // InternalMappingAssistance.g:2155:1: ( ( ( rule__ReplaceConf__InstVarAssignment_5_0_2 ) ) )
+            // InternalMappingAssistance.g:2156:1: ( ( rule__ReplaceConf__InstVarAssignment_5_0_2 ) )
             {
-            // InternalMappingAssistance.g:2156:1: ( ( rule__Conf__InstVarAssignment_5_0_2 ) )
-            // InternalMappingAssistance.g:2157:2: ( rule__Conf__InstVarAssignment_5_0_2 )
+            // InternalMappingAssistance.g:2156:1: ( ( rule__ReplaceConf__InstVarAssignment_5_0_2 ) )
+            // InternalMappingAssistance.g:2157:2: ( rule__ReplaceConf__InstVarAssignment_5_0_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getInstVarAssignment_5_0_2()); 
+               before(grammarAccess.getReplaceConfAccess().getInstVarAssignment_5_0_2()); 
             }
-            // InternalMappingAssistance.g:2158:2: ( rule__Conf__InstVarAssignment_5_0_2 )
-            // InternalMappingAssistance.g:2158:3: rule__Conf__InstVarAssignment_5_0_2
+            // InternalMappingAssistance.g:2158:2: ( rule__ReplaceConf__InstVarAssignment_5_0_2 )
+            // InternalMappingAssistance.g:2158:3: rule__ReplaceConf__InstVarAssignment_5_0_2
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__InstVarAssignment_5_0_2();
+            rule__ReplaceConf__InstVarAssignment_5_0_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7092,7 +7092,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getInstVarAssignment_5_0_2()); 
+               after(grammarAccess.getReplaceConfAccess().getInstVarAssignment_5_0_2()); 
             }
 
             }
@@ -7112,21 +7112,21 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_0__2__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group_5_0__2__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group_5_0__3"
-    // InternalMappingAssistance.g:2166:1: rule__Conf__Group_5_0__3 : rule__Conf__Group_5_0__3__Impl ;
-    public final void rule__Conf__Group_5_0__3() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_0__3"
+    // InternalMappingAssistance.g:2166:1: rule__ReplaceConf__Group_5_0__3 : rule__ReplaceConf__Group_5_0__3__Impl ;
+    public final void rule__ReplaceConf__Group_5_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2170:1: ( rule__Conf__Group_5_0__3__Impl )
-            // InternalMappingAssistance.g:2171:2: rule__Conf__Group_5_0__3__Impl
+            // InternalMappingAssistance.g:2170:1: ( rule__ReplaceConf__Group_5_0__3__Impl )
+            // InternalMappingAssistance.g:2171:2: rule__ReplaceConf__Group_5_0__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5_0__3__Impl();
+            rule__ReplaceConf__Group_5_0__3__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7145,12 +7145,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_0__3"
+    // $ANTLR end "rule__ReplaceConf__Group_5_0__3"
 
 
-    // $ANTLR start "rule__Conf__Group_5_0__3__Impl"
-    // InternalMappingAssistance.g:2177:1: rule__Conf__Group_5_0__3__Impl : ( ',' ) ;
-    public final void rule__Conf__Group_5_0__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_0__3__Impl"
+    // InternalMappingAssistance.g:2177:1: rule__ReplaceConf__Group_5_0__3__Impl : ( ',' ) ;
+    public final void rule__ReplaceConf__Group_5_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7162,11 +7162,11 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:2183:2: ','
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getCommaKeyword_5_0_3()); 
+               before(grammarAccess.getReplaceConfAccess().getCommaKeyword_5_0_3()); 
             }
             match(input,27,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getCommaKeyword_5_0_3()); 
+               after(grammarAccess.getReplaceConfAccess().getCommaKeyword_5_0_3()); 
             }
 
             }
@@ -7186,26 +7186,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_0__3__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group_5_0__3__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group_5_1__0"
-    // InternalMappingAssistance.g:2193:1: rule__Conf__Group_5_1__0 : rule__Conf__Group_5_1__0__Impl rule__Conf__Group_5_1__1 ;
-    public final void rule__Conf__Group_5_1__0() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_1__0"
+    // InternalMappingAssistance.g:2193:1: rule__ReplaceConf__Group_5_1__0 : rule__ReplaceConf__Group_5_1__0__Impl rule__ReplaceConf__Group_5_1__1 ;
+    public final void rule__ReplaceConf__Group_5_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2197:1: ( rule__Conf__Group_5_1__0__Impl rule__Conf__Group_5_1__1 )
-            // InternalMappingAssistance.g:2198:2: rule__Conf__Group_5_1__0__Impl rule__Conf__Group_5_1__1
+            // InternalMappingAssistance.g:2197:1: ( rule__ReplaceConf__Group_5_1__0__Impl rule__ReplaceConf__Group_5_1__1 )
+            // InternalMappingAssistance.g:2198:2: rule__ReplaceConf__Group_5_1__0__Impl rule__ReplaceConf__Group_5_1__1
             {
             pushFollow(FOLLOW_15);
-            rule__Conf__Group_5_1__0__Impl();
+            rule__ReplaceConf__Group_5_1__0__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5_1__1();
+            rule__ReplaceConf__Group_5_1__1();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7224,30 +7224,30 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_1__0"
+    // $ANTLR end "rule__ReplaceConf__Group_5_1__0"
 
 
-    // $ANTLR start "rule__Conf__Group_5_1__0__Impl"
-    // InternalMappingAssistance.g:2205:1: rule__Conf__Group_5_1__0__Impl : ( ( rule__Conf__VarConfAssignment_5_1_0 ) ) ;
-    public final void rule__Conf__Group_5_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_1__0__Impl"
+    // InternalMappingAssistance.g:2205:1: rule__ReplaceConf__Group_5_1__0__Impl : ( ( rule__ReplaceConf__VarConfAssignment_5_1_0 ) ) ;
+    public final void rule__ReplaceConf__Group_5_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2209:1: ( ( ( rule__Conf__VarConfAssignment_5_1_0 ) ) )
-            // InternalMappingAssistance.g:2210:1: ( ( rule__Conf__VarConfAssignment_5_1_0 ) )
+            // InternalMappingAssistance.g:2209:1: ( ( ( rule__ReplaceConf__VarConfAssignment_5_1_0 ) ) )
+            // InternalMappingAssistance.g:2210:1: ( ( rule__ReplaceConf__VarConfAssignment_5_1_0 ) )
             {
-            // InternalMappingAssistance.g:2210:1: ( ( rule__Conf__VarConfAssignment_5_1_0 ) )
-            // InternalMappingAssistance.g:2211:2: ( rule__Conf__VarConfAssignment_5_1_0 )
+            // InternalMappingAssistance.g:2210:1: ( ( rule__ReplaceConf__VarConfAssignment_5_1_0 ) )
+            // InternalMappingAssistance.g:2211:2: ( rule__ReplaceConf__VarConfAssignment_5_1_0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getVarConfAssignment_5_1_0()); 
+               before(grammarAccess.getReplaceConfAccess().getVarConfAssignment_5_1_0()); 
             }
-            // InternalMappingAssistance.g:2212:2: ( rule__Conf__VarConfAssignment_5_1_0 )
-            // InternalMappingAssistance.g:2212:3: rule__Conf__VarConfAssignment_5_1_0
+            // InternalMappingAssistance.g:2212:2: ( rule__ReplaceConf__VarConfAssignment_5_1_0 )
+            // InternalMappingAssistance.g:2212:3: rule__ReplaceConf__VarConfAssignment_5_1_0
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__VarConfAssignment_5_1_0();
+            rule__ReplaceConf__VarConfAssignment_5_1_0();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7255,7 +7255,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getVarConfAssignment_5_1_0()); 
+               after(grammarAccess.getReplaceConfAccess().getVarConfAssignment_5_1_0()); 
             }
 
             }
@@ -7275,26 +7275,26 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_1__0__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group_5_1__0__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group_5_1__1"
-    // InternalMappingAssistance.g:2220:1: rule__Conf__Group_5_1__1 : rule__Conf__Group_5_1__1__Impl rule__Conf__Group_5_1__2 ;
-    public final void rule__Conf__Group_5_1__1() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_1__1"
+    // InternalMappingAssistance.g:2220:1: rule__ReplaceConf__Group_5_1__1 : rule__ReplaceConf__Group_5_1__1__Impl rule__ReplaceConf__Group_5_1__2 ;
+    public final void rule__ReplaceConf__Group_5_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2224:1: ( rule__Conf__Group_5_1__1__Impl rule__Conf__Group_5_1__2 )
-            // InternalMappingAssistance.g:2225:2: rule__Conf__Group_5_1__1__Impl rule__Conf__Group_5_1__2
+            // InternalMappingAssistance.g:2224:1: ( rule__ReplaceConf__Group_5_1__1__Impl rule__ReplaceConf__Group_5_1__2 )
+            // InternalMappingAssistance.g:2225:2: rule__ReplaceConf__Group_5_1__1__Impl rule__ReplaceConf__Group_5_1__2
             {
             pushFollow(FOLLOW_8);
-            rule__Conf__Group_5_1__1__Impl();
+            rule__ReplaceConf__Group_5_1__1__Impl();
 
             state._fsp--;
             if (state.failed) return ;
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5_1__2();
+            rule__ReplaceConf__Group_5_1__2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7313,12 +7313,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_1__1"
+    // $ANTLR end "rule__ReplaceConf__Group_5_1__1"
 
 
-    // $ANTLR start "rule__Conf__Group_5_1__1__Impl"
-    // InternalMappingAssistance.g:2232:1: rule__Conf__Group_5_1__1__Impl : ( ':=' ) ;
-    public final void rule__Conf__Group_5_1__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_1__1__Impl"
+    // InternalMappingAssistance.g:2232:1: rule__ReplaceConf__Group_5_1__1__Impl : ( ':=' ) ;
+    public final void rule__ReplaceConf__Group_5_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -7330,11 +7330,11 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:2238:2: ':='
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getColonEqualsSignKeyword_5_1_1()); 
+               before(grammarAccess.getReplaceConfAccess().getColonEqualsSignKeyword_5_1_1()); 
             }
             match(input,23,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getColonEqualsSignKeyword_5_1_1()); 
+               after(grammarAccess.getReplaceConfAccess().getColonEqualsSignKeyword_5_1_1()); 
             }
 
             }
@@ -7354,21 +7354,21 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_1__1__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group_5_1__1__Impl"
 
 
-    // $ANTLR start "rule__Conf__Group_5_1__2"
-    // InternalMappingAssistance.g:2247:1: rule__Conf__Group_5_1__2 : rule__Conf__Group_5_1__2__Impl ;
-    public final void rule__Conf__Group_5_1__2() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_1__2"
+    // InternalMappingAssistance.g:2247:1: rule__ReplaceConf__Group_5_1__2 : rule__ReplaceConf__Group_5_1__2__Impl ;
+    public final void rule__ReplaceConf__Group_5_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2251:1: ( rule__Conf__Group_5_1__2__Impl )
-            // InternalMappingAssistance.g:2252:2: rule__Conf__Group_5_1__2__Impl
+            // InternalMappingAssistance.g:2251:1: ( rule__ReplaceConf__Group_5_1__2__Impl )
+            // InternalMappingAssistance.g:2252:2: rule__ReplaceConf__Group_5_1__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__Group_5_1__2__Impl();
+            rule__ReplaceConf__Group_5_1__2__Impl();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7387,30 +7387,30 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_1__2"
+    // $ANTLR end "rule__ReplaceConf__Group_5_1__2"
 
 
-    // $ANTLR start "rule__Conf__Group_5_1__2__Impl"
-    // InternalMappingAssistance.g:2258:1: rule__Conf__Group_5_1__2__Impl : ( ( rule__Conf__InstVarAssignment_5_1_2 ) ) ;
-    public final void rule__Conf__Group_5_1__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__Group_5_1__2__Impl"
+    // InternalMappingAssistance.g:2258:1: rule__ReplaceConf__Group_5_1__2__Impl : ( ( rule__ReplaceConf__InstVarAssignment_5_1_2 ) ) ;
+    public final void rule__ReplaceConf__Group_5_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:2262:1: ( ( ( rule__Conf__InstVarAssignment_5_1_2 ) ) )
-            // InternalMappingAssistance.g:2263:1: ( ( rule__Conf__InstVarAssignment_5_1_2 ) )
+            // InternalMappingAssistance.g:2262:1: ( ( ( rule__ReplaceConf__InstVarAssignment_5_1_2 ) ) )
+            // InternalMappingAssistance.g:2263:1: ( ( rule__ReplaceConf__InstVarAssignment_5_1_2 ) )
             {
-            // InternalMappingAssistance.g:2263:1: ( ( rule__Conf__InstVarAssignment_5_1_2 ) )
-            // InternalMappingAssistance.g:2264:2: ( rule__Conf__InstVarAssignment_5_1_2 )
+            // InternalMappingAssistance.g:2263:1: ( ( rule__ReplaceConf__InstVarAssignment_5_1_2 ) )
+            // InternalMappingAssistance.g:2264:2: ( rule__ReplaceConf__InstVarAssignment_5_1_2 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getInstVarAssignment_5_1_2()); 
+               before(grammarAccess.getReplaceConfAccess().getInstVarAssignment_5_1_2()); 
             }
-            // InternalMappingAssistance.g:2265:2: ( rule__Conf__InstVarAssignment_5_1_2 )
-            // InternalMappingAssistance.g:2265:3: rule__Conf__InstVarAssignment_5_1_2
+            // InternalMappingAssistance.g:2265:2: ( rule__ReplaceConf__InstVarAssignment_5_1_2 )
+            // InternalMappingAssistance.g:2265:3: rule__ReplaceConf__InstVarAssignment_5_1_2
             {
             pushFollow(FOLLOW_2);
-            rule__Conf__InstVarAssignment_5_1_2();
+            rule__ReplaceConf__InstVarAssignment_5_1_2();
 
             state._fsp--;
             if (state.failed) return ;
@@ -7418,7 +7418,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getInstVarAssignment_5_1_2()); 
+               after(grammarAccess.getReplaceConfAccess().getInstVarAssignment_5_1_2()); 
             }
 
             }
@@ -7438,7 +7438,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__Group_5_1__2__Impl"
+    // $ANTLR end "rule__ReplaceConf__Group_5_1__2__Impl"
 
 
     // $ANTLR start "rule__Comopnent__Group__0"
@@ -12801,28 +12801,28 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
 
 
     // $ANTLR start "rule__AbstractModel__ConfAssignment_2_3"
-    // InternalMappingAssistance.g:3957:1: rule__AbstractModel__ConfAssignment_2_3 : ( ruleConf ) ;
+    // InternalMappingAssistance.g:3957:1: rule__AbstractModel__ConfAssignment_2_3 : ( ruleReplaceConf ) ;
     public final void rule__AbstractModel__ConfAssignment_2_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMappingAssistance.g:3961:1: ( ( ruleConf ) )
-            // InternalMappingAssistance.g:3962:2: ( ruleConf )
+            // InternalMappingAssistance.g:3961:1: ( ( ruleReplaceConf ) )
+            // InternalMappingAssistance.g:3962:2: ( ruleReplaceConf )
             {
-            // InternalMappingAssistance.g:3962:2: ( ruleConf )
-            // InternalMappingAssistance.g:3963:3: ruleConf
+            // InternalMappingAssistance.g:3962:2: ( ruleReplaceConf )
+            // InternalMappingAssistance.g:3963:3: ruleReplaceConf
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getAbstractModelAccess().getConfConfParserRuleCall_2_3_0()); 
+               before(grammarAccess.getAbstractModelAccess().getConfReplaceConfParserRuleCall_2_3_0()); 
             }
             pushFollow(FOLLOW_2);
-            ruleConf();
+            ruleReplaceConf();
 
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getAbstractModelAccess().getConfConfParserRuleCall_2_3_0()); 
+               after(grammarAccess.getAbstractModelAccess().getConfReplaceConfParserRuleCall_2_3_0()); 
             }
 
             }
@@ -13661,9 +13661,9 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
     // $ANTLR end "rule__Mock__IntentionVarAssignment_5"
 
 
-    // $ANTLR start "rule__Conf__ServiceAssignment_1"
-    // InternalMappingAssistance.g:4260:1: rule__Conf__ServiceAssignment_1 : ( ( RULE_ID ) ) ;
-    public final void rule__Conf__ServiceAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__ServiceAssignment_1"
+    // InternalMappingAssistance.g:4260:1: rule__ReplaceConf__ServiceAssignment_1 : ( ( RULE_ID ) ) ;
+    public final void rule__ReplaceConf__ServiceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13675,23 +13675,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:4266:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getServiceVariableCrossReference_1_0()); 
+               before(grammarAccess.getReplaceConfAccess().getServiceVariableCrossReference_1_0()); 
             }
             // InternalMappingAssistance.g:4267:3: ( RULE_ID )
             // InternalMappingAssistance.g:4268:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getServiceVariableIDTerminalRuleCall_1_0_1()); 
+               before(grammarAccess.getReplaceConfAccess().getServiceVariableIDTerminalRuleCall_1_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getServiceVariableIDTerminalRuleCall_1_0_1()); 
+               after(grammarAccess.getReplaceConfAccess().getServiceVariableIDTerminalRuleCall_1_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getServiceVariableCrossReference_1_0()); 
+               after(grammarAccess.getReplaceConfAccess().getServiceVariableCrossReference_1_0()); 
             }
 
             }
@@ -13711,12 +13711,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__ServiceAssignment_1"
+    // $ANTLR end "rule__ReplaceConf__ServiceAssignment_1"
 
 
-    // $ANTLR start "rule__Conf__MemberAssignment_3"
-    // InternalMappingAssistance.g:4279:1: rule__Conf__MemberAssignment_3 : ( ( RULE_ID ) ) ;
-    public final void rule__Conf__MemberAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__MemberAssignment_3"
+    // InternalMappingAssistance.g:4279:1: rule__ReplaceConf__MemberAssignment_3 : ( ( RULE_ID ) ) ;
+    public final void rule__ReplaceConf__MemberAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13728,23 +13728,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:4285:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getMemberOperationCrossReference_3_0()); 
+               before(grammarAccess.getReplaceConfAccess().getMemberOperationCrossReference_3_0()); 
             }
             // InternalMappingAssistance.g:4286:3: ( RULE_ID )
             // InternalMappingAssistance.g:4287:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getMemberOperationIDTerminalRuleCall_3_0_1()); 
+               before(grammarAccess.getReplaceConfAccess().getMemberOperationIDTerminalRuleCall_3_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getMemberOperationIDTerminalRuleCall_3_0_1()); 
+               after(grammarAccess.getReplaceConfAccess().getMemberOperationIDTerminalRuleCall_3_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getMemberOperationCrossReference_3_0()); 
+               after(grammarAccess.getReplaceConfAccess().getMemberOperationCrossReference_3_0()); 
             }
 
             }
@@ -13764,12 +13764,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__MemberAssignment_3"
+    // $ANTLR end "rule__ReplaceConf__MemberAssignment_3"
 
 
-    // $ANTLR start "rule__Conf__VarConfAssignment_5_0_0"
-    // InternalMappingAssistance.g:4298:1: rule__Conf__VarConfAssignment_5_0_0 : ( ( RULE_ID ) ) ;
-    public final void rule__Conf__VarConfAssignment_5_0_0() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__VarConfAssignment_5_0_0"
+    // InternalMappingAssistance.g:4298:1: rule__ReplaceConf__VarConfAssignment_5_0_0 : ( ( RULE_ID ) ) ;
+    public final void rule__ReplaceConf__VarConfAssignment_5_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13781,23 +13781,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:4304:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getVarConfVariableCrossReference_5_0_0_0()); 
+               before(grammarAccess.getReplaceConfAccess().getVarConfVariableCrossReference_5_0_0_0()); 
             }
             // InternalMappingAssistance.g:4305:3: ( RULE_ID )
             // InternalMappingAssistance.g:4306:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getVarConfVariableIDTerminalRuleCall_5_0_0_0_1()); 
+               before(grammarAccess.getReplaceConfAccess().getVarConfVariableIDTerminalRuleCall_5_0_0_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getVarConfVariableIDTerminalRuleCall_5_0_0_0_1()); 
+               after(grammarAccess.getReplaceConfAccess().getVarConfVariableIDTerminalRuleCall_5_0_0_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getVarConfVariableCrossReference_5_0_0_0()); 
+               after(grammarAccess.getReplaceConfAccess().getVarConfVariableCrossReference_5_0_0_0()); 
             }
 
             }
@@ -13817,12 +13817,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__VarConfAssignment_5_0_0"
+    // $ANTLR end "rule__ReplaceConf__VarConfAssignment_5_0_0"
 
 
-    // $ANTLR start "rule__Conf__InstVarAssignment_5_0_2"
-    // InternalMappingAssistance.g:4317:1: rule__Conf__InstVarAssignment_5_0_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Conf__InstVarAssignment_5_0_2() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__InstVarAssignment_5_0_2"
+    // InternalMappingAssistance.g:4317:1: rule__ReplaceConf__InstVarAssignment_5_0_2 : ( ( RULE_ID ) ) ;
+    public final void rule__ReplaceConf__InstVarAssignment_5_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13834,23 +13834,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:4323:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getInstVarVariableCrossReference_5_0_2_0()); 
+               before(grammarAccess.getReplaceConfAccess().getInstVarVariableCrossReference_5_0_2_0()); 
             }
             // InternalMappingAssistance.g:4324:3: ( RULE_ID )
             // InternalMappingAssistance.g:4325:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getInstVarVariableIDTerminalRuleCall_5_0_2_0_1()); 
+               before(grammarAccess.getReplaceConfAccess().getInstVarVariableIDTerminalRuleCall_5_0_2_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getInstVarVariableIDTerminalRuleCall_5_0_2_0_1()); 
+               after(grammarAccess.getReplaceConfAccess().getInstVarVariableIDTerminalRuleCall_5_0_2_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getInstVarVariableCrossReference_5_0_2_0()); 
+               after(grammarAccess.getReplaceConfAccess().getInstVarVariableCrossReference_5_0_2_0()); 
             }
 
             }
@@ -13870,12 +13870,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__InstVarAssignment_5_0_2"
+    // $ANTLR end "rule__ReplaceConf__InstVarAssignment_5_0_2"
 
 
-    // $ANTLR start "rule__Conf__VarConfAssignment_5_1_0"
-    // InternalMappingAssistance.g:4336:1: rule__Conf__VarConfAssignment_5_1_0 : ( ( RULE_ID ) ) ;
-    public final void rule__Conf__VarConfAssignment_5_1_0() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__VarConfAssignment_5_1_0"
+    // InternalMappingAssistance.g:4336:1: rule__ReplaceConf__VarConfAssignment_5_1_0 : ( ( RULE_ID ) ) ;
+    public final void rule__ReplaceConf__VarConfAssignment_5_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13887,23 +13887,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:4342:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getVarConfVariableCrossReference_5_1_0_0()); 
+               before(grammarAccess.getReplaceConfAccess().getVarConfVariableCrossReference_5_1_0_0()); 
             }
             // InternalMappingAssistance.g:4343:3: ( RULE_ID )
             // InternalMappingAssistance.g:4344:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getVarConfVariableIDTerminalRuleCall_5_1_0_0_1()); 
+               before(grammarAccess.getReplaceConfAccess().getVarConfVariableIDTerminalRuleCall_5_1_0_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getVarConfVariableIDTerminalRuleCall_5_1_0_0_1()); 
+               after(grammarAccess.getReplaceConfAccess().getVarConfVariableIDTerminalRuleCall_5_1_0_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getVarConfVariableCrossReference_5_1_0_0()); 
+               after(grammarAccess.getReplaceConfAccess().getVarConfVariableCrossReference_5_1_0_0()); 
             }
 
             }
@@ -13923,12 +13923,12 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__VarConfAssignment_5_1_0"
+    // $ANTLR end "rule__ReplaceConf__VarConfAssignment_5_1_0"
 
 
-    // $ANTLR start "rule__Conf__InstVarAssignment_5_1_2"
-    // InternalMappingAssistance.g:4355:1: rule__Conf__InstVarAssignment_5_1_2 : ( ( RULE_ID ) ) ;
-    public final void rule__Conf__InstVarAssignment_5_1_2() throws RecognitionException {
+    // $ANTLR start "rule__ReplaceConf__InstVarAssignment_5_1_2"
+    // InternalMappingAssistance.g:4355:1: rule__ReplaceConf__InstVarAssignment_5_1_2 : ( ( RULE_ID ) ) ;
+    public final void rule__ReplaceConf__InstVarAssignment_5_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -13940,23 +13940,23 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
             // InternalMappingAssistance.g:4361:3: ( RULE_ID )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getInstVarVariableCrossReference_5_1_2_0()); 
+               before(grammarAccess.getReplaceConfAccess().getInstVarVariableCrossReference_5_1_2_0()); 
             }
             // InternalMappingAssistance.g:4362:3: ( RULE_ID )
             // InternalMappingAssistance.g:4363:4: RULE_ID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getConfAccess().getInstVarVariableIDTerminalRuleCall_5_1_2_0_1()); 
+               before(grammarAccess.getReplaceConfAccess().getInstVarVariableIDTerminalRuleCall_5_1_2_0_1()); 
             }
             match(input,RULE_ID,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getInstVarVariableIDTerminalRuleCall_5_1_2_0_1()); 
+               after(grammarAccess.getReplaceConfAccess().getInstVarVariableIDTerminalRuleCall_5_1_2_0_1()); 
             }
 
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getConfAccess().getInstVarVariableCrossReference_5_1_2_0()); 
+               after(grammarAccess.getReplaceConfAccess().getInstVarVariableCrossReference_5_1_2_0()); 
             }
 
             }
@@ -13976,7 +13976,7 @@ public class InternalMappingAssistanceParser extends AbstractInternalContentAssi
         }
         return ;
     }
-    // $ANTLR end "rule__Conf__InstVarAssignment_5_1_2"
+    // $ANTLR end "rule__ReplaceConf__InstVarAssignment_5_1_2"
 
 
     // $ANTLR start "rule__Comopnent__NameAssignment_1"

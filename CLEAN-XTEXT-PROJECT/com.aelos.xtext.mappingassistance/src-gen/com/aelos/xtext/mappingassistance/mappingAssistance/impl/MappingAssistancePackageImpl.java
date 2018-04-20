@@ -10,7 +10,6 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistanceFactory;
@@ -19,6 +18,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Type;
@@ -90,7 +90,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass confEClass = null;
+  private EClass replaceConfEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -532,9 +532,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getConf()
+  public EClass getReplaceConf()
   {
-    return confEClass;
+    return replaceConfEClass;
   }
 
   /**
@@ -542,9 +542,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConf_Service()
+  public EReference getReplaceConf_Service()
   {
-    return (EReference)confEClass.getEStructuralFeatures().get(0);
+    return (EReference)replaceConfEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -552,9 +552,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConf_Member()
+  public EReference getReplaceConf_Member()
   {
-    return (EReference)confEClass.getEStructuralFeatures().get(1);
+    return (EReference)replaceConfEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -562,9 +562,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConf_VarConf()
+  public EReference getReplaceConf_VarConf()
   {
-    return (EReference)confEClass.getEStructuralFeatures().get(2);
+    return (EReference)replaceConfEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -572,9 +572,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConf_InstVar()
+  public EReference getReplaceConf_InstVar()
   {
-    return (EReference)confEClass.getEStructuralFeatures().get(3);
+    return (EReference)replaceConfEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1030,11 +1030,11 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     createEReference(mockEClass, MOCK__MEMBER);
     createEReference(mockEClass, MOCK__INTENTION_VAR);
 
-    confEClass = createEClass(CONF);
-    createEReference(confEClass, CONF__SERVICE);
-    createEReference(confEClass, CONF__MEMBER);
-    createEReference(confEClass, CONF__VAR_CONF);
-    createEReference(confEClass, CONF__INST_VAR);
+    replaceConfEClass = createEClass(REPLACE_CONF);
+    createEReference(replaceConfEClass, REPLACE_CONF__SERVICE);
+    createEReference(replaceConfEClass, REPLACE_CONF__MEMBER);
+    createEReference(replaceConfEClass, REPLACE_CONF__VAR_CONF);
+    createEReference(replaceConfEClass, REPLACE_CONF__INST_VAR);
 
     atomicEClass = createEClass(ATOMIC);
 
@@ -1140,7 +1140,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     initEReference(getAbstractModel_Obs(), this.getObserver(), null, "obs", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_Comp(), this.getComopnent(), null, "comp", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_Mock(), this.getMock(), null, "mock", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAbstractModel_Conf(), this.getConf(), null, "conf", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractModel_Conf(), this.getReplaceConf(), null, "conf", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_Bind(), this.getBindings(), null, "bind", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_Inst(), this.getInstanceComp(), null, "inst", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1164,11 +1164,11 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     initEReference(getMock_Member(), theArchitecturePackage.getOperation(), null, "member", null, 0, -1, Mock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMock_IntentionVar(), theTestintentionsAssistancePackage.getVariable(), null, "IntentionVar", null, 0, -1, Mock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(confEClass, Conf.class, "Conf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConf_Service(), theArchitecturePackage.getVariable(), null, "service", null, 0, 1, Conf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConf_Member(), theArchitecturePackage.getOperation(), null, "member", null, 0, 1, Conf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConf_VarConf(), theArchitecturePackage.getVariable(), null, "varConf", null, 0, -1, Conf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConf_InstVar(), theTestintentionsAssistancePackage.getVariable(), null, "instVar", null, 0, -1, Conf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(replaceConfEClass, ReplaceConf.class, "ReplaceConf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReplaceConf_Service(), theArchitecturePackage.getVariable(), null, "service", null, 0, 1, ReplaceConf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReplaceConf_Member(), theArchitecturePackage.getOperation(), null, "member", null, 0, 1, ReplaceConf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReplaceConf_VarConf(), theArchitecturePackage.getVariable(), null, "varConf", null, 0, -1, ReplaceConf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReplaceConf_InstVar(), theTestintentionsAssistancePackage.getVariable(), null, "instVar", null, 0, -1, ReplaceConf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atomicEClass, Atomic.class, "Atomic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

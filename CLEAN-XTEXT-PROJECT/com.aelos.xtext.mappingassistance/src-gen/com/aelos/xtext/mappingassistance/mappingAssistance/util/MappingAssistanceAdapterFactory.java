@@ -8,7 +8,6 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
@@ -17,6 +16,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
@@ -124,9 +124,9 @@ public class MappingAssistanceAdapterFactory extends AdapterFactoryImpl
         return createMockAdapter();
       }
       @Override
-      public Adapter caseConf(Conf object)
+      public Adapter caseReplaceConf(ReplaceConf object)
       {
-        return createConfAdapter();
+        return createReplaceConfAdapter();
       }
       @Override
       public Adapter caseAtomic(Atomic object)
@@ -306,16 +306,16 @@ public class MappingAssistanceAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Conf <em>Conf</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf <em>Replace Conf</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Conf
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf
    * @generated
    */
-  public Adapter createConfAdapter()
+  public Adapter createReplaceConfAdapter()
   {
     return null;
   }

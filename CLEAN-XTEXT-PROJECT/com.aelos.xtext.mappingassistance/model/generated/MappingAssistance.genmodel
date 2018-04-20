@@ -45,11 +45,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Mock/member"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Mock/IntentionVar"/>
     </genClasses>
-    <genClasses ecoreClass="MappingAssistance.ecore#//Conf">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Conf/service"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Conf/member"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Conf/varConf"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//Conf/instVar"/>
+    <genClasses ecoreClass="MappingAssistance.ecore#//ReplaceConf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//ReplaceConf/service"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//ReplaceConf/member"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//ReplaceConf/varConf"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MappingAssistance.ecore#//ReplaceConf/instVar"/>
     </genClasses>
     <genClasses ecoreClass="MappingAssistance.ecore#//Atomic"/>
     <genClasses ecoreClass="MappingAssistance.ecore#//Comopnent">

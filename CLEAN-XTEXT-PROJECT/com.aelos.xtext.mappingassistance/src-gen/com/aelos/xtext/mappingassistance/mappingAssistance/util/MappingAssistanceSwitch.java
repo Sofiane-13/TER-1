@@ -8,7 +8,6 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Conf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
@@ -17,6 +16,7 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.Mock;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Model;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Observer;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
+import com.aelos.xtext.mappingassistance.mappingAssistance.ReplaceConf;
 import com.aelos.xtext.mappingassistance.mappingAssistance.STRING;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
@@ -133,10 +133,10 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MappingAssistancePackage.CONF:
+      case MappingAssistancePackage.REPLACE_CONF:
       {
-        Conf conf = (Conf)theEObject;
-        T result = caseConf(conf);
+        ReplaceConf replaceConf = (ReplaceConf)theEObject;
+        T result = caseReplaceConf(replaceConf);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -337,17 +337,17 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Conf</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Replace Conf</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Conf</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Replace Conf</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseConf(Conf object)
+  public T caseReplaceConf(ReplaceConf object)
   {
     return null;
   }

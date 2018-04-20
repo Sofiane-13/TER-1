@@ -57,18 +57,18 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Assignment cMockAssignment_2_2 = (Assignment)cAlternatives_2.eContents().get(2);
 		private final RuleCall cMockMockParserRuleCall_2_2_0 = (RuleCall)cMockAssignment_2_2.eContents().get(0);
 		private final Assignment cConfAssignment_2_3 = (Assignment)cAlternatives_2.eContents().get(3);
-		private final RuleCall cConfConfParserRuleCall_2_3_0 = (RuleCall)cConfAssignment_2_3.eContents().get(0);
+		private final RuleCall cConfReplaceConfParserRuleCall_2_3_0 = (RuleCall)cConfAssignment_2_3.eContents().get(0);
 		private final Assignment cBindAssignment_2_4 = (Assignment)cAlternatives_2.eContents().get(4);
 		private final RuleCall cBindBindingsParserRuleCall_2_4_0 = (RuleCall)cBindAssignment_2_4.eContents().get(0);
 		private final Assignment cInstAssignment_2_5 = (Assignment)cAlternatives_2.eContents().get(5);
 		private final RuleCall cInstInstanceCompParserRuleCall_2_5_0 = (RuleCall)cInstAssignment_2_5.eContents().get(0);
 		
 		//AbstractModel:
-		//	im+=Import+ testDr+=TestDriver (obs+=Observer | comp+=Comopnent | mock+=Mock | conf+=Conf | bind+=Bindings |
+		//	im+=Import+ testDr+=TestDriver (obs+=Observer | comp+=Comopnent | mock+=Mock | conf+=ReplaceConf | bind+=Bindings |
 		//	inst+=InstanceComp)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//im+=Import+ testDr+=TestDriver (obs+=Observer | comp+=Comopnent | mock+=Mock | conf+=Conf | bind+=Bindings |
+		//im+=Import+ testDr+=TestDriver (obs+=Observer | comp+=Comopnent | mock+=Mock | conf+=ReplaceConf | bind+=Bindings |
 		//inst+=InstanceComp)*
 		public Group getGroup() { return cGroup; }
 		
@@ -84,7 +84,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//TestDriver
 		public RuleCall getTestDrTestDriverParserRuleCall_1_0() { return cTestDrTestDriverParserRuleCall_1_0; }
 		
-		//(obs+=Observer | comp+=Comopnent | mock+=Mock | conf+=Conf | bind+=Bindings | inst+=InstanceComp)*
+		//(obs+=Observer | comp+=Comopnent | mock+=Mock | conf+=ReplaceConf | bind+=Bindings | inst+=InstanceComp)*
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
 		//obs+=Observer
@@ -105,11 +105,11 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//Mock
 		public RuleCall getMockMockParserRuleCall_2_2_0() { return cMockMockParserRuleCall_2_2_0; }
 		
-		//conf+=Conf
+		//conf+=ReplaceConf
 		public Assignment getConfAssignment_2_3() { return cConfAssignment_2_3; }
 		
-		//Conf
-		public RuleCall getConfConfParserRuleCall_2_3_0() { return cConfConfParserRuleCall_2_3_0; }
+		//ReplaceConf
+		public RuleCall getConfReplaceConfParserRuleCall_2_3_0() { return cConfReplaceConfParserRuleCall_2_3_0; }
 		
 		//bind+=Bindings
 		public Assignment getBindAssignment_2_4() { return cBindAssignment_2_4; }
@@ -471,8 +471,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//ID
 		public RuleCall getIntentionVarVariableIDTerminalRuleCall_5_0_1() { return cIntentionVarVariableIDTerminalRuleCall_5_0_1; }
 	}
-	public class ConfElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.mappingassistance.MappingAssistance.Conf");
+	public class ReplaceConfElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.mappingassistance.MappingAssistance.ReplaceConf");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cReplaceConfKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cServiceAssignment_1 = (Assignment)cGroup.eContents().get(1);
@@ -503,7 +503,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final RuleCall cInstVarVariableIDTerminalRuleCall_5_1_2_0_1 = (RuleCall)cInstVarVariableCrossReference_5_1_2_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
-		//Conf:
+		//ReplaceConf:
 		//	"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] ":="
 		//	instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]))* ")";
 		@Override public ParserRule getRule() { return rule; }
@@ -1275,7 +1275,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	private final TestDriverElements pTestDriver;
 	private final ObserverElements pObserver;
 	private final MockElements pMock;
-	private final ConfElements pConf;
+	private final ReplaceConfElements pReplaceConf;
 	private final AtomicElements pAtomic;
 	private final ComopnentElements pComopnent;
 	private final TestOPElements pTestOP;
@@ -1305,7 +1305,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		this.pTestDriver = new TestDriverElements();
 		this.pObserver = new ObserverElements();
 		this.pMock = new MockElements();
-		this.pConf = new ConfElements();
+		this.pReplaceConf = new ReplaceConfElements();
 		this.pAtomic = new AtomicElements();
 		this.pComopnent = new ComopnentElements();
 		this.pTestOP = new TestOPElements();
@@ -1357,7 +1357,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//AbstractModel:
-	//	im+=Import+ testDr+=TestDriver (obs+=Observer | comp+=Comopnent | mock+=Mock | conf+=Conf | bind+=Bindings |
+	//	im+=Import+ testDr+=TestDriver (obs+=Observer | comp+=Comopnent | mock+=Mock | conf+=ReplaceConf | bind+=Bindings |
 	//	inst+=InstanceComp)*;
 	public AbstractModelElements getAbstractModelAccess() {
 		return pAbstractModel;
@@ -1430,15 +1430,15 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		return getMockAccess().getRule();
 	}
 	
-	//Conf:
+	//ReplaceConf:
 	//	"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] ":="
 	//	instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]))* ")";
-	public ConfElements getConfAccess() {
-		return pConf;
+	public ReplaceConfElements getReplaceConfAccess() {
+		return pReplaceConf;
 	}
 	
-	public ParserRule getConfRule() {
-		return getConfAccess().getRule();
+	public ParserRule getReplaceConfRule() {
+		return getReplaceConfAccess().getRule();
 	}
 	
 	//Atomic:
