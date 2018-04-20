@@ -202,17 +202,17 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Assignment cOutVarAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
 		private final CrossReference cOutVarVariableCrossReference_3_0_0 = (CrossReference)cOutVarAssignment_3_0.eContents().get(0);
 		private final RuleCall cOutVarVariableIDTerminalRuleCall_3_0_0_1 = (RuleCall)cOutVarVariableCrossReference_3_0_0.eContents().get(1);
-		private final Keyword cColonEqualsSignKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Keyword cLessThanSignHyphenMinusKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Assignment cTestOpAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cTestOpTestOPParserRuleCall_3_2_0 = (RuleCall)cTestOpAssignment_3_2.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//TestDriver:
-		//	{TestDriver} "TestDriver" "{" (outVar+=[testIntention::Variable] ":=" testOp+=TestOP)*
+		//	{TestDriver} "TestDriver" "{" (outVar+=[testIntention::Variable] "<-" testOp+=TestOP)*
 		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TestDriver} "TestDriver" "{" (outVar+=[testIntention::Variable] ":=" testOp+=TestOP)* "}"
+		//{TestDriver} "TestDriver" "{" (outVar+=[testIntention::Variable] "<-" testOp+=TestOP)* "}"
 		public Group getGroup() { return cGroup; }
 		
 		//{TestDriver}
@@ -224,7 +224,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//(outVar+=[testIntention::Variable] ":=" testOp+=TestOP)*
+		//(outVar+=[testIntention::Variable] "<-" testOp+=TestOP)*
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//outVar+=[testIntention::Variable]
@@ -236,8 +236,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//ID
 		public RuleCall getOutVarVariableIDTerminalRuleCall_3_0_0_1() { return cOutVarVariableIDTerminalRuleCall_3_0_0_1; }
 		
-		//":="
-		public Keyword getColonEqualsSignKeyword_3_1() { return cColonEqualsSignKeyword_3_1; }
+		//"<-"
+		public Keyword getLessThanSignHyphenMinusKeyword_3_1() { return cLessThanSignHyphenMinusKeyword_3_1; }
 		
 		//testOp+=TestOP
 		public Assignment getTestOpAssignment_3_2() { return cTestOpAssignment_3_2; }
@@ -265,7 +265,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Assignment cInstVarAssignment_5_0_0 = (Assignment)cGroup_5_0.eContents().get(0);
 		private final CrossReference cInstVarVariableCrossReference_5_0_0_0 = (CrossReference)cInstVarAssignment_5_0_0.eContents().get(0);
 		private final RuleCall cInstVarVariableIDTerminalRuleCall_5_0_0_0_1 = (RuleCall)cInstVarVariableCrossReference_5_0_0_0.eContents().get(1);
-		private final Keyword cColonEqualsSignKeyword_5_0_1 = (Keyword)cGroup_5_0.eContents().get(1);
+		private final Keyword cLessThanSignHyphenMinusKeyword_5_0_1 = (Keyword)cGroup_5_0.eContents().get(1);
 		private final Assignment cVarOpAssignment_5_0_2 = (Assignment)cGroup_5_0.eContents().get(2);
 		private final CrossReference cVarOpVariableCrossReference_5_0_2_0 = (CrossReference)cVarOpAssignment_5_0_2.eContents().get(0);
 		private final RuleCall cVarOpVariableIDTerminalRuleCall_5_0_2_0_1 = (RuleCall)cVarOpVariableCrossReference_5_0_2_0.eContents().get(1);
@@ -274,12 +274,12 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Assignment cInstVarAssignment_5_1_0 = (Assignment)cGroup_5_1.eContents().get(0);
 		private final CrossReference cInstVarVariableCrossReference_5_1_0_0 = (CrossReference)cInstVarAssignment_5_1_0.eContents().get(0);
 		private final RuleCall cInstVarVariableIDTerminalRuleCall_5_1_0_0_1 = (RuleCall)cInstVarVariableCrossReference_5_1_0_0.eContents().get(1);
-		private final Keyword cColonEqualsSignKeyword_5_1_1 = (Keyword)cGroup_5_1.eContents().get(1);
+		private final Keyword cLessThanSignHyphenMinusKeyword_5_1_1 = (Keyword)cGroup_5_1.eContents().get(1);
 		private final Assignment cVarOpAssignment_5_1_2 = (Assignment)cGroup_5_1.eContents().get(2);
 		private final CrossReference cVarOpVariableCrossReference_5_1_2_0 = (CrossReference)cVarOpAssignment_5_1_2.eContents().get(0);
 		private final RuleCall cVarOpVariableIDTerminalRuleCall_5_1_2_0_1 = (RuleCall)cVarOpVariableCrossReference_5_1_2_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cLeftParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cHyphenMinusKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cService2Assignment_8 = (Assignment)cGroup.eContents().get(8);
 		private final CrossReference cService2VariableCrossReference_8_0 = (CrossReference)cService2Assignment_8.eContents().get(0);
 		private final RuleCall cService2VariableIDTerminalRuleCall_8_0_1 = (RuleCall)cService2VariableCrossReference_8_0.eContents().get(1);
@@ -287,17 +287,16 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Assignment cMember2Assignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final CrossReference cMember2OperationCrossReference_10_0 = (CrossReference)cMember2Assignment_10.eContents().get(0);
 		private final RuleCall cMember2OperationIDTerminalRuleCall_10_0_1 = (RuleCall)cMember2OperationCrossReference_10_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Observer:
-		//	"observer:" service1=[arch::Variable] '.' member1=[arch::Operation] "(" ((instVar+=[testIntention::Variable] ":="
-		//	varOp+=[arch::Variable] ",")* (instVar+=[testIntention::Variable] ":=" varOp+=[arch::Variable]))* ")" "("
-		//	service2=[arch::Variable] '.' member2=[arch::Operation] ")";
+		//	"observer:" service1=[arch::Variable] '.' member1=[arch::Operation] "(" ((instVar+=[testIntention::Variable] "<-"
+		//	varOp+=[arch::Variable] ",")* (instVar+=[testIntention::Variable] "<-" varOp+=[arch::Variable]))* ")" "-"
+		//	service2=[arch::Variable] '.' member2=[arch::Operation];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"observer:" service1=[arch::Variable] '.' member1=[arch::Operation] "(" ((instVar+=[testIntention::Variable] ":="
-		//varOp+=[arch::Variable] ",")* (instVar+=[testIntention::Variable] ":=" varOp+=[arch::Variable]))* ")" "("
-		//service2=[arch::Variable] '.' member2=[arch::Operation] ")"
+		//"observer:" service1=[arch::Variable] '.' member1=[arch::Operation] "(" ((instVar+=[testIntention::Variable] "<-"
+		//varOp+=[arch::Variable] ",")* (instVar+=[testIntention::Variable] "<-" varOp+=[arch::Variable]))* ")" "-"
+		//service2=[arch::Variable] '.' member2=[arch::Operation]
 		public Group getGroup() { return cGroup; }
 		
 		//"observer:"
@@ -327,11 +326,11 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//"("
 		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
 		
-		//((instVar+=[testIntention::Variable] ":=" varOp+=[arch::Variable] ",")* (instVar+=[testIntention::Variable] ":="
+		//((instVar+=[testIntention::Variable] "<-" varOp+=[arch::Variable] ",")* (instVar+=[testIntention::Variable] "<-"
 		//varOp+=[arch::Variable]))*
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//(instVar+=[testIntention::Variable] ":=" varOp+=[arch::Variable] ",")*
+		//(instVar+=[testIntention::Variable] "<-" varOp+=[arch::Variable] ",")*
 		public Group getGroup_5_0() { return cGroup_5_0; }
 		
 		//instVar+=[testIntention::Variable]
@@ -343,8 +342,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//ID
 		public RuleCall getInstVarVariableIDTerminalRuleCall_5_0_0_0_1() { return cInstVarVariableIDTerminalRuleCall_5_0_0_0_1; }
 		
-		//":="
-		public Keyword getColonEqualsSignKeyword_5_0_1() { return cColonEqualsSignKeyword_5_0_1; }
+		//"<-"
+		public Keyword getLessThanSignHyphenMinusKeyword_5_0_1() { return cLessThanSignHyphenMinusKeyword_5_0_1; }
 		
 		//varOp+=[arch::Variable]
 		public Assignment getVarOpAssignment_5_0_2() { return cVarOpAssignment_5_0_2; }
@@ -358,7 +357,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//","
 		public Keyword getCommaKeyword_5_0_3() { return cCommaKeyword_5_0_3; }
 		
-		//instVar+=[testIntention::Variable] ":=" varOp+=[arch::Variable]
+		//instVar+=[testIntention::Variable] "<-" varOp+=[arch::Variable]
 		public Group getGroup_5_1() { return cGroup_5_1; }
 		
 		//instVar+=[testIntention::Variable]
@@ -370,8 +369,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//ID
 		public RuleCall getInstVarVariableIDTerminalRuleCall_5_1_0_0_1() { return cInstVarVariableIDTerminalRuleCall_5_1_0_0_1; }
 		
-		//":="
-		public Keyword getColonEqualsSignKeyword_5_1_1() { return cColonEqualsSignKeyword_5_1_1; }
+		//"<-"
+		public Keyword getLessThanSignHyphenMinusKeyword_5_1_1() { return cLessThanSignHyphenMinusKeyword_5_1_1; }
 		
 		//varOp+=[arch::Variable]
 		public Assignment getVarOpAssignment_5_1_2() { return cVarOpAssignment_5_1_2; }
@@ -385,8 +384,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//")"
 		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 		
-		//"("
-		public Keyword getLeftParenthesisKeyword_7() { return cLeftParenthesisKeyword_7; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_7() { return cHyphenMinusKeyword_7; }
 		
 		//service2=[arch::Variable]
 		public Assignment getService2Assignment_8() { return cService2Assignment_8; }
@@ -408,9 +407,6 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		
 		//ID
 		public RuleCall getMember2OperationIDTerminalRuleCall_10_0_1() { return cMember2OperationIDTerminalRuleCall_10_0_1; }
-		
-		//")"
-		public Keyword getRightParenthesisKeyword_11() { return cRightParenthesisKeyword_11; }
 	}
 	public class MockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.mappingassistance.MappingAssistance.Mock");
@@ -423,16 +419,16 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Assignment cMemberAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cMemberOperationCrossReference_3_0 = (CrossReference)cMemberAssignment_3.eContents().get(0);
 		private final RuleCall cMemberOperationIDTerminalRuleCall_3_0_1 = (RuleCall)cMemberOperationCrossReference_3_0.eContents().get(1);
-		private final Keyword cColonEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLessThanSignHyphenMinusKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cIntentionVarAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cIntentionVarVariableCrossReference_5_0 = (CrossReference)cIntentionVarAssignment_5.eContents().get(0);
 		private final RuleCall cIntentionVarVariableIDTerminalRuleCall_5_0_1 = (RuleCall)cIntentionVarVariableCrossReference_5_0.eContents().get(1);
 		
 		//Mock:
-		//	"mock:" service=[arch::Variable] '.' member+=[arch::Operation] ":=" IntentionVar+=[testIntention::Variable];
+		//	"mock:" service=[arch::Variable] '.' member+=[arch::Operation] "<-" IntentionVar+=[testIntention::Variable];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"mock:" service=[arch::Variable] '.' member+=[arch::Operation] ":=" IntentionVar+=[testIntention::Variable]
+		//"mock:" service=[arch::Variable] '.' member+=[arch::Operation] "<-" IntentionVar+=[testIntention::Variable]
 		public Group getGroup() { return cGroup; }
 		
 		//"mock:"
@@ -459,8 +455,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//ID
 		public RuleCall getMemberOperationIDTerminalRuleCall_3_0_1() { return cMemberOperationIDTerminalRuleCall_3_0_1; }
 		
-		//":="
-		public Keyword getColonEqualsSignKeyword_4() { return cColonEqualsSignKeyword_4; }
+		//"<-"
+		public Keyword getLessThanSignHyphenMinusKeyword_4() { return cLessThanSignHyphenMinusKeyword_4; }
 		
 		//IntentionVar+=[testIntention::Variable]
 		public Assignment getIntentionVarAssignment_5() { return cIntentionVarAssignment_5; }
@@ -488,7 +484,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Assignment cVarConfAssignment_5_0_0 = (Assignment)cGroup_5_0.eContents().get(0);
 		private final CrossReference cVarConfVariableCrossReference_5_0_0_0 = (CrossReference)cVarConfAssignment_5_0_0.eContents().get(0);
 		private final RuleCall cVarConfVariableIDTerminalRuleCall_5_0_0_0_1 = (RuleCall)cVarConfVariableCrossReference_5_0_0_0.eContents().get(1);
-		private final Keyword cColonEqualsSignKeyword_5_0_1 = (Keyword)cGroup_5_0.eContents().get(1);
+		private final Keyword cLessThanSignHyphenMinusKeyword_5_0_1 = (Keyword)cGroup_5_0.eContents().get(1);
 		private final Assignment cInstVarAssignment_5_0_2 = (Assignment)cGroup_5_0.eContents().get(2);
 		private final CrossReference cInstVarVariableCrossReference_5_0_2_0 = (CrossReference)cInstVarAssignment_5_0_2.eContents().get(0);
 		private final RuleCall cInstVarVariableIDTerminalRuleCall_5_0_2_0_1 = (RuleCall)cInstVarVariableCrossReference_5_0_2_0.eContents().get(1);
@@ -497,19 +493,19 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Assignment cVarConfAssignment_5_1_0 = (Assignment)cGroup_5_1.eContents().get(0);
 		private final CrossReference cVarConfVariableCrossReference_5_1_0_0 = (CrossReference)cVarConfAssignment_5_1_0.eContents().get(0);
 		private final RuleCall cVarConfVariableIDTerminalRuleCall_5_1_0_0_1 = (RuleCall)cVarConfVariableCrossReference_5_1_0_0.eContents().get(1);
-		private final Keyword cColonEqualsSignKeyword_5_1_1 = (Keyword)cGroup_5_1.eContents().get(1);
+		private final Keyword cLessThanSignHyphenMinusKeyword_5_1_1 = (Keyword)cGroup_5_1.eContents().get(1);
 		private final Assignment cInstVarAssignment_5_1_2 = (Assignment)cGroup_5_1.eContents().get(2);
 		private final CrossReference cInstVarVariableCrossReference_5_1_2_0 = (CrossReference)cInstVarAssignment_5_1_2.eContents().get(0);
 		private final RuleCall cInstVarVariableIDTerminalRuleCall_5_1_2_0_1 = (RuleCall)cInstVarVariableCrossReference_5_1_2_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ReplaceConf:
-		//	"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] ":="
-		//	instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]))* ")";
+		//	"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] "<-"
+		//	instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] "<-" instVar+=[testIntention::Variable]))* ")";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] ":="
-		//instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]))* ")"
+		//"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] "<-"
+		//instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] "<-" instVar+=[testIntention::Variable]))* ")"
 		public Group getGroup() { return cGroup; }
 		
 		//"replaceConf:"
@@ -539,11 +535,11 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//"("
 		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
 		
-		//((varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":="
+		//((varConf+=[arch::Variable] "<-" instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] "<-"
 		//instVar+=[testIntention::Variable]))*
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//(varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable] ",")*
+		//(varConf+=[arch::Variable] "<-" instVar+=[testIntention::Variable] ",")*
 		public Group getGroup_5_0() { return cGroup_5_0; }
 		
 		//varConf+=[arch::Variable]
@@ -555,8 +551,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//ID
 		public RuleCall getVarConfVariableIDTerminalRuleCall_5_0_0_0_1() { return cVarConfVariableIDTerminalRuleCall_5_0_0_0_1; }
 		
-		//":="
-		public Keyword getColonEqualsSignKeyword_5_0_1() { return cColonEqualsSignKeyword_5_0_1; }
+		//"<-"
+		public Keyword getLessThanSignHyphenMinusKeyword_5_0_1() { return cLessThanSignHyphenMinusKeyword_5_0_1; }
 		
 		//instVar+=[testIntention::Variable]
 		public Assignment getInstVarAssignment_5_0_2() { return cInstVarAssignment_5_0_2; }
@@ -570,7 +566,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//","
 		public Keyword getCommaKeyword_5_0_3() { return cCommaKeyword_5_0_3; }
 		
-		//varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]
+		//varConf+=[arch::Variable] "<-" instVar+=[testIntention::Variable]
 		public Group getGroup_5_1() { return cGroup_5_1; }
 		
 		//varConf+=[arch::Variable]
@@ -582,8 +578,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//ID
 		public RuleCall getVarConfVariableIDTerminalRuleCall_5_1_0_0_1() { return cVarConfVariableIDTerminalRuleCall_5_1_0_0_1; }
 		
-		//":="
-		public Keyword getColonEqualsSignKeyword_5_1_1() { return cColonEqualsSignKeyword_5_1_1; }
+		//"<-"
+		public Keyword getLessThanSignHyphenMinusKeyword_5_1_1() { return cLessThanSignHyphenMinusKeyword_5_1_1; }
 		
 		//instVar+=[testIntention::Variable]
 		public Assignment getInstVarAssignment_5_1_2() { return cInstVarAssignment_5_1_2; }
@@ -1398,7 +1394,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//TestDriver:
-	//	{TestDriver} "TestDriver" "{" (outVar+=[testIntention::Variable] ":=" testOp+=TestOP)*
+	//	{TestDriver} "TestDriver" "{" (outVar+=[testIntention::Variable] "<-" testOp+=TestOP)*
 	//	"}";
 	public TestDriverElements getTestDriverAccess() {
 		return pTestDriver;
@@ -1409,9 +1405,9 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//Observer:
-	//	"observer:" service1=[arch::Variable] '.' member1=[arch::Operation] "(" ((instVar+=[testIntention::Variable] ":="
-	//	varOp+=[arch::Variable] ",")* (instVar+=[testIntention::Variable] ":=" varOp+=[arch::Variable]))* ")" "("
-	//	service2=[arch::Variable] '.' member2=[arch::Operation] ")";
+	//	"observer:" service1=[arch::Variable] '.' member1=[arch::Operation] "(" ((instVar+=[testIntention::Variable] "<-"
+	//	varOp+=[arch::Variable] ",")* (instVar+=[testIntention::Variable] "<-" varOp+=[arch::Variable]))* ")" "-"
+	//	service2=[arch::Variable] '.' member2=[arch::Operation];
 	public ObserverElements getObserverAccess() {
 		return pObserver;
 	}
@@ -1421,7 +1417,7 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//Mock:
-	//	"mock:" service=[arch::Variable] '.' member+=[arch::Operation] ":=" IntentionVar+=[testIntention::Variable];
+	//	"mock:" service=[arch::Variable] '.' member+=[arch::Operation] "<-" IntentionVar+=[testIntention::Variable];
 	public MockElements getMockAccess() {
 		return pMock;
 	}
@@ -1431,8 +1427,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//ReplaceConf:
-	//	"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] ":="
-	//	instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] ":=" instVar+=[testIntention::Variable]))* ")";
+	//	"replaceConf:" service=[arch::Variable] '.' member=[arch::Operation] "(" ((varConf+=[arch::Variable] "<-"
+	//	instVar+=[testIntention::Variable] ",")* (varConf+=[arch::Variable] "<-" instVar+=[testIntention::Variable]))* ")";
 	public ReplaceConfElements getReplaceConfAccess() {
 		return pReplaceConf;
 	}

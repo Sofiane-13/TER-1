@@ -596,9 +596,9 @@ ruleArchitecture returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_5=':'
+			otherlv_5='-'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getArchitectureAccess().getColonKeyword_3_2());
+				newLeafNode(otherlv_5, grammarAccess.getArchitectureAccess().getHyphenMinusKeyword_3_2());
 			}
 			(
 				(

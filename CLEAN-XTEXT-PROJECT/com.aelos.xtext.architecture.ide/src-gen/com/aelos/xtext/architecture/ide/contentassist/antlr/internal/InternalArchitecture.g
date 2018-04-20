@@ -1627,9 +1627,9 @@ rule__Architecture__Group_3__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getArchitectureAccess().getColonKeyword_3_2()); }
-	':'
-	{ after(grammarAccess.getArchitectureAccess().getColonKeyword_3_2()); }
+	{ before(grammarAccess.getArchitectureAccess().getHyphenMinusKeyword_3_2()); }
+	'-'
+	{ after(grammarAccess.getArchitectureAccess().getHyphenMinusKeyword_3_2()); }
 )
 ;
 finally {

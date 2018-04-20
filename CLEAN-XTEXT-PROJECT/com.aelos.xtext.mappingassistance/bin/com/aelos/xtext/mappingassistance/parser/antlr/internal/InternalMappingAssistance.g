@@ -438,9 +438,9 @@ ruleTestDriver returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_4=':='
+			otherlv_4='<-'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getTestDriverAccess().getColonEqualsSignKeyword_3_1());
+				newLeafNode(otherlv_4, grammarAccess.getTestDriverAccess().getLessThanSignHyphenMinusKeyword_3_1());
 			}
 			(
 				(
@@ -538,9 +538,9 @@ ruleObserver returns [EObject current=null]
 						}
 					)
 				)
-				otherlv_6=':='
+				otherlv_6='<-'
 				{
-					newLeafNode(otherlv_6, grammarAccess.getObserverAccess().getColonEqualsSignKeyword_5_0_1());
+					newLeafNode(otherlv_6, grammarAccess.getObserverAccess().getLessThanSignHyphenMinusKeyword_5_0_1());
 				}
 				(
 					(
@@ -574,9 +574,9 @@ ruleObserver returns [EObject current=null]
 						}
 					)
 				)
-				otherlv_10=':='
+				otherlv_10='<-'
 				{
-					newLeafNode(otherlv_10, grammarAccess.getObserverAccess().getColonEqualsSignKeyword_5_1_1());
+					newLeafNode(otherlv_10, grammarAccess.getObserverAccess().getLessThanSignHyphenMinusKeyword_5_1_1());
 				}
 				(
 					(
@@ -597,9 +597,9 @@ ruleObserver returns [EObject current=null]
 		{
 			newLeafNode(otherlv_12, grammarAccess.getObserverAccess().getRightParenthesisKeyword_6());
 		}
-		otherlv_13='('
+		otherlv_13='-'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getObserverAccess().getLeftParenthesisKeyword_7());
+			newLeafNode(otherlv_13, grammarAccess.getObserverAccess().getHyphenMinusKeyword_7());
 		}
 		(
 			(
@@ -631,10 +631,6 @@ ruleObserver returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_17=')'
-		{
-			newLeafNode(otherlv_17, grammarAccess.getObserverAccess().getRightParenthesisKeyword_11());
-		}
 	)
 ;
 
@@ -688,9 +684,9 @@ ruleMock returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=':='
+		otherlv_4='<-'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMockAccess().getColonEqualsSignKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getMockAccess().getLessThanSignHyphenMinusKeyword_4());
 		}
 		(
 			(
@@ -777,9 +773,9 @@ ruleReplaceConf returns [EObject current=null]
 						}
 					)
 				)
-				otherlv_6=':='
+				otherlv_6='<-'
 				{
-					newLeafNode(otherlv_6, grammarAccess.getReplaceConfAccess().getColonEqualsSignKeyword_5_0_1());
+					newLeafNode(otherlv_6, grammarAccess.getReplaceConfAccess().getLessThanSignHyphenMinusKeyword_5_0_1());
 				}
 				(
 					(
@@ -813,9 +809,9 @@ ruleReplaceConf returns [EObject current=null]
 						}
 					)
 				)
-				otherlv_10=':='
+				otherlv_10='<-'
 				{
-					newLeafNode(otherlv_10, grammarAccess.getReplaceConfAccess().getColonEqualsSignKeyword_5_1_1());
+					newLeafNode(otherlv_10, grammarAccess.getReplaceConfAccess().getLessThanSignHyphenMinusKeyword_5_1_1());
 				}
 				(
 					(

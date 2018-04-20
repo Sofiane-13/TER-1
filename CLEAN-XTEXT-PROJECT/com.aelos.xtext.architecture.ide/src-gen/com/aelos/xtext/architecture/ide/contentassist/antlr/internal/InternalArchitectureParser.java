@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalArchitectureParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'INT'", "'STRING'", "'Boolean'", "'Double'", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "')'", "'requeredServices'", "','", "'ArchitectureDefinition'", "'bind'", "':'", "'def'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'INT'", "'STRING'", "'Boolean'", "'Double'", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "')'", "'requeredServices'", "','", "'ArchitectureDefinition'", "'bind'", "'-'", "':'", "'def'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -38,6 +38,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
+    public static final int T__31=31;
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -3860,7 +3861,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==30) ) {
+                if ( (LA12_0==31) ) {
                     alt12=1;
                 }
 
@@ -5359,24 +5360,24 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
 
 
     // $ANTLR start "rule__Architecture__Group_3__2__Impl"
-    // InternalArchitecture.g:1624:1: rule__Architecture__Group_3__2__Impl : ( ':' ) ;
+    // InternalArchitecture.g:1624:1: rule__Architecture__Group_3__2__Impl : ( '-' ) ;
     public final void rule__Architecture__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalArchitecture.g:1628:1: ( ( ':' ) )
-            // InternalArchitecture.g:1629:1: ( ':' )
+            // InternalArchitecture.g:1628:1: ( ( '-' ) )
+            // InternalArchitecture.g:1629:1: ( '-' )
             {
-            // InternalArchitecture.g:1629:1: ( ':' )
-            // InternalArchitecture.g:1630:2: ':'
+            // InternalArchitecture.g:1629:1: ( '-' )
+            // InternalArchitecture.g:1630:2: '-'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getArchitectureAccess().getColonKeyword_3_2()); 
+               before(grammarAccess.getArchitectureAccess().getHyphenMinusKeyword_3_2()); 
             }
             match(input,29,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getArchitectureAccess().getColonKeyword_3_2()); 
+               after(grammarAccess.getArchitectureAccess().getHyphenMinusKeyword_3_2()); 
             }
 
             }
@@ -5745,7 +5746,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             // InternalArchitecture.g:1751:1: ( rule__Variable__Group__0__Impl rule__Variable__Group__1 )
             // InternalArchitecture.g:1752:2: rule__Variable__Group__0__Impl rule__Variable__Group__1
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_25);
             rule__Variable__Group__0__Impl();
 
             state._fsp--;
@@ -5834,7 +5835,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             // InternalArchitecture.g:1778:1: ( rule__Variable__Group__1__Impl rule__Variable__Group__2 )
             // InternalArchitecture.g:1779:2: rule__Variable__Group__1__Impl rule__Variable__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_26);
             rule__Variable__Group__1__Impl();
 
             state._fsp--;
@@ -5878,7 +5879,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             if ( state.backtracking==0 ) {
                before(grammarAccess.getVariableAccess().getColonKeyword_1()); 
             }
-            match(input,29,FOLLOW_2); if (state.failed) return ;
+            match(input,30,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getVariableAccess().getColonKeyword_1()); 
             }
@@ -6041,7 +6042,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationAccess().getDefKeyword_0()); 
             }
-            match(input,30,FOLLOW_2); if (state.failed) return ;
+            match(input,31,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOperationAccess().getDefKeyword_0()); 
             }
@@ -6351,7 +6352,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             // InternalArchitecture.g:1940:1: ( rule__Operation__Group__4__Impl rule__Operation__Group__5 )
             // InternalArchitecture.g:1941:2: rule__Operation__Group__4__Impl rule__Operation__Group__5
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_25);
             rule__Operation__Group__4__Impl();
 
             state._fsp--;
@@ -6430,7 +6431,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             // InternalArchitecture.g:1967:1: ( rule__Operation__Group__5__Impl rule__Operation__Group__6 )
             // InternalArchitecture.g:1968:2: rule__Operation__Group__5__Impl rule__Operation__Group__6
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_26);
             rule__Operation__Group__5__Impl();
 
             state._fsp--;
@@ -6474,7 +6475,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             if ( state.backtracking==0 ) {
                before(grammarAccess.getOperationAccess().getColonKeyword_5()); 
             }
-            match(input,29,FOLLOW_2); if (state.failed) return ;
+            match(input,30,FOLLOW_2); if (state.failed) return ;
             if ( state.backtracking==0 ) {
                after(grammarAccess.getOperationAccess().getColonKeyword_5()); 
             }
@@ -8181,8 +8182,8 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
     protected DFA18 dfa18 = new DFA18(this);
     static final String dfa_1s = "\43\uffff";
     static final String dfa_2s = "\1\1\42\uffff";
-    static final String dfa_3s = "\1\21\1\uffff\1\4\1\20\1\26\1\27\2\4\1\31\1\4\1\27\2\4\1\21\2\4\1\0\1\27\1\uffff\1\4\2\35\7\4\5\21\1\4";
-    static final String dfa_4s = "\1\33\1\uffff\1\4\1\20\1\26\1\27\1\30\1\32\1\31\1\4\1\27\1\30\1\32\1\36\2\4\1\0\1\27\1\uffff\1\30\2\35\2\16\5\32\5\36\1\4";
+    static final String dfa_3s = "\1\21\1\uffff\1\4\1\20\1\26\1\27\2\4\1\31\1\4\1\27\2\4\1\21\2\4\1\0\1\27\1\uffff\1\4\2\36\7\4\5\21\1\4";
+    static final String dfa_4s = "\1\33\1\uffff\1\4\1\20\1\26\1\27\1\30\1\32\1\31\1\4\1\27\1\30\1\32\1\37\2\4\1\0\1\27\1\uffff\1\30\2\36\2\16\5\32\5\37\1\4";
     static final String dfa_5s = "\1\uffff\1\2\20\uffff\1\1\20\uffff";
     static final String dfa_6s = "\20\uffff\1\0\22\uffff}>";
     static final String[] dfa_7s = {
@@ -8199,7 +8200,7 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             "\1\13",
             "\1\14\23\uffff\1\15",
             "\1\14\23\uffff\1\15\1\uffff\1\16",
-            "\1\20\14\uffff\1\17",
+            "\1\20\15\uffff\1\17",
             "\1\14",
             "\1\21",
             "\1\uffff",
@@ -8215,11 +8216,11 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
             "\1\24\23\uffff\1\25\1\uffff\1\42",
             "\1\24\23\uffff\1\25\1\uffff\1\42",
             "\1\24\23\uffff\1\25\1\uffff\1\42",
-            "\1\20\14\uffff\1\17",
-            "\1\20\14\uffff\1\17",
-            "\1\20\14\uffff\1\17",
-            "\1\20\14\uffff\1\17",
-            "\1\20\14\uffff\1\17",
+            "\1\20\15\uffff\1\17",
+            "\1\20\15\uffff\1\17",
+            "\1\20\15\uffff\1\17",
+            "\1\20\15\uffff\1\17",
+            "\1\20\15\uffff\1\17",
             "\1\24"
     };
 
@@ -8276,8 +8277,8 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
     }
     static final String dfa_8s = "\12\uffff";
     static final String dfa_9s = "\3\uffff\5\11\2\uffff";
-    static final String dfa_10s = "\1\4\1\35\6\4\2\uffff";
-    static final String dfa_11s = "\1\4\1\35\1\16\5\32\2\uffff";
+    static final String dfa_10s = "\1\4\1\36\6\4\2\uffff";
+    static final String dfa_11s = "\1\4\1\36\1\16\5\32\2\uffff";
     static final String dfa_12s = "\10\uffff\1\1\1\2";
     static final String dfa_13s = "\12\uffff}>";
     static final String[] dfa_14s = {
@@ -8338,12 +8339,13 @@ public class InternalArchitectureParser extends AbstractInternalContentAssistPar
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000010L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000040020000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000080020000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000080000002L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000010000010L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000010000002L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000007810L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000007810L});
 
 }

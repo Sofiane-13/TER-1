@@ -352,16 +352,16 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBindKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cReceiverAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cReceiverCallParserRuleCall_3_1_0 = (RuleCall)cReceiverAssignment_3_1.eContents().get(0);
-		private final Keyword cColonKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Keyword cHyphenMinusKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		private final Assignment cProviderAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
 		private final RuleCall cProviderCallParserRuleCall_3_3_0 = (RuleCall)cProviderAssignment_3_3.eContents().get(0);
 		
 		//Architecture:
 		//	{Architecture} "ArchitectureDefinition"
-		//	vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*;
+		//	vars+=Variable* ("bind" receiver+=Call "-" provider+=Call)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Architecture} "ArchitectureDefinition" vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*
+		//{Architecture} "ArchitectureDefinition" vars+=Variable* ("bind" receiver+=Call "-" provider+=Call)*
 		public Group getGroup() { return cGroup; }
 		
 		//{Architecture}
@@ -376,7 +376,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//Variable
 		public RuleCall getVarsVariableParserRuleCall_2_0() { return cVarsVariableParserRuleCall_2_0; }
 		
-		//("bind" receiver+=Call ":" provider+=Call)*
+		//("bind" receiver+=Call "-" provider+=Call)*
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//"bind"
@@ -388,8 +388,8 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//Call
 		public RuleCall getReceiverCallParserRuleCall_3_1_0() { return cReceiverCallParserRuleCall_3_1_0; }
 		
-		//":"
-		public Keyword getColonKeyword_3_2() { return cColonKeyword_3_2; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_3_2() { return cHyphenMinusKeyword_3_2; }
 		
 		//provider+=Call
 		public Assignment getProviderAssignment_3_3() { return cProviderAssignment_3_3; }
@@ -759,7 +759,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Architecture:
 	//	{Architecture} "ArchitectureDefinition"
-	//	vars+=Variable* ("bind" receiver+=Call ":" provider+=Call)*;
+	//	vars+=Variable* ("bind" receiver+=Call "-" provider+=Call)*;
 	public ArchitectureElements getArchitectureAccess() {
 		return pArchitecture;
 	}

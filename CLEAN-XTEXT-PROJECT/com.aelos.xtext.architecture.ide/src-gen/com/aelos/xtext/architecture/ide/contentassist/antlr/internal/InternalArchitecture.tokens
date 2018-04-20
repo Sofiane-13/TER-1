@@ -1,9 +1,10 @@
 '('=23
 ')'=24
 ','=26
+'-'=29
 '.'=20
 '.*'=19
-':'=29
+':'=30
 'ArchitectureDefinition'=27
 'Boolean'=13
 'Component:'=21
@@ -11,7 +12,7 @@
 'INT'=11
 'STRING'=12
 'bind'=28
-'def'=30
+'def'=31
 'domain'=15
 'import'=18
 'providedServices'=22
@@ -45,3 +46,4 @@ T__27=27
 T__28=28
 T__29=29
 T__30=30
+T__31=31
