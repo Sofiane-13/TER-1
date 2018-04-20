@@ -188,72 +188,88 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cOutAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cOutVariableParserRuleCall_0_0 = (RuleCall)cOutAssignment_0.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cMethodeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cMethodeIDTerminalRuleCall_2_0 = (RuleCall)cMethodeAssignment_2.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cArgAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final CrossReference cArgVariableCrossReference_4_0_0 = (CrossReference)cArgAssignment_4_0.eContents().get(0);
-		private final RuleCall cArgVariableIDTerminalRuleCall_4_0_0_1 = (RuleCall)cArgVariableCrossReference_4_0_0.eContents().get(1);
-		private final Keyword cCommaKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cArg1Assignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cArg1VariableCrossReference_5_0 = (CrossReference)cArg1Assignment_5.eContents().get(0);
-		private final RuleCall cArg1VariableIDTerminalRuleCall_5_0_1 = (RuleCall)cArg1VariableCrossReference_5_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cOutAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOutVariableParserRuleCall_1_1_0 = (RuleCall)cOutAssignment_1_1.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMethodeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMethodeIDTerminalRuleCall_3_0 = (RuleCall)cMethodeAssignment_3.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Assignment cArgAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
+		private final CrossReference cArgVariableCrossReference_5_0_0 = (CrossReference)cArgAssignment_5_0.eContents().get(0);
+		private final RuleCall cArgVariableIDTerminalRuleCall_5_0_0_1 = (RuleCall)cArgVariableCrossReference_5_0_0.eContents().get(1);
+		private final Keyword cCommaKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cArg1Assignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cArg1VariableCrossReference_6_0 = (CrossReference)cArg1Assignment_6.eContents().get(0);
+		private final RuleCall cArg1VariableIDTerminalRuleCall_6_0_1 = (RuleCall)cArg1VariableCrossReference_6_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		////Pour le test domain 
 		//Function:
-		//	out=Variable "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")";
+		//	out+=Variable ("," out+=Variable)* "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//out=Variable "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")"
+		//out+=Variable ("," out+=Variable)* "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")"
 		public Group getGroup() { return cGroup; }
 		
-		//out=Variable
+		//out+=Variable
 		public Assignment getOutAssignment_0() { return cOutAssignment_0; }
 		
 		//Variable
 		public RuleCall getOutVariableParserRuleCall_0_0() { return cOutVariableParserRuleCall_0_0; }
 		
-		//"="
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
-		
-		//methode=ID
-		public Assignment getMethodeAssignment_2() { return cMethodeAssignment_2; }
-		
-		//ID
-		public RuleCall getMethodeIDTerminalRuleCall_2_0() { return cMethodeIDTerminalRuleCall_2_0; }
-		
-		//"("
-		public Keyword getLeftParenthesisKeyword_3() { return cLeftParenthesisKeyword_3; }
-		
-		//(arg+=[Variable] ",")*
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//arg+=[Variable]
-		public Assignment getArgAssignment_4_0() { return cArgAssignment_4_0; }
-		
-		//[Variable]
-		public CrossReference getArgVariableCrossReference_4_0_0() { return cArgVariableCrossReference_4_0_0; }
-		
-		//ID
-		public RuleCall getArgVariableIDTerminalRuleCall_4_0_0_1() { return cArgVariableIDTerminalRuleCall_4_0_0_1; }
+		//("," out+=Variable)*
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//","
-		public Keyword getCommaKeyword_4_1() { return cCommaKeyword_4_1; }
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//arg1=[Variable]
-		public Assignment getArg1Assignment_5() { return cArg1Assignment_5; }
+		//out+=Variable
+		public Assignment getOutAssignment_1_1() { return cOutAssignment_1_1; }
 		
-		//[Variable]
-		public CrossReference getArg1VariableCrossReference_5_0() { return cArg1VariableCrossReference_5_0; }
+		//Variable
+		public RuleCall getOutVariableParserRuleCall_1_1_0() { return cOutVariableParserRuleCall_1_1_0; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		
+		//methode=ID
+		public Assignment getMethodeAssignment_3() { return cMethodeAssignment_3; }
 		
 		//ID
-		public RuleCall getArg1VariableIDTerminalRuleCall_5_0_1() { return cArg1VariableIDTerminalRuleCall_5_0_1; }
+		public RuleCall getMethodeIDTerminalRuleCall_3_0() { return cMethodeIDTerminalRuleCall_3_0; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
+		
+		//(arg+=[Variable] ",")*
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//arg+=[Variable]
+		public Assignment getArgAssignment_5_0() { return cArgAssignment_5_0; }
+		
+		//[Variable]
+		public CrossReference getArgVariableCrossReference_5_0_0() { return cArgVariableCrossReference_5_0_0; }
+		
+		//ID
+		public RuleCall getArgVariableIDTerminalRuleCall_5_0_0_1() { return cArgVariableIDTerminalRuleCall_5_0_0_1; }
+		
+		//","
+		public Keyword getCommaKeyword_5_1() { return cCommaKeyword_5_1; }
+		
+		//arg1=[Variable]
+		public Assignment getArg1Assignment_6() { return cArg1Assignment_6; }
+		
+		//[Variable]
+		public CrossReference getArg1VariableCrossReference_6_0() { return cArg1VariableCrossReference_6_0; }
+		
+		//ID
+		public RuleCall getArg1VariableIDTerminalRuleCall_6_0_1() { return cArg1VariableIDTerminalRuleCall_6_0_1; }
 		
 		//")"
-		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	public class DataElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Data");
@@ -1093,7 +1109,7 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 	
 	////Pour le test domain 
 	//Function:
-	//	out=Variable "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")";
+	//	out+=Variable ("," out+=Variable)* "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")";
 	public FunctionElements getFunctionAccess() {
 		return pFunction;
 	}

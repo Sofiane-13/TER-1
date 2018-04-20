@@ -19,7 +19,6 @@ import org.eclipse.xtext.validation.Check;
 public class ArchitectureValidator extends AbstractArchitectureValidator {
   @Check
   public void checkBindingSign(final Binding bind) {
-    System.out.println("why");
     int _size = bind.getProMember().getArg().size();
     int _size_1 = bind.getRecMember().getArg().size();
     boolean _notEquals = (_size != _size_1);

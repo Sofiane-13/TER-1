@@ -373,7 +373,7 @@ ruleFunction returns [EObject current=null]
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionRule());
 					}
-					set(
+					add(
 						$current,
 						"out",
 						lv_out_0_0,
@@ -382,15 +382,40 @@ ruleFunction returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_1='='
+		(
+			otherlv_1=','
+			{
+				newLeafNode(otherlv_1, grammarAccess.getFunctionAccess().getCommaKeyword_1_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFunctionAccess().getOutVariableParserRuleCall_1_1_0());
+					}
+					lv_out_2_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFunctionRule());
+						}
+						add(
+							$current,
+							"out",
+							lv_out_2_0,
+							"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+		otherlv_3='='
 		{
-			newLeafNode(otherlv_1, grammarAccess.getFunctionAccess().getEqualsSignKeyword_1());
+			newLeafNode(otherlv_3, grammarAccess.getFunctionAccess().getEqualsSignKeyword_2());
 		}
 		(
 			(
-				lv_methode_2_0=RULE_ID
+				lv_methode_4_0=RULE_ID
 				{
-					newLeafNode(lv_methode_2_0, grammarAccess.getFunctionAccess().getMethodeIDTerminalRuleCall_2_0());
+					newLeafNode(lv_methode_4_0, grammarAccess.getFunctionAccess().getMethodeIDTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -399,14 +424,14 @@ ruleFunction returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"methode",
-						lv_methode_2_0,
+						lv_methode_4_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_3='('
+		otherlv_5='('
 		{
-			newLeafNode(otherlv_3, grammarAccess.getFunctionAccess().getLeftParenthesisKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getFunctionAccess().getLeftParenthesisKeyword_4());
 		}
 		(
 			(
@@ -416,15 +441,15 @@ ruleFunction returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getFunctionRule());
 						}
 					}
-					otherlv_4=RULE_ID
+					otherlv_6=RULE_ID
 					{
-						newLeafNode(otherlv_4, grammarAccess.getFunctionAccess().getArgVariableCrossReference_4_0_0());
+						newLeafNode(otherlv_6, grammarAccess.getFunctionAccess().getArgVariableCrossReference_5_0_0());
 					}
 				)
 			)
-			otherlv_5=','
+			otherlv_7=','
 			{
-				newLeafNode(otherlv_5, grammarAccess.getFunctionAccess().getCommaKeyword_4_1());
+				newLeafNode(otherlv_7, grammarAccess.getFunctionAccess().getCommaKeyword_5_1());
 			}
 		)*
 		(
@@ -434,15 +459,15 @@ ruleFunction returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getFunctionRule());
 					}
 				}
-				otherlv_6=RULE_ID
+				otherlv_8=RULE_ID
 				{
-					newLeafNode(otherlv_6, grammarAccess.getFunctionAccess().getArg1VariableCrossReference_5_0());
+					newLeafNode(otherlv_8, grammarAccess.getFunctionAccess().getArg1VariableCrossReference_6_0());
 				}
 			)
 		)
-		otherlv_7=')'
+		otherlv_9=')'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getFunctionAccess().getRightParenthesisKeyword_6());
+			newLeafNode(otherlv_9, grammarAccess.getFunctionAccess().getRightParenthesisKeyword_7());
 		}
 	)
 ;

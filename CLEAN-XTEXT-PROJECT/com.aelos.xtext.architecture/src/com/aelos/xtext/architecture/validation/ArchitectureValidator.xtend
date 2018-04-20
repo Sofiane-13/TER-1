@@ -27,7 +27,7 @@ class ArchitectureValidator extends AbstractArchitectureValidator {
 	
     @Check
 	def checkBindingSign(Binding bind) {
-		System.out.println("why")
+		//System.out.println("why")
 		if(bind.proMember.arg.size != bind.recMember.arg.size){
 			error("services must have the same signature",ArchitecturePackage.Literals.BINDING__PRO_MEMBER)
 		}

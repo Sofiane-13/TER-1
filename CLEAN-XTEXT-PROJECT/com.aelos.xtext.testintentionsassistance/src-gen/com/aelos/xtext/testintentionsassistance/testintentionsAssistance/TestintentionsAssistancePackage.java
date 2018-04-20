@@ -181,7 +181,7 @@ public interface TestintentionsAssistancePackage extends EPackage
   int FUNCTION = 4;
 
   /**
-   * The feature id for the '<em><b>Out</b></em>' containment reference.
+   * The feature id for the '<em><b>Out</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -943,10 +943,10 @@ public interface TestintentionsAssistancePackage extends EPackage
   EClass getFunction();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function#getOut <em>Out</em>}'.
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function#getOut <em>Out</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Out</em>'.
+   * @return the meta object for the containment reference list '<em>Out</em>'.
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function#getOut()
    * @see #getFunction()
    * @generated
@@ -1612,7 +1612,7 @@ public interface TestintentionsAssistancePackage extends EPackage
     EClass FUNCTION = eINSTANCE.getFunction();
 
     /**
-     * The meta object literal for the '<em><b>Out</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Out</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

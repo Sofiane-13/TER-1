@@ -27,30 +27,20 @@ import org.eclipse.emf.common.util.EList;
 public interface Function extends AbstractElement
 {
   /**
-   * Returns the value of the '<em><b>Out</b></em>' containment reference.
+   * Returns the value of the '<em><b>Out</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Out</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Out</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Out</em>' containment reference.
-   * @see #setOut(Variable)
+   * @return the value of the '<em>Out</em>' containment reference list.
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage#getFunction_Out()
    * @model containment="true"
    * @generated
    */
-  Variable getOut();
-
-  /**
-   * Sets the value of the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function#getOut <em>Out</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Out</em>' containment reference.
-   * @see #getOut()
-   * @generated
-   */
-  void setOut(Variable value);
+  EList<Variable> getOut();
 
   /**
    * Returns the value of the '<em><b>Methode</b></em>' attribute.
