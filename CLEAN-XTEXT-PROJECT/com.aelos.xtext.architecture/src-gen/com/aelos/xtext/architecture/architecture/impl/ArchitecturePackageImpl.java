@@ -682,6 +682,7 @@ public class ArchitecturePackageImpl extends EPackageImpl implements Architectur
     addEEnumLiteral(typeEEnum, Type.STRING);
     addEEnumLiteral(typeEEnum, Type.BOOLEAN);
     addEEnumLiteral(typeEEnum, Type.DOUBLE);
+    addEEnumLiteral(typeEEnum, Type.VOID);
 
     // Create resource
     createResource(eNS_URI);

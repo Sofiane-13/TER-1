@@ -59,12 +59,12 @@ public interface InstanceComp extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(Comopnent)
+   * @see #setType(AddComponent)
    * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getInstanceComp_Type()
    * @model
    * @generated
    */
-  Comopnent getType();
+  AddComponent getType();
 
   /**
    * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp#getType <em>Type</em>}' reference.
@@ -74,6 +74,6 @@ public interface InstanceComp extends EObject
    * @see #getType()
    * @generated
    */
-  void setType(Comopnent value);
+  void setType(AddComponent value);
 
 } // InstanceComp

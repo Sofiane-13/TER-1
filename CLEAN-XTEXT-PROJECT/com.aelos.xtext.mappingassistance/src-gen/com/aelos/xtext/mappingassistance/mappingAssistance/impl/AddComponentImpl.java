@@ -3,7 +3,7 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Operation;
 
@@ -26,20 +26,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Comopnent</b></em>'.
+ * An implementation of the model object '<em><b>Add Component</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl#getOps <em>Ops</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AddComponentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AddComponentImpl#getOps <em>Ops</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AddComponentImpl#getOpsReq <em>Ops Req</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AddComponentImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comopnent
+public class AddComponentImpl extends MinimalEObjectImpl.Container implements AddComponent
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -72,6 +73,16 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
   protected EList<Operation> ops;
 
   /**
+   * The cached value of the '{@link #getOpsReq() <em>Ops Req</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOpsReq()
+   * @generated
+   * @ordered
+   */
+  protected EList<Operation> opsReq;
+
+  /**
    * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -86,7 +97,7 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ComopnentImpl()
+  protected AddComponentImpl()
   {
     super();
   }
@@ -99,7 +110,7 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
   @Override
   protected EClass eStaticClass()
   {
-    return MappingAssistancePackage.Literals.COMOPNENT;
+    return MappingAssistancePackage.Literals.ADD_COMPONENT;
   }
 
   /**
@@ -122,7 +133,7 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.COMOPNENT__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.ADD_COMPONENT__NAME, oldName, name));
   }
 
   /**
@@ -134,9 +145,23 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
   {
     if (ops == null)
     {
-      ops = new EObjectResolvingEList<Operation>(Operation.class, this, MappingAssistancePackage.COMOPNENT__OPS);
+      ops = new EObjectResolvingEList<Operation>(Operation.class, this, MappingAssistancePackage.ADD_COMPONENT__OPS);
     }
     return ops;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Operation> getOpsReq()
+  {
+    if (opsReq == null)
+    {
+      opsReq = new EObjectResolvingEList<Operation>(Operation.class, this, MappingAssistancePackage.ADD_COMPONENT__OPS_REQ);
+    }
+    return opsReq;
   }
 
   /**
@@ -148,7 +173,7 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
   {
     if (operations == null)
     {
-      operations = new EObjectContainmentEList<Operation>(Operation.class, this, MappingAssistancePackage.COMOPNENT__OPERATIONS);
+      operations = new EObjectContainmentEList<Operation>(Operation.class, this, MappingAssistancePackage.ADD_COMPONENT__OPERATIONS);
     }
     return operations;
   }
@@ -163,7 +188,7 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.COMOPNENT__OPERATIONS:
+      case MappingAssistancePackage.ADD_COMPONENT__OPERATIONS:
         return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -179,11 +204,13 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.COMOPNENT__NAME:
+      case MappingAssistancePackage.ADD_COMPONENT__NAME:
         return getName();
-      case MappingAssistancePackage.COMOPNENT__OPS:
+      case MappingAssistancePackage.ADD_COMPONENT__OPS:
         return getOps();
-      case MappingAssistancePackage.COMOPNENT__OPERATIONS:
+      case MappingAssistancePackage.ADD_COMPONENT__OPS_REQ:
+        return getOpsReq();
+      case MappingAssistancePackage.ADD_COMPONENT__OPERATIONS:
         return getOperations();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -200,14 +227,18 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.COMOPNENT__NAME:
+      case MappingAssistancePackage.ADD_COMPONENT__NAME:
         setName((String)newValue);
         return;
-      case MappingAssistancePackage.COMOPNENT__OPS:
+      case MappingAssistancePackage.ADD_COMPONENT__OPS:
         getOps().clear();
         getOps().addAll((Collection<? extends Operation>)newValue);
         return;
-      case MappingAssistancePackage.COMOPNENT__OPERATIONS:
+      case MappingAssistancePackage.ADD_COMPONENT__OPS_REQ:
+        getOpsReq().clear();
+        getOpsReq().addAll((Collection<? extends Operation>)newValue);
+        return;
+      case MappingAssistancePackage.ADD_COMPONENT__OPERATIONS:
         getOperations().clear();
         getOperations().addAll((Collection<? extends Operation>)newValue);
         return;
@@ -225,13 +256,16 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.COMOPNENT__NAME:
+      case MappingAssistancePackage.ADD_COMPONENT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case MappingAssistancePackage.COMOPNENT__OPS:
+      case MappingAssistancePackage.ADD_COMPONENT__OPS:
         getOps().clear();
         return;
-      case MappingAssistancePackage.COMOPNENT__OPERATIONS:
+      case MappingAssistancePackage.ADD_COMPONENT__OPS_REQ:
+        getOpsReq().clear();
+        return;
+      case MappingAssistancePackage.ADD_COMPONENT__OPERATIONS:
         getOperations().clear();
         return;
     }
@@ -248,11 +282,13 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
   {
     switch (featureID)
     {
-      case MappingAssistancePackage.COMOPNENT__NAME:
+      case MappingAssistancePackage.ADD_COMPONENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case MappingAssistancePackage.COMOPNENT__OPS:
+      case MappingAssistancePackage.ADD_COMPONENT__OPS:
         return ops != null && !ops.isEmpty();
-      case MappingAssistancePackage.COMOPNENT__OPERATIONS:
+      case MappingAssistancePackage.ADD_COMPONENT__OPS_REQ:
+        return opsReq != null && !opsReq.isEmpty();
+      case MappingAssistancePackage.ADD_COMPONENT__OPERATIONS:
         return operations != null && !operations.isEmpty();
     }
     return super.eIsSet(featureID);
@@ -275,4 +311,4 @@ public class ComopnentImpl extends MinimalEObjectImpl.Container implements Comop
     return result.toString();
   }
 
-} //ComopnentImpl
+} //AddComponentImpl

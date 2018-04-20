@@ -96,13 +96,13 @@ public interface MappingAssistanceFactory extends EFactory
   Atomic createAtomic();
 
   /**
-   * Returns a new object of class '<em>Comopnent</em>'.
+   * Returns a new object of class '<em>Add Component</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comopnent</em>'.
+   * @return a new object of class '<em>Add Component</em>'.
    * @generated
    */
-  Comopnent createComopnent();
+  AddComponent createAddComponent();
 
   /**
    * Returns a new object of class '<em>Test OP</em>'.

@@ -3,7 +3,7 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
-import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
 
@@ -59,7 +59,7 @@ public class InstanceCompImpl extends MinimalEObjectImpl.Container implements In
    * @generated
    * @ordered
    */
-  protected Comopnent type;
+  protected AddComponent type;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,12 +110,12 @@ public class InstanceCompImpl extends MinimalEObjectImpl.Container implements In
    * <!-- end-user-doc -->
    * @generated
    */
-  public Comopnent getType()
+  public AddComponent getType()
   {
     if (type != null && type.eIsProxy())
     {
       InternalEObject oldType = (InternalEObject)type;
-      type = (Comopnent)eResolveProxy(oldType);
+      type = (AddComponent)eResolveProxy(oldType);
       if (type != oldType)
       {
         if (eNotificationRequired())
@@ -130,7 +130,7 @@ public class InstanceCompImpl extends MinimalEObjectImpl.Container implements In
    * <!-- end-user-doc -->
    * @generated
    */
-  public Comopnent basicGetType()
+  public AddComponent basicGetType()
   {
     return type;
   }
@@ -140,9 +140,9 @@ public class InstanceCompImpl extends MinimalEObjectImpl.Container implements In
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setType(Comopnent newType)
+  public void setType(AddComponent newType)
   {
-    Comopnent oldType = type;
+    AddComponent oldType = type;
     type = newType;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MappingAssistancePackage.INSTANCE_COMP__TYPE, oldType, type));
@@ -181,7 +181,7 @@ public class InstanceCompImpl extends MinimalEObjectImpl.Container implements In
         setName((String)newValue);
         return;
       case MappingAssistancePackage.INSTANCE_COMP__TYPE:
-        setType((Comopnent)newValue);
+        setType((AddComponent)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -201,7 +201,7 @@ public class InstanceCompImpl extends MinimalEObjectImpl.Container implements In
         setName(NAME_EDEFAULT);
         return;
       case MappingAssistancePackage.INSTANCE_COMP__TYPE:
-        setType((Comopnent)null);
+        setType((AddComponent)null);
         return;
     }
     super.eUnset(featureID);

@@ -4,10 +4,10 @@
 package com.aelos.xtext.mappingassistance.mappingAssistance.util;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
@@ -134,9 +134,9 @@ public class MappingAssistanceAdapterFactory extends AdapterFactoryImpl
         return createAtomicAdapter();
       }
       @Override
-      public Adapter caseComopnent(Comopnent object)
+      public Adapter caseAddComponent(AddComponent object)
       {
-        return createComopnentAdapter();
+        return createAddComponentAdapter();
       }
       @Override
       public Adapter caseTestOP(TestOP object)
@@ -336,16 +336,16 @@ public class MappingAssistanceAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent <em>Comopnent</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent <em>Add Component</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent
    * @generated
    */
-  public Adapter createComopnentAdapter()
+  public Adapter createAddComponentAdapter()
   {
     return null;
   }

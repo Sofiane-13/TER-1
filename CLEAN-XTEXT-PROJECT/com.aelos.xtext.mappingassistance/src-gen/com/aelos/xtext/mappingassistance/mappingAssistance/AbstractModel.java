@@ -82,7 +82,7 @@ public interface AbstractModel extends EObject
 
   /**
    * Returns the value of the '<em><b>Comp</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent}.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Comp</em>' containment reference list isn't clear,
@@ -94,7 +94,7 @@ public interface AbstractModel extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Comopnent> getComp();
+  EList<AddComponent> getComp();
 
   /**
    * Returns the value of the '<em><b>Mock</b></em>' containment reference list.

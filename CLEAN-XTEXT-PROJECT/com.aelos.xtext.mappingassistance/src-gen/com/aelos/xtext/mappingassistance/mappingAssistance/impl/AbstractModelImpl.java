@@ -4,8 +4,8 @@
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage;
@@ -88,7 +88,7 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
    * @generated
    * @ordered
    */
-  protected EList<Comopnent> comp;
+  protected EList<AddComponent> comp;
 
   /**
    * The cached value of the '{@link #getMock() <em>Mock</em>}' containment reference list.
@@ -198,11 +198,11 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Comopnent> getComp()
+  public EList<AddComponent> getComp()
   {
     if (comp == null)
     {
-      comp = new EObjectContainmentEList<Comopnent>(Comopnent.class, this, MappingAssistancePackage.ABSTRACT_MODEL__COMP);
+      comp = new EObjectContainmentEList<AddComponent>(AddComponent.class, this, MappingAssistancePackage.ABSTRACT_MODEL__COMP);
     }
     return comp;
   }
@@ -348,7 +348,7 @@ public class AbstractModelImpl extends MinimalEObjectImpl.Container implements A
         return;
       case MappingAssistancePackage.ABSTRACT_MODEL__COMP:
         getComp().clear();
-        getComp().addAll((Collection<? extends Comopnent>)newValue);
+        getComp().addAll((Collection<? extends AddComponent>)newValue);
         return;
       case MappingAssistancePackage.ABSTRACT_MODEL__MOCK:
         getMock().clear();

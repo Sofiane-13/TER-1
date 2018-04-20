@@ -23,7 +23,7 @@ import java.util.HashMap;
 @SuppressWarnings("all")
 public class InternalArchitectureParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "','", "')'", "'requeredServices'", "'ArchitectureDefinition'", "'bind'", "':'", "'def'", "'INT'", "'STRING'", "'Boolean'", "'Double'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'domain'", "'{'", "'}'", "'import'", "'.*'", "'.'", "'Component:'", "'providedServices'", "'('", "','", "')'", "'requeredServices'", "'ArchitectureDefinition'", "'bind'", "'-'", "':'", "'def'", "'INT'", "'STRING'", "'Boolean'", "'Double'", "'Void'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -38,6 +38,8 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -1446,7 +1448,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==26) && (synpred1_InternalArchitecture())) {
+                if ( (LA12_0==27) && (synpred1_InternalArchitecture())) {
                     alt12=1;
                 }
 
@@ -1780,7 +1782,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinding"
-    // InternalArchitecture.g:605:1: ruleBinding returns [EObject current=null] : (otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= ':' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) ) ) ;
+    // InternalArchitecture.g:605:1: ruleBinding returns [EObject current=null] : (otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '-' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) ) ) ;
     public final EObject ruleBinding() throws RecognitionException {
         EObject current = null;
 
@@ -1797,11 +1799,11 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalArchitecture.g:611:2: ( (otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= ':' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) ) ) )
-            // InternalArchitecture.g:612:2: (otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= ':' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) ) )
+            // InternalArchitecture.g:611:2: ( (otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '-' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) ) ) )
+            // InternalArchitecture.g:612:2: (otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '-' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) ) )
             {
-            // InternalArchitecture.g:612:2: (otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= ':' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) ) )
-            // InternalArchitecture.g:613:3: otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= ':' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) )
+            // InternalArchitecture.g:612:2: (otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '-' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) ) )
+            // InternalArchitecture.g:613:3: otherlv_0= 'bind' ( (otherlv_1= RULE_ID ) ) otherlv_2= '.' ( (otherlv_3= RULE_ID ) ) otherlv_4= '-' ( (otherlv_5= RULE_ID ) ) otherlv_6= '.' ( (otherlv_7= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,24,FOLLOW_4); if (state.failed) return current;
             if ( state.backtracking==0 ) {
@@ -1868,7 +1870,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             otherlv_4=(Token)match(input,25,FOLLOW_4); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
-              			newLeafNode(otherlv_4, grammarAccess.getBindingAccess().getColonKeyword_4());
+              			newLeafNode(otherlv_4, grammarAccess.getBindingAccess().getHyphenMinusKeyword_4());
               		
             }
             // InternalArchitecture.g:651:3: ( (otherlv_5= RULE_ID ) )
@@ -2017,7 +2019,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             // InternalArchitecture.g:701:4: (lv_name_0_0= RULE_ID )
             // InternalArchitecture.g:702:5: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_20); if (state.failed) return current;
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_21); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               					newLeafNode(lv_name_0_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0());
@@ -2041,7 +2043,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,25,FOLLOW_21); if (state.failed) return current;
+            otherlv_1=(Token)match(input,26,FOLLOW_22); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_1, grammarAccess.getVariableAccess().getColonKeyword_1());
@@ -2174,7 +2176,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             // InternalArchitecture.g:759:2: (otherlv_0= 'def' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( ( ( (lv_arg_3_0= ruleVariable ) ) otherlv_4= ',' )* ( (lv_arg_5_0= ruleVariable ) ) )* otherlv_6= ')' otherlv_7= ':' ( (lv_type_8_0= ruleAtomicType ) ) )
             // InternalArchitecture.g:760:3: otherlv_0= 'def' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( ( ( (lv_arg_3_0= ruleVariable ) ) otherlv_4= ',' )* ( (lv_arg_5_0= ruleVariable ) ) )* otherlv_6= ')' otherlv_7= ':' ( (lv_type_8_0= ruleAtomicType ) )
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_4); if (state.failed) return current;
+            otherlv_0=(Token)match(input,27,FOLLOW_4); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_0, grammarAccess.getOperationAccess().getDefKeyword_0());
@@ -2334,13 +2336,13 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,21,FOLLOW_20); if (state.failed) return current;
+            otherlv_6=(Token)match(input,21,FOLLOW_21); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_6, grammarAccess.getOperationAccess().getRightParenthesisKeyword_4());
               		
             }
-            otherlv_7=(Token)match(input,25,FOLLOW_21); if (state.failed) return current;
+            otherlv_7=(Token)match(input,26,FOLLOW_22); if (state.failed) return current;
             if ( state.backtracking==0 ) {
 
               			newLeafNode(otherlv_7, grammarAccess.getOperationAccess().getColonKeyword_5());
@@ -2465,7 +2467,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( ((LA17_0>=27 && LA17_0<=30)) ) {
+            if ( ((LA17_0>=28 && LA17_0<=32)) ) {
                 alt17=1;
             }
             else if ( (LA17_0==RULE_ID) ) {
@@ -2576,7 +2578,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleType"
-    // InternalArchitecture.g:915:1: ruleType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) ) ;
+    // InternalArchitecture.g:915:1: ruleType returns [Enumerator current=null] : ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) | (enumLiteral_4= 'Void' ) ) ;
     public final Enumerator ruleType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2584,35 +2586,41 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
         Token enumLiteral_1=null;
         Token enumLiteral_2=null;
         Token enumLiteral_3=null;
+        Token enumLiteral_4=null;
 
 
         	enterRule();
 
         try {
-            // InternalArchitecture.g:921:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) ) )
-            // InternalArchitecture.g:922:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) )
+            // InternalArchitecture.g:921:2: ( ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) | (enumLiteral_4= 'Void' ) ) )
+            // InternalArchitecture.g:922:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) | (enumLiteral_4= 'Void' ) )
             {
-            // InternalArchitecture.g:922:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) )
-            int alt18=4;
+            // InternalArchitecture.g:922:2: ( (enumLiteral_0= 'INT' ) | (enumLiteral_1= 'STRING' ) | (enumLiteral_2= 'Boolean' ) | (enumLiteral_3= 'Double' ) | (enumLiteral_4= 'Void' ) )
+            int alt18=5;
             switch ( input.LA(1) ) {
-            case 27:
+            case 28:
                 {
                 alt18=1;
                 }
                 break;
-            case 28:
+            case 29:
                 {
                 alt18=2;
                 }
                 break;
-            case 29:
+            case 30:
                 {
                 alt18=3;
                 }
                 break;
-            case 30:
+            case 31:
                 {
                 alt18=4;
+                }
+                break;
+            case 32:
+                {
+                alt18=5;
                 }
                 break;
             default:
@@ -2630,7 +2638,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
                     // InternalArchitecture.g:923:3: (enumLiteral_0= 'INT' )
                     // InternalArchitecture.g:924:4: enumLiteral_0= 'INT'
                     {
-                    enumLiteral_0=(Token)match(input,27,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_0=(Token)match(input,28,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getTypeAccess().getINTEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
@@ -2649,7 +2657,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
                     // InternalArchitecture.g:931:3: (enumLiteral_1= 'STRING' )
                     // InternalArchitecture.g:932:4: enumLiteral_1= 'STRING'
                     {
-                    enumLiteral_1=(Token)match(input,28,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_1=(Token)match(input,29,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getTypeAccess().getSTRINGEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
@@ -2668,7 +2676,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
                     // InternalArchitecture.g:939:3: (enumLiteral_2= 'Boolean' )
                     // InternalArchitecture.g:940:4: enumLiteral_2= 'Boolean'
                     {
-                    enumLiteral_2=(Token)match(input,29,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_2=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getTypeAccess().getBooleanEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
@@ -2687,11 +2695,30 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
                     // InternalArchitecture.g:947:3: (enumLiteral_3= 'Double' )
                     // InternalArchitecture.g:948:4: enumLiteral_3= 'Double'
                     {
-                    enumLiteral_3=(Token)match(input,30,FOLLOW_2); if (state.failed) return current;
+                    enumLiteral_3=(Token)match(input,31,FOLLOW_2); if (state.failed) return current;
                     if ( state.backtracking==0 ) {
 
                       				current = grammarAccess.getTypeAccess().getDoubleEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                       				newLeafNode(enumLiteral_3, grammarAccess.getTypeAccess().getDoubleEnumLiteralDeclaration_3());
+                      			
+                    }
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalArchitecture.g:955:3: (enumLiteral_4= 'Void' )
+                    {
+                    // InternalArchitecture.g:955:3: (enumLiteral_4= 'Void' )
+                    // InternalArchitecture.g:956:4: enumLiteral_4= 'Void'
+                    {
+                    enumLiteral_4=(Token)match(input,32,FOLLOW_2); if (state.failed) return current;
+                    if ( state.backtracking==0 ) {
+
+                      				current = grammarAccess.getTypeAccess().getVoidEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                      				newLeafNode(enumLiteral_4, grammarAccess.getTypeAccess().getVoidEnumLiteralDeclaration_4());
                       			
                     }
 
@@ -2728,7 +2755,7 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
         // InternalArchitecture.g:501:4: ( 'def' )
         // InternalArchitecture.g:501:5: 'def'
         {
-        match(input,26,FOLLOW_2); if (state.failed) return ;
+        match(input,27,FOLLOW_2); if (state.failed) return ;
 
         }
     }
@@ -2753,20 +2780,21 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
 
 
     protected DFA15 dfa15 = new DFA15(this);
-    static final String dfa_1s = "\12\uffff";
-    static final String dfa_2s = "\1\4\1\31\6\4\2\uffff";
-    static final String dfa_3s = "\1\4\1\31\1\36\5\25\2\uffff";
-    static final String dfa_4s = "\10\uffff\1\2\1\1";
-    static final String dfa_5s = "\12\uffff}>";
+    static final String dfa_1s = "\13\uffff";
+    static final String dfa_2s = "\1\4\1\32\7\4\2\uffff";
+    static final String dfa_3s = "\1\4\1\32\1\40\6\25\2\uffff";
+    static final String dfa_4s = "\11\uffff\1\2\1\1";
+    static final String dfa_5s = "\13\uffff}>";
     static final String[] dfa_6s = {
             "\1\1",
             "\1\2",
-            "\1\7\26\uffff\1\3\1\4\1\5\1\6",
-            "\1\10\17\uffff\1\11\1\10",
-            "\1\10\17\uffff\1\11\1\10",
-            "\1\10\17\uffff\1\11\1\10",
-            "\1\10\17\uffff\1\11\1\10",
-            "\1\10\17\uffff\1\11\1\10",
+            "\1\10\27\uffff\1\3\1\4\1\5\1\6\1\7",
+            "\1\11\17\uffff\1\12\1\11",
+            "\1\11\17\uffff\1\12\1\11",
+            "\1\11\17\uffff\1\12\1\11",
+            "\1\11\17\uffff\1\12\1\11",
+            "\1\11\17\uffff\1\12\1\11",
+            "\1\11\17\uffff\1\12\1\11",
             "",
             ""
     };
@@ -2812,11 +2840,12 @@ public class InternalArchitectureParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200010L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004002000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000008002000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000012L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000002L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000078000010L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000001F0000010L});
 
 }

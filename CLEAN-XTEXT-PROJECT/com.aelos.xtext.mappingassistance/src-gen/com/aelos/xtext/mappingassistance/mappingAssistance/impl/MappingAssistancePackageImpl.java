@@ -6,10 +6,10 @@ package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
 import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistanceFactory;
@@ -104,7 +104,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass comopnentEClass = null;
+  private EClass addComponentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -592,9 +592,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getComopnent()
+  public EClass getAddComponent()
   {
-    return comopnentEClass;
+    return addComponentEClass;
   }
 
   /**
@@ -602,9 +602,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getComopnent_Name()
+  public EAttribute getAddComponent_Name()
   {
-    return (EAttribute)comopnentEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)addComponentEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -612,9 +612,9 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComopnent_Ops()
+  public EReference getAddComponent_Ops()
   {
-    return (EReference)comopnentEClass.getEStructuralFeatures().get(1);
+    return (EReference)addComponentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -622,9 +622,19 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComopnent_Operations()
+  public EReference getAddComponent_OpsReq()
   {
-    return (EReference)comopnentEClass.getEStructuralFeatures().get(2);
+    return (EReference)addComponentEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAddComponent_Operations()
+  {
+    return (EReference)addComponentEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1038,10 +1048,11 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
 
     atomicEClass = createEClass(ATOMIC);
 
-    comopnentEClass = createEClass(COMOPNENT);
-    createEAttribute(comopnentEClass, COMOPNENT__NAME);
-    createEReference(comopnentEClass, COMOPNENT__OPS);
-    createEReference(comopnentEClass, COMOPNENT__OPERATIONS);
+    addComponentEClass = createEClass(ADD_COMPONENT);
+    createEAttribute(addComponentEClass, ADD_COMPONENT__NAME);
+    createEReference(addComponentEClass, ADD_COMPONENT__OPS);
+    createEReference(addComponentEClass, ADD_COMPONENT__OPS_REQ);
+    createEReference(addComponentEClass, ADD_COMPONENT__OPERATIONS);
 
     testOPEClass = createEClass(TEST_OP);
     createEReference(testOPEClass, TEST_OP__SERVICE);
@@ -1138,7 +1149,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     initEReference(getAbstractModel_Im(), this.getImport(), null, "im", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_TestDr(), this.getTestDriver(), null, "testDr", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_Obs(), this.getObserver(), null, "obs", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAbstractModel_Comp(), this.getComopnent(), null, "comp", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractModel_Comp(), this.getAddComponent(), null, "comp", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_Mock(), this.getMock(), null, "mock", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_Conf(), this.getReplaceConf(), null, "conf", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractModel_Bind(), this.getBindings(), null, "bind", null, 0, -1, AbstractModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1172,10 +1183,11 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
 
     initEClass(atomicEClass, Atomic.class, "Atomic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(comopnentEClass, Comopnent.class, "Comopnent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getComopnent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Comopnent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComopnent_Ops(), this.getOperation(), null, "ops", null, 0, -1, Comopnent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComopnent_Operations(), this.getOperation(), null, "operations", null, 0, -1, Comopnent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(addComponentEClass, AddComponent.class, "AddComponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAddComponent_Name(), ecorePackage.getEString(), "name", null, 0, 1, AddComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAddComponent_Ops(), this.getOperation(), null, "ops", null, 0, -1, AddComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAddComponent_OpsReq(), this.getOperation(), null, "opsReq", null, 0, -1, AddComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAddComponent_Operations(), this.getOperation(), null, "operations", null, 0, -1, AddComponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(testOPEClass, TestOP.class, "TestOP", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTestOP_Service(), theArchitecturePackage.getVariable(), null, "service", null, 0, 1, TestOP.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1200,7 +1212,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
 
     initEClass(instanceCompEClass, InstanceComp.class, "InstanceComp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getInstanceComp_Name(), ecorePackage.getEString(), "name", null, 0, 1, InstanceComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInstanceComp_Type(), this.getComopnent(), null, "type", null, 0, 1, InstanceComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInstanceComp_Type(), this.getAddComponent(), null, "type", null, 0, 1, InstanceComp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(callEClass, Call.class, "Call", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getCall_Receiver(), theArchitecturePackage.getVariable(), null, "receiver", null, 0, 1, Call.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -443,6 +443,12 @@ rule__Type__Alternatives
 		('Double')
 		{ after(grammarAccess.getTypeAccess().getDoubleEnumLiteralDeclaration_3()); }
 	)
+	|
+	(
+		{ before(grammarAccess.getTypeAccess().getVoidEnumLiteralDeclaration_4()); }
+		('Void')
+		{ after(grammarAccess.getTypeAccess().getVoidEnumLiteralDeclaration_4()); }
+	)
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1681,9 +1687,9 @@ rule__Binding__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBindingAccess().getColonKeyword_4()); }
-	':'
-	{ after(grammarAccess.getBindingAccess().getColonKeyword_4()); }
+	{ before(grammarAccess.getBindingAccess().getHyphenMinusKeyword_4()); }
+	'-'
+	{ after(grammarAccess.getBindingAccess().getHyphenMinusKeyword_4()); }
 )
 ;
 finally {

@@ -644,9 +644,9 @@ ruleBinding returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=':'
+		otherlv_4='-'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getBindingAccess().getColonKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getBindingAccess().getHyphenMinusKeyword_4());
 		}
 		(
 			(
@@ -949,6 +949,14 @@ ruleType returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getTypeAccess().getDoubleEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_3, grammarAccess.getTypeAccess().getDoubleEnumLiteralDeclaration_3());
+			}
+		)
+		    |
+		(
+			enumLiteral_4='Void'
+			{
+				$current = grammarAccess.getTypeAccess().getVoidEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getTypeAccess().getVoidEnumLiteralDeclaration_4());
 			}
 		)
 	)

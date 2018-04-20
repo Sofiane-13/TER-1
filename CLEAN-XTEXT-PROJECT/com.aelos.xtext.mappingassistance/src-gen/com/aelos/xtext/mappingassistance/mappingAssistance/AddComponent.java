@@ -9,23 +9,24 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Comopnent</b></em>'.
+ * A representation of the model object '<em><b>Add Component</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getName <em>Name</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOps <em>Ops</em>}</li>
- *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOperations <em>Operations</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getName <em>Name</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getOps <em>Ops</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getOpsReq <em>Ops Req</em>}</li>
+ *   <li>{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getOperations <em>Operations</em>}</li>
  * </ul>
  *
- * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getComopnent()
+ * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAddComponent()
  * @model
  * @generated
  */
-public interface Comopnent extends EObject
+public interface AddComponent extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -37,14 +38,14 @@ public interface Comopnent extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getComopnent_Name()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAddComponent_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -63,11 +64,27 @@ public interface Comopnent extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Ops</em>' reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getComopnent_Ops()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAddComponent_Ops()
    * @model
    * @generated
    */
   EList<Operation> getOps();
+
+  /**
+   * Returns the value of the '<em><b>Ops Req</b></em>' reference list.
+   * The list contents are of type {@link com.aelos.xtext.mappingassistance.mappingAssistance.Operation}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Ops Req</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Ops Req</em>' reference list.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAddComponent_OpsReq()
+   * @model
+   * @generated
+   */
+  EList<Operation> getOpsReq();
 
   /**
    * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
@@ -79,10 +96,10 @@ public interface Comopnent extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Operations</em>' containment reference list.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getComopnent_Operations()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePackage#getAddComponent_Operations()
    * @model containment="true"
    * @generated
    */
   EList<Operation> getOperations();
 
-} // Comopnent
+} // AddComponent

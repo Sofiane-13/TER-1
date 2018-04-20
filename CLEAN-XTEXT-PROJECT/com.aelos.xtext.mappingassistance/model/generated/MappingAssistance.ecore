@@ -13,7 +13,7 @@
         eType="#//TestDriver" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="obs" upperBound="-1" eType="#//Observer"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" upperBound="-1" eType="#//Comopnent"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comp" upperBound="-1" eType="#//AddComponent"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mock" upperBound="-1" eType="#//Mock"
         containment="true"/>
@@ -59,10 +59,12 @@
         upperBound="-1" eType="ecore:EClass platform:/resource/com.aelos.xtext.testintentionsassistance/model/generated/TestintentionsAssistance.ecore#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Atomic"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Comopnent">
+  <eClassifiers xsi:type="ecore:EClass" name="AddComponent">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ops" unique="false" upperBound="-1"
         eType="#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opsReq" unique="false"
+        upperBound="-1" eType="#//Operation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
         eType="#//Operation" containment="true"/>
   </eClassifiers>
@@ -94,7 +96,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InstanceComp">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Comopnent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//AddComponent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Call">
     <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="ecore:EClass platform:/resource/com.aelos.xtext.architecture/model/generated/Architecture.ecore#//Variable"/>

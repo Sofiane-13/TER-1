@@ -64,5 +64,6 @@
     <eLiterals name="STRING" value="1" literal="STRING"/>
     <eLiterals name="Boolean" value="2" literal="Boolean"/>
     <eLiterals name="Double" value="3" literal="Double"/>
+    <eLiterals name="Void" value="4" literal="Void"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -58,7 +58,17 @@ public enum Type implements Enumerator
    * @generated
    * @ordered
    */
-  DOUBLE(3, "Double", "Double");
+  DOUBLE(3, "Double", "Double"),
+
+  /**
+   * The '<em><b>Void</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #VOID_VALUE
+   * @generated
+   * @ordered
+   */
+  VOID(4, "Void", "Void");
 
   /**
    * The '<em><b>INT</b></em>' literal value.
@@ -121,6 +131,21 @@ public enum Type implements Enumerator
   public static final int DOUBLE_VALUE = 3;
 
   /**
+   * The '<em><b>Void</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>Void</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #VOID
+   * @model name="Void"
+   * @generated
+   * @ordered
+   */
+  public static final int VOID_VALUE = 4;
+
+  /**
    * An array of all the '<em><b>Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -133,6 +158,7 @@ public enum Type implements Enumerator
       STRING,
       BOOLEAN,
       DOUBLE,
+      VOID,
     };
 
   /**
@@ -201,6 +227,7 @@ public enum Type implements Enumerator
       case STRING_VALUE: return STRING;
       case BOOLEAN_VALUE: return BOOLEAN;
       case DOUBLE_VALUE: return DOUBLE;
+      case VOID_VALUE: return VOID;
     }
     return null;
   }

@@ -4,10 +4,10 @@
 package com.aelos.xtext.mappingassistance.mappingAssistance.util;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
@@ -147,10 +147,10 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MappingAssistancePackage.COMOPNENT:
+      case MappingAssistancePackage.ADD_COMPONENT:
       {
-        Comopnent comopnent = (Comopnent)theEObject;
-        T result = caseComopnent(comopnent);
+        AddComponent addComponent = (AddComponent)theEObject;
+        T result = caseAddComponent(addComponent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -369,17 +369,17 @@ public class MappingAssistanceSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Comopnent</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Add Component</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Comopnent</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Add Component</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseComopnent(Comopnent object)
+  public T caseAddComponent(AddComponent object)
   {
     return null;
   }

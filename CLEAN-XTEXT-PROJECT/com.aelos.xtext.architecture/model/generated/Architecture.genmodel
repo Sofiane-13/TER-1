@@ -11,6 +11,7 @@
       <genEnumLiterals ecoreEnumLiteral="Architecture.ecore#//Type/STRING"/>
       <genEnumLiterals ecoreEnumLiteral="Architecture.ecore#//Type/Boolean"/>
       <genEnumLiterals ecoreEnumLiteral="Architecture.ecore#//Type/Double"/>
+      <genEnumLiterals ecoreEnumLiteral="Architecture.ecore#//Type/Void"/>
     </genEnums>
     <genClasses ecoreClass="Architecture.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Architecture.ecore#//Model/package"/>

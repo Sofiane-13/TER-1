@@ -11,7 +11,7 @@ Model:
 
 AbstractModel:(im+=Import)+ (testDr+=TestDriver ) (
 	(obs+=Observer)| 
-	(comp+=Comopnent)| 
+	(comp+=AddComponent)| 
 	(mock+=Mock)| 
 	(conf+=ReplaceConf)| 
 	(bind+=Bindings)| 
@@ -55,10 +55,11 @@ Atomic:
 	{VariableRef} variable=[Variable];
 	
 	
-Comopnent:
+AddComponent:
 	"AddComponent:"
 	name=ID "{"
 		"providedServices" "(" ((ops+=[Operation] ",")*(ops+=[Operation]))* ")"
+		"requeredServices" "(" ((opsReq+=[Operation] ",")*(opsReq+=[Operation]))* ")"
 		->(operations+=Operation)*
 		//(vars+=Variable)*
 		//"requiredService" "(" ((calls+=Call ",")*(calls+=Call))* ")"
@@ -67,7 +68,7 @@ Comopnent:
 ;
 
 TestOP:
- 	service=[arch::Variable]'.'name=[arch::Operation]"("((varConf1+=[arch::Variable]":="instVar+=[testIntention::Variable]",")*(varConf1+=[arch::Variable]":="instVar+=[testIntention::Variable]))*")"
+ 	service=[arch::Variable]'.'name=[arch::Operation]"("((varConf1+=[arch::Variable]"<-"instVar+=[testIntention::Variable]",")*(varConf1+=[arch::Variable]"<-"instVar+=[testIntention::Variable]))*")"
 ;
 
 Operation:
@@ -82,8 +83,8 @@ Bindings :
 	"addBind(" nameComp=[InstanceComp]'.'nameServ1+=[Operation] "," nameComp1=[arch::Variable]'.'nameServ2+=[arch::Operation] ")";
       
 InstanceComp:
-"def"
- name=ID ":"type=[Comopnent];	
+"def" name=ID ":"type=[AddComponent];
+	
 Call : receiver=[arch::Variable]'.'member+=[arch::Operation]; 
 
       

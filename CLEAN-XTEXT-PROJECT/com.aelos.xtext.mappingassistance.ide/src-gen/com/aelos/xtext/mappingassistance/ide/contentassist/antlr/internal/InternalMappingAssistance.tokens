@@ -5,7 +5,6 @@
 '.'=19
 '.*'=18
 ':'=35
-':='=33
 '<-'=23
 'AddComponent:'=31
 'Boolean'=15
@@ -21,6 +20,7 @@
 'observer:'=24
 'providedServices'=32
 'replaceConf:'=30
+'requeredServices'=33
 'true'=11
 '{'=21
 '}'=22

@@ -62,4 +62,4 @@ AtomicType:
 	atomType=Type | 
 	compType=[Component];
       
-enum Type : INT | STRING | Boolean | Double;
+enum Type : INT | STRING | Boolean | Double | Void;

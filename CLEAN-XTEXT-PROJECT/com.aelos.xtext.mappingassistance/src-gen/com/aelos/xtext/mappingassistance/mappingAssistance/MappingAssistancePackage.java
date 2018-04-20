@@ -436,14 +436,14 @@ public interface MappingAssistancePackage extends EPackage
   int ATOMIC_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl <em>Comopnent</em>}' class.
+   * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AddComponentImpl <em>Add Component</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getComopnent()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.AddComponentImpl
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getAddComponent()
    * @generated
    */
-  int COMOPNENT = 8;
+  int ADD_COMPONENT = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -452,7 +452,7 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMOPNENT__NAME = 0;
+  int ADD_COMPONENT__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Ops</b></em>' reference list.
@@ -461,7 +461,16 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMOPNENT__OPS = 1;
+  int ADD_COMPONENT__OPS = 1;
+
+  /**
+   * The feature id for the '<em><b>Ops Req</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ADD_COMPONENT__OPS_REQ = 2;
 
   /**
    * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -470,16 +479,16 @@ public interface MappingAssistancePackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMOPNENT__OPERATIONS = 2;
+  int ADD_COMPONENT__OPERATIONS = 3;
 
   /**
-   * The number of structural features of the '<em>Comopnent</em>' class.
+   * The number of structural features of the '<em>Add Component</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMOPNENT_FEATURE_COUNT = 3;
+  int ADD_COMPONENT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl <em>Test OP</em>}' class.
@@ -1255,47 +1264,58 @@ public interface MappingAssistancePackage extends EPackage
   EClass getAtomic();
 
   /**
-   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent <em>Comopnent</em>}'.
+   * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent <em>Add Component</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comopnent</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent
+   * @return the meta object for class '<em>Add Component</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent
    * @generated
    */
-  EClass getComopnent();
+  EClass getAddComponent();
 
   /**
-   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getName()
-   * @see #getComopnent()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getName()
+   * @see #getAddComponent()
    * @generated
    */
-  EAttribute getComopnent_Name();
+  EAttribute getAddComponent_Name();
 
   /**
-   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOps <em>Ops</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getOps <em>Ops</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference list '<em>Ops</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOps()
-   * @see #getComopnent()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getOps()
+   * @see #getAddComponent()
    * @generated
    */
-  EReference getComopnent_Ops();
+  EReference getAddComponent_Ops();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOperations <em>Operations</em>}'.
+   * Returns the meta object for the reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getOpsReq <em>Ops Req</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Ops Req</em>'.
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getOpsReq()
+   * @see #getAddComponent()
+   * @generated
+   */
+  EReference getAddComponent_OpsReq();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getOperations <em>Operations</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Operations</em>'.
-   * @see com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent#getOperations()
-   * @see #getComopnent()
+   * @see com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent#getOperations()
+   * @see #getAddComponent()
    * @generated
    */
-  EReference getComopnent_Operations();
+  EReference getAddComponent_Operations();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.mappingassistance.mappingAssistance.TestOP <em>Test OP</em>}'.
@@ -1963,14 +1983,14 @@ public interface MappingAssistancePackage extends EPackage
     EClass ATOMIC = eINSTANCE.getAtomic();
 
     /**
-     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl <em>Comopnent</em>}' class.
+     * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.AddComponentImpl <em>Add Component</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.ComopnentImpl
-     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getComopnent()
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.AddComponentImpl
+     * @see com.aelos.xtext.mappingassistance.mappingAssistance.impl.MappingAssistancePackageImpl#getAddComponent()
      * @generated
      */
-    EClass COMOPNENT = eINSTANCE.getComopnent();
+    EClass ADD_COMPONENT = eINSTANCE.getAddComponent();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1978,7 +1998,7 @@ public interface MappingAssistancePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute COMOPNENT__NAME = eINSTANCE.getComopnent_Name();
+    EAttribute ADD_COMPONENT__NAME = eINSTANCE.getAddComponent_Name();
 
     /**
      * The meta object literal for the '<em><b>Ops</b></em>' reference list feature.
@@ -1986,7 +2006,15 @@ public interface MappingAssistancePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMOPNENT__OPS = eINSTANCE.getComopnent_Ops();
+    EReference ADD_COMPONENT__OPS = eINSTANCE.getAddComponent_Ops();
+
+    /**
+     * The meta object literal for the '<em><b>Ops Req</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ADD_COMPONENT__OPS_REQ = eINSTANCE.getAddComponent_OpsReq();
 
     /**
      * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
@@ -1994,7 +2022,7 @@ public interface MappingAssistancePackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMOPNENT__OPERATIONS = eINSTANCE.getComopnent_Operations();
+    EReference ADD_COMPONENT__OPERATIONS = eINSTANCE.getAddComponent_Operations();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.mappingassistance.mappingAssistance.impl.TestOPImpl <em>Test OP</em>}' class.

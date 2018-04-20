@@ -4,10 +4,10 @@
 package com.aelos.xtext.mappingassistance.mappingAssistance.impl;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Atomic;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
@@ -94,7 +94,7 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
       case MappingAssistancePackage.MOCK: return createMock();
       case MappingAssistancePackage.REPLACE_CONF: return createReplaceConf();
       case MappingAssistancePackage.ATOMIC: return createAtomic();
-      case MappingAssistancePackage.COMOPNENT: return createComopnent();
+      case MappingAssistancePackage.ADD_COMPONENT: return createAddComponent();
       case MappingAssistancePackage.TEST_OP: return createTestOP();
       case MappingAssistancePackage.OPERATION: return createOperation();
       case MappingAssistancePackage.VARIABLE: return createVariable();
@@ -238,10 +238,10 @@ public class MappingAssistanceFactoryImpl extends EFactoryImpl implements Mappin
    * <!-- end-user-doc -->
    * @generated
    */
-  public Comopnent createComopnent()
+  public AddComponent createAddComponent()
   {
-    ComopnentImpl comopnent = new ComopnentImpl();
-    return comopnent;
+    AddComponentImpl addComponent = new AddComponentImpl();
+    return addComponent;
   }
 
   /**

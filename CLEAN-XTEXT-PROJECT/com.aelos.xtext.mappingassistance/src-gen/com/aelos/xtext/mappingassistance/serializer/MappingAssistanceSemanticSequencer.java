@@ -4,9 +4,9 @@
 package com.aelos.xtext.mappingassistance.serializer;
 
 import com.aelos.xtext.mappingassistance.mappingAssistance.AbstractModel;
+import com.aelos.xtext.mappingassistance.mappingAssistance.AddComponent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Bindings;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Call;
-import com.aelos.xtext.mappingassistance.mappingAssistance.Comopnent;
 import com.aelos.xtext.mappingassistance.mappingAssistance.INT;
 import com.aelos.xtext.mappingassistance.mappingAssistance.Import;
 import com.aelos.xtext.mappingassistance.mappingAssistance.InstanceComp;
@@ -51,6 +51,9 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 			case MappingAssistancePackage.ABSTRACT_MODEL:
 				sequence_AbstractModel(context, (AbstractModel) semanticObject); 
 				return; 
+			case MappingAssistancePackage.ADD_COMPONENT:
+				sequence_AddComponent(context, (AddComponent) semanticObject); 
+				return; 
 			case MappingAssistancePackage.BINDINGS:
 				sequence_Bindings(context, (Bindings) semanticObject); 
 				return; 
@@ -59,9 +62,6 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 				return; 
 			case MappingAssistancePackage.CALL:
 				sequence_Call(context, (Call) semanticObject); 
-				return; 
-			case MappingAssistancePackage.COMOPNENT:
-				sequence_Comopnent(context, (Comopnent) semanticObject); 
 				return; 
 			case MappingAssistancePackage.DOUBLE:
 				sequence_Atomic(context, (com.aelos.xtext.mappingassistance.mappingAssistance.Double) semanticObject); 
@@ -120,7 +120,7 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *         testDr+=TestDriver 
 	 *         (
 	 *             obs+=Observer | 
-	 *             comp+=Comopnent | 
+	 *             comp+=AddComponent | 
 	 *             mock+=Mock | 
 	 *             conf+=ReplaceConf | 
 	 *             bind+=Bindings | 
@@ -129,6 +129,18 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     )
 	 */
 	protected void sequence_AbstractModel(ISerializationContext context, AbstractModel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     AddComponent returns AddComponent
+	 *
+	 * Constraint:
+	 *     (name=ID (ops+=[Operation|ID]* ops+=[Operation|ID])* (opsReq+=[Operation|ID]* opsReq+=[Operation|ID])* operations+=Operation*)
+	 */
+	protected void sequence_AddComponent(ISerializationContext context, AddComponent semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -249,18 +261,6 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	
 	/**
 	 * Contexts:
-	 *     Comopnent returns Comopnent
-	 *
-	 * Constraint:
-	 *     (name=ID (ops+=[Operation|ID]* ops+=[Operation|ID])* operations+=Operation*)
-	 */
-	protected void sequence_Comopnent(ISerializationContext context, Comopnent semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Import returns Import
 	 *
 	 * Constraint:
@@ -282,7 +282,7 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 	 *     InstanceComp returns InstanceComp
 	 *
 	 * Constraint:
-	 *     (name=ID type=[Comopnent|ID])
+	 *     (name=ID type=[AddComponent|ID])
 	 */
 	protected void sequence_InstanceComp(ISerializationContext context, InstanceComp semanticObject) {
 		if (errorAcceptor != null) {
@@ -293,7 +293,7 @@ public class MappingAssistanceSemanticSequencer extends AbstractDelegatingSemant
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getInstanceCompAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getInstanceCompAccess().getTypeComopnentIDTerminalRuleCall_3_0_1(), semanticObject.eGet(MappingAssistancePackage.Literals.INSTANCE_COMP__TYPE, false));
+		feeder.accept(grammarAccess.getInstanceCompAccess().getTypeAddComponentIDTerminalRuleCall_3_0_1(), semanticObject.eGet(MappingAssistancePackage.Literals.INSTANCE_COMP__TYPE, false));
 		feeder.finish();
 	}
 	
