@@ -4,7 +4,7 @@
 package com.aelos.xtext.architecture.scoping;
 
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Call;
+import com.aelos.xtext.architecture.architecture.Binding;
 import com.aelos.xtext.architecture.architecture.Component;
 import com.aelos.xtext.architecture.scoping.AbstractArchitectureScopeProvider;
 import com.google.common.base.Objects;
@@ -27,8 +27,11 @@ public class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider
     if (((context instanceof Component) && Objects.equal(reference, ArchitecturePackage.Literals.COMPONENT__OPS))) {
       return this.scope_Comp_op(EcoreUtil2.<Component>getContainerOfType(context, Component.class));
     }
-    if (((context instanceof Call) && Objects.equal(reference, ArchitecturePackage.Literals.CALL__MEMBER))) {
-      return this.scope_Call_op(EcoreUtil2.<Call>getContainerOfType(context, Call.class));
+    if (((context instanceof Binding) && Objects.equal(reference, ArchitecturePackage.Literals.BINDING__REC_MEMBER))) {
+      return this.scope_rec_member(EcoreUtil2.<Binding>getContainerOfType(context, Binding.class));
+    }
+    if (((context instanceof Binding) && Objects.equal(reference, ArchitecturePackage.Literals.BINDING__PRO_MEMBER))) {
+      return this.scope_Call_op(EcoreUtil2.<Binding>getContainerOfType(context, Binding.class));
     }
     return super.getScope(context, reference);
   }
@@ -37,7 +40,11 @@ public class ArchitectureScopeProvider extends AbstractArchitectureScopeProvider
     return Scopes.scopeFor(selct.getOperations());
   }
   
-  public IScope scope_Call_op(final Call selct) {
-    return Scopes.scopeFor(selct.getReceiver().getType().getCompType().getOps());
+  public IScope scope_Call_op(final Binding selct) {
+    return Scopes.scopeFor(selct.getProvider().getType().getCompType().getOps());
+  }
+  
+  public IScope scope_rec_member(final Binding selct) {
+    return Scopes.scopeFor(selct.getReceiver().getType().getCompType().getOpsReq());
   }
 }

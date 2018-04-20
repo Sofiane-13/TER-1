@@ -34,15 +34,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Architecture">
     <eStructuralFeatures xsi:type="ecore:EReference" name="vars" upperBound="-1" eType="#//Variable"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" upperBound="-1"
-        eType="#//Call" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="provider" upperBound="-1"
-        eType="#//Call" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bind" upperBound="-1" eType="#//Binding"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Call">
+  <eClassifiers xsi:type="ecore:EClass" name="Binding">
     <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//Variable"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="member" unique="false"
-        upperBound="-1" eType="#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recMember" eType="#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provider" eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="proMember" eType="#//Operation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

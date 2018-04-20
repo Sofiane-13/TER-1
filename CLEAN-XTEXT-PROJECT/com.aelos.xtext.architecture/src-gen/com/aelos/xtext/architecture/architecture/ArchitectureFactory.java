@@ -78,13 +78,13 @@ public interface ArchitectureFactory extends EFactory
   Architecture createArchitecture();
 
   /**
-   * Returns a new object of class '<em>Call</em>'.
+   * Returns a new object of class '<em>Binding</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Call</em>'.
+   * @return a new object of class '<em>Binding</em>'.
    * @generated
    */
-  Call createCall();
+  Binding createBinding();
 
   /**
    * Returns a new object of class '<em>Variable</em>'.

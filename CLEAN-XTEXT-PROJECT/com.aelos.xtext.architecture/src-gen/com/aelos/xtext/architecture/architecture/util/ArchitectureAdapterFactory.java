@@ -106,9 +106,9 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
         return createArchitectureAdapter();
       }
       @Override
-      public Adapter caseCall(Call object)
+      public Adapter caseBinding(Binding object)
       {
-        return createCallAdapter();
+        return createBindingAdapter();
       }
       @Override
       public Adapter caseVariable(Variable object)
@@ -238,16 +238,16 @@ public class ArchitectureAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Call <em>Call</em>}'.
+   * Creates a new adapter for an object of class '{@link com.aelos.xtext.architecture.architecture.Binding <em>Binding</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.aelos.xtext.architecture.architecture.Call
+   * @see com.aelos.xtext.architecture.architecture.Binding
    * @generated
    */
-  public Adapter createCallAdapter()
+  public Adapter createBindingAdapter()
   {
     return null;
   }

@@ -17,8 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.aelos.xtext.architecture.architecture.Architecture#getVars <em>Vars</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Architecture#getReceiver <em>Receiver</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.Architecture#getProvider <em>Provider</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.Architecture#getBind <em>Bind</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getArchitecture()
@@ -44,35 +43,19 @@ public interface Architecture extends EObject
   EList<Variable> getVars();
 
   /**
-   * Returns the value of the '<em><b>Receiver</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Call}.
+   * Returns the value of the '<em><b>Bind</b></em>' containment reference list.
+   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Binding}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Receiver</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Bind</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Receiver</em>' containment reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getArchitecture_Receiver()
+   * @return the value of the '<em>Bind</em>' containment reference list.
+   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getArchitecture_Bind()
    * @model containment="true"
    * @generated
    */
-  EList<Call> getReceiver();
-
-  /**
-   * Returns the value of the '<em><b>Provider</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.architecture.architecture.Call}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Provider</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Provider</em>' containment reference list.
-   * @see com.aelos.xtext.architecture.architecture.ArchitecturePackage#getArchitecture_Provider()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Call> getProvider();
+  EList<Binding> getBind();
 
 } // Architecture

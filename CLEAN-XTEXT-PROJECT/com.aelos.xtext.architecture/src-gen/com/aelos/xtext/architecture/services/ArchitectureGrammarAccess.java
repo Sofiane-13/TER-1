@@ -348,20 +348,16 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cArchitectureDefinitionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cVarsAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cVarsVariableParserRuleCall_2_0 = (RuleCall)cVarsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cBindKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cReceiverAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cReceiverCallParserRuleCall_3_1_0 = (RuleCall)cReceiverAssignment_3_1.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
-		private final Assignment cProviderAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
-		private final RuleCall cProviderCallParserRuleCall_3_3_0 = (RuleCall)cProviderAssignment_3_3.eContents().get(0);
+		private final Assignment cBindAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cBindBindingParserRuleCall_3_0 = (RuleCall)cBindAssignment_3.eContents().get(0);
 		
 		//Architecture:
 		//	{Architecture} "ArchitectureDefinition"
-		//	vars+=Variable* ("bind" receiver+=Call "-" provider+=Call)*;
+		//	vars+=Variable*
+		//	bind+=Binding*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Architecture} "ArchitectureDefinition" vars+=Variable* ("bind" receiver+=Call "-" provider+=Call)*
+		//{Architecture} "ArchitectureDefinition" vars+=Variable* bind+=Binding*
 		public Group getGroup() { return cGroup; }
 		
 		//{Architecture}
@@ -376,65 +372,86 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//Variable
 		public RuleCall getVarsVariableParserRuleCall_2_0() { return cVarsVariableParserRuleCall_2_0; }
 		
-		//("bind" receiver+=Call "-" provider+=Call)*
-		public Group getGroup_3() { return cGroup_3; }
+		//bind+=Binding*
+		public Assignment getBindAssignment_3() { return cBindAssignment_3; }
 		
-		//"bind"
-		public Keyword getBindKeyword_3_0() { return cBindKeyword_3_0; }
-		
-		//receiver+=Call
-		public Assignment getReceiverAssignment_3_1() { return cReceiverAssignment_3_1; }
-		
-		//Call
-		public RuleCall getReceiverCallParserRuleCall_3_1_0() { return cReceiverCallParserRuleCall_3_1_0; }
-		
-		//"-"
-		public Keyword getHyphenMinusKeyword_3_2() { return cHyphenMinusKeyword_3_2; }
-		
-		//provider+=Call
-		public Assignment getProviderAssignment_3_3() { return cProviderAssignment_3_3; }
-		
-		//Call
-		public RuleCall getProviderCallParserRuleCall_3_3_0() { return cProviderCallParserRuleCall_3_3_0; }
+		//Binding
+		public RuleCall getBindBindingParserRuleCall_3_0() { return cBindBindingParserRuleCall_3_0; }
 	}
-	public class CallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Call");
+	public class BindingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Binding");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cReceiverAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cReceiverVariableCrossReference_0_0 = (CrossReference)cReceiverAssignment_0.eContents().get(0);
-		private final RuleCall cReceiverVariableIDTerminalRuleCall_0_0_1 = (RuleCall)cReceiverVariableCrossReference_0_0.eContents().get(1);
-		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cMemberAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cMemberOperationCrossReference_2_0 = (CrossReference)cMemberAssignment_2.eContents().get(0);
-		private final RuleCall cMemberOperationIDTerminalRuleCall_2_0_1 = (RuleCall)cMemberOperationCrossReference_2_0.eContents().get(1);
+		private final Keyword cBindKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cReceiverAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cReceiverVariableCrossReference_1_0 = (CrossReference)cReceiverAssignment_1.eContents().get(0);
+		private final RuleCall cReceiverVariableIDTerminalRuleCall_1_0_1 = (RuleCall)cReceiverVariableCrossReference_1_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cRecMemberAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cRecMemberOperationCrossReference_3_0 = (CrossReference)cRecMemberAssignment_3.eContents().get(0);
+		private final RuleCall cRecMemberOperationIDTerminalRuleCall_3_0_1 = (RuleCall)cRecMemberOperationCrossReference_3_0.eContents().get(1);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cProviderAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cProviderVariableCrossReference_5_0 = (CrossReference)cProviderAssignment_5.eContents().get(0);
+		private final RuleCall cProviderVariableIDTerminalRuleCall_5_0_1 = (RuleCall)cProviderVariableCrossReference_5_0.eContents().get(1);
+		private final Keyword cFullStopKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cProMemberAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cProMemberOperationCrossReference_7_0 = (CrossReference)cProMemberAssignment_7.eContents().get(0);
+		private final RuleCall cProMemberOperationIDTerminalRuleCall_7_0_1 = (RuleCall)cProMemberOperationCrossReference_7_0.eContents().get(1);
 		
-		//Call:
-		//	receiver=[Variable] '.' member+=[Operation];
+		//Binding:
+		//	"bind" receiver=[Variable] '.' recMember=[Operation] ":" provider=[Variable] '.' proMember=[Operation];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//receiver=[Variable] '.' member+=[Operation]
+		//"bind" receiver=[Variable] '.' recMember=[Operation] ":" provider=[Variable] '.' proMember=[Operation]
 		public Group getGroup() { return cGroup; }
 		
+		//"bind"
+		public Keyword getBindKeyword_0() { return cBindKeyword_0; }
+		
 		//receiver=[Variable]
-		public Assignment getReceiverAssignment_0() { return cReceiverAssignment_0; }
+		public Assignment getReceiverAssignment_1() { return cReceiverAssignment_1; }
 		
 		//[Variable]
-		public CrossReference getReceiverVariableCrossReference_0_0() { return cReceiverVariableCrossReference_0_0; }
+		public CrossReference getReceiverVariableCrossReference_1_0() { return cReceiverVariableCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getReceiverVariableIDTerminalRuleCall_0_0_1() { return cReceiverVariableIDTerminalRuleCall_0_0_1; }
+		public RuleCall getReceiverVariableIDTerminalRuleCall_1_0_1() { return cReceiverVariableIDTerminalRuleCall_1_0_1; }
 		
 		//'.'
-		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
+		public Keyword getFullStopKeyword_2() { return cFullStopKeyword_2; }
 		
-		//member+=[Operation]
-		public Assignment getMemberAssignment_2() { return cMemberAssignment_2; }
+		//recMember=[Operation]
+		public Assignment getRecMemberAssignment_3() { return cRecMemberAssignment_3; }
 		
 		//[Operation]
-		public CrossReference getMemberOperationCrossReference_2_0() { return cMemberOperationCrossReference_2_0; }
+		public CrossReference getRecMemberOperationCrossReference_3_0() { return cRecMemberOperationCrossReference_3_0; }
 		
 		//ID
-		public RuleCall getMemberOperationIDTerminalRuleCall_2_0_1() { return cMemberOperationIDTerminalRuleCall_2_0_1; }
+		public RuleCall getRecMemberOperationIDTerminalRuleCall_3_0_1() { return cRecMemberOperationIDTerminalRuleCall_3_0_1; }
+		
+		//":"
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		
+		//provider=[Variable]
+		public Assignment getProviderAssignment_5() { return cProviderAssignment_5; }
+		
+		//[Variable]
+		public CrossReference getProviderVariableCrossReference_5_0() { return cProviderVariableCrossReference_5_0; }
+		
+		//ID
+		public RuleCall getProviderVariableIDTerminalRuleCall_5_0_1() { return cProviderVariableIDTerminalRuleCall_5_0_1; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_6() { return cFullStopKeyword_6; }
+		
+		//proMember=[Operation]
+		public Assignment getProMemberAssignment_7() { return cProMemberAssignment_7; }
+		
+		//[Operation]
+		public CrossReference getProMemberOperationCrossReference_7_0() { return cProMemberOperationCrossReference_7_0; }
+		
+		//ID
+		public RuleCall getProMemberOperationIDTerminalRuleCall_7_0_1() { return cProMemberOperationIDTerminalRuleCall_7_0_1; }
 	}
 	public class VariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.architecture.Architecture.Variable");
@@ -641,7 +658,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	private final QualifiedNameElements pQualifiedName;
 	private final ComponentElements pComponent;
 	private final ArchitectureElements pArchitecture;
-	private final CallElements pCall;
+	private final BindingElements pBinding;
 	private final VariableElements pVariable;
 	private final PIDElements pPID;
 	private final OperationElements pOperation;
@@ -665,7 +682,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pComponent = new ComponentElements();
 		this.pArchitecture = new ArchitectureElements();
-		this.pCall = new CallElements();
+		this.pBinding = new BindingElements();
 		this.pVariable = new VariableElements();
 		this.pPID = new PIDElements();
 		this.pOperation = new OperationElements();
@@ -780,7 +797,8 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Architecture:
 	//	{Architecture} "ArchitectureDefinition"
-	//	vars+=Variable* ("bind" receiver+=Call "-" provider+=Call)*;
+	//	vars+=Variable*
+	//	bind+=Binding*;
 	public ArchitectureElements getArchitectureAccess() {
 		return pArchitecture;
 	}
@@ -789,14 +807,14 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		return getArchitectureAccess().getRule();
 	}
 	
-	//Call:
-	//	receiver=[Variable] '.' member+=[Operation];
-	public CallElements getCallAccess() {
-		return pCall;
+	//Binding:
+	//	"bind" receiver=[Variable] '.' recMember=[Operation] ":" provider=[Variable] '.' proMember=[Operation];
+	public BindingElements getBindingAccess() {
+		return pBinding;
 	}
 	
-	public ParserRule getCallRule() {
-		return getCallAccess().getRule();
+	public ParserRule getBindingRule() {
+		return getBindingAccess().getRule();
 	}
 	
 	//Variable:

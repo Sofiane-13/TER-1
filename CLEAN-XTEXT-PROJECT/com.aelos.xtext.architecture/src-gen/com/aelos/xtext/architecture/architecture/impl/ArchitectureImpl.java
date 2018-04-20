@@ -5,7 +5,7 @@ package com.aelos.xtext.architecture.architecture.impl;
 
 import com.aelos.xtext.architecture.architecture.Architecture;
 import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
-import com.aelos.xtext.architecture.architecture.Call;
+import com.aelos.xtext.architecture.architecture.Binding;
 import com.aelos.xtext.architecture.architecture.Variable;
 
 import java.util.Collection;
@@ -31,8 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ArchitectureImpl#getVars <em>Vars</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ArchitectureImpl#getReceiver <em>Receiver</em>}</li>
- *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ArchitectureImpl#getProvider <em>Provider</em>}</li>
+ *   <li>{@link com.aelos.xtext.architecture.architecture.impl.ArchitectureImpl#getBind <em>Bind</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,24 +49,14 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
   protected EList<Variable> vars;
 
   /**
-   * The cached value of the '{@link #getReceiver() <em>Receiver</em>}' containment reference list.
+   * The cached value of the '{@link #getBind() <em>Bind</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReceiver()
+   * @see #getBind()
    * @generated
    * @ordered
    */
-  protected EList<Call> receiver;
-
-  /**
-   * The cached value of the '{@link #getProvider() <em>Provider</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getProvider()
-   * @generated
-   * @ordered
-   */
-  protected EList<Call> provider;
+  protected EList<Binding> bind;
 
   /**
    * <!-- begin-user-doc -->
@@ -109,27 +98,13 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Call> getReceiver()
+  public EList<Binding> getBind()
   {
-    if (receiver == null)
+    if (bind == null)
     {
-      receiver = new EObjectContainmentEList<Call>(Call.class, this, ArchitecturePackage.ARCHITECTURE__RECEIVER);
+      bind = new EObjectContainmentEList<Binding>(Binding.class, this, ArchitecturePackage.ARCHITECTURE__BIND);
     }
-    return receiver;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Call> getProvider()
-  {
-    if (provider == null)
-    {
-      provider = new EObjectContainmentEList<Call>(Call.class, this, ArchitecturePackage.ARCHITECTURE__PROVIDER);
-    }
-    return provider;
+    return bind;
   }
 
   /**
@@ -144,10 +119,8 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
     {
       case ArchitecturePackage.ARCHITECTURE__VARS:
         return ((InternalEList<?>)getVars()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.ARCHITECTURE__RECEIVER:
-        return ((InternalEList<?>)getReceiver()).basicRemove(otherEnd, msgs);
-      case ArchitecturePackage.ARCHITECTURE__PROVIDER:
-        return ((InternalEList<?>)getProvider()).basicRemove(otherEnd, msgs);
+      case ArchitecturePackage.ARCHITECTURE__BIND:
+        return ((InternalEList<?>)getBind()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -164,10 +137,8 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
     {
       case ArchitecturePackage.ARCHITECTURE__VARS:
         return getVars();
-      case ArchitecturePackage.ARCHITECTURE__RECEIVER:
-        return getReceiver();
-      case ArchitecturePackage.ARCHITECTURE__PROVIDER:
-        return getProvider();
+      case ArchitecturePackage.ARCHITECTURE__BIND:
+        return getBind();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -187,13 +158,9 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
         getVars().clear();
         getVars().addAll((Collection<? extends Variable>)newValue);
         return;
-      case ArchitecturePackage.ARCHITECTURE__RECEIVER:
-        getReceiver().clear();
-        getReceiver().addAll((Collection<? extends Call>)newValue);
-        return;
-      case ArchitecturePackage.ARCHITECTURE__PROVIDER:
-        getProvider().clear();
-        getProvider().addAll((Collection<? extends Call>)newValue);
+      case ArchitecturePackage.ARCHITECTURE__BIND:
+        getBind().clear();
+        getBind().addAll((Collection<? extends Binding>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -212,11 +179,8 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
       case ArchitecturePackage.ARCHITECTURE__VARS:
         getVars().clear();
         return;
-      case ArchitecturePackage.ARCHITECTURE__RECEIVER:
-        getReceiver().clear();
-        return;
-      case ArchitecturePackage.ARCHITECTURE__PROVIDER:
-        getProvider().clear();
+      case ArchitecturePackage.ARCHITECTURE__BIND:
+        getBind().clear();
         return;
     }
     super.eUnset(featureID);
@@ -234,10 +198,8 @@ public class ArchitectureImpl extends MinimalEObjectImpl.Container implements Ar
     {
       case ArchitecturePackage.ARCHITECTURE__VARS:
         return vars != null && !vars.isEmpty();
-      case ArchitecturePackage.ARCHITECTURE__RECEIVER:
-        return receiver != null && !receiver.isEmpty();
-      case ArchitecturePackage.ARCHITECTURE__PROVIDER:
-        return provider != null && !provider.isEmpty();
+      case ArchitecturePackage.ARCHITECTURE__BIND:
+        return bind != null && !bind.isEmpty();
     }
     return super.eIsSet(featureID);
   }

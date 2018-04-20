@@ -72,7 +72,7 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
       case ArchitecturePackage.IMPORT: return createImport();
       case ArchitecturePackage.COMPONENT: return createComponent();
       case ArchitecturePackage.ARCHITECTURE: return createArchitecture();
-      case ArchitecturePackage.CALL: return createCall();
+      case ArchitecturePackage.BINDING: return createBinding();
       case ArchitecturePackage.VARIABLE: return createVariable();
       case ArchitecturePackage.OPERATION: return createOperation();
       case ArchitecturePackage.ATOMIC_TYPE: return createAtomicType();
@@ -186,10 +186,10 @@ public class ArchitectureFactoryImpl extends EFactoryImpl implements Architectur
    * <!-- end-user-doc -->
    * @generated
    */
-  public Call createCall()
+  public Binding createBinding()
   {
-    CallImpl call = new CallImpl();
-    return call;
+    BindingImpl binding = new BindingImpl();
+    return binding;
   }
 
   /**
