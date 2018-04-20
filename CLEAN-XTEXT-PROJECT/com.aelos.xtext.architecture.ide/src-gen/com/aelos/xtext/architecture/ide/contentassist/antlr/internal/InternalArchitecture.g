@@ -1681,9 +1681,9 @@ rule__Binding__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBindingAccess().getColonKeyword_4()); }
-	':'
-	{ after(grammarAccess.getBindingAccess().getColonKeyword_4()); }
+	{ before(grammarAccess.getBindingAccess().getHyphenMinusKeyword_4()); }
+	'-'
+	{ after(grammarAccess.getBindingAccess().getHyphenMinusKeyword_4()); }
 )
 ;
 finally {

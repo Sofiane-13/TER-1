@@ -644,9 +644,9 @@ ruleBinding returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4=':'
+		otherlv_4='-'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getBindingAccess().getColonKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getBindingAccess().getHyphenMinusKeyword_4());
 		}
 		(
 			(

@@ -3,7 +3,12 @@
  */
 package com.aelos.xtext.architecture.validation;
 
+import com.aelos.xtext.architecture.architecture.ArchitecturePackage;
+import com.aelos.xtext.architecture.architecture.Binding;
+import com.aelos.xtext.architecture.architecture.Variable;
 import com.aelos.xtext.architecture.validation.AbstractArchitectureValidator;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +17,32 @@ import com.aelos.xtext.architecture.validation.AbstractArchitectureValidator;
  */
 @SuppressWarnings("all")
 public class ArchitectureValidator extends AbstractArchitectureValidator {
+  @Check
+  public void checkBindingSign(final Binding bind) {
+    System.out.println("why");
+    int _size = bind.getProMember().getArg().size();
+    int _size_1 = bind.getRecMember().getArg().size();
+    boolean _notEquals = (_size != _size_1);
+    if (_notEquals) {
+      this.error("services must have the same signature", ArchitecturePackage.Literals.BINDING__PRO_MEMBER);
+    } else {
+      boolean _equals = bind.getProMember().getType().getAtomType().getLiteral().equals(bind.getRecMember().getType().getAtomType().getLiteral());
+      boolean _not = (!_equals);
+      if (_not) {
+        this.error("services must have the same signature", ArchitecturePackage.Literals.BINDING__PRO_MEMBER);
+      }
+      int x = 0;
+      EList<Variable> _arg = bind.getProMember().getArg();
+      for (final Variable providerArg : _arg) {
+        {
+          boolean _equals_1 = providerArg.getType().getAtomType().getLiteral().equals(bind.getRecMember().getArg().get(x).getType().getAtomType().getLiteral());
+          boolean _not_1 = (!_equals_1);
+          if (_not_1) {
+            this.error("the service parameters must have the same Type", ArchitecturePackage.Literals.BINDING__PRO_MEMBER);
+          }
+          x++;
+        }
+      }
+    }
+  }
 }

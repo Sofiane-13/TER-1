@@ -389,7 +389,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cProMemberAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cProMemberOperationCrossReference_3_0 = (CrossReference)cProMemberAssignment_3.eContents().get(0);
 		private final RuleCall cProMemberOperationIDTerminalRuleCall_3_0_1 = (RuleCall)cProMemberOperationCrossReference_3_0.eContents().get(1);
-		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cHyphenMinusKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cReceiverAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final CrossReference cReceiverVariableCrossReference_5_0 = (CrossReference)cReceiverAssignment_5.eContents().get(0);
 		private final RuleCall cReceiverVariableIDTerminalRuleCall_5_0_1 = (RuleCall)cReceiverVariableCrossReference_5_0.eContents().get(1);
@@ -399,10 +399,10 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRecMemberOperationIDTerminalRuleCall_7_0_1 = (RuleCall)cRecMemberOperationCrossReference_7_0.eContents().get(1);
 		
 		//Binding:
-		//	"bind" provider=[Variable] '.' proMember=[Operation] ":" receiver=[Variable] '.' recMember=[Operation];
+		//	"bind" provider=[Variable] '.' proMember=[Operation] "-" receiver=[Variable] '.' recMember=[Operation];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"bind" provider=[Variable] '.' proMember=[Operation] ":" receiver=[Variable] '.' recMember=[Operation]
+		//"bind" provider=[Variable] '.' proMember=[Operation] "-" receiver=[Variable] '.' recMember=[Operation]
 		public Group getGroup() { return cGroup; }
 		
 		//"bind"
@@ -429,8 +429,8 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getProMemberOperationIDTerminalRuleCall_3_0_1() { return cProMemberOperationIDTerminalRuleCall_3_0_1; }
 		
-		//":"
-		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
+		//"-"
+		public Keyword getHyphenMinusKeyword_4() { return cHyphenMinusKeyword_4; }
 		
 		//receiver=[Variable]
 		public Assignment getReceiverAssignment_5() { return cReceiverAssignment_5; }
@@ -787,7 +787,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Binding:
-	//	"bind" provider=[Variable] '.' proMember=[Operation] ":" receiver=[Variable] '.' recMember=[Operation];
+	//	"bind" provider=[Variable] '.' proMember=[Operation] "-" receiver=[Variable] '.' recMember=[Operation];
 	public BindingElements getBindingAccess() {
 		return pBinding;
 	}
