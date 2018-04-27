@@ -3,7 +3,14 @@ import my.exemple.testDomain.*
 import my.exemple.architecture.*
 import my.exemple.comp.*
 TestDriver{
-	ExpectedValue:=mid.computeSpeed(pos:=piloteSpeed)
+	ExpectedValue<-mid.computeSpeed(pos<-lastPos, safeDist<-lastPos)
 }
-replaceConf:mid.conf(pos:=lastPos,speed:=vSpeed)
-mock:first.getPos:=pilotPos
+replaceConf:mid.conf(pos<-lastPos,speed<-vSpeed)
+mock:first.getPos<-pilotPos
+observer:mid.computeSpeed(obs1<-safeDist)-first.getSpeed
+AddComponent:MockVehicule{
+	providedServices(getPos)
+	requeredServices()
+	def getPos():INT
+}
+def mockV:MockVehicule

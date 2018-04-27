@@ -554,22 +554,28 @@ ruleArchitecture returns [EObject current=null]
 			newLeafNode(otherlv_1, grammarAccess.getArchitectureAccess().getArchitectureDefinitionKeyword_1());
 		}
 		(
+			otherlv_2='def'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getArchitectureAccess().getDefKeyword_2_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getArchitectureAccess().getVarsVariableParserRuleCall_2_0());
-				}
-				lv_vars_2_0=ruleVariable
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getArchitectureRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getArchitectureAccess().getVarsVariableParserRuleCall_2_1_0());
 					}
-					add(
-						$current,
-						"vars",
-						lv_vars_2_0,
-						"com.aelos.xtext.architecture.Architecture.Variable");
-					afterParserOrEnumRuleCall();
-				}
+					lv_vars_3_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getArchitectureRule());
+						}
+						add(
+							$current,
+							"vars",
+							lv_vars_3_0,
+							"com.aelos.xtext.architecture.Architecture.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)*
 		(
@@ -577,7 +583,7 @@ ruleArchitecture returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getArchitectureAccess().getBindBindingParserRuleCall_3_0());
 				}
-				lv_bind_3_0=ruleBinding
+				lv_bind_4_0=ruleBinding
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getArchitectureRule());
@@ -585,7 +591,7 @@ ruleArchitecture returns [EObject current=null]
 					add(
 						$current,
 						"bind",
-						lv_bind_3_0,
+						lv_bind_4_0,
 						"com.aelos.xtext.architecture.Architecture.Binding");
 					afterParserOrEnumRuleCall();
 				}

@@ -5,11 +5,11 @@ domain my.exemple.comp{
 	Component:SimpleViehcle{
 		
 		providedServices(conf,getPos,getSpeed,computeSpeed)
-		requeredServices(getPos)
-		def conf(pos:INT, speed:INT):INT
+		requeredServices(getPos, getSpeed)
+		def conf(pos:INT, speed:INT):Void
 		def getPos():INT
 		def getSpeed():INT
-		def computeSpeed(safeDist:INT, pos:INT):INT
+		def computeSpeed(safeDist:INT, pos:INT):Void
 		def getPilotePos():INT
 		
 	
@@ -19,7 +19,7 @@ domain my.exemple.comp{
 		
 		providedServices(conf,getPos,getSpeed)
 		requeredServices()
-		def conf(test:INT):STRING
+		def conf(test:INT):Void
 		def getPos():INT
 		def getSpeed():INT
 		
@@ -30,17 +30,21 @@ domain my.exemple.comp{
 domain my.exemple.architecture{
 	import my.exemple.comp.*
 	ArchitectureDefinition
-	first : SimpleViehcle
-	mid : SimpleViehcle
-	last : SimpleViehcle
-	p : SimplePilote
+	def first : SimpleViehcle
+	def mid : SimpleViehcle
+	def last : SimpleViehcle
+	def p : SimplePilote
 	
-	bind first.computeSpeed : p.getSpeed
-	bind first.computeSpeed : p.getPos
+	bind first.getSpeed - mid.getSpeed
+	bind first.getPos -  mid.getPos
 	
-	bind mid.computeSpeed : first.getSpeed
-	bind mid.computeSpeed : first.getPos
+	bind p.getSpeed - first.getSpeed
+	bind p.getPos -  first.getPos
 	
-	bind last.computeSpeed : mid.getSpeed
-	bind last.computeSpeed : mid.getPos
+	bind first.getSpeed - mid.getSpeed
+	bind first.getPos -  mid.getPos
+	
+	
+	bind mid.getSpeed - last.getSpeed
+	bind mid.getPos - last.getPos
 }

@@ -1525,9 +1525,9 @@ rule__Architecture__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getArchitectureAccess().getVarsAssignment_2()); }
-	(rule__Architecture__VarsAssignment_2)*
-	{ after(grammarAccess.getArchitectureAccess().getVarsAssignment_2()); }
+	{ before(grammarAccess.getArchitectureAccess().getGroup_2()); }
+	(rule__Architecture__Group_2__0)*
+	{ after(grammarAccess.getArchitectureAccess().getGroup_2()); }
 )
 ;
 finally {
@@ -1554,6 +1554,60 @@ rule__Architecture__Group__3__Impl
 	{ before(grammarAccess.getArchitectureAccess().getBindAssignment_3()); }
 	(rule__Architecture__BindAssignment_3)*
 	{ after(grammarAccess.getArchitectureAccess().getBindAssignment_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Architecture__Group_2__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Architecture__Group_2__0__Impl
+	rule__Architecture__Group_2__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Architecture__Group_2__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getArchitectureAccess().getDefKeyword_2_0()); }
+	'def'
+	{ after(grammarAccess.getArchitectureAccess().getDefKeyword_2_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Architecture__Group_2__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Architecture__Group_2__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Architecture__Group_2__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getArchitectureAccess().getVarsAssignment_2_1()); }
+	(rule__Architecture__VarsAssignment_2_1)
+	{ after(grammarAccess.getArchitectureAccess().getVarsAssignment_2_1()); }
 )
 ;
 finally {
@@ -2366,15 +2420,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Architecture__VarsAssignment_2
+rule__Architecture__VarsAssignment_2_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getArchitectureAccess().getVarsVariableParserRuleCall_2_0()); }
+		{ before(grammarAccess.getArchitectureAccess().getVarsVariableParserRuleCall_2_1_0()); }
 		ruleVariable
-		{ after(grammarAccess.getArchitectureAccess().getVarsVariableParserRuleCall_2_0()); }
+		{ after(grammarAccess.getArchitectureAccess().getVarsVariableParserRuleCall_2_1_0()); }
 	)
 ;
 finally {
