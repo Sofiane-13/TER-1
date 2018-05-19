@@ -181,11 +181,26 @@ BCOR5mm, % Binding correction
 								  
   \newpage
 	\section{Introduction}
-	Dans le développement dirigé par les modèles (MDD), il est essentiel de s’assurer de la correction des modèles avant de commencer le processus de transformations et de génération de codes. On diminue ainsi le coût élevé de la détection tardive d’erreurs. l’équipe que nous avons intégrée durant ce stage “AeLoS” travaille sur la vérification et la validation de logiciels aux niveaux modèles.
-														    
-	Le test est un moyen très utilisé pour vérifier et valider les applications, mais ce dernier rencontre plusieurs problèmes comme la couverture des tests, l’hétérogénéité du code, séparation des points de vue…
-														    
-	En 2013, l’équipe AELOS à réaliser des travaux sur l’assistance à la construction du harnais de tests, en 2014 et 2015, le prototype a été amélioré par des groupes d’étudiants du Master Alma. En 2018 nous reprenons le projet afin d'expérimenter une nouvelle approche, le cas d'études se portera sur le contrôle de voiture autonome.
+	Dans le développement dirigé par les modèles (MDD), il est essentiel de s’assurer de la correction des modèles avant de commencer le processus de transformations et de génération de codes. On diminue ainsi le coût élevé de la détection tardive d’erreurs. 
+
+	En effet, ce mode de développement permet de faire abstraction du système qu'on s'apprète à modélisé. C'est à dire elle permet de rendre compréhensible le système modélisé et d’apporter des réponses aux questions que l'on se pose sur le système. Aujourd'hui, il y a de nombreuse entreprises qui s'oriente vers se model comme ils l'ont fait avant avec l'approche objet. Dans le MDD, au lieu de considérer que tout est objet comme dans la programmation objet, on va considérer que tout est modèle.
+
+	L’équipe que nous avons intégrée durant ce stage “AeLoS” travaille sur la vérification et la validation de logiciels aux niveaux modèles.	    
+	Le test est un moyen très utilisé pour vérifier et valider les applications, mais ce dernier rencontre plusieurs problèmes comme la couverture des tests, l’hétérogénéité du code, séparation des points de vue…	   
+
+	En 2013, l'équipe AELOS à réaliser des travaux sur l'assistance à la construction du harnais de tests, en 2014 et 2015, le prototype a été améliorée par des groupes d'étudiants du Master ALMA en 2016. En 2018 nous reprenons le projet afin d'expérimenter une nouvelle approche.
+
+	En effet, suite à différentes approche qui on étaient testés et jugés comme étant non abouti (Ecriture du Code Java du Harnais), laborieux (Spécification manuelle du Harnai) ou simple et rapide (L'outil CostoTest), la nouvelle approche consiste à donner la possibilité de suivre à divers niveau de raffinement du modèle le comportement de l'application de test, permettre l'enrichissement des tests et des modèles en parallèle mais aussi que les tests arrive à résister au divers évolutions des modèles. 
+
+	Dès lors, la question qui se pose, c'est comment s'y prendre arriver à terme de cette nouvelle approche ? Parmi les réponses que l'on peut apporter, c'est de commencer par formaliser le test, par là nous voulons dire bien séparer les différentes parties qui vont constituer le test (domaine de test, intention de test, donné de test …) et formaliser le processus de construction de harnais de test.
+
+	Dans la suite de ce rapport, nous verrons qu’elles sont les moyens logiciels qui ont été mis en place pour formaliser le test et la construction de harnais.
+
+
+	Le cas d'études se portera sur le contrôle de voiture autonome.
+
+
+
 	%----------------------------------------------------------------------------------------
 	%Fin introduction
 	%----------------------------------------------------------------------------------------
