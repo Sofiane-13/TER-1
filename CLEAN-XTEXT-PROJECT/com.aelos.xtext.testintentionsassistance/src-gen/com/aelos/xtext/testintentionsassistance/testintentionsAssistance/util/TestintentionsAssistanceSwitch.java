@@ -19,6 +19,7 @@ import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Not;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Or;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Plus;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.STRING;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention;
@@ -137,6 +138,13 @@ public class TestintentionsAssistanceSwitch<T> extends Switch<T>
         Data data = (Data)theEObject;
         T result = caseData(data);
         if (result == null) result = caseAbstractElement(data);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TestintentionsAssistancePackage.OUT_VARIABLE:
+      {
+        OutVariable outVariable = (OutVariable)theEObject;
+        T result = caseOutVariable(outVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -369,6 +377,22 @@ public class TestintentionsAssistanceSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseData(Data object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Out Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Out Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOutVariable(OutVariable object)
   {
     return null;
   }

@@ -200,19 +200,26 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Assignment cOutVarAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final CrossReference cOutVarVariableCrossReference_3_0_0 = (CrossReference)cOutVarAssignment_3_0.eContents().get(0);
-		private final RuleCall cOutVarVariableIDTerminalRuleCall_3_0_0_1 = (RuleCall)cOutVarVariableCrossReference_3_0_0.eContents().get(1);
-		private final Keyword cLessThanSignHyphenMinusKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
-		private final Assignment cTestOpAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cTestOpTestOPParserRuleCall_3_2_0 = (RuleCall)cTestOpAssignment_3_2.eContents().get(0);
+		private final CrossReference cOutVarOutVariableCrossReference_3_0_0 = (CrossReference)cOutVarAssignment_3_0.eContents().get(0);
+		private final RuleCall cOutVarOutVariableIDTerminalRuleCall_3_0_0_1 = (RuleCall)cOutVarOutVariableCrossReference_3_0_0.eContents().get(1);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
+		private final Assignment cOutVarAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final CrossReference cOutVarVariableCrossReference_3_1_1_0 = (CrossReference)cOutVarAssignment_3_1_1.eContents().get(0);
+		private final RuleCall cOutVarVariableIDTerminalRuleCall_3_1_1_0_1 = (RuleCall)cOutVarVariableCrossReference_3_1_1_0.eContents().get(1);
+		private final Keyword cLessThanSignHyphenMinusKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		private final Assignment cTestOpAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
+		private final RuleCall cTestOpTestOPParserRuleCall_3_3_0 = (RuleCall)cTestOpAssignment_3_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//TestDriver:
-		//	{TestDriver} "TestDriver" "{" (outVar+=[testIntention::Variable] "<-" testOp+=TestOP)*
+		//	{TestDriver} "TestDriver" "{" (outVar+=[testIntention::OutVariable] ("," outVar+=[testIntention::Variable])* "<-"
+		//	testOp+=TestOP)*
 		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TestDriver} "TestDriver" "{" (outVar+=[testIntention::Variable] "<-" testOp+=TestOP)* "}"
+		//{TestDriver} "TestDriver" "{" (outVar+=[testIntention::OutVariable] ("," outVar+=[testIntention::Variable])* "<-"
+		//testOp+=TestOP)* "}"
 		public Group getGroup() { return cGroup; }
 		
 		//{TestDriver}
@@ -224,26 +231,41 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//(outVar+=[testIntention::Variable] "<-" testOp+=TestOP)*
+		//(outVar+=[testIntention::OutVariable] ("," outVar+=[testIntention::Variable])* "<-" testOp+=TestOP)*
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//outVar+=[testIntention::Variable]
+		//outVar+=[testIntention::OutVariable]
 		public Assignment getOutVarAssignment_3_0() { return cOutVarAssignment_3_0; }
 		
-		//[testIntention::Variable]
-		public CrossReference getOutVarVariableCrossReference_3_0_0() { return cOutVarVariableCrossReference_3_0_0; }
+		//[testIntention::OutVariable]
+		public CrossReference getOutVarOutVariableCrossReference_3_0_0() { return cOutVarOutVariableCrossReference_3_0_0; }
 		
 		//ID
-		public RuleCall getOutVarVariableIDTerminalRuleCall_3_0_0_1() { return cOutVarVariableIDTerminalRuleCall_3_0_0_1; }
+		public RuleCall getOutVarOutVariableIDTerminalRuleCall_3_0_0_1() { return cOutVarOutVariableIDTerminalRuleCall_3_0_0_1; }
+		
+		//("," outVar+=[testIntention::Variable])*
+		public Group getGroup_3_1() { return cGroup_3_1; }
+		
+		//","
+		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
+		
+		//outVar+=[testIntention::Variable]
+		public Assignment getOutVarAssignment_3_1_1() { return cOutVarAssignment_3_1_1; }
+		
+		//[testIntention::Variable]
+		public CrossReference getOutVarVariableCrossReference_3_1_1_0() { return cOutVarVariableCrossReference_3_1_1_0; }
+		
+		//ID
+		public RuleCall getOutVarVariableIDTerminalRuleCall_3_1_1_0_1() { return cOutVarVariableIDTerminalRuleCall_3_1_1_0_1; }
 		
 		//"<-"
-		public Keyword getLessThanSignHyphenMinusKeyword_3_1() { return cLessThanSignHyphenMinusKeyword_3_1; }
+		public Keyword getLessThanSignHyphenMinusKeyword_3_2() { return cLessThanSignHyphenMinusKeyword_3_2; }
 		
 		//testOp+=TestOP
-		public Assignment getTestOpAssignment_3_2() { return cTestOpAssignment_3_2; }
+		public Assignment getTestOpAssignment_3_3() { return cTestOpAssignment_3_3; }
 		
 		//TestOP
-		public RuleCall getTestOpTestOPParserRuleCall_3_2_0() { return cTestOpTestOPParserRuleCall_3_2_0; }
+		public RuleCall getTestOpTestOPParserRuleCall_3_3_0() { return cTestOpTestOPParserRuleCall_3_3_0; }
 		
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
@@ -1442,7 +1464,8 @@ public class MappingAssistanceGrammarAccess extends AbstractGrammarElementFinder
 	}
 	
 	//TestDriver:
-	//	{TestDriver} "TestDriver" "{" (outVar+=[testIntention::Variable] "<-" testOp+=TestOP)*
+	//	{TestDriver} "TestDriver" "{" (outVar+=[testIntention::OutVariable] ("," outVar+=[testIntention::Variable])* "<-"
+	//	testOp+=TestOP)*
 	//	"}";
 	public TestDriverElements getTestDriverAccess() {
 		return pTestDriver;

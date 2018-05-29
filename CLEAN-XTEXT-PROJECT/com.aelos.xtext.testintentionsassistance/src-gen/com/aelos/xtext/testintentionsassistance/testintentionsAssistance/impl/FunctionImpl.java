@@ -4,6 +4,7 @@
 package com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl;
 
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
 
@@ -49,7 +50,7 @@ public class FunctionImpl extends AbstractElementImpl implements Function
    * @generated
    * @ordered
    */
-  protected EList<Variable> out;
+  protected EList<OutVariable> out;
 
   /**
    * The default value of the '{@link #getMethode() <em>Methode</em>}' attribute.
@@ -117,11 +118,11 @@ public class FunctionImpl extends AbstractElementImpl implements Function
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getOut()
+  public EList<OutVariable> getOut()
   {
     if (out == null)
     {
-      out = new EObjectContainmentEList<Variable>(Variable.class, this, TestintentionsAssistancePackage.FUNCTION__OUT);
+      out = new EObjectContainmentEList<OutVariable>(OutVariable.class, this, TestintentionsAssistancePackage.FUNCTION__OUT);
     }
     return out;
   }
@@ -258,7 +259,7 @@ public class FunctionImpl extends AbstractElementImpl implements Function
     {
       case TestintentionsAssistancePackage.FUNCTION__OUT:
         getOut().clear();
-        getOut().addAll((Collection<? extends Variable>)newValue);
+        getOut().addAll((Collection<? extends OutVariable>)newValue);
         return;
       case TestintentionsAssistancePackage.FUNCTION__METHODE:
         setMethode((String)newValue);

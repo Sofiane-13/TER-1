@@ -1127,8 +1127,8 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     setNsURI(eNS_URI);
 
     // Obtain other dependent packages
-    TestintentionsAssistancePackage theTestintentionsAssistancePackage = (TestintentionsAssistancePackage)EPackage.Registry.INSTANCE.getEPackage(TestintentionsAssistancePackage.eNS_URI);
     ArchitecturePackage theArchitecturePackage = (ArchitecturePackage)EPackage.Registry.INSTANCE.getEPackage(ArchitecturePackage.eNS_URI);
+    TestintentionsAssistancePackage theTestintentionsAssistancePackage = (TestintentionsAssistancePackage)EPackage.Registry.INSTANCE.getEPackage(TestintentionsAssistancePackage.eNS_URI);
 
     // Create type parameters
 
@@ -1159,7 +1159,7 @@ public class MappingAssistancePackageImpl extends EPackageImpl implements Mappin
     initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(testDriverEClass, TestDriver.class, "TestDriver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTestDriver_OutVar(), theTestintentionsAssistancePackage.getVariable(), null, "outVar", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTestDriver_OutVar(), ecorePackage.getEObject(), null, "outVar", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTestDriver_TestOp(), this.getTestOP(), null, "testOp", null, 0, -1, TestDriver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(observerEClass, Observer.class, "Observer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

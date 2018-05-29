@@ -4,6 +4,7 @@
 package com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl;
 
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Expression;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage;
 
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestIntentionImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestIntentionImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestIntentionImpl#getOutvar <em>Outvar</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +69,16 @@ public class TestIntentionImpl extends AbstractElementImpl implements TestIntent
    * @ordered
    */
   protected EList<Expression> expression;
+
+  /**
+   * The cached value of the '{@link #getOutvar() <em>Outvar</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOutvar()
+   * @generated
+   * @ordered
+   */
+  protected OutVariable outvar;
 
   /**
    * <!-- begin-user-doc -->
@@ -131,6 +143,49 @@ public class TestIntentionImpl extends AbstractElementImpl implements TestIntent
    * <!-- end-user-doc -->
    * @generated
    */
+  public OutVariable getOutvar()
+  {
+    if (outvar != null && outvar.eIsProxy())
+    {
+      InternalEObject oldOutvar = (InternalEObject)outvar;
+      outvar = (OutVariable)eResolveProxy(oldOutvar);
+      if (outvar != oldOutvar)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TestintentionsAssistancePackage.TEST_INTENTION__OUTVAR, oldOutvar, outvar));
+      }
+    }
+    return outvar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OutVariable basicGetOutvar()
+  {
+    return outvar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOutvar(OutVariable newOutvar)
+  {
+    OutVariable oldOutvar = outvar;
+    outvar = newOutvar;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TestintentionsAssistancePackage.TEST_INTENTION__OUTVAR, oldOutvar, outvar));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -156,6 +211,9 @@ public class TestIntentionImpl extends AbstractElementImpl implements TestIntent
         return getDescription();
       case TestintentionsAssistancePackage.TEST_INTENTION__EXPRESSION:
         return getExpression();
+      case TestintentionsAssistancePackage.TEST_INTENTION__OUTVAR:
+        if (resolve) return getOutvar();
+        return basicGetOutvar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -178,6 +236,9 @@ public class TestIntentionImpl extends AbstractElementImpl implements TestIntent
         getExpression().clear();
         getExpression().addAll((Collection<? extends Expression>)newValue);
         return;
+      case TestintentionsAssistancePackage.TEST_INTENTION__OUTVAR:
+        setOutvar((OutVariable)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -198,6 +259,9 @@ public class TestIntentionImpl extends AbstractElementImpl implements TestIntent
       case TestintentionsAssistancePackage.TEST_INTENTION__EXPRESSION:
         getExpression().clear();
         return;
+      case TestintentionsAssistancePackage.TEST_INTENTION__OUTVAR:
+        setOutvar((OutVariable)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -216,6 +280,8 @@ public class TestIntentionImpl extends AbstractElementImpl implements TestIntent
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case TestintentionsAssistancePackage.TEST_INTENTION__EXPRESSION:
         return expression != null && !expression.isEmpty();
+      case TestintentionsAssistancePackage.TEST_INTENTION__OUTVAR:
+        return outvar != null;
     }
     return super.eIsSet(featureID);
   }

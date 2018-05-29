@@ -7,8 +7,6 @@ import com.aelos.xtext.mappingassistance.mappingAssistance.MappingAssistancePack
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestDriver;
 import com.aelos.xtext.mappingassistance.mappingAssistance.TestOP;
 
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -16,6 +14,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -48,7 +47,7 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
    * @generated
    * @ordered
    */
-  protected EList<Variable> outVar;
+  protected EList<EObject> outVar;
 
   /**
    * The cached value of the '{@link #getTestOp() <em>Test Op</em>}' containment reference list.
@@ -86,11 +85,11 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getOutVar()
+  public EList<EObject> getOutVar()
   {
     if (outVar == null)
     {
-      outVar = new EObjectResolvingEList<Variable>(Variable.class, this, MappingAssistancePackage.TEST_DRIVER__OUT_VAR);
+      outVar = new EObjectResolvingEList<EObject>(EObject.class, this, MappingAssistancePackage.TEST_DRIVER__OUT_VAR);
     }
     return outVar;
   }
@@ -156,7 +155,7 @@ public class TestDriverImpl extends MinimalEObjectImpl.Container implements Test
     {
       case MappingAssistancePackage.TEST_DRIVER__OUT_VAR:
         getOutVar().clear();
-        getOutVar().addAll((Collection<? extends Variable>)newValue);
+        getOutVar().addAll((Collection<? extends EObject>)newValue);
         return;
       case MappingAssistancePackage.TEST_DRIVER__TEST_OP:
         getTestOp().clear();

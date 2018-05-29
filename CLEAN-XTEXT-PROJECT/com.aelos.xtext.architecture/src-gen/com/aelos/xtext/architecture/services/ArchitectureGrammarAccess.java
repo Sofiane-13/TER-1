@@ -346,18 +346,19 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cArchitectureAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cArchitectureDefinitionKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cVarsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cVarsVariableParserRuleCall_2_0 = (RuleCall)cVarsAssignment_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cDefKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cVarsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cVarsVariableParserRuleCall_2_1_0 = (RuleCall)cVarsAssignment_2_1.eContents().get(0);
 		private final Assignment cBindAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cBindBindingParserRuleCall_3_0 = (RuleCall)cBindAssignment_3.eContents().get(0);
 		
 		//Architecture:
-		//	{Architecture} "ArchitectureDefinition"
-		//	vars+=Variable*
+		//	{Architecture} "ArchitectureDefinition" ("def" vars+=Variable)*
 		//	bind+=Binding*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Architecture} "ArchitectureDefinition" vars+=Variable* bind+=Binding*
+		//{Architecture} "ArchitectureDefinition" ("def" vars+=Variable)* bind+=Binding*
 		public Group getGroup() { return cGroup; }
 		
 		//{Architecture}
@@ -366,11 +367,17 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 		//"ArchitectureDefinition"
 		public Keyword getArchitectureDefinitionKeyword_1() { return cArchitectureDefinitionKeyword_1; }
 		
-		//vars+=Variable*
-		public Assignment getVarsAssignment_2() { return cVarsAssignment_2; }
+		//("def" vars+=Variable)*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//"def"
+		public Keyword getDefKeyword_2_0() { return cDefKeyword_2_0; }
+		
+		//vars+=Variable
+		public Assignment getVarsAssignment_2_1() { return cVarsAssignment_2_1; }
 		
 		//Variable
-		public RuleCall getVarsVariableParserRuleCall_2_0() { return cVarsVariableParserRuleCall_2_0; }
+		public RuleCall getVarsVariableParserRuleCall_2_1_0() { return cVarsVariableParserRuleCall_2_1_0; }
 		
 		//bind+=Binding*
 		public Assignment getBindAssignment_3() { return cBindAssignment_3; }
@@ -783,8 +790,7 @@ public class ArchitectureGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Architecture:
-	//	{Architecture} "ArchitectureDefinition"
-	//	vars+=Variable*
+	//	{Architecture} "ArchitectureDefinition" ("def" vars+=Variable)*
 	//	bind+=Binding*;
 	public ArchitectureElements getArchitectureAccess() {
 		return pArchitecture;

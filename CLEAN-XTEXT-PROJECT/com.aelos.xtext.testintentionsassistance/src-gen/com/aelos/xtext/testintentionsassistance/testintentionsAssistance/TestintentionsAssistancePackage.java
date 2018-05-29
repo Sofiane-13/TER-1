@@ -254,6 +254,43 @@ public interface TestintentionsAssistancePackage extends EPackage
   int DATA_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.OutVariableImpl <em>Out Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.OutVariableImpl
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getOutVariable()
+   * @generated
+   */
+  int OUT_VARIABLE = 6;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUT_VARIABLE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUT_VARIABLE__TYPE = 1;
+
+  /**
+   * The number of structural features of the '<em>Out Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUT_VARIABLE_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.InstImpl <em>Inst</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -261,7 +298,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getInst()
    * @generated
    */
-  int INST = 6;
+  int INST = 7;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' containment reference list.
@@ -298,7 +335,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getTestIntention()
    * @generated
    */
-  int TEST_INTENTION = 7;
+  int TEST_INTENTION = 8;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -319,13 +356,22 @@ public interface TestintentionsAssistancePackage extends EPackage
   int TEST_INTENTION__EXPRESSION = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Outvar</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEST_INTENTION__OUTVAR = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Test Intention</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEST_INTENTION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int TEST_INTENTION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -335,7 +381,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 8;
+  int EXPRESSION = 9;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -354,7 +400,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 9;
+  int VARIABLE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -391,7 +437,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getOr()
    * @generated
    */
-  int OR = 10;
+  int OR = 11;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -428,7 +474,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getAnd()
    * @generated
    */
-  int AND = 11;
+  int AND = 12;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -465,7 +511,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getEquality()
    * @generated
    */
-  int EQUALITY = 12;
+  int EQUALITY = 13;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -511,7 +557,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getComparison()
    * @generated
    */
-  int COMPARISON = 13;
+  int COMPARISON = 14;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -557,7 +603,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 14;
+  int PLUS = 15;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -594,7 +640,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 15;
+  int MINUS = 16;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -631,7 +677,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getMulOrDiv()
    * @generated
    */
-  int MUL_OR_DIV = 16;
+  int MUL_OR_DIV = 17;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -677,7 +723,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getNot()
    * @generated
    */
-  int NOT = 17;
+  int NOT = 18;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -705,7 +751,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getINT()
    * @generated
    */
-  int INT = 18;
+  int INT = 19;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -733,7 +779,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getSTRING()
    * @generated
    */
-  int STRING = 19;
+  int STRING = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -761,7 +807,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getBoolean()
    * @generated
    */
-  int BOOLEAN = 20;
+  int BOOLEAN = 21;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -789,7 +835,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getDouble()
    * @generated
    */
-  int DOUBLE = 21;
+  int DOUBLE = 22;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -817,7 +863,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getVariableRef()
    * @generated
    */
-  int VARIABLE_REF = 22;
+  int VARIABLE_REF = 23;
 
   /**
    * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -845,7 +891,7 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getType()
    * @generated
    */
-  int TYPE = 23;
+  int TYPE = 24;
 
 
   /**
@@ -1008,6 +1054,38 @@ public interface TestintentionsAssistancePackage extends EPackage
   EReference getData_Inst();
 
   /**
+   * Returns the meta object for class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable <em>Out Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Out Variable</em>'.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable
+   * @generated
+   */
+  EClass getOutVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable#getName()
+   * @see #getOutVariable()
+   * @generated
+   */
+  EAttribute getOutVariable_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable#getType()
+   * @see #getOutVariable()
+   * @generated
+   */
+  EAttribute getOutVariable_Type();
+
+  /**
    * Returns the meta object for class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Inst <em>Inst</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1070,6 +1148,17 @@ public interface TestintentionsAssistancePackage extends EPackage
    * @generated
    */
   EReference getTestIntention_Expression();
+
+  /**
+   * Returns the meta object for the reference '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention#getOutvar <em>Outvar</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Outvar</em>'.
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention#getOutvar()
+   * @see #getTestIntention()
+   * @generated
+   */
+  EReference getTestIntention_Outvar();
 
   /**
    * Returns the meta object for class '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Expression <em>Expression</em>}'.
@@ -1662,6 +1751,32 @@ public interface TestintentionsAssistancePackage extends EPackage
     EReference DATA__INST = eINSTANCE.getData_Inst();
 
     /**
+     * The meta object literal for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.OutVariableImpl <em>Out Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.OutVariableImpl
+     * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.TestintentionsAssistancePackageImpl#getOutVariable()
+     * @generated
+     */
+    EClass OUT_VARIABLE = eINSTANCE.getOutVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OUT_VARIABLE__NAME = eINSTANCE.getOutVariable_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OUT_VARIABLE__TYPE = eINSTANCE.getOutVariable_Type();
+
+    /**
      * The meta object literal for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.InstImpl <em>Inst</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1712,6 +1827,14 @@ public interface TestintentionsAssistancePackage extends EPackage
      * @generated
      */
     EReference TEST_INTENTION__EXPRESSION = eINSTANCE.getTestIntention_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Outvar</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TEST_INTENTION__OUTVAR = eINSTANCE.getTestIntention_Outvar();
 
     /**
      * The meta object literal for the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.impl.ExpressionImpl <em>Expression</em>}' class.

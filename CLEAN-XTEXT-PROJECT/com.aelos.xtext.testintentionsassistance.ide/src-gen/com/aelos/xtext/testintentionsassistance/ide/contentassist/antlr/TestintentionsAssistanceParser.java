@@ -52,6 +52,7 @@ public class TestintentionsAssistanceParser extends AbstractContentAssistParser 
 			builder.put(grammarAccess.getDataAccess().getGroup_0(), "rule__Data__Group_0__0");
 			builder.put(grammarAccess.getDataAccess().getGroup_0_2(), "rule__Data__Group_0_2__0");
 			builder.put(grammarAccess.getDataAccess().getGroup_1(), "rule__Data__Group_1__0");
+			builder.put(grammarAccess.getOutVariableAccess().getGroup(), "rule__OutVariable__Group__0");
 			builder.put(grammarAccess.getInstAccess().getGroup(), "rule__Inst__Group__0");
 			builder.put(grammarAccess.getTestIntentionAccess().getGroup(), "rule__TestIntention__Group__0");
 			builder.put(grammarAccess.getOrAccess().getGroup(), "rule__Or__Group__0");
@@ -88,11 +89,14 @@ public class TestintentionsAssistanceParser extends AbstractContentAssistParser 
 			builder.put(grammarAccess.getFunctionAccess().getArg1Assignment_6(), "rule__Function__Arg1Assignment_6");
 			builder.put(grammarAccess.getDataAccess().getInstAssignment_0_2_0(), "rule__Data__InstAssignment_0_2_0");
 			builder.put(grammarAccess.getDataAccess().getInstAssignment_1_0(), "rule__Data__InstAssignment_1_0");
+			builder.put(grammarAccess.getOutVariableAccess().getNameAssignment_0(), "rule__OutVariable__NameAssignment_0");
+			builder.put(grammarAccess.getOutVariableAccess().getTypeAssignment_2(), "rule__OutVariable__TypeAssignment_2");
 			builder.put(grammarAccess.getInstAccess().getVariableAssignment_0(), "rule__Inst__VariableAssignment_0");
 			builder.put(grammarAccess.getInstAccess().getValeurAssignment_2(), "rule__Inst__ValeurAssignment_2");
 			builder.put(grammarAccess.getTestIntentionAccess().getDescriptionAssignment_1(), "rule__TestIntention__DescriptionAssignment_1");
 			builder.put(grammarAccess.getTestIntentionAccess().getExpressionAssignment_3(), "rule__TestIntention__ExpressionAssignment_3");
-			builder.put(grammarAccess.getTestIntentionAccess().getExpressionAssignment_5(), "rule__TestIntention__ExpressionAssignment_5");
+			builder.put(grammarAccess.getTestIntentionAccess().getOutvarAssignment_5(), "rule__TestIntention__OutvarAssignment_5");
+			builder.put(grammarAccess.getTestIntentionAccess().getExpressionAssignment_7(), "rule__TestIntention__ExpressionAssignment_7");
 			builder.put(grammarAccess.getOrAccess().getRightAssignment_1_2(), "rule__Or__RightAssignment_1_2");
 			builder.put(grammarAccess.getAndAccess().getRightAssignment_1_2(), "rule__And__RightAssignment_1_2");
 			builder.put(grammarAccess.getEqualityAccess().getOpAssignment_1_1(), "rule__Equality__OpAssignment_1_1");

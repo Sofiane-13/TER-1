@@ -37,7 +37,7 @@ Component :
 
 Architecture:
 	{Architecture} "ArchitectureDefinition"
-	(vars+=Variable)*
+	("def" vars+=Variable)*
 
 	(bind+=Binding)*
 
