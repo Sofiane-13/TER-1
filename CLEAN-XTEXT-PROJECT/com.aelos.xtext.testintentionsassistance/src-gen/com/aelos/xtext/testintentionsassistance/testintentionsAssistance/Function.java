@@ -28,7 +28,7 @@ public interface Function extends AbstractElement
 {
   /**
    * Returns the value of the '<em><b>Out</b></em>' containment reference list.
-   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
+   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Out</em>' containment reference list isn't clear,
@@ -40,7 +40,7 @@ public interface Function extends AbstractElement
    * @model containment="true"
    * @generated
    */
-  EList<Variable> getOut();
+  EList<OutVariable> getOut();
 
   /**
    * Returns the value of the '<em><b>Methode</b></em>' attribute.

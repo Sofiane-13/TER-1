@@ -366,9 +366,9 @@ ruleFunction returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFunctionAccess().getOutVariableParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getFunctionAccess().getOutOutVariableParserRuleCall_0_0());
 				}
-				lv_out_0_0=ruleVariable
+				lv_out_0_0=ruleOutVariable
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFunctionRule());
@@ -377,7 +377,7 @@ ruleFunction returns [EObject current=null]
 						$current,
 						"out",
 						lv_out_0_0,
-						"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Variable");
+						"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.OutVariable");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -390,9 +390,9 @@ ruleFunction returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getFunctionAccess().getOutVariableParserRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getFunctionAccess().getOutOutVariableParserRuleCall_1_1_0());
 					}
-					lv_out_2_0=ruleVariable
+					lv_out_2_0=ruleOutVariable
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getFunctionRule());
@@ -401,7 +401,7 @@ ruleFunction returns [EObject current=null]
 							$current,
 							"out",
 							lv_out_2_0,
-							"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Variable");
+							"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.OutVariable");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -557,6 +557,66 @@ ruleData returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleOutVariable
+entryRuleOutVariable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOutVariableRule()); }
+	iv_ruleOutVariable=ruleOutVariable
+	{ $current=$iv_ruleOutVariable.current; }
+	EOF;
+
+// Rule OutVariable
+ruleOutVariable returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_name_0_0=RULE_ID
+				{
+					newLeafNode(lv_name_0_0, grammarAccess.getOutVariableAccess().getNameIDTerminalRuleCall_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getOutVariableRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_0_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_1=':'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getOutVariableAccess().getColonKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getOutVariableAccess().getTypeTypeEnumRuleCall_2_0());
+				}
+				lv_type_2_0=ruleType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOutVariableRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_2_0,
+						"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Type");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleInst
 entryRuleInst returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getInstRule()); }
@@ -686,9 +746,26 @@ ruleTestIntention returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTestIntentionAccess().getExpressionExpressionParserRuleCall_5_0());
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTestIntentionRule());
+					}
 				}
-				lv_expression_5_0=ruleExpression
+				otherlv_5=RULE_ID
+				{
+					newLeafNode(otherlv_5, grammarAccess.getTestIntentionAccess().getOutvarOutVariableCrossReference_5_0());
+				}
+			)
+		)
+		otherlv_6='='
+		{
+			newLeafNode(otherlv_6, grammarAccess.getTestIntentionAccess().getEqualsSignKeyword_6());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTestIntentionAccess().getExpressionExpressionParserRuleCall_7_0());
+				}
+				lv_expression_7_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTestIntentionRule());
@@ -696,7 +773,7 @@ ruleTestIntention returns [EObject current=null]
 					add(
 						$current,
 						"expression",
-						lv_expression_5_0,
+						lv_expression_7_0,
 						"com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Expression");
 					afterParserOrEnumRuleCall();
 				}

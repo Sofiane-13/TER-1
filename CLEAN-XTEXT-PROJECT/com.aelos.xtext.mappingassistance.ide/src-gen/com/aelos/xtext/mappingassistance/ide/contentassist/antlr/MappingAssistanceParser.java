@@ -42,6 +42,7 @@ public class MappingAssistanceParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getTestDriverAccess().getGroup(), "rule__TestDriver__Group__0");
 			builder.put(grammarAccess.getTestDriverAccess().getGroup_3(), "rule__TestDriver__Group_3__0");
+			builder.put(grammarAccess.getTestDriverAccess().getGroup_3_1(), "rule__TestDriver__Group_3_1__0");
 			builder.put(grammarAccess.getObserverAccess().getGroup(), "rule__Observer__Group__0");
 			builder.put(grammarAccess.getObserverAccess().getGroup_5(), "rule__Observer__Group_5__0");
 			builder.put(grammarAccess.getObserverAccess().getGroup_5_0(), "rule__Observer__Group_5_0__0");
@@ -85,7 +86,8 @@ public class MappingAssistanceParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAbstractModelAccess().getInstAssignment_2_5(), "rule__AbstractModel__InstAssignment_2_5");
 			builder.put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
 			builder.put(grammarAccess.getTestDriverAccess().getOutVarAssignment_3_0(), "rule__TestDriver__OutVarAssignment_3_0");
-			builder.put(grammarAccess.getTestDriverAccess().getTestOpAssignment_3_2(), "rule__TestDriver__TestOpAssignment_3_2");
+			builder.put(grammarAccess.getTestDriverAccess().getOutVarAssignment_3_1_1(), "rule__TestDriver__OutVarAssignment_3_1_1");
+			builder.put(grammarAccess.getTestDriverAccess().getTestOpAssignment_3_3(), "rule__TestDriver__TestOpAssignment_3_3");
 			builder.put(grammarAccess.getObserverAccess().getService1Assignment_1(), "rule__Observer__Service1Assignment_1");
 			builder.put(grammarAccess.getObserverAccess().getMember1Assignment_3(), "rule__Observer__Member1Assignment_3");
 			builder.put(grammarAccess.getObserverAccess().getInstVarAssignment_5_0_0(), "rule__Observer__InstVarAssignment_5_0_0");

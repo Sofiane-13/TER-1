@@ -18,6 +18,7 @@ import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Model;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.MulOrDiv;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Not;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Or;
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Plus;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.STRING;
 import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention;
@@ -97,6 +98,9 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 				return; 
 			case TestintentionsAssistancePackage.OR:
 				sequence_Or(context, (Or) semanticObject); 
+				return; 
+			case TestintentionsAssistancePackage.OUT_VARIABLE:
+				sequence_OutVariable(context, (OutVariable) semanticObject); 
 				return; 
 			case TestintentionsAssistancePackage.PLUS:
 				sequence_PlusOrMinus(context, (Plus) semanticObject); 
@@ -402,7 +406,7 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 	 *     Function returns Function
 	 *
 	 * Constraint:
-	 *     (out+=Variable out+=Variable* methode=ID arg+=[Variable|ID]* arg1=[Variable|ID])
+	 *     (out+=OutVariable out+=OutVariable* methode=ID arg+=[Variable|ID]* arg1=[Variable|ID])
 	 */
 	protected void sequence_Function(ISerializationContext context, Function semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -515,6 +519,27 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Contexts:
+	 *     OutVariable returns OutVariable
+	 *
+	 * Constraint:
+	 *     (name=ID type=Type)
+	 */
+	protected void sequence_OutVariable(ISerializationContext context, OutVariable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TestintentionsAssistancePackage.Literals.OUT_VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestintentionsAssistancePackage.Literals.OUT_VARIABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, TestintentionsAssistancePackage.Literals.OUT_VARIABLE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TestintentionsAssistancePackage.Literals.OUT_VARIABLE__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOutVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getOutVariableAccess().getTypeTypeEnumRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Expression returns Minus
 	 *     Or returns Minus
 	 *     Or.Or_1_0 returns Minus
@@ -621,7 +646,7 @@ public class TestintentionsAssistanceSemanticSequencer extends AbstractDelegatin
 	 *     TestIntention returns TestIntention
 	 *
 	 * Constraint:
-	 *     (description=STRING expression+=Expression expression+=Expression)
+	 *     (description=STRING expression+=Expression outvar=[OutVariable|ID] expression+=Expression)
 	 */
 	protected void sequence_TestIntention(ISerializationContext context, TestIntention semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

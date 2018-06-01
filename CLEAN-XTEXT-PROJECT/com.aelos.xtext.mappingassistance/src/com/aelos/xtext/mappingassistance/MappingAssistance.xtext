@@ -31,7 +31,7 @@ TestDriver :
 
 	{TestDriver} "TestDriver" "{"
 
-		(outVar+=[testIntention::Variable]"<-"testOp+=TestOP)*
+		(outVar+=[testIntention::OutVariable](","outVar+=[testIntention::Variable])*"<-"testOp+=TestOP)*
 	
 	"}"
 	;

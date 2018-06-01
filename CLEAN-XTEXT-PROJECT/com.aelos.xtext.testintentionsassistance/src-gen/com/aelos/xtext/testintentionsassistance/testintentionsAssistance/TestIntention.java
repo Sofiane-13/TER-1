@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention#getDescription <em>Description</em>}</li>
  *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention#getExpression <em>Expression</em>}</li>
+ *   <li>{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention#getOutvar <em>Outvar</em>}</li>
  * </ul>
  *
  * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage#getTestIntention()
@@ -65,5 +66,31 @@ public interface TestIntention extends AbstractElement
    * @generated
    */
   EList<Expression> getExpression();
+
+  /**
+   * Returns the value of the '<em><b>Outvar</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Outvar</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Outvar</em>' reference.
+   * @see #setOutvar(OutVariable)
+   * @see com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage#getTestIntention_Outvar()
+   * @model
+   * @generated
+   */
+  OutVariable getOutvar();
+
+  /**
+   * Sets the value of the '{@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention#getOutvar <em>Outvar</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Outvar</em>' reference.
+   * @see #getOutvar()
+   * @generated
+   */
+  void setOutvar(OutVariable value);
 
 } // TestIntention

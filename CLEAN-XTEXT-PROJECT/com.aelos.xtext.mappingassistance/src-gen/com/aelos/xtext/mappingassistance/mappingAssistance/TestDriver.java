@@ -3,8 +3,6 @@
  */
 package com.aelos.xtext.mappingassistance.mappingAssistance;
 
-import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -30,7 +28,7 @@ public interface TestDriver extends EObject
 {
   /**
    * Returns the value of the '<em><b>Out Var</b></em>' reference list.
-   * The list contents are of type {@link com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Variable}.
+   * The list contents are of type {@link org.eclipse.emf.ecore.EObject}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Out Var</em>' reference list isn't clear,
@@ -42,7 +40,7 @@ public interface TestDriver extends EObject
    * @model
    * @generated
    */
-  EList<Variable> getOutVar();
+  EList<EObject> getOutVar();
 
   /**
    * Returns the value of the '<em><b>Test Op</b></em>' containment reference list.

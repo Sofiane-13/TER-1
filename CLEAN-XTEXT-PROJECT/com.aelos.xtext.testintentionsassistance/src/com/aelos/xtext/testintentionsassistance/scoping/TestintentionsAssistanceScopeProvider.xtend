@@ -3,6 +3,15 @@
  */
 package com.aelos.xtext.testintentionsassistance.scoping
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.Function
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestIntention
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.TestintentionsAssistancePackage
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.xtext.EcoreUtil2
+import com.aelos.xtext.testintentionsassistance.testintentionsAssistance.OutVariable
+import org.eclipse.xtext.scoping.Scopes
 
 /**
  * This class contains custom scoping description.
@@ -11,5 +20,20 @@ package com.aelos.xtext.testintentionsassistance.scoping
  * on how and when to use it.
  */
 class TestintentionsAssistanceScopeProvider extends AbstractTestintentionsAssistanceScopeProvider {
+	
+//	override getScope(EObject context, EReference reference) {
+//		
+//	 if (context instanceof Function
+//            && reference == TestintentionsAssistancePackage.Literals.FUNCTION__OUT) {
+//        // Collect a list of candidates by going through the model
+//        // EcoreUtil2 provides useful functionality to do that
+//        // For example searching for all elements within the root Object's tree
+//        val rootElement = EcoreUtil2.getRootContainer(context)
+//        val candidates = EcoreUtil2.getAllContentsOfType(rootElement,OutVariable )
+//        // Create IEObjectDescriptions and puts them into an IScope instance
+//        return Scopes.scopeFor(candidates)
+//    
+//	    }
+//	}
 
 }

@@ -32,6 +32,10 @@
     <genClasses ecoreClass="TestintentionsAssistance.ecore#//Data">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestintentionsAssistance.ecore#//Data/inst"/>
     </genClasses>
+    <genClasses ecoreClass="TestintentionsAssistance.ecore#//OutVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//OutVariable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//OutVariable/type"/>
+    </genClasses>
     <genClasses ecoreClass="TestintentionsAssistance.ecore#//Inst">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestintentionsAssistance.ecore#//Inst/variable"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestintentionsAssistance.ecore#//Inst/valeur"/>
@@ -39,6 +43,7 @@
     <genClasses ecoreClass="TestintentionsAssistance.ecore#//TestIntention">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TestintentionsAssistance.ecore#//TestIntention/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TestintentionsAssistance.ecore#//TestIntention/expression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference TestintentionsAssistance.ecore#//TestIntention/outvar"/>
     </genClasses>
     <genClasses ecoreClass="TestintentionsAssistance.ecore#//Expression"/>
     <genClasses ecoreClass="TestintentionsAssistance.ecore#//Variable">

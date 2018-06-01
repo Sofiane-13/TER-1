@@ -187,11 +187,11 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Function");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cOutAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cOutVariableParserRuleCall_0_0 = (RuleCall)cOutAssignment_0.eContents().get(0);
+		private final RuleCall cOutOutVariableParserRuleCall_0_0 = (RuleCall)cOutAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cOutAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOutVariableParserRuleCall_1_1_0 = (RuleCall)cOutAssignment_1_1.eContents().get(0);
+		private final RuleCall cOutOutVariableParserRuleCall_1_1_0 = (RuleCall)cOutAssignment_1_1.eContents().get(0);
 		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cMethodeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cMethodeIDTerminalRuleCall_3_0 = (RuleCall)cMethodeAssignment_3.eContents().get(0);
@@ -208,29 +208,29 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		
 		////Pour le test domain 
 		//Function:
-		//	out+=Variable ("," out+=Variable)* "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")";
+		//	out+=OutVariable ("," out+=OutVariable)* "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//out+=Variable ("," out+=Variable)* "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")"
+		//out+=OutVariable ("," out+=OutVariable)* "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")"
 		public Group getGroup() { return cGroup; }
 		
-		//out+=Variable
+		//out+=OutVariable
 		public Assignment getOutAssignment_0() { return cOutAssignment_0; }
 		
-		//Variable
-		public RuleCall getOutVariableParserRuleCall_0_0() { return cOutVariableParserRuleCall_0_0; }
+		//OutVariable
+		public RuleCall getOutOutVariableParserRuleCall_0_0() { return cOutOutVariableParserRuleCall_0_0; }
 		
-		//("," out+=Variable)*
+		//("," out+=OutVariable)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//","
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//out+=Variable
+		//out+=OutVariable
 		public Assignment getOutAssignment_1_1() { return cOutAssignment_1_1; }
 		
-		//Variable
-		public RuleCall getOutVariableParserRuleCall_1_1_0() { return cOutVariableParserRuleCall_1_1_0; }
+		//OutVariable
+		public RuleCall getOutOutVariableParserRuleCall_1_1_0() { return cOutOutVariableParserRuleCall_1_1_0; }
 		
 		//"="
 		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
@@ -328,6 +328,37 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		//")"*
 		public Keyword getRightParenthesisKeyword_1_1() { return cRightParenthesisKeyword_1_1; }
 	}
+	public class OutVariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.OutVariable");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeTypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		
+		//OutVariable:
+		//	name=ID ":" type=Type;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=ID ":" type=Type
+		public Group getGroup() { return cGroup; }
+		
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//":"
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
+		
+		//type=Type
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		
+		//Type
+		public RuleCall getTypeTypeEnumRuleCall_2_0() { return cTypeTypeEnumRuleCall_2_0; }
+	}
 	public class InstElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Inst");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -369,17 +400,22 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		private final Assignment cExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cExpressionExpressionParserRuleCall_3_0 = (RuleCall)cExpressionAssignment_3.eContents().get(0);
 		private final Keyword cOracleKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cExpressionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cExpressionExpressionParserRuleCall_5_0 = (RuleCall)cExpressionAssignment_5.eContents().get(0);
+		private final Assignment cOutvarAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cOutvarOutVariableCrossReference_5_0 = (CrossReference)cOutvarAssignment_5.eContents().get(0);
+		private final RuleCall cOutvarOutVariableIDTerminalRuleCall_5_0_1 = (RuleCall)cOutvarOutVariableCrossReference_5_0.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cExpressionAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cExpressionExpressionParserRuleCall_7_0 = (RuleCall)cExpressionAssignment_7.eContents().get(0);
 		
 		////Pour le test intention           
 		//TestIntention:
 		//	'description:' description=STRING
 		//	'datapredicate:' expression+=Expression
-		//	'oracle:' expression+=Expression;
+		//	'oracle:' outvar=[OutVariable] "=" expression+=Expression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'description:' description=STRING 'datapredicate:' expression+=Expression 'oracle:' expression+=Expression
+		//'description:' description=STRING 'datapredicate:' expression+=Expression 'oracle:' outvar=[OutVariable] "="
+		//expression+=Expression
 		public Group getGroup() { return cGroup; }
 		
 		//'description:'
@@ -403,11 +439,23 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		//'oracle:'
 		public Keyword getOracleKeyword_4() { return cOracleKeyword_4; }
 		
+		//outvar=[OutVariable]
+		public Assignment getOutvarAssignment_5() { return cOutvarAssignment_5; }
+		
+		//[OutVariable]
+		public CrossReference getOutvarOutVariableCrossReference_5_0() { return cOutvarOutVariableCrossReference_5_0; }
+		
+		//ID
+		public RuleCall getOutvarOutVariableIDTerminalRuleCall_5_0_1() { return cOutvarOutVariableIDTerminalRuleCall_5_0_1; }
+		
+		//"="
+		public Keyword getEqualsSignKeyword_6() { return cEqualsSignKeyword_6; }
+		
 		//expression+=Expression
-		public Assignment getExpressionAssignment_5() { return cExpressionAssignment_5; }
+		public Assignment getExpressionAssignment_7() { return cExpressionAssignment_7; }
 		
 		//Expression
-		public RuleCall getExpressionExpressionParserRuleCall_5_0() { return cExpressionExpressionParserRuleCall_5_0; }
+		public RuleCall getExpressionExpressionParserRuleCall_7_0() { return cExpressionExpressionParserRuleCall_7_0; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.aelos.xtext.testintentionsassistance.TestintentionsAssistance.Expression");
@@ -968,6 +1016,7 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 	private final AbstractElementElements pAbstractElement;
 	private final FunctionElements pFunction;
 	private final DataElements pData;
+	private final OutVariableElements pOutVariable;
 	private final InstElements pInst;
 	private final TestIntentionElements pTestIntention;
 	private final ExpressionElements pExpression;
@@ -1001,6 +1050,7 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		this.pAbstractElement = new AbstractElementElements();
 		this.pFunction = new FunctionElements();
 		this.pData = new DataElements();
+		this.pOutVariable = new OutVariableElements();
 		this.pInst = new InstElements();
 		this.pTestIntention = new TestIntentionElements();
 		this.pExpression = new ExpressionElements();
@@ -1109,7 +1159,7 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 	
 	////Pour le test domain 
 	//Function:
-	//	out+=Variable ("," out+=Variable)* "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")";
+	//	out+=OutVariable ("," out+=OutVariable)* "=" methode=ID "(" (arg+=[Variable] ",")* arg1=[Variable] ")";
 	public FunctionElements getFunctionAccess() {
 		return pFunction;
 	}
@@ -1130,6 +1180,16 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 		return getDataAccess().getRule();
 	}
 	
+	//OutVariable:
+	//	name=ID ":" type=Type;
+	public OutVariableElements getOutVariableAccess() {
+		return pOutVariable;
+	}
+	
+	public ParserRule getOutVariableRule() {
+		return getOutVariableAccess().getRule();
+	}
+	
 	//Inst:
 	//	variable+=Variable ':=' valeur+=Atomic;
 	public InstElements getInstAccess() {
@@ -1144,7 +1204,7 @@ public class TestintentionsAssistanceGrammarAccess extends AbstractGrammarElemen
 	//TestIntention:
 	//	'description:' description=STRING
 	//	'datapredicate:' expression+=Expression
-	//	'oracle:' expression+=Expression;
+	//	'oracle:' outvar=[OutVariable] "=" expression+=Expression;
 	public TestIntentionElements getTestIntentionAccess() {
 		return pTestIntention;
 	}

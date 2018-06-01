@@ -1,7 +1,7 @@
-'('=25
-')'=26
-','=28
-'-'=27
+'('=26
+')'=27
+','=24
+'-'=28
 '.'=19
 '.*'=18
 ':'=35
@@ -17,7 +17,7 @@
 'false'=12
 'import'=17
 'mock:'=29
-'observer:'=24
+'observer:'=25
 'providedServices'=32
 'replaceConf:'=30
 'requeredServices'=33

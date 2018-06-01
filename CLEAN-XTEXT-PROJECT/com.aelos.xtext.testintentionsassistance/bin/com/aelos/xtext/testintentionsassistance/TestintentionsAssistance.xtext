@@ -25,11 +25,14 @@ AbstractElement:
 
 //Pour le test domain 
 Function:
-	out += Variable(","out+=Variable)* "=" methode = ID "("(arg+=[Variable] ",")*arg1=[Variable]")";
+	out += OutVariable(","out+=OutVariable)* "=" methode = ID "("(arg+=[Variable] ",")*arg1=[Variable]")";
 	
 //Pour le test data 	
 Data: {Data}
 	'input:('(inst+=Inst "," )*|inst+=Inst")"*;
+	
+OutVariable:
+      name=ID ":" type=Type;	
 	
 Inst:
 	variable+=Variable ':=' valeur+=Atomic
@@ -39,7 +42,7 @@ Inst:
 TestIntention:
 	 'description:' description=STRING
      'datapredicate:' expression+=Expression
-     'oracle:' expression+=Expression;
+     'oracle:' outvar=[OutVariable]"="expression+=Expression;
      
 Expression: Or;
 
